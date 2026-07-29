@@ -1,0 +1,37 @@
+{
+  "name": "robuzta-techlabs",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "format": "prettier --write \"src/**/*.{js,jsx,css,json,md}\""
+  },
+  "dependencies": {
+    "@hookform/resolvers": "latest",
+    "clsx": "latest",
+    "framer-motion": "latest",
+    "gsap": "^3.15.0",
+    "lenis": "^1.3.25",
+    "lucide-react": "latest",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-hook-form": "latest",
+    "swiper": "latest",
+    "tailwind-merge": "latest",
+    "three": "^0.185.1",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "latest",
+    "@tailwindcss/postcss": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "prettier": "latest",
+    "tailwindcss": "latest"
+  }
+}
