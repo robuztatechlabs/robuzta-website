@@ -1,8 +1,9 @@
+'use client';
+
 import { PackageCheck, MapPin, Truck, ShieldCheck, ArrowRight } from 'lucide-react';
-import { Button } from '@/components/ui/Button';
-import { Section } from '@/components/ui/Section';
-import { GsapReveal } from '@/components/ui/GsapAnimations';
 import { siteConfig } from '@/data/site';
+import { MagneticButton } from '@/components/ui/MagneticButton';
+import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 
 const doorstepZones = [
   'South Bopal',
@@ -21,28 +22,33 @@ const doorstepZones = [
 
 export function CourierHighlight() {
   return (
-    <Section className="courier-section">
-      <GsapReveal direction="up" delay={0.1}>
-        <div className="courier-band">
-          <div className="courier-icon-box">
-            <Truck size={36} />
-          </div>
-          <div className="courier-content">
-            <div className="courier-badge">
-              <span className="pulse-dot"></span>
-              <span>EXPRESS DOORSTEP PICKUP & SHIP-IN REPAIR</span>
+    <section className="relative bg-white py-20 border-b border-slate-200">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        <div className="rounded-3xl bg-slate-50 border border-slate-200 p-8 sm:p-12 shadow-md flex flex-col lg:flex-row items-center justify-between gap-8">
+          
+          <div className="space-y-6 max-w-3xl">
+            <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-3.5 py-1.5 text-xs font-extrabold text-[#0E7C7B] uppercase tracking-widest">
+              <Truck size={14} className="text-[#0E7C7B]" />
+              EXPRESS DOORSTEP PICKUP & PAN-INDIA SHIP-IN REPAIR
             </div>
-            <h2>Free Doorstep Pickup Across Ahmedabad & Insured Ship-In</h2>
-            <p>
-              We pick up broken devices directly from your home or office across all major Ahmedabad zones, or accept insured ship-in repairs pan-India with video unboxing diagnostics.
+
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              Free Doorstep Pickup Across Ahmedabad & Insured Pan-India Courier Repair
+            </h2>
+
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+              We pick up laptops, MacBooks, and mobile devices directly from your home or office in anti-static padding, or accept Pan-India courier shipments with live video unboxing and insured transit.
             </p>
 
-            <div className="doorstep-zones-list">
-              <span className="zones-label">Doorstep Pickup Zones:</span>
-              <div className="zones-chips">
+            <div className="space-y-2">
+              <span className="text-xs font-black text-slate-500 uppercase tracking-wider block">
+                Popular Free Doorstep Service Zones:
+              </span>
+              <div className="flex flex-wrap gap-2">
                 {doorstepZones.map((zone) => (
-                  <span key={zone} className="zone-chip">
-                    <MapPin size={11} className="text-teal" />
+                  <span key={zone} className="inline-flex items-center gap-1 text-xs font-bold text-slate-700 bg-white border border-slate-200 px-3 py-1 rounded-lg shadow-sm">
+                    <MapPin size={12} className="text-[#0E7C7B]" />
                     {zone}
                   </span>
                 ))}
@@ -50,18 +56,27 @@ export function CourierHighlight() {
             </div>
           </div>
 
-          <div className="courier-cta">
-            <Button href={siteConfig.whatsappHref} variant="whatsapp" className="btn-courier-action">
-              <span>Book Doorstep Pickup</span>
-              <ArrowRight size={16} />
-            </Button>
-            <div className="courier-trust-tag">
-              <ShieldCheck size={14} className="text-teal" />
-              <span>Insured Transit & Data Safety</span>
-            </div>
+          <div className="flex flex-col items-center lg:items-end gap-3 shrink-0">
+            <MagneticButton>
+              <a
+                href={siteConfig.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2.5 rounded-2xl bg-[#0E7C7B] px-8 py-4 text-xs sm:text-sm font-black text-white shadow-xl shadow-[#0E7C7B]/30 hover:bg-[#0a5c5b] hover:scale-[1.02] transition-all"
+              >
+                <WhatsappIcon size={20} className="text-white shrink-0" />
+                <span className="text-white font-black">Book Free Pickup</span>
+              </a>
+            </MagneticButton>
+
+            <span className="text-xs font-bold text-slate-600 flex items-center gap-1.5">
+              <ShieldCheck size={14} className="text-emerald-700" /> Insured Transit & Zero-OTP Safety
+            </span>
           </div>
+
         </div>
-      </GsapReveal>
-    </Section>
+
+      </div>
+    </section>
   );
 }

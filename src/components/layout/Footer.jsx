@@ -1,77 +1,133 @@
+'use client';
+
 import Link from 'next/link';
 import { siteConfig } from '@/data/site';
 import { services } from '@/data/services';
 import { locations } from '@/data/locations';
-import { Phone, Mail, MapPin, ShieldCheck, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, ShieldCheck, Clock, ArrowUpRight, Globe, Share2 } from 'lucide-react';
+import { BrandLogo } from '@/components/ui/BrandLogo';
 
 export function Footer() {
   return (
-    <footer className="site-footer">
-      <div className="container footer-grid">
-        <div className="footer-col-main">
-          <strong className="footer-brand">Robuzta Techlabs</strong>
-          <p className="footer-desc">
-            Ahmedabad&apos;s premier multi-device repair lab. Specialized in chip-level laptop, MacBook, smartphone, and gaming PC diagnostics with transparent pricing and live workbench repairs.
-          </p>
-          <div className="footer-trust-badge">
-            <ShieldCheck size={18} className="text-teal" />
-            <span>No Password Required • Genuine Spare Parts</span>
+    <footer className="border-t border-slate-200 bg-[#0F172A] text-slate-300 pt-16 pb-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        {/* Top Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-16 border-b border-slate-800">
+          
+          {/* Main Info */}
+          <div className="lg:col-span-2 space-y-4">
+            <div className="bg-white p-2 rounded-xl inline-block shadow-sm">
+              <BrandLogo />
+            </div>
+
+            <p className="text-sm leading-relaxed text-slate-400 max-w-md">
+              Ahmedabad’s premier multi-device repair lab. Specialized in chip-level laptop, MacBook, smartphone, Surface, and gaming PC diagnostics with transparent pricing and live workbench repairs under strict Zero-OTP privacy.
+            </p>
+
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-xs text-slate-200 font-bold">
+              <ShieldCheck size={16} className="text-[#0E7C7B]" />
+              <span>Zero-OTP Privacy • ISO 27001 ESD Safe Lab</span>
+            </div>
+
+            <div className="flex items-center gap-3 pt-2">
+              <a href="#" className="h-9 w-9 flex items-center justify-center rounded-lg bg-slate-800 border border-slate-700 text-slate-400 hover:text-white transition-colors" title="Global Web">
+                <Globe size={16} />
+              </a>
+              <a href="#" className="h-9 w-9 flex items-center justify-center rounded-lg bg-slate-800 border border-slate-700 text-slate-400 hover:text-white transition-colors" title="Share & Connect">
+                <Share2 size={16} />
+              </a>
+            </div>
+          </div>
+
+          {/* Column 2: Hardware Services */}
+          <div>
+            <h3 className="text-sm font-extrabold uppercase tracking-wider text-white mb-4">
+              Hardware Repair Services
+            </h3>
+            <ul className="space-y-2.5 text-sm font-semibold">
+              {services.map((service) => (
+                <li key={service.slug}>
+                  <Link href={`/services/${service.slug}`} className="hover:text-[#0E7C7B] transition-colors">
+                    {service.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Quick Links */}
+          <div>
+            <h3 className="text-sm font-extrabold uppercase tracking-wider text-white mb-4">
+              Robuzta Lab Links
+            </h3>
+            <ul className="space-y-2.5 text-sm font-semibold">
+              <li>
+                <Link href="/about" className="hover:text-[#0E7C7B] transition-colors">About Robuzta Lab</Link>
+              </li>
+              <li>
+                <Link href="/locations" className="hover:text-[#0E7C7B] transition-colors">Lab Locations</Link>
+              </li>
+              <li>
+                <Link href="/franchise" className="hover:text-[#0E7C7B] transition-colors">Franchise Opportunity</Link>
+              </li>
+              <li>
+                <Link href="/blog" className="hover:text-[#0E7C7B] transition-colors">Repair Guides & Blog</Link>
+              </li>
+              <li>
+                <Link href="/faq" className="hover:text-[#0E7C7B] transition-colors">Help Center & FAQ</Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-[#0E7C7B] transition-colors">Book Free Doorstep Pickup</Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 4: Contact & Lab HQ */}
+          <div>
+            <h3 className="text-sm font-extrabold uppercase tracking-wider text-white mb-4">
+              Contact & HQ Lab
+            </h3>
+            <ul className="space-y-3 text-sm font-medium">
+              <li className="flex items-start gap-2.5">
+                <Phone size={16} className="text-[#0E7C7B] mt-0.5 flex-shrink-0" />
+                <a href={siteConfig.phoneHref} className="hover:text-white transition-colors">
+                  {siteConfig.phone}
+                </a>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <Mail size={16} className="text-[#0E7C7B] mt-0.5 flex-shrink-0" />
+                <a href={`mailto:${siteConfig.email}`} className="hover:text-white transition-colors">
+                  {siteConfig.email}
+                </a>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <Clock size={16} className="text-[#0E7C7B] mt-0.5 flex-shrink-0" />
+                <span>11:00 AM – 7:00 PM (Mon – Sat)</span>
+              </li>
+              <li className="flex items-start gap-2.5">
+                <MapPin size={16} className="text-orange-500 mt-0.5 flex-shrink-0" />
+                <span className="text-xs leading-normal">
+                  {locations[0]?.address || 'South Bopal & Satellite, Ahmedabad, Gujarat'}
+                </span>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <div>
-          <h3>Repair Services</h3>
-          <ul>
-            {services.map((service) => (
-              <li key={service.slug}>
-                <Link href={`/services/${service.slug}`}>{service.title}</Link>
-              </li>
-            ))}
-          </ul>
+        {/* Bottom Bar */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 font-medium">
+          <p>© {new Date().getFullYear()} Robuzta Techlabs. All rights reserved.</p>
+          <div className="flex items-center gap-6">
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+            <span className="flex items-center gap-1.5 text-emerald-400 font-bold">
+              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
+              Workbench Operational
+            </span>
+          </div>
         </div>
 
-        <div>
-          <h3>Quick Links</h3>
-          <ul>
-            <li><Link href="/locations">Lab Locations</Link></li>
-            <li><Link href="/franchise">Franchise Opportunity</Link></li>
-            <li><Link href="/blog">Repair Blog & Guides</Link></li>
-            <li><Link href="/faq">Frequently Asked Questions</Link></li>
-            <li><Link href="/about">About Robuzta Lab</Link></li>
-            <li><Link href="/contact">Book Doorstep Pickup</Link></li>
-          </ul>
-        </div>
-
-        <div>
-          <h3>Lab Locations & Contact</h3>
-          <ul className="footer-contact-list">
-            <li>
-              <Phone size={16} />
-              <a href={siteConfig.phoneHref}>{siteConfig.phone}</a>
-            </li>
-            <li>
-              <Mail size={16} />
-              <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
-            </li>
-            <li>
-              <Clock size={16} />
-              <span>11:00 AM – 7:00 PM (Mon – Sat)</span>
-            </li>
-            <li>
-              <MapPin size={16} />
-              <span>
-                <strong>Head Office:</strong> {locations[0]?.address}
-              </span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div className="container footer-bottom">
-        <p>© {new Date().getFullYear()} Robuzta Techlabs. All rights reserved.</p>
-        <p className="footer-subtext">
-          Designed for maximum transparency, speed, and hardware data safety.
-        </p>
       </div>
     </footer>
   );

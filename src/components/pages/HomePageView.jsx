@@ -1,36 +1,37 @@
-import { CourierHighlight } from '@/components/sections/CourierHighlight';
-import { FaqPreview } from '@/components/sections/FaqPreview';
-import { FinalCta } from '@/components/sections/FinalCta';
+'use client';
+
+import { SmoothScroll } from '@/components/ui/SmoothScroll';
+import { ScrollProgress } from '@/components/ui/ScrollProgress';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+
 import { HeroSection } from '@/components/sections/HeroSection';
-import { ProcessSection } from '@/components/sections/ProcessSection';
-import { ReviewsSection } from '@/components/sections/ReviewsSection';
-import { ServicesSection } from '@/components/sections/ServicesSection';
 import { TrustSection } from '@/components/sections/TrustSection';
-import { DiagnosticEstimator } from '@/components/ui/DiagnosticEstimator';
-import { Container } from '@/components/ui/Container';
-import { SmoothScroll } from '@/components/ui/SmoothScroll';
-import { GsapReveal } from '@/components/ui/GsapAnimations';
+import { ServicesSection } from '@/components/sections/ServicesSection';
+import { WhyChooseUsSection } from '@/components/sections/WhyChooseUsSection';
+import { PortfolioSection } from '@/components/sections/PortfolioSection';
+import { RepairShowcaseSection } from '@/components/sections/RepairShowcaseSection';
+import { TechStackSection } from '@/components/sections/TechStackSection';
+import { ProcessSection } from '@/components/sections/ProcessSection';
+import { CourierHighlight } from '@/components/sections/CourierHighlight';
+import { ReviewsSection } from '@/components/sections/ReviewsSection';
+import { FaqPreview } from '@/components/sections/FaqPreview';
+import { FinalCta } from '@/components/sections/FinalCta';
 
 export function HomePageView() {
   return (
     <SmoothScroll>
+      <ScrollProgress />
       <Header />
-      <main>
+      <main className="bg-white text-slate-900 min-h-screen">
         <HeroSection />
-
-        <section className="section section-muted" id="estimator">
-          <Container>
-            <GsapReveal direction="up" delay={0.1}>
-              <DiagnosticEstimator />
-            </GsapReveal>
-          </Container>
-        </section>
-
-        <ServicesSection />
-        <ProcessSection />
         <TrustSection />
+        <ServicesSection />
+        <WhyChooseUsSection />
+        <PortfolioSection />
+        <RepairShowcaseSection />
+        <TechStackSection />
+        <ProcessSection />
         <CourierHighlight />
         <ReviewsSection />
         <FaqPreview />
