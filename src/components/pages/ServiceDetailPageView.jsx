@@ -1,16 +1,111 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { CheckCircle2, MessageCircle, ShieldCheck } from 'lucide-react';
-import { Breadcrumb } from '@/components/ui/Breadcrumb';
-import { Button } from '@/components/ui/Button';
-import { Container } from '@/components/ui/Container';
+import { motion, AnimatePresence } from 'framer-motion';
+import {
+  CheckCircle2,
+  MessageCircle,
+  ShieldCheck,
+  ArrowRight,
+  Plus,
+  Minus,
+  Laptop,
+  Smartphone,
+  Cpu,
+  Monitor,
+  Flame,
+  Wrench,
+  Sparkles,
+  Clock,
+  Award,
+  Star,
+} from 'lucide-react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { FinalCta } from '@/components/sections/FinalCta';
+import { MagneticButton } from '@/components/ui/MagneticButton';
+import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 import { getServiceBySlug, services } from '@/data/services';
 import { repairProcess } from '@/data/process';
 import { siteConfig } from '@/data/site';
 
+/* ─── Per-service icon map ──────────────────────────────────────── */
+const serviceIcons = {
+  'laptop-repair': Laptop,
+  'mobile-repair': Smartphone,
+  'macbook-repair': Cpu,
+  'surface-repair': Monitor,
+  'gaming-pc-repair': Flame,
+  'desktop-repair': Wrench,
+};
+
+/* ─── Step icon map for process ────────────────────────────────── */
+const processIcons = [ShieldCheck, MessageCircle, CheckCircle2, Wrench, Star, Award];
+
+/* ─── Reusable animation variants ──────────────────────────────── */
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] },
+  }),
+};
+
+/* ─── FAQ Accordion Item ────────────────────────────────────────── */
+function FaqItem({ question, answer, index }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <motion.div
+      custom={index}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeUp}
+      className={`rounded-2xl border bg-white overflow-hidden transition-all duration-300 ${
+        open ? 'border-[#0E7C7B]/40 shadow-lg shadow-[#0E7C7B]/8' : 'border-slate-200 hover:border-slate-300'
+      }`}
+    >
+      <button
+        type="button"
+        onClick={() => setOpen(!open)}
+        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
+        aria-expanded={open}
+      >
+        <span className="text-base font-bold text-slate-900 leading-snug">{question}</span>
+        <span
+          className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-xl transition-all duration-300 ${
+            open ? 'bg-[#0E7C7B] text-white rotate-0' : 'bg-slate-100 text-slate-600'
+          }`}
+        >
+          {open ? <Minus size={15} /> : <Plus size={15} />}
+        </span>
+      </button>
+
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            key="answer"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden"
+          >
+            <p className="px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+              {answer}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+}
+
+/* ─── Main Component ────────────────────────────────────────────── */
 export function ServiceDetailPageView({ slug }) {
   const service = getServiceBySlug(slug);
 
@@ -18,136 +113,535 @@ export function ServiceDetailPageView({ slug }) {
     notFound();
   }
 
+  const ServiceIcon = serviceIcons[service.slug] || Wrench;
   const relatedServices = services.filter((item) => item.slug !== service.slug).slice(0, 3);
 
   return (
     <>
       <Header />
       <main>
-        <section className="service-hero">
-          <Container>
-            <Breadcrumb
-              items={[
-                { label: 'Services', href: '/#services' },
-                { label: service.title }
-              ]}
-            />
-            <div className="service-hero-grid">
-              <div>
-                <p className="eyebrow">Robuzta Precision Service</p>
-                <h1>{service.title} in Ahmedabad</h1>
-                <p className="service-direct-answer">{service.directAnswer}</p>
-                <div className="hero-actions">
-                  <Button href="/contact">Get Free Quote</Button>
-                  <Button href={siteConfig.whatsappHref} variant="whatsapp">
-                    <MessageCircle size={18} />
-                    WhatsApp Estimate
-                  </Button>
-                </div>
+
+        {/* ══════════════════════════════════════════════
+            SECTION 1 — HERO
+        ══════════════════════════════════════════════ */}
+        <section className="relative overflow-hidden bg-[#0F172A] pt-12 pb-24 lg:pt-16 lg:pb-32">
+
+          {/* Ambient radial glows */}
+          <div className="pointer-events-none absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#0E7C7B]/20 rounded-full blur-[160px]" />
+          <div className="pointer-events-none absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-600/15 rounded-full blur-[140px]" />
+
+          {/* Soft grid overlay */}
+          <div
+            className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,#000_60%,transparent_100%)] pointer-events-none"
+          />
+
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            {/* Breadcrumb */}
+            <motion.div
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="mb-10"
+            >
+              <div className="flex items-center gap-2 text-sm font-semibold text-slate-400">
+                <Link href="/#services" className="hover:text-[#0E7C7B] transition-colors">Services</Link>
+                <span className="text-slate-600">/</span>
+                <span className="text-slate-300">{service.title}</span>
+              </div>
+            </motion.div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+
+              {/* Left — Hero copy */}
+              <div className="lg:col-span-7 space-y-7">
+
+                {/* Eyebrow pill */}
+                <motion.div
+                  custom={0}
+                  initial="hidden"
+                  animate="visible"
+                  variants={fadeUp}
+                  className="inline-flex items-center gap-2.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md px-4 py-1.5 text-xs font-bold text-slate-200 uppercase tracking-widest"
+                >
+                  <ServiceIcon size={14} className="text-[#0E7C7B]" />
+                  <span>Robuzta Precision Service</span>
+                  <Sparkles size={13} className="text-orange-400" />
+                </motion.div>
+
+                {/* H1 */}
+                <motion.h1
+                  custom={1}
+                  initial="hidden"
+                  animate="visible"
+                  variants={fadeUp}
+                  className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.06]"
+                >
+                  {service.title}{' '}
+                  <span className="block mt-1 bg-gradient-to-r from-[#0E7C7B] via-teal-400 to-blue-400 bg-clip-text text-transparent">
+                    in Ahmedabad
+                  </span>
+                </motion.h1>
+
+                {/* Direct answer */}
+                <motion.p
+                  custom={2}
+                  initial="hidden"
+                  animate="visible"
+                  variants={fadeUp}
+                  className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl font-normal"
+                >
+                  {service.directAnswer}
+                </motion.p>
+
+                {/* CTA row */}
+                <motion.div
+                  custom={3}
+                  initial="hidden"
+                  animate="visible"
+                  variants={fadeUp}
+                  className="flex flex-wrap items-center gap-4 pt-2"
+                >
+                  <MagneticButton>
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-[#0E7C7B] to-teal-500 px-7 py-4 text-base font-bold text-white shadow-xl shadow-[#0E7C7B]/30 hover:shadow-[#0E7C7B]/50 hover:scale-[1.03] transition-all"
+                    >
+                      <span>Get Free Quote</span>
+                      <ArrowRight size={18} />
+                    </Link>
+                  </MagneticButton>
+
+                  <MagneticButton>
+                    <a
+                      href={siteConfig.whatsappHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2.5 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-sm px-6 py-4 text-base font-bold text-white hover:bg-emerald-600 hover:border-emerald-500 transition-all"
+                    >
+                      <WhatsappIcon size={18} className="text-emerald-400" />
+                      <span>WhatsApp Estimate</span>
+                    </a>
+                  </MagneticButton>
+                </motion.div>
+
+                {/* Trust badges */}
+                <motion.div
+                  custom={4}
+                  initial="hidden"
+                  animate="visible"
+                  variants={fadeUp}
+                  className="flex flex-wrap items-center gap-5 pt-2 text-xs font-semibold text-slate-400"
+                >
+                  <span className="flex items-center gap-1.5">
+                    <ShieldCheck size={15} className="text-[#0E7C7B]" />
+                    Zero Password / Zero OTP
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <CheckCircle2 size={15} className="text-orange-400" />
+                    180-Day Warranty
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <Clock size={15} className="text-blue-400" />
+                    Same-Day Turnaround
+                  </span>
+                </motion.div>
               </div>
 
-              <aside className="service-proof-panel">
-                <ShieldCheck size={30} />
-                <h2>Robuzta Lab Guarantee</h2>
-                <p>{service.proof}</p>
-                <ul>
-                  <li>Zero password or PIN required</li>
-                  <li>Customer approval before repair</li>
-                  <li>Digital invoice with warranty</li>
-                </ul>
-              </aside>
-            </div>
-          </Container>
-        </section>
+              {/* Right — Proof panel (glassmorphism card) */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.94, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                className="lg:col-span-5"
+              >
+                <div className="rounded-3xl border border-white/15 bg-white/8 backdrop-blur-2xl p-8 space-y-6 shadow-2xl">
 
-        <section className="section" id="symptoms">
-          <Container>
-            <div className="section-heading">
-              <p className="eyebrow">Common Symptoms</p>
-              <h2>Common Hardware Issues We Fix</h2>
-            </div>
-            <div className="check-grid">
-              {service.symptoms.map((item) => (
-                <div className="check-card" key={item}>
-                  <CheckCircle2 size={20} />
-                  <span>{item}</span>
+                  {/* Panel header */}
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0E7C7B] text-white shadow-lg shadow-[#0E7C7B]/30">
+                      <ShieldCheck size={24} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-black uppercase tracking-widest text-[#0E7C7B]">Robuzta Lab Guarantee</p>
+                      <h2 className="text-xl font-extrabold text-white leading-tight">{service.title} Promise</h2>
+                    </div>
+                  </div>
+
+                  <p className="text-sm text-slate-300 leading-relaxed">{service.proof}</p>
+
+                  {/* Guarantee checklist */}
+                  <ul className="space-y-3">
+                    {[
+                      'Zero password or PIN required',
+                      'Customer approval before repair',
+                      'Genuine serial-verified parts',
+                      'Digital invoice with warranty',
+                    ].map((item) => (
+                      <li key={item} className="flex items-center gap-3 text-sm font-semibold text-slate-200">
+                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0E7C7B]/20 border border-[#0E7C7B]/40">
+                          <CheckCircle2 size={12} className="text-[#0E7C7B]" />
+                        </span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Trust metrics */}
+                  <div className="grid grid-cols-2 gap-3 pt-2">
+                    <div className="rounded-2xl bg-white/8 border border-white/10 p-4 text-center">
+                      <div className="text-2xl font-black text-white">15,000+</div>
+                      <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mt-0.5">Devices Restored</div>
+                    </div>
+                    <div className="rounded-2xl bg-white/8 border border-white/10 p-4 text-center">
+                      <div className="text-2xl font-black text-white">99.8%</div>
+                      <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mt-0.5">Success Rate</div>
+                    </div>
+                  </div>
                 </div>
-              ))}
+              </motion.div>
+
             </div>
-          </Container>
+          </div>
         </section>
 
-        <section className="section section-muted" id="process">
-          <Container>
-            <div className="section-heading">
-              <p className="eyebrow">Simple Workflow</p>
-              <h2>Our Transparent 6-Step Repair Process</h2>
+        {/* ══════════════════════════════════════════════
+            SECTION 2 — SYMPTOMS
+        ══════════════════════════════════════════════ */}
+        <section className="relative bg-white py-24 border-b border-slate-200" id="symptoms">
+          {/* Background glow */}
+          <div className="pointer-events-none absolute top-1/2 left-0 -translate-y-1/2 w-[400px] h-[400px] bg-[#0E7C7B]/5 rounded-full blur-[120px]" />
+
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            {/* Section heading */}
+            <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
+              <motion.span
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="inline-block text-xs font-bold uppercase tracking-widest text-[#0E7C7B] bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-3.5 py-1.5 rounded-full"
+              >
+                Common Symptoms
+              </motion.span>
+              <motion.h2
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.08 }}
+                className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight"
+              >
+                Common Hardware Issues We Fix
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.14 }}
+                className="text-slate-500 text-base leading-relaxed"
+              >
+                Recognise any of these symptoms? Our senior technicians can diagnose and resolve these precisely.
+              </motion.p>
             </div>
-            <div className="process-grid">
-              {repairProcess.map((step, index) => (
-                <article className="process-step" key={step.title}>
-                  <span>{String(index + 1).padStart(2, '0')}</span>
-                  <h3>{step.title}</h3>
-                  <p>{step.text}</p>
-                </article>
+
+            {/* Symptom cards grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {service.symptoms.map((item, idx) => (
+                <motion.div
+                  key={item}
+                  custom={idx}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeUp}
+                  className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 hover:border-[#0E7C7B]/40 hover:shadow-xl hover:shadow-[#0E7C7B]/8 transition-all cursor-default"
+                >
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 group-hover:bg-[#0E7C7B] group-hover:border-[#0E7C7B] transition-all">
+                    <CheckCircle2 size={18} className="text-[#0E7C7B] group-hover:text-white transition-colors" />
+                  </span>
+                  <span className="text-sm font-bold text-slate-800 leading-snug">{item}</span>
+                </motion.div>
               ))}
             </div>
-          </Container>
+          </div>
         </section>
 
-        <section className="section" id="included">
-          <Container>
-            <div className="section-heading">
-              <p className="eyebrow">Comprehensive Scope</p>
-              <h2>Services Included in {service.title}</h2>
+        {/* ══════════════════════════════════════════════
+            SECTION 3 — REPAIR PROCESS
+        ══════════════════════════════════════════════ */}
+        <section className="relative bg-slate-50 py-24 border-b border-slate-200" id="process">
+          <div className="pointer-events-none absolute top-0 right-0 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[120px]" />
+
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+              <motion.span
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="inline-block text-xs font-bold uppercase tracking-widest text-blue-700 bg-blue-50 border border-blue-200 px-3.5 py-1.5 rounded-full"
+              >
+                Simple Workflow
+              </motion.span>
+              <motion.h2
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.08 }}
+                className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight"
+              >
+                Our Transparent 6-Step Repair Process
+              </motion.h2>
             </div>
-            <div className="included-grid">
-              {service.included.map((item) => (
-                <article className="included-card" key={item}>
-                  <h3>{item}</h3>
-                  <p>
-                    Diagnosis-first support with transparent quote, customer approval, and
-                    certified lab handling.
-                  </p>
-                </article>
-              ))}
+
+            {/* Timeline grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {repairProcess.map((step, index) => {
+                const StepIcon = processIcons[index] || CheckCircle2;
+                return (
+                  <motion.article
+                    key={step.title}
+                    custom={index}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={fadeUp}
+                    className="group relative rounded-3xl border border-slate-200 bg-white p-7 space-y-4 hover:border-blue-300 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1 transition-all"
+                  >
+                    {/* Step number badge */}
+                    <div className="flex items-center justify-between">
+                      <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-900 text-white text-sm font-black group-hover:bg-blue-600 transition-colors">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
+                      <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-400 group-hover:bg-blue-50 group-hover:text-blue-600 transition-all">
+                        <StepIcon size={18} />
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-blue-700 transition-colors">
+                        {step.title}
+                      </h3>
+                      <p className="text-sm text-slate-500 leading-relaxed mt-1.5">{step.text}</p>
+                    </div>
+
+                    {/* Accent line at bottom */}
+                    <div className="absolute bottom-0 left-7 right-7 h-[2px] rounded-full bg-gradient-to-r from-transparent via-blue-500/0 to-transparent group-hover:via-blue-500/60 transition-all" />
+                  </motion.article>
+                );
+              })}
             </div>
-          </Container>
+          </div>
         </section>
 
-        <section className="section section-muted" id="faq">
-          <Container>
-            <div className="section-heading">
-              <p className="eyebrow">Service FAQ</p>
-              <h2>Frequently Asked Questions</h2>
+        {/* ══════════════════════════════════════════════
+            SECTION 4 — SERVICES INCLUDED
+        ══════════════════════════════════════════════ */}
+        <section className="relative bg-white py-24 border-b border-slate-200" id="included">
+          <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-orange-500/5 rounded-full blur-[120px]" />
+
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
+              <motion.span
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="inline-block text-xs font-bold uppercase tracking-widest text-orange-700 bg-orange-50 border border-orange-200 px-3.5 py-1.5 rounded-full"
+              >
+                Comprehensive Scope
+              </motion.span>
+              <motion.h2
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.08 }}
+                className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight"
+              >
+                Services Included in {service.title}
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.14 }}
+                className="text-slate-500 text-base leading-relaxed"
+              >
+                Every service below is delivered with a diagnosis-first approach, transparent quote, and customer approval before work begins.
+              </motion.p>
             </div>
-            <div className="faq-list">
-              {service.faqs.map((item) => (
-                <details key={item.question}>
-                  <summary>{item.question}</summary>
-                  <p>{item.answer}</p>
-                </details>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {service.included.map((item, idx) => (
+                <motion.article
+                  key={item}
+                  custom={idx}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeUp}
+                  className="group relative rounded-2xl border border-slate-200 bg-white overflow-hidden hover:border-orange-300 hover:shadow-xl hover:shadow-orange-500/10 transition-all"
+                >
+                  {/* Gradient accent bar */}
+                  <div className="h-1 w-full bg-gradient-to-r from-[#0E7C7B] to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+
+                  <div className="p-6 space-y-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 group-hover:bg-[#0E7C7B] group-hover:border-[#0E7C7B] transition-all">
+                      <ServiceIcon size={18} className="text-[#0E7C7B] group-hover:text-white transition-colors" />
+                    </div>
+                    <h3 className="text-base font-extrabold text-slate-900 group-hover:text-[#0E7C7B] transition-colors">
+                      {item}
+                    </h3>
+                    <p className="text-xs text-slate-500 leading-relaxed">
+                      Diagnosis-first support with transparent quote, customer approval, and certified lab handling.
+                    </p>
+                  </div>
+                </motion.article>
               ))}
             </div>
-          </Container>
+          </div>
         </section>
 
-        <section className="section" id="related">
-          <Container>
-            <div className="section-heading">
-              <p className="eyebrow">Related Hardware</p>
-              <h2>Other Repair Services Available</h2>
+        {/* ══════════════════════════════════════════════
+            SECTION 5 — FAQ
+        ══════════════════════════════════════════════ */}
+        <section className="relative bg-slate-50 py-24 border-b border-slate-200" id="faq">
+
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mx-auto">
+              {/* Heading */}
+              <div className="text-center space-y-4 mb-12">
+                <motion.span
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="inline-block text-xs font-bold uppercase tracking-widest text-slate-600 bg-white border border-slate-200 px-3.5 py-1.5 rounded-full shadow-sm"
+                >
+                  Service FAQ
+                </motion.span>
+                <motion.h2
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.08 }}
+                  className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight"
+                >
+                  Frequently Asked Questions
+                </motion.h2>
+                <motion.p
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.14 }}
+                  className="text-slate-500 text-base"
+                >
+                  Everything you need to know about {service.title} at Robuzta Techlabs.
+                </motion.p>
+              </div>
+
+              {/* FAQ accordion items */}
+              <div className="space-y-3">
+                {service.faqs.map((item, idx) => (
+                  <FaqItem
+                    key={item.question}
+                    question={item.question}
+                    answer={item.answer}
+                    index={idx}
+                  />
+                ))}
+              </div>
+
+              {/* Bottom CTA nudge */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 text-center"
+              >
+                <p className="text-sm text-slate-500 font-medium">Still have questions?</p>
+                <a
+                  href={siteConfig.whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-5 py-2.5 text-sm font-bold text-white hover:bg-emerald-700 transition-all shadow-md hover:shadow-lg hover:scale-[1.02]"
+                >
+                  <WhatsappIcon size={16} className="text-white" />
+                  Ask on WhatsApp
+                </a>
+              </motion.div>
             </div>
-            <div className="service-grid">
-              {relatedServices.map((item) => (
-                <article className="service-card" key={item.slug}>
-                  <h3>{item.title}</h3>
-                  <p>{item.summary}</p>
-                  <Link href={`/services/${item.slug}`}>View service</Link>
-                </article>
-              ))}
+          </div>
+        </section>
+
+        {/* ══════════════════════════════════════════════
+            SECTION 6 — RELATED SERVICES
+        ══════════════════════════════════════════════ */}
+        <section className="relative bg-white py-24 border-b border-slate-200" id="related">
+          <div className="pointer-events-none absolute top-0 right-0 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[120px]" />
+
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
+              <motion.span
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="inline-block text-xs font-bold uppercase tracking-widest text-blue-700 bg-blue-50 border border-blue-200 px-3.5 py-1.5 rounded-full"
+              >
+                Related Hardware
+              </motion.span>
+              <motion.h2
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.08 }}
+                className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight"
+              >
+                Other Repair Services Available
+              </motion.h2>
             </div>
-          </Container>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {relatedServices.map((item, idx) => {
+                const RelatedIcon = serviceIcons[item.slug] || Wrench;
+                return (
+                  <motion.article
+                    key={item.slug}
+                    custom={idx}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={fadeUp}
+                    className="group rounded-3xl border border-slate-200 bg-slate-50 p-8 space-y-5 hover:border-blue-300 hover:bg-white hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1 transition-all"
+                  >
+                    {/* Icon */}
+                    <div className="flex items-center justify-between">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0E7C7B] text-white shadow-md shadow-[#0E7C7B]/20 group-hover:scale-110 transition-all">
+                        <RelatedIcon size={22} />
+                      </div>
+                      <ArrowRight
+                        size={18}
+                        className="text-slate-300 group-hover:text-blue-600 group-hover:translate-x-1 transition-all"
+                      />
+                    </div>
+
+                    {/* Content */}
+                    <div className="space-y-2">
+                      <h3 className="text-xl font-extrabold text-slate-900 group-hover:text-blue-700 transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-slate-500 leading-relaxed">{item.summary}</p>
+                    </div>
+
+                    {/* CTA link */}
+                    <Link
+                      href={`/services/${item.slug}`}
+                      className="inline-flex items-center gap-2 text-xs font-extrabold text-[#0E7C7B] group-hover:text-blue-600 transition-colors"
+                    >
+                      View service details
+                      <ArrowRight size={13} />
+                    </Link>
+                  </motion.article>
+                );
+              })}
+            </div>
+          </div>
         </section>
 
         <FinalCta />
