@@ -2,33 +2,33 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, CheckCircle2, ShieldCheck, Sparkles, Laptop, Smartphone, Cpu, Clock, Check, ArrowRight } from 'lucide-react';
+import { Phone, ShieldCheck, Sparkles, Laptop, Smartphone, Cpu, Clock, Monitor, Zap, Flame, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { siteConfig } from '@/data/site';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 
 const deviceCategories = [
-  { id: 'laptop', name: 'Laptop & MacBook', icon: Laptop },
-  { id: 'mobile', name: 'Smartphone & Tablet', icon: Smartphone },
-  { id: 'pc', name: 'Gaming PC & Desktop', icon: Cpu }
+  { id: 'laptop', name: 'Laptop / Mac', icon: Laptop },
+  { id: 'mobile', name: 'Phone / Tablet', icon: Smartphone },
+  { id: 'pc', name: 'Gaming PC / Desktop', icon: Cpu }
 ];
 
 const issueOptions = {
   laptop: [
-    { id: 'l1', label: 'Screen & Display Repair', badge: 'Same-Day Screen Swap', estTime: '2 - 4 Hours' },
-    { id: 'l2', label: 'Motherboard No Power / Liquid Spill', badge: 'BGA Micro-Soldering', estTime: '24 - 48 Hours' },
-    { id: 'l3', label: 'Battery Draining & Charging Failure', badge: 'OEM Battery Swap', estTime: '1 - 2 Hours' },
-    { id: 'l4', label: 'Overheating & Slow SSD Upgrade', badge: 'High-Speed NVMe', estTime: 'Same-Day' }
+    { id: 'l1', label: 'Screen & Display Damage', badge: 'Same-Day Screen Swap', estTime: '2 - 4 Hours', icon: Monitor },
+    { id: 'l2', label: 'Motherboard No Power / Liquid', badge: 'BGA Micro-Soldering', estTime: '24 - 48 Hours', icon: Zap },
+    { id: 'l3', label: 'Battery Health & Charging Port', badge: 'OEM Battery Swap', estTime: '1 - 2 Hours', icon: ShieldCheck },
+    { id: 'l4', label: 'Overheating & Slow SSD Upgrade', badge: 'High-Speed NVMe', estTime: 'Same-Day', icon: Flame }
   ],
   mobile: [
-    { id: 'm1', label: 'Cracked OLED Display & Touch Fault', badge: 'Original Assembly', estTime: '1 - 2 Hours' },
-    { id: 'm2', label: 'Battery Health & Sudden Shutdown', badge: 'Original Battery Health', estTime: '45 Mins' },
-    { id: 'm3', label: 'Charging Flex, Mic & Speaker Issue', badge: 'Type-C / Lightning Flex', estTime: '1 Hour' },
-    { id: 'm4', label: 'Water Spill & Liquid Damage Rescue', badge: 'Ultrasonic Board Cleaning', estTime: 'Same-Day' }
+    { id: 'm1', label: 'Cracked OLED Glass & Touch', badge: 'Original Assembly', estTime: '1 - 2 Hours', icon: Monitor },
+    { id: 'm2', label: 'Battery Draining & Fast Health Drop', badge: 'Original Battery', estTime: '45 Mins', icon: ShieldCheck },
+    { id: 'm3', label: 'Charging Port, Mic & Speaker', badge: 'Flex Assembly Swap', estTime: '1 Hour', icon: Zap },
+    { id: 'm4', label: 'Water Spill & Liquid Emergency', badge: 'Ultrasonic Board Clean', estTime: 'Same-Day', icon: Flame }
   ],
   pc: [
-    { id: 'p1', label: 'GPU Crash, FPS Drop & Overheating', badge: 'Liquid Metal Repasting', estTime: 'Same-Day' },
-    { id: 'p2', label: 'No Display, RAM & PSU Short-Circuit', badge: 'Voltage Diagnostics', estTime: '24 Hours' },
-    { id: 'p3', label: 'Custom AIO Cooler Loop Maintenance', badge: 'Loop Flush & Clean', estTime: 'Same-Day' }
+    { id: 'p1', label: 'GPU Crash, FPS Drop & Overheating', badge: 'Liquid Metal Repasting', estTime: 'Same-Day', icon: Flame },
+    { id: 'p2', label: 'No Display, RAM & Power Short', badge: 'Voltage Stress Test', estTime: '24 Hours', icon: Zap },
+    { id: 'p3', label: 'Custom AIO Cooling Loop Flush', badge: 'Loop Maintenance', estTime: 'Same-Day', icon: ShieldCheck }
   ]
 };
 
@@ -41,153 +41,177 @@ export function DiagnosticEstimator() {
     setSelectedIssue(issueOptions[catId][0]);
   };
 
-  const whatsappMsg = `Hi Robuzta Techlabs! I need a repair estimate:\n- Device: ${deviceCategories.find(c => c.id === category)?.name}\n- Issue: ${selectedIssue.label}\n\nPlease share discounted quote & free doorstep pickup availability in Ahmedabad.`;
+  const currentCategoryObj = deviceCategories.find(c => c.id === category);
+
+  const whatsappMsg = `Hi Robuzta Techlabs! I need a repair estimate:\n- Device: ${currentCategoryObj?.name}\n- Issue: ${selectedIssue.label}\n\nPlease share discounted quote & free doorstep pickup availability in Ahmedabad.`;
   const whatsappUrl = `${siteConfig.whatsappHref}?text=${encodeURIComponent(whatsappMsg)}`;
 
   return (
-    <div className="rounded-3xl bg-white border border-slate-200/90 p-6 sm:p-10 shadow-2xl shadow-slate-200/60 space-y-8 relative overflow-hidden">
+    <div className="rounded-3xl bg-white border border-slate-200/90 p-6 sm:p-9 shadow-2xl shadow-slate-200/50 relative overflow-hidden">
       
-      {/* Top Header Row */}
-      <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-6">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-2xl bg-teal-50 border border-teal-200/60 flex items-center justify-center text-[#0E7C7B]">
-            <Sparkles size={20} />
-          </div>
-          <div>
-            <h3 className="text-base font-extrabold text-slate-900 tracking-tight">
-              Instant Diagnostic Price Estimator
+      {/* Background Subtle Accent Glow */}
+      <div className="pointer-events-none absolute top-0 right-0 w-96 h-96 bg-teal-500/5 rounded-full blur-[140px]" />
+
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch relative z-10">
+        
+        {/* Left Column: Category Tabs & Visual Issue Grid (Col 7) */}
+        <div className="lg:col-span-7 space-y-6 flex flex-col justify-between">
+          
+          {/* Header Title */}
+          <div className="space-y-1.5">
+            <div className="inline-flex items-center gap-2 rounded-full bg-teal-50 border border-teal-200 px-3 py-1 text-xs font-bold text-[#0E7C7B]">
+              <Sparkles size={14} />
+              <span>INTERACTIVE HARDWARE CONFIGURATOR</span>
+            </div>
+            <h3 className="text-xl font-extrabold text-slate-900 tracking-tight">
+              Select Device & Hardware Issue
             </h3>
-            <p className="text-xs text-slate-500 font-medium">Select your device and fault for instant estimate</p>
           </div>
-        </div>
 
-        <span className="text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-3.5 py-1.5 rounded-full flex items-center gap-2">
-          <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-          100% Free Inspection Fee
-        </span>
-      </div>
+          {/* Device Category Pills */}
+          <div className="grid grid-cols-3 gap-2 p-1.5 bg-slate-100/80 rounded-2xl border border-slate-200/60">
+            {deviceCategories.map((cat) => {
+              const CategoryIcon = cat.icon;
+              const active = category === cat.id;
 
-      {/* Step 1: Device Tabs */}
-      <div className="space-y-3">
-        <div className="flex items-center justify-between">
-          <span className="text-xs font-extrabold uppercase tracking-widest text-slate-400">
-            STEP 1: SELECT DEVICE TYPE
-          </span>
-        </div>
+              return (
+                <button
+                  key={cat.id}
+                  type="button"
+                  onClick={() => handleCategoryChange(cat.id)}
+                  className={`flex items-center justify-center gap-2 py-3 px-3 rounded-xl text-xs font-extrabold transition-all duration-200 cursor-pointer ${
+                    active
+                      ? 'bg-[#0F172A] text-white shadow-md shadow-slate-900/20 scale-[1.02]'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+                  }`}
+                >
+                  <CategoryIcon size={16} className={active ? 'text-teal-400' : 'text-slate-500'} />
+                  <span className="truncate">{cat.name.split(' ')[0]}</span>
+                </button>
+              );
+            })}
+          </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          {deviceCategories.map((cat) => {
-            const CategoryIcon = cat.icon;
-            const active = category === cat.id;
+          {/* 2x2 Visual Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
+            {issueOptions[category].map((issue) => {
+              const IssueIcon = issue.icon || Zap;
+              const isSelected = selectedIssue.label === issue.label;
 
-            return (
-              <button
-                key={cat.id}
-                type="button"
-                onClick={() => handleCategoryChange(cat.id)}
-                className={`flex items-center justify-center gap-3 p-4 rounded-2xl text-xs font-extrabold transition-all duration-200 cursor-pointer border ${
-                  active
-                    ? 'bg-[#0F172A] text-white border-[#0F172A] shadow-md shadow-slate-900/15 scale-[1.01]'
-                    : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100'
-                }`}
-              >
-                <CategoryIcon size={18} className={active ? 'text-teal-400' : 'text-slate-500'} />
-                <span>{cat.name}</span>
-              </button>
-            );
-          })}
-        </div>
-      </div>
+              return (
+                <button
+                  key={issue.id || issue.label}
+                  type="button"
+                  onClick={() => setSelectedIssue(issue)}
+                  className={`group relative p-4 rounded-2xl text-left transition-all duration-200 cursor-pointer border flex flex-col justify-between space-y-3 ${
+                    isSelected
+                      ? 'bg-gradient-to-br from-teal-50/90 to-emerald-50/40 border-[#0E7C7B] shadow-md shadow-teal-500/10 ring-2 ring-[#0E7C7B]/30'
+                      : 'bg-white border-slate-200/80 hover:border-slate-300 hover:shadow-md hover:bg-slate-50/50'
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <div className={`w-9 h-9 rounded-xl flex items-center justify-center transition-all ${
+                      isSelected ? 'bg-[#0E7C7B] text-white shadow-sm' : 'bg-slate-100 text-slate-600 group-hover:bg-slate-200'
+                    }`}>
+                      <IssueIcon size={18} />
+                    </div>
 
-      {/* Step 2: Fault Selection List */}
-      <div className="space-y-3">
-        <div className="flex items-center justify-between">
-          <span className="text-xs font-extrabold uppercase tracking-widest text-slate-400">
-            STEP 2: SELECT HARDWARE FAULT
-          </span>
-        </div>
-
-        <div className="grid grid-cols-1 gap-2.5">
-          {issueOptions[category].map((issue) => {
-            const isSelected = selectedIssue.label === issue.label;
-
-            return (
-              <button
-                key={issue.id || issue.label}
-                type="button"
-                onClick={() => setSelectedIssue(issue)}
-                className={`w-full flex items-center justify-between p-4 rounded-2xl text-xs font-bold transition-all duration-200 cursor-pointer border text-left ${
-                  isSelected
-                    ? 'bg-teal-50/70 border-[#0E7C7B] text-slate-900 ring-2 ring-[#0E7C7B]/30 shadow-xs'
-                    : 'bg-white border-slate-200/90 text-slate-700 hover:border-slate-300 hover:bg-slate-50/60'
-                }`}
-              >
-                <div className="flex items-center gap-3">
-                  <div className={`w-6 h-6 rounded-full flex items-center justify-center border transition-colors shrink-0 ${
-                    isSelected ? 'bg-[#0E7C7B] border-[#0E7C7B] text-white' : 'border-slate-300 bg-white'
-                  }`}>
-                    {isSelected && <Check size={14} strokeWidth={3} />}
-                  </div>
-                  <div>
-                    <span className="text-sm font-extrabold text-slate-900 block">{issue.label}</span>
-                    <span className="text-[11px] font-medium text-slate-500 flex items-center gap-1 mt-0.5">
-                      <Clock size={12} className="text-teal-600 shrink-0" />
-                      Turnaround: {issue.estTime}
+                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${
+                      isSelected ? 'bg-[#0E7C7B] text-white border-[#0E7C7B]' : 'bg-slate-100 text-slate-500 border-slate-200'
+                    }`}>
+                      {issue.badge.split(' ')[0]}
                     </span>
                   </div>
-                </div>
 
-                <span className="text-[11px] font-extrabold text-[#0E7C7B] bg-teal-50 border border-teal-200 px-3 py-1 rounded-xl shrink-0 hidden sm:inline-block">
-                  {issue.badge}
-                </span>
-              </button>
-            );
-          })}
-        </div>
-      </div>
+                  <div>
+                    <h4 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-snug">
+                      {issue.label}
+                    </h4>
+                    <p className="text-[11px] text-slate-500 font-semibold mt-1 flex items-center gap-1">
+                      <Clock size={12} className="text-teal-600 shrink-0" />
+                      {issue.estTime}
+                    </p>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
 
-      {/* Step 3: Action & Trust Summary Bar */}
-      <div className="pt-4 border-t border-slate-100 space-y-6">
-        
-        {/* Value Badges */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center text-xs font-extrabold text-slate-700">
-          <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/70 flex items-center justify-center gap-1.5">
-            <CheckCircle2 size={15} className="text-emerald-600 shrink-0" />
-            <span>Free Doorstep Pickup</span>
-          </div>
-          <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/70 flex items-center justify-center gap-1.5">
-            <ShieldCheck size={15} className="text-[#0E7C7B] shrink-0" />
-            <span>180-Day Warranty</span>
-          </div>
-          <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/70 flex items-center justify-center gap-1.5">
-            <CheckCircle2 size={15} className="text-emerald-600 shrink-0" />
-            <span>Zero Password Needed</span>
-          </div>
-          <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/70 flex items-center justify-center gap-1.5">
-            <ShieldCheck size={15} className="text-[#0E7C7B] shrink-0" />
-            <span>Original Genuine Parts</span>
-          </div>
         </div>
 
-        {/* CTAs */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-3 rounded-2xl bg-emerald-600 px-6 py-4 text-sm font-black text-white shadow-lg shadow-emerald-600/20 hover:bg-emerald-700 hover:scale-[1.01] transition-all text-center"
-          >
-            <WhatsappIcon size={22} className="text-white shrink-0" />
-            <span>Get Instant Estimate on WhatsApp</span>
-          </a>
+        {/* Right Column: Live Summary & Direct Booking Box (Col 5) */}
+        <div className="lg:col-span-5 rounded-2xl bg-gradient-to-br from-[#0F172A] via-[#0B132B] to-[#070D1B] p-6 text-white flex flex-col justify-between space-y-6 shadow-xl relative overflow-hidden">
+          
+          {/* Ambient Corner Accent */}
+          <div className="pointer-events-none absolute -top-16 -right-16 w-40 h-40 bg-[#0E7C7B]/30 rounded-full blur-[60px]" />
 
-          <a
-            href={siteConfig.phoneHref}
-            className="flex items-center justify-center gap-2.5 rounded-2xl bg-[#0F172A] hover:bg-slate-800 text-white px-6 py-4 text-sm font-black shadow-md transition-all text-center"
-          >
-            <Phone size={18} className="text-teal-400 shrink-0" />
-            <span>Call Senior Lab Technician Directly</span>
-          </a>
+          {/* Top Selection Overview */}
+          <div className="space-y-4 relative z-10">
+            <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+              <span className="text-xs font-mono font-bold text-teal-400 uppercase tracking-widest">
+                LIVE ESTIMATE SUMMARY
+              </span>
+              <span className="text-[10px] font-mono text-emerald-400 bg-emerald-950/80 border border-emerald-800 px-2 py-0.5 rounded-full">
+                ₹0 Inspection Fee
+              </span>
+            </div>
+
+            <div className="space-y-2">
+              <div className="text-xs text-slate-400 font-medium">Selected Config:</div>
+              <div className="text-base font-extrabold text-white leading-snug">
+                {currentCategoryObj?.name} &bull; <span className="text-teal-300">{selectedIssue.label}</span>
+              </div>
+            </div>
+
+            <div className="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700/70 space-y-1.5">
+              <div className="flex items-center justify-between text-xs text-slate-300 font-bold">
+                <span>Estimated Turnaround:</span>
+                <span className="text-emerald-400 font-mono font-extrabold">{selectedIssue.estTime}</span>
+              </div>
+              <div className="flex items-center justify-between text-xs text-slate-300 font-bold">
+                <span>Diagnostic Inspection:</span>
+                <span className="text-white font-mono font-extrabold">FREE (No Obligation)</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Protection Highlights */}
+          <div className="space-y-2 text-xs font-semibold text-slate-300 relative z-10">
+            <div className="flex items-center gap-2">
+              <CheckCircle2 size={15} className="text-emerald-400 shrink-0" />
+              <span>Free Doorstep Pickup Across Ahmedabad</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <ShieldCheck size={15} className="text-teal-400 shrink-0" />
+              <span>180-Day Written Warranty Included</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 size={15} className="text-emerald-400 shrink-0" />
+              <span>Zero Password / OTP Data Safety</span>
+            </div>
+          </div>
+
+          {/* Actions */}
+          <div className="space-y-3 pt-2 relative z-10">
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2.5 w-full rounded-xl bg-emerald-600 px-5 py-3.5 text-xs sm:text-sm font-black text-white shadow-lg shadow-emerald-600/30 hover:bg-emerald-500 hover:scale-[1.02] transition-all text-center"
+            >
+              <WhatsappIcon size={20} className="text-white shrink-0" />
+              <span>Get Discounted Quote on WhatsApp</span>
+            </a>
+
+            <a
+              href={siteConfig.phoneHref}
+              className="flex items-center justify-center gap-2 w-full rounded-xl bg-slate-800/90 hover:bg-slate-700 border border-slate-700 px-5 py-3 text-xs font-bold text-slate-200 transition-all text-center"
+            >
+              <Phone size={15} className="text-teal-400 shrink-0" />
+              <span>Call Technician ({siteConfig.phone})</span>
+            </a>
+          </div>
+
         </div>
 
       </div>
