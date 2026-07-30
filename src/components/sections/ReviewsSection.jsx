@@ -1,16 +1,17 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Star, ChevronLeft, ChevronRight, ExternalLink, ShieldCheck, CheckCircle2, MessageSquarePlus, Pause, Play } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Star, ChevronLeft, ChevronRight, ExternalLink, ShieldCheck, CheckCircle2, MessageSquarePlus, Sparkles } from 'lucide-react';
 import { reviews, googleStats } from '@/data/reviews';
 import { ReviewCard } from '@/components/cards/ReviewCard';
 import { GoogleIcon } from '@/components/icons/GoogleIcon';
 
 export function ReviewsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoplay, setIsAutoplay] = useState(true);
+  const [isInteracting, setIsInteracting] = useState(false);
   const [visibleCount, setVisibleCount] = useState(3);
+  const resumeTimeoutRef = useRef(null);
 
   // Responsive items per view count
   useEffect(() => {
@@ -31,6 +32,7 @@ export function ReviewsSection() {
 
   const maxIndex = Math.max(0, reviews.length - visibleCount);
 
+  // Infinite looping next & prev handlers
   const handleNext = () => {
     setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
   };
@@ -39,16 +41,30 @@ export function ReviewsSection() {
     setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
   };
 
-  // Autoplay interval
+  // Continuous Autoplay when not interacting
   useEffect(() => {
-    if (!isAutoplay) return;
+    if (isInteracting) return;
 
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
-    }, 4500);
+    }, 3500);
 
     return () => clearInterval(timer);
-  }, [isAutoplay, maxIndex]);
+  }, [isInteracting, maxIndex]);
+
+  // Handle interaction start (Pause)
+  const handleInteractionStart = () => {
+    if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
+    setIsInteracting(true);
+  };
+
+  // Handle interaction end (Resume automatically)
+  const handleInteractionEnd = () => {
+    if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
+    resumeTimeoutRef.current = setTimeout(() => {
+      setIsInteracting(false);
+    }, 1000);
+  };
 
   return (
     <section id="reviews" className="relative bg-gradient-to-b from-slate-50 via-teal-50/20 to-slate-50 py-24 border-b border-slate-200 overflow-hidden">
@@ -66,7 +82,7 @@ export function ReviewsSection() {
             <div className="lg:col-span-7 space-y-4 text-center lg:text-left">
               <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200 px-3.5 py-1.5 text-xs font-extrabold text-emerald-800">
                 <GoogleIcon size={18} />
-                <span>OFFICIAL GOOGLE MAPS REVIEWS</span>
+                <span>OFFICIAL GOOGLE REVIEWS & RATINGS</span>
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
               </div>
 
@@ -81,7 +97,7 @@ export function ReviewsSection() {
                     ))}
                   </div>
                   <p className="text-xs sm:text-sm font-bold text-slate-600">
-                    Based on <strong className="text-slate-900">{googleStats.totalReviews}</strong> verified reviews in Ahmedabad
+                    Based on <strong className="text-slate-900">{googleStats.totalReviews}</strong> 5-Star verified reviews in Ahmedabad
                   </p>
                 </div>
               </div>
@@ -121,49 +137,49 @@ export function ReviewsSection() {
         {/* Carousel Container */}
         <div 
           className="relative space-y-6"
-          onMouseEnter={() => setIsAutoplay(false)}
-          onMouseLeave={() => setIsAutoplay(true)}
+          onMouseEnter={handleInteractionStart}
+          onMouseLeave={handleInteractionEnd}
+          onTouchStart={handleInteractionStart}
+          onTouchEnd={handleInteractionEnd}
         >
           {/* Carousel Controls Bar */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <span className="text-xs font-extrabold uppercase tracking-widest text-slate-500">
-                SWIPE OR USE ARROWS
+              <span className="text-xs font-extrabold uppercase tracking-widest text-slate-500 flex items-center gap-1.5">
+                <Sparkles size={14} className="text-amber-500" /> LATEST 5★ GOOGLE REVIEWS
               </span>
-              <button
-                onClick={() => setIsAutoplay(!isAutoplay)}
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-500 hover:text-teal-700 bg-white border border-slate-200 px-2.5 py-1 rounded-full shadow-2xs transition-colors"
-                title={isAutoplay ? 'Pause Carousel Autoplay' : 'Start Carousel Autoplay'}
-              >
-                {isAutoplay ? (
-                  <>
-                    <Pause size={12} className="text-teal-600" />
-                    <span>Autoplay Active</span>
-                  </>
-                ) : (
-                  <>
-                    <Play size={12} className="text-slate-400" />
-                    <span>Paused</span>
-                  </>
-                )}
-              </button>
+              
+              <span className={`inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-full border transition-all ${
+                isInteracting
+                  ? 'bg-amber-50 border-amber-200 text-amber-700'
+                  : 'bg-emerald-50 border-emerald-200 text-emerald-700'
+              }`}>
+                <span className={`w-1.5 h-1.5 rounded-full ${isInteracting ? 'bg-amber-500' : 'bg-emerald-500 animate-ping'}`} />
+                <span>{isInteracting ? 'Paused on Interaction' : 'Auto Playing'}</span>
+              </span>
             </div>
 
             {/* Navigation Buttons */}
             <div className="flex items-center gap-2">
               <button
-                onClick={handlePrev}
-                disabled={currentIndex === 0}
-                className="w-11 h-11 rounded-2xl bg-white border border-slate-200 text-slate-700 flex items-center justify-center shadow-md hover:bg-teal-600 hover:text-white hover:border-teal-600 disabled:opacity-40 disabled:hover:bg-white disabled:hover:text-slate-700 disabled:hover:border-slate-200 transition-all cursor-pointer"
+                onClick={() => {
+                  handleInteractionStart();
+                  handlePrev();
+                  handleInteractionEnd();
+                }}
+                className="w-11 h-11 rounded-2xl bg-white border border-slate-200 text-slate-700 flex items-center justify-center shadow-md hover:bg-teal-600 hover:text-white hover:border-teal-600 transition-all cursor-pointer"
                 aria-label="Previous Review"
               >
                 <ChevronLeft size={20} />
               </button>
 
               <button
-                onClick={handleNext}
-                disabled={currentIndex >= maxIndex}
-                className="w-11 h-11 rounded-2xl bg-white border border-slate-200 text-slate-700 flex items-center justify-center shadow-md hover:bg-teal-600 hover:text-white hover:border-teal-600 disabled:opacity-40 disabled:hover:bg-white disabled:hover:text-slate-700 disabled:hover:border-slate-200 transition-all cursor-pointer"
+                onClick={() => {
+                  handleInteractionStart();
+                  handleNext();
+                  handleInteractionEnd();
+                }}
+                className="w-11 h-11 rounded-2xl bg-white border border-slate-200 text-slate-700 flex items-center justify-center shadow-md hover:bg-teal-600 hover:text-white hover:border-teal-600 transition-all cursor-pointer"
                 aria-label="Next Review"
               >
                 <ChevronRight size={20} />
@@ -178,7 +194,7 @@ export function ReviewsSection() {
               animate={{
                 x: `-${currentIndex * (100 / visibleCount + (24 / visibleCount))}%`
               }}
-              transition={{ type: 'spring', stiffness: 260, damping: 28 }}
+              transition={{ type: 'spring', stiffness: 240, damping: 26 }}
             >
               {reviews.map((review) => (
                 <div
@@ -199,7 +215,11 @@ export function ReviewsSection() {
             {Array.from({ length: maxIndex + 1 }).map((_, idx) => (
               <button
                 key={idx}
-                onClick={() => setCurrentIndex(idx)}
+                onClick={() => {
+                  handleInteractionStart();
+                  setCurrentIndex(idx);
+                  handleInteractionEnd();
+                }}
                 className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
                   currentIndex === idx
                     ? 'w-8 bg-[#0E7C7B]'
