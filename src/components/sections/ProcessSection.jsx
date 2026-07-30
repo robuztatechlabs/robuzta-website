@@ -1,64 +1,90 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Search, FileText, Wrench, ShieldCheck, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Search, FileText, Wrench, ShieldCheck, CheckCircle2, PackageCheck } from 'lucide-react';
 import { repairProcess } from '@/data/process';
 
-const processIcons = [Search, FileText, Wrench, ShieldCheck, CheckCircle2];
+const processIcons = [Search, FileText, Wrench, ShieldCheck, CheckCircle2, PackageCheck];
 
 export function ProcessSection() {
   return (
-    <section id="process" className="relative bg-slate-50 py-24 border-b border-slate-200">
+    <section id="process" className="relative bg-slate-50 py-24 border-b border-slate-200 overflow-hidden">
       
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16">
+      {/* Background Radial Glow */}
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#0E7C7B]/5 rounded-full blur-[140px]" />
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <span className="text-xs font-bold uppercase tracking-widest text-orange-700 bg-orange-50 border border-orange-200 px-3.5 py-1.5 rounded-full">
+          <motion.span
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-3.5 py-1.5 rounded-full"
+          >
             TRANSPARENT WORKBENCH ROADMAP
-          </span>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            A 5-Step Process Engineered for Complete Customer Confidence
-          </h2>
-          <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-            No hidden charges, no unapproved part replacements, and zero password privacy risk. You remain in control at every stage.
-          </p>
+          </motion.span>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight"
+          >
+            Engineered for Complete Customer Confidence
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-slate-600 text-base sm:text-lg leading-relaxed font-medium"
+          >
+            No hidden charges, zero unapproved part replacements, and strict Zero-OTP privacy. You remain in control at every stage.
+          </motion.p>
         </div>
 
-        {/* Timeline Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+        {/* 6-Step 3-Column Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {repairProcess.map((step, index) => {
             const StepIcon = processIcons[index] || Wrench;
             return (
               <motion.div
                 key={step.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative rounded-3xl bg-white border border-slate-200 p-6 flex flex-col justify-between hover:border-blue-300 hover:shadow-xl hover:shadow-blue-500/10 transition-all space-y-4"
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                className="group relative rounded-3xl bg-white border border-slate-200 p-8 flex flex-col justify-between hover:border-[#0E7C7B]/40 hover:shadow-2xl hover:shadow-[#0E7C7B]/10 hover:-translate-y-1.5 transition-all duration-300 space-y-6"
               >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                    <span className="font-mono text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-orange-600">
+                <div className="space-y-5">
+                  <div className="flex items-center justify-between border-b border-slate-100 pb-4">
+                    <span className="font-mono text-3xl font-black text-[#0E7C7B] group-hover:scale-110 transition-transform">
                       0{index + 1}
                     </span>
-                    <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-50 text-blue-600 border border-blue-200 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all">
-                      <StepIcon size={18} />
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0E7C7B]/10 text-[#0E7C7B] border border-[#0E7C7B]/20 group-hover:bg-[#0E7C7B] group-hover:text-white transition-all shadow-sm">
+                      <StepIcon size={20} />
                     </div>
                   </div>
 
-                  <h3 className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                    {step.title}
-                  </h3>
-
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    {step.text}
-                  </p>
+                  <div className="space-y-2">
+                    <h3 className="text-xl font-extrabold text-slate-900 group-hover:text-[#0E7C7B] transition-colors">
+                      {step.title}
+                    </h3>
+                    <p className="text-xs text-slate-600 leading-relaxed font-medium">
+                      {step.text}
+                    </p>
+                  </div>
                 </div>
 
-                <div className="pt-2 flex items-center text-[10px] font-mono font-bold text-slate-600 uppercase tracking-wider">
-                  Step 0{index + 1} Verified
+                <div className="pt-3 flex items-center justify-between border-t border-slate-100 text-[11px] font-extrabold text-emerald-700">
+                  <span className="flex items-center gap-1.5">
+                    <CheckCircle2 size={14} className="text-[#0E7C7B]" /> Step 0{index + 1} Verified
+                  </span>
+                  <span className="text-slate-400 font-mono text-[10px]">STAGE 0{index + 1}</span>
                 </div>
               </motion.div>
             );

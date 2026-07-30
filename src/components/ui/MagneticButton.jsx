@@ -20,6 +20,8 @@ export function MagneticButton({ children, className = '' }) {
     setPosition({ x: 0, y: 0 });
   };
 
+  const displayClass = className.includes('w-full') ? 'block' : 'inline-block';
+
   return (
     <motion.div
       ref={ref}
@@ -27,7 +29,7 @@ export function MagneticButton({ children, className = '' }) {
       onMouseLeave={handleMouseLeave}
       animate={{ x: position.x, y: position.y }}
       transition={{ type: 'spring', stiffness: 150, damping: 15, mass: 0.1 }}
-      className={`inline-block ${className}`}
+      className={`${displayClass} ${className}`}
     >
       {children}
     </motion.div>
