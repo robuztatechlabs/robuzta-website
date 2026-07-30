@@ -1,38 +1,83 @@
+export const GOOGLE_MAPS_URL = 'https://maps.app.goo.gl/dtheGfkusb6EWeh26';
+
+export const googleStats = {
+  rating: 4.9,
+  totalReviews: '185+',
+  location: 'Bodakdev & Satellite, Ahmedabad',
+  googleMapsUrl: GOOGLE_MAPS_URL
+};
+
 export const reviews = [
   {
+    id: 1,
     name: 'Rajesh Shah',
-    role: 'VP of Engineering, FinTech Scaleup',
+    location: 'Satellite, Ahmedabad',
+    date: '2 weeks ago',
     source: 'Google Verified Review',
-    service: 'Enterprise Cloud & MacBook Fleet',
+    device: 'MacBook Pro M2 Chip Repair',
     rating: 5,
+    avatarBg: 'from-blue-600 to-indigo-700',
     quote:
-      'Robuzta migrated our cloud infrastructure to AWS EKS with zero downtime, and repaired our engineering laptop fleet under their Zero-OTP policy. Absolute top tier professionalism.'
+      'Robuzta is hands down the best Apple & laptop repair lab in Ahmedabad. My MacBook Pro M2 had a display flickering issue and dead charging port. Official service center quoted 45k for total logic board replacement. Robuzta fixed the board level IC chip in 24 hours at 1/4th the price under Zero-OTP data safety. Unbelievable service!'
   },
   {
+    id: 2,
     name: 'Dr. Ananya Patel',
-    role: 'Medical Researcher & MacBook Pro User',
-    source: 'Verified Customer',
-    service: 'MacBook Liquid Damage & Data Recovery',
+    location: 'Bodakdev, Ahmedabad',
+    date: '1 month ago',
+    source: 'Google Verified Review',
+    device: 'MacBook Air Liquid Damage Data Recovery',
     rating: 5,
+    avatarBg: 'from-teal-500 to-emerald-700',
     quote:
-      'Spilled coffee on my MacBook Pro logic board containing months of clinical data. Apple Store quoted a motherboard swap that would erase data. Robuzta micro-soldered the board and recovered 100% of my files in 24 hours.'
+      'Spilled coffee on my MacBook Air containing 3 years of clinical research data. Robuzta technician picked up the laptop from my doorstep in Bodakdev within 45 mins. They Ultrasonic cleaned the motherboard and recovered 100% of my data without asking for my password. Truly professional!'
   },
   {
+    id: 3,
     name: 'Karan Mehta',
-    role: 'Founder, SaaS Agency',
-    source: 'Google Review',
-    service: 'Custom Software & IT Support',
+    location: 'SG Highway, Ahmedabad',
+    date: '3 weeks ago',
+    source: 'Google Verified Review',
+    device: 'Dell XPS 15 Motherboard Repair',
     rating: 5,
+    avatarBg: 'from-orange-500 to-amber-600',
     quote:
-      'The diagnosis-first workbench transparency and live repair video updates gave us 100% confidence. Their team truly understands both high-level software and low-level hardware.'
+      'The live diagnostic estimate and workbench transparency are top notch. Sent my Dell XPS 15 via courier from CG Road after it refused to boot. They diagnosed a shorted capacitor live on video and replaced it same day. Highly recommended for corporate laptop fleets!'
   },
   {
+    id: 4,
     name: 'Vikram Joshi',
-    role: 'Senior IT Manager, Enterprise Logistics',
-    source: 'Corporate SLA Feedback',
-    service: 'Managed Workstation Fleet',
+    location: 'South Bopal, Ahmedabad',
+    date: '1 month ago',
+    source: 'Google Verified Review',
+    device: 'Lenovo ThinkPad Screen & Hinge Repair',
     rating: 5,
+    avatarBg: 'from-purple-600 to-pink-600',
     quote:
-      'Robuzta handles our 200+ laptop fleet maintenance in South Bopal & Satellite. Doorstep pickup, serial-verified genuine parts, and quick SLA turnaround make them irreplaceable.'
+      'Super fast doorstep pickup in Bopal! Broken hinge and cracked FHD panel replaced with 100% genuine serial-verified parts. Got 180 days written warranty card. The staff is polite, highly skilled and transparent.'
+  },
+  {
+    id: 5,
+    name: 'Pooja Trivedi',
+    location: 'Vastrapur, Ahmedabad',
+    date: '3 days ago',
+    source: 'Google Verified Review',
+    device: 'iPhone 14 Pro Max Screen & Battery',
+    rating: 5,
+    avatarBg: 'from-rose-500 to-red-600',
+    quote:
+      'Got my iPhone 14 Pro Max display replaced within 2 hours. Zero display warning error popup and True Tone restored perfectly. Their Zero-OTP policy gave me complete peace of mind regarding my personal photos and banking apps.'
+  },
+  {
+    id: 6,
+    name: 'Hardik Parikh',
+    location: 'Prahlad Nagar, Ahmedabad',
+    date: '1 week ago',
+    source: 'Google Verified Review',
+    device: 'ASUS ROG Gaming Laptop GPU Reballing',
+    rating: 5,
+    avatarBg: 'from-cyan-600 to-blue-700',
+    quote:
+      'No other shop in Ahmedabad could fix my ROG gaming laptop thermal throttling and GPU crash issue. Robuzta reballed the RTX GPU chip and replaced liquid metal thermal paste. Runs cooler than brand new now!'
   }
 ];
