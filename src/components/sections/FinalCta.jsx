@@ -26,7 +26,7 @@ export function FinalCta() {
                 INSTANT HARDWARE DIAGNOSTIC ESTIMATE
               </div>
 
-              <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+              <h2 className="text-3xl sm:text-5xl font-extrabold !text-white text-white drop-shadow-sm tracking-tight leading-tight">
                 Ready to Get Your Hardware Fixed with Zero Data Risk?
               </h2>
 
