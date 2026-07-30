@@ -103,5 +103,77 @@ export const reviews = [
     avatarBg: 'from-indigo-600 to-purple-700',
     quote:
       'Great experience getting my iPad Pro battery replaced. Clear upfront pricing, genuine Apple original battery, and fast turnaround time. Loved their doorstep pickup and delivery in Ahmedabad!'
+  },
+  {
+    id: 9,
+    name: 'Amitabh Varma',
+    location: 'Navrangpura, Ahmedabad',
+    date: '1 month ago',
+    source: 'Google Verified Review',
+    device: 'MacBook Pro Touch Bar & Keyboard Replacement',
+    rating: 5,
+    avatarBg: 'from-blue-500 to-[#0E7C7B]',
+    quote:
+      'Replacing MacBook keys and Touch Bar at official store takes weeks. Robuzta completed it in 6 hours flat with serial-matched original assembly. Incredible turnaround time and friendly team.'
+  },
+  {
+    id: 10,
+    name: 'Rohan Deshmukh',
+    location: 'Thaltej, Ahmedabad',
+    date: '2 months ago',
+    source: 'Google Verified Review',
+    device: 'Acer Predator Gaming Laptop Thermal Pad & Fan',
+    rating: 5,
+    avatarBg: 'from-amber-600 to-orange-700',
+    quote:
+      'High temperature thermal throttling fixed completely. They replaced cooling fans and applied high-grade Honeywell PTM7950 thermal pads. Benchmarked live on workbench. Best gaming laptop service in Thaltej.'
+  },
+  {
+    id: 11,
+    name: 'Bhavna Solanki',
+    location: 'Maninagar, Ahmedabad',
+    date: '2 months ago',
+    source: 'Google Verified Review',
+    device: 'Samsung Galaxy S23 Ultra Curved Screen Repair',
+    rating: 5,
+    avatarBg: 'from-pink-600 to-rose-700',
+    quote:
+      'Cracked AMOLED panel on S23 Ultra fixed seamlessly. Touch sensitivity, ultrasonic fingerprint, and IP rating seals restored properly. Extremely reliable technician work!'
+  },
+  {
+    id: 12,
+    name: 'Chirag Merchant',
+    location: 'Ellisbridge, Ahmedabad',
+    date: '2 months ago',
+    source: 'Google Verified Review',
+    device: 'MacStudio M1 Ultra Liquid Damage Repair',
+    rating: 5,
+    avatarBg: 'from-violet-600 to-indigo-800',
+    quote:
+      'High-end workstation desktop micro-soldering. Saved our video editing studio lakhs of rupees in motherboard replacement costs. 100% data intact under zero-password protocol.'
+  },
+  {
+    id: 13,
+    name: 'Meghna Roy',
+    location: 'Science City Road, Ahmedabad',
+    date: '2 months ago',
+    source: 'Google Verified Review',
+    device: 'Dell Latitude Fleet Maintenance',
+    rating: 5,
+    avatarBg: 'from-teal-600 to-cyan-700',
+    quote:
+      'Robuzta handles our company laptop repairs under corporate SLA. On-site pickup, detailed job sheet report, transparent pricing, and 6-month warranty on all replacements.'
+  },
+  {
+    id: 14,
+    name: 'Jatin Sanghvi',
+    location: 'Paldi, Ahmedabad',
+    date: '3 months ago',
+    source: 'Google Verified Review',
+    device: 'Asus ZenBook Dual Display Hinge & Cable Repair',
+    rating: 5,
+    avatarBg: 'from-slate-700 to-slate-900',
+    quote:
+      'Complex dual screen ribbon cable repair executed flawlessly. Clean, professional workshop with ESD safety protocols. Highly satisfied with their technical expertise.'
   }
 ];

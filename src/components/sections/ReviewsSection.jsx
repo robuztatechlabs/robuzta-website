@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Star, ChevronLeft, ChevronRight, ExternalLink, ShieldCheck, CheckCircle2, MessageSquarePlus, Sparkles } from 'lucide-react';
 import { reviews, googleStats } from '@/data/reviews';
@@ -8,68 +8,29 @@ import { ReviewCard } from '@/components/cards/ReviewCard';
 import { GoogleIcon } from '@/components/icons/GoogleIcon';
 
 export function ReviewsSection() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isInteracting, setIsInteracting] = useState(false);
-  const [visibleCount, setVisibleCount] = useState(3);
-  const resumeTimeoutRef = useRef(null);
+  const scrollContainerRef = useRef(null);
+  const [isPaused, setIsPaused] = useState(false);
 
-  // Responsive items per view count
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 640) {
-        setVisibleCount(1);
-      } else if (window.innerWidth < 1024) {
-        setVisibleCount(2);
-      } else {
-        setVisibleCount(3);
-      }
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const maxIndex = Math.max(0, reviews.length - visibleCount);
-
-  // Infinite looping next & prev handlers
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+  // Manual smooth scroll handlers
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -380, behavior: 'smooth' });
+    }
   };
 
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 380, behavior: 'smooth' });
+    }
   };
 
-  // Continuous Autoplay when not interacting
-  useEffect(() => {
-    if (isInteracting) return;
-
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
-    }, 3500);
-
-    return () => clearInterval(timer);
-  }, [isInteracting, maxIndex]);
-
-  // Handle interaction start (Pause)
-  const handleInteractionStart = () => {
-    if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
-    setIsInteracting(true);
-  };
-
-  // Handle interaction end (Resume automatically)
-  const handleInteractionEnd = () => {
-    if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
-    resumeTimeoutRef.current = setTimeout(() => {
-      setIsInteracting(false);
-    }, 1000);
-  };
+  // Duplicate reviews array 3 times for a truly infinite, endless continuous marquee loop
+  const duplicatedReviews = [...reviews, ...reviews, ...reviews];
 
   return (
     <section id="reviews" className="relative bg-gradient-to-b from-slate-50 via-teal-50/20 to-slate-50 py-24 border-b border-slate-200 overflow-hidden">
       
-      {/* Background Glow Accents */}
+      {/* Background Lighting Accents */}
       <div className="pointer-events-none absolute top-10 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-r from-teal-400/10 via-blue-400/10 to-amber-400/10 rounded-full blur-[140px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12">
@@ -82,7 +43,7 @@ export function ReviewsSection() {
             <div className="lg:col-span-7 space-y-4 text-center lg:text-left">
               <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200 px-3.5 py-1.5 text-xs font-extrabold text-emerald-800">
                 <GoogleIcon size={18} />
-                <span>OFFICIAL GOOGLE REVIEWS & RATINGS</span>
+                <span>OFFICIAL GOOGLE MAPS REVIEWS</span>
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
               </div>
 
@@ -97,7 +58,7 @@ export function ReviewsSection() {
                     ))}
                   </div>
                   <p className="text-xs sm:text-sm font-bold text-slate-600">
-                    Based on <strong className="text-slate-900">{googleStats.totalReviews}</strong> 5-Star verified reviews in Ahmedabad
+                    Based on <strong className="text-slate-900">{googleStats.totalReviews}</strong> 5-Star verified Google reviews in Ahmedabad
                   </p>
                 </div>
               </div>
@@ -107,7 +68,7 @@ export function ReviewsSection() {
               </p>
             </div>
 
-            {/* Google Actions */}
+            {/* Google Action Buttons */}
             <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col gap-3.5 items-center lg:items-end justify-center">
               <a
                 href={googleStats.googleMapsUrl}
@@ -134,100 +95,63 @@ export function ReviewsSection() {
           </div>
         </div>
 
-        {/* Carousel Container */}
-        <div 
-          className="relative space-y-6"
-          onMouseEnter={handleInteractionStart}
-          onMouseLeave={handleInteractionEnd}
-          onTouchStart={handleInteractionStart}
-          onTouchEnd={handleInteractionEnd}
-        >
-          {/* Carousel Controls Bar */}
+        {/* Endless Continuous Infinite Marquee Carousel Container */}
+        <div className="relative space-y-4">
+          
+          {/* Header Controls Bar (Clean Title & Nav Arrows) */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <span className="text-xs font-extrabold uppercase tracking-widest text-slate-500 flex items-center gap-1.5">
-                <Sparkles size={14} className="text-amber-500" /> LATEST 5★ GOOGLE REVIEWS
-              </span>
-              
-              <span className={`inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-full border transition-all ${
-                isInteracting
-                  ? 'bg-amber-50 border-amber-200 text-amber-700'
-                  : 'bg-emerald-50 border-emerald-200 text-emerald-700'
-              }`}>
-                <span className={`w-1.5 h-1.5 rounded-full ${isInteracting ? 'bg-amber-500' : 'bg-emerald-500 animate-ping'}`} />
-                <span>{isInteracting ? 'Paused on Interaction' : 'Auto Playing'}</span>
+                <Sparkles size={14} className="text-amber-500" /> RECENT 5-STAR GOOGLE REVIEWS
               </span>
             </div>
 
-            {/* Navigation Buttons */}
+            {/* Manual Navigation Arrow Buttons */}
             <div className="flex items-center gap-2">
               <button
-                onClick={() => {
-                  handleInteractionStart();
-                  handlePrev();
-                  handleInteractionEnd();
-                }}
+                onClick={scrollLeft}
                 className="w-11 h-11 rounded-2xl bg-white border border-slate-200 text-slate-700 flex items-center justify-center shadow-md hover:bg-teal-600 hover:text-white hover:border-teal-600 transition-all cursor-pointer"
-                aria-label="Previous Review"
+                aria-label="Scroll Reviews Left"
               >
                 <ChevronLeft size={20} />
               </button>
 
               <button
-                onClick={() => {
-                  handleInteractionStart();
-                  handleNext();
-                  handleInteractionEnd();
-                }}
+                onClick={scrollRight}
                 className="w-11 h-11 rounded-2xl bg-white border border-slate-200 text-slate-700 flex items-center justify-center shadow-md hover:bg-teal-600 hover:text-white hover:border-teal-600 transition-all cursor-pointer"
-                aria-label="Next Review"
+                aria-label="Scroll Reviews Right"
               >
                 <ChevronRight size={20} />
               </button>
             </div>
           </div>
 
-          {/* Cards Track with Smooth Motion */}
-          <div className="overflow-hidden py-4 -mx-2 px-2">
-            <motion.div
-              className="flex gap-6"
-              animate={{
-                x: `-${currentIndex * (100 / visibleCount + (24 / visibleCount))}%`
+          {/* Endless Seamless Marquee Track */}
+          <div
+            ref={scrollContainerRef}
+            className="overflow-x-auto no-scrollbar py-4 -mx-2 px-2 scroll-smooth"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            onTouchStart={() => setIsPaused(true)}
+            onTouchEnd={() => setIsPaused(false)}
+          >
+            <div
+              className={`flex gap-6 w-max ${isPaused ? '' : 'animate-marquee'}`}
+              style={{
+                animationDuration: '65s',
+                animationTimingFunction: 'linear',
+                animationIterationCount: 'infinite'
               }}
-              transition={{ type: 'spring', stiffness: 240, damping: 26 }}
             >
-              {reviews.map((review) => (
+              {duplicatedReviews.map((review, idx) => (
                 <div
-                  key={review.id}
-                  className="shrink-0"
-                  style={{
-                    width: `calc(${100 / visibleCount}% - ${(24 * (visibleCount - 1)) / visibleCount}px)`
-                  }}
+                  key={`${review.id}-${idx}`}
+                  className="w-[320px] sm:w-[380px] shrink-0"
                 >
                   <ReviewCard review={review} />
                 </div>
               ))}
-            </motion.div>
-          </div>
-
-          {/* Pagination Indicators (Dots) */}
-          <div className="flex items-center justify-center gap-2 pt-2">
-            {Array.from({ length: maxIndex + 1 }).map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => {
-                  handleInteractionStart();
-                  setCurrentIndex(idx);
-                  handleInteractionEnd();
-                }}
-                className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                  currentIndex === idx
-                    ? 'w-8 bg-[#0E7C7B]'
-                    : 'w-2.5 bg-slate-300 hover:bg-slate-400'
-                }`}
-                aria-label={`Go to slide ${idx + 1}`}
-              />
-            ))}
+            </div>
           </div>
 
         </div>
