@@ -22,8 +22,8 @@ export function ReviewsSection() {
     }
   };
 
-  // Duplicate reviews array 3 times for a truly infinite, endless continuous marquee loop
-  const duplicatedReviews = [...reviews, ...reviews, ...reviews];
+  // Duplicate reviews array for a 100% mathematically seamless -50% endless marquee loop
+  const duplicatedReviews = [...reviews, ...reviews];
 
   return (
     <section id="reviews" className="relative bg-gradient-to-b from-slate-50 via-teal-50/20 to-slate-50 py-24 border-b border-slate-200 overflow-hidden">
