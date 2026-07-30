@@ -1,7 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { useRef } from 'react';
 import { Star, ChevronLeft, ChevronRight, ExternalLink, ShieldCheck, CheckCircle2, MessageSquarePlus, Sparkles } from 'lucide-react';
 import { reviews, googleStats } from '@/data/reviews';
 import { ReviewCard } from '@/components/cards/ReviewCard';
@@ -9,9 +8,8 @@ import { GoogleIcon } from '@/components/icons/GoogleIcon';
 
 export function ReviewsSection() {
   const scrollContainerRef = useRef(null);
-  const [isPaused, setIsPaused] = useState(false);
 
-  // Manual smooth scroll handlers
+  // Manual smooth scroll handlers for arrow buttons
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollBy({ left: -380, behavior: 'smooth' });
@@ -126,17 +124,13 @@ export function ReviewsSection() {
             </div>
           </div>
 
-          {/* Endless Seamless Marquee Track */}
+          {/* Endless Seamless Marquee Track with Zero-Jhatka Pure CSS Hover Pause */}
           <div
             ref={scrollContainerRef}
             className="overflow-x-auto no-scrollbar py-4 -mx-2 px-2 scroll-smooth"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-            onTouchStart={() => setIsPaused(true)}
-            onTouchEnd={() => setIsPaused(false)}
           >
             <div
-              className={`flex gap-6 w-max ${isPaused ? '' : 'animate-marquee'}`}
+              className="flex gap-6 w-max animate-marquee hover:[animation-play-state:paused]"
               style={{
                 animationDuration: '65s',
                 animationTimingFunction: 'linear',
