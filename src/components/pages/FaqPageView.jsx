@@ -1,9 +1,12 @@
+'use client';
+
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { faqs } from '@/data/faqs';
-import { Button } from '@/components/ui/Button';
-import { HelpCircle, MessageCircle, Phone, ShieldCheck } from 'lucide-react';
+import { HelpCircle, Phone, ShieldCheck, Sparkles, ArrowRight } from 'lucide-react';
 import { siteConfig } from '@/data/site';
+import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
+import Link from 'next/link';
 
 export function FaqPageView() {
   const jsonLd = {
@@ -26,74 +29,109 @@ export function FaqPageView() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Header />
-      <main>
-        <section className="service-hero">
-          <div className="container">
-            <p className="eyebrow">Robuzta Help Center</p>
-            <h1>Frequently Asked Questions</h1>
-            <p className="service-direct-answer">
+      <main className="bg-white min-h-screen text-slate-900">
+        
+        {/* FAQ Hero */}
+        <section className="relative bg-gradient-to-b from-slate-50 via-blue-50/20 to-white py-20 sm:py-24 border-b border-slate-200 overflow-hidden">
+          <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-teal-500/10 rounded-full blur-[140px]" />
+
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-4 py-1.5 text-xs font-extrabold text-[#0E7C7B]">
+              <Sparkles size={14} className="text-[#EA580C]" />
+              <span>ROBUZTA HELP CENTER</span>
+            </div>
+
+            <h1 className="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight leading-tight">
+              Frequently Asked Questions
+            </h1>
+
+            <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto font-medium">
               Clear, transparent answers regarding device security, repair turnarounds, warranty terms, and free doorstep pickup in Ahmedabad.
             </p>
           </div>
         </section>
 
-        <section className="section">
-          <div className="container">
-            <div className="faq-page-grid">
-              <div className="faq-list">
-                {faqs.map((faq, index) => (
-                  <details key={faq.question} open={index < 3}>
-                    <summary>
-                      <HelpCircle size={18} className="text-teal" style={{ marginRight: '8px' }} />
-                      {faq.question}
+        {/* FAQ List & Sidebar */}
+        <section className="py-20 border-b border-slate-200">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+              
+              {/* FAQ Accordion List (Col 8) */}
+              <div className="lg:col-span-8 space-y-4">
+                {faqs.map((faq) => (
+                  <details
+                    key={faq.question}
+                    className="group rounded-2xl bg-slate-50/80 border border-slate-200 p-6 font-extrabold text-slate-900 transition-all duration-200 hover:bg-white hover:border-[#0E7C7B]/40 hover:shadow-md"
+                  >
+                    <summary className="flex items-center gap-3 cursor-pointer text-base sm:text-lg list-none justify-between">
+                      <div className="flex items-center gap-3">
+                        <HelpCircle size={20} className="text-[#0E7C7B] shrink-0" />
+                        <span>{faq.question}</span>
+                      </div>
+                      <span className="text-[#0E7C7B] font-bold text-xl group-open:rotate-45 transition-transform">+</span>
                     </summary>
-                    <p>{faq.answer}</p>
+                    <p className="mt-4 text-xs sm:text-sm font-medium text-slate-600 leading-relaxed border-t border-slate-200/80 pt-4">
+                      {faq.answer}
+                    </p>
                   </details>
                 ))}
               </div>
 
-              <aside className="faq-sidebar">
-                <div className="sidebar-card">
-                  <ShieldCheck size={32} className="text-teal" />
-                  <h3>Still Have Questions?</h3>
-                  <p>
-                    Talk directly to our Senior Hardware Lab Technicians for instant diagnosis.
-                  </p>
-                  <div style={{ display: 'grid', gap: '12px', marginTop: '16px' }}>
+              {/* Sidebar (Col 4) */}
+              <div className="lg:col-span-4 space-y-6">
+                
+                <div className="rounded-3xl bg-slate-50 border border-slate-200 p-7 space-y-5 shadow-xl">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0E7C7B] text-white shadow-md">
+                    <ShieldCheck size={26} />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-extrabold text-slate-900">Still Have Questions?</h3>
+                    <p className="text-xs text-slate-600 font-medium leading-relaxed mt-1">
+                      Talk directly to our Senior Hardware Lab Technicians for instant diagnosis.
+                    </p>
+                  </div>
+
+                  <div className="space-y-2.5 pt-1">
                     <a
                       href={siteConfig.whatsappHref}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="button button-whatsapp"
-                      style={{ justifyContent: 'center' }}
+                      className="flex items-center justify-center gap-2 w-full rounded-xl bg-emerald-600 hover:bg-emerald-500 py-3 text-xs font-black text-white shadow-md"
                     >
-                      <MessageCircle size={18} />
-                      Ask on WhatsApp
+                      <WhatsappIcon size={18} className="text-white" />
+                      <span>Ask on WhatsApp</span>
                     </a>
+
                     <a
                       href={siteConfig.phoneHref}
-                      className="button button-primary"
-                      style={{ justifyContent: 'center' }}
+                      className="flex items-center justify-center gap-2 w-full rounded-xl bg-[#0E7C7B] hover:bg-teal-700 py-3 text-xs font-black text-white shadow-md"
                     >
-                      <Phone size={18} />
-                      Call +91 999 245 2459
+                      <Phone size={16} />
+                      <span>Call +91 999 245 2459</span>
                     </a>
                   </div>
                 </div>
 
-                <div className="sidebar-card sidebar-card-dark">
-                  <h3>Book Free Pickup</h3>
-                  <p>
+                <div className="rounded-3xl bg-slate-900 text-white p-7 space-y-4 shadow-xl">
+                  <h3 className="text-xl font-black text-white">Book Free Pickup</h3>
+                  <p className="text-xs text-slate-300 font-medium leading-relaxed">
                     Free doorstep pickup & delivery in South Bopal, Tragad, Satellite, Vastrapur, and across Ahmedabad.
                   </p>
-                  <Button href="/contact" variant="primary" style={{ width: '100%', justifyContent: 'center' }}>
-                    Book Pickup Now
-                  </Button>
+                  <Link
+                    href="/contact"
+                    className="flex items-center justify-center gap-2 w-full rounded-xl bg-[#0E7C7B] hover:bg-teal-600 py-3.5 text-xs font-black text-white shadow-lg"
+                  >
+                    <span>Book Pickup Now</span>
+                    <ArrowRight size={15} />
+                  </Link>
                 </div>
-              </aside>
+
+              </div>
+
             </div>
           </div>
         </section>
+
       </main>
       <Footer />
     </>

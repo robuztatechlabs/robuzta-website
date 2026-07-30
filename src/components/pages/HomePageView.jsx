@@ -16,6 +16,7 @@ import { ProcessSection } from '@/components/sections/ProcessSection';
 import { CourierHighlight } from '@/components/sections/CourierHighlight';
 import { ReviewsSection } from '@/components/sections/ReviewsSection';
 import { FaqPreview } from '@/components/sections/FaqPreview';
+import { FranchiseHomeSection } from '@/components/sections/FranchiseHomeSection';
 import { FinalCta } from '@/components/sections/FinalCta';
 
 export function HomePageView() {
@@ -35,6 +36,7 @@ export function HomePageView() {
         <CourierHighlight />
         <ReviewsSection />
         <FaqPreview />
+        <FranchiseHomeSection />
         <FinalCta />
       </main>
       <Footer />

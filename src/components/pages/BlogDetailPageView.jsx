@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Header } from '@/components/layout/Header';
@@ -35,50 +37,73 @@ export function BlogDetailPageView({ article }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Header />
-      <main>
-        <section className="service-hero">
-          <div className="container">
-            <nav className="breadcrumb" aria-label="Breadcrumb">
-              <Link href="/">Home</Link> <ChevronRight size={14} />
-              <Link href="/blog">Blog</Link> <ChevronRight size={14} />
-              <span>{article.title}</span>
+      <main className="bg-white min-h-screen text-slate-900">
+        
+        {/* Article Hero */}
+        <section className="relative bg-gradient-to-b from-slate-50 via-blue-50/20 to-white py-16 sm:py-20 border-b border-slate-200 overflow-hidden">
+          <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-teal-500/10 rounded-full blur-[140px]" />
+
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-6">
+            <nav className="flex items-center gap-2 text-xs font-extrabold text-slate-500 justify-center">
+              <Link href="/" className="hover:text-[#0E7C7B]">Home</Link> <ChevronRight size={13} />
+              <Link href="/blog" className="hover:text-[#0E7C7B]">Blog</Link> <ChevronRight size={13} />
+              <span className="text-[#0E7C7B] truncate max-w-xs">{article.title}</span>
             </nav>
-            <div className="blog-meta-row">
-              <span>
-                <Tag size={14} /> {article.category}
-              </span>
-              <span>
-                <Calendar size={14} /> {article.date}
-              </span>
-              <span>
-                <Clock size={14} /> {article.readTime}
-              </span>
-            </div>
-            <h1 style={{ marginTop: '16px' }}>{article.title}</h1>
-          </div>
-        </section>
 
-        <section className="section">
-          <div className="container split-section">
-            <article className="article-body">
-              <div dangerouslySetInnerHTML={{ __html: article.content }} />
-
-              <div className="article-author-box">
-                <ShieldCheck size={28} className="text-teal" />
-                <div>
-                  <strong>Written by Robuzta Hardware Engineering Team</strong>
-                  <p>
-                    Robuzta Techlabs is a specialized multi-device electronics repair lab in Ahmedabad providing chip-level diagnostics, genuine parts, and live workbench transparency.
-                  </p>
-                </div>
+            <div className="text-center space-y-4 max-w-4xl mx-auto">
+              <div className="flex flex-wrap items-center justify-center gap-3 text-xs font-extrabold text-slate-600">
+                <span className="flex items-center gap-1 text-[#0E7C7B] bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-3 py-1 rounded-full">
+                  <Tag size={13} /> {article.category}
+                </span>
+                <span className="flex items-center gap-1">
+                  <Calendar size={13} /> {article.date}
+                </span>
+                <span className="flex items-center gap-1">
+                  <Clock size={13} /> {article.readTime}
+                </span>
               </div>
-            </article>
 
-            <div>
-              <QuoteForm title="Have a Hardware Issue?" defaultDevice={article.category.split(' ')[0]} />
+              <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+                {article.title}
+              </h1>
             </div>
           </div>
         </section>
+
+        {/* Article Content & Sidebar Form */}
+        <section className="py-20 border-b border-slate-200">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+              
+              {/* Article HTML Content (Col 7) */}
+              <article className="lg:col-span-7 space-y-8 text-slate-800 leading-relaxed font-medium">
+                <div
+                  className="prose prose-slate max-w-none prose-headings:font-black prose-headings:text-slate-900 prose-a:text-[#0E7C7B] prose-[#0E7C7B]"
+                  dangerouslySetInnerHTML={{ __html: article.content }}
+                />
+
+                <div className="rounded-3xl bg-slate-50 border border-slate-200 p-7 flex items-start gap-4 shadow-md">
+                  <ShieldCheck size={32} className="text-[#0E7C7B] shrink-0 mt-0.5" />
+                  <div className="space-y-1">
+                    <strong className="text-sm font-black text-slate-900 block">
+                      Written by Robuzta Hardware Engineering Team
+                    </strong>
+                    <p className="text-xs text-slate-600 font-medium leading-relaxed">
+                      Robuzta Techlabs is a specialized multi-device electronics repair lab in Ahmedabad providing chip-level diagnostics, genuine parts, and live workbench transparency.
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              {/* Sidebar Form (Col 5) */}
+              <div className="lg:col-span-5">
+                <QuoteForm title="Have a Hardware Issue?" defaultDevice={article.category.split(' ')[0]} />
+              </div>
+
+            </div>
+          </div>
+        </section>
+
       </main>
       <Footer />
     </>

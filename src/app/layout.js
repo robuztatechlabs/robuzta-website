@@ -1,6 +1,7 @@
 import './globals.css';
 import { StickyMobileBar } from '@/components/layout/StickyMobileBar';
 import { FloatingWidget } from '@/components/ui/FloatingWidget';
+import { FranchiseEdgeTab } from '@/components/ui/FranchiseEdgeTab';
 
 export const metadata = {
   title: 'Robuzta Techlabs | Premium Multi-Device Repair Lab in Ahmedabad',
@@ -13,6 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en" data-scroll-behavior="smooth">
       <body>
         {children}
+        <FranchiseEdgeTab />
         <FloatingWidget />
         <StickyMobileBar />
       </body>

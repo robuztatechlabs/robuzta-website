@@ -1,16 +1,17 @@
+'use client';
+
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { QuoteForm } from '@/components/forms/QuoteForm';
-import { MapPin, Phone, Clock, Mail, CheckCircle2, ChevronRight } from 'lucide-react';
+import { MapPin, Phone, Clock, Mail, CheckCircle2, ChevronRight, Navigation, Sparkles } from 'lucide-react';
 
 export function LocationDetailPageView({ location }) {
   if (!location) {
     notFound();
   }
 
-  // Schema.org LocalBusiness structured data
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
@@ -35,98 +36,132 @@ export function LocationDetailPageView({ location }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Header />
-      <main>
-        <section className="service-hero">
-          <div className="container">
-            <nav className="breadcrumb" aria-label="Breadcrumb">
-              <Link href="/">Home</Link> <ChevronRight size={14} />
-              <Link href="/locations">Locations</Link> <ChevronRight size={14} />
-              <span>{location.title}</span>
+      <main className="bg-white min-h-screen text-slate-900">
+        
+        {/* Branch Hero */}
+        <section className="relative bg-gradient-to-b from-slate-50 via-blue-50/20 to-white py-20 sm:py-24 border-b border-slate-200 overflow-hidden">
+          <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-teal-500/10 rounded-full blur-[140px]" />
+
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-6">
+            <nav className="flex items-center gap-2 text-xs font-extrabold text-slate-500 justify-center">
+              <Link href="/" className="hover:text-[#0E7C7B]">Home</Link> <ChevronRight size={13} />
+              <Link href="/locations" className="hover:text-[#0E7C7B]">Locations</Link> <ChevronRight size={13} />
+              <span className="text-[#0E7C7B]">{location.title}</span>
             </nav>
-            <p className="eyebrow">Robuzta Lab Branch</p>
-            <h1>{location.title}</h1>
-            <p className="service-direct-answer">
-              Your trusted local electronics repair lab. Experience chip-level precision repairs, serial number verification, and zero OTP privacy for your devices.
-            </p>
-          </div>
-        </section>
 
-        <section className="section">
-          <div className="container split-section">
-            <div>
-              <h2>Branch Details & Contact Information</h2>
-              <div className="location-info-card">
-                <div className="info-row">
-                  <MapPin className="text-teal" size={20} />
-                  <div>
-                    <strong>Address:</strong>
-                    <p>{location.address}</p>
-                  </div>
-                </div>
-
-                <div className="info-row">
-                  <Clock className="text-teal" size={20} />
-                  <div>
-                    <strong>Working Hours:</strong>
-                    <p>{location.timing}</p>
-                  </div>
-                </div>
-
-                <div className="info-row">
-                  <Phone className="text-teal" size={20} />
-                  <div>
-                    <strong>Direct Hotline:</strong>
-                    <p>
-                      <a href={`tel:${location.phone}`}>{location.phone}</a>
-                    </p>
-                  </div>
-                </div>
-
-                <div className="info-row">
-                  <Mail className="text-teal" size={20} />
-                  <div>
-                    <strong>Email Inquiry:</strong>
-                    <p>{location.email}</p>
-                  </div>
-                </div>
-
-                <div style={{ marginTop: '20px' }}>
-                  <a
-                    href={location.mapUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="button button-whatsapp"
-                  >
-                    Get Directions on Google Maps
-                  </a>
-                </div>
+            <div className="text-center space-y-4 max-w-3xl mx-auto">
+              <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-4 py-1.5 text-xs font-extrabold text-[#0E7C7B]">
+                <Sparkles size={14} className="text-[#EA580C]" />
+                <span>ROBUZTA LAB BRANCH</span>
               </div>
 
-              <h2 style={{ marginTop: '40px' }}>Services Provided at This Branch</h2>
-              <div className="check-grid">
-                {location.servicesAvailable.map((srv) => (
-                  <div key={srv} className="check-card">
-                    <CheckCircle2 size={20} />
-                    <span>{srv}</span>
-                  </div>
-                ))}
-              </div>
+              <h1 className="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight leading-tight">
+                {location.title}
+              </h1>
 
-              <h2 style={{ marginTop: '40px' }}>Areas Covered with Free Pickup</h2>
-              <div className="area-tags" style={{ marginTop: '14px' }}>
-                {location.nearbyAreas.map((area) => (
-                  <span key={area} className="area-tag area-tag-lg">
-                    📍 {area}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <QuoteForm title={`Book Service at ${location.title}`} />
+              <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-medium">
+                Your trusted local electronics repair lab. Experience chip-level precision repairs, serial number verification, and zero OTP privacy for your devices.
+              </p>
             </div>
           </div>
         </section>
+
+        {/* Main Content */}
+        <section className="py-20 border-b border-slate-200">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+              
+              {/* Left Column: Branch Details (Col 7) */}
+              <div className="lg:col-span-7 space-y-10">
+                
+                <div className="space-y-4">
+                  <h2 className="text-2xl font-black text-slate-900">Branch Details & Contact Information</h2>
+                  
+                  <div className="rounded-3xl bg-slate-50 border border-slate-200 p-7 space-y-4 shadow-xl">
+                    <div className="flex items-start gap-3.5 border-b border-slate-200 pb-3.5">
+                      <MapPin size={22} className="text-[#0E7C7B] shrink-0 mt-0.5" />
+                      <div>
+                        <div className="text-xs font-extrabold uppercase text-slate-400">Address</div>
+                        <div className="text-sm font-bold text-slate-900">{location.address}</div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3.5 border-b border-slate-200 pb-3.5">
+                      <Clock size={22} className="text-[#0E7C7B] shrink-0 mt-0.5" />
+                      <div>
+                        <div className="text-xs font-extrabold uppercase text-slate-400">Working Hours</div>
+                        <div className="text-sm font-bold text-slate-900">{location.timing}</div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3.5 border-b border-slate-200 pb-3.5">
+                      <Phone size={22} className="text-[#0E7C7B] shrink-0 mt-0.5" />
+                      <div>
+                        <div className="text-xs font-extrabold uppercase text-slate-400">Direct Hotline</div>
+                        <a href={`tel:${location.phone}`} className="text-sm font-bold text-[#0E7C7B] hover:underline">
+                          {location.phone}
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3.5">
+                      <Mail size={22} className="text-[#0E7C7B] shrink-0 mt-0.5" />
+                      <div>
+                        <div className="text-xs font-extrabold uppercase text-slate-400">Email Inquiry</div>
+                        <div className="text-sm font-bold text-slate-900">{location.email}</div>
+                      </div>
+                    </div>
+
+                    <div className="pt-2">
+                      <a
+                        href={location.mapUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 w-full rounded-2xl bg-[#0E7C7B] hover:bg-teal-700 px-6 py-3.5 text-xs font-black text-white shadow-md transition-all"
+                      >
+                        <Navigation size={16} />
+                        <span>Get Directions on Google Maps</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Services Provided */}
+                <div className="space-y-4">
+                  <h2 className="text-2xl font-black text-slate-900">Services Provided at This Branch</h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {location.servicesAvailable.map((srv) => (
+                      <div key={srv} className="flex items-center gap-2.5 p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-xs font-extrabold text-slate-800">
+                        <CheckCircle2 size={16} className="text-[#0E7C7B] shrink-0" />
+                        <span>{srv}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Areas Covered */}
+                <div className="space-y-4">
+                  <h2 className="text-2xl font-black text-slate-900">Areas Covered with Free Pickup</h2>
+                  <div className="flex flex-wrap gap-2">
+                    {location.nearbyAreas.map((area) => (
+                      <span key={area} className="text-xs font-extrabold text-slate-800 bg-slate-100 border border-slate-200 px-3.5 py-2 rounded-xl">
+                        📍 {area}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Right Column: Quote Form (Col 5) */}
+              <div className="lg:col-span-5">
+                <QuoteForm title={`Book Service at ${location.title}`} />
+              </div>
+
+            </div>
+          </div>
+        </section>
+
       </main>
       <Footer />
     </>
