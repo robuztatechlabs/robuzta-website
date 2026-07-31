@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 export function FinalCta() {
   return (
-    <section id="contact" className="relative bg-white py-24 border-b border-slate-200 overflow-hidden">
+    <section id="contact" className="relative bg-white dark:bg-slate-950 py-24 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
       
       {/* Background Lighting Glow */}
       <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-gradient-to-r from-[#0E7C7B]/10 to-blue-500/10 rounded-full blur-[140px]" />
@@ -64,10 +64,10 @@ export function FinalCta() {
               <MagneticButton className="w-full sm:w-auto">
                 <a
                   href={siteConfig.phoneHref}
-                  className="flex items-center justify-center gap-3 w-full sm:w-auto rounded-2xl bg-white px-8 py-4 text-base font-black text-[#0F172A] hover:text-[#0E7C7B] shadow-xl hover:bg-slate-100 hover:scale-[1.03] transition-all"
+                  className="flex items-center justify-center gap-3 w-full sm:w-auto rounded-2xl bg-white dark:bg-slate-950 px-8 py-4 text-base font-black text-[#0F172A] hover:text-[#0E7C7B] shadow-xl hover:bg-slate-100 hover:scale-[1.03] transition-all"
                 >
                   <Phone size={20} className="text-[#0E7C7B] shrink-0" />
-                  <span className="text-[#0F172A] font-black">Call Direct Hotline</span>
+                  <span className="text-[#0F172A] font-black dark:text-white">Call Direct Hotline</span>
                 </a>
               </MagneticButton>
             </div>

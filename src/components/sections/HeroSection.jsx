@@ -9,7 +9,7 @@ import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-white pt-12 pb-20 lg:pt-16 lg:pb-28">
+    <section className="relative overflow-hidden bg-white dark:bg-slate-950 pt-12 pb-20 lg:pt-16 lg:pb-28">
       
       {/* Soft Ambient Radial Lights */}
       <div className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] sm:w-[800px] sm:h-[800px] bg-blue-500/10 rounded-full blur-[140px]" />
@@ -31,7 +31,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2.5 rounded-full bg-slate-50 border border-slate-200 px-4 py-1.5 text-xs sm:text-sm font-bold text-slate-800 shadow-sm"
+              className="inline-flex items-center gap-2.5 rounded-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-4 py-1.5 text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 shadow-sm"
             >
               <span className="flex h-2 w-2 rounded-full bg-blue-600 animate-pulse" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-orange-600 font-extrabold uppercase tracking-wider">
@@ -45,7 +45,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.08]"
+              className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 leading-[1.08]"
             >
               Precision Hardware Repair.{' '}
               <span className="block mt-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-orange-600 bg-clip-text text-transparent">
@@ -58,7 +58,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg sm:text-xl text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0"
+              className="text-lg sm:text-xl text-slate-600 dark:text-slate-400 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0"
             >
               Robuzta provides specialized chip-level repair for Laptops, MacBooks, Smartphones, Surface devices, Gaming PCs, and Desktops under strict Zero-OTP privacy and 180-day warranty promises.
             </motion.p>
@@ -85,7 +85,7 @@ export function HeroSection() {
                   href={siteConfig.whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 rounded-2xl bg-white border border-slate-200 px-6 py-4 text-base font-bold text-slate-800 hover:text-emerald-700 hover:bg-emerald-50/50 hover:border-emerald-200 shadow-sm transition-all"
+                  className="inline-flex items-center gap-2.5 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700 px-6 py-4 text-base font-bold text-slate-800 dark:text-slate-200 hover:text-emerald-700 hover:bg-emerald-50/50 hover:border-emerald-200 shadow-sm transition-all"
                 >
                   <MessageCircle size={18} className="text-emerald-600" />
                   <span>Instant WhatsApp Quote</span>
@@ -98,7 +98,7 @@ export function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-6 pt-4 text-xs font-semibold text-slate-600"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-6 pt-4 text-xs font-semibold text-slate-600 dark:text-slate-400"
             >
               <span className="flex items-center gap-1.5">
                 <ShieldCheck size={16} className="text-blue-600" />
@@ -123,15 +123,15 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:col-span-5 relative"
           >
-            <div className="relative rounded-3xl border border-slate-200 bg-white/90 backdrop-blur-2xl p-6 shadow-2xl shadow-slate-200/80 space-y-6">
+            <div className="relative rounded-3xl border border-slate-200 dark:border-slate-700 bg-white/90 dark:bg-slate-950/90 backdrop-blur-2xl p-6 shadow-2xl shadow-slate-200/80 space-y-6">
               
               {/* Terminal Window Header */}
-              <div className="flex items-center justify-between border-b border-slate-100 pb-4">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-4">
                 <div className="flex items-center gap-2">
                   <div className="h-3 w-3 rounded-full bg-rose-500" />
                   <div className="h-3 w-3 rounded-full bg-amber-500" />
                   <div className="h-3 w-3 rounded-full bg-emerald-500" />
-                  <span className="ml-2 font-mono text-xs font-medium text-slate-500">robuzta-lab-station.v4</span>
+                  <span className="ml-2 font-mono text-xs font-medium text-slate-500 dark:text-slate-400">robuzta-lab-station.v4</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs font-mono font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
                   <Activity size={12} className="animate-pulse" />
@@ -155,17 +155,17 @@ export function HeroSection() {
 
               {/* Live Metric Cards Grid */}
               <div className="grid grid-cols-2 gap-3">
-                <div className="rounded-2xl bg-slate-50 border border-slate-200 p-4 space-y-1">
-                  <div className="text-xs font-bold uppercase text-slate-500 tracking-wider">Devices Restored</div>
-                  <div className="text-2xl font-black text-slate-900">
+                <div className="rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-4 space-y-1">
+                  <div className="text-xs font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Devices Restored</div>
+                  <div className="text-2xl font-black text-slate-900 dark:text-slate-100">
                     <AnimatedCounter value="15000" suffix="+" />
                   </div>
                   <div className="text-[11px] text-blue-600 font-semibold">Laptops, Macs & Mobiles</div>
                 </div>
 
-                <div className="rounded-2xl bg-slate-50 border border-slate-200 p-4 space-y-1">
-                  <div className="text-xs font-bold uppercase text-slate-500 tracking-wider">Satisfaction Rate</div>
-                  <div className="text-2xl font-black text-slate-900">
+                <div className="rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-4 space-y-1">
+                  <div className="text-xs font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Satisfaction Rate</div>
+                  <div className="text-2xl font-black text-slate-900 dark:text-slate-100">
                     <AnimatedCounter value="99.8" suffix="%" />
                   </div>
                   <div className="text-[11px] text-emerald-600 font-semibold">Same-Day Turnaround</div>
@@ -173,13 +173,13 @@ export function HeroSection() {
               </div>
 
               {/* Floating Highlight Card */}
-              <div className="rounded-2xl bg-gradient-to-r from-blue-50 to-orange-50 border border-blue-200/80 p-4 flex items-center gap-4">
+              <div className="rounded-2xl bg-gradient-to-r from-blue-50 to-orange-50 dark:from-slate-800 dark:to-slate-800 border border-blue-200/80 dark:border-slate-700 p-4 flex items-center gap-4">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-600 text-white shadow-md shadow-blue-500/20">
                   <ShieldCheck size={22} />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-slate-900">Zero Password Protocol</h4>
-                  <p className="text-xs text-slate-600">Hardware & screen diagnostics handled without asking for your private credentials or OTPs.</p>
+                  <h4 className="text-sm font-bold text-slate-900 dark:text-slate-100">Zero Password Protocol</h4>
+                  <p className="text-xs text-slate-600 dark:text-slate-400">Hardware & screen diagnostics handled without asking for your private credentials or OTPs.</p>
                 </div>
               </div>
 

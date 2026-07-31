@@ -12,10 +12,10 @@ export function ContactPageView() {
   return (
     <>
       <Header />
-      <main className="bg-white min-h-screen text-slate-900">
+      <main className="bg-white dark:bg-slate-950 min-h-screen text-slate-900 dark:text-slate-100">
         
         {/* Contact Hero */}
-        <section className="relative bg-gradient-to-b from-slate-50 via-blue-50/20 to-white py-20 sm:py-24 border-b border-slate-200 overflow-hidden">
+        <section className="relative bg-gradient-to-b from-slate-50 via-blue-50/20 to-white dark:from-slate-900 dark:via-slate-900 dark:to-slate-900 py-20 sm:py-24 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
           <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-teal-500/10 rounded-full blur-[140px]" />
 
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center space-y-6">
@@ -24,18 +24,18 @@ export function ContactPageView() {
               <span>ROBUZTA CONTACT & BOOKING</span>
             </div>
 
-            <h1 className="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight leading-tight">
+            <h1 className="text-4xl sm:text-6xl font-black text-slate-900 dark:text-slate-100 tracking-tight leading-tight">
               Get in Touch with Our Lab Technicians
             </h1>
 
-            <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto font-medium">
+            <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto font-medium">
               Need an instant repair quote, doorstep pickup, or hardware diagnostic help? Reach us directly via WhatsApp, Phone, or drop by our South Bopal & Tragad labs.
             </p>
           </div>
         </section>
 
         {/* Main Content Split Section */}
-        <section className="py-20 border-b border-slate-200">
+        <section className="py-20 border-b border-slate-200 dark:border-slate-700">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
               
@@ -43,21 +43,21 @@ export function ContactPageView() {
               <div className="lg:col-span-7 space-y-10">
                 
                 <div className="space-y-4">
-                  <h2 className="text-2xl font-black text-slate-900">Direct Contact Channels</h2>
+                  <h2 className="text-2xl font-black text-slate-900 dark:text-slate-100">Direct Contact Channels</h2>
                   
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <a
                       href={siteConfig.phoneHref}
-                      className="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-[#0E7C7B] hover:bg-white hover:shadow-xl transition-all space-y-2 group"
+                      className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-[#0E7C7B] hover:bg-white dark:hover:bg-slate-800 hover:shadow-xl transition-all space-y-2 group"
                     >
                       <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0E7C7B] text-white">
                         <Phone size={20} />
                       </div>
                       <div>
-                        <div className="text-sm font-extrabold text-slate-900 group-hover:text-[#0E7C7B] transition-colors">
+                        <div className="text-sm font-extrabold text-slate-900 dark:text-slate-100 group-hover:text-[#0E7C7B] transition-colors">
                           Call Senior Technician
                         </div>
-                        <div className="text-xs font-bold text-slate-600">{siteConfig.phone}</div>
+                        <div className="text-xs font-bold text-slate-600 dark:text-slate-400">{siteConfig.phone}</div>
                         <span className="text-[11px] font-semibold text-slate-400">Instant Phone Support</span>
                       </div>
                     </a>
@@ -66,36 +66,36 @@ export function ContactPageView() {
                       href={siteConfig.whatsappHref}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-5 rounded-2xl bg-emerald-50/70 border border-emerald-200 hover:bg-emerald-100/80 hover:shadow-xl transition-all space-y-2 group"
+                      className="p-5 rounded-2xl bg-emerald-50/70 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800/50 hover:bg-emerald-100/80 dark:hover:bg-emerald-900/40 hover:shadow-xl transition-all space-y-2 group"
                     >
-                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-600 text-white">
-                        <WhatsappIcon size={22} className="text-white" />
+                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-600 dark:bg-emerald-500/20 text-white dark:text-emerald-400">
+                        <WhatsappIcon size={22} className="text-white dark:text-emerald-400" />
                       </div>
                       <div>
-                        <div className="text-sm font-extrabold text-emerald-950">WhatsApp Live Chat</div>
-                        <div className="text-xs font-bold text-emerald-800">+91 999 245 2459</div>
-                        <span className="text-[11px] font-semibold text-emerald-700">Photos & Live Quotes</span>
+                        <div className="text-sm font-extrabold text-emerald-950 dark:text-emerald-100">WhatsApp Live Chat</div>
+                        <div className="text-xs font-bold text-emerald-800 dark:text-emerald-400">+91 999 245 2459</div>
+                        <span className="text-[11px] font-semibold text-emerald-700 dark:text-emerald-600">Photos & Live Quotes</span>
                       </div>
                     </a>
 
-                    <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                    <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 space-y-2">
                       <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0E7C7B] text-white">
                         <Mail size={20} />
                       </div>
                       <div>
-                        <div className="text-sm font-extrabold text-slate-900">Email Support</div>
-                        <div className="text-xs font-bold text-slate-600">{siteConfig.email}</div>
+                        <div className="text-sm font-extrabold text-slate-900 dark:text-slate-100">Email Support</div>
+                        <div className="text-xs font-bold text-slate-600 dark:text-slate-400">{siteConfig.email}</div>
                         <span className="text-[11px] font-semibold text-slate-400">Official & Corporate</span>
                       </div>
                     </div>
 
-                    <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+                    <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 space-y-2">
                       <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0E7C7B] text-white">
                         <Clock size={20} />
                       </div>
                       <div>
-                        <div className="text-sm font-extrabold text-slate-900">Lab Hours</div>
-                        <div className="text-xs font-bold text-slate-600">11:00 AM – 7:00 PM</div>
+                        <div className="text-sm font-extrabold text-slate-900 dark:text-slate-100">Lab Hours</div>
+                        <div className="text-xs font-bold text-slate-600 dark:text-slate-400">11:00 AM – 7:00 PM</div>
                         <span className="text-[11px] font-semibold text-slate-400">Monday to Saturday</span>
                       </div>
                     </div>
@@ -104,17 +104,17 @@ export function ContactPageView() {
 
                 {/* Lab Locations List */}
                 <div className="space-y-4">
-                  <h2 className="text-2xl font-black text-slate-900">Robuzta Lab Locations</h2>
+                  <h2 className="text-2xl font-black text-slate-900 dark:text-slate-100">Robuzta Lab Locations</h2>
                   <div className="space-y-3">
                     {locations.map((loc) => (
                       <div
                         key={loc.slug}
-                        className="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex items-start gap-3.5"
+                        className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 flex items-start gap-3.5"
                       >
                         <MapPin size={22} className="text-[#0E7C7B] shrink-0 mt-0.5" />
                         <div>
-                          <div className="text-sm font-extrabold text-slate-900">{loc.title}</div>
-                          <p className="text-xs font-medium text-slate-600">{loc.address}</p>
+                          <div className="text-sm font-extrabold text-slate-900 dark:text-slate-100">{loc.title}</div>
+                          <p className="text-xs font-medium text-slate-600 dark:text-slate-400">{loc.address}</p>
                         </div>
                       </div>
                     ))}
@@ -133,7 +133,7 @@ export function ContactPageView() {
         </section>
 
         {/* Courier Section */}
-        <section className="py-16 bg-slate-50 border-b border-slate-200">
+        <section className="py-16 bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="rounded-3xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-950 text-white p-8 sm:p-12 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="flex items-center gap-4">

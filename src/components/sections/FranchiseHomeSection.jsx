@@ -8,13 +8,13 @@ import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 
 export function FranchiseHomeSection() {
   return (
-    <section className="relative bg-gradient-to-b from-slate-50 via-blue-50/20 to-white py-20 sm:py-24 border-t border-slate-200 overflow-hidden">
+    <section className="relative bg-gradient-to-b from-slate-50 via-blue-50/20 to-white dark:from-slate-900 dark:via-slate-900 dark:to-slate-900 py-20 sm:py-24 border-t border-slate-200 dark:border-slate-700 overflow-hidden">
       
       {/* Background Radial Glow */}
       <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-blue-500/10 rounded-full blur-[130px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl bg-white border border-slate-200/90 p-8 sm:p-12 md:p-14 shadow-2xl shadow-blue-500/5 space-y-10">
+        <div className="rounded-3xl bg-white dark:bg-slate-950 border border-slate-200/90 dark:border-slate-800 p-8 sm:p-12 md:p-14 shadow-2xl shadow-blue-500/5 dark:shadow-blue-900/5 space-y-10">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
@@ -24,7 +24,7 @@ export function FranchiseHomeSection() {
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-200 px-4 py-1.5 text-xs font-extrabold text-blue-700 shadow-sm"
+                className="inline-flex items-center gap-2 rounded-full bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800 px-4 py-1.5 text-xs font-extrabold text-blue-700 dark:text-blue-400 shadow-sm"
               >
                 <Sparkles size={14} className="text-[#EA580C]" />
                 <span>FRANCHISE OPPORTUNITY &bull; PAN-INDIA EXPANSION</span>
@@ -35,7 +35,7 @@ export function FranchiseHomeSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight"
+                className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-slate-100 tracking-tight leading-tight"
               >
                 Partner with India’s Premier <br className="hidden sm:block" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#EA580C]">
@@ -48,22 +48,22 @@ export function FranchiseHomeSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="text-slate-600 text-base sm:text-lg font-medium leading-relaxed"
+                className="text-slate-600 dark:text-slate-400 text-base sm:text-lg font-medium leading-relaxed"
               >
                 Own a high-profit chip-level repair lab in your city. Get turnkey ISO-compliant ESD workbench setups, 55%–70% gross profit margins, and centralized Google & Meta lead generation.
               </motion.p>
 
               {/* 3 Quick Value Badges */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs font-extrabold text-slate-800">
-                <div className="flex items-center gap-2 p-3 rounded-xl bg-slate-50 border border-slate-200">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs font-extrabold text-slate-800 dark:text-slate-200">
+                <div className="flex items-center gap-2 p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
                   <CheckCircle2 size={16} className="text-[#EA580C] shrink-0" />
                   <span>₹3L - ₹6L/mo Est. Profit</span>
                 </div>
-                <div className="flex items-center gap-2 p-3 rounded-xl bg-slate-50 border border-slate-200">
+                <div className="flex items-center gap-2 p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
                   <CheckCircle2 size={16} className="text-[#2563EB] shrink-0" />
                   <span>10 - 14 Mo Target ROI</span>
                 </div>
-                <div className="flex items-center gap-2 p-3 rounded-xl bg-slate-50 border border-slate-200">
+                <div className="flex items-center gap-2 p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
                   <CheckCircle2 size={16} className="text-emerald-600 shrink-0" />
                   <span>100% Turnkey Support</span>
                 </div>

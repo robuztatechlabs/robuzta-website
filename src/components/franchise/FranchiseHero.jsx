@@ -38,7 +38,7 @@ export function FranchiseHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-6xl lg:text-7xl font-black text-slate-900 tracking-tight leading-[1.1]"
+            className="text-4xl sm:text-6xl lg:text-7xl font-black text-slate-900 dark:text-slate-100 tracking-tight leading-[1.1]"
           >
             Build a Multi-Crore <br className="hidden sm:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] via-blue-700 to-[#EA580C]">
@@ -51,7 +51,7 @@ export function FranchiseHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-slate-600 text-base sm:text-xl leading-relaxed max-w-3xl mx-auto font-medium"
+            className="text-slate-600 dark:text-slate-400 text-base sm:text-xl leading-relaxed max-w-3xl mx-auto font-medium"
           >
             Partner with India’s most trusted, technology-enabled repair lab brand. High-margin unit economics, ESD-isolated workbench setups, and 100% turnkey operational & lead support.
           </motion.p>
@@ -74,7 +74,7 @@ export function FranchiseHero() {
 
             <a
               href="#franchise-calculator"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-white border border-slate-300 px-7 py-4 text-sm font-extrabold text-slate-800 shadow-sm hover:bg-slate-50 hover:border-slate-400 transition-all"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 px-7 py-4 text-sm font-extrabold text-slate-800 dark:text-slate-200 shadow-sm hover:bg-slate-50 hover:border-slate-400 transition-all"
             >
               <Download size={18} className="text-[#EA580C]" />
               <span>Explore ROI & Financials</span>
@@ -87,40 +87,40 @@ export function FranchiseHero() {
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-6 rounded-3xl bg-white/80 backdrop-blur-xl border border-slate-200 shadow-xl shadow-slate-200/50"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-6 rounded-3xl bg-white/80 backdrop-blur-xl border border-slate-200 dark:border-slate-700 shadow-xl shadow-slate-200/50"
         >
-          <div className="p-4 space-y-1 border-r border-slate-100 last:border-0 text-center sm:text-left">
-            <div className="text-2xl sm:text-3xl font-black text-slate-900 flex items-center justify-center sm:justify-start gap-1">
+          <div className="p-4 space-y-1 border-r border-slate-100 dark:border-slate-800 last:border-0 text-center sm:text-left">
+            <div className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-slate-100 flex items-center justify-center sm:justify-start gap-1">
               <span className="text-[#2563EB]">₹3L - ₹6L</span>
             </div>
-            <div className="text-xs font-extrabold text-slate-500 uppercase tracking-wider">
+            <div className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
               Est. Monthly Profit Margin
             </div>
           </div>
 
-          <div className="p-4 space-y-1 border-r border-slate-100 last:border-0 text-center sm:text-left">
-            <div className="text-2xl sm:text-3xl font-black text-slate-900 flex items-center justify-center sm:justify-start gap-1">
+          <div className="p-4 space-y-1 border-r border-slate-100 dark:border-slate-800 last:border-0 text-center sm:text-left">
+            <div className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-slate-100 flex items-center justify-center sm:justify-start gap-1">
               <span className="text-[#EA580C]">10 - 14 Mo</span>
             </div>
-            <div className="text-xs font-extrabold text-slate-500 uppercase tracking-wider">
+            <div className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
               Target ROI Break-Even
             </div>
           </div>
 
-          <div className="p-4 space-y-1 border-r border-slate-100 last:border-0 text-center sm:text-left">
-            <div className="text-2xl sm:text-3xl font-black text-slate-900 flex items-center justify-center sm:justify-start gap-1">
+          <div className="p-4 space-y-1 border-r border-slate-100 dark:border-slate-800 last:border-0 text-center sm:text-left">
+            <div className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-slate-100 flex items-center justify-center sm:justify-start gap-1">
               <span className="text-[#2563EB]">100% Turnkey</span>
             </div>
-            <div className="text-xs font-extrabold text-slate-500 uppercase tracking-wider">
+            <div className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
               ESD Lab Setup & Staff Hiring
             </div>
           </div>
 
           <div className="p-4 space-y-1 text-center sm:text-left">
-            <div className="text-2xl sm:text-3xl font-black text-slate-900 flex items-center justify-center sm:justify-start gap-1">
+            <div className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-slate-100 flex items-center justify-center sm:justify-start gap-1">
               <span className="text-emerald-600">Zero OTP</span>
             </div>
-            <div className="text-xs font-extrabold text-slate-500 uppercase tracking-wider">
+            <div className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
               Privacy Standard Guarantee
             </div>
           </div>

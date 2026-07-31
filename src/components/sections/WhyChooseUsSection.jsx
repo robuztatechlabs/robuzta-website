@@ -38,7 +38,7 @@ const pillars = [
 
 export function WhyChooseUsSection() {
   return (
-    <section className="relative bg-white py-24 border-b border-slate-200 overflow-hidden">
+    <section className="relative bg-white dark:bg-slate-950 py-24 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
       
       {/* Background Glow */}
       <div className="pointer-events-none absolute top-0 right-0 w-[500px] h-[500px] bg-[#0E7C7B]/5 rounded-full blur-[140px]" />
@@ -61,7 +61,7 @@ export function WhyChooseUsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight"
+            className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight"
           >
             Built on Workbench Transparency & Data Safety
           </motion.h2>
@@ -71,7 +71,7 @@ export function WhyChooseUsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-slate-600 text-base sm:text-lg leading-relaxed font-medium"
+            className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed font-medium"
           >
             From chip-level motherboard logic soldering to screen and battery replacements, every process is documented, ESD-isolated, and protected under our strict Zero-OTP Privacy Policy.
           </motion.p>
@@ -88,7 +88,7 @@ export function WhyChooseUsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="group rounded-3xl bg-slate-50/70 border border-slate-200 p-8 flex flex-col justify-between hover:border-[#0E7C7B]/40 hover:bg-white hover:shadow-2xl hover:shadow-[#0E7C7B]/10 hover:-translate-y-1.5 transition-all duration-300 space-y-6"
+                className="group rounded-3xl bg-slate-50/70 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-8 flex flex-col justify-between hover:border-[#0E7C7B]/40 hover:bg-white dark:hover:bg-slate-700 hover:shadow-2xl hover:shadow-[#0E7C7B]/10 hover:-translate-y-1.5 transition-all duration-300 space-y-6"
               >
                 <div className="space-y-5">
                   <div className="flex items-center justify-between">
@@ -101,10 +101,10 @@ export function WhyChooseUsSection() {
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-xl font-extrabold text-slate-900 group-hover:text-[#0E7C7B] transition-colors">
+                    <h3 className="text-xl font-extrabold text-slate-900 dark:text-slate-100 group-hover:text-[#0E7C7B] transition-colors">
                       {pillar.title}
                     </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed font-medium">
+                    <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
                       {pillar.description}
                     </p>
                   </div>

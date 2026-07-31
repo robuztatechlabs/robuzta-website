@@ -50,7 +50,7 @@ const whyUsPillars = [
 
 export function FranchiseWhyUs() {
   return (
-    <section className="relative bg-white py-24 border-b border-slate-200 overflow-hidden">
+    <section className="relative bg-white dark:bg-slate-950 py-24 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
       
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16">
         
@@ -70,7 +70,7 @@ export function FranchiseWhyUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight"
+            className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight"
           >
             Engineered for Long-Term Regional Dominance
           </motion.h2>
@@ -80,7 +80,7 @@ export function FranchiseWhyUs() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-slate-600 text-base sm:text-lg leading-relaxed font-medium"
+            className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed font-medium"
           >
             Unlike unorganized local repair shops, Robuzta offers an Apple & Stripe-grade customer experience with standard operating procedures and high-return business models.
           </motion.p>
@@ -120,10 +120,10 @@ export function FranchiseWhyUs() {
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-xl font-extrabold text-slate-900 group-hover:text-[#2563EB] transition-colors">
+                    <h3 className="text-xl font-extrabold text-slate-900 dark:text-slate-100 group-hover:text-[#2563EB] transition-colors">
                       {pillar.title}
                     </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed font-medium">
+                    <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
                       {pillar.description}
                     </p>
                   </div>

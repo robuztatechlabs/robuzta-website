@@ -22,10 +22,10 @@ const doorstepZones = [
 
 export function CourierHighlight() {
   return (
-    <section className="relative bg-white py-20 border-b border-slate-200">
+    <section className="relative bg-white dark:bg-slate-950 py-20 border-b border-slate-200 dark:border-slate-700">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
-        <div className="rounded-3xl bg-slate-50 border border-slate-200 p-8 sm:p-12 shadow-md flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div className="rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-8 sm:p-12 shadow-md flex flex-col lg:flex-row items-center justify-between gap-8">
           
           <div className="space-y-6 max-w-3xl">
             <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-3.5 py-1.5 text-xs font-extrabold text-[#0E7C7B] uppercase tracking-widest">
@@ -33,21 +33,21 @@ export function CourierHighlight() {
               EXPRESS DOORSTEP PICKUP & PAN-INDIA SHIP-IN REPAIR
             </div>
 
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
               Free Doorstep Pickup Across Ahmedabad & Insured Pan-India Courier Repair
             </h2>
 
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
               We pick up laptops, MacBooks, and mobile devices directly from your home or office in anti-static padding, or accept Pan-India courier shipments with live video unboxing and insured transit.
             </p>
 
             <div className="space-y-2">
-              <span className="text-xs font-black text-slate-500 uppercase tracking-wider block">
+              <span className="text-xs font-black text-slate-500 dark:text-slate-400 uppercase tracking-wider block">
                 Popular Free Doorstep Service Zones:
               </span>
               <div className="flex flex-wrap gap-2">
                 {doorstepZones.map((zone) => (
-                  <span key={zone} className="inline-flex items-center gap-1 text-xs font-bold text-slate-700 bg-white border border-slate-200 px-3 py-1 rounded-lg shadow-sm">
+                  <span key={zone} className="inline-flex items-center gap-1 text-xs font-bold text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700 px-3 py-1 rounded-lg shadow-sm">
                     <MapPin size={12} className="text-[#0E7C7B]" />
                     {zone}
                   </span>
@@ -69,7 +69,7 @@ export function CourierHighlight() {
               </a>
             </MagneticButton>
 
-            <span className="text-xs font-bold text-slate-600 flex items-center gap-1.5">
+            <span className="text-xs font-bold text-slate-600 dark:text-slate-400 flex items-center gap-1.5">
               <ShieldCheck size={14} className="text-emerald-700" /> Insured Transit & Zero-OTP Safety
             </span>
           </div>

@@ -8,7 +8,7 @@ import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 export function StickyMobileBar() {
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-50 flex lg:hidden items-center justify-between gap-2 bg-white/95 backdrop-blur-xl border-t border-slate-200 p-2.5 shadow-[0_-4px_20px_rgba(0,0,0,0.1)]"
+      className="fixed bottom-0 left-0 right-0 z-50 flex lg:hidden items-center justify-between gap-2 bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl border-t border-slate-200 dark:border-slate-700 dark:border-slate-800 p-2.5 shadow-[0_-4px_20px_rgba(0,0,0,0.1)]"
       aria-label="Mobile quick action bar"
     >
       <a

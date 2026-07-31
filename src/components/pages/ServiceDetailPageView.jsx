@@ -65,8 +65,8 @@ function FaqItem({ question, answer, index }) {
       whileInView="visible"
       viewport={{ once: true }}
       variants={fadeUp}
-      className={`rounded-2xl border bg-white overflow-hidden transition-all duration-300 ${
-        open ? 'border-[#0E7C7B]/40 shadow-lg shadow-[#0E7C7B]/8' : 'border-slate-200 hover:border-slate-300'
+      className={`rounded-2xl border bg-white dark:bg-slate-950 overflow-hidden transition-all duration-300 ${
+        open ? 'border-[#0E7C7B]/40 shadow-lg shadow-[#0E7C7B]/8' : 'border-slate-200 dark:border-slate-700 hover:border-slate-300'
       }`}
     >
       <button
@@ -75,10 +75,10 @@ function FaqItem({ question, answer, index }) {
         className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
         aria-expanded={open}
       >
-        <span className="text-base font-bold text-slate-900 leading-snug">{question}</span>
+        <span className="text-base font-bold text-slate-900 dark:text-slate-100 leading-snug">{question}</span>
         <span
           className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-xl transition-all duration-300 ${
-            open ? 'bg-[#0E7C7B] text-white rotate-0' : 'bg-slate-100 text-slate-600'
+            open ? 'bg-[#0E7C7B] text-white rotate-0' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
           }`}
         >
           {open ? <Minus size={15} /> : <Plus size={15} />}
@@ -95,7 +95,7 @@ function FaqItem({ question, answer, index }) {
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="overflow-hidden"
           >
-            <p className="px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+            <p className="px-6 pb-5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-100 dark:border-slate-800 pt-4">
               {answer}
             </p>
           </motion.div>
@@ -145,7 +145,7 @@ export function ServiceDetailPageView({ slug }) {
             >
               <div className="flex items-center gap-2 text-sm font-semibold text-slate-400">
                 <Link href="/#services" className="hover:text-[#0E7C7B] transition-colors">Services</Link>
-                <span className="text-slate-600">/</span>
+                <span className="text-slate-600 dark:text-slate-400">/</span>
                 <span className="text-slate-300">{service.title}</span>
               </div>
             </motion.div>
@@ -307,7 +307,7 @@ export function ServiceDetailPageView({ slug }) {
         {/* ══════════════════════════════════════════════
             SECTION 2 — SYMPTOMS
         ══════════════════════════════════════════════ */}
-        <section className="relative bg-white py-24 border-b border-slate-200" id="symptoms">
+        <section className="relative bg-white dark:bg-slate-950 py-24 border-b border-slate-200 dark:border-slate-700" id="symptoms">
           {/* Background glow */}
           <div className="pointer-events-none absolute top-1/2 left-0 -translate-y-1/2 w-[400px] h-[400px] bg-[#0E7C7B]/5 rounded-full blur-[120px]" />
 
@@ -327,7 +327,7 @@ export function ServiceDetailPageView({ slug }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.08 }}
-                className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight"
+                className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight"
               >
                 Common Hardware Issues We Fix
               </motion.h2>
@@ -336,7 +336,7 @@ export function ServiceDetailPageView({ slug }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.14 }}
-                className="text-slate-500 text-base leading-relaxed"
+                className="text-slate-500 dark:text-slate-400 text-base leading-relaxed"
               >
                 Recognise any of these symptoms? Our senior technicians can diagnose and resolve these precisely.
               </motion.p>
@@ -352,12 +352,12 @@ export function ServiceDetailPageView({ slug }) {
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={fadeUp}
-                  className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 hover:border-[#0E7C7B]/40 hover:shadow-xl hover:shadow-[#0E7C7B]/8 transition-all cursor-default"
+                  className="group flex items-center gap-4 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 p-5 hover:border-[#0E7C7B]/40 hover:shadow-xl hover:shadow-[#0E7C7B]/8 transition-all cursor-default"
                 >
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 group-hover:bg-[#0E7C7B] group-hover:border-[#0E7C7B] transition-all">
                     <CheckCircle2 size={18} className="text-[#0E7C7B] group-hover:text-white transition-colors" />
                   </span>
-                  <span className="text-sm font-bold text-slate-800 leading-snug">{item}</span>
+                  <span className="text-sm font-bold text-slate-800 dark:text-slate-200 leading-snug">{item}</span>
                 </motion.div>
               ))}
             </div>
@@ -367,7 +367,7 @@ export function ServiceDetailPageView({ slug }) {
         {/* ══════════════════════════════════════════════
             SECTION 3 — REPAIR PROCESS
         ══════════════════════════════════════════════ */}
-        <section className="relative bg-slate-50 py-24 border-b border-slate-200" id="process">
+        <section className="relative bg-slate-50 dark:bg-slate-900 py-24 border-b border-slate-200 dark:border-slate-700" id="process">
           <div className="pointer-events-none absolute top-0 right-0 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[120px]" />
 
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -385,7 +385,7 @@ export function ServiceDetailPageView({ slug }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.08 }}
-                className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight"
+                className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight"
               >
                 Our Transparent 6-Step Repair Process
               </motion.h2>
@@ -403,23 +403,23 @@ export function ServiceDetailPageView({ slug }) {
                     whileInView="visible"
                     viewport={{ once: true }}
                     variants={fadeUp}
-                    className="group relative rounded-3xl border border-slate-200 bg-white p-7 space-y-4 hover:border-blue-300 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1 transition-all"
+                    className="group relative rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 p-7 space-y-4 hover:border-blue-300 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1 transition-all"
                   >
                     {/* Step number badge */}
                     <div className="flex items-center justify-between">
                       <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-900 text-white text-sm font-black group-hover:bg-blue-600 transition-colors">
                         {String(index + 1).padStart(2, '0')}
                       </span>
-                      <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 text-slate-400 group-hover:bg-blue-50 group-hover:text-blue-600 transition-all">
+                      <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-400 group-hover:bg-blue-50 group-hover:text-blue-600 transition-all">
                         <StepIcon size={18} />
                       </div>
                     </div>
 
                     <div>
-                      <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-blue-700 transition-colors">
+                      <h3 className="text-lg font-extrabold text-slate-900 dark:text-slate-100 group-hover:text-blue-700 transition-colors">
                         {step.title}
                       </h3>
-                      <p className="text-sm text-slate-500 leading-relaxed mt-1.5">{step.text}</p>
+                      <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mt-1.5">{step.text}</p>
                     </div>
 
                     {/* Accent line at bottom */}
@@ -434,7 +434,7 @@ export function ServiceDetailPageView({ slug }) {
         {/* ══════════════════════════════════════════════
             SECTION 4 — SERVICES INCLUDED
         ══════════════════════════════════════════════ */}
-        <section className="relative bg-white py-24 border-b border-slate-200" id="included">
+        <section className="relative bg-white dark:bg-slate-950 py-24 border-b border-slate-200 dark:border-slate-700" id="included">
           <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-orange-500/5 rounded-full blur-[120px]" />
 
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -452,7 +452,7 @@ export function ServiceDetailPageView({ slug }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.08 }}
-                className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight"
+                className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight"
               >
                 Services Included in {service.title}
               </motion.h2>
@@ -461,7 +461,7 @@ export function ServiceDetailPageView({ slug }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.14 }}
-                className="text-slate-500 text-base leading-relaxed"
+                className="text-slate-500 dark:text-slate-400 text-base leading-relaxed"
               >
                 Every service below is delivered with a diagnosis-first approach, transparent quote, and customer approval before work begins.
               </motion.p>
@@ -476,7 +476,7 @@ export function ServiceDetailPageView({ slug }) {
                   whileInView="visible"
                   viewport={{ once: true }}
                   variants={fadeUp}
-                  className="group relative rounded-2xl border border-slate-200 bg-white overflow-hidden hover:border-orange-300 hover:shadow-xl hover:shadow-orange-500/10 transition-all"
+                  className="group relative rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 overflow-hidden hover:border-orange-300 hover:shadow-xl hover:shadow-orange-500/10 transition-all"
                 >
                   {/* Gradient accent bar */}
                   <div className="h-1 w-full bg-gradient-to-r from-[#0E7C7B] to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -485,10 +485,10 @@ export function ServiceDetailPageView({ slug }) {
                     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 group-hover:bg-[#0E7C7B] group-hover:border-[#0E7C7B] transition-all">
                       <ServiceIcon size={18} className="text-[#0E7C7B] group-hover:text-white transition-colors" />
                     </div>
-                    <h3 className="text-base font-extrabold text-slate-900 group-hover:text-[#0E7C7B] transition-colors">
+                    <h3 className="text-base font-extrabold text-slate-900 dark:text-slate-100 group-hover:text-[#0E7C7B] transition-colors">
                       {item}
                     </h3>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
                       Diagnosis-first support with transparent quote, customer approval, and certified lab handling.
                     </p>
                   </div>
@@ -501,7 +501,7 @@ export function ServiceDetailPageView({ slug }) {
         {/* ══════════════════════════════════════════════
             SECTION 5 — FAQ
         ══════════════════════════════════════════════ */}
-        <section className="relative bg-slate-50 py-24 border-b border-slate-200" id="faq">
+        <section className="relative bg-slate-50 dark:bg-slate-900 py-24 border-b border-slate-200 dark:border-slate-700" id="faq">
 
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto">
@@ -511,7 +511,7 @@ export function ServiceDetailPageView({ slug }) {
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="inline-block text-xs font-bold uppercase tracking-widest text-slate-600 bg-white border border-slate-200 px-3.5 py-1.5 rounded-full shadow-sm"
+                  className="inline-block text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700 px-3.5 py-1.5 rounded-full shadow-sm"
                 >
                   Service FAQ
                 </motion.span>
@@ -520,7 +520,7 @@ export function ServiceDetailPageView({ slug }) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.08 }}
-                  className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight"
+                  className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight"
                 >
                   Frequently Asked Questions
                 </motion.h2>
@@ -529,7 +529,7 @@ export function ServiceDetailPageView({ slug }) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.14 }}
-                  className="text-slate-500 text-base"
+                  className="text-slate-500 dark:text-slate-400 text-base"
                 >
                   Everything you need to know about {service.title} at Robuzta Techlabs.
                 </motion.p>
@@ -555,7 +555,7 @@ export function ServiceDetailPageView({ slug }) {
                 transition={{ delay: 0.2 }}
                 className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 text-center"
               >
-                <p className="text-sm text-slate-500 font-medium">Still have questions?</p>
+                <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">Still have questions?</p>
                 <a
                   href={siteConfig.whatsappHref}
                   target="_blank"
@@ -573,7 +573,7 @@ export function ServiceDetailPageView({ slug }) {
         {/* ══════════════════════════════════════════════
             SECTION 6 — RELATED SERVICES
         ══════════════════════════════════════════════ */}
-        <section className="relative bg-white py-24 border-b border-slate-200" id="related">
+        <section className="relative bg-white dark:bg-slate-950 py-24 border-b border-slate-200 dark:border-slate-700" id="related">
           <div className="pointer-events-none absolute top-0 right-0 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[120px]" />
 
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -591,7 +591,7 @@ export function ServiceDetailPageView({ slug }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.08 }}
-                className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight"
+                className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight"
               >
                 Other Repair Services Available
               </motion.h2>
@@ -608,7 +608,7 @@ export function ServiceDetailPageView({ slug }) {
                     whileInView="visible"
                     viewport={{ once: true }}
                     variants={fadeUp}
-                    className="group rounded-3xl border border-slate-200 bg-slate-50 p-8 space-y-5 hover:border-blue-300 hover:bg-white hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1 transition-all"
+                    className="group rounded-3xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 p-8 space-y-5 hover:border-blue-300 hover:bg-white hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1 transition-all"
                   >
                     {/* Icon */}
                     <div className="flex items-center justify-between">
@@ -623,10 +623,10 @@ export function ServiceDetailPageView({ slug }) {
 
                     {/* Content */}
                     <div className="space-y-2">
-                      <h3 className="text-xl font-extrabold text-slate-900 group-hover:text-blue-700 transition-colors">
+                      <h3 className="text-xl font-extrabold text-slate-900 dark:text-slate-100 group-hover:text-blue-700 transition-colors">
                         {item.title}
                       </h3>
-                      <p className="text-sm text-slate-500 leading-relaxed">{item.summary}</p>
+                      <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{item.summary}</p>
                     </div>
 
                     {/* CTA link */}

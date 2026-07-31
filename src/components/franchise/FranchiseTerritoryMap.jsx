@@ -75,7 +75,7 @@ export function FranchiseTerritoryMap() {
   const [selectedCity, setSelectedCity] = useState(cities[2]);
 
   return (
-    <section className="relative bg-white py-24 border-b border-slate-200 overflow-hidden">
+    <section className="relative bg-white dark:bg-slate-950 py-24 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
       
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16">
         
@@ -95,7 +95,7 @@ export function FranchiseTerritoryMap() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight"
+            className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight"
           >
             Find Open Territories & Reserve Your City Zone
           </motion.h2>
@@ -105,7 +105,7 @@ export function FranchiseTerritoryMap() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-slate-600 text-base sm:text-lg leading-relaxed font-medium"
+            className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed font-medium"
           >
             Territories are granted exclusively on a first-come, first-served basis. Click any city below to inspect live territory availability status.
           </motion.p>
@@ -136,14 +136,14 @@ export function FranchiseTerritoryMap() {
                     }`}
                   >
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-1.5 font-extrabold text-slate-900 text-sm">
-                        <MapPin size={16} className={active ? 'text-[#2563EB]' : 'text-slate-500'} />
+                      <div className="flex items-center gap-1.5 font-extrabold text-slate-900 dark:text-slate-100 text-sm">
+                        <MapPin size={16} className={active ? 'text-[#2563EB]' : 'text-slate-500 dark:text-slate-400'} />
                         <span className="truncate">{city.name}</span>
                       </div>
                     </div>
 
                     <div className="flex items-center justify-between text-[11px]">
-                      <span className="font-bold text-slate-500">{city.state}</span>
+                      <span className="font-bold text-slate-500 dark:text-slate-400">{city.state}</span>
                       <span className={`font-mono font-black px-2 py-0.5 rounded-full ${
                         city.status === 'AVAILABLE'
                           ? 'bg-emerald-100 text-emerald-800 border border-emerald-300'

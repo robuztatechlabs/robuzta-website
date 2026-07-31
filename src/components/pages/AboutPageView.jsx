@@ -9,10 +9,10 @@ export function AboutPageView() {
   return (
     <>
       <Header />
-      <main className="bg-white min-h-screen text-slate-900">
+      <main className="bg-white dark:bg-slate-950 min-h-screen text-slate-900 dark:text-slate-100">
         
         {/* About Hero */}
-        <section className="relative bg-gradient-to-b from-slate-50 via-blue-50/20 to-white py-20 sm:py-24 border-b border-slate-200 overflow-hidden">
+        <section className="relative bg-gradient-to-b from-slate-50 via-blue-50/20 to-white dark:from-slate-900 dark:via-slate-900 dark:to-slate-900 py-20 sm:py-24 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
           <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-teal-500/10 rounded-full blur-[140px]" />
 
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center space-y-6">
@@ -21,58 +21,58 @@ export function AboutPageView() {
               <span>THE ROBUZTA DIFFERENCE</span>
             </div>
 
-            <h1 className="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight leading-tight">
+            <h1 className="text-4xl sm:text-6xl font-black text-slate-900 dark:text-slate-100 tracking-tight leading-tight">
               Not Your Typical Local Repair Shop
             </h1>
 
-            <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto font-medium">
+            <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto font-medium">
               Robuzta Techlabs was founded to eliminate opacity in tech repairs. We operate a modern, high-precision repair lab where hardware diagnostics and repairs take place in plain sight.
             </p>
           </div>
         </section>
 
         {/* Core Values Section */}
-        <section className="py-20 border-b border-slate-200">
+        <section className="py-20 border-b border-slate-200 dark:border-slate-700">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16">
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               
-              <div className="rounded-3xl bg-slate-50/80 border border-slate-200 p-8 shadow-xl space-y-4 hover:border-[#0E7C7B]/40 hover:bg-white transition-all">
+              <div className="rounded-3xl bg-slate-50/80 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-8 shadow-xl space-y-4 hover:border-[#0E7C7B]/40 hover:bg-white dark:hover:bg-slate-800 transition-all">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0E7C7B] text-white shadow-md">
                   <Lock size={24} />
                 </div>
-                <h3 className="text-xl font-extrabold text-slate-900">Zero OTP & No Password Protocol</h3>
-                <p className="text-sm text-slate-600 font-medium leading-relaxed">
+                <h3 className="text-xl font-extrabold text-slate-900 dark:text-slate-100">Zero OTP & No Password Protocol</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
                   We test your hardware using specialized external diagnostic boot drives. We NEVER ask for your device screen password, iCloud/Google credentials, or phone OTPs.
                 </p>
               </div>
 
-              <div className="rounded-3xl bg-slate-50/80 border border-slate-200 p-8 shadow-xl space-y-4 hover:border-[#0E7C7B]/40 hover:bg-white transition-all">
+              <div className="rounded-3xl bg-slate-50/80 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-8 shadow-xl space-y-4 hover:border-[#0E7C7B]/40 hover:bg-white dark:hover:bg-slate-800 transition-all">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0E7C7B] text-white shadow-md">
                   <Eye size={24} />
                 </div>
-                <h3 className="text-xl font-extrabold text-slate-900">Live Workbench Repairs</h3>
-                <p className="text-sm text-slate-600 font-medium leading-relaxed">
+                <h3 className="text-xl font-extrabold text-slate-900 dark:text-slate-100">Live Workbench Repairs</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
                   Watch your laptop or mobile being diagnosed right in front of you. Complete transparency ensures total peace of mind for your valuable hardware.
                 </p>
               </div>
 
-              <div className="rounded-3xl bg-slate-50/80 border border-slate-200 p-8 shadow-xl space-y-4 hover:border-[#0E7C7B]/40 hover:bg-white transition-all">
+              <div className="rounded-3xl bg-slate-50/80 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-8 shadow-xl space-y-4 hover:border-[#0E7C7B]/40 hover:bg-white dark:hover:bg-slate-800 transition-all">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0E7C7B] text-white shadow-md">
                   <Cpu size={24} />
                 </div>
-                <h3 className="text-xl font-extrabold text-slate-900">Chip-Level Micro-Soldering</h3>
-                <p className="text-sm text-slate-600 font-medium leading-relaxed">
+                <h3 className="text-xl font-extrabold text-slate-900 dark:text-slate-100">Chip-Level Micro-Soldering</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
                   Our senior technicians operate stereoscopic microscopes and BGA rework stations to fix motherboards, logic boards, and power ICs down to component level.
                 </p>
               </div>
 
-              <div className="rounded-3xl bg-slate-50/80 border border-slate-200 p-8 shadow-xl space-y-4 hover:border-[#0E7C7B]/40 hover:bg-white transition-all">
+              <div className="rounded-3xl bg-slate-50/80 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-8 shadow-xl space-y-4 hover:border-[#0E7C7B]/40 hover:bg-white dark:hover:bg-slate-800 transition-all">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0E7C7B] text-white shadow-md">
                   <Award size={24} />
                 </div>
-                <h3 className="text-xl font-extrabold text-slate-900">Serial-Number Verified Parts</h3>
-                <p className="text-sm text-slate-600 font-medium leading-relaxed">
+                <h3 className="text-xl font-extrabold text-slate-900 dark:text-slate-100">Serial-Number Verified Parts</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
                   Every replacement display, battery, keyboard, or SSD comes with serial number logging and old part return policy to guarantee genuine quality.
                 </p>
               </div>

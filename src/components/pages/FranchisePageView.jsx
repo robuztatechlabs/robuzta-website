@@ -16,7 +16,7 @@ export function FranchisePageView() {
   return (
     <>
       <Header />
-      <main className="bg-white">
+      <main className="bg-white dark:bg-slate-950">
         {/* Section 1: Enterprise Hero Section */}
         <FranchiseHero />
 

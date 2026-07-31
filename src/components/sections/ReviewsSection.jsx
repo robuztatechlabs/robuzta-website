@@ -26,7 +26,7 @@ export function ReviewsSection() {
   const duplicatedReviews = [...reviews, ...reviews];
 
   return (
-    <section id="reviews" className="relative bg-gradient-to-b from-slate-50 via-teal-50/20 to-slate-50 py-24 border-b border-slate-200 overflow-hidden">
+    <section id="reviews" className="relative bg-gradient-to-b from-slate-50 via-teal-50/20 to-slate-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-900 py-24 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
       
       {/* Background Lighting Accents */}
       <div className="pointer-events-none absolute top-10 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-r from-teal-400/10 via-blue-400/10 to-amber-400/10 rounded-full blur-[140px]" />
@@ -34,7 +34,7 @@ export function ReviewsSection() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Top Google Maps Trust Header Card */}
-        <div className="rounded-3xl bg-white border border-slate-200/90 p-6 sm:p-10 shadow-xl shadow-slate-200/60 relative overflow-hidden">
+        <div className="rounded-3xl bg-white dark:bg-slate-950 border border-slate-200/90 p-6 sm:p-10 shadow-xl shadow-slate-200/60 relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Rating Summary */}
@@ -46,7 +46,7 @@ export function ReviewsSection() {
               </div>
 
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
-                <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
+                <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-slate-100 tracking-tight">
                   {googleStats.rating}
                 </h2>
                 <div className="space-y-1">
@@ -55,13 +55,13 @@ export function ReviewsSection() {
                       <Star key={i} size={22} className="fill-amber-400 text-amber-400" />
                     ))}
                   </div>
-                  <p className="text-xs sm:text-sm font-bold text-slate-600">
-                    Based on <strong className="text-slate-900">{googleStats.totalReviews}</strong> 5-Star verified Google reviews in Ahmedabad
+                  <p className="text-xs sm:text-sm font-bold text-slate-600 dark:text-slate-400">
+                    Based on <strong className="text-slate-900 dark:text-slate-100">{googleStats.totalReviews}</strong> 5-Star verified Google reviews in Ahmedabad
                   </p>
                 </div>
               </div>
 
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl">
+              <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed max-w-2xl">
                 Read real feedback from Mac, Laptop, and Smartphone owners across Ahmedabad who experienced our diagnosis-first workbench transparency and zero OTP data safety.
               </p>
             </div>
@@ -83,7 +83,7 @@ export function ReviewsSection() {
                 href={googleStats.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-white border border-slate-300 px-6 py-3 text-sm font-bold text-slate-700 shadow-sm hover:border-emerald-500 hover:text-emerald-700 hover:bg-emerald-50/50 transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-300 shadow-sm hover:border-emerald-500 hover:text-emerald-700 hover:bg-emerald-50/50 transition-all"
               >
                 <MessageSquarePlus size={18} className="text-emerald-600" />
                 <span>Write a Google Review</span>
@@ -99,7 +99,7 @@ export function ReviewsSection() {
           {/* Header Controls Bar (Clean Title & Nav Arrows) */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <span className="text-xs font-extrabold uppercase tracking-widest text-slate-500 flex items-center gap-1.5">
+              <span className="text-xs font-extrabold uppercase tracking-widest text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
                 <Sparkles size={14} className="text-amber-500" /> RECENT 5-STAR GOOGLE REVIEWS
               </span>
             </div>
@@ -108,7 +108,7 @@ export function ReviewsSection() {
             <div className="flex items-center gap-2">
               <button
                 onClick={scrollLeft}
-                className="w-11 h-11 rounded-2xl bg-white border border-slate-200 text-slate-700 flex items-center justify-center shadow-md hover:bg-teal-600 hover:text-white hover:border-teal-600 transition-all cursor-pointer"
+                className="w-11 h-11 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 flex items-center justify-center shadow-md hover:bg-teal-600 hover:text-white hover:border-teal-600 transition-all cursor-pointer"
                 aria-label="Scroll Reviews Left"
               >
                 <ChevronLeft size={20} />
@@ -116,7 +116,7 @@ export function ReviewsSection() {
 
               <button
                 onClick={scrollRight}
-                className="w-11 h-11 rounded-2xl bg-white border border-slate-200 text-slate-700 flex items-center justify-center shadow-md hover:bg-teal-600 hover:text-white hover:border-teal-600 transition-all cursor-pointer"
+                className="w-11 h-11 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 flex items-center justify-center shadow-md hover:bg-teal-600 hover:text-white hover:border-teal-600 transition-all cursor-pointer"
                 aria-label="Scroll Reviews Right"
               >
                 <ChevronRight size={20} />
@@ -151,23 +151,23 @@ export function ReviewsSection() {
         </div>
 
         {/* Bottom Trust Feature Badges */}
-        <div className="pt-4 border-t border-slate-200/80 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-          <div className="p-4 rounded-2xl bg-white/80 border border-slate-200/60 shadow-2xs flex items-center justify-center gap-2 text-xs font-extrabold text-slate-800">
+        <div className="pt-4 border-t border-slate-200/80 dark:border-slate-800 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+          <div className="p-4 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/60 shadow-2xs flex items-center justify-center gap-2 text-xs font-extrabold text-slate-800 dark:text-slate-200">
             <ShieldCheck size={16} className="text-teal-600 shrink-0" />
             <span>Zero-OTP Data Protection</span>
           </div>
 
-          <div className="p-4 rounded-2xl bg-white/80 border border-slate-200/60 shadow-2xs flex items-center justify-center gap-2 text-xs font-extrabold text-slate-800">
+          <div className="p-4 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/60 shadow-2xs flex items-center justify-center gap-2 text-xs font-extrabold text-slate-800 dark:text-slate-200">
             <CheckCircle2 size={16} className="text-emerald-600 shrink-0" />
             <span>Serial-Verified Genuine Parts</span>
           </div>
 
-          <div className="p-4 rounded-2xl bg-white/80 border border-slate-200/60 shadow-2xs flex items-center justify-center gap-2 text-xs font-extrabold text-slate-800">
+          <div className="p-4 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/60 shadow-2xs flex items-center justify-center gap-2 text-xs font-extrabold text-slate-800 dark:text-slate-200">
             <GoogleIcon size={16} className="shrink-0" />
             <span>100% Verified Google Reviews</span>
           </div>
 
-          <div className="p-4 rounded-2xl bg-white/80 border border-slate-200/60 shadow-2xs flex items-center justify-center gap-2 text-xs font-extrabold text-slate-800">
+          <div className="p-4 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/60 shadow-2xs flex items-center justify-center gap-2 text-xs font-extrabold text-slate-800 dark:text-slate-200">
             <ShieldCheck size={16} className="text-amber-500 shrink-0" />
             <span>180-Day Written Warranty</span>
           </div>

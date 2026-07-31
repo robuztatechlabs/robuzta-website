@@ -147,7 +147,7 @@ export function ServicesSection() {
   const whatsappUrl = `${siteConfig.whatsappHref}?text=${encodeURIComponent(whatsappMsg)}`;
 
   return (
-    <section id="services" className="relative bg-white py-24 border-b border-slate-200 overflow-hidden">
+    <section id="services" className="relative bg-white dark:bg-slate-950 py-24 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
       
       {/* Background Radial Glows */}
       <div className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-r from-[#0E7C7B]/5 via-blue-500/5 to-orange-500/5 rounded-full blur-[140px]" />
@@ -171,7 +171,7 @@ export function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight"
+            className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight"
           >
             Specialized Diagnostics & Precision Repairs
           </motion.h2>
@@ -181,7 +181,7 @@ export function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-slate-600 text-base sm:text-lg leading-relaxed font-medium"
+            className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed font-medium"
           >
             Click any device division below to inspect lab capabilities, turnaround times, and verified specifications.
           </motion.p>
@@ -200,7 +200,7 @@ export function ServicesSection() {
                 className={`relative flex items-center gap-2 px-4 py-3 rounded-2xl text-xs font-extrabold transition-all shrink-0 border ${
                   isActive
                     ? 'bg-[#0E7C7B] text-white border-[#0E7C7B] shadow-lg shadow-[#0E7C7B]/25 scale-[1.02]'
-                    : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100 hover:text-slate-900'
+                    : 'bg-slate-50 dark:bg-slate-900 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:bg-slate-100 hover:text-slate-900'
                 }`}
               >
                 <Icon size={16} className={isActive ? 'text-white' : 'text-[#0E7C7B]'} />
@@ -225,7 +225,7 @@ export function ServicesSection() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.98 }}
             transition={{ duration: 0.3 }}
-            className="rounded-3xl bg-gradient-to-br from-slate-50 via-white to-teal-50/20 border border-slate-200 p-6 sm:p-10 shadow-2xl space-y-8"
+            className="rounded-3xl bg-gradient-to-br from-slate-50 via-white to-teal-50/20 dark:from-slate-800 dark:via-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-700 p-6 sm:p-10 shadow-2xl space-y-8"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               
@@ -236,17 +236,17 @@ export function ServicesSection() {
                   <span className="text-xs font-mono font-black text-[#0E7C7B] bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-3 py-1 rounded-full">
                     {activeTab.badge}
                   </span>
-                  <span className="text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full flex items-center gap-1.5">
+                  <span className="text-xs font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-200 dark:border-emerald-800 px-3 py-1 rounded-full flex items-center gap-1.5">
                     <Activity size={13} className="text-[#0E7C7B] animate-pulse" />
                     ESD Anti-Static Bench Active
                   </span>
                 </div>
 
                 <div className="space-y-3">
-                  <h3 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                  <h3 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
                     {activeTab.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-medium">
+                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
                     {activeTab.description}
                   </p>
                 </div>
@@ -258,7 +258,7 @@ export function ServicesSection() {
                   </span>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                     {activeTab.highlights.map((item) => (
-                      <div key={item} className="flex items-center gap-2 text-xs font-bold text-slate-800 bg-white border border-slate-200/80 p-3 rounded-xl shadow-sm">
+                      <div key={item} className="flex items-center gap-2 text-xs font-bold text-slate-800 dark:text-slate-200 bg-white dark:bg-slate-950 border border-slate-200/80 dark:border-slate-700 p-3 rounded-xl shadow-sm">
                         <CheckCircle2 size={16} className="text-[#0E7C7B] shrink-0" />
                         <span>{item}</span>
                       </div>
@@ -267,15 +267,15 @@ export function ServicesSection() {
                 </div>
 
                 {/* Metrics Badges */}
-                <div className="flex flex-wrap items-center gap-3 pt-2 border-t border-slate-200 text-xs font-extrabold text-slate-700">
-                  <span className="flex items-center gap-1.5 bg-slate-100 border border-slate-200 px-3 py-1.5 rounded-lg">
+                <div className="flex flex-wrap items-center gap-3 pt-2 border-t border-slate-200 dark:border-slate-700 text-xs font-extrabold text-slate-700 dark:text-slate-300">
+                  <span className="flex items-center gap-1.5 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3 py-1.5 rounded-lg">
                     <Clock size={15} className="text-[#0E7C7B]" /> {activeTab.time}
                   </span>
-                  <span className="flex items-center gap-1.5 bg-emerald-50 text-emerald-800 border border-emerald-200 px-3 py-1.5 rounded-lg">
-                    <ShieldCheck size={15} className="text-emerald-700" /> {activeTab.warranty}
+                  <span className="flex items-center gap-1.5 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800 px-3 py-1.5 rounded-lg">
+                    <ShieldCheck size={15} className="text-emerald-700 dark:text-emerald-500" /> {activeTab.warranty}
                   </span>
-                  <span className="flex items-center gap-1.5 bg-amber-50 text-amber-800 border border-amber-200 px-3 py-1.5 rounded-lg">
-                    <Zap size={15} className="text-amber-600" /> Zero-OTP Protected
+                  <span className="flex items-center gap-1.5 bg-amber-50 dark:bg-amber-900/30 text-amber-800 dark:text-amber-400 border border-amber-200 dark:border-amber-800 px-3 py-1.5 rounded-lg">
+                    <Zap size={15} className="text-amber-600 dark:text-amber-500" /> Zero-OTP Protected
                   </span>
                 </div>
 
@@ -293,11 +293,10 @@ export function ServicesSection() {
 
                   <a
                     href={siteConfig.phoneHref}
-                    className="flex items-center justify-center gap-2 w-full sm:w-auto rounded-2xl px-6 py-4 text-xs font-black shadow-md hover:bg-slate-200 transition-all"
-                    style={{ backgroundColor: '#f1f5f9', color: '#0f172a' }}
+                    className="flex items-center justify-center gap-2 w-full sm:w-auto rounded-2xl px-6 py-4 text-xs font-black shadow-md bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all"
                   >
-                    <Phone size={16} style={{ color: '#0E7C7B' }} />
-                    <span style={{ color: '#0f172a', fontWeight: 900 }}>Call Senior Tech Directly</span>
+                    <Phone size={16} className="text-[#0E7C7B]" />
+                    <span>Call Senior Tech Directly</span>
                   </a>
                 </div>
 

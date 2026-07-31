@@ -39,7 +39,7 @@ export function FranchiseFaq() {
   };
 
   return (
-    <section className="relative bg-slate-50 py-24 border-b border-slate-200 overflow-hidden">
+    <section className="relative bg-slate-50 dark:bg-slate-900 py-24 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
       
       <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-12">
         
@@ -49,11 +49,11 @@ export function FranchiseFaq() {
             FREQUENTLY ASKED QUESTIONS
           </span>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
             Franchise Partnership FAQs
           </h2>
 
-          <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-medium">
+          <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed font-medium">
             Find answers to common questions about capital requirements, territory rights, training, and operational support.
           </p>
         </div>
@@ -67,8 +67,8 @@ export function FranchiseFaq() {
                 key={faq.question}
                 className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                   isOpen
-                    ? 'bg-white border-[#2563EB]/40 shadow-xl'
-                    : 'bg-white/80 border-slate-200 hover:border-slate-300'
+                    ? 'bg-white dark:bg-slate-950 border-[#2563EB]/40 shadow-xl'
+                    : 'bg-white/80 border-slate-200 dark:border-slate-700 hover:border-slate-300'
                 }`}
               >
                 <button
@@ -76,11 +76,11 @@ export function FranchiseFaq() {
                   onClick={() => toggleAccordion(idx)}
                   className="w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer"
                 >
-                  <span className="text-base sm:text-lg font-extrabold text-slate-900">
+                  <span className="text-base sm:text-lg font-extrabold text-slate-900 dark:text-slate-100">
                     {faq.question}
                   </span>
                   <span className={`flex h-8 w-8 items-center justify-center rounded-xl transition-all ${
-                    isOpen ? 'bg-[#2563EB] text-white' : 'bg-slate-100 text-slate-600'
+                    isOpen ? 'bg-[#2563EB] text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
                   }`}>
                     {isOpen ? <Minus size={16} /> : <Plus size={16} />}
                   </span>
@@ -93,9 +93,9 @@ export function FranchiseFaq() {
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="px-6 pb-6 pt-0 border-t border-slate-100"
+                      className="px-6 pb-6 pt-0 border-t border-slate-100 dark:border-slate-800"
                     >
-                      <p className="text-sm text-slate-600 leading-relaxed font-medium pt-3">
+                      <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-medium pt-3">
                         {faq.answer}
                       </p>
                     </motion.div>

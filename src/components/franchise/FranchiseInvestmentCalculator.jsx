@@ -47,7 +47,7 @@ export function FranchiseInvestmentCalculator() {
   const [selectedModel, setSelectedModel] = useState(models[0]);
 
   return (
-    <section id="franchise-calculator" className="relative bg-gradient-to-b from-slate-50 via-[#F8FAFC] to-white py-24 border-b border-slate-200 overflow-hidden">
+    <section id="franchise-calculator" className="relative bg-gradient-to-b from-slate-50 via-[#F8FAFC] to-white py-24 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
       
       {/* Background Lighting */}
       <div className="pointer-events-none absolute top-1/2 left-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[140px]" />
@@ -70,7 +70,7 @@ export function FranchiseInvestmentCalculator() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight"
+            className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight"
           >
             Investment, Unit Economics & ROI
           </motion.h2>
@@ -80,7 +80,7 @@ export function FranchiseInvestmentCalculator() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-slate-600 text-base sm:text-lg leading-relaxed font-medium"
+            className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed font-medium"
           >
             Compare our store models below to inspect estimated monthly revenue, gross margins, and break-even timelines.
           </motion.p>
@@ -96,7 +96,7 @@ export function FranchiseInvestmentCalculator() {
               className={`px-6 py-3.5 rounded-2xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer border ${
                 selectedModel.id === m.id
                   ? 'bg-[#2563EB] text-white border-[#2563EB] shadow-xl shadow-blue-500/25 scale-[1.02]'
-                  : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
+                  : 'bg-white dark:bg-slate-950 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700 hover:bg-slate-50'
               }`}
             >
               {m.name}
@@ -105,7 +105,7 @@ export function FranchiseInvestmentCalculator() {
         </div>
 
         {/* Dynamic Financial Overview Box */}
-        <div className="rounded-3xl bg-white border border-slate-200/90 p-8 sm:p-12 shadow-2xl space-y-8">
+        <div className="rounded-3xl bg-white dark:bg-slate-950 border border-slate-200/90 p-8 sm:p-12 shadow-2xl space-y-8">
           
           {/* Top Metrics Cards */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -113,20 +113,20 @@ export function FranchiseInvestmentCalculator() {
               <span className="text-[11px] font-extrabold text-blue-700 uppercase tracking-wider block">
                 Initial Investment
               </span>
-              <div className="text-2xl sm:text-4xl font-black text-slate-900">
+              <div className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-slate-100">
                 {selectedModel.investment}
               </div>
-              <div className="text-[11px] text-slate-500 font-medium">{selectedModel.footprint}</div>
+              <div className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">{selectedModel.footprint}</div>
             </div>
 
             <div className="p-5 rounded-2xl bg-emerald-50/60 border border-emerald-200/70 space-y-1">
               <span className="text-[11px] font-extrabold text-emerald-700 uppercase tracking-wider block">
                 Est. Monthly Revenue
               </span>
-              <div className="text-2xl sm:text-4xl font-black text-slate-900">
+              <div className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-slate-100">
                 {selectedModel.estRevenue}
               </div>
-              <div className="text-[11px] text-slate-500 font-medium">Based on 25+ daily repairs</div>
+              <div className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">Based on 25+ daily repairs</div>
             </div>
 
             <div className="p-5 rounded-2xl bg-amber-50/60 border border-amber-200/70 space-y-1">
@@ -136,28 +136,28 @@ export function FranchiseInvestmentCalculator() {
               <div className="text-2xl sm:text-4xl font-black text-[#EA580C]">
                 {selectedModel.estProfit}
               </div>
-              <div className="text-[11px] text-slate-500 font-medium">{selectedModel.profitMargin} Net Margin</div>
+              <div className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">{selectedModel.profitMargin} Net Margin</div>
             </div>
 
             <div className="p-5 rounded-2xl bg-purple-50/60 border border-purple-200/70 space-y-1">
               <span className="text-[11px] font-extrabold text-purple-700 uppercase tracking-wider block">
                 Target Payback Period
               </span>
-              <div className="text-2xl sm:text-4xl font-black text-slate-900">
+              <div className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-slate-100">
                 {selectedModel.payback}
               </div>
-              <div className="text-[11px] text-slate-500 font-medium">100% Capital Recovery</div>
+              <div className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">100% Capital Recovery</div>
             </div>
           </div>
 
           {/* Deliverables Checklist */}
-          <div className="space-y-4 pt-4 border-t border-slate-200">
-            <h4 className="text-lg font-extrabold text-slate-900">
+          <div className="space-y-4 pt-4 border-t border-slate-200 dark:border-slate-700">
+            <h4 className="text-lg font-extrabold text-slate-900 dark:text-slate-100">
               Deliverables Included in {selectedModel.name}:
             </h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {selectedModel.includes.map((item) => (
-                <div key={item} className="flex items-center gap-2.5 p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs font-extrabold text-slate-800">
+                <div key={item} className="flex items-center gap-2.5 p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 text-xs font-extrabold text-slate-800 dark:text-slate-200">
                   <CheckCircle2 size={16} className="text-[#2563EB] shrink-0" />
                   <span>{item}</span>
                 </div>

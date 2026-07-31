@@ -34,13 +34,13 @@ export function QuoteForm({ title = 'Get a Free Fast Repair Quote', defaultDevic
   };
 
   return (
-    <div className="rounded-3xl bg-white border border-slate-200/90 p-6 sm:p-8 shadow-2xl shadow-slate-900/10 space-y-6">
+    <div className="rounded-3xl bg-white dark:bg-slate-950 border border-slate-200/90 p-6 sm:p-8 shadow-2xl shadow-slate-900/10 space-y-6">
       
-      <div className="space-y-1.5 border-b border-slate-100 pb-4">
-        <h3 className="text-xl sm:text-2xl font-black text-slate-900 leading-tight">
+      <div className="space-y-1.5 border-b border-slate-100 dark:border-slate-800 pb-4">
+        <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-slate-100 leading-tight">
           {title}
         </h3>
-        <p className="text-xs text-slate-500 font-medium">
+        <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
           Get an immediate diagnostic estimate. No OTP or passwords required.
         </p>
       </div>
@@ -49,7 +49,7 @@ export function QuoteForm({ title = 'Get a Free Fast Repair Quote', defaultDevic
         <div className="rounded-2xl bg-emerald-50 border border-emerald-200 p-6 text-center space-y-4">
           <CheckCircle2 size={40} className="text-emerald-600 mx-auto" />
           <div className="space-y-1">
-            <h4 className="text-lg font-black text-slate-900">Quote Request Sent!</h4>
+            <h4 className="text-lg font-black text-slate-900 dark:text-slate-100">Quote Request Sent!</h4>
             <p className="text-xs text-emerald-800 font-medium">
               Opening WhatsApp to connect you directly with a Robuzta Senior Technician...
             </p>
@@ -66,7 +66,7 @@ export function QuoteForm({ title = 'Get a Free Fast Repair Quote', defaultDevic
         <form onSubmit={handleSubmit} className="space-y-4">
           
           <div className="space-y-1">
-            <label className="text-xs font-extrabold text-slate-500 uppercase tracking-wider block">
+            <label className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">
               Your Full Name *
             </label>
             <input
@@ -76,12 +76,12 @@ export function QuoteForm({ title = 'Get a Free Fast Repair Quote', defaultDevic
               placeholder="e.g. Rahul Sharma"
               value={formData.name}
               onChange={handleChange}
-              className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-xs text-slate-900 font-medium placeholder-slate-400 focus:border-[#0E7C7B] focus:bg-white focus:outline-none"
+              className="w-full rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-4 py-3 text-xs text-slate-900 dark:text-slate-100 font-medium placeholder-slate-400 focus:border-[#0E7C7B] focus:bg-white focus:outline-none"
             />
           </div>
 
           <div className="space-y-1">
-            <label className="text-xs font-extrabold text-slate-500 uppercase tracking-wider block">
+            <label className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">
               Phone / WhatsApp Number *
             </label>
             <input
@@ -91,19 +91,19 @@ export function QuoteForm({ title = 'Get a Free Fast Repair Quote', defaultDevic
               placeholder="e.g. +91 98765 43210"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-xs text-slate-900 font-medium placeholder-slate-400 focus:border-[#0E7C7B] focus:bg-white focus:outline-none"
+              className="w-full rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-4 py-3 text-xs text-slate-900 dark:text-slate-100 font-medium placeholder-slate-400 focus:border-[#0E7C7B] focus:bg-white focus:outline-none"
             />
           </div>
 
           <div className="space-y-1">
-            <label className="text-xs font-extrabold text-slate-500 uppercase tracking-wider block">
+            <label className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">
               Device Type *
             </label>
             <select
               name="device"
               value={formData.device}
               onChange={handleChange}
-              className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-xs text-slate-900 font-medium focus:border-[#0E7C7B] focus:bg-white focus:outline-none"
+              className="w-full rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-4 py-3 text-xs text-slate-900 dark:text-slate-100 font-medium focus:border-[#0E7C7B] focus:bg-white focus:outline-none"
             >
               <option value="Laptop">Laptop (Dell, HP, Lenovo, ASUS, Acer)</option>
               <option value="MacBook">MacBook (Pro, Air, M1/M2/M3)</option>
@@ -116,14 +116,14 @@ export function QuoteForm({ title = 'Get a Free Fast Repair Quote', defaultDevic
           </div>
 
           <div className="space-y-1">
-            <label className="text-xs font-extrabold text-slate-500 uppercase tracking-wider block">
+            <label className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">
               Service Preference
             </label>
             <select
               name="serviceType"
               value={formData.serviceType}
               onChange={handleChange}
-              className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-xs text-slate-900 font-medium focus:border-[#0E7C7B] focus:bg-white focus:outline-none"
+              className="w-full rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-4 py-3 text-xs text-slate-900 dark:text-slate-100 font-medium focus:border-[#0E7C7B] focus:bg-white focus:outline-none"
             >
               <option value="Doorstep Pickup">Free Doorstep Pickup (Ahmedabad)</option>
               <option value="Lab Visit">Lab Carry-In Visit (South Bopal / Tragad)</option>
@@ -132,7 +132,7 @@ export function QuoteForm({ title = 'Get a Free Fast Repair Quote', defaultDevic
           </div>
 
           <div className="space-y-1">
-            <label className="text-xs font-extrabold text-slate-500 uppercase tracking-wider block">
+            <label className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider block">
               Describe the Problem *
             </label>
             <textarea
@@ -142,7 +142,7 @@ export function QuoteForm({ title = 'Get a Free Fast Repair Quote', defaultDevic
               placeholder="e.g. Broken screen, water spill, laptop not turning on, battery swelling..."
               value={formData.issue}
               onChange={handleChange}
-              className="w-full rounded-xl bg-slate-50 border border-slate-200 px-4 py-3 text-xs text-slate-900 font-medium placeholder-slate-400 focus:border-[#0E7C7B] focus:bg-white focus:outline-none"
+              className="w-full rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-4 py-3 text-xs text-slate-900 dark:text-slate-100 font-medium placeholder-slate-400 focus:border-[#0E7C7B] focus:bg-white focus:outline-none"
             />
           </div>
 

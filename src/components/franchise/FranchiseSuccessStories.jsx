@@ -24,7 +24,7 @@ const partnerStories = [
 
 export function FranchiseSuccessStories() {
   return (
-    <section className="relative bg-slate-50 py-24 border-b border-slate-200 overflow-hidden">
+    <section className="relative bg-slate-50 dark:bg-slate-900 py-24 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
       
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16">
         
@@ -44,7 +44,7 @@ export function FranchiseSuccessStories() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight"
+            className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight"
           >
             Hear From Our Franchise Lab Partners
           </motion.h2>
@@ -54,7 +54,7 @@ export function FranchiseSuccessStories() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-slate-600 text-base sm:text-lg leading-relaxed font-medium"
+            className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed font-medium"
           >
             Read real operational growth stories from franchise operators who scaled their precision tech repair enterprise with Robuzta Techlabs.
           </motion.p>
@@ -69,7 +69,7 @@ export function FranchiseSuccessStories() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="rounded-3xl bg-white border border-slate-200/90 p-8 sm:p-10 shadow-xl space-y-6 flex flex-col justify-between hover:border-blue-300 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
+              className="rounded-3xl bg-white dark:bg-slate-950 border border-slate-200/90 p-8 sm:p-10 shadow-xl space-y-6 flex flex-col justify-between hover:border-blue-300 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
             >
               <Quote className="absolute top-6 right-6 text-slate-100" size={60} />
 
@@ -80,19 +80,19 @@ export function FranchiseSuccessStories() {
                   ))}
                 </div>
 
-                <p className="text-base sm:text-lg text-slate-800 leading-relaxed font-semibold italic">
-                  "{story.quote}"
+                <p className="text-base sm:text-lg text-slate-800 dark:text-slate-200 leading-relaxed font-semibold italic">
+                  &ldquo;{story.quote}&rdquo;
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-slate-100 space-y-3 relative z-10">
+              <div className="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-3 relative z-10">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h3 className="text-lg font-black text-slate-900 flex items-center gap-1.5">
+                    <h3 className="text-lg font-black text-slate-900 dark:text-slate-100 flex items-center gap-1.5">
                       {story.name}
                       <CheckCircle2 size={16} className="text-[#2563EB]" />
                     </h3>
-                    <p className="text-xs text-slate-500 font-bold">{story.location}</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 font-bold">{story.location}</p>
                   </div>
                 </div>
 

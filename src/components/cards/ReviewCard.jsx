@@ -13,7 +13,7 @@ export function ReviewCard({ review }) {
   const bgGradient = review.avatarBg || 'from-teal-600 to-emerald-700';
 
   return (
-    <article className="h-full flex flex-col justify-between rounded-3xl bg-white border border-slate-200/80 p-6 sm:p-8 shadow-lg shadow-slate-200/50 hover:shadow-2xl hover:shadow-teal-500/10 hover:border-teal-300 transition-all duration-300 relative group overflow-hidden">
+    <article className="h-full flex flex-col justify-between rounded-3xl bg-white dark:bg-slate-950 border border-slate-200/80 p-6 sm:p-8 shadow-lg shadow-slate-200/50 hover:shadow-2xl hover:shadow-teal-500/10 hover:border-teal-300 transition-all duration-300 relative group overflow-hidden">
       
       {/* Top Gradient Highlight Accent */}
       <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-teal-500 via-blue-500 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -30,7 +30,7 @@ export function ReviewCard({ review }) {
 
             <div>
               <div className="flex items-center gap-1.5">
-                <h3 className="font-extrabold text-slate-900 text-base group-hover:text-teal-700 transition-colors">
+                <h3 className="font-extrabold text-slate-900 dark:text-slate-100 text-base group-hover:text-teal-700 transition-colors">
                   {review.name}
                 </h3>
                 <span title="Verified Customer" className="text-emerald-500">
@@ -39,7 +39,7 @@ export function ReviewCard({ review }) {
               </div>
               
               {review.location && (
-                <div className="flex items-center gap-1 text-xs text-slate-500 font-medium">
+                <div className="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400 font-medium">
                   <MapPin size={12} className="text-slate-400 shrink-0" />
                   <span>{review.location}</span>
                 </div>
@@ -48,9 +48,9 @@ export function ReviewCard({ review }) {
           </div>
 
           {/* Google Icon Badge */}
-          <div className="flex items-center gap-1.5 bg-slate-50 border border-slate-200 px-2.5 py-1 rounded-full shrink-0 shadow-xs">
+          <div className="flex items-center gap-1.5 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-2.5 py-1 rounded-full shrink-0 shadow-xs">
             <GoogleIcon size={16} />
-            <span className="text-[11px] font-bold text-slate-700 font-mono">Google</span>
+            <span className="text-[11px] font-bold text-slate-700 dark:text-slate-300 font-mono">Google</span>
           </div>
         </div>
 
@@ -70,15 +70,15 @@ export function ReviewCard({ review }) {
         </div>
 
         {/* Review Body */}
-        <p className="text-slate-700 text-sm sm:text-base leading-relaxed italic font-normal pt-1">
+        <p className="text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed italic font-normal pt-1">
           &ldquo;{review.quote}&rdquo;
         </p>
       </div>
 
       {/* Footer / Device Tag */}
       {review.device && (
-        <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-          <div className="inline-flex items-center gap-1.5 bg-teal-50 border border-teal-200/60 px-3 py-1.2 rounded-xl text-xs font-extrabold text-teal-800">
+        <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+          <div className="inline-flex items-center gap-1.5 bg-teal-50 dark:bg-teal-900/30 border border-teal-200/60 dark:border-teal-800 px-3 py-1.2 rounded-xl text-xs font-extrabold text-teal-800 dark:text-teal-400">
             <ShieldCheck size={14} className="text-teal-600 shrink-0" />
             <span>Repaired: {review.device}</span>
           </div>

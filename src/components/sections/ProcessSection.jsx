@@ -8,7 +8,7 @@ const processIcons = [Search, FileText, Wrench, ShieldCheck, CheckCircle2, Packa
 
 export function ProcessSection() {
   return (
-    <section id="process" className="relative bg-slate-50 py-24 border-b border-slate-200 overflow-hidden">
+    <section id="process" className="relative bg-slate-50 dark:bg-slate-900 py-24 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
       
       {/* Background Radial Glow */}
       <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#0E7C7B]/5 rounded-full blur-[140px]" />
@@ -31,7 +31,7 @@ export function ProcessSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight"
+            className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight"
           >
             Engineered for Complete Customer Confidence
           </motion.h2>
@@ -41,7 +41,7 @@ export function ProcessSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-slate-600 text-base sm:text-lg leading-relaxed font-medium"
+            className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed font-medium"
           >
             No hidden charges, zero unapproved part replacements, and strict Zero-OTP privacy. You remain in control at every stage.
           </motion.p>
@@ -58,10 +58,10 @@ export function ProcessSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="group relative rounded-3xl bg-white border border-slate-200 p-8 flex flex-col justify-between hover:border-[#0E7C7B]/40 hover:shadow-2xl hover:shadow-[#0E7C7B]/10 hover:-translate-y-1.5 transition-all duration-300 space-y-6"
+                className="group relative rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700 p-8 flex flex-col justify-between hover:border-[#0E7C7B]/40 hover:shadow-2xl hover:shadow-[#0E7C7B]/10 hover:-translate-y-1.5 transition-all duration-300 space-y-6"
               >
                 <div className="space-y-5">
-                  <div className="flex items-center justify-between border-b border-slate-100 pb-4">
+                  <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-4">
                     <span className="font-mono text-3xl font-black text-[#0E7C7B] group-hover:scale-110 transition-transform">
                       0{index + 1}
                     </span>
@@ -71,16 +71,16 @@ export function ProcessSection() {
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-xl font-extrabold text-slate-900 group-hover:text-[#0E7C7B] transition-colors">
+                    <h3 className="text-xl font-extrabold text-slate-900 dark:text-slate-100 group-hover:text-[#0E7C7B] transition-colors">
                       {step.title}
                     </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed font-medium">
+                    <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
                       {step.text}
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-3 flex items-center justify-between border-t border-slate-100 text-[11px] font-extrabold text-emerald-700">
+                <div className="pt-3 flex items-center justify-between border-t border-slate-100 dark:border-slate-800 text-[11px] font-extrabold text-emerald-700">
                   <span className="flex items-center gap-1.5">
                     <CheckCircle2 size={14} className="text-[#0E7C7B]" /> Step 0{index + 1} Verified
                   </span>

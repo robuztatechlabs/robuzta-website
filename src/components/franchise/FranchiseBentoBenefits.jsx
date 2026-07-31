@@ -16,7 +16,7 @@ import {
 
 export function FranchiseBentoBenefits() {
   return (
-    <section className="relative bg-gradient-to-b from-slate-50 via-blue-50/20 to-slate-50 py-24 border-b border-slate-200 overflow-hidden">
+    <section className="relative bg-gradient-to-b from-slate-50 via-blue-50/20 to-slate-50 py-24 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
       
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16">
         
@@ -36,7 +36,7 @@ export function FranchiseBentoBenefits() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight"
+            className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight"
           >
             The 8 Pillars of Robuzta Partner Success
           </motion.h2>
@@ -46,7 +46,7 @@ export function FranchiseBentoBenefits() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-slate-600 text-base sm:text-lg leading-relaxed font-medium"
+            className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed font-medium"
           >
             Everything required to launch, manage, and scale a high-volume precision repair lab is provided directly by our central operations team.
           </motion.p>
@@ -73,24 +73,24 @@ export function FranchiseBentoBenefits() {
             </div>
 
             <div className="space-y-3">
-              <h3 className="text-2xl font-extrabold text-slate-900 group-hover:text-[#2563EB] transition-colors">
+              <h3 className="text-2xl font-extrabold text-slate-900 dark:text-slate-100 group-hover:text-[#2563EB] transition-colors">
                 Complete Brand Support & Store Interior SOP
               </h3>
-              <p className="text-sm text-slate-600 leading-relaxed max-w-xl font-medium">
+              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl font-medium">
                 Get full access to official Robuzta Techlabs trademarks, 3D retail store architectural blueprints, ESD anti-static workbench layouts, and signage specifications.
               </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-              <div className="flex items-center gap-2 text-xs font-bold text-slate-800 bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
+              <div className="flex items-center gap-2 text-xs font-bold text-slate-800 dark:text-slate-200 bg-white dark:bg-slate-950 p-3 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
                 <CheckCircle2 size={16} className="text-[#2563EB] shrink-0" />
                 <span>3D Store Design Blueprints</span>
               </div>
-              <div className="flex items-center gap-2 text-xs font-bold text-slate-800 bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
+              <div className="flex items-center gap-2 text-xs font-bold text-slate-800 dark:text-slate-200 bg-white dark:bg-slate-950 p-3 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
                 <CheckCircle2 size={16} className="text-[#2563EB] shrink-0" />
                 <span>ISO ESD Workbench Setup</span>
               </div>
-              <div className="flex items-center gap-2 text-xs font-bold text-slate-800 bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
+              <div className="flex items-center gap-2 text-xs font-bold text-slate-800 dark:text-slate-200 bg-white dark:bg-slate-950 p-3 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
                 <CheckCircle2 size={16} className="text-[#2563EB] shrink-0" />
                 <span>Trademark & Signage License</span>
               </div>
@@ -103,7 +103,7 @@ export function FranchiseBentoBenefits() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="group relative overflow-hidden rounded-3xl bg-white border border-slate-200/90 p-8 shadow-lg hover:shadow-2xl hover:border-orange-300 hover:-translate-y-1 transition-all duration-300 space-y-6"
+            className="group relative overflow-hidden rounded-3xl bg-white dark:bg-slate-950 border border-slate-200/90 p-8 shadow-lg hover:shadow-2xl hover:border-orange-300 hover:-translate-y-1 transition-all duration-300 space-y-6"
           >
             <div className="flex items-center justify-between">
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#EA580C] text-white shadow-md shadow-orange-500/20">
@@ -115,10 +115,10 @@ export function FranchiseBentoBenefits() {
             </div>
 
             <div className="space-y-3">
-              <h3 className="text-xl font-extrabold text-slate-900 group-hover:text-[#EA580C] transition-colors">
+              <h3 className="text-xl font-extrabold text-slate-900 dark:text-slate-100 group-hover:text-[#EA580C] transition-colors">
                 Dedicated Partner Portal & CRM
               </h3>
-              <p className="text-xs text-slate-600 leading-relaxed font-medium">
+              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
                 Cloud repair tracking CRM, automated customer WhatsApp status updates, digital warranty generation, and financial accounting tools out of the box.
               </p>
             </div>
@@ -130,7 +130,7 @@ export function FranchiseBentoBenefits() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="group relative overflow-hidden rounded-3xl bg-white border border-slate-200/90 p-8 shadow-lg hover:shadow-2xl hover:border-blue-300 hover:-translate-y-1 transition-all duration-300 space-y-6"
+            className="group relative overflow-hidden rounded-3xl bg-white dark:bg-slate-950 border border-slate-200/90 p-8 shadow-lg hover:shadow-2xl hover:border-blue-300 hover:-translate-y-1 transition-all duration-300 space-y-6"
           >
             <div className="flex items-center justify-between">
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#2563EB] text-white shadow-md shadow-blue-500/20">
@@ -142,10 +142,10 @@ export function FranchiseBentoBenefits() {
             </div>
 
             <div className="space-y-3">
-              <h3 className="text-xl font-extrabold text-slate-900 group-hover:text-[#2563EB] transition-colors">
+              <h3 className="text-xl font-extrabold text-slate-900 dark:text-slate-100 group-hover:text-[#2563EB] transition-colors">
                 Hyper-Local Marketing Assets
               </h3>
-              <p className="text-xs text-slate-600 leading-relaxed font-medium">
+              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
                 High-converting Meta video ad templates, Google Maps SEO campaign execution, print collateral, flyers, and regional newspaper PR releases.
               </p>
             </div>
@@ -157,7 +157,7 @@ export function FranchiseBentoBenefits() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="group relative overflow-hidden rounded-3xl bg-white border border-slate-200/90 p-8 shadow-lg hover:shadow-2xl hover:border-orange-300 hover:-translate-y-1 transition-all duration-300 space-y-6"
+            className="group relative overflow-hidden rounded-3xl bg-white dark:bg-slate-950 border border-slate-200/90 p-8 shadow-lg hover:shadow-2xl hover:border-orange-300 hover:-translate-y-1 transition-all duration-300 space-y-6"
           >
             <div className="flex items-center justify-between">
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#EA580C] text-white shadow-md shadow-orange-500/20">
@@ -169,10 +169,10 @@ export function FranchiseBentoBenefits() {
             </div>
 
             <div className="space-y-3">
-              <h3 className="text-xl font-extrabold text-slate-900 group-hover:text-[#EA580C] transition-colors">
+              <h3 className="text-xl font-extrabold text-slate-900 dark:text-slate-100 group-hover:text-[#EA580C] transition-colors">
                 On-Demand Master Tech Escalation
               </h3>
-              <p className="text-xs text-slate-600 leading-relaxed font-medium">
+              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
                 For complex motherboard liquid damage or CPU power rail faults, escalate hardware directly to Robuzta’s central Master Soldering Lab.
               </p>
             </div>
@@ -196,20 +196,20 @@ export function FranchiseBentoBenefits() {
             </div>
 
             <div className="space-y-3">
-              <h3 className="text-2xl font-extrabold text-slate-900 group-hover:text-[#EA580C] transition-colors">
+              <h3 className="text-2xl font-extrabold text-slate-900 dark:text-slate-100 group-hover:text-[#EA580C] transition-colors">
                 Corporate & Institutional Lead Blueprint
               </h3>
-              <p className="text-sm text-slate-600 leading-relaxed max-w-xl font-medium">
+              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl font-medium">
                 Secure high-margin corporate IT maintenance contracts with IT parks, schools, and offices in your city zone with our pre-vetted corporate sales kit.
               </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-              <div className="flex items-center gap-2 text-xs font-bold text-slate-800 bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
+              <div className="flex items-center gap-2 text-xs font-bold text-slate-800 dark:text-slate-200 bg-white dark:bg-slate-950 p-3 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
                 <CheckCircle2 size={16} className="text-[#EA580C] shrink-0" />
                 <span>Corporate AMC Contract Templates</span>
               </div>
-              <div className="flex items-center gap-2 text-xs font-bold text-slate-800 bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
+              <div className="flex items-center gap-2 text-xs font-bold text-slate-800 dark:text-slate-200 bg-white dark:bg-slate-950 p-3 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
                 <CheckCircle2 size={16} className="text-[#EA580C] shrink-0" />
                 <span>Doorstep Pickup Executive System</span>
               </div>

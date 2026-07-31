@@ -50,7 +50,7 @@ const comparisonRows = [
 
 export function FranchiseComparisonTable() {
   return (
-    <section className="relative bg-white py-24 border-b border-slate-200 overflow-hidden">
+    <section className="relative bg-white dark:bg-slate-950 py-24 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
       
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16">
         
@@ -70,7 +70,7 @@ export function FranchiseComparisonTable() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight"
+            className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight"
           >
             Why Robuzta Outperforms Generic Repair Models
           </motion.h2>
@@ -80,14 +80,14 @@ export function FranchiseComparisonTable() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-slate-600 text-base sm:text-lg leading-relaxed font-medium"
+            className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed font-medium"
           >
             Compare how a Robuzta Techlabs franchise compares to starting an independent shop or buying a generic retail franchise.
           </motion.p>
         </div>
 
         {/* Comparison Table */}
-        <div className="overflow-x-auto rounded-3xl border border-slate-200 shadow-xl bg-white">
+        <div className="overflow-x-auto rounded-3xl border border-slate-200 dark:border-slate-700 shadow-xl bg-white dark:bg-slate-950">
           <table className="w-full text-left border-collapse min-w-[700px]">
             <thead>
               <tr className="bg-slate-900 text-white">
@@ -106,10 +106,10 @@ export function FranchiseComparisonTable() {
               </tr>
             </thead>
 
-            <tbody className="divide-y divide-slate-200 text-xs sm:text-sm font-bold text-slate-800">
+            <tbody className="divide-y divide-slate-200 text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200">
               {comparisonRows.map((row, idx) => (
-                <tr key={row.feature} className={idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/60'}>
-                  <td className="p-5 font-bold text-slate-900">{row.feature}</td>
+                <tr key={row.feature} className={idx % 2 === 0 ? 'bg-white dark:bg-slate-950' : 'bg-slate-50/60 dark:bg-slate-900/60'}>
+                  <td className="p-5 font-bold text-slate-900 dark:text-slate-100">{row.feature}</td>
                   
                   {/* Robuzta Column */}
                   <td className="p-5 text-center font-extrabold text-blue-900 bg-blue-50/70 border-x border-blue-100">
@@ -120,16 +120,16 @@ export function FranchiseComparisonTable() {
                   </td>
 
                   {/* Independent Column */}
-                  <td className="p-5 text-center font-medium text-slate-500">
-                    <div className="flex items-center justify-center gap-1.5 text-slate-500">
+                  <td className="p-5 text-center font-medium text-slate-500 dark:text-slate-400">
+                    <div className="flex items-center justify-center gap-1.5 text-slate-500 dark:text-slate-400">
                       <X size={15} className="text-red-500 shrink-0" />
                       <span>{row.independent}</span>
                     </div>
                   </td>
 
                   {/* Generic Column */}
-                  <td className="p-5 text-center font-medium text-slate-500">
-                    <div className="flex items-center justify-center gap-1.5 text-slate-500">
+                  <td className="p-5 text-center font-medium text-slate-500 dark:text-slate-400">
+                    <div className="flex items-center justify-center gap-1.5 text-slate-500 dark:text-slate-400">
                       <X size={15} className="text-amber-500 shrink-0" />
                       <span>{row.generic}</span>
                     </div>

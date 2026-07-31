@@ -36,14 +36,14 @@ export function LocationDetailPageView({ location }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Header />
-      <main className="bg-white min-h-screen text-slate-900">
+      <main className="bg-white dark:bg-slate-950 min-h-screen text-slate-900 dark:text-slate-100">
         
         {/* Branch Hero */}
-        <section className="relative bg-gradient-to-b from-slate-50 via-blue-50/20 to-white py-20 sm:py-24 border-b border-slate-200 overflow-hidden">
+        <section className="relative bg-gradient-to-b from-slate-50 via-blue-50/20 to-white py-20 sm:py-24 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
           <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-teal-500/10 rounded-full blur-[140px]" />
 
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-6">
-            <nav className="flex items-center gap-2 text-xs font-extrabold text-slate-500 justify-center">
+            <nav className="flex items-center gap-2 text-xs font-extrabold text-slate-500 dark:text-slate-400 justify-center">
               <Link href="/" className="hover:text-[#0E7C7B]">Home</Link> <ChevronRight size={13} />
               <Link href="/locations" className="hover:text-[#0E7C7B]">Locations</Link> <ChevronRight size={13} />
               <span className="text-[#0E7C7B]">{location.title}</span>
@@ -55,11 +55,11 @@ export function LocationDetailPageView({ location }) {
                 <span>ROBUZTA LAB BRANCH</span>
               </div>
 
-              <h1 className="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight leading-tight">
+              <h1 className="text-4xl sm:text-6xl font-black text-slate-900 dark:text-slate-100 tracking-tight leading-tight">
                 {location.title}
               </h1>
 
-              <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-medium">
+              <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed font-medium">
                 Your trusted local electronics repair lab. Experience chip-level precision repairs, serial number verification, and zero OTP privacy for your devices.
               </p>
             </div>
@@ -67,7 +67,7 @@ export function LocationDetailPageView({ location }) {
         </section>
 
         {/* Main Content */}
-        <section className="py-20 border-b border-slate-200">
+        <section className="py-20 border-b border-slate-200 dark:border-slate-700">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
               
@@ -75,26 +75,26 @@ export function LocationDetailPageView({ location }) {
               <div className="lg:col-span-7 space-y-10">
                 
                 <div className="space-y-4">
-                  <h2 className="text-2xl font-black text-slate-900">Branch Details & Contact Information</h2>
+                  <h2 className="text-2xl font-black text-slate-900 dark:text-slate-100">Branch Details & Contact Information</h2>
                   
-                  <div className="rounded-3xl bg-slate-50 border border-slate-200 p-7 space-y-4 shadow-xl">
-                    <div className="flex items-start gap-3.5 border-b border-slate-200 pb-3.5">
+                  <div className="rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-7 space-y-4 shadow-xl">
+                    <div className="flex items-start gap-3.5 border-b border-slate-200 dark:border-slate-700 pb-3.5">
                       <MapPin size={22} className="text-[#0E7C7B] shrink-0 mt-0.5" />
                       <div>
                         <div className="text-xs font-extrabold uppercase text-slate-400">Address</div>
-                        <div className="text-sm font-bold text-slate-900">{location.address}</div>
+                        <div className="text-sm font-bold text-slate-900 dark:text-slate-100">{location.address}</div>
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3.5 border-b border-slate-200 pb-3.5">
+                    <div className="flex items-start gap-3.5 border-b border-slate-200 dark:border-slate-700 pb-3.5">
                       <Clock size={22} className="text-[#0E7C7B] shrink-0 mt-0.5" />
                       <div>
                         <div className="text-xs font-extrabold uppercase text-slate-400">Working Hours</div>
-                        <div className="text-sm font-bold text-slate-900">{location.timing}</div>
+                        <div className="text-sm font-bold text-slate-900 dark:text-slate-100">{location.timing}</div>
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3.5 border-b border-slate-200 pb-3.5">
+                    <div className="flex items-start gap-3.5 border-b border-slate-200 dark:border-slate-700 pb-3.5">
                       <Phone size={22} className="text-[#0E7C7B] shrink-0 mt-0.5" />
                       <div>
                         <div className="text-xs font-extrabold uppercase text-slate-400">Direct Hotline</div>
@@ -108,7 +108,7 @@ export function LocationDetailPageView({ location }) {
                       <Mail size={22} className="text-[#0E7C7B] shrink-0 mt-0.5" />
                       <div>
                         <div className="text-xs font-extrabold uppercase text-slate-400">Email Inquiry</div>
-                        <div className="text-sm font-bold text-slate-900">{location.email}</div>
+                        <div className="text-sm font-bold text-slate-900 dark:text-slate-100">{location.email}</div>
                       </div>
                     </div>
 
@@ -128,10 +128,10 @@ export function LocationDetailPageView({ location }) {
 
                 {/* Services Provided */}
                 <div className="space-y-4">
-                  <h2 className="text-2xl font-black text-slate-900">Services Provided at This Branch</h2>
+                  <h2 className="text-2xl font-black text-slate-900 dark:text-slate-100">Services Provided at This Branch</h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {location.servicesAvailable.map((srv) => (
-                      <div key={srv} className="flex items-center gap-2.5 p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-xs font-extrabold text-slate-800">
+                      <div key={srv} className="flex items-center gap-2.5 p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-xs font-extrabold text-slate-800 dark:text-slate-200">
                         <CheckCircle2 size={16} className="text-[#0E7C7B] shrink-0" />
                         <span>{srv}</span>
                       </div>
@@ -141,10 +141,10 @@ export function LocationDetailPageView({ location }) {
 
                 {/* Areas Covered */}
                 <div className="space-y-4">
-                  <h2 className="text-2xl font-black text-slate-900">Areas Covered with Free Pickup</h2>
+                  <h2 className="text-2xl font-black text-slate-900 dark:text-slate-100">Areas Covered with Free Pickup</h2>
                   <div className="flex flex-wrap gap-2">
                     {location.nearbyAreas.map((area) => (
-                      <span key={area} className="text-xs font-extrabold text-slate-800 bg-slate-100 border border-slate-200 px-3.5 py-2 rounded-xl">
+                      <span key={area} className="text-xs font-extrabold text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3.5 py-2 rounded-xl">
                         📍 {area}
                       </span>
                     ))}

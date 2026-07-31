@@ -9,7 +9,7 @@ import { BrandLogo } from '@/components/ui/BrandLogo';
 
 export function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-[#0F172A] text-slate-300 pt-16 pb-12">
+    <footer className="border-t border-slate-200 dark:border-slate-700 bg-[#0F172A] text-slate-300 pt-16 pb-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Top Grid */}
@@ -17,7 +17,7 @@ export function Footer() {
           
           {/* Main Info */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="bg-white p-2 rounded-xl inline-block shadow-sm">
+            <div className="bg-white dark:bg-slate-950 p-2 rounded-xl inline-block shadow-sm">
               <BrandLogo />
             </div>
 

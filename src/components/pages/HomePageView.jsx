@@ -24,7 +24,7 @@ export function HomePageView() {
     <SmoothScroll>
       <ScrollProgress />
       <Header />
-      <main className="bg-white text-slate-900 min-h-screen">
+      <main className="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen">
         <HeroSection />
         <TrustSection />
         <ServicesSection />
