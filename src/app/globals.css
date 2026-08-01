@@ -74,3 +74,28 @@
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+
+/* ── 3D Laptop Explorer Styles ── */
+.laptop-explorer-panel {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(7, 14, 26, 0.98) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+@keyframes component-glow-pulse {
+  0%, 100% { box-shadow: 0 0 8px 2px var(--glow-color, #0E7C7B); }
+  50% { box-shadow: 0 0 20px 6px var(--glow-color, #0E7C7B); }
+}
+
+.component-glow-pulse {
+  animation: component-glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes float-subtle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-float-subtle {
+  animation: float-subtle 3s ease-in-out infinite;
+}
