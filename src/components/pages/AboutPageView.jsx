@@ -30,6 +30,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { ReelsSection } from '@/components/sections/ReelsSection';
+import { useBookingModal } from '@/context/BookingModalContext';
 
 const journeyWaypoints = [
   {
@@ -137,6 +138,7 @@ const uspFeatureGrid = [
 ];
 
 export function AboutPageView() {
+  const { openModal } = useBookingModal();
   const verticalRouteRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -199,13 +201,14 @@ export function AboutPageView() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="flex flex-wrap items-center justify-center gap-4 pt-4"
             >
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 dark:bg-[#0E7C7B] dark:hover:bg-teal-500 px-8 py-4 text-xs sm:text-sm font-black text-white shadow-xl shadow-[#0E7C7B]/20 transition-all transform hover:scale-105"
+              <button
+                type="button"
+                onClick={() => openModal({ formType: 'About Page Book Free Inspection' })}
+                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 dark:bg-[#0E7C7B] dark:hover:bg-teal-500 px-8 py-4 text-xs sm:text-sm font-black text-white shadow-xl shadow-[#0E7C7B]/20 transition-all transform hover:scale-105 cursor-pointer"
               >
                 <span>Book Free Inspection</span>
                 <ArrowRight size={16} />
-              </Link>
+              </button>
 
               <a
                 href="#our-usps"
@@ -399,13 +402,14 @@ export function AboutPageView() {
 
                   {/* Direct Action Button */}
                   <div className="pt-4">
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center gap-2 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 dark:bg-[#0E7C7B] dark:hover:bg-teal-500 px-8 py-4 text-xs sm:text-sm font-black text-white shadow-xl shadow-[#0E7C7B]/20 transition-all transform hover:scale-105 group/cta"
+                    <button
+                      type="button"
+                      onClick={() => openModal({ formType: 'About Page Contact Senior Technician' })}
+                      className="inline-flex items-center gap-2 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 dark:bg-[#0E7C7B] dark:hover:bg-teal-500 px-8 py-4 text-xs sm:text-sm font-black text-white shadow-xl shadow-[#0E7C7B]/20 transition-all transform hover:scale-105 group/cta cursor-pointer"
                     >
                       <span>Contact Senior Technician</span>
                       <ArrowRight size={16} className="group-hover/cta:translate-x-1 transition-transform" />
-                    </Link>
+                    </button>
                   </div>
 
                 </div>

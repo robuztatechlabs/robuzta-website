@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { siteConfig } from '@/data/site';
 import { Send, CheckCircle2, ShieldCheck, Sparkles } from 'lucide-react';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
+import { submitLeadData } from '@/lib/leadDispatcher';
 
 export function QuoteForm({ title = 'Get a Free Fast Repair Quote', defaultDevice = '' }) {
   const [submitted, setSubmitted] = useState(false);
@@ -24,6 +25,18 @@ export function QuoteForm({ title = 'Get a Free Fast Repair Quote', defaultDevic
     e.preventDefault();
     setSubmitted(true);
 
+    // 1. Dispatch to Lead API (Google Sheets, Email Alert, Local Storage)
+    submitLeadData({
+      formType: 'Quote Form Submission',
+      name: formData.name,
+      phone: formData.phone,
+      device: formData.device,
+      issue: formData.issue,
+      locality: formData.serviceType,
+      notes: `Service Option: ${formData.serviceType}`
+    });
+
+    // 2. Format WhatsApp Redirect
     const message = `Hi Robuzta Techlabs! My name is ${formData.name}. I need repair for my ${formData.device}.\n\n*Service Option:* ${formData.serviceType}\n*Issue:* ${formData.issue}\n*Phone:* ${formData.phone}`;
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `${siteConfig.whatsappHref}?text=${encodedMessage}`;
@@ -34,10 +47,10 @@ export function QuoteForm({ title = 'Get a Free Fast Repair Quote', defaultDevic
   };
 
   return (
-    <div className="rounded-3xl bg-white dark:bg-slate-950 border border-slate-200/90 p-6 sm:p-8 shadow-2xl shadow-slate-900/10 space-y-6">
+    <div className="rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 shadow-2xl space-y-6">
       
       <div className="space-y-1.5 border-b border-slate-100 dark:border-slate-800 pb-4">
-        <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-slate-100 leading-tight">
+        <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white leading-tight">
           {title}
         </h3>
         <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
@@ -46,18 +59,18 @@ export function QuoteForm({ title = 'Get a Free Fast Repair Quote', defaultDevic
       </div>
 
       {submitted ? (
-        <div className="rounded-2xl bg-emerald-50 border border-emerald-200 p-6 text-center space-y-4">
-          <CheckCircle2 size={40} className="text-emerald-600 mx-auto" />
+        <div className="rounded-2xl bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-200 dark:border-emerald-800 p-6 text-center space-y-4">
+          <CheckCircle2 size={40} className="text-emerald-600 dark:text-emerald-400 mx-auto" />
           <div className="space-y-1">
-            <h4 className="text-lg font-black text-slate-900 dark:text-slate-100">Quote Request Sent!</h4>
-            <p className="text-xs text-emerald-800 font-medium">
+            <h4 className="text-lg font-black text-slate-900 dark:text-white">Quote Request Sent!</h4>
+            <p className="text-xs text-emerald-800 dark:text-emerald-300 font-medium">
               Opening WhatsApp to connect you directly with a Robuzta Senior Technician...
             </p>
           </div>
           <button
             type="button"
             onClick={() => setSubmitted(false)}
-            className="w-full rounded-xl bg-slate-900 hover:bg-slate-800 py-3 text-xs font-black text-white shadow-md transition-all cursor-pointer"
+            className="w-full rounded-xl bg-[#0E7C7B] hover:bg-teal-600 py-3 text-xs font-black text-white shadow-md transition-all cursor-pointer"
           >
             Submit Another Request
           </button>
@@ -76,7 +89,7 @@ export function QuoteForm({ title = 'Get a Free Fast Repair Quote', defaultDevic
               placeholder="e.g. Rahul Sharma"
               value={formData.name}
               onChange={handleChange}
-              className="w-full rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-4 py-3 text-xs text-slate-900 dark:text-slate-100 font-medium placeholder-slate-400 focus:border-[#0E7C7B] focus:bg-white focus:outline-none"
+              className="w-full rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 text-xs text-slate-900 dark:text-white font-medium placeholder-slate-400 focus:border-[#0E7C7B] focus:outline-none"
             />
           </div>
 
@@ -91,7 +104,7 @@ export function QuoteForm({ title = 'Get a Free Fast Repair Quote', defaultDevic
               placeholder="e.g. +91 98765 43210"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-4 py-3 text-xs text-slate-900 dark:text-slate-100 font-medium placeholder-slate-400 focus:border-[#0E7C7B] focus:bg-white focus:outline-none"
+              className="w-full rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 text-xs text-slate-900 dark:text-white font-medium placeholder-slate-400 focus:border-[#0E7C7B] focus:outline-none"
             />
           </div>
 
@@ -103,7 +116,7 @@ export function QuoteForm({ title = 'Get a Free Fast Repair Quote', defaultDevic
               name="device"
               value={formData.device}
               onChange={handleChange}
-              className="w-full rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-4 py-3 text-xs text-slate-900 dark:text-slate-100 font-medium focus:border-[#0E7C7B] focus:bg-white focus:outline-none"
+              className="w-full rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 text-xs text-slate-900 dark:text-white font-medium focus:border-[#0E7C7B] focus:outline-none"
             >
               <option value="Laptop">Laptop (Dell, HP, Lenovo, ASUS, Acer)</option>
               <option value="MacBook">MacBook (Pro, Air, M1/M2/M3)</option>
@@ -123,7 +136,7 @@ export function QuoteForm({ title = 'Get a Free Fast Repair Quote', defaultDevic
               name="serviceType"
               value={formData.serviceType}
               onChange={handleChange}
-              className="w-full rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-4 py-3 text-xs text-slate-900 dark:text-slate-100 font-medium focus:border-[#0E7C7B] focus:bg-white focus:outline-none"
+              className="w-full rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 text-xs text-slate-900 dark:text-white font-medium focus:border-[#0E7C7B] focus:outline-none"
             >
               <option value="Doorstep Pickup">Free Doorstep Pickup (Ahmedabad)</option>
               <option value="Lab Visit">Lab Carry-In Visit (South Bopal / Tragad)</option>
@@ -142,7 +155,7 @@ export function QuoteForm({ title = 'Get a Free Fast Repair Quote', defaultDevic
               placeholder="e.g. Broken screen, water spill, laptop not turning on, battery swelling..."
               value={formData.issue}
               onChange={handleChange}
-              className="w-full rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-4 py-3 text-xs text-slate-900 dark:text-slate-100 font-medium placeholder-slate-400 focus:border-[#0E7C7B] focus:bg-white focus:outline-none"
+              className="w-full rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 text-xs text-slate-900 dark:text-white font-medium placeholder-slate-400 focus:border-[#0E7C7B] focus:outline-none"
             />
           </div>
 
@@ -155,7 +168,7 @@ export function QuoteForm({ title = 'Get a Free Fast Repair Quote', defaultDevic
           </button>
 
           <p className="text-[11px] font-semibold text-slate-400 text-center flex items-center justify-center gap-1.5 pt-1">
-            <ShieldCheck size={14} className="text-[#0E7C7B]" />
+            <ShieldCheck size={14} className="text-[#0E7C7B] dark:text-teal-400" />
             <span>Your data is 100% safe. Zero OTP required.</span>
           </p>
         </form>

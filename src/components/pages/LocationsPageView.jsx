@@ -26,6 +26,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { siteConfig } from '@/data/site';
+import { useBookingModal } from '@/context/BookingModalContext';
 
 const officeHighlights = [
   {
@@ -86,6 +87,7 @@ const routeSteps = [
 ];
 
 export function LocationsPageView() {
+  const { openModal } = useBookingModal();
   const routeRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -324,16 +326,17 @@ export function LocationsPageView() {
                         className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-6 py-3.5 text-xs font-black shadow-lg shadow-[#0E7C7B]/20 transition-all text-center"
                       >
                         <Navigation size={16} />
-                        <span>Get Google Maps Directions</span>
+                        <span>Get Directions</span>
                       </a>
 
-                      <a
-                        href={`tel:${siteConfig.phone}`}
-                        className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-100 px-6 py-3.5 text-xs font-black transition-all text-center"
+                      <button
+                        type="button"
+                        onClick={() => openModal({ formType: loc.title + ' Book Doorstep Pickup', locality: loc.title })}
+                        className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 rounded-2xl bg-slate-900 dark:bg-slate-900 hover:bg-slate-800 text-white px-6 py-3.5 text-xs font-black transition-all text-center border border-slate-800 cursor-pointer"
                       >
-                        <Phone size={16} className="text-[#0E7C7B] dark:text-teal-400" />
-                        <span>Call Branch Now</span>
-                      </a>
+                        <Phone size={16} className="text-teal-400" />
+                        <span>Book Free Pickup</span>
+                      </button>
                     </div>
                   </motion.article>
                 );

@@ -6,9 +6,11 @@ import { faqs } from '@/data/faqs';
 import { HelpCircle, Phone, ShieldCheck, Sparkles, ArrowRight } from 'lucide-react';
 import { siteConfig } from '@/data/site';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
-import Link from 'next/link';
+import { useBookingModal } from '@/context/BookingModalContext';
 
 export function FaqPageView() {
+  const { openModal } = useBookingModal();
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -29,19 +31,19 @@ export function FaqPageView() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Header />
-      <main className="bg-white dark:bg-slate-950 min-h-screen text-slate-900 dark:text-slate-100">
+      <main className="bg-white dark:bg-slate-950 min-h-screen text-slate-900 dark:text-slate-100 transition-colors duration-300">
         
         {/* FAQ Hero */}
-        <section className="relative bg-gradient-to-b from-slate-50 via-blue-50/20 to-white py-20 sm:py-24 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
-          <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-teal-500/10 rounded-full blur-[140px]" />
+        <section className="relative bg-gradient-to-b from-slate-50 via-teal-50/20 to-white dark:from-slate-900 dark:via-slate-900 dark:to-slate-950 py-20 sm:py-24 border-b border-slate-200 dark:border-slate-800 overflow-hidden">
+          <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#0E7C7B]/10 rounded-full blur-[140px]" />
 
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-4 py-1.5 text-xs font-extrabold text-[#0E7C7B]">
+            <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-4 py-1.5 text-xs font-extrabold text-[#0E7C7B] dark:text-teal-300">
               <Sparkles size={14} className="text-[#EA580C]" />
               <span>ROBUZTA HELP CENTER</span>
             </div>
 
-            <h1 className="text-4xl sm:text-6xl font-black text-slate-900 dark:text-slate-100 tracking-tight leading-tight">
+            <h1 className="text-4xl sm:text-6xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
               Frequently Asked Questions
             </h1>
 
@@ -52,7 +54,7 @@ export function FaqPageView() {
         </section>
 
         {/* FAQ List & Sidebar */}
-        <section className="py-20 border-b border-slate-200 dark:border-slate-700">
+        <section className="py-20 border-b border-slate-200 dark:border-slate-800">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
               
@@ -61,16 +63,16 @@ export function FaqPageView() {
                 {faqs.map((faq) => (
                   <details
                     key={faq.question}
-                    className="group rounded-2xl bg-slate-50/80 border border-slate-200 dark:border-slate-700 p-6 font-extrabold text-slate-900 dark:text-slate-100 transition-all duration-200 hover:bg-white hover:border-[#0E7C7B]/40 hover:shadow-md"
+                    className="group rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 font-black text-slate-900 dark:text-white transition-all duration-200 hover:bg-white dark:hover:bg-slate-950 hover:border-[#0E7C7B]/40 hover:shadow-md"
                   >
                     <summary className="flex items-center gap-3 cursor-pointer text-base sm:text-lg list-none justify-between">
                       <div className="flex items-center gap-3">
-                        <HelpCircle size={20} className="text-[#0E7C7B] shrink-0" />
+                        <HelpCircle size={20} className="text-[#0E7C7B] dark:text-teal-400 shrink-0" />
                         <span>{faq.question}</span>
                       </div>
-                      <span className="text-[#0E7C7B] font-bold text-xl group-open:rotate-45 transition-transform">+</span>
+                      <span className="text-[#0E7C7B] dark:text-teal-400 font-bold text-xl group-open:rotate-45 transition-transform">+</span>
                     </summary>
-                    <p className="mt-4 text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200/80 pt-4">
+                    <p className="mt-4 text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-200 dark:border-slate-800 pt-4">
                       {faq.answer}
                     </p>
                   </details>
@@ -80,12 +82,12 @@ export function FaqPageView() {
               {/* Sidebar (Col 4) */}
               <div className="lg:col-span-4 space-y-6">
                 
-                <div className="rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-7 space-y-5 shadow-xl">
+                <div className="rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-7 space-y-5 shadow-xl">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0E7C7B] text-white shadow-md">
                     <ShieldCheck size={26} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-extrabold text-slate-900 dark:text-slate-100">Still Have Questions?</h3>
+                    <h3 className="text-xl font-black text-slate-900 dark:text-white">Still Have Questions?</h3>
                     <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed mt-1">
                       Talk directly to our Senior Hardware Lab Technicians for instant diagnosis.
                     </p>
@@ -104,7 +106,7 @@ export function FaqPageView() {
 
                     <a
                       href={siteConfig.phoneHref}
-                      className="flex items-center justify-center gap-2 w-full rounded-xl bg-[#0E7C7B] hover:bg-teal-700 py-3 text-xs font-black text-white shadow-md"
+                      className="flex items-center justify-center gap-2 w-full rounded-xl bg-[#0E7C7B] hover:bg-teal-600 py-3 text-xs font-black text-white shadow-md"
                     >
                       <Phone size={16} />
                       <span>Call +91 999 245 2459</span>
@@ -112,18 +114,19 @@ export function FaqPageView() {
                   </div>
                 </div>
 
-                <div className="rounded-3xl bg-slate-900 text-white p-7 space-y-4 shadow-xl">
+                <div className="rounded-3xl bg-slate-900 dark:bg-slate-900 text-white p-7 space-y-4 shadow-xl border border-slate-800">
                   <h3 className="text-xl font-black text-white">Book Free Pickup</h3>
                   <p className="text-xs text-slate-300 font-medium leading-relaxed">
                     Free doorstep pickup & delivery in South Bopal, Tragad, Satellite, Vastrapur, and across Ahmedabad.
                   </p>
-                  <Link
-                    href="/contact"
-                    className="flex items-center justify-center gap-2 w-full rounded-xl bg-[#0E7C7B] hover:bg-teal-600 py-3.5 text-xs font-black text-white shadow-lg"
+                  <button
+                    type="button"
+                    onClick={() => openModal({ formType: 'FAQ Page Book Pickup' })}
+                    className="flex items-center justify-center gap-2 w-full rounded-xl bg-[#0E7C7B] hover:bg-teal-600 py-3.5 text-xs font-black text-white shadow-lg cursor-pointer"
                   >
                     <span>Book Pickup Now</span>
                     <ArrowRight size={15} />
-                  </Link>
+                  </button>
                 </div>
 
               </div>
