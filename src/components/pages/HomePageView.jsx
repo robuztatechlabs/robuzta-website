@@ -6,6 +6,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 
 import { HeroSection } from '@/components/sections/HeroSection';
+import { LaptopExplorerSection } from '@/components/sections/LaptopExplorerSection';
 import { TrustSection } from '@/components/sections/TrustSection';
 import { ServicesSection } from '@/components/sections/ServicesSection';
 import { WhyChooseUsSection } from '@/components/sections/WhyChooseUsSection';
@@ -26,6 +27,7 @@ export function HomePageView() {
       <Header />
       <main className="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen">
         <HeroSection />
+        <LaptopExplorerSection />
         <TrustSection />
         <ServicesSection />
         <WhyChooseUsSection />

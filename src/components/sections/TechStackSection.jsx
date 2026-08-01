@@ -3,8 +3,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Cpu } from 'lucide-react';
-import { ServiceModelShowcase } from '@/components/cards/ServiceModelShowcase';
-import { techLabModelShowcase } from '@/data/serviceModels';
 
 const techCategories = {
   'Micro-Soldering & Logic Board': [
@@ -46,9 +44,6 @@ export function TechStackSection() {
             We utilize high-precision thermal imaging, BGA micro-soldering stations, and ESD-safe workstations to deliver Apple and enterprise-grade hardware care.
           </p>
         </div>
-
-        {/* Microchip 3D lab preview — dedicated container */}
-        <ServiceModelShowcase {...techLabModelShowcase} ctaHref="/contact" index={0} />
 
         {/* Category Tabs */}
         <div className="flex justify-center">
