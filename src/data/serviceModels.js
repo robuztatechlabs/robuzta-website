@@ -93,6 +93,6 @@ export function getModelShowcasesForService(slug) {
 }
 
 export function encodeModelPath(path) {
-  const parts = path.split('/');
-  return parts.map((part, index) => (index === 0 ? part : encodeURIComponent(part))).join('/');
+  if (!path) return '';
+  return encodeURI(path);
 }
