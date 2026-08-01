@@ -39,17 +39,17 @@ export function FranchiseFaq() {
   };
 
   return (
-    <section className="relative bg-slate-50 dark:bg-slate-900 py-24 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
+    <section className="relative bg-slate-50 dark:bg-slate-900 py-24 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
       
       <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Section Header */}
         <div className="text-center space-y-4">
-          <span className="text-xs font-black uppercase tracking-widest text-[#2563EB] bg-blue-50 border border-blue-200 px-3.5 py-1.5 rounded-full inline-block">
+          <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-300 bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-4 py-1.5 rounded-full inline-block">
             FREQUENTLY ASKED QUESTIONS
           </span>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
             Franchise Partnership FAQs
           </h2>
 
@@ -67,8 +67,8 @@ export function FranchiseFaq() {
                 key={faq.question}
                 className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                   isOpen
-                    ? 'bg-white dark:bg-slate-950 border-[#2563EB]/40 shadow-xl'
-                    : 'bg-white/80 border-slate-200 dark:border-slate-700 hover:border-slate-300'
+                    ? 'bg-white dark:bg-slate-950 border-[#0E7C7B] shadow-xl'
+                    : 'bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700'
                 }`}
               >
                 <button
@@ -76,11 +76,11 @@ export function FranchiseFaq() {
                   onClick={() => toggleAccordion(idx)}
                   className="w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer"
                 >
-                  <span className="text-base sm:text-lg font-extrabold text-slate-900 dark:text-slate-100">
+                  <span className="text-base sm:text-lg font-black text-slate-900 dark:text-white">
                     {faq.question}
                   </span>
-                  <span className={`flex h-8 w-8 items-center justify-center rounded-xl transition-all ${
-                    isOpen ? 'bg-[#2563EB] text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
+                  <span className={`flex h-8 w-8 items-center justify-center rounded-xl transition-all shrink-0 ${
+                    isOpen ? 'bg-[#0E7C7B] text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
                   }`}>
                     {isOpen ? <Minus size={16} /> : <Plus size={16} />}
                   </span>

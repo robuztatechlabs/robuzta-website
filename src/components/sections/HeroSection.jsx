@@ -23,6 +23,7 @@ import {
 import Link from 'next/link';
 import { siteConfig } from '@/data/site';
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
+import { useBookingModal } from '@/context/BookingModalContext';
 
 const whatWeFixServices = [
   {
@@ -64,6 +65,7 @@ const whatWeFixServices = [
 ];
 
 export function HeroSection() {
+  const { openModal } = useBookingModal();
   return (
     <section className="relative overflow-hidden bg-white dark:bg-[#070E1A] pt-10 pb-20 lg:pt-16 lg:pb-28 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
       
@@ -150,13 +152,14 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2"
             >
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2.5 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-7 py-4 text-sm font-black shadow-xl shadow-[#0E7C7B]/25 hover:scale-[1.03] transition-all"
+              <button
+                type="button"
+                onClick={() => openModal({ formType: 'Hero Section Book Appointment' })}
+                className="inline-flex items-center gap-2.5 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-7 py-4 text-sm font-black shadow-xl shadow-[#0E7C7B]/25 hover:scale-[1.03] transition-all cursor-pointer"
               >
                 <Calendar size={18} />
                 <span>Book Appointment</span>
-              </Link>
+              </button>
 
               <a
                 href={`tel:${siteConfig.phone}`}
