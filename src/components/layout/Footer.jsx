@@ -64,6 +64,9 @@ export function Footer() {
             </h3>
             <ul className="space-y-2.5 text-sm font-semibold">
               <li>
+                <Link href="/services" className="hover:text-[#0E7C7B] transition-colors">All Services Overview</Link>
+              </li>
+              <li>
                 <Link href="/about" className="hover:text-[#0E7C7B] transition-colors">About Robuzta Lab</Link>
               </li>
               <li>

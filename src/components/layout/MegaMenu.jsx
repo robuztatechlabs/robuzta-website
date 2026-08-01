@@ -68,11 +68,11 @@ export function MegaMenu({ onClose }) {
           Transparent Workbench Diagnosis
         </span>
         <Link
-          href="/#services"
+          href="/services"
           onClick={onClose}
           className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#0E7C7B] dark:text-teal-400 hover:text-[#0a5c5b] dark:hover:text-teal-300 transition-colors"
         >
-          <span>View All Repairs & Estimates</span>
+          <span>View All Services Page</span>
           <ArrowRight size={14} />
         </Link>
       </div>

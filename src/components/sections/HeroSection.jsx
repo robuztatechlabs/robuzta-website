@@ -14,15 +14,12 @@ import {
   Database,
   Droplets,
   HardDrive,
-  CheckCircle2,
   Sparkles,
-  Check,
   Lock,
   Zap
 } from 'lucide-react';
 import Link from 'next/link';
 import { siteConfig } from '@/data/site';
-import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
 
 const whatWeFixServices = [
   {
@@ -79,52 +76,32 @@ export function HeroSection() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
           
-          {/* Left Column: Hero Copy & Actions */}
+          {/* Left Column: Hero Copy & Actions (INSTANT ZERO-DELAY RENDER) */}
           <div className="lg:col-span-6 space-y-8 text-center lg:text-left">
             
             {/* Location & Status Eyebrow Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-4 py-1.5 text-xs font-black text-[#0E7C7B] dark:text-teal-300 shadow-sm"
-            >
+            <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-4 py-1.5 text-xs font-black text-[#0E7C7B] dark:text-teal-300 shadow-sm">
               <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
               <span className="uppercase tracking-widest">
                 OPEN &bull; SOUTH BOPAL, AHMEDABAD
               </span>
-            </motion.div>
+            </div>
 
-            {/* Main Headline */}
-            <motion.h1
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl sm:text-6xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.08]"
-            >
+            {/* Main Headline (Instant Paint - No Opacity 0 Delay) */}
+            <h1 className="text-4xl sm:text-6xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.08]">
               Expert Repair for{' '}
               <span className="block mt-1 bg-gradient-to-r from-[#0E7C7B] via-teal-500 via-sky-400 to-purple-500 bg-clip-text text-transparent">
                 Laptops, Mobiles & iPads
               </span>
-            </motion.h1>
+            </h1>
 
             {/* Sub-headline */}
-            <motion.p
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base sm:text-lg text-slate-600 dark:text-slate-300 font-medium leading-relaxed max-w-xl mx-auto lg:mx-0"
-            >
+            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 font-medium leading-relaxed max-w-xl mx-auto lg:mx-0">
               Ahmedabad's <strong className="text-slate-900 dark:text-white">certified component-level repair lab</strong> — trusted for liquid damage recovery, screen replacement & logic board fixes.
-            </motion.p>
+            </p>
 
             {/* 4 Micro Feature Pills */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.25 }}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 pt-1"
-            >
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 pt-1">
               <div className="flex items-center gap-1.5 text-xs font-black text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-3 py-1.5 rounded-full hover:border-[#0E7C7B] transition-colors">
                 <ShieldCheck size={14} className="text-[#0E7C7B] dark:text-teal-400" />
                 <span>No Fix, No Fee</span>
@@ -141,15 +118,10 @@ export function HeroSection() {
                 <Clock size={14} className="text-purple-500" />
                 <span>Same-Day Turnaround</span>
               </div>
-            </motion.div>
+            </div>
 
             {/* Action Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2"
-            >
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2.5 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-7 py-4 text-sm font-black shadow-xl shadow-[#0E7C7B]/25 hover:scale-[1.03] transition-all"
@@ -165,119 +137,64 @@ export function HeroSection() {
                 <Phone size={18} className="text-[#0E7C7B] dark:text-teal-400" />
                 <span>{siteConfig.phone}</span>
               </a>
-            </motion.div>
+            </div>
 
           </div>
 
           {/* Right Column: Interactive Animated "WHAT WE FIX" Side Console Card */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.94, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="lg:col-span-6 relative"
-          >
-            {/* Top Floating Badge: NO FIX NO FEE (Animated Glow & Pulse) */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              whileHover={{ scale: 1.08 }}
-              className="absolute -top-4 -right-2 z-30 bg-gradient-to-r from-blue-600 via-[#0E7C7B] to-emerald-500 text-white text-[11px] font-black uppercase px-4 py-1.5 rounded-2xl shadow-xl shadow-teal-500/30 border border-white/20 flex items-center gap-1.5"
-            >
-              <Zap size={13} className="text-amber-300 animate-bounce" />
-              <span>NO FIX NO FEE</span>
-              <Check size={14} className="text-emerald-300" />
-            </motion.div>
+          <div className="lg:col-span-6 relative">
+            
+            {/* Top Floating Badge: NO FIX NO FEE */}
+            <div className="absolute -top-5 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 rounded-full bg-slate-900 border border-amber-500/50 px-4 py-1.5 text-xs font-black text-amber-400 shadow-xl shadow-amber-500/10">
+              <Zap size={14} className="text-amber-400 animate-bounce" />
+              <span>ROBUZTA LAB CAPABILITIES</span>
+            </div>
 
-            {/* Main Animated Card Box */}
-            <div className="relative rounded-3xl bg-[#0F172A] dark:bg-[#090F1D] text-white p-7 sm:p-8 shadow-2xl border border-slate-800 space-y-6 overflow-hidden">
-              
-              {/* Background Glow */}
-              <div className="pointer-events-none absolute -top-20 -right-20 w-64 h-64 bg-[#0E7C7B]/20 rounded-full blur-[90px]" />
-
-              {/* Header */}
-              <div className="flex items-center justify-between border-b border-slate-800 pb-4 relative z-10">
-                <div className="space-y-1">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400 block">
-                    WHAT WE FIX
+            {/* Console Frame */}
+            <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-900/90 dark:bg-slate-950/90 backdrop-blur-xl p-6 sm:p-8 shadow-2xl space-y-6 pt-9">
+              <div className="flex items-center justify-between border-b border-slate-800 pb-4">
+                <div className="space-y-0.5">
+                  <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
+                    WHAT WE REPAIR & RESTORE
                   </span>
-                  <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">
-                    All Your Devices, Covered
+                  <h3 className="text-lg font-black text-white">
+                    Select Your Hardware Category
                   </h3>
                 </div>
-
-                <div className="flex items-center gap-2 bg-emerald-500/15 border border-emerald-500/30 px-3.5 py-1.5 rounded-full text-[11px] font-extrabold text-emerald-400 shadow-inner">
-                  <span className="h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
-                  <span>Open Now</span>
-                </div>
+                <span className="flex h-3 w-3 rounded-full bg-teal-400 animate-ping" />
               </div>
 
-              {/* 6 Animated Interactive Service Grid Cards */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3.5 relative z-10">
-                {whatWeFixServices.map((service, idx) => {
-                  const IconComponent = service.icon;
+              {/* 6 Services Grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {whatWeFixServices.map((srv) => {
+                  const IconComp = srv.icon;
                   return (
-                    <motion.div
-                      key={service.title}
-                      initial={{ opacity: 0, y: 15 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: 0.3 + idx * 0.08 }}
-                      whileHover={{ scale: 1.05, y: -4 }}
-                      whileTap={{ scale: 0.98 }}
+                    <Link
+                      key={srv.title}
+                      href={srv.href}
+                      className="group relative rounded-2xl bg-slate-800/80 hover:bg-slate-800 p-4 border border-slate-700/80 hover:border-[#0E7C7B] transition-all flex flex-col justify-between space-y-3 shadow-md hover:scale-[1.03]"
                     >
-                      <Link
-                        href={service.href}
-                        className="group rounded-2xl bg-slate-800/70 hover:bg-slate-800 border border-slate-700/80 hover:border-[#0E7C7B] p-4 flex flex-col items-center text-center justify-center space-y-2.5 transition-all duration-300 hover:shadow-xl hover:shadow-[#0E7C7B]/10 block h-full"
-                      >
-                        <div className={`flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-tr ${service.color} border shadow-md group-hover:scale-110 transition-transform`}>
-                          <IconComponent size={22} />
-                        </div>
-                        <span className="text-xs font-extrabold text-slate-200 group-hover:text-white transition-colors">
-                          {service.title}
+                      <div className={`h-10 w-10 rounded-xl bg-gradient-to-br ${srv.color} flex items-center justify-center border shadow-inner`}>
+                        <IconComp size={20} />
+                      </div>
+                      <div>
+                        <span className="text-xs font-black text-white block leading-tight group-hover:text-teal-300 transition-colors">
+                          {srv.title}
                         </span>
-                      </Link>
-                    </motion.div>
+                        <span className="text-[10px] font-bold text-slate-400 flex items-center gap-1 pt-1 group-hover:text-white transition-colors">
+                          <span>Diagnose</span>
+                          <ArrowRight size={10} />
+                        </span>
+                      </div>
+                    </Link>
                   );
                 })}
               </div>
 
-              {/* 3 Animated Bottom Stat Boxes */}
-              <div className="grid grid-cols-3 gap-3 pt-2 relative z-10">
-                <motion.div
-                  whileHover={{ scale: 1.04 }}
-                  className="rounded-2xl bg-slate-800/40 border border-slate-800 p-3.5 text-center space-y-0.5"
-                >
-                  <span className="text-xl font-black text-white block">
-                    <AnimatedCounter value="5000" suffix="+" />
-                  </span>
-                  <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider block">REPAIRS DONE</span>
-                </motion.div>
-
-                <motion.div
-                  whileHover={{ scale: 1.04 }}
-                  className="rounded-2xl bg-slate-800/40 border border-slate-800 p-3.5 text-center space-y-0.5"
-                >
-                  <span className="text-xl font-black text-teal-400 block">4.9★</span>
-                  <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider block">GOOGLE RATING</span>
-                </motion.div>
-
-                <motion.div
-                  whileHover={{ scale: 1.04 }}
-                  className="rounded-2xl bg-slate-800/40 border border-slate-800 p-3.5 text-center space-y-0.5"
-                >
-                  <span className="text-xl font-black text-purple-400 block">90D</span>
-                  <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider block">WARRANTY</span>
-                </motion.div>
-              </div>
-
-              {/* Perfectly Aligned Customer Social Proof Footer Badge */}
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                className="rounded-2xl bg-slate-800/90 border border-slate-700/80 p-4 flex items-center justify-between gap-4 relative z-10 group shadow-md"
-              >
-                <div className="flex items-center gap-3.5 min-w-0">
-                  {/* Clean Non-Clipped Avatar Stack */}
-                  <div className="flex items-center -space-x-2 shrink-0 pl-1">
+              {/* Bottom Customer Trust Bar */}
+              <div className="pt-2 border-t border-slate-800 flex items-center justify-between text-slate-300">
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center -space-x-2 shrink-0">
                     <div className="h-8 w-8 rounded-full bg-indigo-600 text-xs font-black text-white flex items-center justify-center border-2 border-slate-900 shadow-md shrink-0">
                       J
                     </div>
@@ -302,14 +219,14 @@ export function HeroSection() {
 
                 <Link
                   href="/contact"
-                  className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#0E7C7B] text-white hover:bg-teal-500 transition-colors shadow-md shrink-0 group-hover:translate-x-1 transition-transform"
+                  className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#0E7C7B] text-white hover:bg-teal-500 transition-colors shadow-md shrink-0"
                 >
                   <ArrowRight size={18} />
                 </Link>
-              </motion.div>
+              </div>
 
             </div>
-          </motion.div>
+          </div>
 
         </div>
       </div>

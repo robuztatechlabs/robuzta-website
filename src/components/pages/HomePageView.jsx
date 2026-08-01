@@ -1,24 +1,79 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { SmoothScroll } from '@/components/ui/SmoothScroll';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 
+// HeroSection is loaded synchronously so top of Home page paints INSTANTLY (0ms)
 import { HeroSection } from '@/components/sections/HeroSection';
-import { LaptopExplorerSection } from '@/components/sections/LaptopExplorerSection';
-import { TrustSection } from '@/components/sections/TrustSection';
-import { ServicesSection } from '@/components/sections/ServicesSection';
-import { WhyChooseUsSection } from '@/components/sections/WhyChooseUsSection';
-import { PortfolioSection } from '@/components/sections/PortfolioSection';
-import { RepairShowcaseSection } from '@/components/sections/RepairShowcaseSection';
-import { TechStackSection } from '@/components/sections/TechStackSection';
-import { ProcessSection } from '@/components/sections/ProcessSection';
-import { CourierHighlight } from '@/components/sections/CourierHighlight';
-import { ReviewsSection } from '@/components/sections/ReviewsSection';
-import { FaqPreview } from '@/components/sections/FaqPreview';
-import { FranchiseHomeSection } from '@/components/sections/FranchiseHomeSection';
-import { FinalCta } from '@/components/sections/FinalCta';
+
+// Below-the-fold sections are lazy-loaded dynamically to prevent initial route render lag
+const LaptopExplorerSection = dynamic(
+  () => import('@/components/sections/LaptopExplorerSection').then(m => m.LaptopExplorerSection),
+  { ssr: false }
+);
+
+const TrustSection = dynamic(
+  () => import('@/components/sections/TrustSection').then(m => m.TrustSection),
+  { ssr: false }
+);
+
+const ServicesSection = dynamic(
+  () => import('@/components/sections/ServicesSection').then(m => m.ServicesSection),
+  { ssr: false }
+);
+
+const WhyChooseUsSection = dynamic(
+  () => import('@/components/sections/WhyChooseUsSection').then(m => m.WhyChooseUsSection),
+  { ssr: false }
+);
+
+const PortfolioSection = dynamic(
+  () => import('@/components/sections/PortfolioSection').then(m => m.PortfolioSection),
+  { ssr: false }
+);
+
+const RepairShowcaseSection = dynamic(
+  () => import('@/components/sections/RepairShowcaseSection').then(m => m.RepairShowcaseSection),
+  { ssr: false }
+);
+
+const TechStackSection = dynamic(
+  () => import('@/components/sections/TechStackSection').then(m => m.TechStackSection),
+  { ssr: false }
+);
+
+const ProcessSection = dynamic(
+  () => import('@/components/sections/ProcessSection').then(m => m.ProcessSection),
+  { ssr: false }
+);
+
+const CourierHighlight = dynamic(
+  () => import('@/components/sections/CourierHighlight').then(m => m.CourierHighlight),
+  { ssr: false }
+);
+
+const ReviewsSection = dynamic(
+  () => import('@/components/sections/ReviewsSection').then(m => m.ReviewsSection),
+  { ssr: false }
+);
+
+const FaqPreview = dynamic(
+  () => import('@/components/sections/FaqPreview').then(m => m.FaqPreview),
+  { ssr: false }
+);
+
+const FranchiseHomeSection = dynamic(
+  () => import('@/components/sections/FranchiseHomeSection').then(m => m.FranchiseHomeSection),
+  { ssr: false }
+);
+
+const FinalCta = dynamic(
+  () => import('@/components/sections/FinalCta').then(m => m.FinalCta),
+  { ssr: false }
+);
 
 export function HomePageView() {
   return (

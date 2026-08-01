@@ -33,7 +33,7 @@ const serviceIcons = {
 
 const navItems = [
   { name: 'Home', href: '/' },
-  { name: 'Services', href: '/#services', isDropdown: true },
+  { name: 'Services', href: '/services', isDropdown: true },
   { name: 'Locations', href: '/locations' },
   { name: 'About Us', href: '/about' },
   { name: 'Blog', href: '/blog' },

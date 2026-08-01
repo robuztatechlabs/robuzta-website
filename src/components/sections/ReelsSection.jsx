@@ -24,7 +24,6 @@ function OfficialInstagramEmbed({ reel, idx }) {
           src={`https://www.instagram.com/reel/${reel.reelId}/embed`}
           className="w-full h-full border-0 overflow-hidden rounded-2xl"
           scrolling="no"
-          allowTransparency={true}
           allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
           onLoad={() => setIsLoaded(true)}
           title={`Official Instagram Reel ${reel.title}`}

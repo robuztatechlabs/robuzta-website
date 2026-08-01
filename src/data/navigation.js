@@ -4,6 +4,10 @@ export const navigationItems = [
     href: '/'
   },
   {
+    label: 'Services',
+    href: '/services'
+  },
+  {
     label: 'Locations',
     href: '/locations'
   },
@@ -20,4 +24,3 @@ export const navigationItems = [
     href: '/contact'
   }
 ];
-
