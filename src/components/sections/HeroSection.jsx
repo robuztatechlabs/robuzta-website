@@ -124,10 +124,7 @@ export function HeroSection() {
             </div>
 
             {/* Action Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+            <div
               className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2"
             >
               <Link
@@ -136,7 +133,7 @@ export function HeroSection() {
               >
                 <Calendar size={18} />
                 <span>Book Appointment</span>
-              </button>
+              </Link>
 
               <a
                 href={`tel:${siteConfig.phone}`}

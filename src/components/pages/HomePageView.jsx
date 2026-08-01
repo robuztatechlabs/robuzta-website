@@ -6,10 +6,21 @@ import { ScrollProgress } from '@/components/ui/ScrollProgress';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 
+// Lead overlays & widgets
+import { ExitIntentModal } from '@/components/ui/ExitIntentModal';
+import { QuickCallbackWidget } from '@/components/ui/QuickCallbackWidget';
+import { ScrollTriggeredCtaBar } from '@/components/ui/ScrollTriggeredCtaBar';
+import { LeadMagnetBanner } from '@/components/ui/LeadMagnetBanner';
+
 // HeroSection is loaded synchronously so top of Home page paints INSTANTLY (0ms)
 import { HeroSection } from '@/components/sections/HeroSection';
 
 // Below-the-fold sections are lazy-loaded dynamically to prevent initial route render lag
+const MultiStepLeadWizard = dynamic(
+  () => import('@/components/sections/MultiStepLeadWizard').then(m => m.MultiStepLeadWizard),
+  { ssr: false }
+);
+
 const LaptopExplorerSection = dynamic(
   () => import('@/components/sections/LaptopExplorerSection').then(m => m.LaptopExplorerSection),
   { ssr: false }
