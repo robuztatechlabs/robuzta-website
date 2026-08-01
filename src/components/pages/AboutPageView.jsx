@@ -4,6 +4,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { ShieldCheck, Cpu, Lock, Eye, Award, CheckCircle2, Sparkles, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { ReelsSection } from '@/components/sections/ReelsSection';
 
 export function AboutPageView() {
   return (
@@ -121,6 +122,12 @@ export function AboutPageView() {
 
           </div>
         </section>
+
+        {/* Live Workbench Instagram Reels Showcase */}
+        <ReelsSection
+          title="See Our Technicians In Action"
+          subtitle="Watch real video proof of micro-soldering, logic board diagnostics, and ESD-safe repair procedures recorded live on our workbench."
+        />
 
       </main>
       <Footer />

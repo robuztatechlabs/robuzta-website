@@ -7,6 +7,7 @@ import { siteConfig } from '@/data/site';
 import { locations } from '@/data/locations';
 import { Phone, Mail, MapPin, Clock, ShieldCheck, Sparkles, ArrowRight } from 'lucide-react';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
+import { SocialBar } from '@/components/ui/SocialBar';
 
 export function ContactPageView() {
   return (
@@ -66,10 +67,10 @@ export function ContactPageView() {
                       href={siteConfig.whatsappHref}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-5 rounded-2xl bg-emerald-50/70 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800/50 hover:bg-emerald-100/80 dark:hover:bg-emerald-900/40 hover:shadow-xl transition-all space-y-2 group"
+                      className="p-5 rounded-2xl bg-emerald-50/70 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 hover:bg-emerald-100/80 dark:hover:bg-emerald-900/50 hover:shadow-xl transition-all space-y-2 group"
                     >
-                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-600 dark:bg-emerald-500/20 text-white dark:text-emerald-400">
-                        <WhatsappIcon size={22} className="text-white dark:text-emerald-400" />
+                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-600 text-white">
+                        <WhatsappIcon size={22} className="text-white" />
                       </div>
                       <div>
                         <div className="text-sm font-extrabold text-emerald-950 dark:text-emerald-100">WhatsApp Live Chat</div>
@@ -99,6 +100,18 @@ export function ContactPageView() {
                         <span className="text-[11px] font-semibold text-slate-400">Monday to Saturday</span>
                       </div>
                     </div>
+                  </div>
+
+                  {/* Social Media Section */}
+                  <div className="p-6 rounded-2xl bg-gradient-to-r from-slate-900 to-slate-950 border border-slate-800 text-white space-y-3">
+                    <div className="flex items-center gap-2 text-xs font-extrabold uppercase text-amber-400 tracking-wider">
+                      <Sparkles size={14} />
+                      <span>Follow Robuzta Techlabs</span>
+                    </div>
+                    <p className="text-xs text-slate-300 font-medium">
+                      Watch live repair videos, chip-level diagnostics tutorials, and customer stories on Instagram, YouTube & Facebook.
+                    </p>
+                    <SocialBar size="md" />
                   </div>
                 </div>
 

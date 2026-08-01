@@ -4,8 +4,9 @@ import Link from 'next/link';
 import { siteConfig } from '@/data/site';
 import { services } from '@/data/services';
 import { locations } from '@/data/locations';
-import { Phone, Mail, MapPin, ShieldCheck, Clock, ArrowUpRight, Globe, Share2 } from 'lucide-react';
+import { Phone, Mail, MapPin, ShieldCheck, Clock, Sparkles } from 'lucide-react';
 import { BrandLogo } from '@/components/ui/BrandLogo';
+import { SocialBar } from '@/components/ui/SocialBar';
 
 export function Footer() {
   return (
@@ -16,7 +17,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-16 border-b border-slate-800">
           
           {/* Main Info */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="lg:col-span-2 space-y-5">
             <div className="bg-white dark:bg-slate-950 p-2 rounded-xl inline-block shadow-sm">
               <BrandLogo />
             </div>
@@ -30,13 +31,13 @@ export function Footer() {
               <span>Zero-OTP Privacy • ISO 27001 ESD Safe Lab</span>
             </div>
 
-            <div className="flex items-center gap-3 pt-2">
-              <a href="#" className="h-9 w-9 flex items-center justify-center rounded-lg bg-slate-800 border border-slate-700 text-slate-400 hover:text-white transition-colors" title="Global Web">
-                <Globe size={16} />
-              </a>
-              <a href="#" className="h-9 w-9 flex items-center justify-center rounded-lg bg-slate-800 border border-slate-700 text-slate-400 hover:text-white transition-colors" title="Share & Connect">
-                <Share2 size={16} />
-              </a>
+            {/* Unique Animated Social Media Links */}
+            <div className="space-y-2 pt-2">
+              <span className="text-[11px] font-extrabold uppercase text-slate-400 tracking-wider flex items-center gap-1.5">
+                <Sparkles size={12} className="text-[#EA580C]" />
+                Connect With Robuzta
+              </span>
+              <SocialBar size="md" />
             </div>
           </div>
 

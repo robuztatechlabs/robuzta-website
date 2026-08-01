@@ -11,11 +11,11 @@ export function LocationsPageView() {
     <>
       <Header />
       <main className="bg-white dark:bg-slate-950 min-h-screen text-slate-900 dark:text-slate-100">
-        
+
         {/* Locations Hero */}
         <section className="relative bg-gradient-to-b from-slate-50 via-blue-50/20 to-white dark:from-slate-900 dark:via-slate-900 dark:to-slate-900 py-20 sm:py-24 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
           <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-teal-500/10 rounded-full blur-[140px]" />
-          
+
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center space-y-6">
             <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-4 py-1.5 text-xs font-extrabold text-[#0E7C7B]">
               <Sparkles size={14} className="text-[#EA580C]" />
@@ -35,7 +35,7 @@ export function LocationsPageView() {
         {/* Locations Grid */}
         <section className="py-20 border-b border-slate-200 dark:border-slate-700">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12">
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {locations.map((loc) => (
                 <article
@@ -53,7 +53,7 @@ export function LocationsPageView() {
                         </h2>
                       </div>
 
-                      <span className="text-[11px] font-extrabold text-emerald-800 bg-emerald-100 border border-emerald-300 px-3 py-1 rounded-full">
+                      <span className="shrink-0 whitespace-nowrap text-[11px] font-extrabold text-emerald-800 dark:text-emerald-300 bg-emerald-100 dark:bg-emerald-950/80 border border-emerald-300 dark:border-emerald-800 px-3.5 py-1 rounded-full inline-block">
                         Live Lab Branch
                       </span>
                     </div>
