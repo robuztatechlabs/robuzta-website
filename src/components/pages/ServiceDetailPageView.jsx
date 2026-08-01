@@ -28,8 +28,10 @@ import { FinalCta } from '@/components/sections/FinalCta';
 import { MagneticButton } from '@/components/ui/MagneticButton';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 import { getServiceBySlug, services } from '@/data/services';
+import { getModelShowcasesForService } from '@/data/serviceModels';
 import { repairProcess } from '@/data/process';
 import { siteConfig } from '@/data/site';
+import { ServiceModelShowcase } from '@/components/cards/ServiceModelShowcase';
 
 /* ─── Per-service icon map ──────────────────────────────────────── */
 const serviceIcons = {
@@ -115,6 +117,7 @@ export function ServiceDetailPageView({ slug }) {
 
   const ServiceIcon = serviceIcons[service.slug] || Wrench;
   const relatedServices = services.filter((item) => item.slug !== service.slug).slice(0, 3);
+  const modelShowcases = getModelShowcasesForService(service.slug);
 
   return (
     <>
@@ -303,6 +306,48 @@ export function ServiceDetailPageView({ slug }) {
             </div>
           </div>
         </section>
+
+        {/* ══════════════════════════════════════════════
+            SECTION 1.5 — 3D HARDWARE SHOWCASE
+        ══════════════════════════════════════════════ */}
+        {modelShowcases.length > 0 && (
+          <section className="relative bg-slate-50 dark:bg-slate-900 py-24 border-b border-slate-200 dark:border-slate-700" id="hardware-showcase">
+            <div className="pointer-events-none absolute top-0 right-0 w-[400px] h-[400px] bg-[#0E7C7B]/5 rounded-full blur-[120px]" />
+
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+              <div className="text-center max-w-3xl mx-auto space-y-4">
+                <motion.span
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="inline-block text-xs font-bold uppercase tracking-widest text-[#0E7C7B] bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-3.5 py-1.5 rounded-full"
+                >
+                  Interactive Hardware Preview
+                </motion.span>
+                <motion.h2
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.08 }}
+                  className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight"
+                >
+                  What We Repair & Build
+                </motion.h2>
+              </div>
+
+              <div className="space-y-8">
+                {modelShowcases.map((showcase, idx) => (
+                  <ServiceModelShowcase
+                    key={showcase.modelPath}
+                    {...showcase}
+                    ctaHref="/contact"
+                    index={idx}
+                  />
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* ══════════════════════════════════════════════
             SECTION 2 — SYMPTOMS
