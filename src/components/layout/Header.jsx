@@ -21,6 +21,7 @@ import { MagneticButton } from '@/components/ui/MagneticButton';
 import { BrandLogo } from '@/components/ui/BrandLogo';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
+import { useBookingModal } from '@/context/BookingModalContext';
 
 const serviceIcons = {
   'laptop-repair': Laptop,
@@ -41,6 +42,7 @@ const navItems = [
 ];
 
 export function Header() {
+  const { openModal } = useBookingModal();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [megaMenuOpen, setMegaMenuOpen] = useState(false);
   const [hoveredNav, setHoveredNav] = useState(null);
@@ -159,14 +161,13 @@ export function Header() {
           </a>
 
           {/* Primary CTA Button: Book Diagnosis */}
-          <MagneticButton>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-xl px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-black shadow-md transition-all hover:scale-[1.03] bg-[#0E7C7B] dark:bg-teal-600 text-white"
-            >
-              <span className="font-black text-white">Book Diagnosis</span>
-            </Link>
-          </MagneticButton>
+          <button
+            type="button"
+            onClick={() => openModal({ formType: 'Header Book Diagnosis' })}
+            className="inline-flex items-center justify-center rounded-xl px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-black shadow-md transition-all hover:scale-[1.03] bg-[#0E7C7B] dark:bg-teal-600 text-white cursor-pointer"
+          >
+            <span className="font-black text-white">Book Diagnosis</span>
+          </button>
 
           {/* Mobile Menu Toggle */}
           <button

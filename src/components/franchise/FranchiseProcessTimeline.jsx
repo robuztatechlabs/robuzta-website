@@ -43,7 +43,7 @@ const processSteps = [
 
 export function FranchiseProcessTimeline() {
   return (
-    <section className="relative bg-white dark:bg-slate-950 py-24 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
+    <section className="relative bg-white dark:bg-slate-950 py-24 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
       
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16">
         
@@ -53,7 +53,7 @@ export function FranchiseProcessTimeline() {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-xs font-black uppercase tracking-widest text-[#2563EB] bg-blue-50 border border-blue-200 px-3.5 py-1.5 rounded-full inline-block"
+            className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-300 bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-4 py-1.5 rounded-full inline-block"
           >
             TRANSPARENT 7-STAGE ONBOARDING
           </motion.span>
@@ -63,7 +63,7 @@ export function FranchiseProcessTimeline() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight"
+            className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight"
           >
             From Application to Launching Your Lab
           </motion.h2>
@@ -88,11 +88,12 @@ export function FranchiseProcessTimeline() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="group rounded-3xl bg-slate-50/80 border border-slate-200 dark:border-slate-700 p-7 flex flex-col justify-between hover:border-[#2563EB]/40 hover:bg-white hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-1.5 transition-all duration-300 space-y-5"
+              whileHover={{ y: -6 }}
+              className="group rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-7 flex flex-col justify-between hover:border-[#0E7C7B] hover:shadow-2xl transition-all duration-300 space-y-5"
             >
               <div className="space-y-4">
-                <div className="flex items-center justify-between border-b border-slate-200/80 pb-3">
-                  <span className="font-mono text-3xl font-black text-[#2563EB]">
+                <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
+                  <span className="font-mono text-3xl font-black text-[#0E7C7B] dark:text-teal-400">
                     {item.step}
                   </span>
                   <span className="text-[10px] font-mono font-bold text-slate-400 uppercase">
@@ -100,7 +101,7 @@ export function FranchiseProcessTimeline() {
                   </span>
                 </div>
 
-                <h3 className="text-lg font-extrabold text-slate-900 dark:text-slate-100 group-hover:text-[#2563EB] transition-colors">
+                <h3 className="text-lg font-black text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors">
                   {item.title}
                 </h3>
 
@@ -109,8 +110,8 @@ export function FranchiseProcessTimeline() {
                 </p>
               </div>
 
-              <div className="pt-2 flex items-center gap-1.5 text-[11px] font-extrabold text-emerald-700">
-                <CheckCircle2 size={14} className="text-[#2563EB]" /> Verified Step
+              <div className="pt-2 flex items-center gap-1.5 text-[11px] font-extrabold text-[#0E7C7B] dark:text-teal-400">
+                <CheckCircle2 size={14} className="text-[#0E7C7B] dark:text-teal-400" /> Verified Step
               </div>
             </motion.div>
           ))}

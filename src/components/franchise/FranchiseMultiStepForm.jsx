@@ -45,20 +45,20 @@ export function FranchiseMultiStepForm() {
   };
 
   return (
-    <section id="franchise-application-form" className="relative bg-white dark:bg-slate-950 py-24 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
+    <section id="franchise-application-form" className="relative bg-white dark:bg-slate-950 py-24 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
       
       {/* Background Lighting Glows */}
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-r from-[#2563EB]/10 via-blue-500/5 to-orange-500/10 rounded-full blur-[140px]" />
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[#0E7C7B]/10 rounded-full blur-[140px]" />
 
       <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-10">
         
         {/* Section Header */}
         <div className="text-center space-y-4">
-          <span className="text-xs font-black uppercase tracking-widest text-[#2563EB] bg-blue-50 border border-blue-200 px-3.5 py-1.5 rounded-full inline-block">
+          <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-300 bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-4 py-1.5 rounded-full inline-block">
             CONFIDENTIAL FRANCHISE APPLICATION
           </span>
 
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
             Apply for Robuzta Franchise Partnership
           </h2>
 
@@ -69,19 +69,19 @@ export function FranchiseMultiStepForm() {
 
         {/* Step Progress Bar Header */}
         {!isSubmitted && (
-          <div className="flex items-center justify-between gap-2 max-w-md mx-auto p-2 bg-slate-100 dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 text-xs font-extrabold">
+          <div className="flex items-center justify-between gap-2 max-w-md mx-auto p-2 bg-slate-100 dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 text-xs font-extrabold">
             <div className={`flex-1 text-center py-2 rounded-xl transition-all ${
-              step === 1 ? 'bg-[#2563EB] text-white shadow-md' : 'text-slate-600 dark:text-slate-400'
+              step === 1 ? 'bg-[#0E7C7B] text-white shadow-md' : 'text-slate-600 dark:text-slate-400'
             }`}>
               1. Contact
             </div>
             <div className={`flex-1 text-center py-2 rounded-xl transition-all ${
-              step === 2 ? 'bg-[#2563EB] text-white shadow-md' : 'text-slate-600 dark:text-slate-400'
+              step === 2 ? 'bg-[#0E7C7B] text-white shadow-md' : 'text-slate-600 dark:text-slate-400'
             }`}>
               2. Territory & Budget
             </div>
             <div className={`flex-1 text-center py-2 rounded-xl transition-all ${
-              step === 3 ? 'bg-[#2563EB] text-white shadow-md' : 'text-slate-600 dark:text-slate-400'
+              step === 3 ? 'bg-[#0E7C7B] text-white shadow-md' : 'text-slate-600 dark:text-slate-400'
             }`}>
               3. Experience & Submit
             </div>
@@ -89,7 +89,7 @@ export function FranchiseMultiStepForm() {
         )}
 
         {/* Multi-Step Wizard Container */}
-        <div className="rounded-3xl bg-white dark:bg-slate-950 border border-slate-200/90 p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+        <div className="rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 sm:p-12 shadow-2xl relative overflow-hidden">
           
           {isSubmitted ? (
             <motion.div
@@ -97,12 +97,12 @@ export function FranchiseMultiStepForm() {
               animate={{ opacity: 1, scale: 1 }}
               className="text-center py-10 space-y-6"
             >
-              <div className="h-20 w-20 bg-emerald-100 border border-emerald-300 text-emerald-600 rounded-full flex items-center justify-center mx-auto shadow-inner">
+              <div className="h-20 w-20 bg-emerald-100 dark:bg-emerald-950/80 border border-emerald-300 dark:border-emerald-800 text-emerald-600 dark:text-emerald-400 rounded-full flex items-center justify-center mx-auto shadow-inner">
                 <CheckCircle2 size={44} />
               </div>
 
               <div className="space-y-2 max-w-lg mx-auto">
-                <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-slate-100">
+                <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
                   Application Submitted Successfully!
                 </h3>
                 <p className="text-sm text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
@@ -133,8 +133,8 @@ export function FranchiseMultiStepForm() {
                   exit={{ opacity: 0, x: -10 }}
                   className="space-y-4"
                 >
-                  <h4 className="text-base font-extrabold text-slate-900 dark:text-slate-100 border-b border-slate-100 dark:border-slate-800 pb-3 flex items-center gap-2">
-                    <User size={18} className="text-[#2563EB]" /> Step 1: Personal & Contact Information
+                  <h4 className="text-base font-black text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-3 flex items-center gap-2">
+                    <User size={18} className="text-[#0E7C7B] dark:text-teal-400" /> Step 1: Personal & Contact Information
                   </h4>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -146,7 +146,7 @@ export function FranchiseMultiStepForm() {
                         placeholder="e.g. Vikramaditya Shah"
                         value={formData.fullName}
                         onChange={(e) => updateField('fullName', e.target.value)}
-                        className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-4 py-3.5 text-sm text-slate-900 dark:text-slate-100 font-medium placeholder-slate-400 focus:border-[#2563EB] focus:bg-white focus:outline-none"
+                        className="w-full rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 px-4 py-3.5 text-sm text-slate-900 dark:text-white font-medium placeholder-slate-400 focus:border-[#0E7C7B] focus:outline-none"
                       />
                     </div>
 
@@ -157,7 +157,7 @@ export function FranchiseMultiStepForm() {
                         placeholder="e.g. Shah Electronics Pvt Ltd"
                         value={formData.companyName}
                         onChange={(e) => updateField('companyName', e.target.value)}
-                        className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-4 py-3.5 text-sm text-slate-900 dark:text-slate-100 font-medium placeholder-slate-400 focus:border-[#2563EB] focus:bg-white focus:outline-none"
+                        className="w-full rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 px-4 py-3.5 text-sm text-slate-900 dark:text-white font-medium placeholder-slate-400 focus:border-[#0E7C7B] focus:outline-none"
                       />
                     </div>
                   </div>
@@ -171,7 +171,7 @@ export function FranchiseMultiStepForm() {
                         placeholder="e.g. vikram@gmail.com"
                         value={formData.email}
                         onChange={(e) => updateField('email', e.target.value)}
-                        className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-4 py-3.5 text-sm text-slate-900 dark:text-slate-100 font-medium placeholder-slate-400 focus:border-[#2563EB] focus:bg-white focus:outline-none"
+                        className="w-full rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 px-4 py-3.5 text-sm text-slate-900 dark:text-white font-medium placeholder-slate-400 focus:border-[#0E7C7B] focus:outline-none"
                       />
                     </div>
 
@@ -183,7 +183,7 @@ export function FranchiseMultiStepForm() {
                         placeholder="e.g. +91 98980 12345"
                         value={formData.phone}
                         onChange={(e) => updateField('phone', e.target.value)}
-                        className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-4 py-3.5 text-sm text-slate-900 dark:text-slate-100 font-medium placeholder-slate-400 focus:border-[#2563EB] focus:bg-white focus:outline-none"
+                        className="w-full rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 px-4 py-3.5 text-sm text-slate-900 dark:text-white font-medium placeholder-slate-400 focus:border-[#0E7C7B] focus:outline-none"
                       />
                     </div>
                   </div>
@@ -198,7 +198,7 @@ export function FranchiseMultiStepForm() {
                   exit={{ opacity: 0, x: -10 }}
                   className="space-y-4"
                 >
-                  <h4 className="text-base font-extrabold text-slate-900 dark:text-slate-100 border-b border-slate-100 dark:border-slate-800 pb-3 flex items-center gap-2">
+                  <h4 className="text-base font-black text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-3 flex items-center gap-2">
                     <MapPin size={18} className="text-[#EA580C]" /> Step 2: Target Territory & Investment Capacity
                   </h4>
 
@@ -211,7 +211,7 @@ export function FranchiseMultiStepForm() {
                         placeholder="e.g. Surat, Vadodara, Rajkot, Ahmedabad"
                         value={formData.city}
                         onChange={(e) => updateField('city', e.target.value)}
-                        className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-4 py-3.5 text-sm text-slate-900 dark:text-slate-100 font-medium placeholder-slate-400 focus:border-[#2563EB] focus:bg-white focus:outline-none"
+                        className="w-full rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 px-4 py-3.5 text-sm text-slate-900 dark:text-white font-medium placeholder-slate-400 focus:border-[#0E7C7B] focus:outline-none"
                       />
                     </div>
 
@@ -223,7 +223,7 @@ export function FranchiseMultiStepForm() {
                         placeholder="e.g. Gujarat"
                         value={formData.state}
                         onChange={(e) => updateField('state', e.target.value)}
-                        className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-4 py-3.5 text-sm text-slate-900 dark:text-slate-100 font-medium placeholder-slate-400 focus:border-[#2563EB] focus:bg-white focus:outline-none"
+                        className="w-full rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 px-4 py-3.5 text-sm text-slate-900 dark:text-white font-medium placeholder-slate-400 focus:border-[#0E7C7B] focus:outline-none"
                       />
                     </div>
                   </div>
@@ -233,7 +233,7 @@ export function FranchiseMultiStepForm() {
                     <select
                       value={formData.budget}
                       onChange={(e) => updateField('budget', e.target.value)}
-                      className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-4 py-3.5 text-sm text-slate-900 dark:text-slate-100 font-medium focus:border-[#2563EB] focus:bg-white focus:outline-none"
+                      className="w-full rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 px-4 py-3.5 text-sm text-slate-900 dark:text-white font-medium focus:border-[#0E7C7B] focus:outline-none"
                     >
                       <option value="₹8.5L - ₹15L">Standard Lab Model (₹8.5 Lakhs - ₹15 Lakhs)</option>
                       <option value="₹15L - ₹25L">Flagship Enterprise Hub (₹15 Lakhs - ₹25 Lakhs)</option>
@@ -251,8 +251,8 @@ export function FranchiseMultiStepForm() {
                   exit={{ opacity: 0, x: -10 }}
                   className="space-y-4"
                 >
-                  <h4 className="text-base font-extrabold text-slate-900 dark:text-slate-100 border-b border-slate-100 dark:border-slate-800 pb-3 flex items-center gap-2">
-                    <Briefcase size={18} className="text-[#2563EB]" /> Step 3: Experience & Additional Notes
+                  <h4 className="text-base font-black text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-3 flex items-center gap-2">
+                    <Briefcase size={18} className="text-[#0E7C7B] dark:text-teal-400" /> Step 3: Experience & Additional Notes
                   </h4>
 
                   <div className="space-y-1.5">
@@ -260,7 +260,7 @@ export function FranchiseMultiStepForm() {
                     <select
                       value={formData.experience}
                       onChange={(e) => updateField('experience', e.target.value)}
-                      className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-4 py-3.5 text-sm text-slate-900 dark:text-slate-100 font-medium focus:border-[#2563EB] focus:bg-white focus:outline-none"
+                      className="w-full rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 px-4 py-3.5 text-sm text-slate-900 dark:text-white font-medium focus:border-[#0E7C7B] focus:outline-none"
                     >
                       <option value="Business Owner / Entrepreneur">Existing Business Owner / Entrepreneur</option>
                       <option value="IT / Electronics Hardware Repair">IT / Electronics Retail & Service Background</option>
@@ -276,19 +276,19 @@ export function FranchiseMultiStepForm() {
                       placeholder="Share any preferred store location, launching timeline, or specific questions..."
                       value={formData.message}
                       onChange={(e) => updateField('message', e.target.value)}
-                      className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-4 py-3.5 text-sm text-slate-900 dark:text-slate-100 font-medium placeholder-slate-400 focus:border-[#2563EB] focus:bg-white focus:outline-none"
+                      className="w-full rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 px-4 py-3.5 text-sm text-slate-900 dark:text-white font-medium placeholder-slate-400 focus:border-[#0E7C7B] focus:outline-none"
                     />
                   </div>
                 </motion.div>
               )}
 
               {/* Wizard Nav Buttons */}
-              <div className="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800">
+              <div className="flex items-center justify-between pt-4 border-t border-slate-200 dark:border-slate-800">
                 {step > 1 ? (
                   <button
                     type="button"
                     onClick={handlePrev}
-                    className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-xs font-extrabold text-slate-700 dark:text-slate-300 transition-all cursor-pointer"
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-xs font-extrabold text-slate-800 dark:text-slate-200 transition-all cursor-pointer"
                   >
                     <ArrowLeft size={16} />
                     <span>Previous</span>
@@ -297,7 +297,7 @@ export function FranchiseMultiStepForm() {
 
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-2xl bg-[#2563EB] hover:bg-blue-700 text-xs font-black text-white shadow-lg shadow-blue-500/25 hover:scale-[1.02] transition-all cursor-pointer"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-xs font-black text-white shadow-lg shadow-[#0E7C7B]/25 hover:scale-[1.02] transition-all cursor-pointer"
                 >
                   <span>{step === 3 ? 'Submit Franchise Application' : 'Next Step'}</span>
                   <ArrowRight size={16} />

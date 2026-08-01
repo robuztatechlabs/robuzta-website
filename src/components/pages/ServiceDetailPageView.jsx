@@ -32,6 +32,7 @@ import { getModelShowcasesForService } from '@/data/serviceModels';
 import { repairProcess } from '@/data/process';
 import { siteConfig } from '@/data/site';
 import { ServiceModelShowcase } from '@/components/cards/ServiceModelShowcase';
+import { useBookingModal } from '@/context/BookingModalContext';
 
 /* ─── Per-service icon map ──────────────────────────────────────── */
 const serviceIcons = {
@@ -109,6 +110,7 @@ function FaqItem({ question, answer, index }) {
 
 /* ─── Main Component ────────────────────────────────────────────── */
 export function ServiceDetailPageView({ slug }) {
+  const { openModal } = useBookingModal();
   const service = getServiceBySlug(slug);
 
   if (!service) {
@@ -204,15 +206,14 @@ export function ServiceDetailPageView({ slug }) {
                   variants={fadeUp}
                   className="flex flex-wrap items-center gap-4 pt-2"
                 >
-                  <MagneticButton>
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-[#0E7C7B] to-teal-500 px-7 py-4 text-base font-bold text-white shadow-xl shadow-[#0E7C7B]/30 hover:shadow-[#0E7C7B]/50 hover:scale-[1.03] transition-all"
-                    >
-                      <span>Get Free Quote</span>
-                      <ArrowRight size={18} />
-                    </Link>
-                  </MagneticButton>
+                  <button
+                    type="button"
+                    onClick={() => openModal({ formType: service.title + ' Free Quote', device: service.title })}
+                    className="inline-flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-[#0E7C7B] to-teal-500 px-7 py-4 text-base font-bold text-white shadow-xl shadow-[#0E7C7B]/30 hover:shadow-[#0E7C7B]/50 hover:scale-[1.03] transition-all cursor-pointer"
+                  >
+                    <span>Get Free Quote</span>
+                    <ArrowRight size={18} />
+                  </button>
 
                   <MagneticButton>
                     <a

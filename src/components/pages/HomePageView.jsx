@@ -79,13 +79,27 @@ export function HomePageView() {
   return (
     <SmoothScroll>
       <ScrollProgress />
+
+      {/* Global Lead Capture Overlays */}
+      <ExitIntentModal />
+      <QuickCallbackWidget />
+      <ScrollTriggeredCtaBar />
+
       <Header />
       <main className="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen">
         <HeroSection />
+        {/* 30-Second Multi-Step Diagnostic & Free Pickup Wizard */}
+        <MultiStepLeadWizard />
+
+        {/* Interactive 3D Laptop Explorer */}
         <LaptopExplorerSection />
         <TrustSection />
         <ServicesSection />
         <WhyChooseUsSection />
+
+        {/* Lead Magnet Download Banner */}
+        <LeadMagnetBanner />
+
         <PortfolioSection />
         <RepairShowcaseSection />
         <TechStackSection />

@@ -50,7 +50,7 @@ const comparisonRows = [
 
 export function FranchiseComparisonTable() {
   return (
-    <section className="relative bg-white dark:bg-slate-950 py-24 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
+    <section className="relative bg-white dark:bg-slate-950 py-24 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
       
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16">
         
@@ -60,7 +60,7 @@ export function FranchiseComparisonTable() {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-xs font-black uppercase tracking-widest text-[#2563EB] bg-blue-50 border border-blue-200 px-3.5 py-1.5 rounded-full inline-block"
+            className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-300 bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-4 py-1.5 rounded-full inline-block"
           >
             ENTERPRISE COMPARISON MATRIX
           </motion.span>
@@ -70,7 +70,7 @@ export function FranchiseComparisonTable() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight"
+            className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight"
           >
             Why Robuzta Outperforms Generic Repair Models
           </motion.h2>
@@ -87,14 +87,14 @@ export function FranchiseComparisonTable() {
         </div>
 
         {/* Comparison Table */}
-        <div className="overflow-x-auto rounded-3xl border border-slate-200 dark:border-slate-700 shadow-xl bg-white dark:bg-slate-950">
+        <div className="overflow-x-auto rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl bg-white dark:bg-slate-950">
           <table className="w-full text-left border-collapse min-w-[700px]">
             <thead>
-              <tr className="bg-slate-900 text-white">
+              <tr className="bg-slate-900 dark:bg-slate-900 text-white">
                 <th className="p-5 text-sm font-black uppercase tracking-wider w-2/5">
                   Business Feature / Operational Advantage
                 </th>
-                <th className="p-5 text-sm font-black uppercase tracking-wider text-[#2563EB] bg-blue-950/80 w-1/5 text-center border-x border-slate-800">
+                <th className="p-5 text-sm font-black uppercase tracking-wider text-teal-300 bg-[#0E7C7B] w-1/5 text-center border-x border-slate-800">
                   Robuzta Franchise 🏆
                 </th>
                 <th className="p-5 text-sm font-black uppercase tracking-wider text-slate-400 w-1/5 text-center">
@@ -106,15 +106,15 @@ export function FranchiseComparisonTable() {
               </tr>
             </thead>
 
-            <tbody className="divide-y divide-slate-200 text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200">
+            <tbody className="divide-y divide-slate-200 dark:divide-slate-800 text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200">
               {comparisonRows.map((row, idx) => (
-                <tr key={row.feature} className={idx % 2 === 0 ? 'bg-white dark:bg-slate-950' : 'bg-slate-50/60 dark:bg-slate-900/60'}>
-                  <td className="p-5 font-bold text-slate-900 dark:text-slate-100">{row.feature}</td>
+                <tr key={row.feature} className={idx % 2 === 0 ? 'bg-white dark:bg-slate-950' : 'bg-slate-50 dark:bg-slate-900/60'}>
+                  <td className="p-5 font-bold text-slate-900 dark:text-white">{row.feature}</td>
                   
                   {/* Robuzta Column */}
-                  <td className="p-5 text-center font-extrabold text-blue-900 bg-blue-50/70 border-x border-blue-100">
-                    <div className="flex items-center justify-center gap-1.5 text-emerald-700">
-                      <Check size={16} className="text-[#2563EB] shrink-0" />
+                  <td className="p-5 text-center font-black text-[#0E7C7B] dark:text-teal-300 bg-[#0E7C7B]/10 dark:bg-teal-950/40 border-x border-[#0E7C7B]/20 dark:border-slate-800">
+                    <div className="flex items-center justify-center gap-1.5">
+                      <Check size={16} className="text-[#0E7C7B] dark:text-teal-400 shrink-0" />
                       <span>{row.robuzta}</span>
                     </div>
                   </td>
