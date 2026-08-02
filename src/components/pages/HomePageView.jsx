@@ -10,7 +10,6 @@ import { Footer } from '@/components/layout/Footer';
 import { ExitIntentModal } from '@/components/ui/ExitIntentModal';
 import { QuickCallbackWidget } from '@/components/ui/QuickCallbackWidget';
 import { ScrollTriggeredCtaBar } from '@/components/ui/ScrollTriggeredCtaBar';
-import { LeadMagnetBanner } from '@/components/ui/LeadMagnetBanner';
 
 // HeroSection is loaded synchronously so top of Home page paints INSTANTLY (0ms)
 import { HeroSection } from '@/components/sections/HeroSection';
@@ -107,9 +106,6 @@ export function HomePageView() {
         <TrustSection />
         <ServicesSection />
         <WhyChooseUsSection />
-
-        {/* Lead Magnet Download Banner */}
-        <LeadMagnetBanner />
 
         <PortfolioSection />
         <RepairShowcaseSection />
