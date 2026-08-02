@@ -100,7 +100,7 @@ export function HeroSection() {
 
             {/* Sub-headline */}
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 font-medium leading-relaxed max-w-xl mx-auto lg:mx-0">
-              Ahmedabad's <strong className="text-slate-900 dark:text-white">certified component-level repair lab</strong> — trusted for liquid damage recovery, screen replacement & logic board fixes.
+              Ahmedabad&apos;s <strong className="text-slate-900 dark:text-white">certified component-level repair lab</strong> — trusted for liquid damage recovery, screen replacement & logic board fixes.
             </p>
 
             {/* 4 Micro Feature Pills */}

@@ -193,7 +193,7 @@ export function BlogListingPageView() {
               </div>
             ) : (
               <div className="text-center py-16 space-y-4">
-                <p className="text-slate-500 font-bold">No articles found matching "{searchQuery}".</p>
+                <p className="text-slate-500 font-bold">No articles found matching &quot;{searchQuery}&quot;.</p>
                 <button
                   onClick={() => { setSearchQuery(''); setSelectedCategory('All'); }}
                   className="text-xs font-black text-[#0E7C7B] underline"
