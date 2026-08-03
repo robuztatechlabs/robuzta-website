@@ -30,6 +30,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { ReelsSection } from '@/components/sections/ReelsSection';
+import { PlatformTrustSection } from '@/components/sections/PlatformTrustSection';
 import { useBookingModal } from '@/context/BookingModalContext';
 
 const journeyWaypoints = [
@@ -253,6 +254,9 @@ export function AboutPageView() {
             </div>
           </div>
         </section>
+
+        {/* Multi-Platform Verified Ratings (Google, Justdial, Sulekha) */}
+        <PlatformTrustSection />
 
         {/* 3. ROBUZTA OFFICIAL USPs SECTION */}
         <section id="our-usps" className="py-24 bg-slate-50/50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 relative">

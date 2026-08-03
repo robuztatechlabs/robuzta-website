@@ -36,9 +36,9 @@ export function ScrollTriggeredCtaBar() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 80, opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-40 w-[94%] max-w-4xl pointer-events-auto"
+          className="hidden lg:flex fixed bottom-6 left-1/2 -translate-x-1/2 z-40 w-auto max-w-4xl pointer-events-auto"
         >
-          <div className="rounded-2xl sm:rounded-full bg-slate-900/95 dark:bg-slate-950/95 text-white p-2.5 sm:p-3 border border-slate-700/80 shadow-2xl backdrop-blur-xl flex flex-wrap sm:flex-nowrap items-center justify-between gap-2.5 sm:gap-4 shrink-0">
+          <div className="rounded-full bg-slate-900/95 dark:bg-slate-950/95 text-white p-3 border border-slate-700/80 shadow-2xl backdrop-blur-xl flex items-center justify-between gap-4 shrink-0">
             
             {/* Left Status Badge (Desktop & Tablet) */}
             <div className="hidden sm:flex items-center gap-2.5 pl-2 shrink-0">

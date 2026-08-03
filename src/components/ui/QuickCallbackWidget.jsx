@@ -28,7 +28,7 @@ export function QuickCallbackWidget() {
   return (
     <>
       {/* Floating Trigger Button (Bottom Left) */}
-      <div className="fixed bottom-20 lg:bottom-24 left-5 sm:left-6 z-30">
+      <div className="hidden sm:block fixed bottom-6 left-6 z-40">
         <motion.button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
@@ -39,8 +39,7 @@ export function QuickCallbackWidget() {
           <div className="flex h-7 w-7 items-center justify-center rounded-full bg-white/20 text-white animate-pulse">
             <PhoneCall size={15} />
           </div>
-          <span className="hidden sm:inline">Request 60-Sec Callback</span>
-          <span className="sm:hidden">Callback</span>
+          <span>Request 60-Sec Callback</span>
         </motion.button>
       </div>
 

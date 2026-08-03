@@ -10,7 +10,7 @@ export function FloatingWidget() {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="fixed bottom-20 lg:bottom-24 right-6 z-30 flex flex-col items-end" aria-label="Quick contact widget">
+    <div className="fixed bottom-16 lg:bottom-6 right-5 sm:right-6 z-40 flex flex-col items-end" aria-label="Quick contact widget">
       {expanded && (
         <div className="mb-3 w-80 rounded-3xl bg-slate-900/95 backdrop-blur-xl border border-slate-800 p-5 text-white shadow-2xl space-y-4 animate-in fade-in slide-in-from-bottom-3 duration-200">
           

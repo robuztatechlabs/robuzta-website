@@ -9,6 +9,7 @@ import { locations } from '@/data/locations';
 import { Phone, Mail, MapPin, Clock, ShieldCheck, Sparkles, ArrowRight, Truck, CheckCircle2, ChevronDown, MessageSquare, Zap, Navigation } from 'lucide-react';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 import { SocialBar } from '@/components/ui/SocialBar';
+import { PlatformTrustSection } from '@/components/sections/PlatformTrustSection';
 import Link from 'next/link';
 
 const CONTACT_FAQS = [
@@ -289,6 +290,9 @@ export function ContactPageView() {
             </div>
           </div>
         </section>
+
+        {/* Multi-Platform Verified Ratings (Google, Justdial, Sulekha) */}
+        <PlatformTrustSection />
 
         {/* Contact FAQs Accordion Section */}
         <section className="py-20 border-b border-slate-200 dark:border-slate-800">
