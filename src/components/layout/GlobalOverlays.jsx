@@ -1,7 +1,6 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { StickyMobileBar } from '@/components/layout/StickyMobileBar';
 
 const BookRepairModal = dynamic(
   () => import('@/components/ui/BookRepairModal').then((m) => m.BookRepairModal),
@@ -13,8 +12,8 @@ const FranchiseEdgeTab = dynamic(
   { ssr: false }
 );
 
-const FloatingWidget = dynamic(
-  () => import('@/components/ui/FloatingWidget').then((m) => m.FloatingWidget),
+const ScrollTriggeredCtaBar = dynamic(
+  () => import('@/components/ui/ScrollTriggeredCtaBar').then((m) => m.ScrollTriggeredCtaBar),
   { ssr: false }
 );
 
@@ -23,8 +22,7 @@ export function GlobalOverlays() {
     <>
       <BookRepairModal />
       <FranchiseEdgeTab />
-      <FloatingWidget />
-      <StickyMobileBar />
+      <ScrollTriggeredCtaBar />
     </>
   );
 }

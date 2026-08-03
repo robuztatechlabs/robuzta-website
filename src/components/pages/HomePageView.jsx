@@ -106,11 +106,7 @@ export function HomePageView() {
   return (
     <SmoothScroll>
       <ScrollProgress />
-
-      {/* Global Lead Capture Overlays */}
       <ExitIntentModal />
-      <QuickCallbackWidget />
-      <ScrollTriggeredCtaBar />
 
       <Header />
       <main className="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen">
