@@ -26,7 +26,7 @@ export const platformListings = [
   {
     id: 'justdial',
     name: 'Justdial',
-    rating: '4.8',
+    rating: '4.9',
     reviews: 'Verified Business Listing',
     badge: 'Top Rated Tech Lab in Bopal',
     url: 'https://www.justdial.com/Ahmedabad/Robuzta-Techlabs-Bopal/079PXX79-XX79-221124120052-T5Z4_BZDET?via=scode',
