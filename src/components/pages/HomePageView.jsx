@@ -5,16 +5,28 @@ import { SmoothScroll } from '@/components/ui/SmoothScroll';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-
-// Lead overlays & widgets
-import { ExitIntentModal } from '@/components/ui/ExitIntentModal';
-import { QuickCallbackWidget } from '@/components/ui/QuickCallbackWidget';
-import { ScrollTriggeredCtaBar } from '@/components/ui/ScrollTriggeredCtaBar';
+import { LazySection } from '@/components/ui/LazySection';
 
 // HeroSection is loaded synchronously so top of Home page paints INSTANTLY (0ms)
 import { HeroSection } from '@/components/sections/HeroSection';
 
-// Below-the-fold sections are lazy-loaded dynamically to prevent initial route render lag
+// Lead overlays & widgets lazy-loaded dynamically to zero out initial main-thread blocking time
+const ExitIntentModal = dynamic(
+  () => import('@/components/ui/ExitIntentModal').then(m => m.ExitIntentModal),
+  { ssr: false }
+);
+
+const QuickCallbackWidget = dynamic(
+  () => import('@/components/ui/QuickCallbackWidget').then(m => m.QuickCallbackWidget),
+  { ssr: false }
+);
+
+const ScrollTriggeredCtaBar = dynamic(
+  () => import('@/components/ui/ScrollTriggeredCtaBar').then(m => m.ScrollTriggeredCtaBar),
+  { ssr: false }
+);
+
+// Below-the-fold sections lazy-loaded dynamically + deferred on scroll via LazySection
 const MultiStepLeadWizard = dynamic(
   () => import('@/components/sections/MultiStepLeadWizard').then(m => m.MultiStepLeadWizard),
   { ssr: false }
@@ -98,24 +110,64 @@ export function HomePageView() {
       <Header />
       <main className="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen">
         <HeroSection />
+
         {/* 30-Second Multi-Step Diagnostic & Free Pickup Wizard */}
-        <MultiStepLeadWizard />
+        <LazySection minHeight="400px">
+          <MultiStepLeadWizard />
+        </LazySection>
 
         {/* Interactive 3D Laptop Explorer */}
-        <LaptopExplorerSection />
-        <TrustSection />
-        <ServicesSection />
-        <WhyChooseUsSection />
+        <LazySection minHeight="500px">
+          <LaptopExplorerSection />
+        </LazySection>
 
-        <PortfolioSection />
-        <RepairShowcaseSection />
-        <TechStackSection />
-        <ProcessSection />
-        <CourierHighlight />
-        <ReviewsSection />
-        <FaqPreview />
-        <FranchiseHomeSection />
-        <FinalCta />
+        <LazySection minHeight="350px">
+          <TrustSection />
+        </LazySection>
+
+        <LazySection minHeight="450px">
+          <ServicesSection />
+        </LazySection>
+
+        <LazySection minHeight="350px">
+          <WhyChooseUsSection />
+        </LazySection>
+
+        <LazySection minHeight="400px">
+          <PortfolioSection />
+        </LazySection>
+
+        <LazySection minHeight="400px">
+          <RepairShowcaseSection />
+        </LazySection>
+
+        <LazySection minHeight="350px">
+          <TechStackSection />
+        </LazySection>
+
+        <LazySection minHeight="400px">
+          <ProcessSection />
+        </LazySection>
+
+        <LazySection minHeight="300px">
+          <CourierHighlight />
+        </LazySection>
+
+        <LazySection minHeight="400px">
+          <ReviewsSection />
+        </LazySection>
+
+        <LazySection minHeight="350px">
+          <FaqPreview />
+        </LazySection>
+
+        <LazySection minHeight="400px">
+          <FranchiseHomeSection />
+        </LazySection>
+
+        <LazySection minHeight="350px">
+          <FinalCta />
+        </LazySection>
       </main>
       <Footer />
     </SmoothScroll>

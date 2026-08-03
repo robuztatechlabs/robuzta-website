@@ -61,6 +61,9 @@ export function ExitIntentModal() {
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
           <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="exit-modal-title"
             initial={{ opacity: 0, scale: 0.94, y: 15 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.94, y: 15 }}
@@ -71,6 +74,7 @@ export function ExitIntentModal() {
             <button
               type="button"
               onClick={handleClose}
+              aria-label="Close modal"
               className="absolute top-4 right-4 h-9 w-9 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white flex items-center justify-center transition-colors cursor-pointer"
               title="Close modal"
             >
@@ -100,26 +104,26 @@ export function ExitIntentModal() {
                     <span>EXCLUSIVE 10% OFF VOUCHER</span>
                   </div>
 
-                  <h3 className="text-2xl sm:text-3xl font-black tracking-tight">
-                    Before You Go... Claim Free Diagnostics!
+                  <h3 id="exit-modal-title" className="text-2xl sm:text-3xl font-black tracking-tight">
+                    Wait! Get ₹200 OFF Your First Repair
                   </h3>
 
                   <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
-                    Get a <strong>₹0 Free Inspection</strong> + <strong>10% Off Your Repair</strong>. Valid for doorstep pickup across Ahmedabad.
+                    Claim your instant discount code plus free doorstep pickup across South Bopal & Ahmedabad.
                   </p>
                 </div>
 
                 {/* Form */}
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="space-y-1.5">
-                    <label className="text-[11px] font-extrabold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Your Name</label>
+                    <label className="text-[11px] font-extrabold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Your Full Name *</label>
                     <input
                       type="text"
                       required
                       placeholder="e.g. Rahul Sharma"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 text-xs sm:text-sm font-medium focus:border-[#0E7C7B] focus:outline-none"
+                      className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 text-xs sm:text-sm font-medium focus:border-[#0E7C7B] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0E7C7B]"
                     />
                   </div>
 
@@ -132,21 +136,21 @@ export function ExitIntentModal() {
                         placeholder="e.g. 98980 12345"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 text-xs sm:text-sm font-medium focus:border-[#0E7C7B] focus:outline-none"
+                        className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 text-xs sm:text-sm font-medium focus:border-[#0E7C7B] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0E7C7B]"
                       />
                     </div>
 
                     <div className="space-y-1.5">
-                      <label className="text-[11px] font-extrabold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Device Type</label>
+                      <label className="text-[11px] font-extrabold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Device</label>
                       <select
                         value={device}
                         onChange={(e) => setDevice(e.target.value)}
-                        className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 text-xs sm:text-sm font-medium focus:border-[#0E7C7B] focus:outline-none"
+                        className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 text-xs sm:text-sm font-medium focus:border-[#0E7C7B] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0E7C7B]"
                       >
                         <option value="Laptop / MacBook">Laptop / MacBook</option>
-                        <option value="iPhone / Android">iPhone / Android</option>
-                        <option value="iPad / Tablet">iPad / Tablet</option>
-                        <option value="Gaming PC / Rig">Gaming PC / Rig</option>
+                        <option value="Mobile Phone">Mobile Phone</option>
+                        <option value="Tablet / iPad">Tablet / iPad</option>
+                        <option value="Gaming Desktop">Gaming Desktop</option>
                       </select>
                     </div>
                   </div>

@@ -345,6 +345,9 @@ export function AboutPageView() {
                       <img
                         src="https://robuzta.com/wp-content/uploads/2026/02/Mr.-Pranshu-Maheshwari.png"
                         alt="Mr. Pranshu Maheshwari - Founder & CEO Robuzta Techlabs"
+                        width={340}
+                        height={420}
+                        loading="lazy"
                         className="w-full h-auto object-cover transform group-hover/photo:scale-105 transition-transform duration-500"
                       />
                      
@@ -375,12 +378,12 @@ export function AboutPageView() {
                       FOUNDER STATEMENT
                     </span>
                     <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
-                      "No Solution Found? Robuzta Hai Na!"
+                      &quot;No Solution Found? Robuzta Hai Na!&quot;
                     </h2>
                   </div>
 
                   <blockquote className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed font-medium italic border-l-4 border-[#0E7C7B] pl-4 py-1">
-                    "Over a decade of hands-on experience has shaped one guiding principle: repair with care, accuracy, and transparency. Every repair is backed by genuine parts, clear estimates, and warranty-protected service."
+                    &quot;Over a decade of hands-on experience has shaped one guiding principle: repair with care, accuracy, and transparency. Every repair is backed by genuine parts, clear estimates, and warranty-protected service.&quot;
                   </blockquote>
 
                   {/* Highlights */}

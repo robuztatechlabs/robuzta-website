@@ -196,7 +196,7 @@ export function FaqPageView() {
                   <div className="rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-12 text-center space-y-3">
                     <HelpCircle size={36} className="text-slate-400 mx-auto" />
                     <h3 className="text-lg font-bold text-slate-900 dark:text-white">No matching questions found</h3>
-                    <p className="text-xs text-slate-500 font-medium">Try searching for keywords like "password", "warranty", "pickup", or "micro-soldering".</p>
+                    <p className="text-xs text-slate-500 font-medium">Try searching for keywords like &quot;password&quot;, &quot;warranty&quot;, &quot;pickup&quot;, or &quot;micro-soldering&quot;.</p>
                     <button
                       type="button"
                       onClick={() => {

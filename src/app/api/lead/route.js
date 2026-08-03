@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
+const PRODUCTION_GOOGLE_SHEETS_WEBHOOK = 'https://script.google.com/macros/s/AKfycbwUubMl7HlaqvuA5c5xgoEUjecmAkXerc_TjaqV9A7YARPFYf8bg_FPF_5ylcIVkug/exec';
+const PRODUCTION_NOTIFICATION_EMAIL = 'Robuzta.tech@gmail.com';
+
 export async function POST(request) {
   try {
     const body = await request.json();
@@ -23,7 +26,7 @@ export async function POST(request) {
       formType,
       name,
       phone,
-      email,
+      email: email || PRODUCTION_NOTIFICATION_EMAIL,
       device,
       issue,
       locality,
@@ -55,8 +58,8 @@ export async function POST(request) {
       console.error('Local lead backup save error:', err);
     }
 
-    // 2. GOOGLE SHEETS WEBHOOK DISPATCH (IF CONFIGURED)
-    const sheetsWebhook = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
+    // 2. GOOGLE SHEETS WEBHOOK DISPATCH (DIRECT PRODUCTION INTEGRATION)
+    const sheetsWebhook = process.env.GOOGLE_SHEETS_WEBHOOK_URL || PRODUCTION_GOOGLE_SHEETS_WEBHOOK;
     if (sheetsWebhook) {
       try {
         await fetch(sheetsWebhook, {
@@ -65,11 +68,11 @@ export async function POST(request) {
           body: JSON.stringify(leadData)
         });
       } catch (err) {
-        console.error('Google Sheets Webhook error:', err);
+        console.error('Google Sheets Webhook dispatch error:', err);
       }
     }
 
-    // 3. EMAIL NOTIFICATION DISPATCH (IF CONFIGURED)
+    // 3. EMAIL NOTIFICATION DISPATCH
     const emailWebhook = process.env.EMAIL_WEBHOOK_URL;
     if (emailWebhook) {
       try {
@@ -77,8 +80,8 @@ export async function POST(request) {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            to: process.env.LEAD_NOTIFICATION_EMAIL || 'info@robuzta.com',
-            subject: `🚨 New Lead: ${formType} - ${name} (${phone})`,
+            to: process.env.LEAD_NOTIFICATION_EMAIL || PRODUCTION_NOTIFICATION_EMAIL,
+            subject: `🚨 New Robuzta Lead: ${formType} - ${name} (${phone})`,
             leadData
           })
         });

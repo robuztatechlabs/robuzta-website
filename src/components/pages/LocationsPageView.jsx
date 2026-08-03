@@ -142,7 +142,7 @@ export function LocationsPageView() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-slate-600 dark:text-slate-400 text-base sm:text-xl leading-relaxed max-w-3xl mx-auto font-medium"
             >
-              Step into Ahmedabad's premier live workbench repair laboratory. Transparent estimates, component-level micro-soldering stations, and dedicated customer lounges.
+              Step into Ahmedabad&apos;s premier live workbench repair laboratory. Transparent estimates, component-level micro-soldering stations, and dedicated customer lounges.
             </motion.p>
 
             {/* Quick Action Buttons */}
@@ -595,7 +595,7 @@ export function LocationsPageView() {
                   <ShieldCheck size={32} />
                 </div>
                 <div className="space-y-1 text-center md:text-left">
-                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">Can't Visit In Person?</h3>
+                  <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">Can&apos;t Visit In Person?</h3>
                   <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium max-w-xl">
                     Request free doorstep pickup across South Bopal, Tragad, Satellite, Vastrapur & Ahmedabad, or use our insured Pan-India ship-in service.
                   </p>

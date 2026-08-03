@@ -2,45 +2,59 @@
 
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import Lenis from 'lenis';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export function SmoothScroll({ children }) {
   const pathname = usePathname();
 
   useEffect(() => {
-    // Register GSAP ScrollTrigger
-    gsap.registerPlugin(ScrollTrigger);
+    // 1. Skip heavy JS smooth scroll on mobile touch devices for maximum performance
+    const isMobile = typeof window !== 'undefined' && (window.innerWidth < 768 || 'ontouchstart' in window);
+    if (isMobile) return;
 
-    // Initialize Lenis Smooth Scroll
-    const lenis = new Lenis({
-      duration: 1.0,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
-      smoothWheel: true,
-      wheelMultiplier: 1.0,
-      touchMultiplier: 1.5,
-      infinite: false
-    });
+    let lenis = null;
+    let tickerHandler = null;
+    let cancelled = false;
 
-    // Reset scroll position on route change
-    lenis.scrollTo(0, { immediate: true });
+    // 2. Defer heavy GSAP & Lenis initialization until main thread is completely idle
+    const initTask = setTimeout(async () => {
+      if (cancelled) return;
 
-    // Synchronize Lenis scroll with GSAP ScrollTrigger
-    lenis.on('scroll', ScrollTrigger.update);
+      const [{ default: Lenis }, { gsap }, { ScrollTrigger }] = await Promise.all([
+        import('lenis'),
+        import('gsap'),
+        import('gsap/ScrollTrigger')
+      ]);
 
-    const updateGsapTicker = (time) => {
-      lenis.raf(time * 1000);
-    };
+      gsap.registerPlugin(ScrollTrigger);
 
-    gsap.ticker.add(updateGsapTicker);
-    gsap.ticker.lagSmoothing(0);
+      lenis = new Lenis({
+        duration: 0.9,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        smoothWheel: true,
+        wheelMultiplier: 1.0,
+        touchMultiplier: 1.0,
+        infinite: false
+      });
+
+      lenis.on('scroll', ScrollTrigger.update);
+
+      tickerHandler = (time) => {
+        if (lenis) lenis.raf(time * 1000);
+      };
+
+      gsap.ticker.add(tickerHandler);
+      gsap.ticker.lagSmoothing(0);
+    }, 150);
 
     return () => {
-      gsap.ticker.remove(updateGsapTicker);
-      lenis.destroy();
+      cancelled = true;
+      clearTimeout(initTask);
+      if (lenis) {
+        try {
+          lenis.destroy();
+        } catch {}
+      }
     };
   }, [pathname]);
 

@@ -1,10 +1,7 @@
 import './globals.css';
-import { StickyMobileBar } from '@/components/layout/StickyMobileBar';
-import { FloatingWidget } from '@/components/ui/FloatingWidget';
-import { FranchiseEdgeTab } from '@/components/ui/FranchiseEdgeTab';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { BookingModalProvider } from '@/context/BookingModalContext';
-import { BookRepairModal } from '@/components/ui/BookRepairModal';
+import { GlobalOverlays } from '@/components/layout/GlobalOverlays';
 import { getOrganizationSchema, getLocalBusinessSchema, getWebSiteSchema } from '@/lib/jsonLd';
 
 export const metadata = {
@@ -107,10 +104,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <BookingModalProvider>
             {children}
-            <BookRepairModal />
-            <FranchiseEdgeTab />
-            <FloatingWidget />
-            <StickyMobileBar />
+            <GlobalOverlays />
           </BookingModalProvider>
         </ThemeProvider>
       </body>

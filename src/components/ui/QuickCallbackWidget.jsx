@@ -28,7 +28,7 @@ export function QuickCallbackWidget() {
   return (
     <>
       {/* Floating Trigger Button (Bottom Left) */}
-      <div className="fixed bottom-5 left-5 z-40">
+      <div className="fixed bottom-20 lg:bottom-24 left-5 sm:left-6 z-30">
         <motion.button
           type="button"
           onClick={() => setIsOpen(!isOpen)}

@@ -7,12 +7,15 @@ export default function sitemap() {
 
   const staticRoutes = [
     '',
+    '/services',
     '/locations',
     '/franchise',
     '/contact',
     '/faq',
     '/blog',
-    '/about'
+    '/about',
+    '/privacy',
+    '/terms'
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
