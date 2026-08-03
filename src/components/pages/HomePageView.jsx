@@ -42,6 +42,11 @@ const TrustSection = dynamic(
   { ssr: false }
 );
 
+const PlatformTrustSection = dynamic(
+  () => import('@/components/sections/PlatformTrustSection').then(m => m.PlatformTrustSection),
+  { ssr: false }
+);
+
 const ServicesSection = dynamic(
   () => import('@/components/sections/ServicesSection').then(m => m.ServicesSection),
   { ssr: false }
@@ -123,6 +128,10 @@ export function HomePageView() {
 
         <LazySection minHeight="350px">
           <TrustSection />
+        </LazySection>
+
+        <LazySection minHeight="250px">
+          <PlatformTrustSection />
         </LazySection>
 
         <LazySection minHeight="450px">
