@@ -51,6 +51,9 @@ export function BookRepairModal() {
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
           <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="booking-modal-title"
             initial={{ opacity: 0, scale: 0.94, y: 15 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.94, y: 15 }}
@@ -61,6 +64,7 @@ export function BookRepairModal() {
             <button
               type="button"
               onClick={closeModal}
+              aria-label="Close modal"
               className="absolute top-4 right-4 h-9 w-9 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white flex items-center justify-center transition-colors cursor-pointer"
             >
               <X size={18} />
@@ -109,7 +113,7 @@ export function BookRepairModal() {
                         placeholder="e.g. Vikramaditya Shah"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 text-xs sm:text-sm font-medium focus:border-[#0E7C7B] focus:outline-none"
+                        className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 text-xs sm:text-sm font-medium focus:border-[#0E7C7B] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0E7C7B]"
                       />
                     </div>
 
@@ -121,7 +125,7 @@ export function BookRepairModal() {
                         placeholder="e.g. 98980 12345"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 text-xs sm:text-sm font-medium focus:border-[#0E7C7B] focus:outline-none"
+                        className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 text-xs sm:text-sm font-medium focus:border-[#0E7C7B] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0E7C7B]"
                       />
                     </div>
                   </div>
@@ -132,7 +136,7 @@ export function BookRepairModal() {
                       <select
                         value={device}
                         onChange={(e) => setDevice(e.target.value)}
-                        className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 text-xs sm:text-sm font-medium focus:border-[#0E7C7B] focus:outline-none"
+                        className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 text-xs sm:text-sm font-medium focus:border-[#0E7C7B] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0E7C7B]"
                       >
                         <option value="Laptop / MacBook">Laptop / MacBook</option>
                         <option value="iPhone / Android">iPhone / Android</option>
@@ -146,7 +150,7 @@ export function BookRepairModal() {
                       <select
                         value={locality}
                         onChange={(e) => setLocality(e.target.value)}
-                        className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 text-xs sm:text-sm font-medium focus:border-[#0E7C7B] focus:outline-none"
+                        className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 text-xs sm:text-sm font-medium focus:border-[#0E7C7B] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0E7C7B]"
                       >
                         <option value="South Bopal & Bopal">South Bopal & Bopal</option>
                         <option value="Satellite & Vastrapur">Satellite & Vastrapur</option>
@@ -165,7 +169,7 @@ export function BookRepairModal() {
                       placeholder="e.g. Screen damage, Liquid spill, No power..."
                       value={issue}
                       onChange={(e) => setIssue(e.target.value)}
-                      className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 text-xs sm:text-sm font-medium focus:border-[#0E7C7B] focus:outline-none"
+                      className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 text-xs sm:text-sm font-medium focus:border-[#0E7C7B] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0E7C7B]"
                     />
                   </div>
 

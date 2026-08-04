@@ -30,6 +30,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { ReelsSection } from '@/components/sections/ReelsSection';
+import { PlatformTrustSection } from '@/components/sections/PlatformTrustSection';
 import { useBookingModal } from '@/context/BookingModalContext';
 
 const journeyWaypoints = [
@@ -254,6 +255,9 @@ export function AboutPageView() {
           </div>
         </section>
 
+        {/* Multi-Platform Verified Ratings (Google, Justdial, Sulekha) */}
+        <PlatformTrustSection />
+
         {/* 3. ROBUZTA OFFICIAL USPs SECTION */}
         <section id="our-usps" className="py-24 bg-slate-50/50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 relative">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16">
@@ -345,6 +349,9 @@ export function AboutPageView() {
                       <img
                         src="https://robuzta.com/wp-content/uploads/2026/02/Mr.-Pranshu-Maheshwari.png"
                         alt="Mr. Pranshu Maheshwari - Founder & CEO Robuzta Techlabs"
+                        width={340}
+                        height={420}
+                        loading="lazy"
                         className="w-full h-auto object-cover transform group-hover/photo:scale-105 transition-transform duration-500"
                       />
                      

@@ -67,13 +67,13 @@ export function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-white dark:bg-[#070E1A] pt-10 pb-20 lg:pt-16 lg:pb-28 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
       
-      {/* Background Ambient Glows */}
-      <div className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] sm:w-[800px] sm:h-[800px] bg-[#0E7C7B]/15 dark:bg-[#0E7C7B]/20 rounded-full blur-[140px]" />
-      <div className="pointer-events-none absolute top-1/3 right-10 w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[120px]" />
+      {/* Background Ambient Glows (GPU Accelerated for Zero LCP Delay) */}
+      <div className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#0E7C7B]/15 dark:bg-[#0E7C7B]/20 rounded-full blur-3xl will-change-transform" />
+      <div className="pointer-events-none absolute top-1/3 right-10 w-[300px] h-[300px] bg-purple-500/10 rounded-full blur-3xl will-change-transform" />
       
       {/* Background Grid Pattern */}
       <div 
-        className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f080_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f080_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1e293b80_1px,transparent_1px),linear-gradient(to_bottom,#1e293b80_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"
+        className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f080_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f080_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1e293b80_1px,transparent_1px),linear-gradient(to_bottom,#1e293b80_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none"
       />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -99,14 +99,13 @@ export function HeroSection() {
             <div
               className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2"
             >
-              <button
-                type="button"
-                onClick={() => openModal({ formType: 'Hero Book Diagnosis' })}
-                className="inline-flex items-center gap-2.5 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-7 py-4 text-sm font-black shadow-xl shadow-[#0E7C7B]/25 hover:scale-[1.03] transition-all cursor-pointer"
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2.5 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-7 py-4 text-sm font-black shadow-xl shadow-[#0E7C7B]/25 hover:scale-[1.03] transition-all"
               >
                 <Calendar size={18} />
-                <span>Book Diagnosis</span>
-              </button>
+                <span>Book Appointment</span>
+              </Link>
 
               <a
                 href={siteConfig.phoneHref}

@@ -1,3 +1,5 @@
+import { siteConfig } from '@/data/site';
+
 /**
  * Schema.org JSON-LD structured data generators for Robuzta Techlabs
  * Optimized for Google Search rich snippets, Google AI Overviews, and AI Answer Engines.
@@ -16,27 +18,27 @@ export function getOrganizationSchema() {
     logo: `${siteBaseUrl}/robuzta-logo-scaled.webp`,
     image: `${siteBaseUrl}/robuzta-logo-scaled.webp`,
     description: 'Ahmedabad premier precision multi-device repair lab specializing in laptops, MacBooks, smartphones, Surface devices, and gaming PCs with transparent live diagnostics and zero OTP privacy.',
-    telephone: '+91 99099 00000',
-    email: 'support@robuzta.com',
+    telephone: siteConfig.phone,
+    email: siteConfig.email,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Satellite / Vastrapur Main Road',
+      streetAddress: siteConfig.address,
       addressLocality: 'Ahmedabad',
       addressRegion: 'Gujarat',
-      postalCode: '380015',
+      postalCode: '380057',
       addressCountry: 'IN'
     },
     sameAs: [
-      'https://www.instagram.com/robuztatechlabs',
-      'https://www.facebook.com/robuztatechlabs',
-      'https://www.linkedin.com/company/robuztatechlabs'
+      siteConfig.socials.instagram,
+      siteConfig.socials.facebook,
+      siteConfig.socials.youtube
     ]
   };
 }
 
 export function getLocalBusinessSchema(location = null) {
   const locTitle = location ? location.title : 'Main Repair Lab - Satellite / Vastrapur';
-  const locAddress = location ? location.address : 'Satellite / Vastrapur, Ahmedabad, Gujarat 380015';
+  const locAddress = location ? location.address : siteConfig.address;
 
   return {
     '@context': 'https://schema.org',
@@ -45,14 +47,14 @@ export function getLocalBusinessSchema(location = null) {
     name: `Robuzta Techlabs - ${locTitle}`,
     image: `${siteBaseUrl}/robuzta-logo-scaled.webp`,
     url: location ? `${siteBaseUrl}/locations/${location.slug}` : siteBaseUrl,
-    telephone: '+91 99099 00000',
+    telephone: siteConfig.phone,
     priceRange: '₹₹',
     address: {
       '@type': 'PostalAddress',
       streetAddress: locAddress,
       addressLocality: 'Ahmedabad',
       addressRegion: 'Gujarat',
-      postalCode: '380015',
+      postalCode: '380057',
       addressCountry: 'IN'
     },
     geo: {
@@ -156,7 +158,7 @@ export function getServiceSchema(service) {
     provider: {
       '@type': 'LocalBusiness',
       name: 'Robuzta Techlabs',
-      telephone: '+91 99099 00000',
+      telephone: siteConfig.phone,
       url: siteBaseUrl
     },
     areaServed: {
@@ -164,7 +166,7 @@ export function getServiceSchema(service) {
       name: 'Ahmedabad'
     },
     serviceType: service.title,
-    termsOfService: `${siteBaseUrl}/faq`,
+    termsOfService: `${siteBaseUrl}/terms`,
     offers: {
       '@type': 'Offer',
       priceCurrency: 'INR',
@@ -215,14 +217,14 @@ export function getContactPageSchema() {
     mainEntity: {
       '@type': 'LocalBusiness',
       name: 'Robuzta Techlabs',
-      telephone: '+91 99099 00000',
-      email: 'support@robuzta.com',
+      telephone: siteConfig.phone,
+      email: siteConfig.email,
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Satellite / Vastrapur Main Road',
+        streetAddress: siteConfig.address,
         addressLocality: 'Ahmedabad',
         addressRegion: 'Gujarat',
-        postalCode: '380015',
+        postalCode: '380057',
         addressCountry: 'IN'
       }
     }

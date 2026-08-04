@@ -61,6 +61,9 @@ export function ExitIntentModal() {
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
           <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="exit-modal-title"
             initial={{ opacity: 0, scale: 0.94, y: 15 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.94, y: 15 }}
@@ -71,6 +74,7 @@ export function ExitIntentModal() {
             <button
               type="button"
               onClick={handleClose}
+              aria-label="Close modal"
               className="absolute top-4 right-4 h-9 w-9 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white flex items-center justify-center transition-colors cursor-pointer"
               title="Close modal"
             >
@@ -144,9 +148,9 @@ export function ExitIntentModal() {
                         className="w-full rounded-2xl bg-slate-50 border border-slate-200 px-4 py-3 text-xs sm:text-sm font-medium focus:border-[#0E7C7B] focus:outline-none"
                       >
                         <option value="Laptop / MacBook">Laptop / MacBook</option>
-                        <option value="iPhone / Android">iPhone / Android</option>
-                        <option value="iPad / Tablet">iPad / Tablet</option>
-                        <option value="Gaming PC / Rig">Gaming PC / Rig</option>
+                        <option value="Mobile Phone">Mobile Phone</option>
+                        <option value="Tablet / iPad">Tablet / iPad</option>
+                        <option value="Gaming Desktop">Gaming Desktop</option>
                       </select>
                     </div>
                   </div>

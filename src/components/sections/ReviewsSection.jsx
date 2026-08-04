@@ -61,28 +61,43 @@ export function ReviewsSection() {
               </p>
             </div>
 
-            {/* Google Action Buttons */}
-            <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col gap-3.5 items-center lg:items-end justify-center">
+            {/* Google, Justdial & Sulekha Listing Action Buttons */}
+            <div className="lg:col-span-5 flex flex-col gap-3.5 items-stretch lg:items-end justify-center">
               <a
                 href={googleStats.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-2xl bg-[#0F172A] px-7 py-3.5 text-sm font-extrabold text-white shadow-lg hover:bg-[#0E7C7B] hover:shadow-teal-500/20 hover:scale-[1.02] transition-all group"
+                className="w-full inline-flex items-center justify-between gap-3 rounded-2xl bg-[#0F172A] px-6 py-3.5 text-xs sm:text-sm font-extrabold text-white shadow-lg hover:bg-[#0E7C7B] hover:scale-[1.01] transition-all group"
               >
-                <GoogleIcon size={20} />
-                <span>View All Reviews on Google Maps</span>
-                <ExternalLink size={16} className="text-slate-400 group-hover:text-white transition-colors" />
+                <div className="flex items-center gap-2.5">
+                  <GoogleIcon size={18} />
+                  <span>Google Maps Reviews (4.9★)</span>
+                </div>
+                <ExternalLink size={15} className="text-slate-400 group-hover:text-white transition-colors shrink-0" />
               </a>
 
-              <a
-                href={googleStats.googleMapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 px-6 py-3 text-sm font-bold text-slate-700 dark:text-slate-300 shadow-sm hover:border-emerald-500 hover:text-emerald-700 hover:bg-emerald-50/50 transition-all"
-              >
-                <MessageSquarePlus size={18} className="text-emerald-600" />
-                <span>Write a Google Review</span>
-              </a>
+              <div className="grid grid-cols-2 gap-2.5 w-full">
+                <a
+                  href="https://www.justdial.com/Ahmedabad/Robuzta-Techlabs-Bopal/079PXX79-XX79-221124120052-T5Z4_BZDET?via=scode"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 px-4 py-2.5 text-xs font-bold text-slate-800 dark:text-slate-200 shadow-sm hover:border-[#0073E6] hover:bg-blue-50/50 dark:hover:bg-blue-950/40 transition-all text-center"
+                >
+                  <span className="font-black text-[#0073E6]">Just</span>
+                  <span className="font-black text-[#FF6F00]">dial</span>
+                  <ExternalLink size={13} className="text-slate-400 shrink-0" />
+                </a>
+
+                <a
+                  href="https://www.sulekha.com/robuzta-techlabs-bopal-ahmedabad-contact-address"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 px-4 py-2.5 text-xs font-bold text-slate-800 dark:text-slate-200 shadow-sm hover:border-[#E53935] hover:bg-red-50/50 dark:hover:bg-red-950/40 transition-all text-center"
+                >
+                  <span className="font-black text-[#E53935]">Sulekha</span>
+                  <ExternalLink size={13} className="text-slate-400 shrink-0" />
+                </a>
+              </div>
             </div>
 
           </div>

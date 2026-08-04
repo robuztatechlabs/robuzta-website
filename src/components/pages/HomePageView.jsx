@@ -8,12 +8,29 @@ import { Footer } from '@/components/layout/Footer';
 
 // Lead overlays & widgets
 import { ExitIntentModal } from '@/components/ui/ExitIntentModal';
+import { QuickCallbackWidget } from '@/components/ui/QuickCallbackWidget';
 import { ScrollTriggeredCtaBar } from '@/components/ui/ScrollTriggeredCtaBar';
 
 // Synchronously loaded top sections
 import { HeroSection } from '@/components/sections/HeroSection';
 
-// Below-the-fold sections are lazy-loaded dynamically to prevent initial route render lag
+// Lead overlays & widgets lazy-loaded dynamically to zero out initial main-thread blocking time
+const ExitIntentModal = dynamic(
+  () => import('@/components/ui/ExitIntentModal').then(m => m.ExitIntentModal),
+  { ssr: false }
+);
+
+const QuickCallbackWidget = dynamic(
+  () => import('@/components/ui/QuickCallbackWidget').then(m => m.QuickCallbackWidget),
+  { ssr: false }
+);
+
+const ScrollTriggeredCtaBar = dynamic(
+  () => import('@/components/ui/ScrollTriggeredCtaBar').then(m => m.ScrollTriggeredCtaBar),
+  { ssr: false }
+);
+
+// Below-the-fold sections lazy-loaded dynamically + deferred on scroll via LazySection
 const MultiStepLeadWizard = dynamic(
   () => import('@/components/sections/MultiStepLeadWizard').then(m => m.MultiStepLeadWizard),
   { ssr: false }
@@ -26,6 +43,11 @@ const LaptopExplorerSection = dynamic(
 
 const TrustSection = dynamic(
   () => import('@/components/sections/TrustSection').then(m => m.TrustSection),
+  { ssr: false }
+);
+
+const PlatformTrustSection = dynamic(
+  () => import('@/components/sections/PlatformTrustSection').then(m => m.PlatformTrustSection),
   { ssr: false }
 );
 
@@ -88,31 +110,72 @@ export function HomePageView() {
   return (
     <SmoothScroll>
       <ScrollProgress />
-
-      {/* Global Lead Capture Overlays */}
       <ExitIntentModal />
+      <QuickCallbackWidget />
       <ScrollTriggeredCtaBar />
 
       <Header />
       <main className="bg-white text-slate-900 min-h-screen">
         <HeroSection />
+        {/* 30-Second Multi-Step Diagnostic & Free Pickup Wizard */}
         <MultiStepLeadWizard />
 
         {/* Interactive 3D Laptop Explorer */}
-        <LaptopExplorerSection />
-        <TrustSection />
-        <ServicesSection />
-        <WhyChooseUsSection />
+        <LazySection minHeight="500px">
+          <LaptopExplorerSection />
+        </LazySection>
 
-        <PortfolioSection />
-        <RepairShowcaseSection />
-        <TechStackSection />
-        <ProcessSection />
-        <CourierHighlight />
-        <ReviewsSection />
-        <FaqPreview />
-        <FranchiseHomeSection />
-        <FinalCta />
+        <LazySection minHeight="350px">
+          <TrustSection />
+        </LazySection>
+
+        <LazySection minHeight="250px">
+          <PlatformTrustSection />
+        </LazySection>
+
+        <LazySection minHeight="450px">
+          <ServicesSection />
+        </LazySection>
+
+        <LazySection minHeight="350px">
+          <WhyChooseUsSection />
+        </LazySection>
+
+        <LazySection minHeight="400px">
+          <PortfolioSection />
+        </LazySection>
+
+        <LazySection minHeight="400px">
+          <RepairShowcaseSection />
+        </LazySection>
+
+        <LazySection minHeight="350px">
+          <TechStackSection />
+        </LazySection>
+
+        <LazySection minHeight="400px">
+          <ProcessSection />
+        </LazySection>
+
+        <LazySection minHeight="300px">
+          <CourierHighlight />
+        </LazySection>
+
+        <LazySection minHeight="400px">
+          <ReviewsSection />
+        </LazySection>
+
+        <LazySection minHeight="350px">
+          <FaqPreview />
+        </LazySection>
+
+        <LazySection minHeight="400px">
+          <FranchiseHomeSection />
+        </LazySection>
+
+        <LazySection minHeight="350px">
+          <FinalCta />
+        </LazySection>
       </main>
       <Footer />
     </SmoothScroll>
