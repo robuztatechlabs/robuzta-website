@@ -527,8 +527,7 @@ export function LaptopExplorer({
       }
       registerComponent(id, ramGroup, '#3B82F6');
     };
-    createRamStick(-2.2, 0.8, 'ram1');
-    createRamStick(-2.2, 1.4, 'ram2');
+    createRamStick(-2.2, 0.9, 'ram1');
 
     /* ── D. NVMe M.2 2280 SSD ── */
     const ssdGroup = new THREE.Group();

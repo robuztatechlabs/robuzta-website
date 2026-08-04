@@ -43,6 +43,11 @@ const TrustSection = dynamic(
 );
 
 
+const BrandLogosGrid = dynamic(
+  () => import('@/components/sections/BrandLogosGrid').then(m => m.BrandLogosGrid),
+  { ssr: false }
+);
+
 const ServicesSection = dynamic(
   () => import('@/components/sections/ServicesSection').then(m => m.ServicesSection),
   { ssr: false }
@@ -108,22 +113,38 @@ export function HomePageView() {
 
       <Header />
       <main className="bg-white text-slate-900 min-h-screen">
+        {/* 1. Hero */}
         <HeroSection />
-        <MultiStepLeadWizard />
 
-        {/* Interactive 3D Laptop Explorer */}
+        {/* 2. Custom 3D Model */}
         <LaptopExplorerSection />
+
+        {/* 3. Trust Stats Strip */}
         <TrustSection />
+
+        {/* 4. Services Overview */}
         <ServicesSection />
+
+        {/* 5. Brands We Repair */}
+        <BrandLogosGrid />
+
+        {/* 6. How It Works */}
+        <ProcessSection />
+
+        {/* 7. Transparent Pricing & Hardware Estimator */}
+        <RepairShowcaseSection />
+
+        {/* 8. Why Choose Us */}
         <WhyChooseUsSection />
 
-        <PortfolioSection />
-        <RepairShowcaseSection />
-        <TechStackSection />
-        <ProcessSection />
-        <CourierHighlight />
+        {/* 9. Customer Reviews */}
         <ReviewsSection />
+
+        {/* 10. FAQ */}
         <FaqPreview />
+
+        {/* 11. Location, Hours & Final Contact CTA */}
+        <CourierHighlight />
         <FranchiseHomeSection />
         <FinalCta />
       </main>
