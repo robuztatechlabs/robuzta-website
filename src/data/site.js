@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: 'Robuzta Techlabs',
-  phone: '+91 999 245 2459',
-  phoneHref: 'tel:+919992452459',
-  whatsappHref: 'https://wa.me/919992452459',
+  phone: '+91 999 998 8885',
+  phoneHref: 'tel:+919999988885',
+  whatsappHref: 'https://wa.me/919999988885',
   email: 'info@robuzta.com',
   address:
     '103, First Floor, Sun South Winds, Safal Parisar Road, South Bopal, Ahmedabad, Gujarat 380057',

@@ -30,8 +30,8 @@ const pillars = [
   },
   {
     icon: Truck,
-    title: 'Free Doorstep Pickup & Pan-India Courier',
-    description: 'Free anti-static pickup across South Bopal, Satellite, Tragad, Vastrapur in Ahmedabad, plus insured Pan-India express ship-in service.',
+    title: 'Doorstep Pickup & Pan-India Courier',
+    description: 'Anti-static pickup across South Bopal, Satellite, Tragad, Vastrapur in Ahmedabad, plus insured Pan-India express ship-in service.',
     tag: 'Doorstep Pickup'
   }
 ];
@@ -47,14 +47,6 @@ export function WhyChooseUsSection() {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <motion.span
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-3.5 py-1.5 rounded-full"
-          >
-            WHY AHMEDABAD TRUSTS ROBUZTA TECHLABS
-          </motion.span>
 
           <motion.h2
             initial={{ opacity: 0, y: 15 }}

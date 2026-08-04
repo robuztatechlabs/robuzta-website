@@ -82,7 +82,7 @@ export function Footer() {
                 <Link href="/faq" className="hover:text-[#0E7C7B] transition-colors">Help Center & FAQ</Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-[#0E7C7B] transition-colors">Book Free Doorstep Pickup</Link>
+                <Link href="/contact" className="hover:text-[#0E7C7B] transition-colors">Book Doorstep Pickup</Link>
               </li>
             </ul>
           </div>

@@ -15,15 +15,6 @@ export function RepairShowcaseSection() {
         
         {/* Section Title Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 rounded-full bg-teal-50 dark:bg-teal-900/30 border border-teal-200 dark:border-teal-800 px-4 py-1.5 text-xs font-extrabold text-teal-800 dark:text-teal-400 uppercase tracking-widest"
-          >
-            <Sparkles size={14} className="text-[#0E7C7B]" />
-            <span>MULTI-DEVICE HARDWARE LAB DIVISION</span>
-          </motion.div>
 
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
@@ -42,7 +33,7 @@ export function RepairShowcaseSection() {
             transition={{ delay: 0.14 }}
             className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed font-medium max-w-2xl mx-auto"
           >
-            Experience 100% transparent hardware diagnostics. Select your device and fault below for an instant quote with free doorstep pickup across Ahmedabad.
+            Experience 100% transparent hardware diagnostics. Select your device and fault below for an instant quote with doorstep pickup across Ahmedabad.
           </motion.p>
         </div>
 

@@ -20,15 +20,6 @@ export function FranchiseHomeSection() {
             
             {/* Left Content Column */}
             <div className="lg:col-span-7 space-y-6 text-center sm:text-left">
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-4 py-1.5 text-xs font-extrabold text-[#0E7C7B] dark:text-teal-300 shadow-sm"
-              >
-                <Sparkles size={14} className="text-[#EA580C]" />
-                <span>FRANCHISE OPPORTUNITY &bull; PAN-INDIA EXPANSION</span>
-              </motion.div>
 
               <motion.h2
                 initial={{ opacity: 0, y: 15 }}
@@ -52,22 +43,6 @@ export function FranchiseHomeSection() {
               >
                 Own a high-profit chip-level repair lab in your city. Get turnkey ISO-compliant ESD workbench setups, 55%–70% gross profit margins, and centralized Google & Meta lead generation.
               </motion.p>
-
-              {/* 3 Quick Value Badges */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs font-extrabold text-slate-800 dark:text-slate-200">
-                <div className="flex items-center gap-2 p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                  <CheckCircle2 size={16} className="text-[#EA580C] shrink-0" />
-                  <span>₹3L - ₹6L/mo Est. Profit</span>
-                </div>
-                <div className="flex items-center gap-2 p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                  <CheckCircle2 size={16} className="text-[#0E7C7B] dark:text-teal-400 shrink-0" />
-                  <span>10 - 14 Mo Target ROI</span>
-                </div>
-                <div className="flex items-center gap-2 p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                  <CheckCircle2 size={16} className="text-emerald-600 shrink-0" />
-                  <span>100% Turnkey Support</span>
-                </div>
-              </div>
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
@@ -111,15 +86,6 @@ export function FranchiseHomeSection() {
                   <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
                     We handle retail 3D store blueprints, BGA soldering equipment, technician hiring, CRM software, and initial parts inventory sourcing.
                   </p>
-                </div>
-
-                <div className="pt-4 border-t border-slate-200 dark:border-slate-800 space-y-2 text-xs font-extrabold text-slate-700 dark:text-slate-300 relative z-10">
-                  <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400">
-                    <ShieldCheck size={16} /> Verified ISO 27001 Operating Standard
-                  </div>
-                  <div className="flex items-center gap-2 text-[#0E7C7B] dark:text-teal-400">
-                    <TrendingUp size={16} /> 55% - 70% Gross Margin Repairs
-                  </div>
                 </div>
 
               </div>

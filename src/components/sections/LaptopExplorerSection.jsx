@@ -66,10 +66,6 @@ export function LaptopExplorerSection() {
           transition={{ duration: 0.5 }}
           className="space-y-4"
         >
-          <span className="inline-flex items-center gap-2 rounded-full bg-teal-400/10 border border-teal-400/20 px-4 py-1.5 text-xs font-black text-teal-300 uppercase tracking-widest">
-            <Move3D size={14} />
-            LAB-GRADE 3D HARDWARE INSPECTOR
-          </span>
           <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
             Interactive Chip & Component{' '}
             <span className="bg-gradient-to-r from-[#0E7C7B] via-teal-400 to-purple-400 bg-clip-text text-transparent">

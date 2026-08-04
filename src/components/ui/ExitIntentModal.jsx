@@ -101,47 +101,47 @@ export function ExitIntentModal() {
                   </div>
 
                   <h3 className="text-2xl sm:text-3xl font-black tracking-tight">
-                    Before You Go... Claim Free Diagnostics!
+                    Before You Go... Claim Diagnostic Offer!
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
-                    Get a <strong>₹0 Free Inspection</strong> + <strong>10% Off Your Repair</strong>. Valid for doorstep pickup across Ahmedabad.
+                  <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
+                    Get a <strong>₹0 Diagnostic Inspection</strong> + <strong>10% Off Your Repair</strong>. Valid for doorstep pickup across Ahmedabad.
                   </p>
                 </div>
 
                 {/* Form */}
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="space-y-1.5">
-                    <label className="text-[11px] font-extrabold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Your Name</label>
+                    <label className="text-[11px] font-extrabold uppercase text-slate-500 tracking-wider">Your Name</label>
                     <input
                       type="text"
                       required
                       placeholder="e.g. Rahul Sharma"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 text-xs sm:text-sm font-medium focus:border-[#0E7C7B] focus:outline-none"
+                      className="w-full rounded-2xl bg-slate-50 border border-slate-200 px-4 py-3 text-xs sm:text-sm font-medium focus:border-[#0E7C7B] focus:outline-none"
                     />
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div className="space-y-1.5">
-                      <label className="text-[11px] font-extrabold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Mobile Number *</label>
+                      <label className="text-[11px] font-extrabold uppercase text-slate-500 tracking-wider">Mobile Number *</label>
                       <input
                         type="tel"
                         required
-                        placeholder="e.g. 98980 12345"
+                        placeholder="e.g. +91 999 998 8885"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 text-xs sm:text-sm font-medium focus:border-[#0E7C7B] focus:outline-none"
+                        className="w-full rounded-2xl bg-slate-50 border border-slate-200 px-4 py-3 text-xs sm:text-sm font-medium focus:border-[#0E7C7B] focus:outline-none font-tech"
                       />
                     </div>
 
                     <div className="space-y-1.5">
-                      <label className="text-[11px] font-extrabold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Device Type</label>
+                      <label className="text-[11px] font-extrabold uppercase text-slate-500 tracking-wider">Device Type</label>
                       <select
                         value={device}
                         onChange={(e) => setDevice(e.target.value)}
-                        className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 text-xs sm:text-sm font-medium focus:border-[#0E7C7B] focus:outline-none"
+                        className="w-full rounded-2xl bg-slate-50 border border-slate-200 px-4 py-3 text-xs sm:text-sm font-medium focus:border-[#0E7C7B] focus:outline-none"
                       >
                         <option value="Laptop / MacBook">Laptop / MacBook</option>
                         <option value="iPhone / Android">iPhone / Android</option>
@@ -155,7 +155,7 @@ export function ExitIntentModal() {
                     type="submit"
                     className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 px-6 py-3.5 text-xs sm:text-sm font-black text-white shadow-xl shadow-[#0E7C7B]/25 transition-all cursor-pointer"
                   >
-                    <span>Claim 10% Off + Free Inspection</span>
+                    <span>Claim 10% Off + Zero-Cost Inspection</span>
                     <ArrowRight size={16} />
                   </button>
                 </form>

@@ -90,11 +90,11 @@ export function BookRepairModal() {
                   </div>
 
                   <h3 className="text-2xl sm:text-3xl font-black tracking-tight">
-                    Book Free Inspection & Pickup
+                    Book Zero-Cost Inspection & Pickup
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
-                    Zero inspection fees. Free doorstep pickup across South Bopal, Satellite & Ahmedabad.
+                  <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
+                    Zero inspection fees. Standard doorstep pickup across South Bopal, Satellite & Ahmedabad.
                   </p>
                 </div>
 
@@ -174,7 +174,7 @@ export function BookRepairModal() {
                     className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 px-6 py-3.5 text-xs sm:text-sm font-black text-white shadow-xl shadow-[#0E7C7B]/25 transition-all cursor-pointer"
                   >
                     <Truck size={16} />
-                    <span>Confirm Free Inspection & Pickup</span>
+                    <span>Confirm Zero-Cost Inspection & Pickup</span>
                   </button>
                 </form>
 

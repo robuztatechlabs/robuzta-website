@@ -8,10 +8,9 @@ import { Footer } from '@/components/layout/Footer';
 
 // Lead overlays & widgets
 import { ExitIntentModal } from '@/components/ui/ExitIntentModal';
-import { QuickCallbackWidget } from '@/components/ui/QuickCallbackWidget';
 import { ScrollTriggeredCtaBar } from '@/components/ui/ScrollTriggeredCtaBar';
 
-// HeroSection is loaded synchronously so top of Home page paints INSTANTLY (0ms)
+// Synchronously loaded top sections
 import { HeroSection } from '@/components/sections/HeroSection';
 
 // Below-the-fold sections are lazy-loaded dynamically to prevent initial route render lag
@@ -92,13 +91,11 @@ export function HomePageView() {
 
       {/* Global Lead Capture Overlays */}
       <ExitIntentModal />
-      <QuickCallbackWidget />
       <ScrollTriggeredCtaBar />
 
       <Header />
-      <main className="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen">
+      <main className="bg-white text-slate-900 min-h-screen">
         <HeroSection />
-        {/* 30-Second Multi-Step Diagnostic & Free Pickup Wizard */}
         <MultiStepLeadWizard />
 
         {/* Interactive 3D Laptop Explorer */}

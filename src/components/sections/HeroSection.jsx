@@ -82,65 +82,38 @@ export function HeroSection() {
           {/* Left Column: Hero Copy & Actions (INSTANT ZERO-DELAY RENDER) */}
           <div className="lg:col-span-6 space-y-8 text-center lg:text-left">
             
-            {/* Location & Status Eyebrow Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-4 py-1.5 text-xs font-black text-[#0E7C7B] dark:text-teal-300 shadow-sm">
-              <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="uppercase tracking-widest">
-                OPEN &bull; SOUTH BOPAL, AHMEDABAD
-              </span>
-            </div>
-
-            {/* Main Headline (Instant Paint - No Opacity 0 Delay) */}
-            <h1 className="text-4xl sm:text-6xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.08]">
-              Expert Repair for{' '}
-              <span className="block mt-1 bg-gradient-to-r from-[#0E7C7B] via-teal-500 via-sky-400 to-purple-500 bg-clip-text text-transparent">
+            {/* Main Headline */}
+            <h1 className="text-4xl sm:text-6xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.08]">
+              Precision Repair for{' '}
+              <span className="block mt-1 bg-gradient-to-r from-[#0E7C7B] via-teal-600 to-slate-900 bg-clip-text text-transparent">
                 Laptops, Mobiles & iPads
               </span>
             </h1>
 
             {/* Sub-headline */}
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 font-medium leading-relaxed max-w-xl mx-auto lg:mx-0">
-              Ahmedabad&apos;s <strong className="text-slate-900 dark:text-white">certified component-level repair lab</strong> — trusted for liquid damage recovery, screen replacement & logic board fixes.
+            <p className="text-base sm:text-lg text-slate-600 font-medium max-w-xl mx-auto lg:mx-0">
+              Component-level hardware repair & logic board diagnostics.
             </p>
-
-            {/* 4 Micro Feature Pills */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 pt-1">
-              <div className="flex items-center gap-1.5 text-xs font-black text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-3 py-1.5 rounded-full hover:border-[#0E7C7B] transition-colors">
-                <ShieldCheck size={14} className="text-[#0E7C7B] dark:text-teal-400" />
-                <span>No Fix, No Fee</span>
-              </div>
-              <div className="flex items-center gap-1.5 text-xs font-black text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-3 py-1.5 rounded-full hover:border-amber-500 transition-colors">
-                <Star size={14} className="text-amber-500 fill-amber-500" />
-                <span>4.9★ Rated</span>
-              </div>
-              <div className="flex items-center gap-1.5 text-xs font-black text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-3 py-1.5 rounded-full hover:border-sky-500 transition-colors">
-                <Lock size={14} className="text-sky-500" />
-                <span>90-Day Warranty</span>
-              </div>
-              <div className="flex items-center gap-1.5 text-xs font-black text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-3 py-1.5 rounded-full hover:border-purple-500 transition-colors">
-                <Clock size={14} className="text-purple-500" />
-                <span>Same-Day Turnaround</span>
-              </div>
-            </div>
 
             {/* Action Buttons */}
             <div
               className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2"
             >
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2.5 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-7 py-4 text-sm font-black shadow-xl shadow-[#0E7C7B]/25 hover:scale-[1.03] transition-all"
+              <button
+                type="button"
+                onClick={() => openModal({ formType: 'Hero Book Diagnosis' })}
+                className="inline-flex items-center gap-2.5 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-7 py-4 text-sm font-black shadow-xl shadow-[#0E7C7B]/25 hover:scale-[1.03] transition-all cursor-pointer"
               >
                 <Calendar size={18} />
-                <span>Book Appointment</span>
-              </Link>
+                <span>Book Diagnosis</span>
+              </button>
 
               <a
-                href={`tel:${siteConfig.phone}`}
-                className="inline-flex items-center gap-2.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-6 py-4 text-sm font-black text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 shadow-sm transition-all"
+                href={siteConfig.phoneHref}
+                className="inline-flex items-center gap-2.5 rounded-2xl bg-white border border-slate-200 px-6 py-4 text-sm font-bold text-slate-900 hover:bg-slate-50 shadow-sm transition-all font-tech"
               >
-                <Phone size={18} className="text-[#0E7C7B] dark:text-teal-400" />
-                <span>{siteConfig.phone}</span>
+                <Phone size={18} className="text-[#0E7C7B]" />
+                <span>+91 999 998 8885</span>
               </a>
             </div>
 
@@ -149,11 +122,6 @@ export function HeroSection() {
           {/* Right Column: Interactive Animated "WHAT WE FIX" Side Console Card */}
           <div className="lg:col-span-6 relative">
             
-            {/* Top Floating Badge: NO FIX NO FEE */}
-            <div className="absolute -top-5 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 rounded-full bg-slate-900 border border-amber-500/50 px-4 py-1.5 text-xs font-black text-amber-400 shadow-xl shadow-amber-500/10">
-              <Zap size={14} className="text-amber-400 animate-bounce" />
-              <span>ROBUZTA LAB CAPABILITIES</span>
-            </div>
 
             {/* Console Frame */}
             <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-900/90 dark:bg-slate-950/90 backdrop-blur-xl p-6 sm:p-8 shadow-2xl space-y-6 pt-9">

@@ -20,7 +20,6 @@ import { MegaMenu } from '@/components/layout/MegaMenu';
 import { MagneticButton } from '@/components/ui/MagneticButton';
 import { BrandLogo } from '@/components/ui/BrandLogo';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
-import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { useBookingModal } from '@/context/BookingModalContext';
 
 const serviceIcons = {
@@ -65,13 +64,8 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-700 dark:border-slate-800 bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl transition-all duration-300 shadow-sm">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         
-        {/* Brand Logo */}
         <div className="flex items-center gap-3">
           <BrandLogo />
-          <span className="hidden xl:inline-flex items-center gap-1.5 text-[10px] font-extrabold text-[#0E7C7B] dark:text-teal-400 bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/20 px-2.5 py-0.5 rounded-full ml-1">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#0E7C7B] dark:bg-teal-400 animate-pulse"></span>
-            Precision Hardware Lab
-          </span>
         </div>
 
         {/* Desktop Navigation */}
@@ -136,8 +130,6 @@ export function Header() {
         {/* Header Action Buttons */}
         <div className="flex items-center gap-2.5">
           
-          <ThemeToggle className="hidden sm:flex border border-slate-200 dark:border-slate-700 dark:border-slate-800 bg-slate-100 dark:bg-slate-800" />
-
           {/* Call Hotline Icon Button */}
           <a
             href={siteConfig.phoneHref}
@@ -221,7 +213,6 @@ export function Header() {
             </div>
 
             <div className="pt-2 flex flex-wrap items-center gap-3">
-              <ThemeToggle className="h-11 w-11 flex-shrink-0 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700" />
               <a
                 href={siteConfig.whatsappHref}
                 target="_blank"

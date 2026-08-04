@@ -21,9 +21,9 @@ export function FinalCta() {
             
             {/* Text Copy */}
             <div className="lg:col-span-8 space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-3.5 py-1.5 text-xs font-extrabold text-teal-100 uppercase tracking-widest">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-3.5 py-1.5 font-tech text-xs font-bold text-teal-100 uppercase tracking-widest">
                 <Sparkles size={14} />
-                INSTANT HARDWARE DIAGNOSTIC ESTIMATE
+                [ INSTANT HARDWARE ESTIMATE ]
               </div>
 
               <h2 className="text-3xl sm:text-5xl font-extrabold !text-white text-white drop-shadow-sm tracking-tight leading-tight">
@@ -31,15 +31,15 @@ export function FinalCta() {
               </h2>
 
               <p className="text-teal-50 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
-                Connect directly with a senior Robuzta technician now for an instant diagnostic estimate or free doorstep pickup across Ahmedabad under full Zero-OTP data safety.
+                Connect directly with a senior Robuzta technician for an instant diagnostic estimate or doorstep pickup across Ahmedabad under full Zero-OTP data safety.
               </p>
 
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-white font-extrabold">
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-white font-extrabold font-tech">
                 <span className="flex items-center gap-1.5">
                   <ShieldCheck size={16} className="text-amber-300" /> Zero Password Required
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <ShieldCheck size={16} className="text-emerald-300" /> Free Doorstep Pickup
+                  <ShieldCheck size={16} className="text-emerald-300" /> Doorstep Pickup Included
                 </span>
                 <span className="flex items-center gap-1.5">
                   <ShieldCheck size={16} className="text-teal-200" /> 180-Day Warranty Included

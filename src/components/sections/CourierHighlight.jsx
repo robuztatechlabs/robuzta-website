@@ -33,21 +33,21 @@ export function CourierHighlight() {
               EXPRESS DOORSTEP PICKUP & PAN-INDIA SHIP-IN REPAIR
             </div>
 
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
-              Free Doorstep Pickup Across Ahmedabad & Insured Pan-India Courier Repair
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              Doorstep Pickup Across Ahmedabad & Insured Pan-India Courier Repair
             </h2>
 
-            <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
               We pick up laptops, MacBooks, and mobile devices directly from your home or office in anti-static padding, or accept Pan-India courier shipments with live video unboxing and insured transit.
             </p>
 
             <div className="space-y-2">
-              <span className="text-xs font-black text-slate-500 dark:text-slate-400 uppercase tracking-wider block">
-                Popular Free Doorstep Service Zones:
+              <span className="font-tech text-xs font-bold text-slate-500 uppercase tracking-wider block">
+                [ POPULAR DOORSTEP SERVICE ZONES ]
               </span>
               <div className="flex flex-wrap gap-2">
                 {doorstepZones.map((zone) => (
-                  <span key={zone} className="inline-flex items-center gap-1 text-xs font-bold text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700 px-3 py-1 rounded-lg shadow-sm">
+                  <span key={zone} className="inline-flex items-center gap-1 text-xs font-bold text-slate-700 bg-white border border-slate-200 px-3 py-1 rounded-lg shadow-sm">
                     <MapPin size={12} className="text-[#0E7C7B]" />
                     {zone}
                   </span>
@@ -65,7 +65,7 @@ export function CourierHighlight() {
                 className="flex items-center justify-center gap-2.5 rounded-2xl bg-[#0E7C7B] px-8 py-4 text-xs sm:text-sm font-black text-white shadow-xl shadow-[#0E7C7B]/30 hover:bg-[#0a5c5b] hover:scale-[1.02] transition-all"
               >
                 <WhatsappIcon size={20} className="text-white shrink-0" />
-                <span className="text-white font-black">Book Free Pickup</span>
+                <span className="text-white font-black">Book Pickup Now</span>
               </a>
             </MagneticButton>
 

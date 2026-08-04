@@ -36,17 +36,17 @@ export function MultiStepLeadWizard() {
 
     // 1. Dispatch to API (Google Sheets, Email Notification & Local Storage Backup)
     submitLeadData({
-      formType: '30-Second Diagnostic & Free Pickup Wizard',
+      formType: '30-Second Diagnostic & Doorstep Pickup Wizard',
       name,
       phone,
       device: selectedBrand,
       issue: selectedIssue.label,
       locality,
-      notes: 'Customer requested free doorstep pickup in Ahmedabad.'
+      notes: 'Customer requested doorstep pickup in Ahmedabad.'
     });
 
     // 2. Format WhatsApp Redirection
-    const whatsappMsg = `Hi Robuzta Techlabs! I booked a Free Inspection & Pickup:\n\n- Brand: ${selectedBrand}\n- Issue: ${selectedIssue.label}\n- Customer: ${name}\n- Phone: ${phone}\n- Locality: ${locality}\n\nPlease confirm my pickup slot and share initial cost estimate.`;
+    const whatsappMsg = `Hi Robuzta Techlabs! I booked a Zero-Cost Inspection & Pickup:\n\n- Brand: ${selectedBrand}\n- Issue: ${selectedIssue.label}\n- Customer: ${name}\n- Phone: ${phone}\n- Locality: ${locality}\n\nPlease confirm my pickup slot and share initial cost estimate.`;
     const whatsappUrl = `${siteConfig.whatsappHref}?text=${encodeURIComponent(whatsappMsg)}`;
 
     setTimeout(() => {
@@ -55,7 +55,7 @@ export function MultiStepLeadWizard() {
   };
 
   return (
-    <section className="py-24 bg-slate-50/50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 relative overflow-hidden transition-colors duration-300">
+    <section className="py-24 bg-slate-50 border-b border-slate-200 relative overflow-hidden transition-colors duration-300">
       
       {/* Background Accent Lighting */}
       <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#0E7C7B]/10 rounded-full blur-[140px]" />
@@ -64,40 +64,36 @@ export function MultiStepLeadWizard() {
         
         {/* Header */}
         <div className="text-center space-y-4 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-4 py-1.5 text-xs font-black text-[#0E7C7B] dark:text-teal-300">
-            <Sparkles size={14} className="text-[#0E7C7B] dark:text-teal-400" />
-            <span>INSTANT DIAGNOSTIC & DOORSTEP PICKUP WIZARD</span>
-          </div>
 
-          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
-            Book Free Inspection in 30 Seconds
+          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
+            Book Zero-Cost Inspection in 30 Seconds
           </h2>
 
-          <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg font-medium">
-            Zero inspection fees. Free doorstep pickup across South Bopal, Satellite, Vastrapur & Ahmedabad.
+          <p className="text-slate-600 text-base sm:text-lg font-medium">
+            Zero inspection fees. Standard doorstep pickup across South Bopal, Satellite, Vastrapur & Ahmedabad.
           </p>
         </div>
 
         {/* Wizard Container Card */}
-        <div className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 sm:p-12 shadow-2xl space-y-8">
+        <div className="rounded-3xl bg-white border border-slate-200 p-8 sm:p-12 shadow-xl space-y-8">
           
           {/* Step Progress Header */}
           {!isSubmitted && (
-            <div className="flex items-center justify-between gap-2 max-w-lg mx-auto p-2 bg-slate-100 dark:bg-slate-950 rounded-2xl border border-slate-200 dark:border-slate-800 text-xs font-extrabold">
+            <div className="flex items-center justify-between gap-2 max-w-lg mx-auto p-2 bg-slate-100 rounded-2xl border border-slate-200 font-tech text-xs font-bold">
               <div className={`flex-1 text-center py-2.5 rounded-xl transition-all ${
-                step === 1 ? 'bg-[#0E7C7B] text-white shadow-md' : 'text-slate-600 dark:text-slate-400'
+                step === 1 ? 'bg-[#0E7C7B] text-white shadow-md' : 'text-slate-600'
               }`}>
-                1. Select Brand
+                01. Select Brand
               </div>
               <div className={`flex-1 text-center py-2.5 rounded-xl transition-all ${
-                step === 2 ? 'bg-[#0E7C7B] text-white shadow-md' : 'text-slate-600 dark:text-slate-400'
+                step === 2 ? 'bg-[#0E7C7B] text-white shadow-md' : 'text-slate-600'
               }`}>
-                2. Select Issue
+                02. Select Issue
               </div>
               <div className={`flex-1 text-center py-2.5 rounded-xl transition-all ${
-                step === 3 ? 'bg-[#0E7C7B] text-white shadow-md' : 'text-slate-600 dark:text-slate-400'
+                step === 3 ? 'bg-[#0E7C7B] text-white shadow-md' : 'text-slate-600'
               }`}>
-                3. Book Free Pickup
+                03. Doorstep Pickup
               </div>
             </div>
           )}
@@ -235,42 +231,42 @@ export function MultiStepLeadWizard() {
               {/* STEP 3: CONTACT & LOCATION */}
               {step === 3 && (
                 <div className="space-y-4">
-                  <h4 className="text-base font-black text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-800 pb-3">
-                    Step 3: Contact & Free Pickup Locality
+                  <h4 className="text-base font-black text-slate-900 border-b border-slate-100 pb-3">
+                    Step 3: Contact & Doorstep Pickup Locality
                   </h4>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
-                      <label className="text-xs font-extrabold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Your Name *</label>
+                      <label className="text-xs font-extrabold uppercase text-slate-500 tracking-wider">Your Name *</label>
                       <input
                         type="text"
                         required
                         placeholder="e.g. Amit Patel"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        className="w-full rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 px-4 py-3.5 text-xs sm:text-sm text-slate-900 dark:text-white font-medium focus:border-[#0E7C7B] focus:outline-none"
+                        className="w-full rounded-2xl bg-slate-50 border border-slate-200 px-4 py-3.5 text-xs sm:text-sm text-slate-900 font-medium focus:border-[#0E7C7B] focus:outline-none"
                       />
                     </div>
 
                     <div className="space-y-1.5">
-                      <label className="text-xs font-extrabold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Mobile Number *</label>
+                      <label className="text-xs font-extrabold uppercase text-slate-500 tracking-wider">Mobile Number *</label>
                       <input
                         type="tel"
                         required
-                        placeholder="e.g. +91 999 245 2459"
+                        placeholder="e.g. +91 999 998 8885"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        className="w-full rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 px-4 py-3.5 text-xs sm:text-sm text-slate-900 dark:text-white font-medium focus:border-[#0E7C7B] focus:outline-none"
+                        className="w-full rounded-2xl bg-slate-50 border border-slate-200 px-4 py-3.5 text-xs sm:text-sm text-slate-900 font-medium focus:border-[#0E7C7B] focus:outline-none font-tech"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs font-extrabold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Ahmedabad Locality *</label>
+                    <label className="text-xs font-extrabold uppercase text-slate-500 tracking-wider">Ahmedabad Locality *</label>
                     <select
                       value={locality}
                       onChange={(e) => setLocality(e.target.value)}
-                      className="w-full rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 px-4 py-3.5 text-xs sm:text-sm text-slate-900 dark:text-white font-medium focus:border-[#0E7C7B] focus:outline-none"
+                      className="w-full rounded-2xl bg-slate-50 border border-slate-200 px-4 py-3.5 text-xs sm:text-sm text-slate-900 font-medium focus:border-[#0E7C7B] focus:outline-none"
                     >
                       <option value="South Bopal & Bopal">South Bopal & Bopal</option>
                       <option value="Satellite & Vastrapur">Satellite & Vastrapur</option>
@@ -285,7 +281,7 @@ export function MultiStepLeadWizard() {
                     <button
                       type="button"
                       onClick={() => setStep(2)}
-                      className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-slate-200 dark:bg-slate-800 text-xs font-extrabold text-slate-800 dark:text-slate-200 cursor-pointer"
+                      className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-slate-200 text-xs font-extrabold text-slate-800 cursor-pointer"
                     >
                       <ArrowLeft size={16} />
                       <span>Back</span>
@@ -296,7 +292,7 @@ export function MultiStepLeadWizard() {
                       className="inline-flex items-center gap-2 px-8 py-3.5 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-xs font-black text-white shadow-xl shadow-[#0E7C7B]/25 cursor-pointer"
                     >
                       <Truck size={16} />
-                      <span>Confirm Free Pickup & Quote</span>
+                      <span>Confirm Pickup & Quote</span>
                     </button>
                   </div>
                 </div>

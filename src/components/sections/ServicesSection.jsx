@@ -101,16 +101,16 @@ const serviceTabs = [
     ctaUrl: '/services/gaming-pc-repair'
   },
   {
-    id: 'free-pickup',
+    id: 'doorstep-pickup',
     slug: 'contact',
     icon: Truck,
     badge: '05 // DOORSTEP PICKUP',
-    title: 'Free Anti-Static Pickup Across Ahmedabad',
+    title: 'Anti-Static Doorstep Pickup Across Ahmedabad',
     description: 'Dedicated Robuzta pickup executive collects your broken laptop, Mac, or phone directly from your home or office in South Bopal, Satellite, Vastrapur, Motera, or Tragad with anti-static padding and zero OTP privacy.',
     time: 'Same-Day Dispatch',
     warranty: 'Insured Transit',
     highlights: [
-      'Free Pickup in South Bopal & Satellite',
+      'Doorstep Pickup in South Bopal & Satellite',
       'Anti-Static Padded Transport Box',
       'Zero OTP & Zero Password Policy',
       'Live Video Unboxing Logged',
@@ -143,7 +143,7 @@ const serviceTabs = [
 export function ServicesSection() {
   const [activeTab, setActiveTab] = useState(serviceTabs[0]);
 
-  const whatsappMsg = `Hi Robuzta Techlabs! I need a custom quote for ${activeTab.title}:\n\nRequirement: Free inspection & doorstep pickup.`;
+  const whatsappMsg = `Hi Robuzta Techlabs! I need a custom quote for ${activeTab.title}:\n\nRequirement: Zero-cost inspection & doorstep pickup.`;
   const whatsappUrl = `${siteConfig.whatsappHref}?text=${encodeURIComponent(whatsappMsg)}`;
 
   return (
@@ -156,15 +156,6 @@ export function ServicesSection() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-3.5 py-1.5 text-xs font-black text-[#0E7C7B] uppercase tracking-widest"
-          >
-            <Sparkles size={14} className="text-[#0E7C7B]" />
-            INTERACTIVE HARDWARE LAB NAVIGATOR
-          </motion.div>
 
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
@@ -225,126 +216,44 @@ export function ServicesSection() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.98 }}
             transition={{ duration: 0.3 }}
-            className="rounded-3xl bg-gradient-to-br from-slate-50 via-white to-teal-50/20 dark:from-slate-800 dark:via-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-700 p-6 sm:p-10 shadow-2xl space-y-8"
+            className="rounded-3xl bg-slate-50 border border-slate-200 p-6 sm:p-10 shadow-xl space-y-8 max-w-4xl mx-auto"
           >
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="space-y-6">
               
-              {/* Left Column: Spec Details & Capabilities */}
-              <div className="lg:col-span-7 space-y-6">
-                
-                <div className="flex items-center gap-3">
-                  <span className="text-xs font-mono font-black text-[#0E7C7B] bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-3 py-1 rounded-full">
-                    {activeTab.badge}
-                  </span>
-                  <span className="text-xs font-bold text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-200 dark:border-emerald-800 px-3 py-1 rounded-full flex items-center gap-1.5">
-                    <Activity size={13} className="text-[#0E7C7B] animate-pulse" />
-                    ESD Anti-Static Bench Active
-                  </span>
-                </div>
 
-                <div className="space-y-3">
-                  <h3 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
-                    {activeTab.title}
-                  </h3>
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
-                    {activeTab.description}
-                  </p>
-                </div>
+              <h3 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                {activeTab.title}
+              </h3>
 
-                {/* Key Spec Highlights */}
-                <div className="space-y-2 pt-1">
-                  <span className="text-xs font-black uppercase tracking-wider text-slate-400 block">
-                    Verified Lab Capabilities:
-                  </span>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                    {activeTab.highlights.map((item) => (
-                      <div key={item} className="flex items-center gap-2 text-xs font-bold text-slate-800 dark:text-slate-200 bg-white dark:bg-slate-950 border border-slate-200/80 dark:border-slate-700 p-3 rounded-xl shadow-sm">
-                        <CheckCircle2 size={16} className="text-[#0E7C7B] shrink-0" />
-                        <span>{item}</span>
-                      </div>
-                    ))}
+              {/* Key Spec Highlights */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                {activeTab.highlights.map((item) => (
+                  <div key={item} className="flex items-center gap-2.5 text-xs font-bold text-slate-800 bg-white border border-slate-200 p-3.5 rounded-xl shadow-sm">
+                    <CheckCircle2 size={16} className="text-[#0E7C7B] shrink-0" />
+                    <span>{item}</span>
                   </div>
-                </div>
-
-                {/* Metrics Badges */}
-                <div className="flex flex-wrap items-center gap-3 pt-2 border-t border-slate-200 dark:border-slate-700 text-xs font-extrabold text-slate-700 dark:text-slate-300">
-                  <span className="flex items-center gap-1.5 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3 py-1.5 rounded-lg">
-                    <Clock size={15} className="text-[#0E7C7B]" /> {activeTab.time}
-                  </span>
-                  <span className="flex items-center gap-1.5 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800 px-3 py-1.5 rounded-lg">
-                    <ShieldCheck size={15} className="text-emerald-700 dark:text-emerald-500" /> {activeTab.warranty}
-                  </span>
-                  <span className="flex items-center gap-1.5 bg-amber-50 dark:bg-amber-900/30 text-amber-800 dark:text-amber-400 border border-amber-200 dark:border-amber-800 px-3 py-1.5 rounded-lg">
-                    <Zap size={15} className="text-amber-600 dark:text-amber-500" /> Zero-OTP Protected
-                  </span>
-                </div>
-
-                {/* Action CTAs with Explicit High-Contrast Colors */}
-                <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
-                  <a
-                    href={whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2.5 w-full sm:w-auto rounded-2xl bg-emerald-600 px-7 py-4 text-xs font-black text-white shadow-xl shadow-emerald-600/30 hover:bg-emerald-700 hover:scale-[1.02] transition-all"
-                  >
-                    <WhatsappIcon size={20} className="text-white shrink-0" />
-                    <span className="text-white font-extrabold">Book Diagnostic via WhatsApp</span>
-                  </a>
-
-                  <a
-                    href={siteConfig.phoneHref}
-                    className="flex items-center justify-center gap-2 w-full sm:w-auto rounded-2xl px-6 py-4 text-xs font-black shadow-md bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all"
-                  >
-                    <Phone size={16} className="text-[#0E7C7B]" />
-                    <span>Call Senior Tech Directly</span>
-                  </a>
-                </div>
-
+                ))}
               </div>
 
-              {/* Right Column: Visual Lab Inspection Card */}
-              <div className="lg:col-span-5">
-                <div className="rounded-3xl bg-gradient-to-br from-[#0F172A] via-[#0E7C7B] to-[#0F172A] text-white p-6 sm:p-8 space-y-6 shadow-2xl relative overflow-hidden">
-                  
-                  {/* Card Glow */}
-                  <div className="pointer-events-none absolute -top-12 -right-12 w-48 h-48 bg-teal-400/20 rounded-full blur-3xl" />
+              {/* Action CTAs */}
+              <div className="flex flex-col sm:flex-row items-center gap-3 pt-4 border-t border-slate-200">
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2.5 w-full sm:w-auto rounded-2xl bg-emerald-600 px-7 py-4 text-xs font-black text-white shadow-xl shadow-emerald-600/20 hover:bg-emerald-700 transition-all"
+                >
+                  <WhatsappIcon size={20} className="text-white shrink-0" />
+                  <span className="text-white font-extrabold">Book Diagnostic via WhatsApp</span>
+                </a>
 
-                  <div className="flex items-center justify-between border-b border-white/15 pb-4">
-                    <div className="flex items-center gap-2">
-                      <Wrench size={18} className="text-teal-300" />
-                      <span className="text-xs font-mono font-extrabold uppercase text-teal-100">ROBUZTA HARDWARE STATION</span>
-                    </div>
-                    <span className="h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
-                  </div>
-
-                  <div className="space-y-4">
-                    <div className="rounded-2xl bg-white/10 backdrop-blur-md p-4 border border-white/15 space-y-2">
-                      <div className="text-[10px] font-mono font-bold text-teal-200 uppercase tracking-widest">Inspection Protocol</div>
-                      <div className="text-lg font-black text-white">{activeTab.title}</div>
-                      <div className="text-xs text-teal-100 leading-relaxed font-medium">
-                        ISO 27001 Certified Anti-Static ESD Bench • Live HD Video Inspection Logged • Zero Password Needed.
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-3 text-xs">
-                      <div className="rounded-xl bg-white/10 p-3 border border-white/15 space-y-1">
-                        <span className="text-[10px] text-teal-200 font-mono">Part Serial:</span>
-                        <div className="font-extrabold text-white">100% Verified OEM</div>
-                      </div>
-                      <div className="rounded-xl bg-white/10 p-3 border border-white/15 space-y-1">
-                        <span className="text-[10px] text-teal-200 font-mono">Diagnosis Fee:</span>
-                        <div className="font-extrabold text-emerald-300">₹0 (Free Check)</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="pt-2 text-center border-t border-white/15">
-                    <span className="text-[11px] font-bold text-teal-100">
-                      Doorstep Pickup & Pan-India Ship-In Available
-                    </span>
-                  </div>
-
-                </div>
+                <a
+                  href={siteConfig.phoneHref}
+                  className="flex items-center justify-center gap-2 w-full sm:w-auto rounded-2xl px-6 py-4 text-xs font-black shadow-sm bg-white border border-slate-200 text-slate-900 hover:bg-slate-50 transition-all font-tech"
+                >
+                  <Phone size={16} className="text-[#0E7C7B]" />
+                  <span>+91 999 998 8885</span>
+                </a>
               </div>
 
             </div>

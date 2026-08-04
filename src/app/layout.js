@@ -14,7 +14,7 @@ export const metadata = {
     template: '%s | Robuzta Techlabs'
   },
   description:
-    'Ahmedabad premier multi-device repair lab. Live diagnostic stream, zero OTP privacy, BGA micro-soldering, original parts, and free doorstep pickup across Ahmedabad.',
+    'Ahmedabad premier multi-device repair lab. Live diagnostic stream, zero OTP privacy, BGA micro-soldering, original parts, and doorstep pickup across Ahmedabad.',
   keywords: [
     'laptop repair ahmedabad',
     'macbook repair ahmedabad',
@@ -84,6 +84,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
         <script
           id="org-schema"
           type="application/ld+json"
@@ -104,7 +107,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body suppressHydrationWarning>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="light" forcedTheme="light" enableSystem={false} disableTransitionOnChange>
           <BookingModalProvider>
             {children}
             <BookRepairModal />

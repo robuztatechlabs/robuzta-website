@@ -34,9 +34,7 @@ export function TechStackSection() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <span className="text-xs font-bold uppercase tracking-widest text-blue-700 bg-blue-50 border border-blue-200 px-3.5 py-1.5 rounded-full">
-            LAB INSTRUMENTATION & DIAGNOSTIC GEAR
-          </span>
+         
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
             Powered by Lab-Grade Diagnostic Instruments
           </h2>

@@ -17,21 +17,13 @@ export function ProcessSection() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <motion.span
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-3.5 py-1.5 rounded-full"
-          >
-            TRANSPARENT WORKBENCH ROADMAP
-          </motion.span>
 
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight"
+            className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight"
           >
             Engineered for Complete Customer Confidence
           </motion.h2>
@@ -41,7 +33,7 @@ export function ProcessSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed font-medium"
+            className="text-slate-600 text-base sm:text-lg leading-relaxed font-medium"
           >
             No hidden charges, zero unapproved part replacements, and strict Zero-OTP privacy. You remain in control at every stage.
           </motion.p>
@@ -58,11 +50,11 @@ export function ProcessSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="group relative rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700 p-8 flex flex-col justify-between hover:border-[#0E7C7B]/40 hover:shadow-2xl hover:shadow-[#0E7C7B]/10 hover:-translate-y-1.5 transition-all duration-300 space-y-6"
+                className="group relative rounded-3xl bg-white border border-slate-200 p-8 flex flex-col justify-between hover:border-[#0E7C7B]/40 hover:shadow-2xl hover:shadow-[#0E7C7B]/10 hover:-translate-y-1.5 transition-all duration-300 space-y-6"
               >
                 <div className="space-y-5">
-                  <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-4">
-                    <span className="font-mono text-3xl font-black text-[#0E7C7B] group-hover:scale-110 transition-transform">
+                  <div className="flex items-center justify-between border-b border-slate-100 pb-4">
+                    <span className="font-tech text-3xl font-black text-[#0E7C7B] group-hover:scale-110 transition-transform">
                       0{index + 1}
                     </span>
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0E7C7B]/10 text-[#0E7C7B] border border-[#0E7C7B]/20 group-hover:bg-[#0E7C7B] group-hover:text-white transition-all shadow-sm">

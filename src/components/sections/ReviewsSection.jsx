@@ -39,11 +39,6 @@ export function ReviewsSection() {
             
             {/* Rating Summary */}
             <div className="lg:col-span-7 space-y-4 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200 px-3.5 py-1.5 text-xs font-extrabold text-emerald-800">
-                <GoogleIcon size={18} />
-                <span>OFFICIAL GOOGLE MAPS REVIEWS</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              </div>
 
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
                 <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-slate-100 tracking-tight">

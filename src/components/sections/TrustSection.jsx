@@ -54,10 +54,7 @@ export function TrustSection() {
 
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-4 py-1.5 text-xs font-black text-[#0E7C7B] dark:text-teal-300">
-            <Sparkles size={14} className="text-amber-500" />
-            <span>ZERO COMPROMISE DATA & QUALITY GUARANTEE</span>
-          </div>
+          
 
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
             Built on Workbench Transparency & Data Safety

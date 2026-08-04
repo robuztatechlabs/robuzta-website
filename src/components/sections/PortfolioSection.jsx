@@ -61,10 +61,6 @@ export function PortfolioSection() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-4 max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-4 py-1.5 text-xs font-black text-[#0E7C7B] dark:text-teal-300">
-              <Sparkles size={14} className="text-[#0E7C7B] dark:text-teal-400" />
-              <span>FEATURED HARDWARE REPAIR CASE STUDIES</span>
-            </div>
 
             <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
               Precision Engineering in Action
@@ -128,21 +124,13 @@ export function PortfolioSection() {
                   </p>
                 </div>
 
-                {/* Metrics & Tech Stack */}
-                <div className="space-y-4 pt-4 border-t border-slate-100 dark:border-slate-800 relative z-10">
+                {/* Metrics */}
+                <div className="space-y-4 pt-4 border-t border-slate-100 relative z-10">
                   <div className="grid grid-cols-3 gap-2">
                     {item.metrics.map((metric) => (
-                      <div key={metric} className="bg-slate-50 dark:bg-slate-900 p-2.5 rounded-xl text-center border border-slate-200 dark:border-slate-800">
-                        <span className="text-xs font-black text-slate-800 dark:text-slate-200 block">{metric}</span>
+                      <div key={metric} className="bg-slate-50 p-2.5 rounded-xl text-center border border-slate-200">
+                        <span className="text-xs font-black text-slate-800 block">{metric}</span>
                       </div>
-                    ))}
-                  </div>
-
-                  <div className="flex flex-wrap gap-2">
-                    {item.tags.map((tag) => (
-                      <span key={tag} className="text-[11px] font-mono font-bold text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-lg border border-slate-200 dark:border-slate-800">
-                        #{tag}
-                      </span>
                     ))}
                   </div>
                 </div>
