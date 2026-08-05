@@ -10,7 +10,7 @@ import { SocialBar } from '@/components/ui/SocialBar';
 
 export function Footer() {
   return (
-    <footer className="border-t border-slate-200 dark:border-slate-700 bg-[#0F172A] text-slate-300 pt-16 pb-12">
+    <footer className="border-t border-slate-200 dark:border-slate-700 bg-[#0F172A] text-slate-300 pt-16 pb-28 lg:pb-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Top Grid */}

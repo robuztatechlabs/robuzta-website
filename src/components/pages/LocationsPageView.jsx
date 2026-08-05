@@ -254,20 +254,7 @@ export function LocationsPageView() {
                         </span>
                       </div>
 
-                      {/* Embedded Google Maps iFrame */}
-                      <div className="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 h-56 bg-slate-100 dark:bg-slate-950 shadow-inner group/map">
-                        <iframe
-                          src={mapEmbedSrc}
-                          className="w-full h-full border-0 filter grayscale contrast-125 dark:invert dark:hue-rotate-180 transition-all duration-500 group-hover/map:filter-none"
-                          allowFullScreen
-                          loading="lazy"
-                          referrerPolicy="no-referrer-when-downgrade"
-                          title={`${loc.title} Map`}
-                        />
-                        <div className="absolute top-3 left-3 bg-slate-950/90 backdrop-blur-md text-white text-[10px] font-black uppercase px-3 py-1 rounded-full border border-white/20 shadow-md">
-                          Live Interactive Map
-                        </div>
-                      </div>
+
 
                       {/* Detailed Address */}
                       <div className="space-y-2 bg-white dark:bg-slate-950 p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800">

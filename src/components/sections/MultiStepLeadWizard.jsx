@@ -55,7 +55,7 @@ export function MultiStepLeadWizard() {
   };
 
   return (
-    <section className="py-24 bg-slate-50 border-b border-slate-200 relative overflow-hidden transition-colors duration-300">
+    <section className="py-28 lg:py-36 bg-slate-50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 relative overflow-hidden transition-colors duration-300">
       
       {/* Background Accent Lighting */}
       <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#0E7C7B]/10 rounded-full blur-[140px]" />
@@ -65,35 +65,35 @@ export function MultiStepLeadWizard() {
         {/* Header */}
         <div className="text-center space-y-4 max-w-3xl mx-auto">
 
-          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
             Book Zero-Cost Inspection in 30 Seconds
           </h2>
 
-          <p className="text-slate-600 text-base sm:text-lg font-medium">
+          <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg font-medium">
             Zero inspection fees. Standard doorstep pickup across South Bopal, Satellite, Vastrapur & Ahmedabad.
           </p>
         </div>
 
         {/* Wizard Container Card */}
-        <div className="rounded-3xl bg-white border border-slate-200 p-8 sm:p-12 shadow-xl space-y-8">
+        <div className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 sm:p-12 shadow-xl space-y-8">
           
           {/* Step Progress Header */}
           {!isSubmitted && (
-            <div className="flex items-center justify-between gap-2 max-w-lg mx-auto p-2 bg-slate-100 rounded-2xl border border-slate-200 font-tech text-xs font-bold">
-              <div className={`flex-1 text-center py-2.5 rounded-xl transition-all ${
-                step === 1 ? 'bg-[#0E7C7B] text-white shadow-md' : 'text-slate-600'
+            <div className="flex items-center justify-between gap-1 sm:gap-2 max-w-lg mx-auto p-1.5 sm:p-2 bg-slate-100 dark:bg-slate-950 rounded-2xl border border-slate-200 dark:border-slate-800 font-tech text-[10px] sm:text-xs font-bold">
+              <div className={`flex-1 text-center py-2 sm:py-2.5 px-1 rounded-xl transition-all ${
+                step === 1 ? 'bg-[#0E7C7B] text-white shadow-md' : 'text-slate-600 dark:text-slate-400'
               }`}>
-                01. Select Brand
+                01. Brand
               </div>
-              <div className={`flex-1 text-center py-2.5 rounded-xl transition-all ${
-                step === 2 ? 'bg-[#0E7C7B] text-white shadow-md' : 'text-slate-600'
+              <div className={`flex-1 text-center py-2 sm:py-2.5 px-1 rounded-xl transition-all ${
+                step === 2 ? 'bg-[#0E7C7B] text-white shadow-md' : 'text-slate-600 dark:text-slate-400'
               }`}>
-                02. Select Issue
+                02. Issue
               </div>
-              <div className={`flex-1 text-center py-2.5 rounded-xl transition-all ${
-                step === 3 ? 'bg-[#0E7C7B] text-white shadow-md' : 'text-slate-600'
+              <div className={`flex-1 text-center py-2 sm:py-2.5 px-1 rounded-xl transition-all ${
+                step === 3 ? 'bg-[#0E7C7B] text-white shadow-md' : 'text-slate-600 dark:text-slate-400'
               }`}>
-                03. Doorstep Pickup
+                03. Pickup
               </div>
             </div>
           )}
@@ -184,7 +184,7 @@ export function MultiStepLeadWizard() {
                           className={`w-full p-4 rounded-2xl text-left transition-all cursor-pointer border flex items-center justify-between gap-4 ${
                             isSelected
                               ? 'bg-[#0E7C7B]/10 dark:bg-teal-950/40 border-[#0E7C7B] shadow-md'
-                              : 'bg-slate-50 dark:bg-slate-950 border-slate-200 dark:border-slate-800 hover:border-slate-300'
+                              : 'bg-slate-50 dark:bg-slate-950 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700'
                           }`}
                         >
                           <div className="flex items-center gap-3.5">
@@ -231,42 +231,42 @@ export function MultiStepLeadWizard() {
               {/* STEP 3: CONTACT & LOCATION */}
               {step === 3 && (
                 <div className="space-y-4">
-                  <h4 className="text-base font-black text-slate-900 border-b border-slate-100 pb-3">
+                  <h4 className="text-base font-black text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-800 pb-3">
                     Step 3: Contact & Doorstep Pickup Locality
                   </h4>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
-                      <label className="text-xs font-extrabold uppercase text-slate-500 tracking-wider">Your Name *</label>
+                      <label className="text-xs font-extrabold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Your Name *</label>
                       <input
                         type="text"
                         required
                         placeholder="e.g. Amit Patel"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        className="w-full rounded-2xl bg-slate-50 border border-slate-200 px-4 py-3.5 text-xs sm:text-sm text-slate-900 font-medium focus:border-[#0E7C7B] focus:outline-none"
+                        className="w-full rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 px-4 py-3.5 text-xs sm:text-sm text-slate-900 dark:text-white font-medium focus:border-[#0E7C7B] focus:outline-none"
                       />
                     </div>
 
                     <div className="space-y-1.5">
-                      <label className="text-xs font-extrabold uppercase text-slate-500 tracking-wider">Mobile Number *</label>
+                      <label className="text-xs font-extrabold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Mobile Number *</label>
                       <input
                         type="tel"
                         required
                         placeholder="e.g. +91 999 998 8885"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        className="w-full rounded-2xl bg-slate-50 border border-slate-200 px-4 py-3.5 text-xs sm:text-sm text-slate-900 font-medium focus:border-[#0E7C7B] focus:outline-none font-tech"
+                        className="w-full rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 px-4 py-3.5 text-xs sm:text-sm text-slate-900 dark:text-white font-medium focus:border-[#0E7C7B] focus:outline-none font-tech"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs font-extrabold uppercase text-slate-500 tracking-wider">Ahmedabad Locality *</label>
+                    <label className="text-xs font-extrabold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Ahmedabad Locality *</label>
                     <select
                       value={locality}
                       onChange={(e) => setLocality(e.target.value)}
-                      className="w-full rounded-2xl bg-slate-50 border border-slate-200 px-4 py-3.5 text-xs sm:text-sm text-slate-900 font-medium focus:border-[#0E7C7B] focus:outline-none"
+                      className="w-full rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 px-4 py-3.5 text-xs sm:text-sm text-slate-900 dark:text-white font-medium focus:border-[#0E7C7B] focus:outline-none"
                     >
                       <option value="South Bopal & Bopal">South Bopal & Bopal</option>
                       <option value="Satellite & Vastrapur">Satellite & Vastrapur</option>
@@ -281,7 +281,7 @@ export function MultiStepLeadWizard() {
                     <button
                       type="button"
                       onClick={() => setStep(2)}
-                      className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-slate-200 text-xs font-extrabold text-slate-800 cursor-pointer"
+                      className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-slate-200 dark:bg-slate-800 text-xs font-extrabold text-slate-800 dark:text-slate-200 cursor-pointer"
                     >
                       <ArrowLeft size={16} />
                       <span>Back</span>

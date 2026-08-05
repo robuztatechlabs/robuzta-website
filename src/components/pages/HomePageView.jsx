@@ -5,7 +5,7 @@ import { SmoothScroll } from '@/components/ui/SmoothScroll';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-
+import { LazySection } from '@/components/ui/LazySection';
 
 // Synchronously loaded top sections
 import { HeroSection } from '@/components/sections/HeroSection';
@@ -42,34 +42,13 @@ const TrustSection = dynamic(
   { ssr: false }
 );
 
-
-const BrandLogosGrid = dynamic(
-  () => import('@/components/sections/BrandLogosGrid').then(m => m.BrandLogosGrid),
-  { ssr: false }
-);
-
 const ServicesSection = dynamic(
   () => import('@/components/sections/ServicesSection').then(m => m.ServicesSection),
   { ssr: false }
 );
 
-const WhyChooseUsSection = dynamic(
-  () => import('@/components/sections/WhyChooseUsSection').then(m => m.WhyChooseUsSection),
-  { ssr: false }
-);
-
-const PortfolioSection = dynamic(
-  () => import('@/components/sections/PortfolioSection').then(m => m.PortfolioSection),
-  { ssr: false }
-);
-
-const RepairShowcaseSection = dynamic(
-  () => import('@/components/sections/RepairShowcaseSection').then(m => m.RepairShowcaseSection),
-  { ssr: false }
-);
-
-const TechStackSection = dynamic(
-  () => import('@/components/sections/TechStackSection').then(m => m.TechStackSection),
+const BrandLogosGrid = dynamic(
+  () => import('@/components/sections/BrandLogosGrid').then(m => m.BrandLogosGrid),
   { ssr: false }
 );
 
@@ -78,8 +57,13 @@ const ProcessSection = dynamic(
   { ssr: false }
 );
 
-const CourierHighlight = dynamic(
-  () => import('@/components/sections/CourierHighlight').then(m => m.CourierHighlight),
+const RepairShowcaseSection = dynamic(
+  () => import('@/components/sections/RepairShowcaseSection').then(m => m.RepairShowcaseSection),
+  { ssr: false }
+);
+
+const WhyChooseUsSection = dynamic(
+  () => import('@/components/sections/WhyChooseUsSection').then(m => m.WhyChooseUsSection),
   { ssr: false }
 );
 
@@ -90,6 +74,16 @@ const ReviewsSection = dynamic(
 
 const FaqPreview = dynamic(
   () => import('@/components/sections/FaqPreview').then(m => m.FaqPreview),
+  { ssr: false }
+);
+
+const LocationSection = dynamic(
+  () => import('@/components/sections/LocationSection').then(m => m.LocationSection),
+  { ssr: false }
+);
+
+const CourierHighlight = dynamic(
+  () => import('@/components/sections/CourierHighlight').then(m => m.CourierHighlight),
   { ssr: false }
 );
 
@@ -113,40 +107,75 @@ export function HomePageView() {
 
       <Header />
       <main className="bg-white text-slate-900 min-h-screen">
-        {/* 1. Hero */}
+        {/* 1. Hero Section */}
         <HeroSection />
 
-        {/* 2. Custom 3D Model */}
-        <LaptopExplorerSection />
+        {/* Interactive 3D Model Explorer & Diagnostic Configurator */}
+        <LazySection minHeight="450px">
+          <LaptopExplorerSection />
+        </LazySection>
 
-        {/* 3. Trust Stats Strip */}
-        <TrustSection />
+        <LazySection minHeight="400px">
+          <MultiStepLeadWizard />
+        </LazySection>
 
-        {/* 4. Services Overview */}
-        <ServicesSection />
+        {/* 2. Trust Statistics */}
+        <LazySection minHeight="350px">
+          <TrustSection />
+        </LazySection>
 
-        {/* 5. Brands We Repair */}
-        <BrandLogosGrid />
+        {/* 3. Services Overview */}
+        <LazySection minHeight="450px">
+          <ServicesSection />
+        </LazySection>
 
-        {/* 6. How It Works */}
-        <ProcessSection />
+        {/* 4. Brands We Repair */}
+        <LazySection minHeight="200px">
+          <BrandLogosGrid />
+        </LazySection>
 
-        {/* 7. Transparent Pricing & Hardware Estimator */}
-        <RepairShowcaseSection />
+        {/* 5. How It Works */}
+        <LazySection minHeight="400px">
+          <ProcessSection />
+        </LazySection>
 
-        {/* 8. Why Choose Us */}
-        <WhyChooseUsSection />
+        {/* 6. Transparent Pricing & Diagnostic Calculator */}
+        <LazySection minHeight="450px">
+          <RepairShowcaseSection />
+        </LazySection>
 
-        {/* 9. Customer Reviews */}
-        <ReviewsSection />
+        {/* 7. Why Choose Us */}
+        <LazySection minHeight="400px">
+          <WhyChooseUsSection />
+        </LazySection>
 
-        {/* 10. FAQ */}
-        <FaqPreview />
+        {/* 8. Customer Reviews */}
+        <LazySection minHeight="400px">
+          <ReviewsSection />
+        </LazySection>
 
-        {/* 11. Location, Hours & Final Contact CTA */}
-        <CourierHighlight />
-        <FranchiseHomeSection />
-        <FinalCta />
+        {/* 9. Frequently Asked Questions */}
+        <LazySection minHeight="350px">
+          <FaqPreview />
+        </LazySection>
+
+        {/* 10. Location & Business Hours */}
+        <LazySection minHeight="400px">
+          <LocationSection />
+        </LazySection>
+
+        <LazySection minHeight="300px">
+          <CourierHighlight />
+        </LazySection>
+
+        <LazySection minHeight="400px">
+          <FranchiseHomeSection />
+        </LazySection>
+
+        {/* 11. Final Call-To-Action */}
+        <LazySection minHeight="350px">
+          <FinalCta />
+        </LazySection>
       </main>
       <Footer />
     </SmoothScroll>

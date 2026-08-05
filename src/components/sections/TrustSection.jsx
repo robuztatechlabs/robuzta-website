@@ -1,61 +1,70 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ShieldCheck, Award, Lock, CheckCircle2, Star, Zap, Cpu, Server, Sparkles } from 'lucide-react';
+import Image from 'next/image';
+import { ShieldCheck, Award, Lock, CheckCircle2, Star, Cpu } from 'lucide-react';
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
 import { trustCards } from '@/data/trust';
 
-const clientLogos = [
-  'Dell Laptops', 'HP Pavilion & OMEN', 'Lenovo ThinkPad', 'Apple MacBook & iPad',
-  'ASUS ROG & ZenBook', 'Acer Predator', 'Microsoft Surface', 'Samsung Galaxy', 'OnePlus', 'Google Pixel'
+const brandLogos = [
+  { name: 'Apple', image: '/assets/brands/apples.webp' },
+  { name: 'Dell', image: '/assets/brands/dell.webp' },
+  { name: 'HP', image: '/assets/brands/hp.webp' },
+  { name: 'Lenovo', image: '/assets/brands/lenovo.webp' },
+  { name: 'ASUS', image: '/assets/brands/asus.png' },
+  { name: 'Google Pixel', image: '/assets/brands/google-pixel.webp' },
+  { name: 'iPhone', image: '/assets/brands/iphone.png' },
+  { name: 'Microsoft Surface', image: '/assets/brands/microsoft.webp' },
+  { name: 'Samsung', image: '/assets/brands/samsung.webp' },
+  { name: 'Acer', image: '/assets/brands/acer.webp' }
 ];
 
 export function TrustSection() {
+  const marqueeLogos = brandLogos.concat(brandLogos);
+
   return (
-    <section className="relative bg-slate-50 dark:bg-slate-900 py-24 border-y border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
+    <section className="relative bg-slate-50 dark:bg-slate-900 py-28 lg:py-36 border-y border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
       
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16 lg:space-y-20">
         
         {/* Metric Stats Banner */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 p-8 rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 shadow-xl">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 p-6 sm:p-10 rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 shadow-xl">
           <div className="space-y-1 text-center md:text-left">
-            <div className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">
+            <div className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
               <AnimatedCounter value="15000" suffix="+" />
             </div>
-            <div className="text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">Devices Restored</div>
-            <p className="text-[11px] text-[#0E7C7B] dark:text-teal-400 font-bold">Laptops, Macs, Surface & Mobile</p>
+            <div className="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">Devices Restored</div>
+            <p className="text-[10px] sm:text-[11px] text-[#0E7C7B] dark:text-teal-400 font-bold truncate">Laptops, Macs & Mobiles</p>
           </div>
 
           <div className="space-y-1 text-center md:text-left">
-            <div className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">
+            <div className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
               <AnimatedCounter value="99.8" suffix="%" />
             </div>
-            <div className="text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">Repair Success Rate</div>
-            <p className="text-[11px] text-amber-600 dark:text-amber-400 font-bold">Micro-soldering & Screen swaps</p>
+            <div className="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">Repair Success Rate</div>
+            <p className="text-[10px] sm:text-[11px] text-amber-600 dark:text-amber-400 font-bold truncate">Micro-soldering & Screens</p>
           </div>
 
           <div className="space-y-1 text-center md:text-left">
-            <div className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">
+            <div className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
               <AnimatedCounter value="2" suffix=" to 4h" />
             </div>
-            <div className="text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">Avg Turnaround</div>
-            <p className="text-[11px] text-emerald-600 dark:text-emerald-400 font-bold">Same-Day Express Service</p>
+            <div className="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">Avg Turnaround</div>
+            <p className="text-[10px] sm:text-[11px] text-emerald-600 dark:text-emerald-400 font-bold truncate">Express Turnaround</p>
           </div>
 
           <div className="space-y-1 text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start gap-1.5 text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">
+            <div className="flex items-center justify-center md:justify-start gap-1 text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
               <span>4.9</span>
-              <Star size={24} className="text-amber-500 fill-amber-500" />
+              <Star size={20} className="text-amber-500 fill-amber-500 shrink-0" />
             </div>
-            <div className="text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">Verified Rating</div>
-            <p className="text-[11px] text-slate-600 dark:text-slate-400 font-bold">Based on 1,200+ Google Reviews</p>
+            <div className="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">Verified Rating</div>
+            <p className="text-[10px] sm:text-[11px] text-slate-600 dark:text-slate-400 font-bold truncate">1,200+ Google Reviews</p>
           </div>
         </div>
 
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          
-
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
             Built on Workbench Transparency & Data Safety
           </h2>
@@ -93,23 +102,6 @@ export function TrustSection() {
               </p>
             </motion.div>
           ))}
-        </div>
-
-        {/* Infinite Logo Marquee */}
-        <div className="space-y-4 pt-4">
-          <div className="text-center text-xs font-black uppercase tracking-widest text-slate-400 dark:text-slate-500">
-            Certified Hardware Component & Brand Support
-          </div>
-          <div className="relative overflow-hidden py-4 border-y border-slate-200 dark:border-slate-800">
-            <div className="animate-marquee flex items-center gap-12 text-xs font-extrabold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
-              {clientLogos.concat(clientLogos).map((logo, index) => (
-                <span key={index} className="flex items-center gap-2.5 hover:text-[#0E7C7B] dark:hover:text-teal-400 transition-colors cursor-default whitespace-nowrap">
-                  <span className="h-2 w-2 rounded-full bg-[#0E7C7B] dark:bg-teal-400"></span>
-                  {logo}
-                </span>
-              ))}
-            </div>
-          </div>
         </div>
 
       </div>

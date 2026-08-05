@@ -1,25 +1,30 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, ShieldCheck, TrendingUp, Sparkles, Building, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Building, CheckCircle2, TrendingUp, Cpu, Layers } from 'lucide-react';
 import Link from 'next/link';
 import { siteConfig } from '@/data/site';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 
 export function FranchiseHomeSection() {
   return (
-    <section className="relative bg-gradient-to-b from-slate-50 via-teal-50/20 to-white dark:from-slate-900 dark:via-slate-900 dark:to-slate-950 py-20 sm:py-24 border-t border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
+    <section className="relative bg-white dark:bg-slate-950 py-28 lg:py-36 border-t border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
       
       {/* Background Radial Glow */}
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#0E7C7B]/10 rounded-full blur-[130px]" />
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#0E7C7B]/5 rounded-full blur-[140px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 p-8 sm:p-12 md:p-14 shadow-2xl space-y-10">
+        <div className="rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 sm:p-14 md:p-16 shadow-xl space-y-12 transition-colors duration-300">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
             {/* Left Content Column */}
-            <div className="lg:col-span-7 space-y-6 text-center sm:text-left">
+            <div className="lg:col-span-7 space-y-8 text-center sm:text-left">
+
+              <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/20 px-4 py-1.5 text-xs font-black text-[#0E7C7B] dark:text-teal-400 uppercase tracking-widest">
+                <Building size={14} className="text-[#0E7C7B] dark:text-teal-400" />
+                <span>FRANCHISE OPPORTUNITY</span>
+              </div>
 
               <motion.h2
                 initial={{ opacity: 0, y: 15 }}
@@ -28,10 +33,7 @@ export function FranchiseHomeSection() {
                 transition={{ delay: 0.1 }}
                 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight"
               >
-                Partner with India’s Premier <br className="hidden sm:block" />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0E7C7B] via-teal-500 to-[#EA580C]">
-                  Precision Hardware Repair Brand
-                </span>
+                Partner with India’s Premier Hardware Repair Lab
               </motion.h2>
 
               <motion.p
@@ -39,16 +41,16 @@ export function FranchiseHomeSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="text-slate-600 dark:text-slate-400 text-base sm:text-lg font-medium leading-relaxed"
+                className="text-slate-600 dark:text-slate-300 text-base sm:text-lg font-medium leading-relaxed max-w-2xl"
               >
-                Own a high-profit chip-level repair lab in your city. Get turnkey ISO-compliant ESD workbench setups, 55%–70% gross profit margins, and centralized Google & Meta lead generation.
+                Launch a high-margin chip-level repair lab in your city with complete turnkey setup, ESD workbenches, CRM software, and automated lead generation.
               </motion.p>
 
               {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
+              <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4 pt-2">
                 <Link
                   href="/franchise"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 px-8 py-4 text-xs sm:text-sm font-black text-white shadow-xl shadow-[#0E7C7B]/25 transition-all"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 px-8 py-4.5 text-xs sm:text-sm font-black text-white shadow-xl shadow-[#0E7C7B]/25 hover:scale-[1.03] transition-all"
                 >
                   <span>Explore Franchise Models</span>
                   <ArrowRight size={16} />
@@ -58,36 +60,45 @@ export function FranchiseHomeSection() {
                   href={siteConfig.whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-emerald-600 hover:bg-emerald-500 px-6 py-4 text-xs sm:text-sm font-black text-white shadow-md transition-all"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 px-7 py-4.5 text-xs sm:text-sm font-black text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 shadow-sm transition-all font-tech"
                 >
-                  <WhatsappIcon size={18} className="text-white" />
+                  <WhatsappIcon size={18} className="shrink-0" />
                   <span>WhatsApp Inquiry</span>
                 </a>
               </div>
 
             </div>
 
-            {/* Right Visual Card Column (100% Theme-Adaptive) */}
-            <div className="lg:col-span-5">
-              <div className="rounded-3xl bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white p-8 space-y-6 shadow-xl border border-slate-200 dark:border-slate-800 relative overflow-hidden">
-                
-                <div className="pointer-events-none absolute -top-10 -right-10 w-40 h-40 bg-[#0E7C7B]/10 rounded-full blur-[60px]" />
-
-                <div className="space-y-3 relative z-10">
-                  <div className="flex items-center gap-2 text-[#0E7C7B] dark:text-teal-400 text-xs font-mono font-bold uppercase tracking-widest">
-                    <Building size={16} />
-                    <span>TURNKEY LAB SETUP</span>
-                  </div>
-
-                  <h3 className="text-2xl font-black text-slate-900 dark:text-white">
-                    Complete Diagnostic & Repair Ecosystem Provided
-                  </h3>
-
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
-                    We handle retail 3D store blueprints, BGA soldering equipment, technician hiring, CRM software, and initial parts inventory sourcing.
-                  </p>
+            {/* Right Metric Highlights Grid (Clean, Spacious Stats) */}
+            <div className="lg:col-span-5 grid grid-cols-1 gap-4">
+              <div className="rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 p-6 flex items-start gap-4 shadow-sm">
+                <div className="h-10 w-10 rounded-xl bg-teal-50 dark:bg-teal-950/50 border border-teal-200 dark:border-teal-800 text-[#0E7C7B] dark:text-teal-400 flex items-center justify-center shrink-0">
+                  <TrendingUp size={20} />
                 </div>
+                <div>
+                  <h4 className="text-sm font-black text-slate-900 dark:text-white">55% – 70% Gross Profit Margins</h4>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 font-medium">High margin chip-level micro-soldering & screen repair business.</p>
+                </div>
+              </div>
 
+              <div className="rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 p-6 flex items-start gap-4 shadow-sm">
+                <div className="h-10 w-10 rounded-xl bg-teal-50 dark:bg-teal-950/50 border border-teal-200 dark:border-teal-800 text-[#0E7C7B] dark:text-teal-400 flex items-center justify-center shrink-0">
+                  <Cpu size={20} />
+                </div>
+                <div>
+                  <h4 className="text-sm font-black text-slate-900 dark:text-white">Turnkey ISO Workbenches</h4>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 font-medium">3D store blueprints, BGA equipment, and parts supply chain included.</p>
+                </div>
+              </div>
+
+              <div className="rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 p-6 flex items-start gap-4 shadow-sm">
+                <div className="h-10 w-10 rounded-xl bg-teal-50 dark:bg-teal-950/50 border border-teal-200 dark:border-teal-800 text-[#0E7C7B] dark:text-teal-400 flex items-center justify-center shrink-0">
+                  <Layers size={20} />
+                </div>
+                <div>
+                  <h4 className="text-sm font-black text-slate-900 dark:text-white">Centralized Lead Generation</h4>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 font-medium">Direct customer inquiry flow powered by central digital marketing.</p>
+                </div>
               </div>
             </div>
 

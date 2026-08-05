@@ -34,7 +34,7 @@ export function ReviewsSection() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Top Google Maps Trust Header Card */}
-        <div className="rounded-3xl bg-white dark:bg-slate-950 border border-slate-200/90 p-6 sm:p-10 shadow-xl shadow-slate-200/60 relative overflow-hidden">
+        <div className="rounded-3xl bg-white dark:bg-slate-950 border border-slate-200/90 dark:border-slate-800 p-6 sm:p-10 shadow-xl shadow-slate-200/60 dark:shadow-none relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Rating Summary */}
@@ -67,7 +67,7 @@ export function ReviewsSection() {
                 href={googleStats.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-between gap-3 rounded-2xl bg-[#0F172A] px-6 py-3.5 text-xs sm:text-sm font-extrabold text-white shadow-lg hover:bg-[#0E7C7B] hover:scale-[1.01] transition-all group"
+                className="w-full inline-flex items-center justify-between gap-3 rounded-2xl bg-[#0F172A] dark:bg-slate-900 border border-transparent dark:border-slate-800 px-6 py-3.5 text-xs sm:text-sm font-extrabold text-white shadow-lg hover:bg-[#0E7C7B] dark:hover:bg-[#0E7C7B] hover:scale-[1.01] transition-all group"
               >
                 <div className="flex items-center gap-2.5">
                   <GoogleIcon size={18} />
@@ -150,7 +150,7 @@ export function ReviewsSection() {
               {duplicatedReviews.map((review, idx) => (
                 <div
                   key={`${review.id}-${idx}`}
-                  className="w-[320px] sm:w-[380px] shrink-0"
+                  className="w-[310px] sm:w-[350px] lg:w-[340px] xl:w-[350px] shrink-0"
                 >
                   <ReviewCard review={review} />
                 </div>

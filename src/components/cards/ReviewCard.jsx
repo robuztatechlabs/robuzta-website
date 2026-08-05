@@ -13,44 +13,41 @@ export function ReviewCard({ review }) {
   const bgGradient = review.avatarBg || 'from-teal-600 to-emerald-700';
 
   return (
-    <article className="h-full flex flex-col justify-between rounded-3xl bg-white dark:bg-slate-950 border border-slate-200/80 p-6 sm:p-8 shadow-lg shadow-slate-200/50 hover:shadow-2xl hover:shadow-teal-500/10 hover:border-teal-300 transition-all duration-300 relative group overflow-hidden">
+    <article className="h-full flex flex-col justify-between rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 p-6 sm:p-7 shadow-lg shadow-slate-200/40 dark:shadow-none hover:shadow-xl hover:border-[#0E7C7B] transition-all duration-300 relative group overflow-hidden">
       
-      {/* Top Gradient Highlight Accent */}
-      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-teal-500 via-blue-500 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+      {/* Top Accent Line */}
+      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#0E7C7B] via-teal-500 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity" />
 
       {/* Header Info */}
       <div className="space-y-4">
         
-        <div className="flex items-start justify-between gap-4">
-          <div className="flex items-center gap-3.5">
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center gap-3.5 min-w-0">
             {/* Avatar with Initials */}
-            <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${bgGradient} text-white font-extrabold text-base flex items-center justify-center shadow-md shadow-slate-300/60 shrink-0`}>
+            <div className={`w-11 h-11 rounded-full bg-gradient-to-br ${bgGradient} text-white font-extrabold text-sm flex items-center justify-center shadow-sm shrink-0`}>
               {initials}
             </div>
 
-            <div>
+            <div className="min-w-0">
               <div className="flex items-center gap-1.5">
-                <h3 className="font-extrabold text-slate-900 dark:text-slate-100 text-base group-hover:text-teal-700 transition-colors">
+                <h3 className="font-extrabold text-slate-900 dark:text-slate-100 text-sm sm:text-base group-hover:text-[#0E7C7B] transition-colors truncate">
                   {review.name}
                 </h3>
-                <span title="Verified Customer" className="text-emerald-500">
-                  <CheckCircle2 size={16} className="fill-emerald-100" />
-                </span>
+                <CheckCircle2 size={16} className="text-emerald-500 fill-emerald-100 dark:fill-emerald-950/60 shrink-0" title="Verified Customer" />
               </div>
               
               {review.location && (
                 <div className="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400 font-medium">
                   <MapPin size={12} className="text-slate-400 shrink-0" />
-                  <span>{review.location}</span>
+                  <span className="truncate">{review.location}</span>
                 </div>
               )}
             </div>
           </div>
 
-          {/* Google Icon Badge */}
-          <div className="flex items-center gap-1.5 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-2.5 py-1 rounded-full shrink-0 shadow-xs">
-            <GoogleIcon size={16} />
-            <span className="text-[11px] font-bold text-slate-700 dark:text-slate-300 font-mono">Google</span>
+          {/* ONLY Google Logo Icon */}
+          <div className="h-9 w-9 rounded-full bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 flex items-center justify-center shrink-0 shadow-xs">
+            <GoogleIcon size={18} />
           </div>
         </div>
 
@@ -58,7 +55,7 @@ export function ReviewCard({ review }) {
         <div className="flex items-center justify-between pt-1">
           <div className="flex items-center gap-1 text-amber-400">
             {Array.from({ length: review.rating || 5 }).map((_, i) => (
-              <Star key={i} size={17} className="fill-amber-400 text-amber-400" />
+              <Star key={i} size={16} className="fill-amber-400 text-amber-400" />
             ))}
           </div>
 
@@ -70,21 +67,26 @@ export function ReviewCard({ review }) {
         </div>
 
         {/* Review Body */}
-        <p className="text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed italic font-normal pt-1">
+        <p className="text-slate-700 dark:text-slate-300 text-xs sm:text-sm leading-relaxed italic font-normal pt-1">
           &ldquo;{review.quote}&rdquo;
         </p>
       </div>
 
-      {/* Footer / Device Tag */}
+      {/* Footer / Device Tag with Clean ONLY Verified Icon Badge */}
       {review.device && (
-        <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-          <div className="inline-flex items-center gap-1.5 bg-teal-50 dark:bg-teal-900/30 border border-teal-200/60 dark:border-teal-800 px-3 py-1.2 rounded-xl text-xs font-extrabold text-teal-800 dark:text-teal-400">
-            <ShieldCheck size={14} className="text-teal-600 shrink-0" />
-            <span>Repaired: {review.device}</span>
+        <div className="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">
+          <div className="inline-flex items-center gap-1.5 bg-teal-50 dark:bg-teal-950/40 border border-teal-200/60 dark:border-teal-800 px-3 py-1.5 rounded-xl text-xs font-extrabold text-[#0E7C7B] dark:text-teal-400 min-w-0">
+            <ShieldCheck size={14} className="text-[#0E7C7B] dark:text-teal-400 shrink-0" />
+            <span className="truncate">Repaired: {review.device}</span>
           </div>
-          <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
-            Verified
-          </span>
+
+          {/* ONLY Verified Icon Badge without text */}
+          <div
+            className="h-8 w-8 rounded-full bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200/60 dark:border-emerald-800 flex items-center justify-center shrink-0"
+            title="Verified Review"
+          >
+            <CheckCircle2 size={16} className="text-emerald-500 fill-emerald-100 dark:fill-emerald-950/60 shrink-0" />
+          </div>
         </div>
       )}
 

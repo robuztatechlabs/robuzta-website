@@ -12,8 +12,8 @@ export function FaqPreview() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="faq" className="relative bg-white dark:bg-slate-950 py-24 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-16">
+    <section id="faq" className="relative bg-white dark:bg-slate-950 py-28 lg:py-36 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-16 lg:space-y-20">
         
         {/* Section Header */}
         <div className="text-center space-y-4">

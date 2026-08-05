@@ -10,7 +10,7 @@ export function FloatingWidget() {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="fixed bottom-16 lg:bottom-6 right-5 sm:right-6 z-40 flex flex-col items-end" aria-label="Quick contact widget">
+    <div className="hidden lg:flex fixed bottom-6 right-6 z-40 flex-col items-end" aria-label="Quick contact widget">
       {expanded && (
         <div className="mb-3 w-80 rounded-3xl bg-slate-900/95 backdrop-blur-xl border border-slate-800 p-5 text-white shadow-2xl space-y-4 animate-in fade-in slide-in-from-bottom-3 duration-200">
           
@@ -46,7 +46,7 @@ export function FloatingWidget() {
               className="flex items-center justify-center gap-2 w-full rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 py-3 text-xs font-extrabold text-white transition-all"
             >
               <Phone size={15} className="text-[#EA580C]" />
-              <span>Call Hotline (+91 999 245 2459)</span>
+              <span>Call Hotline (+91 999 998 8885)</span>
             </a>
 
             <Link

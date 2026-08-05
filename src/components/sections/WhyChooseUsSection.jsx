@@ -38,12 +38,12 @@ const pillars = [
 
 export function WhyChooseUsSection() {
   return (
-    <section className="relative bg-white dark:bg-slate-950 py-24 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
+    <section className="relative bg-white dark:bg-slate-950 py-28 lg:py-36 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
       
       {/* Background Glow */}
       <div className="pointer-events-none absolute top-0 right-0 w-[500px] h-[500px] bg-[#0E7C7B]/5 rounded-full blur-[140px]" />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16 lg:space-y-20">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
@@ -70,7 +70,7 @@ export function WhyChooseUsSection() {
         </div>
 
         {/* Feature Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {pillars.map((pillar, index) => {
             const Icon = pillar.icon;
             return (
@@ -80,7 +80,7 @@ export function WhyChooseUsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="group rounded-3xl bg-slate-50/70 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-8 flex flex-col justify-between hover:border-[#0E7C7B]/40 hover:bg-white dark:hover:bg-slate-700 hover:shadow-2xl hover:shadow-[#0E7C7B]/10 hover:-translate-y-1.5 transition-all duration-300 space-y-6"
+                className="group rounded-3xl bg-slate-50/70 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-8 sm:p-9 flex flex-col justify-between hover:border-[#0E7C7B]/40 hover:bg-white dark:hover:bg-slate-700 hover:shadow-2xl hover:shadow-[#0E7C7B]/10 hover:-translate-y-1.5 transition-all duration-300 space-y-6"
               >
                 <div className="space-y-5">
                   <div className="flex items-center justify-between">

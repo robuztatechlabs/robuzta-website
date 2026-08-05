@@ -65,7 +65,7 @@ const whatWeFixServices = [
 export function HeroSection() {
   const { openModal } = useBookingModal();
   return (
-    <section className="relative overflow-hidden bg-white dark:bg-[#070E1A] pt-10 pb-20 lg:pt-16 lg:pb-28 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+    <section className="relative overflow-hidden bg-white dark:bg-[#070E1A] pt-14 pb-24 lg:pt-20 lg:pb-36 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
       
       {/* Background Ambient Glows (GPU Accelerated for Zero LCP Delay) */}
       <div className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#0E7C7B]/15 dark:bg-[#0E7C7B]/20 rounded-full blur-3xl will-change-transform" />
@@ -77,31 +77,31 @@ export function HeroSection() {
       />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column: Hero Copy & Actions (INSTANT ZERO-DELAY RENDER) */}
-          <div className="lg:col-span-6 space-y-8 text-center lg:text-left">
+          {/* Left Column: Hero Copy & Actions */}
+          <div className="lg:col-span-6 space-y-8 lg:space-y-10 text-center lg:text-left">
             
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-6xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.08]">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
               Precision Repair for{' '}
-              <span className="block mt-1 bg-gradient-to-r from-[#0E7C7B] via-teal-600 to-slate-900 bg-clip-text text-transparent">
+              <span className="block mt-1 sm:mt-2 bg-gradient-to-r from-[#0E7C7B] via-teal-600 dark:via-teal-400 to-slate-900 dark:to-teal-200 bg-clip-text text-transparent">
                 Laptops, Mobiles & iPads
               </span>
             </h1>
 
             {/* Sub-headline */}
-            <p className="text-base sm:text-lg text-slate-600 font-medium max-w-xl mx-auto lg:mx-0">
-              Component-level hardware repair & logic board diagnostics.
+            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 font-medium max-w-xl mx-auto lg:mx-0 leading-relaxed">
+              Component-level hardware repair & logic board diagnostics with zero OTP data safety.
             </p>
 
             {/* Action Buttons */}
             <div
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2"
+              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-5 pt-4 w-full"
             >
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2.5 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-7 py-4 text-sm font-black shadow-xl shadow-[#0E7C7B]/25 hover:scale-[1.03] transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-8 py-4 text-sm font-black shadow-xl shadow-[#0E7C7B]/25 hover:scale-[1.03] transition-all"
               >
                 <Calendar size={18} />
                 <span>Book Appointment</span>
@@ -109,9 +109,9 @@ export function HeroSection() {
 
               <a
                 href={siteConfig.phoneHref}
-                className="inline-flex items-center gap-2.5 rounded-2xl bg-white border border-slate-200 px-6 py-4 text-sm font-bold text-slate-900 hover:bg-slate-50 shadow-sm transition-all font-tech"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-7 py-4 text-sm font-bold text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 shadow-sm transition-all font-tech"
               >
-                <Phone size={18} className="text-[#0E7C7B]" />
+                <Phone size={18} className="text-[#0E7C7B] dark:text-teal-400" />
                 <span>+91 999 998 8885</span>
               </a>
             </div>

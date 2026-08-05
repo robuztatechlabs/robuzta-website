@@ -19,6 +19,7 @@ import { services } from '@/data/services';
 import { MegaMenu } from '@/components/layout/MegaMenu';
 import { MagneticButton } from '@/components/ui/MagneticButton';
 import { BrandLogo } from '@/components/ui/BrandLogo';
+import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 import { useBookingModal } from '@/context/BookingModalContext';
 
@@ -130,6 +131,9 @@ export function Header() {
         {/* Header Action Buttons */}
         <div className="flex items-center gap-2.5">
           
+          {/* Light / Dark Mode Theme Switcher */}
+          <ThemeToggle />
+
           {/* Call Hotline Icon Button */}
           <a
             href={siteConfig.phoneHref}
@@ -152,11 +156,11 @@ export function Header() {
             <WhatsappIcon size={20} />
           </a>
 
-          {/* Primary CTA Button: Book Diagnosis */}
+          {/* Primary CTA Button: Book Diagnosis (Desktop & Tablet) */}
           <button
             type="button"
             onClick={() => openModal({ formType: 'Header Book Diagnosis' })}
-            className="inline-flex items-center justify-center rounded-xl px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-black shadow-md transition-all hover:scale-[1.03] bg-[#0E7C7B] dark:bg-teal-600 text-white cursor-pointer"
+            className="hidden sm:inline-flex items-center justify-center rounded-xl px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-black shadow-md transition-all hover:scale-[1.03] bg-[#0E7C7B] dark:bg-teal-600 text-white cursor-pointer"
           >
             <span className="font-black text-white">Book Diagnosis</span>
           </button>
