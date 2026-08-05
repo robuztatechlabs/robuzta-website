@@ -70,7 +70,7 @@ export function Header() {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1 text-sm font-extrabold">
+        <nav className="hidden lg:flex items-center gap-1.5 text-sm font-tech">
           {navItems.map((item) => {
             const isHovered = hoveredNav === item.name || (item.isDropdown && megaMenuOpen);
             
@@ -90,10 +90,10 @@ export function Header() {
                 >
                   <Link
                     href={item.href}
-                    className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl transition-all font-black text-sm ${
+                    className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl transition-all font-tech font-bold text-sm tracking-wide ${
                       isHovered
-                        ? 'text-black dark:text-white bg-slate-100 dark:bg-slate-800'
-                        : 'text-slate-600 dark:text-slate-400 dark:text-slate-300 bg-transparent'
+                        ? 'text-[#0E7C7B] dark:text-teal-400 bg-[#0E7C7B]/10 dark:bg-teal-400/10'
+                        : 'text-slate-700 dark:text-slate-300 hover:text-[#0E7C7B] dark:hover:text-teal-400 bg-transparent'
                     }`}
                     onClick={() => setMegaMenuOpen(!megaMenuOpen)}
                     aria-expanded={megaMenuOpen}
@@ -101,7 +101,7 @@ export function Header() {
                     <span>{item.name}</span>
                     <ChevronDown
                       size={15}
-                      className={`transition-transform duration-200 ${megaMenuOpen ? 'rotate-180' : ''}`}
+                      className={`transition-transform duration-200 ${megaMenuOpen ? 'rotate-180 text-[#0E7C7B] dark:text-teal-400' : ''}`}
                     />
                   </Link>
 
@@ -116,10 +116,10 @@ export function Header() {
                 href={item.href}
                 onMouseEnter={() => setHoveredNav(item.name)}
                 onMouseLeave={() => setHoveredNav(null)}
-                className={`px-3.5 py-2 rounded-xl transition-all font-black text-sm ${
+                className={`px-3.5 py-2 rounded-xl transition-all font-tech font-bold text-sm tracking-wide ${
                   isHovered
-                    ? 'text-black dark:text-white bg-slate-100 dark:bg-slate-800'
-                    : 'text-slate-600 dark:text-slate-400 dark:text-slate-300 bg-transparent'
+                    ? 'text-[#0E7C7B] dark:text-teal-400 bg-[#0E7C7B]/10 dark:bg-teal-400/10'
+                    : 'text-slate-700 dark:text-slate-300 hover:text-[#0E7C7B] dark:hover:text-teal-400 bg-transparent'
                 }`}
               >
                 {item.name}
