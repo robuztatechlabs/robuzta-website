@@ -27,14 +27,14 @@ export function StickyMobileBar() {
 
   return (
     <div
-      className="fixed bottom-4 left-3 right-3 sm:left-6 sm:right-6 z-50 flex lg:hidden items-center justify-between gap-2 bg-slate-900/95 dark:bg-slate-950/95 backdrop-blur-xl border border-slate-700/80 dark:border-slate-800 p-2 rounded-2xl shadow-2xl shadow-black/50 animate-in fade-in slide-in-from-bottom-4 duration-300"
+      className="fixed bottom-3 left-0 right-0 mx-auto w-[calc(100vw-1rem)] sm:w-full sm:max-w-xl z-50 flex lg:hidden items-center justify-between gap-1.5 sm:gap-2 bg-slate-900/95 backdrop-blur-xl border border-slate-700/80 p-1.5 sm:p-2 rounded-2xl shadow-2xl shadow-black/60 animate-in fade-in slide-in-from-bottom-4 duration-300 pointer-events-auto overflow-hidden box-border"
       aria-label="Mobile quick action floating bar"
     >
       <a
         href={siteConfig.phoneHref}
-        className="flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700/80 px-2 py-2.5 text-[11px] font-black text-white shadow-sm transition-all min-h-[42px]"
+        className="flex-1 min-w-0 flex items-center justify-center gap-1 sm:gap-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700/80 px-1 sm:px-3 py-2.5 text-[10px] sm:text-xs font-black text-white shadow-sm transition-all min-h-[42px]"
       >
-        <Phone size={14} className="text-teal-400 shrink-0" />
+        <Phone size={13} className="text-teal-400 shrink-0" />
         <span className="truncate">Call Now</span>
       </a>
 
@@ -42,18 +42,18 @@ export function StickyMobileBar() {
         href={siteConfig.whatsappHref}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-2 py-2.5 text-[11px] font-black text-white shadow-sm transition-all min-h-[42px]"
+        className="flex-1 min-w-0 flex items-center justify-center gap-1 sm:gap-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-1 sm:px-3 py-2.5 text-[10px] sm:text-xs font-black text-white shadow-sm transition-all min-h-[42px]"
       >
-        <WhatsappIcon size={15} className="text-white shrink-0" />
+        <WhatsappIcon size={14} className="text-white shrink-0" />
         <span className="truncate">WhatsApp</span>
       </a>
 
       <button
         type="button"
         onClick={() => openModal({ formType: 'Mobile Sticky Bar' })}
-        className="flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-[#0E7C7B] hover:bg-teal-600 px-2 py-2.5 text-[11px] font-black text-white shadow-sm transition-all min-h-[42px] cursor-pointer"
+        className="flex-1 min-w-0 flex items-center justify-center gap-1 sm:gap-1.5 rounded-xl bg-[#0E7C7B] hover:bg-teal-600 px-1 sm:px-3 py-2.5 text-[10px] sm:text-xs font-black text-white shadow-sm transition-all min-h-[42px] cursor-pointer"
       >
-        <Wrench size={14} className="text-white shrink-0" />
+        <Wrench size={13} className="text-white shrink-0" />
         <span className="truncate">Book Pickup</span>
       </button>
     </div>

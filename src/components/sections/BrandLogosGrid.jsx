@@ -11,70 +11,70 @@ export function BrandLogosGrid() {
       tag: 'Air, Pro & Mac Studio',
       image: '/assets/brands/apples.webp',
       badge: 'Logic Board',
-      logoStyle: 'h-12 sm:h-20 w-auto max-w-[130px]'
+      logoStyle: 'h-10 sm:h-14 w-auto max-w-[120px] sm:max-w-[140px]'
     },
     {
       name: 'Dell',
       tag: 'XPS, Inspiron & Alienware',
       image: '/assets/brands/dell.webp',
       badge: 'Power IC',
-      logoStyle: 'h-12 sm:h-20 w-auto max-w-[130px]'
+      logoStyle: 'h-10 sm:h-14 w-auto max-w-[120px] sm:max-w-[140px]'
     },
     {
       name: 'HP',
       tag: 'Spectre, OMEN & Pavilion',
       image: '/assets/brands/hp.webp',
       badge: 'Screen Swap',
-      logoStyle: 'h-15 sm:h-150 w-50 max-w-[130px]'
+      logoStyle: 'h-10 sm:h-14 w-auto max-w-[120px] sm:max-w-[140px]'
     },
     {
       name: 'Lenovo',
       tag: 'ThinkPad, Legion & Yoga',
       image: '/assets/brands/lenovo.webp',
       badge: 'Hinge Repair',
-      logoStyle: 'h-15 sm:h-150 w-50 max-w-[140px]'
+      logoStyle: 'h-10 sm:h-14 w-auto max-w-[120px] sm:max-w-[140px]'
     },
     {
       name: 'ASUS',
       tag: 'ROG, TUF & ZenBook',
       image: '/assets/brands/asus.png',
       badge: 'GPU Soldering',
-      logoStyle: 'h-15 sm:h-150 w-50 max-w-[140px]'
+      logoStyle: 'h-10 sm:h-14 w-auto max-w-[120px] sm:max-w-[140px]'
     },
     {
       name: 'Microsoft Surface',
       tag: 'Surface Pro & Laptop',
       image: '/assets/brands/microsoft.webp',
       badge: 'Battery & Screen',
-      logoStyle: 'h-15 sm:h-150 w-50 max-w-[140px]'
+      logoStyle: 'h-10 sm:h-14 w-auto max-w-[120px] sm:max-w-[140px]'
     },
     {
       name: 'Apple iPhone',
       tag: 'Pro Max & Standard Series',
       image: '/assets/brands/iphone.png',
       badge: 'FaceID & Glass',
-      logoStyle: 'h-15 sm:h-150 w-50 max-w-[140px]'
+      logoStyle: 'h-10 sm:h-14 w-auto max-w-[120px] sm:max-w-[140px]'
     },
     {
       name: 'Samsung Galaxy',
       tag: 'S-Series, Z Fold & Flip',
       image: '/assets/brands/samsung.webp',
       badge: 'AMOLED Display',
-      logoStyle: 'h-15 sm:h-150 w-50 max-w-[500px]'
+      logoStyle: 'h-10 sm:h-14 w-auto max-w-[120px] sm:max-w-[140px]'
     },
     {
       name: 'Google Pixel',
       tag: 'Pixel Pro & Fold Series',
       image: '/assets/brands/google-pixel.webp',
       badge: 'Camera & Board',
-      logoStyle: 'h-15 sm:h-150 w-50 max-w-[140px]'
+      logoStyle: 'h-10 sm:h-14 w-auto max-w-[120px] sm:max-w-[140px]'
     },
     {
       name: 'Acer & Gaming',
       tag: 'Predator, Nitro & Swift',
       image: '/assets/brands/acer.webp',
       badge: 'Overheat Repair',
-      logoStyle: 'h-10 sm:h-12 w-auto max-w-[140px]'
+      logoStyle: 'h-10 sm:h-14 w-auto max-w-[120px] sm:max-w-[140px]'
     }
   ];
 

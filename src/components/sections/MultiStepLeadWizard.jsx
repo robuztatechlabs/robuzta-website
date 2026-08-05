@@ -156,7 +156,7 @@ export function MultiStepLeadWizard() {
                     <button
                       type="button"
                       onClick={() => setStep(2)}
-                      className="inline-flex items-center gap-2 px-8 py-3.5 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-xs font-black text-white shadow-lg cursor-pointer"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-xs font-black text-white shadow-lg cursor-pointer transition-all"
                     >
                       <span>Next: Select Hardware Issue</span>
                       <ArrowRight size={16} />

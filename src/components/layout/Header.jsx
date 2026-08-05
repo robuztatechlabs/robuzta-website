@@ -19,7 +19,6 @@ import { services } from '@/data/services';
 import { MegaMenu } from '@/components/layout/MegaMenu';
 import { MagneticButton } from '@/components/ui/MagneticButton';
 import { BrandLogo } from '@/components/ui/BrandLogo';
-import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 import { useBookingModal } from '@/context/BookingModalContext';
 
@@ -130,9 +129,6 @@ export function Header() {
 
         {/* Header Action Buttons */}
         <div className="flex items-center gap-2.5">
-          
-          {/* Light / Dark Mode Theme Switcher */}
-          <ThemeToggle />
 
           {/* Call Hotline Icon Button */}
           <a

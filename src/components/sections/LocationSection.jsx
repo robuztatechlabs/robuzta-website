@@ -31,41 +31,42 @@ export function LocationSection() {
         </div>
 
         {/* 2 Lab Location Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {locations.map((loc) => (
             <div
               key={loc.slug}
-              className="group rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 space-y-6 shadow-xl hover:border-[#0E7C7B] transition-all duration-300 flex flex-col justify-between"
+              className="group rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 sm:p-8 space-y-5 shadow-xl hover:border-[#0E7C7B] transition-all duration-300 flex flex-col justify-between"
             >
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 
                 {/* Branch Header */}
-                <div className="flex items-start justify-between border-b border-slate-100 dark:border-slate-800 pb-5">
-                  <div className="flex items-center gap-3.5">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0E7C7B]/10 dark:bg-teal-400/10 text-[#0E7C7B] dark:text-teal-400 border border-[#0E7C7B]/20 group-hover:bg-[#0E7C7B] group-hover:text-white transition-all shadow-sm">
-                      <Building2 size={24} />
+                <div className="flex flex-col xs:flex-row items-start xs:items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-2xl bg-[#0E7C7B]/10 dark:bg-teal-400/10 text-[#0E7C7B] dark:text-teal-400 border border-[#0E7C7B]/20 group-hover:bg-[#0E7C7B] group-hover:text-white transition-all shadow-sm shrink-0">
+                      <Building2 size={20} className="sm:hidden" />
+                      <Building2 size={24} className="hidden sm:block" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-black text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors">
+                      <h3 className="text-base sm:text-xl font-black text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors leading-tight">
                         {loc.title}
                       </h3>
-                      <span className="text-xs font-bold text-slate-500 dark:text-slate-400">
+                      <span className="text-[11px] sm:text-xs font-bold text-slate-500 dark:text-slate-400">
                         Live Hardware Repair Lab
                       </span>
                     </div>
                   </div>
 
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 text-xs font-bold text-emerald-600 dark:text-emerald-400 shrink-0">
+                  <span className="self-start xs:self-auto inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 sm:px-3 sm:py-1 text-[11px] sm:text-xs font-bold text-emerald-600 dark:text-emerald-400 shrink-0">
                     <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
                     <span>Open Now</span>
                   </span>
                 </div>
 
                 {/* Lab Address Box */}
-                <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800 space-y-2">
-                  <div className="flex items-center justify-between text-xs font-black uppercase tracking-wider text-[#0E7C7B] dark:text-teal-400">
-                    <span className="flex items-center gap-1.5">
-                      <MapPin size={15} />
+                <div className="p-3.5 sm:p-5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800 space-y-1.5">
+                  <div className="flex flex-wrap items-center justify-between gap-2 text-[10px] sm:text-xs font-black uppercase tracking-wider text-[#0E7C7B] dark:text-teal-400">
+                    <span className="flex items-center gap-1.5 truncate">
+                      <MapPin size={14} className="shrink-0" />
                       LAB ADDRESS
                     </span>
 
@@ -73,10 +74,10 @@ export function LocationSection() {
                       href={loc.mapUrl || "https://maps.google.com/?q=Robuzta+Techlabs+South+Bopal"}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-[11px] font-bold text-slate-500 dark:text-slate-400 hover:text-[#0E7C7B] dark:hover:text-teal-300 transition-colors"
+                      className="inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-bold text-slate-500 dark:text-slate-400 hover:text-[#0E7C7B] dark:hover:text-teal-300 transition-colors shrink-0"
                     >
                       <span>Google Maps</span>
-                      <Navigation size={12} />
+                      <Navigation size={11} className="shrink-0" />
                     </a>
                   </div>
 
@@ -86,22 +87,22 @@ export function LocationSection() {
                 </div>
 
                 {/* Hours & Hotline Info Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                  <div className="flex items-center gap-3 p-4 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800 text-xs font-bold text-slate-800 dark:text-slate-200">
-                    <Clock size={20} className="text-[#0E7C7B] dark:text-teal-400 shrink-0" />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="flex items-center gap-2.5 p-3 sm:p-4 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800 text-xs font-bold text-slate-800 dark:text-slate-200">
+                    <Clock size={18} className="text-[#0E7C7B] dark:text-teal-400 shrink-0" />
                     <div>
-                      <span className="text-[10px] text-slate-400 font-extrabold uppercase block tracking-wider">BUSINESS HOURS</span>
-                      <span className="text-slate-900 dark:text-slate-100 font-extrabold">11:00 AM – 7:00 PM</span>
-                      <span className="text-[10px] text-slate-500 dark:text-slate-400 block font-medium">Monday to Saturday</span>
+                      <span className="text-[9px] sm:text-[10px] text-slate-400 font-extrabold uppercase block tracking-wider">BUSINESS HOURS</span>
+                      <span className="text-slate-900 dark:text-slate-100 font-extrabold text-xs sm:text-sm">11:00 AM – 7:00 PM</span>
+                      <span className="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 block font-medium">Monday to Saturday</span>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-3 p-4 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800 text-xs font-bold text-slate-800 dark:text-slate-200">
-                    <Phone size={20} className="text-[#0E7C7B] dark:text-teal-400 shrink-0" />
+                  <div className="flex items-center gap-2.5 p-3 sm:p-4 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800 text-xs font-bold text-slate-800 dark:text-slate-200">
+                    <Phone size={18} className="text-[#0E7C7B] dark:text-teal-400 shrink-0" />
                     <div>
-                      <span className="text-[10px] text-slate-400 font-extrabold uppercase block tracking-wider">DIRECT HOTLINE</span>
-                      <span className="text-slate-900 dark:text-slate-100 font-extrabold">+91 999 245 2459</span>
-                      <span className="text-[10px] text-emerald-600 dark:text-emerald-400 block font-bold">Instant Phone Support</span>
+                      <span className="text-[9px] sm:text-[10px] text-slate-400 font-extrabold uppercase block tracking-wider">DIRECT HOTLINE</span>
+                      <span className="text-slate-900 dark:text-slate-100 font-extrabold text-xs sm:text-sm">+91 999 245 2459</span>
+                      <span className="text-[9px] sm:text-[10px] text-emerald-600 dark:text-emerald-400 block font-bold">Instant Phone Support</span>
                     </div>
                   </div>
                 </div>
@@ -109,12 +110,12 @@ export function LocationSection() {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row items-center gap-3 pt-4 border-t border-slate-100 dark:border-slate-800">
+              <div className="flex flex-col sm:flex-row items-center gap-2.5 pt-3.5 border-t border-slate-100 dark:border-slate-800">
                 <a
                   href={`tel:${siteConfig.phone}`}
-                  className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-6 py-3.5 text-xs font-black shadow-lg shadow-[#0E7C7B]/20 transition-all text-center"
+                  className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-5 py-3 text-xs font-black shadow-md transition-all text-center"
                 >
-                  <Phone size={16} />
+                  <Phone size={15} />
                   <span>Call Branch Direct</span>
                 </a>
 
@@ -122,9 +123,9 @@ export function LocationSection() {
                   href={siteConfig.whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-3.5 text-xs font-black shadow-md transition-all text-center"
+                  className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-3 text-xs font-black shadow-md transition-all text-center"
                 >
-                  <WhatsappIcon size={16} className="text-white shrink-0" />
+                  <WhatsappIcon size={15} className="text-white shrink-0" />
                   <span>WhatsApp Branch</span>
                 </a>
               </div>

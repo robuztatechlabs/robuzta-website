@@ -123,13 +123,13 @@ export function HeroSection() {
             
 
             {/* Console Frame */}
-            <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-900/90 dark:bg-slate-950/90 backdrop-blur-xl p-6 sm:p-8 shadow-2xl space-y-6 pt-9">
+            <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-900/90 dark:bg-slate-950/90 backdrop-blur-xl p-4 sm:p-8 shadow-2xl space-y-5 sm:space-y-6 pt-7 sm:pt-9 overflow-hidden">
               <div className="flex items-center justify-between border-b border-slate-800 pb-4">
                 <div className="space-y-0.5">
                   <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
                     WHAT WE REPAIR & RESTORE
                   </span>
-                  <h3 className="text-lg font-black text-white">
+                  <h3 className="text-base sm:text-lg font-black text-white">
                     Select Your Hardware Category
                   </h3>
                 </div>
@@ -137,23 +137,23 @@ export function HeroSection() {
               </div>
 
               {/* 6 Services Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
                 {whatWeFixServices.map((srv) => {
                   const IconComp = srv.icon;
                   return (
                     <Link
                       key={srv.title}
                       href={srv.href}
-                      className="group relative rounded-2xl bg-slate-800/80 hover:bg-slate-800 p-4 border border-slate-700/80 hover:border-[#0E7C7B] transition-all flex flex-col justify-between space-y-3 shadow-md hover:scale-[1.03]"
+                      className="group relative rounded-2xl bg-slate-800/80 hover:bg-slate-800 p-3 sm:p-4 border border-slate-700/80 hover:border-[#0E7C7B] transition-all flex flex-col justify-between space-y-2.5 sm:space-y-3 shadow-md hover:scale-[1.03]"
                     >
-                      <div className={`h-10 w-10 rounded-xl bg-gradient-to-br ${srv.color} flex items-center justify-center border shadow-inner`}>
-                        <IconComp size={20} />
+                      <div className={`h-9 w-9 sm:h-10 sm:w-10 rounded-xl bg-gradient-to-br ${srv.color} flex items-center justify-center border shadow-inner shrink-0`}>
+                        <IconComp size={18} />
                       </div>
                       <div>
-                        <span className="text-xs font-black text-white block leading-tight group-hover:text-teal-300 transition-colors">
+                        <span className="text-[11px] sm:text-xs font-black text-white block leading-tight group-hover:text-teal-300 transition-colors">
                           {srv.title}
                         </span>
-                        <span className="text-[10px] font-bold text-slate-400 flex items-center gap-1 pt-1 group-hover:text-white transition-colors">
+                        <span className="text-[9px] sm:text-[10px] font-bold text-slate-400 flex items-center gap-1 pt-1 group-hover:text-white transition-colors">
                           <span>Diagnose</span>
                           <ArrowRight size={10} />
                         </span>
@@ -164,36 +164,37 @@ export function HeroSection() {
               </div>
 
               {/* Bottom Customer Trust Bar */}
-              <div className="pt-2 border-t border-slate-800 flex items-center justify-between text-slate-300">
-                <div className="flex items-center gap-3">
+              <div className="pt-3 border-t border-slate-800 flex items-center justify-between gap-2 text-slate-300 overflow-hidden">
+                <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
                   <div className="flex items-center -space-x-2 shrink-0">
-                    <div className="h-8 w-8 rounded-full bg-indigo-600 text-xs font-black text-white flex items-center justify-center border-2 border-slate-900 shadow-md shrink-0">
+                    <div className="h-7 w-7 sm:h-8 sm:w-8 rounded-full bg-indigo-600 text-[10px] sm:text-xs font-black text-white flex items-center justify-center border-2 border-slate-900 shadow-md shrink-0">
                       J
                     </div>
-                    <div className="h-8 w-8 rounded-full bg-emerald-600 text-xs font-black text-white flex items-center justify-center border-2 border-slate-900 shadow-md shrink-0">
+                    <div className="h-7 w-7 sm:h-8 sm:w-8 rounded-full bg-emerald-600 text-[10px] sm:text-xs font-black text-white flex items-center justify-center border-2 border-slate-900 shadow-md shrink-0">
                       M
                     </div>
-                    <div className="h-8 w-8 rounded-full bg-amber-600 text-xs font-black text-white flex items-center justify-center border-2 border-slate-900 shadow-md shrink-0">
+                    <div className="h-7 w-7 sm:h-8 sm:w-8 rounded-full bg-amber-600 text-[10px] sm:text-xs font-black text-white flex items-center justify-center border-2 border-slate-900 shadow-md shrink-0">
                       A
                     </div>
                   </div>
 
                   <div className="min-w-0 text-left">
-                    <span className="text-xs sm:text-sm font-black text-white block truncate leading-tight">
+                    <span className="text-[11px] sm:text-sm font-black text-white block truncate leading-tight">
                       5,000+ Happy Customers
                     </span>
-                    <div className="flex items-center gap-1.5 text-xs text-amber-400 pt-0.5">
-                      <span className="tracking-widest">★★★★★</span>
-                      <span className="text-slate-300 font-bold text-[11px]">4.9 Rating</span>
+                    <div className="flex items-center gap-1 text-[10px] sm:text-xs text-amber-400 pt-0.5 truncate">
+                      <span className="tracking-tighter sm:tracking-widest">★★★★★</span>
+                      <span className="text-slate-300 font-bold text-[10px] sm:text-[11px] truncate">4.9 Rating</span>
                     </div>
                   </div>
                 </div>
 
                 <Link
                   href="/contact"
-                  className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#0E7C7B] text-white hover:bg-teal-500 transition-colors shadow-md shrink-0"
+                  className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl bg-[#0E7C7B] text-white hover:bg-teal-500 transition-colors shadow-md shrink-0"
+                  aria-label="Contact Robuzta"
                 >
-                  <ArrowRight size={18} />
+                  <ArrowRight size={16} />
                 </Link>
               </div>
 

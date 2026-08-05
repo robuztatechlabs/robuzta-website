@@ -34,20 +34,20 @@ export function ReviewsSection() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Top Google Maps Trust Header Card */}
-        <div className="rounded-3xl bg-white dark:bg-slate-950 border border-slate-200/90 dark:border-slate-800 p-6 sm:p-10 shadow-xl shadow-slate-200/60 dark:shadow-none relative overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="rounded-3xl bg-white dark:bg-slate-950 border border-slate-200/90 dark:border-slate-800 p-5 sm:p-10 shadow-xl shadow-slate-200/60 dark:shadow-none relative overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
             
             {/* Rating Summary */}
-            <div className="lg:col-span-7 space-y-4 text-center lg:text-left">
+            <div className="lg:col-span-7 space-y-3 sm:space-y-4 text-center lg:text-left">
 
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4">
                 <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-slate-100 tracking-tight">
                   {googleStats.rating}
                 </h2>
-                <div className="space-y-1">
+                <div className="space-y-0.5 sm:space-y-1 text-left">
                   <div className="flex items-center gap-1 text-amber-400">
                     {Array.from({ length: 5 }).map((_, i) => (
-                      <Star key={i} size={22} className="fill-amber-400 text-amber-400" />
+                      <Star key={i} size={18} className="fill-amber-400 text-amber-400 sm:w-5 sm:h-5" />
                     ))}
                   </div>
                   <p className="text-xs sm:text-sm font-bold text-slate-600 dark:text-slate-400">
@@ -56,46 +56,46 @@ export function ReviewsSection() {
                 </div>
               </div>
 
-              <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed max-w-2xl">
+              <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-base leading-relaxed max-w-2xl">
                 Read real feedback from Mac, Laptop, and Smartphone owners across Ahmedabad who experienced our diagnosis-first workbench transparency and zero OTP data safety.
               </p>
             </div>
 
             {/* Google, Justdial & Sulekha Listing Action Buttons */}
-            <div className="lg:col-span-5 flex flex-col gap-3.5 items-stretch lg:items-end justify-center">
+            <div className="lg:col-span-5 flex flex-col gap-2.5 sm:gap-3.5 items-stretch lg:items-end justify-center">
               <a
                 href={googleStats.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-between gap-3 rounded-2xl bg-[#0F172A] dark:bg-slate-900 border border-transparent dark:border-slate-800 px-6 py-3.5 text-xs sm:text-sm font-extrabold text-white shadow-lg hover:bg-[#0E7C7B] dark:hover:bg-[#0E7C7B] hover:scale-[1.01] transition-all group"
+                className="w-full inline-flex items-center justify-between gap-2.5 rounded-2xl bg-[#0F172A] dark:bg-slate-900 border border-transparent dark:border-slate-800 px-4 sm:px-6 py-3 sm:py-3.5 text-xs sm:text-sm font-extrabold text-white shadow-lg hover:bg-[#0E7C7B] dark:hover:bg-[#0E7C7B] transition-all group"
               >
-                <div className="flex items-center gap-2.5">
-                  <GoogleIcon size={18} />
-                  <span>Google Maps Reviews (4.9★)</span>
+                <div className="flex items-center gap-2 truncate">
+                  <GoogleIcon size={16} className="shrink-0" />
+                  <span className="truncate">Google Maps Reviews (4.9★)</span>
                 </div>
-                <ExternalLink size={15} className="text-slate-400 group-hover:text-white transition-colors shrink-0" />
+                <ExternalLink size={14} className="text-slate-400 group-hover:text-white transition-colors shrink-0" />
               </a>
 
-              <div className="grid grid-cols-2 gap-2.5 w-full">
+              <div className="grid grid-cols-2 gap-2 sm:gap-2.5 w-full">
                 <a
                   href="https://www.justdial.com/Ahmedabad/Robuzta-Techlabs-Bopal/079PXX79-XX79-221124120052-T5Z4_BZDET?via=scode"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 px-4 py-2.5 text-xs font-bold text-slate-800 dark:text-slate-200 shadow-sm hover:border-[#0073E6] hover:bg-blue-50/50 dark:hover:bg-blue-950/40 transition-all text-center"
+                  className="inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-2xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 px-3 sm:px-4 py-2.5 text-xs font-bold text-slate-800 dark:text-slate-200 shadow-sm hover:border-[#0073E6] hover:bg-blue-50/50 dark:hover:bg-blue-950/40 transition-all text-center"
                 >
                   <span className="font-black text-[#0073E6]">Just</span>
                   <span className="font-black text-[#FF6F00]">dial</span>
-                  <ExternalLink size={13} className="text-slate-400 shrink-0" />
+                  <ExternalLink size={12} className="text-slate-400 shrink-0" />
                 </a>
 
                 <a
                   href="https://www.sulekha.com/robuzta-techlabs-bopal-ahmedabad-contact-address"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 px-4 py-2.5 text-xs font-bold text-slate-800 dark:text-slate-200 shadow-sm hover:border-[#E53935] hover:bg-red-50/50 dark:hover:bg-red-950/40 transition-all text-center"
+                  className="inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-2xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 px-3 sm:px-4 py-2.5 text-xs font-bold text-slate-800 dark:text-slate-200 shadow-sm hover:border-[#E53935] hover:bg-red-50/50 dark:hover:bg-red-950/40 transition-all text-center"
                 >
                   <span className="font-black text-[#E53935]">Sulekha</span>
-                  <ExternalLink size={13} className="text-slate-400 shrink-0" />
+                  <ExternalLink size={12} className="text-slate-400 shrink-0" />
                 </a>
               </div>
             </div>
