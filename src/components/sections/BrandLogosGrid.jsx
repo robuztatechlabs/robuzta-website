@@ -11,75 +11,75 @@ export function BrandLogosGrid() {
       tag: 'Air, Pro & Mac Studio',
       image: '/assets/brands/apples.webp',
       badge: 'Logic Board',
-      logoStyle: 'h-10 sm:h-14 w-auto max-w-[120px] sm:max-w-[140px]'
+      logoStyle: 'h-15 sm:h-20 w-150 max-w-[120px] sm:max-w-[140px]'
     },
     {
       name: 'Dell',
       tag: 'XPS, Inspiron & Alienware',
       image: '/assets/brands/dell.webp',
       badge: 'Power IC',
-      logoStyle: 'h-10 sm:h-14 w-auto max-w-[120px] sm:max-w-[140px]'
+      logoStyle: 'h-15 sm:h-20 w-150 max-w-[120px] sm:max-w-[140px]'
     },
     {
       name: 'HP',
       tag: 'Spectre, OMEN & Pavilion',
       image: '/assets/brands/hp.webp',
       badge: 'Screen Swap',
-      logoStyle: 'h-10 sm:h-14 w-auto max-w-[120px] sm:max-w-[140px]'
+      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]'
     },
     {
       name: 'Lenovo',
       tag: 'ThinkPad, Legion & Yoga',
       image: '/assets/brands/lenovo.webp',
       badge: 'Hinge Repair',
-      logoStyle: 'h-10 sm:h-14 w-auto max-w-[120px] sm:max-w-[140px]'
+      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]'
     },
     {
       name: 'ASUS',
       tag: 'ROG, TUF & ZenBook',
       image: '/assets/brands/asus.png',
       badge: 'GPU Soldering',
-      logoStyle: 'h-10 sm:h-14 w-auto max-w-[120px] sm:max-w-[140px]'
+      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]'
     },
     {
       name: 'Microsoft Surface',
       tag: 'Surface Pro & Laptop',
       image: '/assets/brands/microsoft.webp',
       badge: 'Battery & Screen',
-      logoStyle: 'h-10 sm:h-14 w-auto max-w-[120px] sm:max-w-[140px]'
+      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]'
     },
     {
       name: 'Apple iPhone',
       tag: 'Pro Max & Standard Series',
       image: '/assets/brands/iphone.png',
       badge: 'FaceID & Glass',
-      logoStyle: 'h-10 sm:h-14 w-auto max-w-[120px] sm:max-w-[140px]'
+      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]'
     },
     {
       name: 'Samsung Galaxy',
       tag: 'S-Series, Z Fold & Flip',
       image: '/assets/brands/samsung.webp',
       badge: 'AMOLED Display',
-      logoStyle: 'h-10 sm:h-14 w-auto max-w-[120px] sm:max-w-[140px]'
+      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]'
     },
     {
       name: 'Google Pixel',
       tag: 'Pixel Pro & Fold Series',
       image: '/assets/brands/google-pixel.webp',
       badge: 'Camera & Board',
-      logoStyle: 'h-10 sm:h-14 w-auto max-w-[120px] sm:max-w-[140px]'
+      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]'
     },
     {
       name: 'Acer & Gaming',
       tag: 'Predator, Nitro & Swift',
       image: '/assets/brands/acer.webp',
       badge: 'Overheat Repair',
-      logoStyle: 'h-10 sm:h-14 w-auto max-w-[120px] sm:max-w-[140px]'
+      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]'
     }
   ];
 
   return (
-    <section className="relative py-16 sm:py-20 lg:py-24 bg-slate-50/50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
+    <section className="relative py-10 sm:py-14 lg:py-16 bg-slate-50/50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
 
       {/* Ambient Radial Background Glow */}
       <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#0E7C7B]/5 dark:bg-[#0E7C7B]/10 rounded-full blur-[160px]" />

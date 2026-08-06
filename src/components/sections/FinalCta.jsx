@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 export function FinalCta() {
   return (
-    <section id="contact" className="relative bg-white dark:bg-slate-950 py-16 sm:py-20 lg:py-24 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
+    <section id="contact" className="relative bg-white dark:bg-slate-950 py-10 sm:py-14 lg:py-16 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
       
       {/* Background Ambient Glow */}
       <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#0E7C7B]/5 dark:bg-[#0E7C7B]/10 rounded-full blur-[140px]" />

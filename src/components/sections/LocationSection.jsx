@@ -7,7 +7,7 @@ import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 
 export function LocationSection() {
   return (
-    <section id="locations-hours" className="relative bg-slate-50/60 dark:bg-slate-950 py-16 sm:py-20 lg:py-24 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+    <section id="locations-hours" className="relative bg-slate-50/60 dark:bg-slate-950 py-10 sm:py-14 lg:py-16 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
       
       {/* Ambient Background Blur */}
       <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#0E7C7B]/5 rounded-full blur-3xl" />

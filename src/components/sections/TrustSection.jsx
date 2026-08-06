@@ -23,7 +23,7 @@ export function TrustSection() {
   const marqueeLogos = brandLogos.concat(brandLogos);
 
   return (
-    <section className="relative bg-slate-50 dark:bg-slate-900 py-16 sm:py-20 lg:py-24 border-y border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
+    <section className="relative bg-slate-50 dark:bg-slate-900 py-10 sm:py-14 lg:py-16 border-y border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
       
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12 lg:space-y-16">
         
@@ -55,7 +55,7 @@ export function TrustSection() {
 
           <div className="space-y-1 text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-1 text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-              <span>4.9</span>
+              <AnimatedCounter value="4.9" />
               <Star size={20} className="text-amber-500 fill-amber-500 shrink-0" />
             </div>
             <div className="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">Verified Rating</div>

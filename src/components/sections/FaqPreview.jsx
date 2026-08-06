@@ -7,7 +7,7 @@ import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 
 export function FaqPreview() {
   return (
-    <section id="faq" className="relative bg-white dark:bg-slate-950 py-16 sm:py-20 lg:py-24 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+    <section id="faq" className="relative bg-white dark:bg-slate-950 py-10 sm:py-14 lg:py-16 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         
         <div className="rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 sm:p-12 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">

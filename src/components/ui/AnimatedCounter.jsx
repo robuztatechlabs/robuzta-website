@@ -3,7 +3,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
-export function AnimatedCounter({ value, suffix = '', prefix = '', duration = 2000 }) {
+export function AnimatedCounter({ value, suffix = '', prefix = '', duration = 3500 }) {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3, margin: '0px 0px -50px 0px' });
@@ -24,8 +24,8 @@ export function AnimatedCounter({ value, suffix = '', prefix = '', duration = 20
         const elapsedTime = currentTime - startTime;
         const progress = Math.min(elapsedTime / duration, 1);
         
-        // Custom smooth exponential ease-out
-        const easeOutProgress = 1 - Math.pow(1 - progress, 4);
+        // Quintic smooth ease-out curve for majestic counter feel
+        const easeOutProgress = 1 - Math.pow(1 - progress, 5);
         const currentCount = start + (end - start) * easeOutProgress;
 
         setCount(currentCount);
@@ -51,10 +51,10 @@ export function AnimatedCounter({ value, suffix = '', prefix = '', duration = 20
   return (
     <motion.span
       ref={ref}
-      initial={{ opacity: 0, y: 10, scale: 0.95 }}
-      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 10, scale: 0.95 }}
-      transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="font-mono inline-block tracking-tight"
+      initial={{ opacity: 0, y: 12, scale: 0.94 }}
+      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 12, scale: 0.94 }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      className="font-tech inline-block tracking-tight font-black"
     >
       {prefix}{formatDisplay()}{suffix}
     </motion.span>

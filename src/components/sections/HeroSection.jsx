@@ -1,6 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   ArrowRight,
   ShieldCheck,
@@ -16,7 +17,12 @@ import {
   HardDrive,
   Sparkles,
   Lock,
-  Zap
+  Zap,
+  Tv,
+  Video,
+  X,
+  ExternalLink,
+  Play
 } from 'lucide-react';
 import Link from 'next/link';
 import { siteConfig } from '@/data/site';
@@ -64,23 +70,97 @@ const whatWeFixServices = [
 
 export function HeroSection() {
   const { openModal } = useBookingModal();
+  const [isLiveModalOpen, setIsLiveModalOpen] = useState(false);
+
   return (
-    <section className="relative overflow-hidden bg-white dark:bg-[#070E1A] pt-14 pb-16 lg:pt-20 lg:pb-24 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+    <section className="relative overflow-hidden bg-white dark:bg-[#070E1A] pt-28 sm:pt-32 lg:pt-36 pb-16 lg:pb-24 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
       
-      {/* Background Ambient Glows (GPU Accelerated for Zero LCP Delay) */}
-      <div className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#0E7C7B]/15 dark:bg-[#0E7C7B]/20 rounded-full blur-3xl will-change-transform" />
-      <div className="pointer-events-none absolute top-1/3 right-10 w-[300px] h-[300px] bg-purple-500/10 rounded-full blur-3xl will-change-transform" />
+      {/* Soft Ambient Gradient Overlay */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-slate-50/70 via-teal-50/20 to-white dark:from-[#070E1A] dark:via-[#0a1626] dark:to-[#070E1A]" />
+
+      {/* Background Ambient Glows */}
+      <div className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#0E7C7B]/10 dark:bg-[#0E7C7B]/20 rounded-full blur-3xl will-change-transform" />
+      <div className="pointer-events-none absolute top-1/3 right-10 w-[300px] h-[300px] bg-teal-500/10 rounded-full blur-3xl will-change-transform" />
       
       {/* Background Grid Pattern */}
       <div 
         className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f080_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f080_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1e293b80_1px,transparent_1px),linear-gradient(to_bottom,#1e293b80_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none"
       />
 
+      {/* Futuristic Top-to-Bottom Glowing Laser Light Scan Beam */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        {/* Horizontal Ambient Glow Wave */}
+        <motion.div
+          initial={{ top: '-10%', opacity: 0 }}
+          animate={{
+            top: ['-10%', '110%'],
+            opacity: [0, 0.6, 0.6, 0]
+          }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: 'linear'
+          }}
+          className="absolute left-0 right-0 h-32 bg-gradient-to-b from-transparent via-[#0E7C7B]/20 dark:via-[#0E7C7B]/30 to-transparent blur-xl"
+        />
+
+        {/* Crisp Laser Beam Line */}
+        <motion.div
+          initial={{ top: '-10%' }}
+          animate={{
+            top: ['-10%', '110%']
+          }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: 'linear'
+          }}
+          className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#0E7C7B] via-teal-400 to-transparent shadow-[0_0_15px_#0E7C7B]"
+        />
+
+        {/* Staggered Vertical Light Beams Traveling Top-to-Bottom */}
+        <motion.div
+          initial={{ top: '-30%' }}
+          animate={{ top: ['-30%', '120%'] }}
+          transition={{
+            duration: 4.5,
+            repeat: Infinity,
+            repeatDelay: 1.5,
+            ease: 'easeInOut'
+          }}
+          className="absolute left-[18%] w-[2px] h-40 bg-gradient-to-b from-transparent via-[#0E7C7B] to-transparent shadow-[0_0_12px_#0E7C7B]"
+        />
+
+        <motion.div
+          initial={{ top: '-30%' }}
+          animate={{ top: ['-30%', '120%'] }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            delay: 2,
+            ease: 'easeInOut'
+          }}
+          className="absolute left-[52%] w-[2px] h-48 bg-gradient-to-b from-transparent via-teal-400 to-transparent shadow-[0_0_15px_#2dd4bf]"
+        />
+
+        <motion.div
+          initial={{ top: '-30%' }}
+          animate={{ top: ['-30%', '120%'] }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            delay: 3.5,
+            ease: 'easeInOut'
+          }}
+          className="absolute left-[82%] w-[2px] h-44 bg-gradient-to-b from-transparent via-cyan-400 to-transparent shadow-[0_0_12px_#22d3ee]"
+        />
+      </div>
+
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Hero Copy & Actions */}
-          <div className="lg:col-span-6 space-y-8 lg:space-y-10 text-center lg:text-left">
+          <div className="lg:col-span-6 space-y-7 lg:space-y-8 text-center lg:text-left">
             
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
@@ -97,7 +177,7 @@ export function HeroSection() {
 
             {/* Action Buttons */}
             <div
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-5 pt-4 w-full"
+              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-5 pt-3 w-full"
             >
               <Link
                 href="/contact"
@@ -133,7 +213,17 @@ export function HeroSection() {
                     Select Your Hardware Category
                   </h3>
                 </div>
-                <span className="flex h-3 w-3 rounded-full bg-teal-400 animate-ping" />
+                <button
+                  type="button"
+                  onClick={() => setIsLiveModalOpen(true)}
+                  className="flex items-center gap-2 px-3 py-1 rounded-full bg-red-950/80 border border-red-800/60 text-red-400 hover:text-white hover:bg-red-900/80 transition-colors text-xs font-bold font-mono cursor-pointer"
+                >
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+                  </span>
+                  <span>LIVE REPAIR</span>
+                </button>
               </div>
 
               {/* 6 Services Grid */}
@@ -203,6 +293,7 @@ export function HeroSection() {
 
         </div>
       </div>
+
     </section>
   );
 }
