@@ -23,9 +23,9 @@ export function TrustSection() {
   const marqueeLogos = brandLogos.concat(brandLogos);
 
   return (
-    <section className="relative bg-slate-50 dark:bg-slate-900 py-28 lg:py-36 border-y border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
+    <section className="relative bg-slate-50 dark:bg-slate-900 py-16 sm:py-20 lg:py-24 border-y border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
       
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16 lg:space-y-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12 lg:space-y-16">
         
         {/* Metric Stats Banner */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 p-6 sm:p-10 rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 shadow-xl">

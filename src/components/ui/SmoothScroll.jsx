@@ -28,11 +28,12 @@ export function SmoothScroll({ children }) {
       gsap.registerPlugin(ScrollTrigger);
 
       lenis = new Lenis({
-        duration: 0.9,
+        duration: 0.6,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         orientation: 'vertical',
+        gestureOrientation: 'vertical',
         smoothWheel: true,
-        wheelMultiplier: 1.0,
+        wheelMultiplier: 1.1,
         touchMultiplier: 1.0,
         infinite: false
       });
@@ -45,7 +46,7 @@ export function SmoothScroll({ children }) {
 
       gsap.ticker.add(tickerHandler);
       gsap.ticker.lagSmoothing(0);
-    }, 150);
+    }, 50);
 
     return () => {
       cancelled = true;

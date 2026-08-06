@@ -65,7 +65,7 @@ const whatWeFixServices = [
 export function HeroSection() {
   const { openModal } = useBookingModal();
   return (
-    <section className="relative overflow-hidden bg-white dark:bg-[#070E1A] pt-14 pb-24 lg:pt-20 lg:pb-36 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+    <section className="relative overflow-hidden bg-white dark:bg-[#070E1A] pt-14 pb-16 lg:pt-20 lg:pb-24 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
       
       {/* Background Ambient Glows (GPU Accelerated for Zero LCP Delay) */}
       <div className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#0E7C7B]/15 dark:bg-[#0E7C7B]/20 rounded-full blur-3xl will-change-transform" />

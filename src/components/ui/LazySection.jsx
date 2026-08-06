@@ -1,36 +1,17 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 
-export function LazySection({ children, minHeight = '250px' }) {
-  const [isInView, setIsInView] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setIsInView(true);
-            observer.disconnect();
-          }
-        },
-        { rootMargin: '300px 0px' }
-      );
-
-      observer.observe(el);
-      return () => observer.disconnect();
-    } else {
-      setIsInView(true);
-    }
-  }, []);
-
+export function LazySection({ children, className = '' }) {
   return (
-    <div ref={ref} style={{ minHeight: isInView ? undefined : minHeight }}>
-      {isInView ? children : null}
-    </div>
+    <motion.div
+      initial={{ opacity: 0, y: 14 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.08, margin: '0px 0px -20px 0px' }}
+      transition={{ duration: 0.35, ease: 'easeOut' }}
+      className={className}
+    >
+      {children}
+    </motion.div>
   );
 }

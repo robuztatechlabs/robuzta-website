@@ -8,7 +8,7 @@ import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 
 export function FranchiseHomeSection() {
   return (
-    <section className="relative bg-white dark:bg-slate-950 py-28 lg:py-36 border-t border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
+    <section className="relative bg-white dark:bg-slate-950 py-16 sm:py-20 lg:py-24 border-t border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
       
       {/* Background Radial Glow */}
       <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#0E7C7B]/5 rounded-full blur-[140px]" />

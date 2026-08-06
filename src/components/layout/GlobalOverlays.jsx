@@ -23,11 +23,6 @@ const QuickCallbackWidget = dynamic(
   { ssr: false }
 );
 
-const ScrollTriggeredCtaBar = dynamic(
-  () => import('@/components/ui/ScrollTriggeredCtaBar').then((m) => m.ScrollTriggeredCtaBar),
-  { ssr: false }
-);
-
 export function GlobalOverlays() {
   return (
     <>
@@ -35,7 +30,6 @@ export function GlobalOverlays() {
       <FranchiseEdgeTab />
       <FloatingWidget />
       <QuickCallbackWidget />
-      <ScrollTriggeredCtaBar />
       <StickyMobileBar />
     </>
   );

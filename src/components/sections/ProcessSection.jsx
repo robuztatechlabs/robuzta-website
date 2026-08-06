@@ -8,12 +8,12 @@ const processIcons = [Search, FileText, CheckCircle2, Wrench, ShieldCheck, Packa
 
 export function ProcessSection() {
   return (
-    <section id="process" className="relative bg-slate-50 dark:bg-slate-900 py-28 lg:py-36 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
+    <section id="process" className="relative bg-slate-50 dark:bg-slate-900 py-16 sm:py-20 lg:py-24 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
       
       {/* Background Radial Glow */}
       <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#0E7C7B]/5 rounded-full blur-[140px]" />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16 lg:space-y-20">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12 lg:space-y-16">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
