@@ -1,7 +1,14 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+
+const liveOperations = [
+  'ISO-Certified ESD Hardware Lab',
+  'Zero-OTP & Zero-Passcode Data Safety',
+  'Same-Day Screen & Battery Swap',
+  'Logic Board Micro-Soldering Specialist'
+];
 import {
   ArrowRight,
   ShieldCheck,
@@ -71,6 +78,14 @@ const whatWeFixServices = [
 export function HeroSection() {
   const { openModal } = useBookingModal();
   const [isLiveModalOpen, setIsLiveModalOpen] = useState(false);
+  const [opIndex, setOpIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setOpIndex((prev) => (prev + 1) % liveOperations.length);
+    }, 2800);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className="relative overflow-hidden bg-white dark:bg-[#070E1A] pt-28 sm:pt-32 lg:pt-36 pb-16 lg:pb-24 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
@@ -162,6 +177,26 @@ export function HeroSection() {
           {/* Left Column: Hero Copy & Actions */}
           <div className="lg:col-span-6 space-y-7 lg:space-y-8 text-center lg:text-left">
             
+            {/* Live Operations Ticker Badge */}
+            <div className="inline-flex items-center gap-2.5 rounded-full bg-slate-900/90 dark:bg-slate-900/90 border border-slate-700/80 px-4 py-2 text-xs font-bold text-white shadow-lg backdrop-blur-md">
+              <span className="relative flex h-2.5 w-2.5 shrink-0">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
+              </span>
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={opIndex}
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -6 }}
+                  transition={{ duration: 0.25 }}
+                  className="font-tech text-teal-400 font-bold tracking-wide"
+                >
+                  {liveOperations[opIndex]}
+                </motion.span>
+              </AnimatePresence>
+            </div>
+
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
               Precision Repair for{' '}
