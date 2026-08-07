@@ -70,7 +70,7 @@ export function WhyChooseUsSection() {
         </div>
 
         {/* Feature Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
           {pillars.map((pillar, index) => {
             const Icon = pillar.icon;
             return (
@@ -80,20 +80,20 @@ export function WhyChooseUsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="group rounded-3xl bg-slate-50/70 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-8 sm:p-9 flex flex-col justify-between hover:border-[#0E7C7B]/40 hover:bg-white dark:hover:bg-slate-700 hover:shadow-2xl hover:shadow-[#0E7C7B]/10 hover:-translate-y-1.5 transition-all duration-300 space-y-6"
+                className="group rounded-2xl sm:rounded-3xl bg-slate-50/70 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-4 sm:p-9 flex flex-col justify-between hover:border-[#0E7C7B]/40 hover:bg-white dark:hover:bg-slate-700 hover:shadow-2xl hover:shadow-[#0E7C7B]/10 hover:-translate-y-1.5 transition-all duration-300 space-y-4 sm:space-y-6"
               >
-                <div className="space-y-5">
-                  <div className="flex items-center justify-between">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0E7C7B] text-white shadow-md shadow-[#0E7C7B]/20 group-hover:scale-110 transition-transform">
-                      <Icon size={22} />
+                <div className="space-y-3.5 sm:space-y-5">
+                  <div className="flex items-center justify-between gap-2.5">
+                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl sm:rounded-2xl bg-[#0E7C7B] text-white shadow-md shadow-[#0E7C7B]/20 group-hover:scale-110 transition-transform shrink-0">
+                      <Icon size={18} className="sm:w-[22px] sm:h-[22px]" />
                     </div>
-                    <span className="text-[11px] font-black text-[#0E7C7B] bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-3 py-1 rounded-full">
+                    <span className="text-[10px] sm:text-[11px] font-black text-[#0E7C7B] dark:text-teal-400 bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-2.5 sm:px-3 py-1 rounded-full shrink-0">
                       {pillar.tag}
                     </span>
                   </div>
 
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-extrabold text-slate-900 dark:text-slate-100 group-hover:text-[#0E7C7B] transition-colors">
+                  <div className="space-y-1.5 sm:space-y-2">
+                    <h3 className="text-base sm:text-xl font-extrabold text-slate-900 dark:text-slate-100 group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors leading-snug">
                       {pillar.title}
                     </h3>
                     <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
@@ -102,8 +102,9 @@ export function WhyChooseUsSection() {
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-slate-200/80 flex items-center gap-2 text-xs font-extrabold text-emerald-700">
-                  <CheckCircle2 size={15} className="text-[#0E7C7B]" /> Guaranteed Robuzta Quality
+                <div className="pt-2.5 sm:pt-3 border-t border-slate-200/80 dark:border-slate-700 flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-extrabold text-emerald-700 dark:text-emerald-400">
+                  <CheckCircle2 size={14} className="text-[#0E7C7B] dark:text-teal-400 shrink-0 sm:w-[15px] sm:h-[15px]" />
+                  <span>Guaranteed Robuzta Quality</span>
                 </div>
               </motion.div>
             );
@@ -115,20 +116,20 @@ export function WhyChooseUsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="rounded-3xl bg-gradient-to-br from-[#0F172A] via-[#0E7C7B] to-[#0F172A] text-white p-8 flex flex-col justify-between space-y-6 shadow-2xl hover:-translate-y-1.5 transition-all duration-300"
+            className="rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#0F172A] via-[#0E7C7B] to-[#0F172A] text-white p-4.5 sm:p-8 flex flex-col justify-between space-y-4 sm:space-y-6 shadow-2xl hover:-translate-y-1.5 transition-all duration-300"
           >
-            <div className="space-y-3">
+            <div className="space-y-2.5 sm:space-y-3">
               <span className="text-[10px] font-black uppercase tracking-widest text-teal-200 bg-white/10 px-2.5 py-1 rounded-full border border-white/20 inline-block">
                 ROBUZTA PROMISE
               </span>
-              <h3 className="text-2xl font-extrabold text-white">Need Immediate Technical Consultation?</h3>
+              <h3 className="text-lg sm:text-2xl font-extrabold text-white leading-snug">Need Immediate Technical Consultation?</h3>
               <p className="text-xs text-teal-100 leading-relaxed font-medium">
                 Our senior lab technicians are available right now to answer your hardware questions via direct call or WhatsApp with zero diagnosis fee.
               </p>
             </div>
             <a
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-4 text-xs font-black shadow-lg hover:bg-slate-100 transition-all text-center"
+              className="w-full inline-flex items-center justify-center gap-2 rounded-xl sm:rounded-2xl px-5 sm:px-6 py-3 sm:py-4 text-xs font-black shadow-lg hover:bg-slate-100 transition-all text-center"
               style={{ backgroundColor: '#ffffff', color: '#0F172A' }}
             >
               <span style={{ color: '#0F172A', fontWeight: 900 }}>Talk to Senior Technician Now</span>

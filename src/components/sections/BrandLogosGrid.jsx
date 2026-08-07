@@ -103,7 +103,7 @@ export function BrandLogosGrid() {
         </div>
 
         {/* Animated Brand Cards Grid with Large Clear Color Logos */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-6">
           {brands.map((b, idx) => (
             <motion.div
               key={b.name}
@@ -111,34 +111,34 @@ export function BrandLogosGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.05 }}
-              whileHover={{ y: -8, scale: 1.02 }}
-              className="group relative flex flex-col items-center justify-between p-4 sm:p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 hover:border-[#0E7C7B] dark:hover:border-teal-400 shadow-md hover:shadow-2xl hover:shadow-[#0E7C7B]/15 transition-all duration-300 cursor-pointer overflow-hidden min-h-[200px] sm:min-h-[220px]"
+              whileHover={{ y: -6, scale: 1.02 }}
+              className="group relative flex flex-col items-center justify-between p-3.5 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 hover:border-[#0E7C7B] dark:hover:border-teal-400 shadow-md hover:shadow-2xl hover:shadow-[#0E7C7B]/15 transition-all duration-300 cursor-pointer overflow-hidden min-h-[210px] sm:min-h-[230px]"
             >
               {/* Top Accent Hover Glow Line */}
               <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#0E7C7B] via-teal-500 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity" />
 
               {/* Hardware Category Badge */}
-              <div className="w-full flex justify-end">
-                <span className="text-[10px] font-extrabold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 group-hover:bg-[#0E7C7B]/10 group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 border border-slate-200/80 dark:border-slate-700 px-2.5 py-0.5 rounded-full transition-colors">
+              <div className="w-full flex justify-end pt-0.5">
+                <span className="text-[10px] font-black bg-slate-100 dark:bg-slate-800/90 text-[#0E7C7B] dark:text-teal-400 group-hover:bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-2 sm:px-2.5 py-0.5 rounded-full transition-colors truncate max-w-full">
                   {b.badge}
                 </span>
               </div>
 
-              {/* High-Visibility Color Logo Viewport */}
-              <div className="h-20 w-full flex items-center justify-center my-3 p-1">
+              {/* High-Visibility Large Color Logo Viewport */}
+              <div className="h-16 sm:h-20 w-full flex items-center justify-center my-1.5 sm:my-3 p-1">
                 <img
                   src={b.image}
                   alt={`${b.name} Official Logo`}
-                  className={`${b.logoStyle} object-contain transition-transform duration-300 group-hover:scale-110 dark:brightness-125`}
+                  className="max-h-14 sm:max-h-16 max-w-[115px] sm:max-w-[135px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-110 dark:brightness-125"
                 />
               </div>
 
               {/* Card Label Info */}
-              <div className="text-center w-full pt-3 border-t border-slate-100 dark:border-slate-800/80">
+              <div className="text-center w-full pt-2.5 sm:pt-3 border-t border-slate-100 dark:border-slate-800/80">
                 <span className="text-xs sm:text-sm font-black text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors block truncate">
                   {b.name}
                 </span>
-                <span className="text-[11px] text-slate-500 dark:text-slate-400 font-medium block mt-0.5 truncate">
+                <span className="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400 font-medium block mt-0.5 truncate">
                   {b.tag}
                 </span>
               </div>

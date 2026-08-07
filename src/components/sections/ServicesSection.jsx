@@ -102,30 +102,30 @@ export function ServicesSection() {
         </div>
 
         {/* 6 Modern Service Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
           {servicesList.map((service) => {
             const Icon = service.icon;
             return (
               <div
                 key={service.id}
-                className="group relative rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 sm:p-9 flex flex-col justify-between hover:border-[#0E7C7B] hover:bg-white dark:hover:bg-slate-950 hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 space-y-6"
+                className="group relative rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 xs:p-6 sm:p-9 flex flex-col justify-between hover:border-[#0E7C7B] hover:bg-white dark:hover:bg-slate-950 hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 space-y-5 sm:space-y-6"
               >
-                <div className="space-y-5">
+                <div className="space-y-4 sm:space-y-5">
                   
                   {/* Top Icon & Badge */}
-                  <div className="flex items-center justify-between">
-                    <div className={`h-14 w-14 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center border shadow-sm group-hover:scale-110 transition-transform`}>
-                      <Icon size={26} />
+                  <div className="flex items-center justify-between gap-3">
+                    <div className={`h-12 w-12 sm:h-14 sm:w-14 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center border shadow-sm group-hover:scale-110 transition-transform shrink-0`}>
+                      <Icon size={24} className="sm:w-[26px] sm:h-[26px]" />
                     </div>
 
-                    <span className="text-[11px] font-black text-[#0E7C7B] dark:text-teal-400 bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-3 py-1 rounded-full">
+                    <span className="text-[10px] sm:text-[11px] font-extrabold sm:font-black text-[#0E7C7B] dark:text-teal-400 bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-2.5 sm:px-3 py-1 rounded-full shrink-0">
                       {service.badge}
                     </span>
                   </div>
 
                   {/* Title & Description */}
-                  <div className="space-y-2.5">
-                    <h3 className="text-xl font-black text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors">
+                  <div className="space-y-2">
+                    <h3 className="text-lg sm:text-xl font-black text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors leading-snug">
                       {service.title}
                     </h3>
                     <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
@@ -135,10 +135,10 @@ export function ServicesSection() {
                 </div>
 
                 {/* Card Actions: Learn More & Book Modal */}
-                <div className="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                <div className="pt-3.5 sm:pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-2">
                   <Link
                     href={service.link}
-                    className="inline-flex items-center gap-1.5 text-xs font-black text-[#0E7C7B] dark:text-teal-400 hover:underline group-hover:translate-x-1 transition-all"
+                    className="inline-flex items-center gap-1.5 text-xs font-black text-[#0E7C7B] dark:text-teal-400 hover:underline group-hover:translate-x-1 transition-all shrink-0"
                   >
                     <span>Learn More</span>
                     <ArrowRight size={14} />
@@ -147,7 +147,7 @@ export function ServicesSection() {
                   <button
                     type="button"
                     onClick={() => openModal({ formType: `Services Section - ${service.title}`, device: service.title })}
-                    className="px-4 py-2 rounded-xl bg-slate-900 dark:bg-slate-800 hover:bg-[#0E7C7B] dark:hover:bg-teal-600 text-white text-xs font-black transition-all cursor-pointer shadow-sm"
+                    className="px-3.5 sm:px-4 py-2 rounded-xl bg-slate-900 dark:bg-slate-800 hover:bg-[#0E7C7B] dark:hover:bg-teal-600 text-white text-xs font-black transition-all cursor-pointer shadow-sm shrink-0"
                   >
                     Book Repair
                   </button>
@@ -159,21 +159,21 @@ export function ServicesSection() {
         </div>
 
         {/* Bottom Banner */}
-        <div className="rounded-3xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-950 text-white p-8 sm:p-10 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 border border-slate-800">
-          <div className="flex items-center gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0E7C7B] text-white shadow-md shrink-0">
-              <ShieldCheck size={26} />
+        <div className="rounded-3xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-950 text-white p-5 sm:p-10 shadow-xl flex flex-col md:flex-row items-stretch md:items-center justify-between gap-5 sm:gap-6 border border-slate-800">
+          <div className="flex items-start sm:items-center gap-3.5 sm:gap-4">
+            <div className="flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-2xl bg-[#0E7C7B] text-white shadow-md shrink-0">
+              <ShieldCheck size={24} className="sm:w-[26px] sm:h-[26px]" />
             </div>
-            <div>
-              <h4 className="text-lg font-black text-white">Not Sure What Is Wrong With Your Device?</h4>
-              <p className="text-xs text-slate-300 font-medium">Get a zero-cost hardware inspection and transparent price estimate before any work begins.</p>
+            <div className="space-y-1">
+              <h4 className="text-base sm:text-lg font-black text-white leading-snug">Not Sure What Is Wrong With Your Device?</h4>
+              <p className="text-xs text-slate-300 font-medium leading-relaxed">Get a zero-cost hardware inspection and transparent price estimate before any work begins.</p>
             </div>
           </div>
 
           <button
             type="button"
             onClick={() => openModal({ formType: 'Services Section Free Inspection' })}
-            className="w-full md:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 px-7 py-3.5 text-xs font-black text-white shadow-lg shrink-0 cursor-pointer"
+            className="w-full md:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 px-6 sm:px-7 py-3.5 text-xs font-black text-white shadow-lg shrink-0 cursor-pointer"
           >
             <span>Get Free Diagnostic Estimate</span>
             <ArrowRight size={15} />

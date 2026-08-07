@@ -28,37 +28,37 @@ export function TrustSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12 lg:space-y-16">
         
         {/* Metric Stats Banner */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 p-6 sm:p-10 rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 shadow-xl">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 p-4 sm:p-10 rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 shadow-xl">
           <div className="space-y-1 text-center md:text-left">
-            <div className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+            <div className="text-xl sm:text-4xl font-black text-slate-900 dark:text-white">
               <AnimatedCounter value="15000" suffix="+" />
             </div>
-            <div className="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">Devices Restored</div>
+            <div className="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">Devices Restored</div>
             <p className="text-[10px] sm:text-[11px] text-[#0E7C7B] dark:text-teal-400 font-bold truncate">Laptops, Macs & Mobiles</p>
           </div>
 
           <div className="space-y-1 text-center md:text-left">
-            <div className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+            <div className="text-xl sm:text-4xl font-black text-slate-900 dark:text-white">
               <AnimatedCounter value="99.8" suffix="%" />
             </div>
-            <div className="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">Repair Success Rate</div>
+            <div className="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">Repair Success Rate</div>
             <p className="text-[10px] sm:text-[11px] text-amber-600 dark:text-amber-400 font-bold truncate">Micro-soldering & Screens</p>
           </div>
 
           <div className="space-y-1 text-center md:text-left">
-            <div className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+            <div className="text-xl sm:text-4xl font-black text-slate-900 dark:text-white">
               <AnimatedCounter value="2" suffix=" to 4h" />
             </div>
-            <div className="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">Avg Turnaround</div>
+            <div className="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">Avg Turnaround</div>
             <p className="text-[10px] sm:text-[11px] text-emerald-600 dark:text-emerald-400 font-bold truncate">Express Turnaround</p>
           </div>
 
           <div className="space-y-1 text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start gap-1 text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+            <div className="flex items-center justify-center md:justify-start gap-1 text-xl sm:text-4xl font-black text-slate-900 dark:text-white">
               <AnimatedCounter value="4.9" />
-              <Star size={20} className="text-amber-500 fill-amber-500 shrink-0" />
+              <Star size={18} className="text-amber-500 fill-amber-500 shrink-0 sm:w-5 sm:h-5" />
             </div>
-            <div className="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">Verified Rating</div>
+            <div className="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">Verified Rating</div>
             <p className="text-[10px] sm:text-[11px] text-slate-600 dark:text-slate-400 font-bold truncate">1,200+ Google Reviews</p>
           </div>
         </div>
@@ -75,7 +75,7 @@ export function TrustSection() {
         </div>
 
         {/* Trust Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {trustCards.map((card, idx) => (
             <motion.div
               key={card.title}
@@ -84,18 +84,20 @@ export function TrustSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               whileHover={{ y: -6 }}
-              className="group rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 p-7 space-y-4 hover:border-[#0E7C7B] hover:shadow-2xl transition-all"
+              className="group rounded-2xl sm:rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 p-4 sm:p-7 space-y-3 sm:space-y-4 hover:border-[#0E7C7B] hover:shadow-2xl transition-all"
             >
-              <div className="flex h-13 w-13 items-center justify-center rounded-2xl bg-[#0E7C7B]/10 dark:bg-teal-400/10 text-[#0E7C7B] dark:text-teal-400 border border-[#0E7C7B]/20 group-hover:scale-110 group-hover:bg-[#0E7C7B] group-hover:text-white transition-all">
-                {idx === 0 && <Lock size={22} />}
-                {idx === 1 && <Cpu size={22} />}
-                {idx === 2 && <Award size={22} />}
-                {idx === 3 && <ShieldCheck size={22} />}
-              </div>
+              <div className="flex items-center gap-3 sm:block space-y-0 sm:space-y-4">
+                <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl sm:rounded-2xl bg-[#0E7C7B]/10 dark:bg-teal-400/10 text-[#0E7C7B] dark:text-teal-400 border border-[#0E7C7B]/20 group-hover:scale-110 group-hover:bg-[#0E7C7B] group-hover:text-white transition-all shrink-0">
+                  {idx === 0 && <Lock size={18} className="sm:w-[22px] sm:h-[22px]" />}
+                  {idx === 1 && <Cpu size={18} className="sm:w-[22px] sm:h-[22px]" />}
+                  {idx === 2 && <Award size={18} className="sm:w-[22px] sm:h-[22px]" />}
+                  {idx === 3 && <ShieldCheck size={18} className="sm:w-[22px] sm:h-[22px]" />}
+                </div>
 
-              <h3 className="text-lg font-black text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors">
-                {card.title}
-              </h3>
+                <h3 className="text-sm sm:text-lg font-black text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors leading-snug">
+                  {card.title}
+                </h3>
+              </div>
 
               <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
                 {card.text}
