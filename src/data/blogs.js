@@ -10,6 +10,7 @@ export const blogs = [
     author: 'Robuzta Display Hardware Team',
     authorRole: 'Senior Screen Replacement Technician',
     featured: true,
+    image: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?q=80&w=800&auto=format&fit=crop&fm=webp',
     content: `
       <p>A damaged laptop screen can halt your work or gaming instantly. Whether it's a hairline pressure crack, bleeding LCD ink, dead pixel clusters, or vertical rainbow lines across your display, understanding screen types and pricing before handing your laptop to a repair shop is essential.</p>
       
@@ -24,40 +25,40 @@ export const blogs = [
       <h3>Screen Types and Price Breakdown in Ahmedabad</h3>
       <p>Replacement costs depend on the exact panel specification required by your laptop model:</p>
 
-      <div className="my-6 overflow-x-auto">
-        <table className="w-full text-left border-collapse border border-slate-700 text-sm">
+      <div class="my-8 overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-800 shadow-md">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
           <thead>
-            <tr className="bg-slate-800 text-white">
-              <th className="p-3 border border-slate-700">Display Type</th>
-              <th className="p-3 border border-slate-700">Resolution & Refresh Rate</th>
-              <th className="p-3 border border-slate-700">Estimated Cost</th>
-              <th className="p-3 border border-slate-700">Repair Time</th>
+            <tr class="bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700">
+              <th class="p-3.5 sm:p-4 font-black">Display Type</th>
+              <th class="p-3.5 sm:p-4 font-black">Resolution</th>
+              <th class="p-3.5 sm:p-4 font-black">Estimated Cost</th>
+              <th class="p-3.5 sm:p-4 font-black">Turnaround</th>
             </tr>
           </thead>
-          <tbody>
-            <tr className="border-b border-slate-800">
-              <td className="p-3 font-bold">Standard HD Matte</td>
-              <td className="p-3">1366x768 60Hz</td>
-              <td className="p-3 font-bold text-emerald-400">₹2,800 – ₹3,800</td>
-              <td className="p-3">30 Mins</td>
+          <tbody class="divide-y divide-slate-100 dark:divide-slate-800 bg-white dark:bg-slate-900">
+            <tr>
+              <td class="p-3.5 sm:p-4 font-bold text-slate-900 dark:text-slate-100">Standard HD Matte</td>
+              <td class="p-3.5 sm:p-4 text-slate-500">1366x768 60Hz</td>
+              <td class="p-3.5 sm:p-4 font-black text-[#0E7C7B]">₹2,800 – ₹3,800</td>
+              <td class="p-3.5 sm:p-4 text-slate-500">30 Mins</td>
             </tr>
-            <tr className="border-b border-slate-800">
-              <td className="p-3 font-bold">Full HD IPS Panel</td>
-              <td className="p-3">1920x1080 60Hz Slim</td>
-              <td className="p-3 font-bold text-emerald-400">₹3,900 – ₹5,400</td>
-              <td className="p-3">45 Mins</td>
+            <tr>
+              <td class="p-3.5 sm:p-4 font-bold text-slate-900 dark:text-slate-100">Full HD IPS Panel</td>
+              <td class="p-3.5 sm:p-4 text-slate-500">1920x1080 60Hz</td>
+              <td class="p-3.5 sm:p-4 font-black text-[#0E7C7B]">₹3,900 – ₹5,400</td>
+              <td class="p-3.5 sm:p-4 text-slate-500">45 Mins</td>
             </tr>
-            <tr className="border-b border-slate-800">
-              <td className="p-3 font-bold">Gaming High-FPS</td>
-              <td className="p-3">1080p 144Hz / 240Hz IPS</td>
-              <td className="p-3 font-bold text-emerald-400">₹5,800 – ₹8,200</td>
-              <td className="p-3">60 Mins</td>
+            <tr>
+              <td class="p-3.5 sm:p-4 font-bold text-slate-900 dark:text-slate-100">Gaming High-FPS</td>
+              <td class="p-3.5 sm:p-4 text-slate-500">1080p 144Hz IPS</td>
+              <td class="p-3.5 sm:p-4 font-black text-[#0E7C7B]">₹5,800 – ₹8,200</td>
+              <td class="p-3.5 sm:p-4 text-slate-500">60 Mins</td>
             </tr>
-            <tr className="border-b border-slate-800">
-              <td className="p-3 font-bold">Apple Retina / 4K OLED</td>
-              <td className="p-3">2560x1600 / 3840x2160 OLED</td>
-              <td className="p-3 font-bold text-emerald-400">₹8,500 – ₹16,500</td>
-              <td className="p-3">Same Day</td>
+            <tr>
+              <td class="p-3.5 sm:p-4 font-bold text-slate-900 dark:text-slate-100">Apple Retina / 4K OLED</td>
+              <td class="p-3.5 sm:p-4 text-slate-500">2.8K / 4K OLED</td>
+              <td class="p-3.5 sm:p-4 font-black text-[#0E7C7B]">₹8,500 – ₹16,500</td>
+              <td class="p-3.5 sm:p-4 text-slate-500">Same Day</td>
             </tr>
           </tbody>
         </table>
@@ -83,6 +84,7 @@ export const blogs = [
     author: 'Robuzta Apple Logic Board Team',
     authorRole: 'Master Micro-Soldering Specialist',
     featured: true,
+    image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=800&auto=format&fit=crop&fm=webp',
     content: `
       <p>When an Apple MacBook Air or Pro stops booting up, fails to charge, or suffers liquid exposure, official service centers almost universally recommend replacing the entire logic board assembly. This repair often costs upwards of ₹45,000 to ₹70,000—frequently exceeding the current market value of the laptop itself.</p>
 
@@ -116,6 +118,7 @@ export const blogs = [
     author: 'Robuzta Mobile Hardware Lab',
     authorRole: 'Senior Smartphone Repair Specialist',
     featured: false,
+    image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=800&auto=format&fit=crop&fm=webp',
     content: `
       <p>Liquid exposure is the single most urgent smartphone emergency. Even devices rated IP67 or IP68 lose their rubber gasket seal protection over time due to drop impacts and heat expansion, allowing moisture into internal motherboard circuits.</p>
 
@@ -143,6 +146,7 @@ export const blogs = [
     author: 'Robuzta Gaming Performance Lab',
     authorRole: 'Thermal Dynamics Engineer',
     featured: false,
+    image: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=800&auto=format&fit=crop&fm=webp',
     content: `
       <p>Modern gaming laptops like ASUS ROG, Lenovo Legion, Acer Predator, and MSI Titan pack high-wattage CPUs and GPUs into compact chassis. Over time, heat causes factory thermal compound to dry out and pump out, resulting in CPU temperatures hitting 95°C–100°C and severe thermal throttling.</p>
 
@@ -168,6 +172,7 @@ export const blogs = [
     author: 'Robuzta Power Diagnostics Team',
     authorRole: 'Power Delivery Lead',
     featured: false,
+    image: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?q=80&w=800&auto=format&fit=crop&fm=webp',
     content: `
       <p>Plugging in your laptop charger and seeing no charging LED or indicator light can be nerve-wracking. Before panicking about a dead laptop, it’s vital to understand that 80% of charging failures stem from loose DC power jacks or blown Type-C Power Delivery (PD) controller chips.</p>
 
@@ -192,6 +197,7 @@ export const blogs = [
     author: 'Robuzta Security & Quality Assurance',
     authorRole: 'Data Privacy Officer',
     featured: false,
+    image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=800&auto=format&fit=crop&fm=webp',
     content: `
       <p>One of the biggest concerns when dropping off a phone or laptop for repair is data privacy. Customers often worry about technicians accessing personal photos, banking apps, emails, or asking for screen unlock passwords and OTPs.</p>
 
