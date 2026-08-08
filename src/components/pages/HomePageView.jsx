@@ -16,8 +16,6 @@ import { ProcessSection } from '@/components/sections/ProcessSection';
 import { RepairShowcaseSection } from '@/components/sections/RepairShowcaseSection';
 import { WhyChooseUsSection } from '@/components/sections/WhyChooseUsSection';
 import { ReviewsSection } from '@/components/sections/ReviewsSection';
-import { FaqPreview } from '@/components/sections/FaqPreview';
-import { LocationSection } from '@/components/sections/LocationSection';
 import { FinalCta } from '@/components/sections/FinalCta';
 
 // Heavy 3D WebGL Explorer dynamic import (Client-only)
@@ -77,17 +75,7 @@ export function HomePageView() {
           <ReviewsSection />
         </LazySection>
 
-        {/* 9. FAQ */}
-        <LazySection>
-          <FaqPreview />
-        </LazySection>
-
-        {/* 10. Location and hours */}
-        <LazySection>
-          <LocationSection />
-        </LazySection>
-
-        {/* 11. Final contact CTA */}
+        {/* 9. Final contact CTA */}
         <LazySection>
           <FinalCta />
         </LazySection>
