@@ -40,10 +40,11 @@ export function MegaMenu({ onClose }) {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
         {services.map((srv) => {
           const IconComponent = serviceIcons[srv.slug] || Wrench;
+          const href = srv.slug === 'laptop-repair' ? '/laptop-repair/' : `/services/${srv.slug}`;
           return (
             <Link
               key={srv.slug}
-              href={`/services/${srv.slug}`}
+              href={href}
               onClick={onClose}
               className="flex items-center gap-3 p-3 rounded-xl bg-slate-50/60 dark:bg-slate-900/60 hover:bg-[#0E7C7B]/10 dark:hover:bg-teal-400/10 border border-slate-100 dark:border-slate-800 hover:border-[#0E7C7B]/30 dark:hover:border-teal-400/30 transition-all group"
             >
@@ -63,16 +64,50 @@ export function MegaMenu({ onClose }) {
         })}
       </div>
 
-      <div className="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+      {/* Brand Shortcuts Bar */}
+      <div className="mt-3 pt-2.5 border-t border-slate-100 dark:border-slate-800">
+        <div className="flex items-center justify-between text-[11px] font-bold text-slate-500 dark:text-slate-400 mb-1.5">
+          <span>Repair By Brand:</span>
+          <Link
+            href="/laptop-repair/"
+            onClick={onClose}
+            className="text-[#0E7C7B] dark:text-teal-400 hover:underline"
+          >
+            All Brands →
+          </Link>
+        </div>
+        <div className="flex flex-wrap gap-1">
+          {[
+            { name: 'Dell', slug: 'dell' },
+            { name: 'HP', slug: 'hp' },
+            { name: 'MacBook', slug: 'macbook' },
+            { name: 'ASUS', slug: 'asus' },
+            { name: 'Acer', slug: 'acer' },
+            { name: 'MSI', slug: 'msi' },
+            { name: 'Surface', slug: 'surface' }
+          ].map((brand) => (
+            <Link
+              key={brand.slug}
+              href={`/laptop-repair/${brand.slug}/`}
+              onClick={onClose}
+              className="text-[10px] px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-[#0E7C7B] hover:text-white dark:hover:bg-teal-500 dark:hover:text-white transition-colors font-medium"
+            >
+              {brand.name}
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-3 pt-2 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
         <span className="text-[11px] font-semibold text-slate-400 dark:text-slate-500">
           Transparent Workbench Diagnosis
         </span>
         <Link
-          href="/services"
+          href="/laptop-repair/"
           onClick={onClose}
           className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#0E7C7B] dark:text-teal-400 hover:text-[#0a5c5b] dark:hover:text-teal-300 transition-colors"
         >
-          <span>View All Services Page</span>
+          <span>Laptop Repair Hub</span>
           <ArrowRight size={14} />
         </Link>
       </div>

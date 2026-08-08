@@ -29,7 +29,6 @@ import {
   UserCheck
 } from 'lucide-react';
 import Link from 'next/link';
-import { ReelsSection } from '@/components/sections/ReelsSection';
 import { PlatformTrustSection } from '@/components/sections/PlatformTrustSection';
 import { useBookingModal } from '@/context/BookingModalContext';
 
@@ -554,12 +553,6 @@ export function AboutPageView() {
 
           </div>
         </section>
-
-        {/* 6. INSTAGRAM REELS SHOWCASE */}
-        <ReelsSection
-          title="See Our Technicians In Action"
-          subtitle="Watch real video proof of micro-soldering, logic board diagnostics, and ESD-safe repair procedures recorded live on our workbench."
-        />
 
       </main>
       <Footer />

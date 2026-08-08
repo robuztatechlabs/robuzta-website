@@ -309,6 +309,90 @@ export function ServiceDetailPageView({ slug }) {
         </section>
 
         {/* ══════════════════════════════════════════════
+            SECTION 1.5 — BRAND & PROBLEM REDIRECTION HUB (FOR LAPTOP REPAIR)
+        ══════════════════════════════════════════════ */}
+        {slug === 'laptop-repair' && (
+          <section className="py-12 bg-slate-900 border-y border-slate-800">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
+              <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                  <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
+                    BRAND & PROBLEM DIRECT ROUTING
+                  </span>
+                  <h2 className="text-2xl sm:text-3xl font-black text-white mt-1">
+                    Select Your Laptop Brand or Issue
+                  </h2>
+                </div>
+                <Link
+                  href="/laptop-repair/"
+                  className="inline-flex items-center gap-2 rounded-xl bg-[#0E7C7B] hover:bg-teal-600 px-5 py-2.5 text-xs font-bold text-white transition-all shadow-md self-start md:self-auto"
+                >
+                  <span>Explore Full Laptop Repair Hub</span>
+                  <ArrowRight size={14} />
+                </Link>
+              </div>
+
+              {/* Brand Links Grid */}
+              <div className="space-y-3">
+                <span className="text-xs font-bold text-slate-400 block">Select Laptop Brand:</span>
+                <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
+                  {[
+                    { name: 'Dell', slug: 'dell', desc: 'XPS, Inspiron, Vostro' },
+                    { name: 'HP', slug: 'hp', desc: 'Pavilion, Spectre, Omen' },
+                    { name: 'Acer', slug: 'acer', desc: 'Nitro, Predator, Swift' },
+                    { name: 'ASUS', slug: 'asus', desc: 'ROG, TUF, ZenBook' },
+                    { name: 'MSI', slug: 'msi', desc: 'Katana, Raider, Stealth' },
+                    { name: 'Surface', slug: 'surface', desc: 'Pro, Laptop, Studio' },
+                    { name: 'MacBook', slug: 'macbook', desc: 'M1/M2/M3 & Intel' }
+                  ].map((b) => (
+                    <Link
+                      key={b.slug}
+                      href={`/laptop-repair/${b.slug}/`}
+                      className="group p-3.5 rounded-2xl bg-slate-800/80 hover:bg-[#0E7C7B]/20 border border-slate-700 hover:border-[#0E7C7B] transition-all text-center"
+                    >
+                      <span className="text-sm font-black text-white group-hover:text-teal-400 block">
+                        {b.name}
+                      </span>
+                      <span className="text-[10px] text-slate-400 line-clamp-1 mt-0.5">
+                        {b.desc}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Problem Links Grid */}
+              <div className="space-y-3 pt-2">
+                <span className="text-xs font-bold text-slate-400 block">Select Laptop Problem / Hardware Fix:</span>
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+                  {[
+                    { name: 'Motherboard Repair', slug: 'motherboard-repair' },
+                    { name: 'Screen Replacement', slug: 'screen-replacement' },
+                    { name: 'Battery Replacement', slug: 'battery-replacement' },
+                    { name: 'Keyboard Repair', slug: 'keyboard-replacement' },
+                    { name: 'Hinge & Body Fix', slug: 'body-panel-repair' },
+                    { name: 'Charging Port Fix', slug: 'charging-port-repair' },
+                    { name: 'RAM & SSD Upgrade', slug: 'ram-ssd-upgrade' },
+                    { name: 'Overheating / Fan', slug: 'fan-repair' },
+                    { name: 'Water / Liquid Spill', slug: 'liquid-damage-repair' }
+                  ].map((p) => (
+                    <Link
+                      key={p.slug}
+                      href={`/laptop-repair/${p.slug}/`}
+                      className="group p-3 rounded-xl bg-slate-800/50 hover:bg-[#0E7C7B]/20 border border-slate-700/80 hover:border-[#0E7C7B] transition-all flex items-center justify-between text-xs font-bold text-slate-200 hover:text-teal-300"
+                    >
+                      <span>{p.name}</span>
+                      <ArrowRight size={12} className="text-[#0E7C7B] group-hover:translate-x-0.5 transition-transform" />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          </section>
+        )}
+
+        {/* ══════════════════════════════════════════════
             SECTION 1.5 — 3D HARDWARE SHOWCASE
         ══════════════════════════════════════════════ */}
         {modelShowcases.length > 0 && (
