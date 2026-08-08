@@ -11,70 +11,80 @@ export function BrandLogosGrid() {
       tag: 'Air, Pro & Mac Studio',
       image: '/assets/brands/apples.webp',
       badge: 'Logic Board',
-      logoStyle: 'h-15 sm:h-20 w-150 max-w-[120px] sm:max-w-[140px]'
+      logoStyle: 'h-15 sm:h-20 w-150 max-w-[120px] sm:max-w-[140px]',
+      mobileScale: 1
     },
     {
       name: 'Dell',
       tag: 'XPS, Inspiron & Alienware',
       image: '/assets/brands/dell.webp',
       badge: 'Power IC',
-      logoStyle: 'h-15 sm:h-20 w-150 max-w-[120px] sm:max-w-[140px]'
+      logoStyle: 'h-15 sm:h-20 w-150 max-w-[120px] sm:max-w-[140px]',
+      mobileScale: 1
     },
     {
       name: 'HP',
       tag: 'Spectre, OMEN & Pavilion',
       image: '/assets/brands/hp.webp',
       badge: 'Screen Swap',
-      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]'
+      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]',
+      mobileScale: 1
     },
     {
       name: 'Lenovo',
       tag: 'ThinkPad, Legion & Yoga',
       image: '/assets/brands/lenovo.webp',
       badge: 'Hinge Repair',
-      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]'
+      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]',
+      mobileScale: 1
     },
     {
       name: 'ASUS',
       tag: 'ROG, TUF & ZenBook',
       image: '/assets/brands/asus.png',
       badge: 'GPU Soldering',
-      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]'
+      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]',
+      mobileScale: 1
     },
     {
       name: 'Microsoft Surface',
       tag: 'Surface Pro & Laptop',
       image: '/assets/brands/microsoft.webp',
       badge: 'Battery & Screen',
-      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]'
+      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]',
+      mobileScale: 1.8
     },
     {
       name: 'Apple iPhone',
       tag: 'Pro Max & Standard Series',
       image: '/assets/brands/iphone.png',
       badge: 'FaceID & Glass',
-      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]'
+      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]',
+      mobileScale: 1.7
     },
     {
       name: 'Samsung Galaxy',
       tag: 'S-Series, Z Fold & Flip',
       image: '/assets/brands/samsung.webp',
       badge: 'AMOLED Display',
-      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]'
+      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]',
+      mobileScale: 1.6
     },
     {
       name: 'Google Pixel',
       tag: 'Pixel Pro & Fold Series',
       image: '/assets/brands/google-pixel.webp',
       badge: 'Camera & Board',
-      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]'
+      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]',
+      mobileScale: 1.7
     },
     {
       name: 'Acer & Gaming',
       tag: 'Predator, Nitro & Swift',
       image: '/assets/brands/acer.webp',
       badge: 'Overheat Repair',
-      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]'
+      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]',
+      mobileScale: 1
     }
   ];
 
@@ -93,8 +103,38 @@ export function BrandLogosGrid() {
           </h2>
         </div>
 
-        {/* Clean Minimal Brand Cards Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5 sm:gap-8 lg:gap-10">
+        {/* Mobile Single Horizontal Floating Logo Strip (Phone Screen Only) */}
+        <div className="sm:hidden relative w-full overflow-hidden py-4 border-y border-slate-200 dark:border-slate-800">
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-slate-50 dark:from-slate-950 to-transparent z-10" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-slate-50 dark:from-slate-950 to-transparent z-10" />
+
+          <motion.div
+            animate={{ x: ['0%', '-50%'] }}
+            transition={{
+              duration: 18,
+              repeat: Infinity,
+              ease: 'linear'
+            }}
+            className="flex items-center gap-8 w-max px-2"
+          >
+            {[...brands, ...brands].map((b, idx) => (
+              <div
+                key={`${b.name}-${idx}`}
+                className="flex items-center justify-center shrink-0 w-20 h-10"
+              >
+                <img
+                  src={b.image}
+                  alt={`${b.name} Official Logo`}
+                  className="w-full h-full object-contain dark:brightness-125"
+                  style={{ transform: `scale(${b.mobileScale ?? 1})` }}
+                />
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Desktop & Tablet Brand Cards Grid */}
+        <div className="hidden sm:grid sm:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8">
           {brands.map((b, idx) => (
             <motion.div
               key={b.name}
@@ -113,7 +153,7 @@ export function BrandLogosGrid() {
                 />
               </div>
 
-              <span className="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors block text-center truncate">
+              <span className="text-xs sm:text-base font-black text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors block text-center truncate">
                 {b.name}
               </span>
             </motion.div>

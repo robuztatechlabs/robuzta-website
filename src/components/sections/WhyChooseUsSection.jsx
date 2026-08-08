@@ -67,15 +67,15 @@ export function WhyChooseUsSection() {
                 className="group rounded-2xl sm:rounded-3xl bg-slate-50/70 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-3.5 sm:p-6 flex flex-col justify-between hover:border-[#0E7C7B]/40 hover:bg-white dark:hover:bg-slate-700 hover:shadow-lg transition-all duration-300 space-y-3"
               >
                 <div className="space-y-2 sm:space-y-3">
-                  <div className="flex h-9 w-9 sm:h-11 sm:w-11 items-center justify-center rounded-xl sm:rounded-2xl bg-[#0E7C7B] text-white shadow-md group-hover:scale-105 transition-transform shrink-0">
-                    <Icon size={16} className="sm:w-[18px] sm:h-[18px]" />
+                  <div className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-xl sm:rounded-2xl bg-[#0E7C7B] text-white shadow-md group-hover:scale-105 transition-transform shrink-0">
+                    <Icon size={18} className="sm:w-[18px] sm:h-[18px]" />
                   </div>
 
                   <div className="space-y-1">
-                    <h3 className="text-xs xs:text-sm sm:text-base font-black text-slate-900 dark:text-slate-100 group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors leading-snug">
+                    <h3 className="text-sm xs:text-base sm:text-lg font-black text-slate-900 dark:text-slate-100 group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors leading-snug">
                       {pillar.title}
                     </h3>
-                    <p className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium leading-tight">
+                    <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium leading-tight line-clamp-2">
                       {pillar.description}
                     </p>
                   </div>
@@ -90,21 +90,21 @@ export function WhyChooseUsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.3 }}
-            className="col-span-2 lg:col-span-1 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#0F172A] via-[#0E7C7B] to-[#0F172A] text-white p-3.5 sm:p-6 flex flex-col justify-between space-y-3 sm:space-y-4 shadow-xl"
+            className="col-span-2 lg:col-span-1 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#0F172A] via-[#0E7C7B] to-[#0F172A] text-white p-4 sm:p-6 flex flex-col justify-between space-y-3 sm:space-y-4 shadow-xl"
           >
             <div className="space-y-1">
-              <h3 className="text-xs xs:text-sm sm:text-lg font-black text-white leading-snug">Need Technical Advice?</h3>
-              <p className="text-[10px] sm:text-xs text-teal-100 font-medium leading-tight">
+              <h3 className="text-sm xs:text-base sm:text-lg font-black text-white leading-snug">Need Technical Advice?</h3>
+              <p className="text-xs sm:text-sm text-teal-100 font-medium leading-tight">
                 Speak directly with a senior hardware technician.
               </p>
             </div>
             <a
               href="/contact"
-              className="w-full inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 text-[10px] sm:text-xs font-black shadow-md hover:bg-slate-100 transition-all text-center"
+              className="w-full inline-flex items-center justify-center gap-1.5 sm:gap-2 rounded-xl px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-black shadow-md hover:bg-slate-100 transition-all text-center"
               style={{ backgroundColor: '#ffffff', color: '#0F172A' }}
             >
               <span style={{ color: '#0F172A', fontWeight: 900 }}>Talk to Technician</span>
-              <ArrowRight size={12} className="sm:w-3.5 sm:h-3.5" style={{ color: '#0E7C7B' }} />
+              <ArrowRight size={14} style={{ color: '#0E7C7B' }} />
             </a>
           </motion.div>
         </div>

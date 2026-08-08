@@ -8,18 +8,18 @@ export const trustBadges = [
 export const trustCards = [
   {
     title: 'Zero-Passcode Policy',
-    text: 'Hardware diagnostics and repairs are handled without asking for your PIN, OTP, iCloud, or personal passwords.'
+    text: 'No PINs, OTPs, or passwords required'
   },
   {
     title: 'Serial-Verified Parts',
-    text: 'Replacement parts are logged and verified before installation, with defective parts returned directly to you.'
+    text: 'Logged OEM genuine replacement parts'
   },
   {
-    title: 'Warranty + Digital Invoice',
-    text: 'Every completed repair is fully documented with a digital invoice and a 90 to 180-day warranty promise.'
+    title: 'Warranty + Invoice',
+    text: '180-day warranty & digital invoice'
   },
   {
     title: 'Transparent Repair Flow',
-    text: 'Experience a clear 6-step repair process: free inspection, transparent quote, customer approval, lab repair, quality testing, and delivery.'
+    text: 'Live ESD workbench repair tracking'
   }
 ];

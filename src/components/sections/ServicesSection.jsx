@@ -97,24 +97,24 @@ export function ServicesSection() {
                 href={service.link}
                 className="group relative rounded-2xl sm:rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3.5 sm:p-7 flex flex-col justify-between hover:border-[#0E7C7B] hover:bg-white dark:hover:bg-slate-950 hover:shadow-xl transition-all duration-300 space-y-3"
               >
-                <div className="space-y-2 sm:space-y-3">
-                  <div className={`h-9 w-9 sm:h-12 sm:w-12 rounded-xl sm:rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center border shadow-sm group-hover:scale-105 transition-transform shrink-0`}>
-                    <Icon size={18} className="sm:w-[24px] sm:h-[24px]" />
+                <div className="space-y-2.5 sm:space-y-3">
+                  <div className={`h-10 w-10 sm:h-12 sm:w-12 rounded-xl sm:rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center border shadow-sm group-hover:scale-105 transition-transform shrink-0`}>
+                    <Icon size={20} className="sm:w-[24px] sm:h-[24px]" />
                   </div>
 
                   <div className="space-y-1">
-                    <h3 className="text-xs xs:text-sm sm:text-base font-black text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors leading-snug">
+                    <h3 className="text-sm xs:text-base sm:text-lg font-black text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors leading-snug">
                       {service.title}
                     </h3>
-                    <p className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium leading-tight">
+                    <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium leading-tight line-clamp-2">
                       {service.description}
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-1 flex items-center gap-1 text-[10px] sm:text-xs font-black text-[#0E7C7B] dark:text-teal-400 group-hover:translate-x-1 transition-all">
+                <div className="pt-1 flex items-center gap-1.5 text-xs sm:text-sm font-black text-[#0E7C7B] dark:text-teal-400 group-hover:translate-x-1 transition-all">
                   <span>Explore</span>
-                  <ArrowRight size={12} className="sm:w-3.5 sm:h-3.5" />
+                  <ArrowRight size={14} className="sm:w-4 sm:h-4" />
                 </div>
               </Link>
             );

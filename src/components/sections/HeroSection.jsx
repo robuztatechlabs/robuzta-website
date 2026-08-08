@@ -2,13 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
-const liveOperations = [
-  'ISO-Certified ESD Hardware Lab',
-  'Zero-OTP & Zero-Passcode Data Safety',
-  'Same-Day Screen & Battery Swap',
-  'Logic Board Micro-Soldering Specialist'
-];
 import {
   ArrowRight,
   ShieldCheck,
@@ -25,55 +18,51 @@ import {
   Sparkles,
   Lock,
   Zap,
-  Tv,
-  Video,
-  X,
-  ExternalLink,
-  Play
+  Cpu,
+  CheckCircle2
 } from 'lucide-react';
 import Link from 'next/link';
 import { siteConfig } from '@/data/site';
-import { AnimatedCounter } from '@/components/ui/AnimatedCounter';
-import { useBookingModal } from '@/context/BookingModalContext';
+import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 
-const whatWeFixServices = [
-  {
-    title: 'Laptop Repair',
-    icon: Laptop,
-    href: '/services/laptop-repair',
-    color: 'from-purple-500/25 to-indigo-500/25 text-purple-400 border-purple-500/40'
-  },
-  {
-    title: 'Mobile Repair',
-    icon: Smartphone,
-    href: '/services/mobile-repair',
-    color: 'from-emerald-500/25 to-teal-500/25 text-emerald-400 border-emerald-500/40'
-  },
-  {
-    title: 'MacBook Repair',
-    icon: Tablet,
-    href: '/services/macbook-repair',
-    color: 'from-blue-500/25 to-cyan-500/25 text-blue-400 border-blue-500/40'
-  },
-  {
-    title: 'Gaming PC & Surface',
-    icon: HardDrive,
-    href: '/services/gaming-pc-repair',
-    color: 'from-amber-500/25 to-orange-500/25 text-amber-400 border-amber-500/40'
-  }
+const typingPhrases = [
+  'Fix My Broken Display Screen',
+  'Replace Mobile Battery',
+  'Motherboard Chip Diagnostics',
+  'Free Doorstep Device Pickup'
 ];
 
-export function HeroSection() {
-  const { openModal } = useBookingModal();
-  const [isLiveModalOpen, setIsLiveModalOpen] = useState(false);
-  const [opIndex, setOpIndex] = useState(0);
+function useTypingText(phrases, typingSpeed = 70, deletingSpeed = 35, delay = 2000) {
+  const [text, setText] = useState('');
+  const [phraseIndex, setPhraseIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setOpIndex((prev) => (prev + 1) % liveOperations.length);
-    }, 2800);
-    return () => clearInterval(interval);
-  }, []);
+    const currentPhrase = phrases[phraseIndex % phrases.length];
+    
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        setText(currentPhrase.substring(0, text.length + 1));
+        if (text.length + 1 === currentPhrase.length) {
+          setTimeout(() => setIsDeleting(true), delay);
+        }
+      } else {
+        setText(currentPhrase.substring(0, text.length - 1));
+        if (text.length - 1 === 0) {
+          setIsDeleting(false);
+          setPhraseIndex((prev) => prev + 1);
+        }
+      }
+    }, isDeleting ? deletingSpeed : typingSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [text, isDeleting, phraseIndex, phrases, typingSpeed, deletingSpeed, delay]);
+
+  return text;
+}
+
+export function HeroSection() {
+  const typedText = useTypingText(typingPhrases);
 
   return (
     <section className="relative overflow-hidden bg-white dark:bg-[#070E1A] pt-32 sm:pt-40 lg:pt-48 pb-20 sm:pb-28 lg:pb-36 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
@@ -121,7 +110,7 @@ export function HeroSection() {
           className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#0E7C7B] dark:via-teal-400 to-transparent shadow-[0_0_15px_#0E7C7B]"
         />
 
-        {/* Staggered Vertical Light Beams Traveling Top-to-Bottom */}
+        {/* Staggered Vertical Light Beams */}
         <motion.div
           initial={{ top: '-30%' }}
           animate={{ top: ['-30%', '120%'] }}
@@ -145,126 +134,110 @@ export function HeroSection() {
           }}
           className="absolute left-[52%] w-[2px] h-48 bg-gradient-to-b from-transparent via-teal-400 to-transparent shadow-[0_0_15px_#2dd4bf]"
         />
-
-        <motion.div
-          initial={{ top: '-30%' }}
-          animate={{ top: ['-30%', '120%'] }}
-          transition={{
-            duration: 5,
-            repeat: Infinity,
-            delay: 3.5,
-            ease: 'easeInOut'
-          }}
-          className="absolute left-[82%] w-[2px] h-44 bg-gradient-to-b from-transparent via-cyan-400 to-transparent shadow-[0_0_12px_#22d3ee]"
-        />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           
-          {/* Left Column: Hero Copy & Actions */}
-          <div className="lg:col-span-6 space-y-8 lg:space-y-10 text-center lg:text-left">
+          {/* Left Column: Hero Copy & Single Animated Typing Button */}
+          <div className="lg:col-span-6 space-y-6 lg:space-y-8 text-center lg:text-left">
             
             {/* Main Headline */}
-            <h1 className="text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
               Precision Repair for{' '}
               <span className="block mt-1 sm:mt-2 bg-gradient-to-r from-[#0E7C7B] via-teal-600 dark:via-teal-400 to-slate-900 dark:to-teal-200 bg-clip-text text-transparent">
                 Laptops & Mobiles
               </span>
             </h1>
 
-            <p className="text-xs sm:text-sm font-semibold text-slate-500 dark:text-slate-400 tracking-wide leading-relaxed px-1">
+            <p className="text-sm sm:text-base font-bold text-slate-500 dark:text-slate-400 tracking-wide leading-relaxed px-1">
               ISO-certified hardware lab • Zero-OTP data safety • Free doorstep pickup
             </p>
 
-            {/* Action Buttons: Call, WhatsApp & Book */}
-            <div
-              className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2 w-full"
-            >
+            {/* Interactive Typing Box & Single Primary CTA Button */}
+            <div className="space-y-3.5 pt-2 flex flex-col items-center lg:items-start">
+              
+              {/* Typing Keyboard Indicator */}
+              <div className="inline-flex items-center gap-2 rounded-xl bg-slate-900 dark:bg-slate-900 border border-slate-700/80 px-4 py-2.5 text-xs sm:text-sm font-mono text-emerald-400 shadow-md">
+                <span className="text-slate-400 font-sans font-medium">Type issue:</span>
+                <span className="font-bold text-teal-300">"{typedText}"</span>
+                <span className="animate-pulse text-emerald-400 font-bold">|</span>
+              </div>
+
+              {/* Single Primary High-Converting Button */}
               <a
                 href={siteConfig.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white px-6 sm:px-7 py-3.5 sm:py-4 text-xs sm:text-sm font-black shadow-lg shadow-emerald-600/25 transition-all"
+                className="group relative inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-emerald-600 via-teal-600 to-[#0E7C7B] hover:from-emerald-500 hover:to-teal-500 text-white px-7 py-4 text-sm sm:text-base font-black shadow-xl shadow-emerald-600/30 hover:scale-[1.02] transition-all w-full sm:w-auto"
               >
-                <span>WhatsApp Estimate</span>
+                <WhatsappIcon size={22} className="text-white shrink-0" />
+                <span>Get WhatsApp Estimate & Book</span>
+                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform shrink-0" />
               </a>
 
-              <a
-                href={siteConfig.phoneHref}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-6 sm:px-7 py-3.5 sm:py-4 text-xs sm:text-sm font-black shadow-lg shadow-[#0E7C7B]/25 transition-all font-tech"
-              >
-                <Phone size={16} />
-                <span>Call +91 999 998 8885</span>
-              </a>
-
-              <Link
-                href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-5 sm:px-6 py-3.5 sm:py-4 text-xs sm:text-sm font-bold text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 shadow-sm transition-all"
-              >
-                <Calendar size={16} className="text-[#0E7C7B] dark:text-teal-400" />
-                <span>Book Visit</span>
-              </Link>
             </div>
 
           </div>
 
-          {/* Right Column: Interactive Animated "WHAT WE FIX" Side Console Card (Desktop Only) */}
-          <div className="hidden lg:block lg:col-span-6 relative">
-            
-
-            {/* Console Frame */}
-            <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-900/90 dark:bg-slate-950/90 backdrop-blur-xl p-4 sm:p-7 shadow-2xl space-y-4 overflow-hidden">
-              <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-                <h3 className="text-sm sm:text-base font-black text-white">
-                  Select Category
-                </h3>
-                <button
-                  type="button"
-                  onClick={() => setIsLiveModalOpen(true)}
-                  className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-red-950/80 border border-red-800/60 text-red-400 hover:text-white transition-colors text-[10px] sm:text-xs font-bold cursor-pointer"
-                >
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+          {/* Right Column: One Visual Hero Feature Box */}
+          <div className="lg:col-span-6 relative">
+            <div className="relative rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-900/95 dark:bg-slate-950/95 backdrop-blur-xl p-5 sm:p-8 shadow-2xl space-y-6 overflow-hidden">
+              
+              {/* Visual Header */}
+              <div className="flex items-center justify-between border-b border-slate-800 pb-4">
+                <div className="flex items-center gap-2">
+                  <div className="h-3 w-3 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="text-xs font-black tracking-widest text-slate-300 uppercase font-mono">
+                    Robuzta Hardware Lab
                   </span>
-                  <span>LIVE REPAIR</span>
-                </button>
-              </div>
-
-              {/* 4 Clean Categories Grid */}
-              <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
-                {whatWeFixServices.map((srv) => {
-                  const IconComp = srv.icon;
-                  return (
-                    <Link
-                      key={srv.title}
-                      href={srv.href}
-                      className="group relative rounded-2xl bg-slate-800/80 hover:bg-slate-800 p-3.5 sm:p-4 border border-slate-700/80 hover:border-[#0E7C7B] transition-all flex items-center gap-3 shadow-md hover:scale-[1.02]"
-                    >
-                      <div className={`h-9 w-9 rounded-xl bg-gradient-to-br ${srv.color} flex items-center justify-center border shrink-0`}>
-                        <IconComp size={18} />
-                      </div>
-                      <span className="text-xs font-black text-white leading-tight group-hover:text-teal-300 transition-colors">
-                        {srv.title}
-                      </span>
-                    </Link>
-                  );
-                })}
-              </div>
-
-              {/* Clean Minimal Rating Bar */}
-              <div className="pt-2.5 border-t border-slate-800 flex items-center justify-between text-xs text-slate-300">
-                <span className="font-extrabold text-white text-[11px] sm:text-xs">
-                  5,000+ Repairs • 4.9★ Google Rating
+                </div>
+                <span className="text-[10px] font-extrabold uppercase tracking-wider text-teal-400 bg-teal-950/80 border border-teal-800/60 px-2.5 py-1 rounded-full">
+                  ISO 9001:2015
                 </span>
-                <Link
-                  href="/contact"
-                  className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#0E7C7B] text-white hover:bg-teal-500 transition-colors shrink-0"
-                  aria-label="Contact Robuzta"
-                >
-                  <ArrowRight size={14} />
-                </Link>
+              </div>
+
+              {/* Central Graphic Visual */}
+              <div className="relative py-6 px-4 rounded-2xl bg-slate-800/60 border border-slate-700/60 overflow-hidden flex flex-col items-center justify-center text-center space-y-3">
+                {/* Animated Circuit Radial Rings */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(14,124,123,0.25)_0,transparent_70%)] pointer-events-none" />
+                
+                <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#0E7C7B] to-teal-400 text-white shadow-xl shadow-[#0E7C7B]/30 ring-4 ring-[#0E7C7B]/20">
+                  <Cpu size={32} />
+                </div>
+
+                <div className="relative z-10 space-y-1">
+                  <h4 className="text-base font-black text-white">Chip-Level Diagnostic Suite</h4>
+                  <p className="text-xs text-slate-400 font-medium">Bopal & Tragad Micro-Soldering Workbenches</p>
+                </div>
+              </div>
+
+              {/* 4 Feature Badges Grid */}
+              <div className="grid grid-cols-2 gap-2.5">
+                <div className="p-3 rounded-xl bg-slate-800/50 border border-slate-700/50 flex items-center gap-2.5">
+                  <ShieldCheck size={16} className="text-emerald-400 shrink-0" />
+                  <span className="text-xs font-bold text-slate-200">Zero-OTP Safety</span>
+                </div>
+                <div className="p-3 rounded-xl bg-slate-800/50 border border-slate-700/50 flex items-center gap-2.5">
+                  <Clock size={16} className="text-teal-400 shrink-0" />
+                  <span className="text-xs font-bold text-slate-200">2–4h Express</span>
+                </div>
+                <div className="p-3 rounded-xl bg-slate-800/50 border border-slate-700/50 flex items-center gap-2.5">
+                  <Zap size={16} className="text-amber-400 shrink-0" />
+                  <span className="text-xs font-bold text-slate-200">Original Parts</span>
+                </div>
+                <div className="p-3 rounded-xl bg-slate-800/50 border border-slate-700/50 flex items-center gap-2.5">
+                  <Lock size={16} className="text-purple-400 shrink-0" />
+                  <span className="text-xs font-bold text-slate-200">Live Workbench</span>
+                </div>
+              </div>
+
+              {/* Rating Trust Bar */}
+              <div className="pt-3 border-t border-slate-800 flex items-center justify-between text-xs text-slate-300 font-bold">
+                <span>15,000+ Devices Restored</span>
+                <span className="flex items-center gap-1 text-amber-400 font-black">
+                  4.9★ Google Rating
+                </span>
               </div>
 
             </div>

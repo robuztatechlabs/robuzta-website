@@ -13,7 +13,6 @@ import { TrustSection } from '@/components/sections/TrustSection';
 import { ServicesSection } from '@/components/sections/ServicesSection';
 import { BrandLogosGrid } from '@/components/sections/BrandLogosGrid';
 import { ProcessSection } from '@/components/sections/ProcessSection';
-import { RepairShowcaseSection } from '@/components/sections/RepairShowcaseSection';
 import { WhyChooseUsSection } from '@/components/sections/WhyChooseUsSection';
 import { ReviewsSection } from '@/components/sections/ReviewsSection';
 import { FinalCta } from '@/components/sections/FinalCta';
@@ -29,10 +28,10 @@ export function HomePageView() {
     <SmoothScroll>
       <ScrollProgress />
       <Header />
-      
+
       <main className="bg-white dark:bg-slate-950 text-slate-900 dark:text-white min-h-screen">
-        
-        {/* 1. Hero (who, what, where + call/WhatsApp CTA) */}
+
+        {/* 1. Hero */}
         <HeroSection />
 
         {/* 2. Trust stats strip */}
@@ -40,12 +39,12 @@ export function HomePageView() {
           <TrustSection />
         </LazySection>
 
-        {/* 3. Services overview (links to all 6 service hubs) */}
+        {/* 3. Services overview */}
         <LazySection>
           <ServicesSection />
         </LazySection>
 
-        {/* 4. Brands we repair (logo strip — laptop + mobile brands) */}
+        {/* 4. Brands we repair */}
         <LazySection>
           <BrandLogosGrid />
         </LazySection>
@@ -55,17 +54,12 @@ export function HomePageView() {
           <ProcessSection />
         </LazySection>
 
-        {/* 6. Transparent pricing */}
-        <LazySection>
-          <RepairShowcaseSection />
-        </LazySection>
-
-        {/* 7. Why choose us */}
+        {/* 6. Why choose us */}
         <LazySection>
           <WhyChooseUsSection />
         </LazySection>
 
-        {/* Interactive 3D Component Explorer (Custom 3D Model preserved) */}
+        {/* 7. Interactive 3D Component Explorer */}
         <LazySection>
           <LaptopExplorerSection />
         </LazySection>
@@ -79,7 +73,7 @@ export function HomePageView() {
         <LazySection>
           <FinalCta />
         </LazySection>
-        
+
       </main>
 
       <Footer />

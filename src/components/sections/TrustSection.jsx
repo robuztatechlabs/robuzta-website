@@ -30,32 +30,32 @@ export function TrustSection() {
         {/* Metric Stats Banner */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 p-5 sm:p-8 rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 shadow-xl">
           <div className="space-y-1 text-center md:text-left">
-            <div className="text-xl xs:text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+            <div className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
               <AnimatedCounter value="15000" suffix="+" />
             </div>
-            <div className="text-[11px] sm:text-xs font-bold text-slate-500 dark:text-slate-400">Devices Restored</div>
+            <div className="text-xs sm:text-sm font-bold text-slate-500 dark:text-slate-400">Devices Restored</div>
           </div>
 
           <div className="space-y-1 text-center md:text-left">
-            <div className="text-xl xs:text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+            <div className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
               <AnimatedCounter value="99.8" suffix="%" />
             </div>
-            <div className="text-[11px] sm:text-xs font-bold text-slate-500 dark:text-slate-400">Success Rate</div>
+            <div className="text-xs sm:text-sm font-bold text-slate-500 dark:text-slate-400">Success Rate</div>
           </div>
 
           <div className="space-y-1 text-center md:text-left">
-            <div className="text-xl xs:text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+            <div className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
               <AnimatedCounter value="2" suffix=" to 4h" />
             </div>
-            <div className="text-[11px] sm:text-xs font-bold text-slate-500 dark:text-slate-400">Avg Turnaround</div>
+            <div className="text-xs sm:text-sm font-bold text-slate-500 dark:text-slate-400">Avg Turnaround</div>
           </div>
 
           <div className="space-y-1 text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start gap-1 text-xl xs:text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+            <div className="flex items-center justify-center md:justify-start gap-1 text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
               <AnimatedCounter value="4.9" />
-              <Star size={18} className="text-amber-500 fill-amber-500 shrink-0 sm:w-5 sm:h-5" />
+              <Star size={20} className="text-amber-500 fill-amber-500 shrink-0 sm:w-5 sm:h-5" />
             </div>
-            <div className="text-[11px] sm:text-xs font-bold text-slate-500 dark:text-slate-400">1,200+ Reviews</div>
+            <div className="text-xs sm:text-sm font-bold text-slate-500 dark:text-slate-400">1,200+ Reviews</div>
           </div>
         </div>
 
@@ -78,19 +78,19 @@ export function TrustSection() {
               whileHover={{ y: -4 }}
               className="group rounded-2xl sm:rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 p-3.5 sm:p-7 flex flex-col justify-between hover:border-[#0E7C7B] hover:shadow-xl transition-all duration-300 space-y-2.5 sm:space-y-3"
             >
-              <div className="space-y-2 sm:space-y-3">
-                <div className="flex h-9 w-9 sm:h-12 sm:w-12 items-center justify-center rounded-xl sm:rounded-2xl bg-[#0E7C7B]/10 dark:bg-teal-400/10 text-[#0E7C7B] dark:text-teal-400 border border-[#0E7C7B]/20 group-hover:scale-105 group-hover:bg-[#0E7C7B] group-hover:text-white transition-all shrink-0">
-                  {idx === 0 && <Lock size={16} className="sm:w-[22px] sm:h-[22px]" />}
-                  {idx === 1 && <Cpu size={16} className="sm:w-[22px] sm:h-[22px]" />}
-                  {idx === 2 && <Award size={16} className="sm:w-[22px] sm:h-[22px]" />}
-                  {idx === 3 && <ShieldCheck size={16} className="sm:w-[22px] sm:h-[22px]" />}
+              <div className="space-y-2.5 sm:space-y-3">
+                <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl sm:rounded-2xl bg-[#0E7C7B]/10 dark:bg-teal-400/10 text-[#0E7C7B] dark:text-teal-400 border border-[#0E7C7B]/20 group-hover:scale-105 group-hover:bg-[#0E7C7B] group-hover:text-white transition-all shrink-0">
+                  {idx === 0 && <Lock size={18} className="sm:w-[22px] sm:h-[22px]" />}
+                  {idx === 1 && <Cpu size={18} className="sm:w-[22px] sm:h-[22px]" />}
+                  {idx === 2 && <Award size={18} className="sm:w-[22px] sm:h-[22px]" />}
+                  {idx === 3 && <ShieldCheck size={18} className="sm:w-[22px] sm:h-[22px]" />}
                 </div>
 
                 <div className="space-y-1">
-                  <h3 className="text-xs xs:text-sm sm:text-base font-black text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors leading-snug">
+                  <h3 className="text-sm xs:text-base sm:text-lg font-black text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors leading-snug">
                     {card.title}
                   </h3>
-                  <p className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium leading-tight">
+                  <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium leading-tight line-clamp-2">
                     {card.text}
                   </p>
                 </div>
