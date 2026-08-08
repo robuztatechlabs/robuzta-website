@@ -38,40 +38,28 @@ import { useBookingModal } from '@/context/BookingModalContext';
 
 const whatWeFixServices = [
   {
-    title: 'Laptop & MacBook',
+    title: 'Laptop Repair',
     icon: Laptop,
     href: '/services/laptop-repair',
     color: 'from-purple-500/25 to-indigo-500/25 text-purple-400 border-purple-500/40'
   },
   {
-    title: 'iPhone & Android',
+    title: 'Mobile Repair',
     icon: Smartphone,
     href: '/services/mobile-repair',
     color: 'from-emerald-500/25 to-teal-500/25 text-emerald-400 border-emerald-500/40'
   },
   {
-    title: 'iPad & Tablet',
+    title: 'MacBook Repair',
     icon: Tablet,
-    href: '/services/laptop-repair',
+    href: '/services/macbook-repair',
     color: 'from-blue-500/25 to-cyan-500/25 text-blue-400 border-blue-500/40'
   },
   {
-    title: 'Data Recovery',
-    icon: Database,
-    href: '/services/laptop-repair',
-    color: 'from-amber-500/25 to-orange-500/25 text-amber-400 border-amber-500/40'
-  },
-  {
-    title: 'Liquid Damage',
-    icon: Droplets,
-    href: '/services/laptop-repair',
-    color: 'from-sky-500/25 to-blue-500/25 text-sky-400 border-sky-500/40'
-  },
-  {
-    title: 'RAM & SSD Upgrade',
+    title: 'Gaming PC & Surface',
     icon: HardDrive,
-    href: '/services/laptop-repair',
-    color: 'from-teal-500/25 to-emerald-500/25 text-teal-400 border-teal-500/40'
+    href: '/services/gaming-pc-repair',
+    color: 'from-amber-500/25 to-orange-500/25 text-amber-400 border-amber-500/40'
   }
 ];
 
@@ -88,7 +76,7 @@ export function HeroSection() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden bg-white dark:bg-[#070E1A] pt-28 sm:pt-32 lg:pt-36 pb-16 lg:pb-24 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+    <section className="relative overflow-hidden bg-white dark:bg-[#070E1A] pt-32 sm:pt-40 lg:pt-48 pb-20 sm:pb-28 lg:pb-36 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
       
       {/* Soft Ambient Gradient Overlay */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-slate-50/70 via-teal-50/20 to-white dark:from-[#070E1A] dark:via-[#0a1626] dark:to-[#070E1A]" />
@@ -130,7 +118,7 @@ export function HeroSection() {
             repeat: Infinity,
             ease: 'linear'
           }}
-          className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#0E7C7B] via-teal-400 to-transparent shadow-[0_0_15px_#0E7C7B]"
+          className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#0E7C7B] dark:via-teal-400 to-transparent shadow-[0_0_15px_#0E7C7B]"
         />
 
         {/* Staggered Vertical Light Beams Traveling Top-to-Bottom */}
@@ -138,7 +126,7 @@ export function HeroSection() {
           initial={{ top: '-30%' }}
           animate={{ top: ['-30%', '120%'] }}
           transition={{
-            duration: 4.5,
+            duration: 5,
             repeat: Infinity,
             repeatDelay: 1.5,
             ease: 'easeInOut'
@@ -172,86 +160,69 @@ export function HeroSection() {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 items-center">
           
           {/* Left Column: Hero Copy & Actions */}
-          <div className="lg:col-span-6 space-y-7 lg:space-y-8 text-center lg:text-left">
+          <div className="lg:col-span-6 space-y-8 lg:space-y-10 text-center lg:text-left">
             
-            {/* Live Operations Ticker Badge */}
-            <div className="inline-flex items-center gap-2.5 rounded-full bg-slate-900/90 dark:bg-slate-900/90 border border-slate-700/80 px-4 py-2 text-xs font-bold text-white shadow-lg backdrop-blur-md">
-              <span className="relative flex h-2.5 w-2.5 shrink-0">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
-              </span>
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={opIndex}
-                  initial={{ opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -6 }}
-                  transition={{ duration: 0.25 }}
-                  className="font-tech text-teal-400 font-bold tracking-wide"
-                >
-                  {liveOperations[opIndex]}
-                </motion.span>
-              </AnimatePresence>
-            </div>
-
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
+            <h1 className="text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
               Precision Repair for{' '}
               <span className="block mt-1 sm:mt-2 bg-gradient-to-r from-[#0E7C7B] via-teal-600 dark:via-teal-400 to-slate-900 dark:to-teal-200 bg-clip-text text-transparent">
-                Laptops, Mobiles & iPads
+                Laptops & Mobiles
               </span>
             </h1>
 
-            {/* Sub-headline */}
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 font-medium max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              Component-level hardware repair & logic board diagnostics with zero OTP data safety.
+            <p className="text-xs sm:text-sm font-semibold text-slate-500 dark:text-slate-400 tracking-wide leading-relaxed px-1">
+              ISO-certified hardware lab • Zero-OTP data safety • Free doorstep pickup
             </p>
 
-            {/* Action Buttons */}
+            {/* Action Buttons: Call, WhatsApp & Book */}
             <div
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-5 pt-3 w-full"
+              className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2 w-full"
             >
-              <Link
-                href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-8 py-4 text-sm font-black shadow-xl shadow-[#0E7C7B]/25 hover:scale-[1.03] transition-all"
+              <a
+                href={siteConfig.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white px-6 sm:px-7 py-3.5 sm:py-4 text-xs sm:text-sm font-black shadow-lg shadow-emerald-600/25 transition-all"
               >
-                <Calendar size={18} />
-                <span>Book Appointment</span>
-              </Link>
+                <span>WhatsApp Estimate</span>
+              </a>
 
               <a
                 href={siteConfig.phoneHref}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-7 py-4 text-sm font-bold text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 shadow-sm transition-all font-tech"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-6 sm:px-7 py-3.5 sm:py-4 text-xs sm:text-sm font-black shadow-lg shadow-[#0E7C7B]/25 transition-all font-tech"
               >
-                <Phone size={18} className="text-[#0E7C7B] dark:text-teal-400" />
-                <span>+91 999 998 8885</span>
+                <Phone size={16} />
+                <span>Call +91 999 998 8885</span>
               </a>
+
+              <Link
+                href="/contact"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-5 sm:px-6 py-3.5 sm:py-4 text-xs sm:text-sm font-bold text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 shadow-sm transition-all"
+              >
+                <Calendar size={16} className="text-[#0E7C7B] dark:text-teal-400" />
+                <span>Book Visit</span>
+              </Link>
             </div>
 
           </div>
 
-          {/* Right Column: Interactive Animated "WHAT WE FIX" Side Console Card */}
-          <div className="lg:col-span-6 relative">
+          {/* Right Column: Interactive Animated "WHAT WE FIX" Side Console Card (Desktop Only) */}
+          <div className="hidden lg:block lg:col-span-6 relative">
             
 
             {/* Console Frame */}
-            <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-900/90 dark:bg-slate-950/90 backdrop-blur-xl p-4 sm:p-8 shadow-2xl space-y-5 sm:space-y-6 pt-7 sm:pt-9 overflow-hidden">
-              <div className="flex items-center justify-between border-b border-slate-800 pb-4">
-                <div className="space-y-0.5">
-                  <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
-                    WHAT WE REPAIR & RESTORE
-                  </span>
-                  <h3 className="text-base sm:text-lg font-black text-white">
-                    Select Your Hardware Category
-                  </h3>
-                </div>
+            <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-900/90 dark:bg-slate-950/90 backdrop-blur-xl p-4 sm:p-7 shadow-2xl space-y-4 overflow-hidden">
+              <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+                <h3 className="text-sm sm:text-base font-black text-white">
+                  Select Category
+                </h3>
                 <button
                   type="button"
                   onClick={() => setIsLiveModalOpen(true)}
-                  className="flex items-center gap-2 px-3 py-1 rounded-full bg-red-950/80 border border-red-800/60 text-red-400 hover:text-white hover:bg-red-900/80 transition-colors text-xs font-bold font-mono cursor-pointer"
+                  className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-red-950/80 border border-red-800/60 text-red-400 hover:text-white transition-colors text-[10px] sm:text-xs font-bold cursor-pointer"
                 >
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
@@ -261,65 +232,38 @@ export function HeroSection() {
                 </button>
               </div>
 
-              {/* 6 Services Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3">
+              {/* 4 Clean Categories Grid */}
+              <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
                 {whatWeFixServices.map((srv) => {
                   const IconComp = srv.icon;
                   return (
                     <Link
                       key={srv.title}
                       href={srv.href}
-                      className="group relative rounded-2xl bg-slate-800/80 hover:bg-slate-800 p-3 sm:p-4 border border-slate-700/80 hover:border-[#0E7C7B] transition-all flex flex-col justify-between space-y-2.5 sm:space-y-3 shadow-md hover:scale-[1.03]"
+                      className="group relative rounded-2xl bg-slate-800/80 hover:bg-slate-800 p-3.5 sm:p-4 border border-slate-700/80 hover:border-[#0E7C7B] transition-all flex items-center gap-3 shadow-md hover:scale-[1.02]"
                     >
-                      <div className={`h-9 w-9 sm:h-10 sm:w-10 rounded-xl bg-gradient-to-br ${srv.color} flex items-center justify-center border shadow-inner shrink-0`}>
+                      <div className={`h-9 w-9 rounded-xl bg-gradient-to-br ${srv.color} flex items-center justify-center border shrink-0`}>
                         <IconComp size={18} />
                       </div>
-                      <div>
-                        <span className="text-[11px] sm:text-xs font-black text-white block leading-tight group-hover:text-teal-300 transition-colors">
-                          {srv.title}
-                        </span>
-                        <span className="text-[9px] sm:text-[10px] font-bold text-slate-400 flex items-center gap-1 pt-1 group-hover:text-white transition-colors">
-                          <span>Diagnose</span>
-                          <ArrowRight size={10} />
-                        </span>
-                      </div>
+                      <span className="text-xs font-black text-white leading-tight group-hover:text-teal-300 transition-colors">
+                        {srv.title}
+                      </span>
                     </Link>
                   );
                 })}
               </div>
 
-              {/* Bottom Customer Trust Bar */}
-              <div className="pt-3 border-t border-slate-800 flex items-center justify-between gap-2 text-slate-300 overflow-hidden">
-                <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
-                  <div className="flex items-center -space-x-2 shrink-0">
-                    <div className="h-7 w-7 sm:h-8 sm:w-8 rounded-full bg-indigo-600 text-[10px] sm:text-xs font-black text-white flex items-center justify-center border-2 border-slate-900 shadow-md shrink-0">
-                      J
-                    </div>
-                    <div className="h-7 w-7 sm:h-8 sm:w-8 rounded-full bg-emerald-600 text-[10px] sm:text-xs font-black text-white flex items-center justify-center border-2 border-slate-900 shadow-md shrink-0">
-                      M
-                    </div>
-                    <div className="h-7 w-7 sm:h-8 sm:w-8 rounded-full bg-amber-600 text-[10px] sm:text-xs font-black text-white flex items-center justify-center border-2 border-slate-900 shadow-md shrink-0">
-                      A
-                    </div>
-                  </div>
-
-                  <div className="min-w-0 text-left">
-                    <span className="text-[11px] sm:text-sm font-black text-white block truncate leading-tight">
-                      5,000+ Happy Customers
-                    </span>
-                    <div className="flex items-center gap-1 text-[10px] sm:text-xs text-amber-400 pt-0.5 truncate">
-                      <span className="tracking-tighter sm:tracking-widest">★★★★★</span>
-                      <span className="text-slate-300 font-bold text-[10px] sm:text-[11px] truncate">4.9 Rating</span>
-                    </div>
-                  </div>
-                </div>
-
+              {/* Clean Minimal Rating Bar */}
+              <div className="pt-2.5 border-t border-slate-800 flex items-center justify-between text-xs text-slate-300">
+                <span className="font-extrabold text-white text-[11px] sm:text-xs">
+                  5,000+ Repairs • 4.9★ Google Rating
+                </span>
                 <Link
                   href="/contact"
-                  className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl bg-[#0E7C7B] text-white hover:bg-teal-500 transition-colors shadow-md shrink-0"
+                  className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#0E7C7B] text-white hover:bg-teal-500 transition-colors shrink-0"
                   aria-label="Contact Robuzta"
                 >
-                  <ArrowRight size={16} />
+                  <ArrowRight size={14} />
                 </Link>
               </div>
 

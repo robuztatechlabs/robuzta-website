@@ -7,35 +7,26 @@ import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 
 export function LocationSection() {
   return (
-    <section id="locations-hours" className="relative bg-slate-50/60 dark:bg-slate-950 py-10 sm:py-14 lg:py-16 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+    <section id="locations-hours" className="relative bg-slate-50/60 dark:bg-slate-950 py-16 sm:py-24 lg:py-32 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
       
       {/* Ambient Background Blur */}
       <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#0E7C7B]/5 rounded-full blur-3xl" />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12 lg:space-y-16">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-14 sm:space-y-20 lg:space-y-24">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-4 py-1.5 text-xs font-black text-[#0E7C7B] uppercase tracking-widest">
-            <Building2 size={14} className="text-[#0E7C7B]" />
-            <span>LAB LOCATIONS & BUSINESS HOURS</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
-            Visit Our Live Workbench Labs or Book Doorstep Pickup
+        <div className="text-center max-w-2xl mx-auto">
+          <h2 className="text-2xl xs:text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
+            Visit Us or Book Pickup
           </h2>
-
-          <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed font-medium">
-            Walk into our South Bopal & Tragad laboratories for live hardware diagnostics, or request free anti-static doorstep pickup anywhere in Ahmedabad.
-          </p>
         </div>
 
         {/* 2 Lab Location Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
           {locations.map((loc) => (
             <div
               key={loc.slug}
-              className="group rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 sm:p-8 space-y-5 shadow-xl hover:border-[#0E7C7B] transition-all duration-300 flex flex-col justify-between"
+              className="group rounded-2xl sm:rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 sm:p-8 space-y-4 sm:space-y-6 shadow-xl hover:border-[#0E7C7B] transition-all duration-300 flex flex-col justify-between"
             >
               <div className="space-y-4 sm:space-y-6">
                 
@@ -47,7 +38,7 @@ export function LocationSection() {
                       <Building2 size={24} className="hidden sm:block" />
                     </div>
                     <div>
-                      <h3 className="text-base sm:text-xl font-black text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors leading-tight">
+                      <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors leading-tight">
                         {loc.title}
                       </h3>
                       <span className="text-[11px] sm:text-xs font-bold text-slate-500 dark:text-slate-400">

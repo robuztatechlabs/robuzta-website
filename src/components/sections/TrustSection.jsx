@@ -23,85 +23,78 @@ export function TrustSection() {
   const marqueeLogos = brandLogos.concat(brandLogos);
 
   return (
-    <section className="relative bg-slate-50 dark:bg-slate-900 py-10 sm:py-14 lg:py-16 border-y border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
+    <section className="relative bg-slate-50 dark:bg-slate-900 py-16 sm:py-24 lg:py-32 border-y border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
       
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12 lg:space-y-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-14 sm:space-y-20 lg:space-y-24">
         
         {/* Metric Stats Banner */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 p-4 sm:p-10 rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 shadow-xl">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 p-5 sm:p-8 rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 shadow-xl">
           <div className="space-y-1 text-center md:text-left">
-            <div className="text-xl sm:text-4xl font-black text-slate-900 dark:text-white">
+            <div className="text-xl xs:text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
               <AnimatedCounter value="15000" suffix="+" />
             </div>
-            <div className="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">Devices Restored</div>
-            <p className="text-[10px] sm:text-[11px] text-[#0E7C7B] dark:text-teal-400 font-bold truncate">Laptops, Macs & Mobiles</p>
+            <div className="text-[11px] sm:text-xs font-bold text-slate-500 dark:text-slate-400">Devices Restored</div>
           </div>
 
           <div className="space-y-1 text-center md:text-left">
-            <div className="text-xl sm:text-4xl font-black text-slate-900 dark:text-white">
+            <div className="text-xl xs:text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
               <AnimatedCounter value="99.8" suffix="%" />
             </div>
-            <div className="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">Repair Success Rate</div>
-            <p className="text-[10px] sm:text-[11px] text-amber-600 dark:text-amber-400 font-bold truncate">Micro-soldering & Screens</p>
+            <div className="text-[11px] sm:text-xs font-bold text-slate-500 dark:text-slate-400">Success Rate</div>
           </div>
 
           <div className="space-y-1 text-center md:text-left">
-            <div className="text-xl sm:text-4xl font-black text-slate-900 dark:text-white">
+            <div className="text-xl xs:text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
               <AnimatedCounter value="2" suffix=" to 4h" />
             </div>
-            <div className="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">Avg Turnaround</div>
-            <p className="text-[10px] sm:text-[11px] text-emerald-600 dark:text-emerald-400 font-bold truncate">Express Turnaround</p>
+            <div className="text-[11px] sm:text-xs font-bold text-slate-500 dark:text-slate-400">Avg Turnaround</div>
           </div>
 
           <div className="space-y-1 text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start gap-1 text-xl sm:text-4xl font-black text-slate-900 dark:text-white">
+            <div className="flex items-center justify-center md:justify-start gap-1 text-xl xs:text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
               <AnimatedCounter value="4.9" />
               <Star size={18} className="text-amber-500 fill-amber-500 shrink-0 sm:w-5 sm:h-5" />
             </div>
-            <div className="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">Verified Rating</div>
-            <p className="text-[10px] sm:text-[11px] text-slate-600 dark:text-slate-400 font-bold truncate">1,200+ Google Reviews</p>
+            <div className="text-[11px] sm:text-xs font-bold text-slate-500 dark:text-slate-400">1,200+ Reviews</div>
           </div>
         </div>
 
         {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
-            Built on Workbench Transparency & Data Safety
+        <div className="text-center max-w-2xl mx-auto">
+          <h2 className="text-2xl xs:text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
+            Trusted by 15,000+ Customers
           </h2>
-
-          <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed font-medium">
-            From chip-level motherboard logic soldering to screen and battery replacements, every process is documented, ESD-isolated, and protected under our strict Zero-OTP Privacy Policy.
-          </p>
         </div>
 
-        {/* Trust Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        {/* Trust Cards 2-Column Mobile App Grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-6">
           {trustCards.map((card, idx) => (
             <motion.div
               key={card.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              whileHover={{ y: -6 }}
-              className="group rounded-2xl sm:rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 p-4 sm:p-7 space-y-3 sm:space-y-4 hover:border-[#0E7C7B] hover:shadow-2xl transition-all"
+              transition={{ duration: 0.4, delay: idx * 0.08 }}
+              whileHover={{ y: -4 }}
+              className="group rounded-2xl sm:rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 p-3.5 sm:p-7 flex flex-col justify-between hover:border-[#0E7C7B] hover:shadow-xl transition-all duration-300 space-y-2.5 sm:space-y-3"
             >
-              <div className="flex items-center gap-3 sm:block space-y-0 sm:space-y-4">
-                <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl sm:rounded-2xl bg-[#0E7C7B]/10 dark:bg-teal-400/10 text-[#0E7C7B] dark:text-teal-400 border border-[#0E7C7B]/20 group-hover:scale-110 group-hover:bg-[#0E7C7B] group-hover:text-white transition-all shrink-0">
-                  {idx === 0 && <Lock size={18} className="sm:w-[22px] sm:h-[22px]" />}
-                  {idx === 1 && <Cpu size={18} className="sm:w-[22px] sm:h-[22px]" />}
-                  {idx === 2 && <Award size={18} className="sm:w-[22px] sm:h-[22px]" />}
-                  {idx === 3 && <ShieldCheck size={18} className="sm:w-[22px] sm:h-[22px]" />}
+              <div className="space-y-2 sm:space-y-3">
+                <div className="flex h-9 w-9 sm:h-12 sm:w-12 items-center justify-center rounded-xl sm:rounded-2xl bg-[#0E7C7B]/10 dark:bg-teal-400/10 text-[#0E7C7B] dark:text-teal-400 border border-[#0E7C7B]/20 group-hover:scale-105 group-hover:bg-[#0E7C7B] group-hover:text-white transition-all shrink-0">
+                  {idx === 0 && <Lock size={16} className="sm:w-[22px] sm:h-[22px]" />}
+                  {idx === 1 && <Cpu size={16} className="sm:w-[22px] sm:h-[22px]" />}
+                  {idx === 2 && <Award size={16} className="sm:w-[22px] sm:h-[22px]" />}
+                  {idx === 3 && <ShieldCheck size={16} className="sm:w-[22px] sm:h-[22px]" />}
                 </div>
 
-                <h3 className="text-sm sm:text-lg font-black text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors leading-snug">
-                  {card.title}
-                </h3>
+                <div className="space-y-1">
+                  <h3 className="text-xs xs:text-sm sm:text-base font-black text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors leading-snug">
+                    {card.title}
+                  </h3>
+                  <p className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium leading-tight">
+                    {card.text}
+                  </p>
+                </div>
               </div>
-
-              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
-                {card.text}
-              </p>
             </motion.div>
           ))}
         </div>

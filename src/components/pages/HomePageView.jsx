@@ -15,10 +15,10 @@ import { BrandLogosGrid } from '@/components/sections/BrandLogosGrid';
 import { ProcessSection } from '@/components/sections/ProcessSection';
 import { RepairShowcaseSection } from '@/components/sections/RepairShowcaseSection';
 import { WhyChooseUsSection } from '@/components/sections/WhyChooseUsSection';
-import { MultiStepLeadWizard } from '@/components/sections/MultiStepLeadWizard';
 import { ReviewsSection } from '@/components/sections/ReviewsSection';
 import { FaqPreview } from '@/components/sections/FaqPreview';
-import { CourierHighlight } from '@/components/sections/CourierHighlight';
+import { LocationSection } from '@/components/sections/LocationSection';
+import { FinalCta } from '@/components/sections/FinalCta';
 
 // Heavy 3D WebGL Explorer dynamic import (Client-only)
 const LaptopExplorerSection = dynamic(
@@ -34,50 +34,45 @@ export function HomePageView() {
       
       <main className="bg-white dark:bg-slate-950 text-slate-900 dark:text-white min-h-screen">
         
-        {/* 1. Hero Section */}
+        {/* 1. Hero (who, what, where + call/WhatsApp CTA) */}
         <HeroSection />
 
-        {/* 2. Trust Statistics */}
+        {/* 2. Trust stats strip */}
         <LazySection>
           <TrustSection />
         </LazySection>
 
-        {/* 3. Services Overview */}
+        {/* 3. Services overview (links to all 6 service hubs) */}
         <LazySection>
           <ServicesSection />
         </LazySection>
 
-        {/* 4. Brands We Repair */}
+        {/* 4. Brands we repair (logo strip — laptop + mobile brands) */}
         <LazySection>
           <BrandLogosGrid />
         </LazySection>
 
-        {/* 5. How It Works */}
+        {/* 5. How it works */}
         <LazySection>
           <ProcessSection />
         </LazySection>
 
-        {/* 6. Diagnostics & Repair Calculator */}
+        {/* 6. Transparent pricing */}
         <LazySection>
           <RepairShowcaseSection />
         </LazySection>
 
-        {/* 7. Why Choose Us */}
+        {/* 7. Why choose us */}
         <LazySection>
           <WhyChooseUsSection />
         </LazySection>
 
-        {/* Interactive 3D Component Explorer */}
+        {/* Interactive 3D Component Explorer (Custom 3D Model preserved) */}
         <LazySection>
           <LaptopExplorerSection />
         </LazySection>
 
-        {/* Lead Wizard */}
-        <LazySection>
-          <MultiStepLeadWizard />
-        </LazySection>
-
-        {/* 8. Customer Reviews */}
+        {/* 8. Customer reviews */}
         <LazySection>
           <ReviewsSection />
         </LazySection>
@@ -87,9 +82,14 @@ export function HomePageView() {
           <FaqPreview />
         </LazySection>
 
-        {/* Courier Highlight */}
+        {/* 10. Location and hours */}
         <LazySection>
-          <CourierHighlight />
+          <LocationSection />
+        </LazySection>
+
+        {/* 11. Final contact CTA */}
+        <LazySection>
+          <FinalCta />
         </LazySection>
         
       </main>

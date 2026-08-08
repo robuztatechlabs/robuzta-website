@@ -79,69 +79,43 @@ export function BrandLogosGrid() {
   ];
 
   return (
-    <section className="relative py-10 sm:py-14 lg:py-16 bg-slate-50/50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
+    <section className="relative py-16 sm:py-24 lg:py-32 bg-slate-50/50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
 
       {/* Ambient Radial Background Glow */}
       <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#0E7C7B]/5 dark:bg-[#0E7C7B]/10 rounded-full blur-[160px]" />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12 lg:space-y-16">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-14 sm:space-y-20 lg:space-y-24">
 
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/20 px-4 py-1.5 text-xs font-black text-[#0E7C7B] dark:text-teal-400 uppercase tracking-widest">
-            <Cpu size={14} className="text-[#0E7C7B] dark:text-teal-400" />
-            <span>OFFICIAL BRAND & HARDWARE SUPPORT</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
-            Major Brands We Inspect & Repair
+        <div className="text-center max-w-2xl mx-auto">
+          <h2 className="text-2xl xs:text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
+            Brands We Service
           </h2>
-
-          <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed font-medium">
-            Certified component-level repair and genuine parts replacement for all leading laptop, smartphone, and gaming PC manufacturers.
-          </p>
         </div>
 
-        {/* Animated Brand Cards Grid with Large Clear Color Logos */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-6">
+        {/* Clean Minimal Brand Cards Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5 sm:gap-8 lg:gap-10">
           {brands.map((b, idx) => (
             <motion.div
               key={b.name}
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.05 }}
-              whileHover={{ y: -6, scale: 1.02 }}
-              className="group relative flex flex-col items-center justify-between p-3.5 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 hover:border-[#0E7C7B] dark:hover:border-teal-400 shadow-md hover:shadow-2xl hover:shadow-[#0E7C7B]/15 transition-all duration-300 cursor-pointer overflow-hidden min-h-[210px] sm:min-h-[230px]"
+              transition={{ duration: 0.3, delay: idx * 0.04 }}
+              whileHover={{ y: -4, scale: 1.02 }}
+              className="group relative flex flex-col items-center justify-center p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 hover:border-[#0E7C7B] dark:hover:border-teal-400 shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden space-y-3"
             >
-              {/* Top Accent Hover Glow Line */}
-              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#0E7C7B] via-teal-500 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity" />
-
-              {/* Hardware Category Badge */}
-              <div className="w-full flex justify-end pt-0.5">
-                <span className="text-[10px] font-black bg-slate-100 dark:bg-slate-800/90 text-[#0E7C7B] dark:text-teal-400 group-hover:bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-2 sm:px-2.5 py-0.5 rounded-full transition-colors truncate max-w-full">
-                  {b.badge}
-                </span>
-              </div>
-
-              {/* High-Visibility Large Color Logo Viewport */}
-              <div className="h-16 sm:h-20 w-full flex items-center justify-center my-1.5 sm:my-3 p-1">
+              <div className="h-14 sm:h-16 w-full flex items-center justify-center p-1">
                 <img
                   src={b.image}
                   alt={`${b.name} Official Logo`}
-                  className="max-h-14 sm:max-h-16 max-w-[115px] sm:max-w-[135px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-110 dark:brightness-125"
+                  className="max-h-12 sm:max-h-14 max-w-[110px] sm:max-w-[130px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105 dark:brightness-125"
                 />
               </div>
 
-              {/* Card Label Info */}
-              <div className="text-center w-full pt-2.5 sm:pt-3 border-t border-slate-100 dark:border-slate-800/80">
-                <span className="text-xs sm:text-sm font-black text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors block truncate">
-                  {b.name}
-                </span>
-                <span className="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400 font-medium block mt-0.5 truncate">
-                  {b.tag}
-                </span>
-              </div>
+              <span className="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors block text-center truncate">
+                {b.name}
+              </span>
             </motion.div>
           ))}
         </div>

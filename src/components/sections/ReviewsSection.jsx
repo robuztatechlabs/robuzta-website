@@ -26,39 +26,34 @@ export function ReviewsSection() {
   const duplicatedReviews = [...reviews, ...reviews];
 
   return (
-    <section id="reviews" className="relative bg-gradient-to-b from-slate-50 via-teal-50/20 to-slate-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-900 py-10 sm:py-14 lg:py-16 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
+    <section id="reviews" className="relative bg-gradient-to-b from-slate-50 via-teal-50/20 to-slate-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-900 py-16 sm:py-24 lg:py-32 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
       
       {/* Background Lighting Accents */}
       <div className="pointer-events-none absolute top-10 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-r from-teal-400/10 via-blue-400/10 to-amber-400/10 rounded-full blur-[140px]" />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12 lg:space-y-16">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-14 sm:space-y-20 lg:space-y-24">
         
         {/* Top Google Maps Trust Header Card */}
         <div className="rounded-3xl bg-white dark:bg-slate-950 border border-slate-200/90 dark:border-slate-800 p-4.5 xs:p-6 sm:p-10 shadow-xl shadow-slate-200/60 dark:shadow-none relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-8 items-center">
             
             {/* Rating Summary */}
-            <div className="lg:col-span-7 space-y-3 sm:space-y-4 text-center lg:text-left">
-
+            <div className="lg:col-span-7 space-y-2 text-center lg:text-left">
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-4">
-                <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-slate-100 tracking-tight">
-                  {googleStats.rating}
+                <h2 className="text-2xl xs:text-3xl sm:text-5xl font-black text-slate-900 dark:text-slate-100 tracking-tight">
+                  Verified 4.9★ Reviews
                 </h2>
-                <div className="space-y-0.5 sm:space-y-1 text-left">
+                <div className="space-y-0.5 text-left">
                   <div className="flex items-center gap-1 text-amber-400">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Star key={i} size={16} className="fill-amber-400 text-amber-400 sm:w-5 sm:h-5" />
                     ))}
                   </div>
-                  <p className="text-xs sm:text-sm font-bold text-slate-600 dark:text-slate-400">
-                    Based on <strong className="text-slate-900 dark:text-slate-100">{googleStats.totalReviews}</strong> 5-Star verified Google reviews in Ahmedabad
-                  </p>
+                  <span className="text-xs font-bold text-slate-500 dark:text-slate-400 block">
+                    {googleStats.totalReviews} Google Reviews
+                  </span>
                 </div>
               </div>
-
-              <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-base leading-relaxed max-w-2xl">
-                Read real feedback from Mac, Laptop, and Smartphone owners across Ahmedabad who experienced our diagnosis-first workbench transparency and zero OTP data safety.
-              </p>
             </div>
 
             {/* Google, Justdial & Sulekha Listing Action Buttons */}
@@ -77,7 +72,7 @@ export function ReviewsSection() {
                 <ExternalLink size={14} className="text-slate-400 group-hover:text-white transition-colors shrink-0" />
               </a>
 
-              <div className="grid grid-cols-2 gap-2 sm:gap-2.5 w-full">
+              <div className="hidden sm:grid grid-cols-2 gap-2 sm:gap-2.5 w-full">
                 <a
                   href="https://www.justdial.com/Ahmedabad/Robuzta-Techlabs-Bopal/079PXX79-XX79-221124120052-T5Z4_BZDET?via=scode"
                   target="_blank"
