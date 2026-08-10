@@ -2,6 +2,7 @@ import { services } from '@/data/services';
 import { locations } from '@/data/locations';
 import { blogs } from '@/data/blogs';
 import { getAllSlugs } from '@/data/laptopRepairData';
+import { getAllMobileSlugs } from '@/data/mobileRepairData';
 
 export default function sitemap() {
   const baseUrl = 'https://robuzta.com';
@@ -10,6 +11,12 @@ export default function sitemap() {
     '',
     '/services',
     '/laptop-repair',
+    '/mobile-repair',
+    '/gaming-desktop/repair',
+    '/gaming-desktop/build',
+    '/data-recovery',
+    '/software-services',
+    '/cleaning-tune-up',
     '/locations',
     '/franchise',
     '/contact',
@@ -39,6 +46,13 @@ export default function sitemap() {
     priority: 0.8
   }));
 
+  const mobileRepairSubRoutes = getAllMobileSlugs().map((slug) => ({
+    url: `${baseUrl}/mobile-repair/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.8
+  }));
+
   const locationRoutes = locations.map((l) => ({
     url: `${baseUrl}/locations/${l.slug}`,
     lastModified: new Date(),
@@ -57,6 +71,7 @@ export default function sitemap() {
     ...staticRoutes,
     ...serviceRoutes,
     ...laptopRepairSubRoutes,
+    ...mobileRepairSubRoutes,
     ...locationRoutes,
     ...blogRoutes
   ];

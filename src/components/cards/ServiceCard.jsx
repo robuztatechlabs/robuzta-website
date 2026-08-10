@@ -6,6 +6,9 @@ import {
   Monitor,
   Flame,
   Wrench,
+  Database,
+  Code,
+  Wind,
   ArrowRight,
   Clock,
   CheckCircle2
@@ -17,7 +20,10 @@ const serviceIcons = {
   'macbook-repair': Cpu,
   'surface-repair': Monitor,
   'gaming-pc-repair': Flame,
-  'desktop-repair': Wrench
+  'desktop-repair': Wrench,
+  'data-recovery': Database,
+  'software-services': Code,
+  'cleaning-tune-up': Wind
 };
 
 const serviceBadges = {
@@ -26,12 +32,30 @@ const serviceBadges = {
   'macbook-repair': 'CHIP-LEVEL',
   'surface-repair': 'SPECIALIST',
   'gaming-pc-repair': 'BENCHMARK LAB',
-  'desktop-repair': 'UPGRADE READY'
+  'desktop-repair': 'UPGRADE READY',
+  'data-recovery': '95% SUCCESS',
+  'software-services': 'GENUINE OS',
+  'cleaning-tune-up': '15°C COOLER'
 };
 
 export function ServiceCard({ service }) {
   const IconComponent = serviceIcons[service.slug] || Wrench;
   const badgeText = serviceBadges[service.slug] || 'EXPRESS';
+
+  const href =
+    service.slug === 'laptop-repair'
+      ? '/laptop-repair/'
+      : service.slug === 'mobile-repair'
+      ? '/mobile-repair/'
+      : service.slug === 'gaming-pc-repair'
+      ? '/gaming-desktop/repair/'
+      : service.slug === 'data-recovery'
+      ? '/data-recovery/'
+      : service.slug === 'software-services'
+      ? '/software-services/'
+      : service.slug === 'cleaning-tune-up'
+      ? '/cleaning-tune-up/'
+      : `/services/${service.slug}`;
 
   return (
     <article className="service-card stagger-item" id={service.slug}>
@@ -56,7 +80,7 @@ export function ServiceCard({ service }) {
 
       <div className="card-footer">
         <span className="card-proof-text">{service.proof}</span>
-        <Link href={`/services/${service.slug}`} className="card-link-btn">
+        <Link href={href} className="card-link-btn">
           <span>View Details</span>
           <ArrowRight size={16} />
         </Link>

@@ -19,7 +19,9 @@ import {
   Lock,
   Zap,
   Cpu,
-  CheckCircle2
+  CheckCircle2,
+  X,
+  ExternalLink
 } from 'lucide-react';
 import Link from 'next/link';
 import { siteConfig } from '@/data/site';
@@ -63,6 +65,7 @@ function useTypingText(phrases, typingSpeed = 70, deletingSpeed = 35, delay = 20
 
 export function HeroSection() {
   const typedText = useTypingText(typingPhrases);
+  const [isLiveModalOpen, setIsLiveModalOpen] = useState(false);
 
   return (
     <section className="relative overflow-hidden bg-white dark:bg-[#070E1A] pt-32 sm:pt-40 lg:pt-48 pb-20 sm:pb-28 lg:pb-36 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
@@ -142,6 +145,26 @@ export function HeroSection() {
           {/* Left Column: Hero Copy & Single Animated Typing Button */}
           <div className="lg:col-span-6 space-y-6 lg:space-y-8 text-center lg:text-left">
             
+            {/* Top Badges: ISO Badge + Watch Repairs Live Badge */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
+              <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-[#0E7C7B]/20 border border-[#0E7C7B]/30 px-4 py-1.5 text-xs font-black uppercase tracking-wider text-[#0E7C7B] dark:text-teal-300">
+                <Sparkles size={14} className="text-[#0E7C7B] dark:text-teal-400" />
+                <span>ISO 9001:2015 REPAIR LAB</span>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setIsLiveModalOpen(true)}
+                className="inline-flex items-center gap-2 rounded-full bg-red-600 hover:bg-red-500 text-white px-3.5 py-1.5 text-xs font-black uppercase tracking-wider shadow-md hover:scale-105 transition-all cursor-pointer"
+              >
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                </span>
+                <span>Watch Live</span>
+              </button>
+            </div>
+
             {/* Main Headline */}
             <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
               Precision Repair for{' '}
@@ -164,7 +187,7 @@ export function HeroSection() {
                 <span className="animate-pulse text-emerald-400 font-bold">|</span>
               </div>
 
-              {/* Single Primary High-Converting Button */}
+              {/* Action Button */}
               <a
                 href={siteConfig.whatsappHref}
                 target="_blank"
@@ -245,6 +268,85 @@ export function HeroSection() {
 
         </div>
       </div>
+
+      {/* YOUTUBE LIVE STREAM MODAL (Triggered by Watch Live badge) */}
+      <AnimatePresence>
+        {isLiveModalOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsLiveModalOpen(false)}
+              className="absolute inset-0 bg-slate-950/85 backdrop-blur-md"
+            />
+
+            {/* Modal Box */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="relative w-full max-w-4xl overflow-hidden rounded-3xl border border-red-500/40 bg-slate-900 shadow-2xl shadow-red-950/50"
+            >
+              {/* Modal Header */}
+              <div className="flex items-center justify-between border-b border-slate-800 bg-slate-950/90 px-5 sm:px-6 py-4">
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2 rounded-full bg-red-950/90 px-3 py-1 border border-red-800/60">
+                    <span className="relative flex h-2.5 w-2.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500"></span>
+                    </span>
+                    <span className="font-mono text-xs font-black text-red-400 tracking-wider">LIVE STREAM</span>
+                  </div>
+                  <h3 className="font-black text-white text-sm sm:text-base hidden sm:block">
+                    Robuzta Techlabs — Micro-Soldering & Hardware Repair Lab
+                  </h3>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => setIsLiveModalOpen(false)}
+                  className="rounded-xl p-2 text-slate-400 hover:bg-slate-800 hover:text-white transition-colors cursor-pointer"
+                >
+                  <X size={20} />
+                </button>
+              </div>
+
+              {/* Video Player Frame */}
+              <div className="relative aspect-video w-full bg-black flex items-center justify-center">
+                <iframe
+                  src="https://www.youtube.com/embed/live_stream?channel=robuztatechlabs"
+                  title="Robuzta YouTube Live Repair Cam"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="h-full w-full border-0"
+                />
+              </div>
+
+              {/* Modal Footer Controls */}
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 bg-slate-950 px-5 sm:px-6 py-4 border-t border-slate-800">
+                <div className="flex items-center gap-2.5 text-xs text-slate-300">
+                  <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="font-medium">Streaming Live from Robuzta South Bopal ESD-Safe Workstation</span>
+                </div>
+
+                <div className="flex items-center gap-3 w-full sm:w-auto">
+                  <a
+                    href="https://www.youtube.com/@robuztatechlabs/live"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 rounded-xl bg-red-600 hover:bg-red-500 px-5 py-2.5 text-xs font-bold text-white transition-colors shadow-md shadow-red-600/20"
+                  >
+                    <ExternalLink size={14} />
+                    <span>Watch on YouTube</span>
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
 
     </section>
   );

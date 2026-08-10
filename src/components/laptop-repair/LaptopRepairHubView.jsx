@@ -147,20 +147,7 @@ export function LaptopRepairHubView() {
 
       <main id="main-content" className="min-h-screen bg-white dark:bg-[#070E1A] text-slate-900 dark:text-white pt-24 sm:pt-28">
         
-        {/* Breadcrumb Navigation */}
-        <div className="bg-slate-50 dark:bg-slate-900/60 border-b border-slate-200 dark:border-slate-800 py-3.5">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-medium text-slate-600 dark:text-slate-400">
-              <Link href="/" className="hover:text-[#0E7C7B] dark:hover:text-teal-400 transition-colors">
-                Home
-              </Link>
-              <ChevronRight size={14} className="text-slate-400" />
-              <span aria-current="page" className="font-extrabold text-slate-900 dark:text-white">
-                Laptop Repair Hub
-              </span>
-            </nav>
-          </div>
-        </div>
+
 
         {/* HERO SECTION */}
         <section className="relative overflow-hidden py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-slate-50/90 via-white to-slate-50/40 dark:from-[#070E1A] dark:via-[#0b1628] dark:to-[#070E1A] border-b border-slate-200 dark:border-slate-800">
