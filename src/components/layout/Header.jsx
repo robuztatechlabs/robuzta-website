@@ -197,10 +197,27 @@ export function Header() {
               <div className="grid grid-cols-2 gap-2">
                 {services.map((srv) => {
                   const IconComp = serviceIcons[srv.slug] || Wrench;
+                  const targetHref =
+                    srv.slug === 'laptop-repair'
+                      ? '/laptop-repair/'
+                      : srv.slug === 'mobile-repair'
+                      ? '/mobile-repair/'
+                      : srv.slug === 'macbook-repair'
+                      ? '/laptop-repair/macbook/'
+                      : srv.slug === 'gaming-pc-repair' || srv.slug === 'gaming-desktop'
+                      ? '/gaming-desktop/repair/'
+                      : srv.slug === 'data-recovery'
+                      ? '/data-recovery/'
+                      : srv.slug === 'software-services'
+                      ? '/software-services/'
+                      : srv.slug === 'cleaning-tune-up'
+                      ? '/cleaning-tune-up/'
+                      : `/services/${srv.slug}`;
+
                   return (
                     <Link
                       key={srv.slug}
-                      href={`/services/${srv.slug}`}
+                      href={targetHref}
                       onClick={() => setMobileMenuOpen(false)}
                       className="flex items-center gap-2 p-2 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 dark:border-slate-800 text-xs font-bold text-slate-900 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800"
                     >

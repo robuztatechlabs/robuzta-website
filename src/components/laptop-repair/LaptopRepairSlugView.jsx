@@ -143,7 +143,7 @@ export function LaptopRepairSlugView({ data }) {
 
       <Header />
 
-      <main id="main-content" className="min-h-screen bg-white dark:bg-[#070E1A] text-slate-900 dark:text-white pt-24 sm:pt-28">
+      <main id="main-content" className="min-h-screen bg-white dark:bg-[#070E1A] text-slate-900 dark:text-white pt-20">
         
 
 

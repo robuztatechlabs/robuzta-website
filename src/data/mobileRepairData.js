@@ -12,7 +12,7 @@ export const MOBILE_BRANDS = [
     tagline: 'Component-level logic board diagnostics, OEM display, battery & camera module replacements for all Apple iPhone models.',
     metaTitle: 'iPhone Repair in Ahmedabad | Screen, Battery & Logic Board | Robuzta',
     metaDescription: 'Expert iPhone repair in Ahmedabad. Certified screen replacement, battery swap, water damage & logic board repair for iPhone 11 to 16 Pro Max.',
-    logoImage: '/assets/brands/iphone.png',
+    logoImage: '/assets/brands/apple-13.svg',
     shortTag: 'iPhone 11, 12, 13, 14, 15 & 16 Pro Max',
     supportedModels: [
       'iPhone 16 / 16 Plus / 16 Pro / 16 Pro Max',
@@ -50,7 +50,7 @@ export const MOBILE_BRANDS = [
     tagline: 'Authorized-grade repairs for Samsung Galaxy S Series, Z Fold/Flip, A Series, and Note devices with genuine AMOLED displays.',
     metaTitle: 'Samsung Mobile Repair in Ahmedabad | Galaxy S, Fold & A Series | Robuzta',
     metaDescription: 'Specialized Samsung Galaxy repair in Ahmedabad. Original Dynamic AMOLED screen replacement, battery swap, charging port & motherboard repair.',
-    logoImage: '/assets/brands/samsung.webp',
+    logoImage: '/assets/brands/samsung-electronics.svg',
     shortTag: 'Galaxy S24, S23, Ultra, Z Fold & Flip',
     supportedModels: [
       'Samsung Galaxy S24 / S24+ / S24 Ultra',
@@ -84,7 +84,7 @@ export const MOBILE_BRANDS = [
     tagline: 'Precision hardware repair for Google Pixel 6, 7, 8, and 9 Series including OLED displays, Tensor PMIC, and camera sensors.',
     metaTitle: 'Google Pixel Phone Repair in Ahmedabad | Pixel 6, 7, 8 & 9 | Robuzta',
     metaDescription: 'Expert Google Pixel repair in Ahmedabad. Screen replacement, battery repair, Tensor chip logic board diagnostics & charging port fix.',
-    logoImage: '/assets/brands/google-pixel.webp',
+    logoImage: '/assets/brands/icons8-google.svg',
     shortTag: 'Pixel 9, 8 Pro, 7a, 6 Pro & Pixel Fold',
     supportedModels: [
       'Google Pixel 9 / 9 Pro / 9 Pro XL / 9 Fold',
@@ -118,7 +118,7 @@ export const MOBILE_BRANDS = [
     tagline: 'Specialized repairs for OnePlus 12, 11, 10 Pro, Nord Series, and Open including green line screen fixes and Warp Charging ports.',
     metaTitle: 'OnePlus Mobile Repair in Ahmedabad | Screen, Battery & Board | Robuzta',
     metaDescription: 'Professional OnePlus phone repair in Ahmedabad. Green line screen fix, SuperVOOC charging port, battery swap & motherboard BGA repair.',
-    logoImage: '/assets/brands/oneplus.svg',
+    logoImage: '/assets/brands/oneplus-5.svg',
     shortTag: 'OnePlus 12, 11, 10 Pro, Nord & Open',
     supportedModels: [
       'OnePlus 12 / 12R / 11 / 11R Series',
@@ -152,7 +152,7 @@ export const MOBILE_BRANDS = [
     tagline: 'Fast and reliable repair solutions for OPPO Reno, Find X, and A Series smartphones.',
     metaTitle: 'OPPO Mobile Repair in Ahmedabad | Reno & Find Series | Robuzta',
     metaDescription: 'Expert OPPO mobile repair in Ahmedabad. Display screen replacement, battery swap, camera glass & charging port repair.',
-    logoImage: '/assets/brands/oppo.svg',
+    logoImage: '/assets/brands/oppo-seeklogo.svg',
     shortTag: 'Reno 12, Find X6, F & A Series',
     supportedModels: [
       'OPPO Reno 12 Pro / Reno 11 / Reno 10 Pro',
@@ -181,7 +181,7 @@ export const MOBILE_BRANDS = [
     tagline: 'Comprehensive hardware repair for Vivo X Series, V Series, and Y Series camera smartphones.',
     metaTitle: 'Vivo Phone Repair in Ahmedabad | V & X Series Repair | Robuzta',
     metaDescription: 'Certified Vivo mobile repair in Ahmedabad. Curved AMOLED display, FlashCharge battery, ZEISS camera lens & logic board fix.',
-    logoImage: '/assets/brands/vivo.svg',
+    logoImage: '/assets/brands/vivo-2.svg',
     shortTag: 'Vivo X100 Pro, V30, V29 & Y Series',
     supportedModels: [
       'Vivo X100 Pro / X90 Pro / X80 Series',
@@ -210,7 +210,7 @@ export const MOBILE_BRANDS = [
     tagline: 'Affordable OEM repair for Realme GT, Number Series, and Narzo smartphones.',
     metaTitle: 'Realme Mobile Repair in Ahmedabad | GT & Narzo Series | Robuzta',
     metaDescription: 'Fast Realme phone repair in Ahmedabad. Screen glass replacement, battery swap, speaker fix & motherboard short repair.',
-    logoImage: '/assets/brands/realme.svg',
+    logoImage: '/assets/brands/realme-seeklogo.svg',
     shortTag: 'Realme GT 6, 12 Pro+, Narzo 70',
     supportedModels: [
       'Realme GT 6 / GT 5 Pro / GT Neo Series',
@@ -239,7 +239,7 @@ export const MOBILE_BRANDS = [
     tagline: 'Expert repairs for Motorola Edge Series, Razr Foldable, and Moto G Series smartphones.',
     metaTitle: 'Motorola Mobile Repair in Ahmedabad | Moto Edge & Razr | Robuzta',
     metaDescription: 'Specialized Motorola repair in Ahmedabad for Moto Edge, Razr & Moto G series. pOLED screen, battery & charging port repair.',
-    logoImage: '/assets/brands/motorola.svg',
+    logoImage: '/assets/brands/motorola-seeklogo.svg',
     shortTag: 'Moto Edge 50, Razr 50 Ultra, Moto G',
     supportedModels: [
       'Motorola Razr 50 Ultra / Razr 40',
@@ -297,7 +297,7 @@ export const MOBILE_BRANDS = [
     tagline: 'High-performance repairs for iQOO 12, 11, Neo 9 Pro, and Z Series gaming smartphones.',
     metaTitle: 'iQOO Mobile Repair in Ahmedabad | iQOO 12, Neo & Z Series | Robuzta',
     metaDescription: 'Specialized iQOO gaming phone repair in Ahmedabad. 144Hz AMOLED screen, Snapdragon GPU BGA repair, FlashCharge & battery swap.',
-    logoImage: '/assets/brands/iqoo.svg',
+    logoImage: '/assets/brands/iqoo-seeklogo.svg',
     shortTag: 'iQOO 12, Neo 9 Pro, Z9 & Z7',
     supportedModels: [
       'iQOO 12 / 11 / 10 Pro Flagship Gaming',

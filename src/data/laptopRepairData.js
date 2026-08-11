@@ -12,7 +12,7 @@ export const LAPTOP_BRANDS = [
     tagline: 'Component-level logic board diagnostics, OEM display, battery & keyboard replacement for Inspiron, XPS, Vostro, and Alienware series.',
     metaTitle: 'Dell Laptop Repair in Ahmedabad | Robuzta Techlabs',
     metaDescription: 'Expert Dell laptop repair in Ahmedabad. Certified component-level diagnostics for XPS, Inspiron, Vostro & Alienware. Genuine parts & warranty.',
-    logoImage: '/assets/brands/dell.webp',
+    logoImage: '/assets/brands/dell-2.svg',
     shortTag: 'XPS, Inspiron, Vostro & Alienware',
     supportedModels: ['Dell XPS 13 / 15 / 17', 'Dell Inspiron 3000 / 5000 / 7000', 'Dell Vostro Series', 'Dell Latitude Corporate', 'Dell Alienware & G-Series'],
     brandHighlights: [
@@ -44,7 +44,7 @@ export const LAPTOP_BRANDS = [
     tagline: 'Specialized hardware repair for HP Pavilion, Spectre, Envy, EliteBook, ProBook, and OMEN gaming laptops.',
     metaTitle: 'HP Laptop Repair in Ahmedabad | Robuzta Techlabs',
     metaDescription: 'Professional HP laptop repair in Ahmedabad. Fast screen, battery, hinge & logic board repair for Spectre, Pavilion, Envy & OMEN laptops.',
-    logoImage: '/assets/brands/hp.webp',
+    logoImage: '/assets/brands/hp-hewlett-packard.svg',
     shortTag: 'Spectre, Pavilion, Envy & OMEN',
     supportedModels: ['HP Pavilion 14 / 15 / x360', 'HP Spectre x360 Series', 'HP Envy 13 / 15 / 16', 'HP OMEN & Victus Gaming', 'HP EliteBook & ProBook'],
     brandHighlights: [
@@ -72,7 +72,7 @@ export const LAPTOP_BRANDS = [
     tagline: 'Reliable repair solutions for Acer Nitro 5, Predator Helios, Swift, Aspire, and Spin laptops.',
     metaTitle: 'Acer Laptop Repair in Ahmedabad | Robuzta Techlabs',
     metaDescription: 'Expert Acer laptop repair in Ahmedabad for Nitro 5, Predator, Swift & Aspire models. Display, charging port, thermal & logic board support.',
-    logoImage: '/assets/brands/acer.webp',
+    logoImage: '/assets/brands/acer-2011.svg',
     shortTag: 'Nitro, Predator, Swift & Aspire',
     supportedModels: ['Acer Nitro 5 / Nitro 16', 'Acer Predator Helios 300 / 16', 'Acer Swift 3 / Swift 5 / Go', 'Acer Aspire 3 / 5 / 7', 'Acer Spin Convertible Series'],
     brandHighlights: [
@@ -100,7 +100,7 @@ export const LAPTOP_BRANDS = [
     tagline: 'Authorized-grade hardware repair for ASUS ROG Strix, TUF Gaming, ZenBook, Vivobook, and ProArt laptops.',
     metaTitle: 'ASUS Laptop Repair in Ahmedabad | Robuzta Techlabs',
     metaDescription: 'Fast ASUS laptop repair in Ahmedabad for ROG Strix, TUF Gaming, ZenBook & Vivobook models. Motherboard BGA, display & liquid spill repair.',
-    logoImage: '/assets/brands/asus.png',
+    logoImage: '/assets/brands/asus-rog-1-1.svg',
     shortTag: 'ROG Strix, TUF & ZenBook',
     supportedModels: ['ASUS ROG Strix SCAR / G15', 'ASUS TUF Gaming F15 / A15', 'ASUS ZenBook Duo / Flip', 'ASUS Vivobook Pro / S Series', 'ASUS ProArt Studiobook'],
     brandHighlights: [
@@ -128,7 +128,7 @@ export const LAPTOP_BRANDS = [
     tagline: 'High-performance diagnostic and repair lab for MSI Katana, Pulse, Stealth, Raider, and Modern series laptops.',
     metaTitle: 'MSI Laptop Repair in Ahmedabad | Robuzta Techlabs',
     metaDescription: 'Specialized MSI laptop repair in Ahmedabad. Thermal overhaul, GPU repair, screen replacement & hinge rebuilding for MSI Katana, Raider & Stealth.',
-    logoImage: '',
+    logoImage: '/assets/brands/msi-gaming.svg',
     shortTag: 'Katana, Raider, Stealth & Pulse',
     supportedModels: ['MSI Katana GF66 / 15', 'MSI Pulse GL66 / 15', 'MSI Stealth 15 / 17', 'MSI Raider GE66 / 76', 'MSI Modern 14 / 15'],
     brandHighlights: [
@@ -156,7 +156,7 @@ export const LAPTOP_BRANDS = [
     tagline: 'Delicate micro-repair lab for Microsoft Surface Pro, Surface Laptop, Surface Book, and Surface Laptop Studio.',
     metaTitle: 'Microsoft Surface Repair in Ahmedabad | Robuzta Techlabs',
     metaDescription: 'Precision Microsoft Surface repair in Ahmedabad. Display glass, battery, charging port & logic board repair for Surface Pro, Laptop & Book.',
-    logoImage: '/assets/brands/microsoft.webp',
+    logoImage: '/assets/brands/microsoft-centered.svg',
     shortTag: 'Surface Pro, Laptop & Studio',
     supportedModels: ['Surface Pro 7 / 8 / 9 / X', 'Surface Laptop 3 / 4 / 5 / Go', 'Surface Book 2 / 3', 'Surface Laptop Studio'],
     brandHighlights: [
@@ -184,7 +184,7 @@ export const LAPTOP_BRANDS = [
     tagline: 'Apple-grade logic board micro-soldering, retina display replacement, and battery service for MacBook Air & MacBook Pro (M1, M2, M3 & Intel).',
     metaTitle: 'MacBook Repair in Ahmedabad | Robuzta Techlabs',
     metaDescription: 'Premium MacBook repair in Ahmedabad for MacBook Air & Pro (M1/M2/M3/Intel). Logic board chip repair, Retina display, battery & liquid damage.',
-    logoImage: '/assets/brands/apples.webp',
+    logoImage: '/assets/brands/apple-13.svg',
     shortTag: 'MacBook Air & Pro (M1/M2/M3/Intel)',
     supportedModels: ['MacBook Air M1 / M2 / M3 (13" & 15")', 'MacBook Pro 13" / 14" / 16" (M1/M2/M3 Pro & Max)', 'Intel MacBook Air & Pro (2015-2020)'],
     brandHighlights: [

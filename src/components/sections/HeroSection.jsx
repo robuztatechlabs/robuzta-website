@@ -41,7 +41,7 @@ function useTypingText(phrases, typingSpeed = 70, deletingSpeed = 35, delay = 20
 
   useEffect(() => {
     const currentPhrase = phrases[phraseIndex % phrases.length];
-    
+
     const timeout = setTimeout(() => {
       if (!isDeleting) {
         setText(currentPhrase.substring(0, text.length + 1));
@@ -69,16 +69,16 @@ export function HeroSection() {
 
   return (
     <section className="relative overflow-hidden bg-white dark:bg-[#070E1A] pt-32 sm:pt-40 lg:pt-48 pb-20 sm:pb-28 lg:pb-36 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
-      
+
       {/* Soft Ambient Gradient Overlay */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-slate-50/70 via-teal-50/20 to-white dark:from-[#070E1A] dark:via-[#0a1626] dark:to-[#070E1A]" />
 
       {/* Background Ambient Glows */}
       <div className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#0E7C7B]/10 dark:bg-[#0E7C7B]/20 rounded-full blur-3xl will-change-transform" />
       <div className="pointer-events-none absolute top-1/3 right-10 w-[300px] h-[300px] bg-teal-500/10 rounded-full blur-3xl will-change-transform" />
-      
+
       {/* Background Grid Pattern */}
-      <div 
+      <div
         className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f080_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f080_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1e293b80_1px,transparent_1px),linear-gradient(to_bottom,#1e293b80_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none"
       />
 
@@ -141,10 +141,10 @@ export function HeroSection() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-          
+
           {/* Left Column: Hero Copy & Single Animated Typing Button */}
           <div className="lg:col-span-6 space-y-6 lg:space-y-8 text-center lg:text-left">
-            
+
             {/* Top Badges: ISO Badge + Watch Repairs Live Badge */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
               <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-[#0E7C7B]/20 border border-[#0E7C7B]/30 px-4 py-1.5 text-xs font-black uppercase tracking-wider text-[#0E7C7B] dark:text-teal-300">
@@ -179,7 +179,7 @@ export function HeroSection() {
 
             {/* Interactive Typing Box & Single Primary CTA Button */}
             <div className="space-y-3.5 pt-2 flex flex-col items-center lg:items-start">
-              
+
               {/* Typing Keyboard Indicator */}
               <div className="inline-flex items-center gap-2 rounded-xl bg-slate-900 dark:bg-slate-900 border border-slate-700/80 px-4 py-2.5 text-xs sm:text-sm font-mono text-emerald-400 shadow-md">
                 <span className="text-slate-400 font-sans font-medium">Type issue:</span>
@@ -206,7 +206,7 @@ export function HeroSection() {
           {/* Right Column: One Visual Hero Feature Box */}
           <div className="lg:col-span-6 relative">
             <div className="relative rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-900/95 dark:bg-slate-950/95 backdrop-blur-xl p-5 sm:p-8 shadow-2xl space-y-6 overflow-hidden">
-              
+
               {/* Visual Header */}
               <div className="flex items-center justify-between border-b border-slate-800 pb-4">
                 <div className="flex items-center gap-2">
@@ -224,7 +224,7 @@ export function HeroSection() {
               <div className="relative py-6 px-4 rounded-2xl bg-slate-800/60 border border-slate-700/60 overflow-hidden flex flex-col items-center justify-center text-center space-y-3">
                 {/* Animated Circuit Radial Rings */}
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(14,124,123,0.25)_0,transparent_70%)] pointer-events-none" />
-                
+
                 <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#0E7C7B] to-teal-400 text-white shadow-xl shadow-[#0E7C7B]/30 ring-4 ring-[#0E7C7B]/20">
                   <Cpu size={32} />
                 </div>

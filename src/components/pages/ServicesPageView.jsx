@@ -97,7 +97,17 @@ export function ServicesPageView() {
         <section className="py-20 border-b border-slate-200 dark:border-slate-800">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredServices.map((service) => (
+              {filteredServices.map((service) => {
+                const dedicatedUrls = {
+                  'laptop-repair': '/laptop-repair/',
+                  'mobile-repair': '/mobile-repair/',
+                  'gaming-pc-repair': '/gaming-desktop/repair/',
+                  'data-recovery': '/data-recovery/',
+                  'software-services': '/software-services/',
+                  'cleaning-tune-up': '/cleaning-tune-up/'
+                };
+                const serviceHref = dedicatedUrls[service.slug] || `/services/${service.slug}`;
+                return (
                 <div
                   key={service.slug}
                   className="rounded-3xl bg-slate-50/80 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-7 shadow-xl hover:border-[#0E7C7B]/60 hover:bg-white dark:hover:bg-slate-850 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between space-y-6 group relative overflow-hidden"
@@ -152,7 +162,7 @@ export function ServicesPageView() {
                   {/* Card Bottom CTA Actions */}
                   <div className="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-3">
                     <Link
-                      href={`/services/${service.slug}`}
+                      href={serviceHref}
                       className="flex items-center gap-1.5 text-xs font-black text-[#0E7C7B] hover:text-teal-600 group-hover:translate-x-1 transition-transform"
                     >
                       <span>Explore Capabilities</span>
@@ -167,7 +177,8 @@ export function ServicesPageView() {
                     </Link>
                   </div>
                 </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
@@ -176,9 +187,6 @@ export function ServicesPageView() {
         <section className="py-20 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12">
             <div className="text-center max-w-3xl mx-auto space-y-4">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-4 py-1.5 rounded-full">
-                ROBUZTA LAB ADVANTAGE
-              </span>
               <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">
                 Why Customers Trust Robuzta Techlabs
               </h2>

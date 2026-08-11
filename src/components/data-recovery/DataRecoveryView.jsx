@@ -231,31 +231,7 @@ export function DataRecoveryView() {
           </motion.div>
         </section>
 
-        {/* Section 1: Storage Brands Supported Bar */}
-        <section className="py-8 sm:py-12 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-6">
-            <div className="text-center space-y-1">
-              <span className="text-[11px] font-black uppercase tracking-widest text-slate-400">
-                SUPPORTED STORAGE MANUFACTURERS & PLATFORMS
-              </span>
-            </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 items-center">
-              {RECOVERY_BRANDS.map((brand, i) => (
-                <div
-                  key={i}
-                  className="h-16 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-2.5 flex items-center justify-center shadow-sm hover:border-[#0E7C7B] transition-all"
-                >
-                  <img
-                    src={brand.logo}
-                    alt={`${brand.name} logo`}
-                    className="max-h-9 w-auto max-w-[120px] object-contain dark:brightness-110"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Section 2: 4 Service Coverage Cards */}
         <section className="py-18 sm:py-26 lg:py-32 border-b border-slate-200 dark:border-slate-800">
