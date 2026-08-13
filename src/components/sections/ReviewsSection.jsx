@@ -157,28 +157,6 @@ export function ReviewsSection() {
 
         </div>
 
-        {/* Bottom Trust Feature Badges */}
-        <div className="pt-4 border-t border-slate-200/80 dark:border-slate-800 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-          <div className="p-4 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/60 shadow-2xs flex items-center justify-center gap-2 text-xs font-extrabold text-slate-800 dark:text-slate-200">
-            <ShieldCheck size={16} className="text-teal-600 shrink-0" />
-            <span>Zero-OTP Data Protection</span>
-          </div>
-
-          <div className="p-4 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/60 shadow-2xs flex items-center justify-center gap-2 text-xs font-extrabold text-slate-800 dark:text-slate-200">
-            <CheckCircle2 size={16} className="text-emerald-600 shrink-0" />
-            <span>Serial-Verified Genuine Parts</span>
-          </div>
-
-          <div className="p-4 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/60 shadow-2xs flex items-center justify-center gap-2 text-xs font-extrabold text-slate-800 dark:text-slate-200">
-            <GoogleIcon size={16} className="shrink-0" />
-            <span>100% Verified Google Reviews</span>
-          </div>
-
-          <div className="p-4 rounded-2xl bg-white/80 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/60 shadow-2xs flex items-center justify-center gap-2 text-xs font-extrabold text-slate-800 dark:text-slate-200">
-            <ShieldCheck size={16} className="text-amber-500 shrink-0" />
-            <span>180-Day Written Warranty</span>
-          </div>
-        </div>
 
       </div>
     </section>

@@ -202,55 +202,6 @@ export function ContactPageView() {
           </div>
         </section>
 
-        {/* 4-Step Repair Workflow */}
-        <section className="py-14 sm:py-20 lg:py-24 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
-            <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-30px' }}
-              transition={SMOOTH_TRANSITION}
-              className="text-center max-w-2xl mx-auto space-y-3"
-            >
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400">
-                SIMPLE PROCESS
-              </span>
-              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
-                How Our Repair Service Works
-              </h2>
-            </motion.div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {[
-                { num: '01', title: 'Book Online', desc: 'Fill out the quote form or WhatsApp us your issue details.' },
-                { num: '02', title: 'Free Pickup', desc: 'Free doorstep pickup in Ahmedabad or insured courier across India.' },
-                { num: '03', title: 'Live Diagnostics', desc: 'Fast hardware inspection and transparent pricing approval.' },
-                { num: '04', title: 'Fixed & Delivered', desc: 'Device stress-tested and returned with up to 180 days warranty.', isGreen: true }
-              ].map((step, idx) => (
-                <motion.div
-                  key={step.num}
-                  initial={{ opacity: 0, y: 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-20px' }}
-                  transition={{ ...SMOOTH_TRANSITION, delay: idx * 0.12 }}
-                  whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                  className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 sm:p-6 space-y-3 shadow-sm transition-all"
-                >
-                  <div className={`flex h-9 w-9 items-center justify-center rounded-xl text-white font-black text-xs ${step.isGreen ? 'bg-emerald-600' : 'bg-[#0E7C7B]'}`}>
-                    {step.num}
-                  </div>
-                  <h3 className="text-base font-black text-slate-900 dark:text-white">{step.title}</h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
-                    {step.desc}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Multi-Platform Verified Ratings */}
-        <PlatformTrustSection />
 
         {/* Contact FAQs Section */}
         <section className="py-14 sm:py-20 lg:py-24 border-b border-slate-200 dark:border-slate-800">

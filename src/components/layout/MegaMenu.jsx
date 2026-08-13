@@ -31,19 +31,10 @@ const serviceIcons = {
 export function MegaMenu({ onClose }) {
   return (
     <div
-      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-80 sm:w-[540px] rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700 dark:border-slate-800 p-5 shadow-2xl z-50 transition-all duration-200 animate-in fade-in slide-in-from-top-2"
+      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-80 sm:w-[540px] rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700 dark:border-slate-800 p-3 sm:p-4 shadow-2xl z-50 transition-all duration-200 animate-in fade-in slide-in-from-top-2"
       role="menu"
     >
-      <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3 mb-3">
-        <span className="text-xs font-black uppercase tracking-wider text-slate-400 dark:text-slate-500">
-          Precision Hardware & Software Services
-        </span>
-        <span className="text-[10px] font-bold text-[#0E7C7B] dark:text-teal-400 bg-[#0E7C7B]/10 dark:bg-teal-400/10 px-2.5 py-0.5 rounded-full border border-[#0E7C7B]/20 dark:border-teal-400/20">
-          Zero-OTP Protected
-        </span>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-[380px] overflow-y-auto pr-1">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-[380px] overflow-y-auto pr-1 custom-scrollbar">
         {services.map((srv) => {
           const IconComponent = serviceIcons[srv.slug] || Wrench;
           const href =
@@ -85,54 +76,6 @@ export function MegaMenu({ onClose }) {
             </Link>
           );
         })}
-      </div>
-
-      {/* Brand Shortcuts Bar */}
-      <div className="mt-3 pt-2.5 border-t border-slate-100 dark:border-slate-800">
-        <div className="flex items-center justify-between text-[11px] font-bold text-slate-500 dark:text-slate-400 mb-1.5">
-          <span>Repair By Brand:</span>
-          <Link
-            href="/laptop-repair/"
-            onClick={onClose}
-            className="text-[#0E7C7B] dark:text-teal-400 hover:underline"
-          >
-            All Brands →
-          </Link>
-        </div>
-        <div className="flex flex-wrap gap-1">
-          {[
-            { name: 'Dell', slug: 'dell' },
-            { name: 'HP', slug: 'hp' },
-            { name: 'MacBook', slug: 'macbook' },
-            { name: 'ASUS', slug: 'asus' },
-            { name: 'Acer', slug: 'acer' },
-            { name: 'MSI', slug: 'msi' },
-            { name: 'Surface', slug: 'surface' }
-          ].map((brand) => (
-            <Link
-              key={brand.slug}
-              href={`/laptop-repair/${brand.slug}/`}
-              onClick={onClose}
-              className="text-[10px] px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-[#0E7C7B] hover:text-white dark:hover:bg-teal-500 dark:hover:text-white transition-colors font-medium"
-            >
-              {brand.name}
-            </Link>
-          ))}
-        </div>
-      </div>
-
-      <div className="mt-3 pt-2 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-        <span className="text-[11px] font-semibold text-slate-400 dark:text-slate-500">
-          Transparent Workbench Diagnosis
-        </span>
-        <Link
-          href="/laptop-repair/"
-          onClick={onClose}
-          className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#0E7C7B] dark:text-teal-400 hover:text-[#0a5c5b] dark:hover:text-teal-300 transition-colors"
-        >
-          <span>Laptop Repair Hub</span>
-          <ArrowRight size={14} />
-        </Link>
       </div>
     </div>
   );

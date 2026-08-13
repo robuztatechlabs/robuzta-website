@@ -130,27 +130,7 @@ export function Header() {
         {/* Header Action Buttons */}
         <div className="flex items-center gap-2.5">
 
-          {/* Call Hotline Icon Button */}
-          <a
-            href={siteConfig.phoneHref}
-            className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-all shadow-sm hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-900 dark:text-slate-100 dark:text-white"
-            aria-label="Call Robuzta Techlabs"
-            title="Call Hotline"
-          >
-            <Phone size={17} />
-          </a>
 
-          {/* Official WhatsApp Logo Icon Button */}
-          <a
-            href={siteConfig.whatsappHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-emerald-700 dark:border-emerald-600 transition-all shadow-md hover:scale-105 bg-[#16a34a] text-white"
-            aria-label="WhatsApp Robuzta Techlabs"
-            title="WhatsApp Support"
-          >
-            <WhatsappIcon size={20} />
-          </a>
 
           {/* Primary CTA Button: Book Diagnosis (Desktop & Tablet) */}
           <button
@@ -230,15 +210,7 @@ export function Header() {
             </div>
 
             <div className="pt-2 flex flex-wrap items-center gap-3">
-              <a
-                href={siteConfig.whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-11 w-11 items-center justify-center rounded-xl text-white font-extrabold text-sm shadow-md shrink-0 bg-[#16a34a]"
-                title="WhatsApp Support"
-              >
-                <WhatsappIcon size={22} />
-              </a>
+
               <Link
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}

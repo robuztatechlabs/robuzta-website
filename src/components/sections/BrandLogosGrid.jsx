@@ -103,61 +103,33 @@ export function BrandLogosGrid() {
           </h2>
         </div>
 
-        {/* Mobile Single Horizontal Floating Logo Strip (Phone Screen Only) */}
-        <div className="sm:hidden relative w-full overflow-hidden py-4 border-y border-slate-200 dark:border-slate-800">
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-slate-50 dark:from-slate-950 to-transparent z-10" />
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-slate-50 dark:from-slate-950 to-transparent z-10" />
+        {/* Continuous Horizontal Floating Logo Strip (All Screens) */}
+        <div className="relative w-full overflow-hidden py-6 sm:py-8 border-y border-slate-200 dark:border-slate-800">
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-slate-50 dark:from-slate-950 to-transparent z-10" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-slate-50 dark:from-slate-950 to-transparent z-10" />
 
           <motion.div
-            animate={{ x: ['0%', '-50%'] }}
+            animate={{ x: ['0%', '-33.333333%'] }}
             transition={{
-              duration: 18,
+              duration: 25,
               repeat: Infinity,
               ease: 'linear'
             }}
-            className="flex items-center gap-8 w-max px-2"
+            className="flex items-center gap-12 sm:gap-20 w-max px-4"
           >
-            {[...brands, ...brands].map((b, idx) => (
+            {[...brands, ...brands, ...brands].map((b, idx) => (
               <div
                 key={`${b.name}-${idx}`}
-                className="flex items-center justify-center shrink-0 w-20 h-10"
+                className="flex items-center justify-center shrink-0 w-28 sm:w-40 h-16 sm:h-20 opacity-70 hover:opacity-100 transition-opacity duration-300 cursor-pointer group px-4"
               >
                 <img
                   src={b.image}
                   alt={`${b.name} Official Logo`}
-                  className="w-full h-full object-contain dark:brightness-125"
-                  style={{ transform: `scale(${b.mobileScale ?? 1})` }}
+                  className="max-h-8 sm:max-h-10 w-auto object-contain dark:brightness-125 group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
             ))}
           </motion.div>
-        </div>
-
-        {/* Desktop & Tablet Brand Cards Grid */}
-        <div className="hidden sm:grid sm:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8">
-          {brands.map((b, idx) => (
-            <motion.div
-              key={b.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: idx * 0.04 }}
-              whileHover={{ y: -4, scale: 1.02 }}
-              className="group relative flex flex-col items-center justify-center p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 hover:border-[#0E7C7B] dark:hover:border-teal-400 shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden space-y-3"
-            >
-              <div className="h-20 sm:h-24 w-full flex items-center justify-center p-1">
-                <img
-                  src={b.image}
-                  alt={`${b.name} Official Logo`}
-                  className={`${b.logoStyle} object-contain transition-transform duration-300 group-hover:scale-105 dark:brightness-125`}
-                />
-              </div>
-
-              <span className="text-xs sm:text-base font-black text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors block text-center truncate">
-                {b.name}
-              </span>
-            </motion.div>
-          ))}
         </div>
 
       </div>

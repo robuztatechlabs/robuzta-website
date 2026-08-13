@@ -19,7 +19,14 @@ import {
   Lock,
   Zap,
   Cpu,
-  CheckCircle2
+  CheckCircle2,
+  Layers,
+  ZoomIn,
+  ZoomOut,
+  RotateCcw,
+  MousePointerClick,
+  X,
+  ExternalLink
 } from 'lucide-react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
@@ -79,9 +86,32 @@ function useTypingText(phrases, typingSpeed = 70, deletingSpeed = 35, delay = 20
 
 export function HeroSection() {
   const typedText = useTypingText(typingPhrases);
+  const [selectedComponent, setSelectedComponent] = useState(null);
+  const [isExploded, setIsExploded] = useState(true);
+  const [zoomAction, setZoomAction] = useState(null);
+  const resetFnRef = useRef(null);
+  const [isLiveModalOpen, setIsLiveModalOpen] = useState(false);
+
+  const handleComponentSelect = useCallback((id) => {
+    setSelectedComponent(id);
+  }, []);
+
+  const handleResetView = useCallback((resetFn) => {
+    resetFnRef.current = resetFn;
+  }, []);
+
+  const handleReset = useCallback(() => {
+    setSelectedComponent(null);
+    if (resetFnRef.current) resetFnRef.current();
+  }, []);
+
+  const triggerZoom = (direction) => {
+    setZoomAction(direction);
+    setTimeout(() => setZoomAction(null), 100);
+  };
 
   return (
-    <section className="relative overflow-hidden bg-white dark:bg-[#070E1A] pt-32 sm:pt-40 lg:pt-48 pb-20 sm:pb-28 lg:pb-36 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+    <section className="relative overflow-hidden bg-white dark:bg-[#070E1A] pt-32 sm:pt-40 lg:pt-48 pb-10 sm:pb-16 lg:pb-20 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
       
       {/* Soft Ambient Gradient Overlay */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-slate-50/70 via-teal-50/20 to-white dark:from-[#070E1A] dark:via-[#0a1626] dark:to-[#070E1A]" />
@@ -210,56 +240,44 @@ export function HeroSection() {
                 </span>
               </div>
 
-              {/* Central Graphic Visual */}
-              <div className="relative py-6 px-4 rounded-2xl bg-slate-800/60 border border-slate-700/60 overflow-hidden flex flex-col items-center justify-center text-center space-y-3">
-                {/* Animated Circuit Radial Rings */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(14,124,123,0.25)_0,transparent_70%)] pointer-events-none" />
-                
-                <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#0E7C7B] to-teal-400 text-white shadow-xl shadow-[#0E7C7B]/30 ring-4 ring-[#0E7C7B]/20">
-                  <Cpu size={32} />
-                </div>
 
-                <div className="relative z-10 space-y-1">
-                  <h4 className="text-base font-black text-white">Chip-Level Diagnostic Suite</h4>
-                  <p className="text-xs text-slate-400 font-medium">Bopal & Tragad Micro-Soldering Workbenches</p>
-                </div>
-              </div>
 
-              <LaptopExplorer
-                onComponentSelect={handleComponentSelect}
-                selectedComponent={selectedComponent}
-                onResetView={handleResetView}
-                isExploded={isExploded}
-                zoomAction={zoomAction}
-              />
+              {/* 3D Explorer Viewport */}
+              <div className="relative w-full h-[250px] sm:h-[350px] mt-4 rounded-xl sm:rounded-2xl overflow-hidden bg-slate-950 border border-slate-700/50 shadow-inner">
+                <LaptopExplorer
+                  onComponentSelect={handleComponentSelect}
+                  selectedComponent={selectedComponent}
+                  onResetView={handleResetView}
+                  isExploded={isExploded}
+                  zoomAction={zoomAction}
+                />
 
-              {/* Interaction Hint Badge */}
-              {!selectedComponent && (
-                <div className="absolute bottom-4 left-0 right-0 flex items-center justify-center gap-4 pointer-events-none px-4 z-20">
-                  <div className="flex items-center gap-2 text-xs font-bold text-slate-700 dark:text-slate-300 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-full border border-slate-200 dark:border-slate-800 shadow-xl">
-                    <MousePointerClick size={14} className="text-[#0E7C7B] dark:text-teal-400 animate-bounce" />
-                    <span>Click any IC to inspect details</span>
+                {/* Interaction Hint Badge */}
+                {!selectedComponent && (
+                  <div className="absolute bottom-3 left-0 right-0 flex items-center justify-center gap-4 pointer-events-none px-4 z-20">
+                    <div className="flex items-center gap-2 text-[10px] sm:text-xs font-bold text-slate-700 dark:text-slate-300 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-slate-200 dark:border-slate-800 shadow-xl">
+                      <MousePointerClick size={14} className="text-[#0E7C7B] dark:text-teal-400 animate-bounce" />
+                      <span>Click any IC to inspect details</span>
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
 
-              {/* Overlay Button that appears when a component is selected */}
-              {selectedComponent && (
-                <div className="absolute bottom-6 left-0 right-0 flex items-center justify-center pointer-events-none z-40 px-4">
-                  <a
-                    href={siteConfig.whatsappHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="pointer-events-auto flex flex-col items-center gap-1.5 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white font-bold py-3 px-8 rounded-2xl shadow-2xl shadow-teal-500/40 transition-transform hover:scale-105 active:scale-95 text-center border border-teal-400/30"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <span className="flex items-center gap-2 text-base sm:text-lg">
-                      <WhatsappIcon size={22} className="text-white" />
-                      Book Repair For This Part
-                    </span>
-                  </a>
-                </div>
-              )}
+                {/* Overlay Button that appears when a component is selected */}
+                {selectedComponent && (
+                  <div className="absolute bottom-4 left-0 right-0 flex items-center justify-center pointer-events-none z-40 px-4">
+                    <a
+                      href={siteConfig.whatsappHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="pointer-events-auto flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white font-bold py-2 sm:py-2.5 px-4 sm:px-6 rounded-xl shadow-xl transition-transform hover:scale-105 active:scale-95 text-center border border-teal-400/30"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <WhatsappIcon size={18} className="text-white" />
+                      <span className="text-sm sm:text-base">Book Repair For This Part</span>
+                    </a>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
 
