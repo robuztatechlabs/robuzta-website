@@ -145,22 +145,9 @@ export function LaptopRepairHubView() {
 
       <Header />
 
-      <main id="main-content" className="min-h-screen bg-white dark:bg-[#070E1A] text-slate-900 dark:text-white pt-24 sm:pt-28">
+      <main id="main-content" className="min-h-screen bg-white dark:bg-[#070E1A] text-slate-900 dark:text-white pt-20">
         
-        {/* Breadcrumb Navigation */}
-        <div className="bg-slate-50 dark:bg-slate-900/60 border-b border-slate-200 dark:border-slate-800 py-3.5">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-medium text-slate-600 dark:text-slate-400">
-              <Link href="/" className="hover:text-[#0E7C7B] dark:hover:text-teal-400 transition-colors">
-                Home
-              </Link>
-              <ChevronRight size={14} className="text-slate-400" />
-              <span aria-current="page" className="font-extrabold text-slate-900 dark:text-white">
-                Laptop Repair Hub
-              </span>
-            </nav>
-          </div>
-        </div>
+
 
         {/* HERO SECTION */}
         <section className="relative overflow-hidden py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-slate-50/90 via-white to-slate-50/40 dark:from-[#070E1A] dark:via-[#0b1628] dark:to-[#070E1A] border-b border-slate-200 dark:border-slate-800">
@@ -246,25 +233,37 @@ export function LaptopRepairHubView() {
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-              {LAPTOP_BRANDS.map((brand) => (
+              {LAPTOP_BRANDS.map((brand) => {
+                // Per-brand image sizing tuning
+                const logoSizeClass = {
+                  hp: 'max-h-18 w-20',           // HP logo is tall/narrow icon
+                  asus: 'max-h-14 w-full',        // ASUS wordmark is wide
+                  surface: 'max-h-18 w-full',     // Microsoft logo is wide
+                  msi: 'max-h-18 w-full',         // MSI wordmark/logo
+                  dell: 'max-h-18 w-full',          // Dell icon
+                  acer: 'max-h-12 w-full',        // Acer wordmark
+                  macbook: 'max-h-14 w-14',       // Apple icon
+                }[brand.slug] || 'max-h-16 w-auto';
+
+                return (
                 <Link
                   key={brand.slug}
                   href={`/laptop-repair/${brand.slug}/`}
                   className="group relative flex flex-col items-center text-center justify-between rounded-3xl border border-slate-200/90 dark:border-slate-800/80 bg-slate-50/50 dark:bg-slate-900/60 p-5 sm:p-6 hover:border-[#0E7C7B] dark:hover:border-teal-500/80 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                 >
-                  <div className="space-y-3.5 flex flex-col items-center w-full">
+                  <div className="space-y-4 flex flex-col items-center w-full">
                     {/* Real Brand Logo Container */}
-                    <div className="h-16 w-full max-w-[130px] rounded-2xl bg-white dark:bg-slate-950/80 border border-slate-200/70 dark:border-slate-800 p-2.5 flex items-center justify-center group-hover:scale-105 transition-transform shadow-sm">
+                    <div className="h-24 w-full rounded-2xl bg-white dark:bg-slate-950/80 border border-slate-200/70 dark:border-slate-800 p-4 flex items-center justify-center group-hover:scale-105 transition-transform shadow-sm">
                       {brand.logoImage ? (
                         <Image
                           src={brand.logoImage}
                           alt={`${brand.name} Repair Logo`}
-                          width={110}
-                          height={40}
-                          className="max-h-9 w-auto object-contain dark:brightness-110"
+                          width={200}
+                          height={100}
+                          className={`${logoSizeClass} object-contain dark:brightness-110`}
                         />
                       ) : (
-                        <span className="text-xl font-black tracking-tighter text-[#0E7C7B] dark:text-teal-400">
+                        <span className="text-2xl font-black tracking-tighter text-[#0E7C7B] dark:text-teal-400">
                           {brand.name.toUpperCase()}
                         </span>
                       )}
@@ -285,7 +284,9 @@ export function LaptopRepairHubView() {
                     <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
                   </div>
                 </Link>
-              ))}
+                );
+              })}
+
             </div>
 
           </div>

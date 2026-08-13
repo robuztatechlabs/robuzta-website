@@ -238,6 +238,108 @@ export const services = [
           'Yes. Upgrading an older hard drive to an NVMe or SATA SSD will make your desktop boot and run up to 5x faster.'
       }
     ]
+  },
+  {
+    title: 'Data Recovery',
+    slug: 'data-recovery',
+    metaTitle: 'Data Recovery Services in Ahmedabad | Robuzta Techlabs',
+    metaDescription:
+      'Professional data recovery in Ahmedabad for laptop HDD, NVMe SSD, dead laptops, liquid damage, and dead mobile phones with No Recovery No Fee guarantee.',
+    summary:
+      'HDD, SSD, dead laptop, water damage, and mobile phone data extraction.',
+    proof: '95%+ recovery rate with 100% Zero-OTP privacy guarantee.',
+    directAnswer:
+      'Robuzta performs component-level data extraction for damaged hard drives, solid-state drives, dead motherboards, and water-damaged smartphones.',
+    symptoms: [
+      'Clicking hard drive sound',
+      'Unrecognized NVMe SSD',
+      'Dead laptop won’t turn on',
+      'Liquid spilled on laptop',
+      'Dead iPhone or Android phone',
+      'Accidentally formatted partition'
+    ],
+    included: [
+      'Laptop HDD / SSD recovery',
+      'Dead laptop data extraction',
+      'Liquid damage restoration',
+      'Mobile phone data recovery',
+      'Sector-by-sector drive cloning',
+      'Encrypted backup transfer'
+    ],
+    faqs: [
+      {
+        question: 'What is No Data, No Fee?',
+        answer: 'If our lab cannot recover your critical files, you pay zero diagnostic or recovery fee.'
+      }
+    ]
+  },
+  {
+    title: 'Software Services',
+    slug: 'software-services',
+    metaTitle: 'Software Services in Ahmedabad | Robuzta Techlabs',
+    metaDescription:
+      'Expert software services in Ahmedabad for genuine Windows 11/10 setup, MS Office activation, virus/spyware removal, BIOS unlock, and data backup.',
+    summary:
+      'Windows 11/10 setup, MS Office activation, virus removal, BIOS unlock, and data backup.',
+    proof: 'Genuine digital licenses and zero-bloatware OS setup.',
+    directAnswer:
+      'Robuzta provides clean operating system installation, MS Office setup, malware purge, and BIOS unlock with 100% data preservation.',
+    symptoms: [
+      'Slow Windows boot time',
+      'Virus or pop-up infection',
+      'MS Office activation error',
+      'Locked out by BIOS password',
+      'OS boot failure or BSOD',
+      'Data migration requirement'
+    ],
+    included: [
+      'Windows 11 / 10 Pro setup',
+      'MS Office 365 / 2021 setup',
+      'Deep virus & malware removal',
+      'Master BIOS password unlock',
+      'Data backup & drive migration',
+      'OEM driver optimization'
+    ],
+    faqs: [
+      {
+        question: 'Will I lose files during Windows setup?',
+        answer: 'No, we perform complete pre-installation backups of your User profile data.'
+      }
+    ]
+  },
+  {
+    title: 'Cleaning & Tune-Up',
+    slug: 'cleaning-tune-up',
+    metaTitle: 'Laptop & PC Cleaning & Tune-Up in Ahmedabad | Robuzta Techlabs',
+    metaDescription:
+      'Professional thermal cleaning in Ahmedabad. Compare Basic vs Pro deep cleaning with Thermal Grizzly Kryonaut repasting & 15°C temperature drops.',
+    summary:
+      'Basic vs Pro thermal servicing, dust removal, Thermal Grizzly repasting & OS tune-up.',
+    proof: 'Reduces CPU/GPU thermals by 15°C to 25°C.',
+    directAnswer:
+      'Robuzta offers precision thermal servicing and OS speed optimization to stop laptop overheating, fan noise, and thermal throttling.',
+    symptoms: [
+      'Loud fan grinding noise',
+      'Overheating palm rest',
+      'Sudden gaming shutdown',
+      'Thermal throttling lag',
+      'Clogged cooling vents',
+      'Slow system response'
+    ],
+    included: [
+      'Basic exterior & vent cleaning',
+      'Pro full disassembly bath',
+      'Thermal Grizzly Kryonaut repasting',
+      'Keycaps & trackpad groove cleaning',
+      'Temp cache & startup optimization',
+      'Before vs after benchmark report'
+    ],
+    faqs: [
+      {
+        question: 'What is included in Pro cleaning?',
+        answer: 'Pro includes full disassembly, ultrasonic internal bath, Thermal Grizzly repasting, and thermal benchmark report.'
+      }
+    ]
   }
 ];
 

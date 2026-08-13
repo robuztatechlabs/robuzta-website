@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Star, ExternalLink, ShieldCheck, Sparkles } from 'lucide-react';
+import { Star, ExternalLink, ShieldCheck } from 'lucide-react';
 import { GoogleIcon } from '@/components/icons/GoogleIcon';
 import { JustdialIcon } from '@/components/icons/JustdialIcon';
 import { SulekhaIcon } from '@/components/icons/SulekhaIcon';
@@ -49,23 +49,23 @@ export const platformListings = [
 
 export function PlatformTrustSection() {
   return (
-    <section className="py-16 bg-slate-50/60 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 relative overflow-hidden transition-colors duration-300">
+    <section className="py-14 bg-slate-50/60 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 relative overflow-hidden transition-colors duration-300">
       
       {/* Background Lighting Accent */}
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[#0E7C7B]/5 dark:bg-teal-500/5 rounded-full blur-[140px]" />
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[250px] bg-[#0E7C7B]/5 dark:bg-teal-500/5 rounded-full blur-[140px]" />
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10 relative z-10">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8 relative z-10">
         
-        {/* Header Title Bar */}
-        <div className="text-center space-y-3 max-w-3xl mx-auto">
+        {/* Header Title Bar - Short & Simple */}
+        <div className="text-center space-y-2 max-w-2xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-4 py-1.5 text-xs font-extrabold text-[#0E7C7B] dark:text-teal-300"
+            className="inline-flex items-center gap-1.5 rounded-full bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-3.5 py-1 text-xs font-black text-[#0E7C7B] dark:text-teal-300"
           >
-            <ShieldCheck size={14} className="text-emerald-500" />
-            <span>VERIFIED MULTI-PLATFORM RATINGS &bull; AHMEDABAD</span>
+            <ShieldCheck size={13} className="text-emerald-500" />
+            <span>VERIFIED RATINGS</span>
           </motion.div>
 
           <motion.h2
@@ -75,7 +75,7 @@ export function PlatformTrustSection() {
             transition={{ delay: 0.1 }}
             className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight"
           >
-            Trusted & Top-Rated Across India’s Leading Discovery Platforms
+            Top-Rated Across Platforms
           </motion.h2>
 
           <motion.p
@@ -85,12 +85,12 @@ export function PlatformTrustSection() {
             transition={{ delay: 0.15 }}
             className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm font-medium"
           >
-            100% verified customer ratings, transparent service reviews, and official business profiles.
+            Verified customer reviews on Google, Justdial & Sulekha.
           </motion.p>
         </div>
 
         {/* 3 Platform Glassmorphic Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
           {platformListings.map((item, idx) => (
             <motion.a
               key={item.id}
@@ -101,30 +101,30 @@ export function PlatformTrustSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              whileHover={{ y: -6 }}
-              className={`group relative rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 p-6 sm:p-7 shadow-xl shadow-slate-200/40 dark:shadow-none flex flex-col justify-between space-y-6 transition-all duration-300 ${item.borderColor}`}
+              whileHover={{ y: -4 }}
+              className={`group relative rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 p-6 shadow-md flex flex-col justify-between space-y-5 transition-all duration-300 ${item.borderColor}`}
             >
               {/* Subtle Gradient Hover Overlay */}
               <div className={`pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br ${item.accentColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
 
-              <div className="space-y-4 relative z-10">
+              <div className="space-y-3.5 relative z-10">
                 {/* Logo & Direct Link Arrow */}
-                <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-4">
+                <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
                   {item.renderLogo()}
-                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-500 group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 group-hover:bg-[#0E7C7B]/10 transition-colors shrink-0">
-                    <ExternalLink size={16} />
+                  <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-500 group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 group-hover:bg-[#0E7C7B]/10 transition-colors shrink-0">
+                    <ExternalLink size={15} />
                   </span>
                 </div>
 
                 {/* Rating Score & Star Bar */}
-                <div className="space-y-2">
-                  <div className="flex items-center gap-3">
+                <div className="space-y-1.5">
+                  <div className="flex items-center gap-2.5">
                     <span className="text-3xl font-black text-slate-900 dark:text-white tracking-tight">
                       {item.rating}
                     </span>
                     <div className="flex items-center gap-1 text-amber-400">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} size={18} className="fill-amber-400 text-amber-400" />
+                        <Star key={i} size={16} className="fill-amber-400 text-amber-400" />
                       ))}
                     </div>
                   </div>
@@ -136,8 +136,8 @@ export function PlatformTrustSection() {
               </div>
 
               {/* Bottom Badge Tag */}
-              <div className="pt-2 relative z-10">
-                <span className="text-[11px] font-black text-[#0E7C7B] dark:text-teal-300 bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-3 py-1.5 rounded-xl block text-center truncate">
+              <div className="pt-1 relative z-10">
+                <span className="text-[11px] font-black text-[#0E7C7B] dark:text-teal-300 bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-3 py-1 rounded-xl block text-center truncate">
                   {item.badge}
                 </span>
               </div>

@@ -9,25 +9,25 @@ export function BrandLogosGrid() {
     {
       name: 'Apple MacBook',
       tag: 'Air, Pro & Mac Studio',
-      image: '/assets/brands/apples.webp',
+      image: '/assets/brands/apple-13.svg',
       badge: 'Logic Board',
-      logoStyle: 'h-15 sm:h-20 w-150 max-w-[120px] sm:max-w-[140px]',
+      logoStyle: 'h-14 sm:h-16 w-14 sm:w-16 max-w-[64px]',
       mobileScale: 1
     },
     {
       name: 'Dell',
       tag: 'XPS, Inspiron & Alienware',
-      image: '/assets/brands/dell.webp',
+      image: '/assets/brands/dell-2.svg',
       badge: 'Power IC',
-      logoStyle: 'h-15 sm:h-20 w-150 max-w-[120px] sm:max-w-[140px]',
+      logoStyle: 'h-14 sm:h-16 w-14 sm:w-16 max-w-[64px]',
       mobileScale: 1
     },
     {
       name: 'HP',
       tag: 'Spectre, OMEN & Pavilion',
-      image: '/assets/brands/hp.webp',
+      image: '/assets/brands/hp-hewlett-packard.svg',
       badge: 'Screen Swap',
-      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]',
+      logoStyle: 'h-16 sm:h-20 w-16 sm:w-20 max-w-[80px]',
       mobileScale: 1
     },
     {
@@ -41,49 +41,49 @@ export function BrandLogosGrid() {
     {
       name: 'ASUS',
       tag: 'ROG, TUF & ZenBook',
-      image: '/assets/brands/asus.png',
+      image: '/assets/brands/asus-rog-1-1.svg',
       badge: 'GPU Soldering',
-      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]',
+      logoStyle: 'h-10 sm:h-12 w-full max-w-[140px] sm:max-w-[160px]',
       mobileScale: 1
     },
     {
       name: 'Microsoft Surface',
       tag: 'Surface Pro & Laptop',
-      image: '/assets/brands/microsoft.webp',
+      image: '/assets/brands/microsoft-centered.svg',
       badge: 'Battery & Screen',
-      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]',
+      logoStyle: 'h-10 sm:h-12 w-full max-w-[140px] sm:max-w-[160px]',
       mobileScale: 1.8
     },
     {
-      name: 'Apple iPhone',
-      tag: 'Pro Max & Standard Series',
-      image: '/assets/brands/iphone.png',
-      badge: 'FaceID & Glass',
-      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]',
-      mobileScale: 1.7
+      name: 'MSI',
+      tag: 'Katana, Raider & Stealth',
+      image: '/assets/brands/msi-gaming.svg',
+      badge: 'GPU Repair',
+      logoStyle: 'h-15 sm:h-15 w-full max-w-[140px] sm:max-w-[160px]',
+      mobileScale: 1
     },
     {
       name: 'Samsung Galaxy',
       tag: 'S-Series, Z Fold & Flip',
-      image: '/assets/brands/samsung.webp',
+      image: '/assets/brands/samsung-electronics.svg',
       badge: 'AMOLED Display',
-      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]',
+      logoStyle: 'h-10 sm:h-12 w-full max-w-[140px] sm:max-w-[160px]',
       mobileScale: 1.6
     },
     {
       name: 'Google Pixel',
       tag: 'Pixel Pro & Fold Series',
-      image: '/assets/brands/google-pixel.webp',
+      image: '/assets/brands/icons8-google.svg',
       badge: 'Camera & Board',
-      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]',
+      logoStyle: 'h-14 sm:h-16 w-14 sm:w-16 max-w-[64px]',
       mobileScale: 1.7
     },
     {
       name: 'Acer & Gaming',
       tag: 'Predator, Nitro & Swift',
-      image: '/assets/brands/acer.webp',
+      image: '/assets/brands/acer-2011.svg',
       badge: 'Overheat Repair',
-      logoStyle: 'h-15 sm:h-150 w-150 max-w-[120px] sm:max-w-[140px]',
+      logoStyle: 'h-10 sm:h-12 w-full max-w-[140px] sm:max-w-[160px]',
       mobileScale: 1
     }
   ];
@@ -145,11 +145,11 @@ export function BrandLogosGrid() {
               whileHover={{ y: -4, scale: 1.02 }}
               className="group relative flex flex-col items-center justify-center p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 hover:border-[#0E7C7B] dark:hover:border-teal-400 shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden space-y-3"
             >
-              <div className="h-14 sm:h-16 w-full flex items-center justify-center p-1">
+              <div className="h-20 sm:h-24 w-full flex items-center justify-center p-1">
                 <img
                   src={b.image}
                   alt={`${b.name} Official Logo`}
-                  className="max-h-12 sm:max-h-14 max-w-[110px] sm:max-w-[130px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105 dark:brightness-125"
+                  className={`${b.logoStyle} object-contain transition-transform duration-300 group-hover:scale-105 dark:brightness-125`}
                 />
               </div>
 

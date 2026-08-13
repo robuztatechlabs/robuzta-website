@@ -124,36 +124,16 @@ export function ServiceDetailPageView({ slug }) {
   return (
     <>
       <Header />
-      <main>
+      <main className="pt-20">
 
         {/* ══════════════════════════════════════════════
             SECTION 1 — HERO
         ══════════════════════════════════════════════ */}
-        <section className="relative overflow-hidden bg-[#0F172A] pt-12 pb-24 lg:pt-16 lg:pb-32">
-
-          {/* Ambient radial glows */}
-          <div className="pointer-events-none absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#0E7C7B]/20 rounded-full blur-[160px]" />
-          <div className="pointer-events-none absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-600/15 rounded-full blur-[140px]" />
-
-          {/* Soft grid overlay */}
-          <div
-            className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,#000_60%,transparent_100%)] pointer-events-none"
-          />
+        <section className="relative bg-gradient-to-b from-slate-50 via-teal-50/20 to-white dark:from-slate-900 dark:via-slate-900 dark:to-slate-950 py-12 sm:py-16 lg:py-20 border-b border-slate-200 dark:border-slate-800 overflow-hidden">
+          <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[950px] h-[450px] bg-[#0E7C7B]/10 rounded-full blur-[170px]" />
 
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            {/* Breadcrumb */}
-            <motion.div
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              className="mb-10"
-            >
-              <div className="flex items-center gap-2 text-sm font-semibold text-slate-400">
-                <Link href="/#services" className="hover:text-[#0E7C7B] transition-colors">Services</Link>
-                <span className="text-slate-600 dark:text-slate-400">/</span>
-                <span className="text-slate-300">{service.title}</span>
-              </div>
-            </motion.div>
+
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 
@@ -166,11 +146,11 @@ export function ServiceDetailPageView({ slug }) {
                   initial="hidden"
                   animate="visible"
                   variants={fadeUp}
-                  className="inline-flex items-center gap-2.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md px-4 py-1.5 text-xs font-bold text-slate-200 uppercase tracking-widest"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-3.5 py-1 text-xs font-black text-[#0E7C7B] dark:text-teal-300 uppercase tracking-widest"
                 >
                   <ServiceIcon size={14} className="text-[#0E7C7B]" />
-                  <span>Robuzta Precision Service</span>
-                  <Sparkles size={13} className="text-orange-400" />
+                  <span>ROBUZTA PRECISION SERVICE</span>
+                  <Sparkles size={13} className="text-amber-500" />
                 </motion.div>
 
                 {/* H1 */}
@@ -179,10 +159,10 @@ export function ServiceDetailPageView({ slug }) {
                   initial="hidden"
                   animate="visible"
                   variants={fadeUp}
-                  className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.06]"
+                  className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-slate-100 tracking-tight leading-tight"
                 >
                   {service.title}{' '}
-                  <span className="block mt-1 bg-gradient-to-r from-[#0E7C7B] via-teal-400 to-blue-400 bg-clip-text text-transparent">
+                  <span className="block mt-1 text-[#0E7C7B]">
                     in Ahmedabad
                   </span>
                 </motion.h1>
@@ -193,7 +173,7 @@ export function ServiceDetailPageView({ slug }) {
                   initial="hidden"
                   animate="visible"
                   variants={fadeUp}
-                  className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-2xl font-normal"
+                  className="text-sm sm:text-base text-slate-600 dark:text-slate-300 font-medium leading-relaxed max-w-2xl"
                 >
                   {service.directAnswer}
                 </motion.p>
@@ -215,17 +195,15 @@ export function ServiceDetailPageView({ slug }) {
                     <ArrowRight size={18} />
                   </button>
 
-                  <MagneticButton>
-                    <a
-                      href={siteConfig.whatsappHref}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2.5 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-sm px-6 py-4 text-base font-bold text-white hover:bg-emerald-600 hover:border-emerald-500 transition-all"
-                    >
-                      <WhatsappIcon size={18} className="text-emerald-400" />
-                      <span>WhatsApp Estimate</span>
-                    </a>
-                  </MagneticButton>
+                  <a
+                    href={siteConfig.whatsappHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-4 text-base font-bold shadow-lg shadow-emerald-600/20 hover:scale-[1.02] transition-all"
+                  >
+                    <WhatsappIcon size={18} className="text-white" />
+                    <span>WhatsApp Estimate</span>
+                  </a>
                 </motion.div>
 
                 {/* Trust badges */}
@@ -234,18 +212,18 @@ export function ServiceDetailPageView({ slug }) {
                   initial="hidden"
                   animate="visible"
                   variants={fadeUp}
-                  className="flex flex-wrap items-center gap-5 pt-2 text-xs font-semibold text-slate-400"
+                  className="flex flex-wrap items-center gap-5 pt-2 text-xs font-semibold text-slate-600 dark:text-slate-400"
                 >
                   <span className="flex items-center gap-1.5">
                     <ShieldCheck size={15} className="text-[#0E7C7B]" />
                     Zero Password / Zero OTP
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <CheckCircle2 size={15} className="text-orange-400" />
+                    <CheckCircle2 size={15} className="text-amber-500" />
                     180-Day Warranty
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <Clock size={15} className="text-blue-400" />
+                    <Clock size={15} className="text-teal-600 dark:text-teal-400" />
                     Same-Day Turnaround
                   </span>
                 </motion.div>
@@ -258,7 +236,7 @@ export function ServiceDetailPageView({ slug }) {
                 transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
                 className="lg:col-span-5"
               >
-                <div className="rounded-3xl border border-white/15 bg-white/8 backdrop-blur-2xl p-8 space-y-6 shadow-2xl">
+                <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 space-y-6 shadow-2xl">
 
                   {/* Panel header */}
                   <div className="flex items-center gap-3">
@@ -267,11 +245,11 @@ export function ServiceDetailPageView({ slug }) {
                     </div>
                     <div>
                       <p className="text-[10px] font-black uppercase tracking-widest text-[#0E7C7B]">Robuzta Lab Guarantee</p>
-                      <h2 className="text-xl font-extrabold text-white leading-tight">{service.title} Promise</h2>
+                      <h2 className="text-xl font-extrabold text-slate-900 dark:text-white leading-tight">{service.title} Promise</h2>
                     </div>
                   </div>
 
-                  <p className="text-sm text-slate-300 leading-relaxed">{service.proof}</p>
+                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{service.proof}</p>
 
                   {/* Guarantee checklist */}
                   <ul className="space-y-3">
@@ -281,9 +259,9 @@ export function ServiceDetailPageView({ slug }) {
                       'Genuine serial-verified parts',
                       'Digital invoice with warranty',
                     ].map((item) => (
-                      <li key={item} className="flex items-center gap-3 text-sm font-semibold text-slate-200">
-                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0E7C7B]/20 border border-[#0E7C7B]/40">
-                          <CheckCircle2 size={12} className="text-[#0E7C7B]" />
+                      <li key={item} className="flex items-center gap-3 text-sm font-semibold text-slate-800 dark:text-slate-200">
+                        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0E7C7B]/10 dark:bg-[#0E7C7B]/20 border border-[#0E7C7B]/30">
+                          <CheckCircle2 size={12} className="text-[#0E7C7B] dark:text-teal-400" />
                         </span>
                         {item}
                       </li>
@@ -292,13 +270,13 @@ export function ServiceDetailPageView({ slug }) {
 
                   {/* Trust metrics */}
                   <div className="grid grid-cols-2 gap-3 pt-2">
-                    <div className="rounded-2xl bg-white/8 border border-white/10 p-4 text-center">
-                      <div className="text-2xl font-black text-white">15,000+</div>
-                      <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mt-0.5">Devices Restored</div>
+                    <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 p-4 text-center">
+                      <div className="text-2xl font-black text-slate-900 dark:text-white">15,000+</div>
+                      <div className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mt-0.5">Devices Restored</div>
                     </div>
-                    <div className="rounded-2xl bg-white/8 border border-white/10 p-4 text-center">
-                      <div className="text-2xl font-black text-white">99.8%</div>
-                      <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mt-0.5">Success Rate</div>
+                    <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 p-4 text-center">
+                      <div className="text-2xl font-black text-slate-900 dark:text-white">99.8%</div>
+                      <div className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mt-0.5">Success Rate</div>
                     </div>
                   </div>
                 </div>
@@ -730,6 +708,15 @@ export function ServiceDetailPageView({ slug }) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {relatedServices.map((item, idx) => {
                 const RelatedIcon = serviceIcons[item.slug] || Wrench;
+                const dedicatedUrls = {
+                  'laptop-repair': '/laptop-repair/',
+                  'mobile-repair': '/mobile-repair/',
+                  'gaming-pc-repair': '/gaming-desktop/repair/',
+                  'data-recovery': '/data-recovery/',
+                  'software-services': '/software-services/',
+                  'cleaning-tune-up': '/cleaning-tune-up/'
+                };
+                const relatedHref = dedicatedUrls[item.slug] || `/services/${item.slug}`;
                 return (
                   <motion.article
                     key={item.slug}
@@ -761,7 +748,7 @@ export function ServiceDetailPageView({ slug }) {
 
                     {/* CTA link */}
                     <Link
-                      href={`/services/${item.slug}`}
+                      href={relatedHref}
                       className="inline-flex items-center gap-2 text-xs font-extrabold text-[#0E7C7B] group-hover:text-blue-600 transition-colors"
                     >
                       View service details

@@ -1,7 +1,18 @@
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { getServiceBySlug, services } from '@/data/services';
 import { ServiceDetailPageView } from '@/components/pages/ServiceDetailPageView';
 import { getServiceSchema, getFaqPageSchema, getBreadcrumbSchema } from '@/lib/jsonLd';
+
+const DEDICATED_SERVICE_URLS = {
+  'mobile-repair': '/mobile-repair/',
+  'laptop-repair': '/laptop-repair/',
+  'macbook-repair': '/laptop-repair/macbook/',
+  'gaming-desktop': '/gaming-desktop/repair/',
+  'gaming-pc-repair': '/gaming-desktop/repair/',
+  'data-recovery': '/data-recovery/',
+  'software-services': '/software-services/',
+  'cleaning-tune-up': '/cleaning-tune-up/'
+};
 
 export function generateStaticParams() {
   return services.map((service) => ({
@@ -19,7 +30,7 @@ export async function generateMetadata({ params }) {
 
   const title = service.metaTitle || `${service.title} | Robuzta Techlabs Ahmedabad`;
   const description = service.metaDescription || service.description || `Professional ${service.title} services at Robuzta Techlabs Ahmedabad. Genuine parts, live diagnostics, zero OTP privacy.`;
-  const canonicalUrl = `https://robuzta.com/services/${slug}`;
+  const canonicalUrl = DEDICATED_SERVICE_URLS[slug] ? `https://robuzta.com${DEDICATED_SERVICE_URLS[slug]}` : `https://robuzta.com/services/${slug}`;
 
   return {
     title,
@@ -55,6 +66,11 @@ export async function generateMetadata({ params }) {
 
 export default async function ServicePage({ params }) {
   const { slug } = await params;
+
+  if (DEDICATED_SERVICE_URLS[slug]) {
+    redirect(DEDICATED_SERVICE_URLS[slug]);
+  }
+
   const service = getServiceBySlug(slug);
 
   if (!service) {

@@ -9,6 +9,9 @@ import {
   Monitor,
   Flame,
   Wrench,
+  Database,
+  Code,
+  Wind,
   ArrowRight,
   ShieldCheck
 } from 'lucide-react';
@@ -19,28 +22,48 @@ const serviceIcons = {
   'macbook-repair': Cpu,
   'surface-repair': Monitor,
   'gaming-pc-repair': Flame,
-  'desktop-repair': Wrench
+  'desktop-repair': Wrench,
+  'data-recovery': Database,
+  'software-services': Code,
+  'cleaning-tune-up': Wind
 };
 
 export function MegaMenu({ onClose }) {
   return (
     <div
-      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-80 sm:w-[480px] rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700 dark:border-slate-800 p-5 shadow-2xl z-50 transition-all duration-200 animate-in fade-in slide-in-from-top-2"
+      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-80 sm:w-[540px] rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700 dark:border-slate-800 p-5 shadow-2xl z-50 transition-all duration-200 animate-in fade-in slide-in-from-top-2"
       role="menu"
     >
       <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3 mb-3">
         <span className="text-xs font-black uppercase tracking-wider text-slate-400 dark:text-slate-500">
-          Precision Hardware Services
+          Precision Hardware & Software Services
         </span>
         <span className="text-[10px] font-bold text-[#0E7C7B] dark:text-teal-400 bg-[#0E7C7B]/10 dark:bg-teal-400/10 px-2.5 py-0.5 rounded-full border border-[#0E7C7B]/20 dark:border-teal-400/20">
           Zero-OTP Protected
         </span>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-[380px] overflow-y-auto pr-1">
         {services.map((srv) => {
           const IconComponent = serviceIcons[srv.slug] || Wrench;
-          const href = srv.slug === 'laptop-repair' ? '/laptop-repair/' : `/services/${srv.slug}`;
+          const href =
+            srv.slug === 'laptop-repair'
+              ? '/laptop-repair/'
+              : srv.slug === 'mobile-repair'
+              ? '/mobile-repair/'
+              : srv.slug === 'gaming-pc-repair'
+              ? '/gaming-desktop/repair/'
+              : srv.slug === 'data-recovery'
+              ? '/data-recovery/'
+              : srv.slug === 'software-services'
+              ? '/software-services/'
+              : srv.slug === 'cleaning-tune-up'
+              ? '/cleaning-tune-up/'
+              : srv.slug === 'macbook-repair'
+              ? '/laptop-repair/macbook/'
+              : srv.slug === 'surface-repair'
+              ? '/laptop-repair/surface/'
+              : `/services/${srv.slug}`;
           return (
             <Link
               key={srv.slug}

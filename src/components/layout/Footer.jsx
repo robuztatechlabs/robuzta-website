@@ -41,19 +41,29 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Hardware Services */}
           <div>
             <h3 className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-white mb-3 sm:mb-4">
               Hardware Repair Services
             </h3>
             <ul className="space-y-2 sm:space-y-2.5 text-xs sm:text-sm font-semibold">
-              {services.map((service) => (
-                <li key={service.slug}>
-                  <Link href={`/services/${service.slug}`} className="hover:text-[#0E7C7B] transition-colors">
-                    {service.title}
-                  </Link>
-                </li>
-              ))}
+              {services.map((service) => {
+                const dedicatedUrls = {
+                  'laptop-repair': '/laptop-repair/',
+                  'mobile-repair': '/mobile-repair/',
+                  'gaming-pc-repair': '/gaming-desktop/repair/',
+                  'data-recovery': '/data-recovery/',
+                  'software-services': '/software-services/',
+                  'cleaning-tune-up': '/cleaning-tune-up/'
+                };
+                const href = dedicatedUrls[service.slug] || `/services/${service.slug}`;
+                return (
+                  <li key={service.slug}>
+                    <Link href={href} className="hover:text-[#0E7C7B] transition-colors">
+                      {service.title}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 

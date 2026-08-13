@@ -143,26 +143,9 @@ export function LaptopRepairSlugView({ data }) {
 
       <Header />
 
-      <main id="main-content" className="min-h-screen bg-white dark:bg-[#070E1A] text-slate-900 dark:text-white pt-24 sm:pt-28">
+      <main id="main-content" className="min-h-screen bg-white dark:bg-[#070E1A] text-slate-900 dark:text-white pt-20">
         
-        {/* Breadcrumb Navigation */}
-        <div className="bg-slate-50 dark:bg-slate-900/60 border-b border-slate-200 dark:border-slate-800 py-3.5">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-medium text-slate-600 dark:text-slate-400 overflow-x-auto">
-              <Link href="/" className="hover:text-[#0E7C7B] dark:hover:text-teal-400 transition-colors whitespace-nowrap">
-                Home
-              </Link>
-              <ChevronRight size={14} className="text-slate-400 shrink-0" />
-              <Link href="/laptop-repair/" className="hover:text-[#0E7C7B] dark:hover:text-teal-400 transition-colors whitespace-nowrap">
-                Laptop Repair
-              </Link>
-              <ChevronRight size={14} className="text-slate-400 shrink-0" />
-              <span aria-current="page" className="font-extrabold text-slate-900 dark:text-white whitespace-nowrap">
-                {pageTitle}
-              </span>
-            </nav>
-          </div>
-        </div>
+
 
         {/* ══════════════════════════════════════════════
             SECTION 1 — HERO & VISUAL DIAGNOSTIC SUMMARY
