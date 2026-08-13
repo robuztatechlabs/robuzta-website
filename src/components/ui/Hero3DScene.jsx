@@ -1,10 +1,13 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
+import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
+import { siteConfig } from '@/data/site';
 
 export function Hero3DScene() {
   const containerRef = useRef(null);
+  const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -170,6 +173,37 @@ export function Hero3DScene() {
 
     window.addEventListener('mousemove', handleMouseMove);
 
+    // Raycaster for click interaction
+    const raycaster = new THREE.Raycaster();
+    const mouse = new THREE.Vector2();
+
+    const handleClick = (event) => {
+      if (!container) return;
+      const rect = renderer.domElement.getBoundingClientRect();
+      // Only process clicks within the canvas
+      if (
+        event.clientX < rect.left ||
+        event.clientX > rect.right ||
+        event.clientY < rect.top ||
+        event.clientY > rect.bottom
+      ) {
+        return;
+      }
+      mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+      mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+      raycaster.setFromCamera(mouse, camera);
+
+      // Check intersections with mainGroup
+      const intersects = raycaster.intersectObjects(mainGroup.children, true);
+      if (intersects.length > 0) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    };
+    
+    window.addEventListener('click', handleClick);
+
     // Animation Loop
     let animationFrameId;
     const animate = () => {
@@ -217,6 +251,7 @@ export function Hero3DScene() {
     return () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('click', handleClick);
       window.removeEventListener('resize', handleResize);
       if (container.contains(renderer.domElement)) {
         container.removeChild(renderer.domElement);
@@ -225,5 +260,25 @@ export function Hero3DScene() {
     };
   }, []);
 
-  return <div ref={containerRef} className="hero-3d-canvas" aria-hidden="true" />;
+  return (
+    <div className="relative w-full h-full">
+      <div ref={containerRef} className="absolute inset-0 cursor-pointer hero-3d-canvas" aria-hidden="true" />
+      
+      {/* Overlay Button that appears on click */}
+      {showButton && (
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
+          <a
+            href={siteConfig.whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pointer-events-auto flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white font-bold py-3 px-6 rounded-full shadow-lg shadow-teal-500/30 transition-transform hover:scale-105 active:scale-95"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <WhatsappIcon size={20} className="text-white" />
+            <span>Submit Repair Form</span>
+          </a>
+        </div>
+      )}
+    </div>
+  );
 }

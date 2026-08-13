@@ -17,7 +17,7 @@ const stepColors = [
 
 export function ProcessSection() {
   return (
-    <section id="process" className="relative bg-slate-50 dark:bg-slate-900 py-16 sm:py-24 lg:py-32 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
+    <section id="process" className="relative bg-slate-50 dark:bg-slate-900 py-10 sm:py-16 lg:py-20 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
       
       {/* Background Radial Glow */}
       <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#0E7C7B]/5 rounded-full blur-[140px]" />

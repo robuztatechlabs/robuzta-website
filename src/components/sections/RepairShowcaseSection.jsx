@@ -6,12 +6,12 @@ import { ShieldCheck, Sparkles, Cpu, Clock, CheckCircle2 } from 'lucide-react';
 
 export function RepairShowcaseSection() {
   return (
-    <section id="hardware-lab" className="relative bg-gradient-to-b from-white via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-900 dark:to-slate-900 py-16 sm:py-24 lg:py-32 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
+    <section id="hardware-lab" className="relative bg-gradient-to-b from-white via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-900 dark:to-slate-900 py-10 sm:py-16 lg:py-20 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
       
       {/* Ambient Lighting Glow */}
       <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-r from-[#0E7C7B]/10 via-blue-500/10 to-teal-400/10 rounded-full blur-[160px]" />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-14 sm:space-y-20 lg:space-y-24">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-14 lg:space-y-16">
         
         {/* Section Title Header */}
         <div className="text-center max-w-2xl mx-auto">

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   ArrowRight,
@@ -19,11 +19,32 @@ import {
   Lock,
   Zap,
   Cpu,
-  CheckCircle2
+  CheckCircle2,
+  Layers,
+  ZoomIn,
+  ZoomOut,
+  RotateCcw,
+  MousePointerClick
 } from 'lucide-react';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { siteConfig } from '@/data/site';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
+
+const LaptopExplorer = dynamic(
+  () => import('@/components/3d/LaptopExplorer').then(mod => mod.LaptopExplorer),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="h-full w-full flex items-center justify-center bg-transparent min-h-[400px]">
+        <div className="flex flex-col items-center gap-4">
+          <div className="h-10 w-10 animate-spin rounded-full border-2 border-slate-300 dark:border-slate-700 border-t-[#0E7C7B]" />
+          <span className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Loading 3D Hardware Model…</span>
+        </div>
+      </div>
+    ),
+  }
+);
 
 const typingPhrases = [
   'Fix My Broken Display Screen',
@@ -63,9 +84,32 @@ function useTypingText(phrases, typingSpeed = 70, deletingSpeed = 35, delay = 20
 
 export function HeroSection() {
   const typedText = useTypingText(typingPhrases);
+  
+  const [selectedComponent, setSelectedComponent] = useState(null);
+  const [isExploded, setIsExploded] = useState(true);
+  const [zoomAction, setZoomAction] = useState(null);
+  const resetFnRef = useRef(null);
+
+  const handleComponentSelect = useCallback((id) => {
+    setSelectedComponent(id);
+  }, []);
+
+  const handleResetView = useCallback((resetFn) => {
+    resetFnRef.current = resetFn;
+  }, []);
+
+  const handleReset = useCallback(() => {
+    setSelectedComponent(null);
+    if (resetFnRef.current) resetFnRef.current();
+  }, []);
+
+  const triggerZoom = (direction) => {
+    setZoomAction(direction);
+    setTimeout(() => setZoomAction(null), 100);
+  };
 
   return (
-    <section className="relative overflow-hidden bg-white dark:bg-[#070E1A] pt-32 sm:pt-40 lg:pt-48 pb-20 sm:pb-28 lg:pb-36 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+    <section className="relative overflow-hidden bg-white dark:bg-[#070E1A] pt-32 sm:pt-40 lg:pt-48 pb-10 sm:pb-16 lg:pb-20 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
       
       {/* Soft Ambient Gradient Overlay */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-slate-50/70 via-teal-50/20 to-white dark:from-[#070E1A] dark:via-[#0a1626] dark:to-[#070E1A]" />
@@ -110,30 +154,7 @@ export function HeroSection() {
           className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#0E7C7B] dark:via-teal-400 to-transparent shadow-[0_0_15px_#0E7C7B]"
         />
 
-        {/* Staggered Vertical Light Beams */}
-        <motion.div
-          initial={{ top: '-30%' }}
-          animate={{ top: ['-30%', '120%'] }}
-          transition={{
-            duration: 5,
-            repeat: Infinity,
-            repeatDelay: 1.5,
-            ease: 'easeInOut'
-          }}
-          className="absolute left-[18%] w-[2px] h-40 bg-gradient-to-b from-transparent via-[#0E7C7B] to-transparent shadow-[0_0_12px_#0E7C7B]"
-        />
 
-        <motion.div
-          initial={{ top: '-30%' }}
-          animate={{ top: ['-30%', '120%'] }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            delay: 2,
-            ease: 'easeInOut'
-          }}
-          className="absolute left-[52%] w-[2px] h-48 bg-gradient-to-b from-transparent via-teal-400 to-transparent shadow-[0_0_15px_#2dd4bf]"
-        />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -180,66 +201,92 @@ export function HeroSection() {
 
           </div>
 
-          {/* Right Column: One Visual Hero Feature Box */}
-          <div className="lg:col-span-6 relative">
-            <div className="relative rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-900/95 dark:bg-slate-950/95 backdrop-blur-xl p-5 sm:p-8 shadow-2xl space-y-6 overflow-hidden">
-              
-              {/* Visual Header */}
-              <div className="flex items-center justify-between border-b border-slate-800 pb-4">
-                <div className="flex items-center gap-2">
-                  <div className="h-3 w-3 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="text-xs font-black tracking-widest text-slate-300 uppercase font-mono">
-                    Robuzta Hardware Lab
-                  </span>
-                </div>
-                <span className="text-[10px] font-extrabold uppercase tracking-wider text-teal-400 bg-teal-950/80 border border-teal-800/60 px-2.5 py-1 rounded-full">
-                  ISO 9001:2015
-                </span>
+          {/* Right Column: 3D Custom Model Hero Feature Box */}
+          <div className="lg:col-span-6 relative h-[400px] sm:h-[500px] lg:h-[600px] flex items-center justify-center rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900 overflow-hidden shadow-xl">
+            <div className="w-full h-full relative">
+              {/* Top Controls Bar (Top Left) */}
+              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-30 flex flex-wrap items-center gap-1.5 sm:gap-2">
+                <button
+                  type="button"
+                  onClick={() => setIsExploded(!isExploded)}
+                  className={`flex items-center gap-2 text-[11px] sm:text-xs font-bold px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-xl border backdrop-blur-md transition-all cursor-pointer ${
+                    isExploded
+                      ? 'bg-[#0E7C7B] border-teal-500 text-white shadow-md'
+                      : 'bg-white/90 dark:bg-slate-900/90 border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:border-teal-500'
+                  }`}
+                >
+                  <Layers size={14} />
+                  <span>{isExploded ? 'Deck Lifted' : 'Reveal Internals'}</span>
+                </button>
+
+                {selectedComponent && (
+                  <button
+                    type="button"
+                    onClick={handleReset}
+                    className="flex items-center gap-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200 dark:border-slate-700 hover:border-[#0E7C7B] text-slate-900 dark:text-white text-[11px] sm:text-xs font-bold px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-xl transition-all cursor-pointer"
+                  >
+                    <RotateCcw size={14} />
+                    <span>Reset</span>
+                  </button>
+                )}
               </div>
 
-              {/* Central Graphic Visual */}
-              <div className="relative py-6 px-4 rounded-2xl bg-slate-800/60 border border-slate-700/60 overflow-hidden flex flex-col items-center justify-center text-center space-y-3">
-                {/* Animated Circuit Radial Rings */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(14,124,123,0.25)_0,transparent_70%)] pointer-events-none" />
-                
-                <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#0E7C7B] to-teal-400 text-white shadow-xl shadow-[#0E7C7B]/30 ring-4 ring-[#0E7C7B]/20">
-                  <Cpu size={32} />
-                </div>
-
-                <div className="relative z-10 space-y-1">
-                  <h4 className="text-base font-black text-white">Chip-Level Diagnostic Suite</h4>
-                  <p className="text-xs text-slate-400 font-medium">Bopal & Tragad Micro-Soldering Workbenches</p>
-                </div>
+              {/* Quick Zoom Controls (Bottom Left Overlay) */}
+              <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-30 flex items-center gap-1.5 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-slate-200 dark:border-slate-800 p-1 rounded-xl shadow-md">
+                <button
+                  type="button"
+                  onClick={() => triggerZoom('in')}
+                  className="p-1.5 sm:p-2 rounded-lg text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                  title="Zoom In"
+                >
+                  <ZoomIn size={15} />
+                </button>
+                <div className="w-[1px] h-4 bg-slate-200 dark:bg-slate-800" />
+                <button
+                  type="button"
+                  onClick={() => triggerZoom('out')}
+                  className="p-1.5 sm:p-2 rounded-lg text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                  title="Zoom Out"
+                >
+                  <ZoomOut size={15} />
+                </button>
               </div>
 
-              {/* 4 Feature Badges Grid */}
-              <div className="grid grid-cols-2 gap-2.5">
-                <div className="p-3 rounded-xl bg-slate-800/50 border border-slate-700/50 flex items-center gap-2.5">
-                  <ShieldCheck size={16} className="text-emerald-400 shrink-0" />
-                  <span className="text-xs font-bold text-slate-200">Zero-OTP Safety</span>
-                </div>
-                <div className="p-3 rounded-xl bg-slate-800/50 border border-slate-700/50 flex items-center gap-2.5">
-                  <Clock size={16} className="text-teal-400 shrink-0" />
-                  <span className="text-xs font-bold text-slate-200">2–4h Express</span>
-                </div>
-                <div className="p-3 rounded-xl bg-slate-800/50 border border-slate-700/50 flex items-center gap-2.5">
-                  <Zap size={16} className="text-amber-400 shrink-0" />
-                  <span className="text-xs font-bold text-slate-200">Original Parts</span>
-                </div>
-                <div className="p-3 rounded-xl bg-slate-800/50 border border-slate-700/50 flex items-center gap-2.5">
-                  <Lock size={16} className="text-purple-400 shrink-0" />
-                  <span className="text-xs font-bold text-slate-200">Live Workbench</span>
-                </div>
-              </div>
+              <LaptopExplorer
+                onComponentSelect={handleComponentSelect}
+                selectedComponent={selectedComponent}
+                onResetView={handleResetView}
+                isExploded={isExploded}
+                zoomAction={zoomAction}
+              />
 
-              {/* Rating Trust Bar */}
-              <div className="pt-3 border-t border-slate-800 flex items-center justify-between text-xs text-slate-300 font-bold">
-                <span>15,000+ Devices Restored</span>
-                <span className="flex items-center gap-1 text-amber-400 font-black">
-                  4.9★ Google Rating
-                </span>
-              </div>
+              {/* Interaction Hint Badge */}
+              {!selectedComponent && (
+                <div className="absolute bottom-4 left-0 right-0 flex items-center justify-center gap-4 pointer-events-none px-4 z-20">
+                  <div className="flex items-center gap-2 text-xs font-bold text-slate-700 dark:text-slate-300 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-full border border-slate-200 dark:border-slate-800 shadow-xl">
+                    <MousePointerClick size={14} className="text-[#0E7C7B] dark:text-teal-400 animate-bounce" />
+                    <span>Click any IC to inspect details</span>
+                  </div>
+                </div>
+              )}
 
+              {/* Overlay Button that appears when a component is selected */}
+              {selectedComponent && (
+                <div className="absolute bottom-6 left-0 right-0 flex items-center justify-center pointer-events-none z-40 px-4">
+                  <a
+                    href={siteConfig.whatsappHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="pointer-events-auto flex flex-col items-center gap-1.5 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white font-bold py-3 px-8 rounded-2xl shadow-2xl shadow-teal-500/40 transition-transform hover:scale-105 active:scale-95 text-center border border-teal-400/30"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <span className="flex items-center gap-2 text-base sm:text-lg">
+                      <WhatsappIcon size={22} className="text-white" />
+                      Book Repair For This Part
+                    </span>
+                  </a>
+                </div>
+              )}
             </div>
           </div>
 
