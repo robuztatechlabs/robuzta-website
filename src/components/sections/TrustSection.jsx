@@ -23,9 +23,9 @@ export function TrustSection() {
   const marqueeLogos = brandLogos.concat(brandLogos);
 
   return (
-    <section className="relative bg-slate-50 dark:bg-slate-900 py-10 sm:py-16 lg:py-20 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
+    <section className="relative bg-slate-50 dark:bg-slate-900 py-14 sm:py-20 lg:py-24 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
       
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-14 lg:space-y-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16 lg:space-y-20">
         
         {/* Metric Stats Banner */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 p-5 sm:p-8 rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 shadow-xl">
@@ -67,7 +67,7 @@ export function TrustSection() {
         </div>
 
         {/* Trust Cards 2-Column Mobile App Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {trustCards.map((card, idx) => (
             <motion.div
               key={card.title}

@@ -18,7 +18,7 @@ const nodeColors = [
 
 export function ProcessSection() {
   return (
-    <section id="process" className="relative bg-slate-50 dark:bg-slate-900 pt-8 pb-10 sm:pt-13 sm:pb-16 lg:pt-16 lg:pb-20 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
+    <section id="process" className="relative bg-slate-50 dark:bg-slate-900 pt-12 pb-16 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
       
       {/* Background Radial Glow */}
       <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#0E7C7B]/5 rounded-full blur-[140px]" />
@@ -42,7 +42,7 @@ export function ProcessSection() {
         <div className="relative max-w-5xl mx-auto pb-10">
           
           {/* Continuous Gradient Spine */}
-          <div className="absolute left-10 sm:left-1/2 top-0 bottom-0 w-1 sm:w-1.5 -translate-x-1/2 bg-gradient-to-b from-blue-500 via-[#0E7C7B] to-amber-500 rounded-full shadow-[0_0_15px_rgba(14,124,123,0.3)]" />
+          <div className="absolute left-6 sm:left-1/2 top-0 bottom-0 w-1 sm:w-1.5 -translate-x-1/2 bg-gradient-to-b from-blue-500 via-[#0E7C7B] to-amber-500 rounded-full shadow-[0_0_15px_rgba(14,124,123,0.3)]" />
 
           <div className="space-y-12 sm:space-y-16 relative z-10">
             {repairProcess.map((step, index) => {
@@ -50,10 +50,6 @@ export function ProcessSection() {
               const isEven = index % 2 === 0;
               const nodeBg = nodeColors[index] || 'bg-[#0E7C7B]';
 
-              // Badges for alternating styling
-              const phaseBadgeColors = isEven 
-                ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800'
-                : 'bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 border border-orange-200 dark:border-orange-800';
 
               return (
                 <div
@@ -63,14 +59,14 @@ export function ProcessSection() {
                   }`}
                 >
                   {/* Central Node Icon */}
-                  <div className="absolute left-10 sm:left-1/2 -translate-x-1/2 flex items-center justify-center w-9 h-9 sm:w-12 sm:h-12 rounded-full text-white shadow-lg ring-4 ring-slate-50 dark:ring-slate-900 z-20">
+                  <div className="absolute left-6 sm:left-1/2 -translate-x-1/2 flex items-center justify-center w-8 h-8 sm:w-12 sm:h-12 rounded-full text-white shadow-lg ring-4 ring-slate-50 dark:ring-slate-900 z-20">
                     <div className={`flex items-center justify-center w-full h-full rounded-full ${nodeBg} shadow-inner`}>
-                      <StepIcon size={20} className="w-4 h-4 sm:w-5 sm:h-5" />
+                      <StepIcon size={20} className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
                     </div>
                   </div>
 
                   {/* Card Container */}
-                  <div className={`w-full sm:w-1/2 pl-20 sm:pl-0 ${
+                  <div className={`w-full sm:w-1/2 pl-14 pr-2 sm:px-0 ${
                     isEven ? 'sm:pr-10 lg:pr-16' : 'sm:pl-10 lg:pl-16'
                   }`}>
                     <motion.div
@@ -86,16 +82,13 @@ export function ProcessSection() {
                       }`} />
 
                       {/* Connection Line (Mobile) */}
-                      <div className="sm:hidden absolute top-1/2 -translate-y-1/2 -left-10 w-10 h-[2px] bg-slate-200 dark:bg-slate-800" />
+                      <div className="sm:hidden absolute top-1/2 -translate-y-1/2 -left-8 w-8 h-[2px] bg-slate-200 dark:bg-slate-800" />
 
                       <div className="space-y-4 sm:space-y-5">
-                        {/* Top row: Step Number & Badge */}
-                        <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-4">
+                        {/* Top row: Step Number */}
+                        <div className="border-b border-slate-100 dark:border-slate-800 pb-3 sm:pb-4">
                           <span className="font-tech text-xl sm:text-2xl font-black text-slate-800 dark:text-slate-200">
                             Step 0{index + 1}
-                          </span>
-                          <span className={`text-[10px] sm:text-xs font-black uppercase tracking-widest px-3 sm:px-4 py-1 sm:py-1.5 rounded-full shadow-sm ${phaseBadgeColors}`}>
-                            Phase {index + 1}
                           </span>
                         </div>
 

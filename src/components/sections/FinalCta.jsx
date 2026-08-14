@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 export function FinalCta() {
   return (
-    <section id="contact" className="relative bg-white dark:bg-slate-950 pt-8 pb-10 sm:pt-13 sm:pb-16 lg:pt-16 lg:pb-20 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
+    <section id="contact" className="relative bg-white dark:bg-slate-950 pt-12 pb-16 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
       
       {/* Background Ambient Glow */}
       <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#0E7C7B]/5 dark:bg-[#0E7C7B]/10 rounded-full blur-[140px]" />

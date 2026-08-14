@@ -73,12 +73,12 @@ export function ServicesSection() {
   const { openModal } = useBookingModal();
 
   return (
-    <section id="services" className="relative bg-white dark:bg-slate-950 pt-8 pb-10 sm:pt-13 sm:pb-16 lg:pt-16 lg:pb-20 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+    <section id="services" className="relative bg-white dark:bg-slate-950 pt-12 pb-16 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
       
       {/* Background Radial Glow */}
       <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#0E7C7B]/5 rounded-full blur-3xl" />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-14 lg:space-y-16">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16 lg:space-y-20">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto">
@@ -87,8 +87,8 @@ export function ServicesSection() {
           </h2>
         </div>
 
-        {/* 6 Clean Minimal Service Cards 2-Column Mobile App Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-6 lg:gap-8">
+        {/* Service Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {servicesList.map((service) => {
             const Icon = service.icon;
             return (

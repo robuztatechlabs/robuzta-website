@@ -111,7 +111,7 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-white dark:bg-[#070E1A] pt-32 sm:pt-40 lg:pt-48 pb-10 sm:pb-16 lg:pb-20 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+    <section className="relative overflow-hidden bg-white dark:bg-[#070E1A] pt-32 sm:pt-40 lg:pt-48 pb-16 sm:pb-20 lg:pb-24 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
       
       {/* Soft Ambient Gradient Overlay */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-slate-50/70 via-teal-50/20 to-white dark:from-[#070E1A] dark:via-[#0a1626] dark:to-[#070E1A]" />
@@ -166,34 +166,34 @@ export function HeroSection() {
           <div className="lg:col-span-6 space-y-6 lg:space-y-8 text-center lg:text-left">
 
             {/* Top Badges: ISO Badge + Watch Repairs Live Badge */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
-              <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-[#0E7C7B]/20 border border-[#0E7C7B]/30 px-4 py-1.5 text-xs font-black uppercase tracking-wider text-[#0E7C7B] dark:text-teal-300">
-                <Sparkles size={14} className="text-[#0E7C7B] dark:text-teal-400" />
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2">
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-[#0E7C7B]/20 border border-[#0E7C7B]/30 px-3 py-1 sm:px-4 sm:py-1.5 text-[10px] sm:text-xs font-black uppercase tracking-wider text-[#0E7C7B] dark:text-teal-300">
+                <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#0E7C7B] dark:text-teal-400" />
                 <span>ISO 9001:2015 REPAIR LAB</span>
               </div>
 
               <button
                 type="button"
                 onClick={() => setIsLiveModalOpen(true)}
-                className="inline-flex items-center gap-2 rounded-full bg-red-600 hover:bg-red-500 text-white px-3.5 py-1.5 text-xs font-black uppercase tracking-wider shadow-md hover:scale-105 transition-all cursor-pointer"
+                className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-red-600 hover:bg-red-500 text-white px-3 py-1 sm:px-3.5 sm:py-1.5 text-[10px] sm:text-xs font-black uppercase tracking-wider shadow-md hover:scale-105 transition-all cursor-pointer"
               >
-                <span className="relative flex h-2 w-2">
+                <span className="relative flex h-1.5 w-1.5 sm:h-2 sm:w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 sm:h-2 sm:w-2 bg-white"></span>
                 </span>
                 <span>Watch Live</span>
               </button>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
+            <h1 className="text-[2.5rem] leading-[1.1] sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white sm:leading-tight">
               Precision Repair for{' '}
-              <span className="block mt-1 sm:mt-2 bg-gradient-to-r from-[#0E7C7B] via-teal-600 dark:via-teal-400 to-slate-900 dark:to-teal-200 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#0E7C7B] via-teal-600 dark:via-teal-400 to-slate-900 dark:to-teal-200 bg-clip-text text-transparent">
                 Laptops & Mobiles
               </span>
             </h1>
 
-            <p className="text-sm sm:text-base font-bold text-slate-500 dark:text-slate-400 tracking-wide leading-relaxed px-1">
+            <p className="text-[11px] xs:text-xs sm:text-base font-bold text-slate-500 dark:text-slate-400 tracking-wide leading-relaxed px-2 sm:px-1">
               ISO-certified hardware lab • Zero-OTP data safety • Free doorstep pickup
             </p>
 
@@ -212,7 +212,7 @@ export function HeroSection() {
                 href={siteConfig.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-emerald-600 via-teal-600 to-[#0E7C7B] hover:from-emerald-500 hover:to-teal-500 text-white px-7 py-4 text-sm sm:text-base font-black shadow-xl shadow-emerald-600/30 hover:scale-[1.02] transition-all w-full sm:w-auto"
+                className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-emerald-600 via-teal-600 to-[#0E7C7B] hover:from-emerald-500 hover:to-teal-500 text-white px-5 py-3 sm:px-7 sm:py-4 text-xs xs:text-sm sm:text-base font-black shadow-xl shadow-emerald-600/30 hover:scale-[1.02] transition-all w-[90%] xs:w-auto sm:w-auto"
               >
                 <WhatsappIcon size={22} className="text-white shrink-0" />
                 <span>Get WhatsApp Estimate & Book</span>

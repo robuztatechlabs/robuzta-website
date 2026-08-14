@@ -51,7 +51,7 @@ export function LaptopExplorerSection() {
   return (
     <section
       id="laptop-explorer"
-      className="relative overflow-hidden bg-slate-50 dark:bg-[#070e1a] border-b border-slate-200 dark:border-slate-800 pt-8 pb-10 sm:pt-13 sm:pb-16 lg:pt-16 lg:pb-20 transition-colors duration-300"
+      className="relative overflow-hidden bg-slate-50 dark:bg-[#070e1a] border-b border-slate-200 dark:border-slate-800 pt-12 pb-16 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-24 transition-colors duration-300"
     >
       {/* Background ambient glows */}
       <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#0E7C7B]/5 dark:bg-[#0E7C7B]/10 rounded-full blur-[160px]" />

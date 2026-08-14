@@ -33,12 +33,12 @@ const pillars = [
 
 export function WhyChooseUsSection() {
   return (
-    <section className="relative bg-white dark:bg-slate-950 pt-8 pb-10 sm:pt-13 sm:pb-16 lg:pt-16 lg:pb-20 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
+    <section className="relative bg-white dark:bg-slate-950 pt-12 pb-16 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
       
       {/* Background Glow */}
       <div className="pointer-events-none absolute top-0 right-0 w-[500px] h-[500px] bg-[#0E7C7B]/5 rounded-full blur-[140px]" />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-14 lg:space-y-16">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16 lg:space-y-20">
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto">
@@ -54,7 +54,7 @@ export function WhyChooseUsSection() {
         </div>
 
         {/* Feature 2-Column Mobile App Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {pillars.map((pillar, index) => {
             const Icon = pillar.icon;
             return (
@@ -90,7 +90,7 @@ export function WhyChooseUsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.3 }}
-            className="col-span-2 lg:col-span-1 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#0F172A] via-[#0E7C7B] to-[#0F172A] text-white p-4 sm:p-6 flex flex-col justify-between space-y-3 sm:space-y-4 shadow-xl"
+            className="col-span-1 sm:col-span-2 lg:col-span-1 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#0F172A] via-[#0E7C7B] to-[#0F172A] text-white p-4 sm:p-6 flex flex-col justify-between space-y-3 sm:space-y-4 shadow-xl"
           >
             <div className="space-y-1">
               <h3 className="text-sm xs:text-base sm:text-lg font-black text-white leading-snug">Need Technical Advice?</h3>
