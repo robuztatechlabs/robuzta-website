@@ -23,7 +23,7 @@ export function TrustSection() {
   const marqueeLogos = brandLogos.concat(brandLogos);
 
   return (
-    <section className="relative bg-slate-50 dark:bg-slate-900 py-10 sm:py-16 lg:py-20 border-y border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
+    <section className="relative bg-slate-50 dark:bg-slate-900 py-10 sm:py-16 lg:py-20 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
       
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-14 lg:space-y-16">
         

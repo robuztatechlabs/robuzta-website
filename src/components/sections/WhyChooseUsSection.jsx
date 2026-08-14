@@ -33,7 +33,7 @@ const pillars = [
 
 export function WhyChooseUsSection() {
   return (
-    <section className="relative bg-white dark:bg-slate-950 py-10 sm:py-16 lg:py-20 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
+    <section className="relative bg-white dark:bg-slate-950 pt-8 pb-10 sm:pt-13 sm:pb-16 lg:pt-16 lg:pb-20 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
       
       {/* Background Glow */}
       <div className="pointer-events-none absolute top-0 right-0 w-[500px] h-[500px] bg-[#0E7C7B]/5 rounded-full blur-[140px]" />

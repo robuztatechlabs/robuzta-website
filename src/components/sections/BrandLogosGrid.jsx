@@ -89,7 +89,7 @@ export function BrandLogosGrid() {
   ];
 
   return (
-    <section className="relative py-10 sm:py-16 lg:py-20 bg-slate-50/50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
+    <section className="relative pt-8 pb-10 sm:pt-13 sm:pb-16 lg:pt-16 lg:pb-20 bg-slate-50/50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
 
       {/* Ambient Radial Background Glow */}
       <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#0E7C7B]/5 dark:bg-[#0E7C7B]/10 rounded-full blur-[160px]" />
@@ -120,12 +120,12 @@ export function BrandLogosGrid() {
             {[...brands, ...brands, ...brands].map((b, idx) => (
               <div
                 key={`${b.name}-${idx}`}
-                className="flex items-center justify-center shrink-0 w-28 sm:w-40 h-16 sm:h-20 opacity-70 hover:opacity-100 transition-opacity duration-300 cursor-pointer group px-4"
+                className="flex items-center justify-center shrink-0 w-32 sm:w-44 lg:w-48 h-20 sm:h-24 opacity-70 hover:opacity-100 transition-opacity duration-300 cursor-pointer group px-4"
               >
                 <img
                   src={b.image}
                   alt={`${b.name} Official Logo`}
-                  className="max-h-8 sm:max-h-10 w-auto object-contain dark:brightness-125 group-hover:scale-110 transition-transform duration-300"
+                  className="max-h-12 sm:max-h-14 lg:max-h-16 w-auto object-contain dark:brightness-125 group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
             ))}

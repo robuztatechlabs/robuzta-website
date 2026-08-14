@@ -26,7 +26,7 @@ export function ReviewsSection() {
   const duplicatedReviews = [...reviews, ...reviews];
 
   return (
-    <section id="reviews" className="relative bg-gradient-to-b from-slate-50 via-teal-50/20 to-slate-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-900 py-10 sm:py-16 lg:py-20 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
+    <section id="reviews" className="relative bg-gradient-to-b from-slate-50 via-teal-50/20 to-slate-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-900 pt-8 pb-10 sm:pt-13 sm:pb-16 lg:pt-16 lg:pb-20 border-b border-slate-200 dark:border-slate-700 overflow-hidden">
       
       {/* Background Lighting Accents */}
       <div className="pointer-events-none absolute top-10 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-gradient-to-r from-teal-400/10 via-blue-400/10 to-amber-400/10 rounded-full blur-[140px]" />

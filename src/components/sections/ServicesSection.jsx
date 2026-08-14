@@ -73,7 +73,7 @@ export function ServicesSection() {
   const { openModal } = useBookingModal();
 
   return (
-    <section id="services" className="relative bg-white dark:bg-slate-950 py-10 sm:py-16 lg:py-20 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+    <section id="services" className="relative bg-white dark:bg-slate-950 pt-8 pb-10 sm:pt-13 sm:pb-16 lg:pt-16 lg:pb-20 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
       
       {/* Background Radial Glow */}
       <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#0E7C7B]/5 rounded-full blur-3xl" />

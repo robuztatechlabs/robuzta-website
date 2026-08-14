@@ -51,13 +51,13 @@ export function LaptopExplorerSection() {
   return (
     <section
       id="laptop-explorer"
-      className="relative overflow-hidden bg-slate-50 dark:bg-[#070e1a] border-b border-slate-200 dark:border-slate-800 py-10 lg:py-16 transition-colors duration-300"
+      className="relative overflow-hidden bg-slate-50 dark:bg-[#070e1a] border-b border-slate-200 dark:border-slate-800 pt-8 pb-10 sm:pt-13 sm:pb-16 lg:pt-16 lg:pb-20 transition-colors duration-300"
     >
       {/* Background ambient glows */}
       <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#0E7C7B]/5 dark:bg-[#0E7C7B]/10 rounded-full blur-[160px]" />
 
       {/* Section Header */}
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-8 sm:pb-10 text-center">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-10 sm:pb-14 lg:pb-16 text-center">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}

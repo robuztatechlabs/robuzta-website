@@ -17,11 +17,7 @@ import { WhyChooseUsSection } from '@/components/sections/WhyChooseUsSection';
 import { ReviewsSection } from '@/components/sections/ReviewsSection';
 import { FinalCta } from '@/components/sections/FinalCta';
 
-// Heavy 3D WebGL Explorer dynamic import (Client-only)
-const LaptopExplorerSection = dynamic(
-  () => import('@/components/sections/LaptopExplorerSection').then(m => m.LaptopExplorerSection),
-  { ssr: false }
-);
+
 
 export function HomePageView() {
   return (
@@ -59,10 +55,6 @@ export function HomePageView() {
           <WhyChooseUsSection />
         </LazySection>
 
-        {/* 7. Interactive 3D Component Explorer */}
-        <LazySection>
-          <LaptopExplorerSection />
-        </LazySection>
 
         {/* 8. Customer reviews */}
         <LazySection>
