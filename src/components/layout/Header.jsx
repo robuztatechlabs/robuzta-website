@@ -37,6 +37,7 @@ const navItems = [
   { name: 'Locations', href: '/locations' },
   { name: 'About Us', href: '/about' },
   { name: 'Blog', href: '/blog' },
+  { name: 'Franchise', href: '/franchise' },
   { name: 'Contact Us', href: '/contact' }
 ];
 
