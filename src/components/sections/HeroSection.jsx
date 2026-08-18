@@ -224,7 +224,7 @@ export function HeroSection() {
           </div>
 
           {/* Right Column: One Visual Hero Feature Box */}
-          <div className="lg:col-span-6 relative">
+          <div className="hidden md:block lg:col-span-6 relative">
             <div className="relative rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-900/95 dark:bg-slate-950/95 backdrop-blur-xl p-5 sm:p-8 shadow-2xl space-y-6 overflow-hidden">
               
               {/* Visual Header */}
