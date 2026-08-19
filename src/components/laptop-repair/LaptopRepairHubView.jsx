@@ -162,16 +162,15 @@ export function LaptopRepairHubView() {
                 <span>Ahmedabad's Premier Component-Level Lab</span>
               </div>
 
-              {/* SINGLE H1 */}
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.12]">
                 Laptop Repair Services in Ahmedabad —{' '}
                 <span className="bg-gradient-to-r from-[#0E7C7B] via-teal-500 to-cyan-400 bg-clip-text text-transparent">
-                  By Brand & By Problem
+                  Fast, Reliable & Chip-Level Repairs
                 </span>
               </h1>
 
               <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 font-medium leading-relaxed max-w-3xl mx-auto">
-                Component-level logic board BGA micro-soldering, OEM display & battery replacement, liquid damage restoration, and thermal servicing with zero-password privacy protection.
+                Screen Replacement, Motherboard Repair, Data Recovery, Battery Replacement, Water Damage Repair & SSD Upgrades for Dell, HP, Lenovo, Surface, MacBook and More.
               </p>
 
               {/* Action Buttons */}
@@ -199,16 +198,16 @@ export function LaptopRepairHubView() {
               {/* Key Trust Signals */}
               <div className="flex flex-wrap items-center justify-center gap-6 pt-4 text-xs font-extrabold text-slate-600 dark:text-slate-400">
                 <span className="flex items-center gap-1.5">
-                  <ShieldCheck size={16} className="text-[#0E7C7B] dark:text-teal-400" />
-                  No Fix, No Fee Policy
-                </span>
-                <span className="flex items-center gap-1.5">
                   <CheckCircle2 size={16} className="text-emerald-500" />
-                  180-Day OEM Warranty
+                  1000+ Devices Repaired
                 </span>
                 <span className="flex items-center gap-1.5">
                   <Zap size={16} className="text-amber-500" />
-                  2 to 4 Hour Express Repair
+                  Same-Day Repairs Available
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <ShieldCheck size={16} className="text-[#0E7C7B] dark:text-teal-400" />
+                  No Fix, No Fee Policy
                 </span>
               </div>
 
@@ -322,9 +321,6 @@ export function LaptopRepairHubView() {
                         <div className="h-11 w-11 rounded-2xl bg-[#0E7C7B]/10 dark:bg-[#0E7C7B]/20 text-[#0E7C7B] dark:text-teal-300 flex items-center justify-center group-hover:scale-110 transition-transform">
                           <ProbIcon size={20} />
                         </div>
-                        <span className="text-xs font-black text-[#0E7C7B] dark:text-teal-400 font-mono bg-[#0E7C7B]/10 dark:bg-teal-400/10 px-2.5 py-0.5 rounded-full border border-[#0E7C7B]/20 dark:border-teal-400/20">
-                          {prob.priceEstimate.split(' ')[0]} {prob.priceEstimate.split(' ')[1]}
-                        </span>
                       </div>
 
                       <div>

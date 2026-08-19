@@ -50,7 +50,10 @@ export function Footer() {
                 const dedicatedUrls = {
                   'laptop-repair': '/laptop-repair/',
                   'mobile-repair': '/mobile-repair/',
+                  'macbook-repair': '/laptop-repair/macbook/',
+                  'surface-repair': '/laptop-repair/surface/',
                   'gaming-pc-repair': '/gaming-desktop/repair/',
+                  'desktop-repair': '/gaming-desktop/repair/',
                   'data-recovery': '/data-recovery/',
                   'software-services': '/software-services/',
                   'cleaning-tune-up': '/cleaning-tune-up/'

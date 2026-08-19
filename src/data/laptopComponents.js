@@ -6,29 +6,32 @@
 
 export const COMPONENT_DATA = {
   cpu: {
-    name: 'Central Processor (CPU & BGA Socket)',
+    name: 'Motherboard & Logic Board Repair',
     icon: '🔲',
     color: '#0E7C7B',
+    href: '/laptop-repair/motherboard-repair/',
     description:
       'The central computing brain. Most repair shops demand ₹35,000+ for full motherboard swaps when a CPU power rail short occurs or thermal throttling halts your machine.',
     repair:
-      'At Robuzta Techlabs South Bopal, we use FLIR thermal imaging & BGA optical rework stations to replace shorted power ICs and reball CPU BGA chips at 65% lower cost. Backed by our No Fix, No Fee guarantee.',
+      'At Robuzta Techlabs South Bopal, we use FLIR thermal imaging & BGA optical rework stations to replace shorted power ICs and reball CPU BGA chips at 65% lower cost.',
     badge: 'ROBUZTA BGA MICRO-SOLDERING',
   },
   gpu: {
-    name: 'Graphics Processor (GPU & GDDR6 VRAM)',
+    name: 'GPU & Graphics Card Repair',
     icon: '🎮',
     color: '#7C3AED',
+    href: '/laptop-repair/motherboard-repair/',
     description:
       'Dedicated NVIDIA RTX & AMD Radeon graphics processors undergo intense thermal stress in gaming laptops, leading to screen artifacts, black displays, and crashing under load.',
     repair:
-      'Robuzta’s certified engineers perform BGA chip reflowing, micro-reballing, and GDDR6 VRAM IC replacement under 45× stereo microscopes with a 90-day lab warranty.',
+      'Robuzta’s certified engineers perform BGA chip reflowing, micro-reballing, and GDDR6 VRAM IC replacement under 45× stereo microscopes with a lab warranty.',
     badge: 'ADVANCED GPU LAB REWORK',
   },
   ram1: {
-    name: 'RAM Module — Primary Memory Slot',
+    name: 'RAM Upgrade & Speed Optimization',
     icon: '📊',
     color: '#3B82F6',
+    href: '/laptop-repair/ram-ssd-upgrade/',
     description:
       'High-speed memory module handling active multitasking. Faulty RAM causes sudden Blue Screen of Death (BSOD), system freezes, and infinite boot loops.',
     repair:
@@ -36,9 +39,10 @@ export const COMPONENT_DATA = {
     badge: 'ZERO-PASSWORD DATA SAFETY',
   },
   ram2: {
-    name: 'RAM Module — Secondary Channel Slot',
+    name: 'Dual-Channel Memory Calibration',
     icon: '📊',
     color: '#3B82F6',
+    href: '/laptop-repair/ram-ssd-upgrade/',
     description:
       'Enables high-bandwidth dual-channel performance. Corrupted slots or contacts cause intermittent crashes during video rendering or gaming.',
     repair:
@@ -46,9 +50,10 @@ export const COMPONENT_DATA = {
     badge: 'DUAL-CHANNEL OPTIMIZATION',
   },
   ssd: {
-    name: 'NVMe M.2 PCIe 4.0 SSD Storage',
+    name: 'SSD Storage Upgrade & Data Recovery',
     icon: '💾',
     color: '#EA580C',
+    href: '/laptop-repair/ram-ssd-upgrade/',
     description:
       'Ultra-fast solid-state drive holding your operating system, work files, and personal data. Failures cause unbootable drives, disk read errors, or loss of critical files.',
     repair:
@@ -56,9 +61,10 @@ export const COMPONENT_DATA = {
     badge: 'CHIP-LEVEL DATA RECOVERY',
   },
   battery: {
-    name: 'Lithium-Ion Battery Assembly',
+    name: 'Genuine Battery Replacement',
     icon: '🔋',
     color: '#22C55E',
+    href: '/laptop-repair/battery-replacement/',
     description:
       'Swollen or degraded lithium pouch cells are a dangerous fire risk and press against the trackpad or aluminum palm rest, causing physical chassis bulging.',
     repair:
@@ -66,9 +72,10 @@ export const COMPONENT_DATA = {
     badge: '180-DAY OEM WARRANTY',
   },
   wifi: {
-    name: 'Wi-Fi 6E & Bluetooth 5.3 Module',
+    name: 'Wi-Fi & Network Card Service',
     icon: '📡',
     color: '#06B6D4',
+    href: '/laptop-repair/motherboard-repair/',
     description:
       'Wireless networking card and antenna array. Damaged motherboard traces or IPEX antenna cable snaps cause weak Wi-Fi signals and frequent Bluetooth disconnections.',
     repair:
@@ -76,9 +83,10 @@ export const COMPONENT_DATA = {
     badge: 'OEM PART REPLACEMENT',
   },
   fan: {
-    name: 'Turbo Blower Fan & Copper Heatpipes',
+    name: 'Fan & Thermal Service (Overheating Fix)',
     icon: '🌀',
     color: '#64748B',
+    href: '/laptop-repair/fan-repair/',
     description:
       'Thermal management system keeping CPU & GPU temps stable. Dust clogging or dried thermal paste causes thermal throttling, loud fan noise, and sudden shutdowns.',
     repair:
@@ -86,3 +94,4 @@ export const COMPONENT_DATA = {
     badge: 'THERMAL GRIZZLY REPASTE',
   },
 };
+

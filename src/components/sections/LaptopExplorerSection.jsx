@@ -51,8 +51,9 @@ export function LaptopExplorerSection() {
   return (
     <section
       id="laptop-explorer"
-      className="relative overflow-hidden bg-slate-50 dark:bg-[#070e1a] border-b border-slate-200 dark:border-slate-800 pt-12 pb-16 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-24 transition-colors duration-300"
+      className="hidden lg:block relative overflow-hidden bg-slate-50 dark:bg-[#070e1a] border-b border-slate-200 dark:border-slate-800 pt-12 pb-16 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-24 transition-colors duration-300"
     >
+
       {/* Background ambient glows */}
       <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#0E7C7B]/5 dark:bg-[#0E7C7B]/10 rounded-full blur-[160px]" />
 
@@ -221,14 +222,15 @@ export function LaptopExplorerSection() {
                         </p>
                       </div>
 
-                      {/* CTA Link */}
+                      {/* CTA Link to Dedicated Service Page */}
                       <Link
-                        href="/contact"
+                        href={selectedData.href || '/laptop-repair/'}
                         className="flex items-center justify-center gap-2 w-full rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-5 sm:px-6 py-3.5 sm:py-4 text-xs font-black uppercase tracking-wider shadow-lg shadow-[#0E7C7B]/20 transition-all hover:scale-[1.02]"
                       >
-                        <span>Get Repair Quote For This Component</span>
+                        <span>View {selectedData.name} Page</span>
                         <ArrowRight size={15} />
                       </Link>
+
                     </div>
                   </motion.div>
                 ) : (

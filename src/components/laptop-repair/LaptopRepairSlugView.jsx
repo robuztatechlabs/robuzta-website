@@ -211,16 +211,16 @@ export function LaptopRepairSlugView({ data }) {
                 {/* Trust Badges */}
                 <div className="flex flex-wrap items-center justify-center lg:justify-start gap-5 pt-3 text-xs font-extrabold text-slate-600 dark:text-slate-400 border-t border-slate-200/80 dark:border-slate-800/80">
                   <span className="flex items-center gap-1.5">
-                    <ShieldCheck size={16} className="text-[#0E7C7B] dark:text-teal-400" />
-                    Zero-Password Privacy
-                  </span>
-                  <span className="flex items-center gap-1.5">
                     <CheckCircle2 size={16} className="text-emerald-500" />
-                    180-Day OEM Warranty
+                    1000+ Devices Repaired
                   </span>
                   <span className="flex items-center gap-1.5">
                     <Zap size={16} className="text-amber-500" />
-                    No Fix, No Fee
+                    Same-Day Repairs Available
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <ShieldCheck size={16} className="text-[#0E7C7B] dark:text-teal-400" />
+                    No Fix, No Fee Policy
                   </span>
                 </div>
 
@@ -313,48 +313,9 @@ export function LaptopRepairSlugView({ data }) {
         {/* ══════════════════════════════════════════════
             SECTION 2 — VISUAL DIAGNOSTIC BREAKDOWN / SYMPTOMS
         ══════════════════════════════════════════════ */}
-        <section className="py-16 sm:py-20 bg-white dark:bg-[#070E1A]">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12">
-            
-            {isBrand ? (
-              <div className="space-y-10">
-                
-                <div className="text-center max-w-3xl mx-auto space-y-3">
-                  <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400">
-                    LAB CAPABILITIES & WORKBENCH GUARANTEE
-                  </span>
-                  <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                    Why Choose Robuzta for {data.name} Repairs?
-                  </h2>
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300">
-                    We repair {data.name} laptops at the chip component level — saving you up to 70% compared to full motherboard replacement costs.
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {data.brandHighlights.map((hl, idx) => (
-                    <div
-                      key={hl}
-                      className="group p-6 rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-900/60 hover:border-[#0E7C7B] dark:hover:border-teal-500/80 transition-all duration-300 space-y-3"
-                    >
-                      <div className="flex items-center justify-between">
-                        <div className="h-10 w-10 rounded-2xl bg-[#0E7C7B]/10 dark:bg-[#0E7C7B]/20 text-[#0E7C7B] dark:text-teal-400 flex items-center justify-center font-black text-sm">
-                          0{idx + 1}
-                        </div>
-                        <CheckCircle2 size={20} className="text-emerald-500" />
-                      </div>
-                      <h3 className="text-base font-black text-slate-900 dark:text-white leading-snug">
-                        {hl}
-                      </h3>
-                      <p className="text-xs text-slate-600 dark:text-slate-400">
-                        Performed in our ESD-safe cleanroom with FLIR thermal inspection and stereo microscopes.
-                      </p>
-                    </div>
-                  ))}
-                </div>
-
-              </div>
-            ) : (
+        {!isBrand && (
+          <section className="py-16 sm:py-20 bg-white dark:bg-[#070E1A]">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
                 
                 {/* Symptoms Column */}
@@ -373,7 +334,7 @@ export function LaptopRepairSlugView({ data }) {
                   </div>
 
                   <div className="space-y-3">
-                    {data.symptoms.map((sym) => (
+                    {data.symptoms?.map((sym) => (
                       <div
                         key={sym}
                         className="flex items-start gap-3.5 p-4 rounded-2xl border border-amber-200/80 dark:border-amber-900/40 bg-amber-50/50 dark:bg-amber-950/20"
@@ -401,7 +362,7 @@ export function LaptopRepairSlugView({ data }) {
                   </div>
 
                   <div className="space-y-3">
-                    {data.repairProcess.map((step, idx) => (
+                    {data.repairProcess?.map((step, idx) => (
                       <div
                         key={step}
                         className="flex items-start gap-3.5 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-900/60"
@@ -418,107 +379,52 @@ export function LaptopRepairSlugView({ data }) {
                 </div>
 
               </div>
-            )}
-
-          </div>
-        </section>
+            </div>
+          </section>
+        )}
 
         {/* ══════════════════════════════════════════════
-            SECTION 3 — VISUAL COMPARISON (ROBUZTA VS LOCAL REPAIR SHOPS)
+            WHY CUSTOMERS CHOOSE US SECTION
         ══════════════════════════════════════════════ */}
-        <section className="py-16 sm:py-20 bg-slate-50 dark:bg-[#0a1424] border-y border-slate-200 dark:border-slate-800">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
-            
-            <div className="text-center max-w-3xl mx-auto space-y-3">
+        <section className="py-12 sm:py-16 bg-slate-50/80 dark:bg-slate-900/60 border-y border-slate-200 dark:border-slate-800">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
+            <div className="text-center space-y-2">
               <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400">
-                TRANSPARENCY COMPARISON
+                PROVEN REPAIR EXCELLENCE
               </span>
-              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                Robuzta Lab Standard vs General Repair Shops
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
+                Why Customers Choose Us
               </h2>
-              <p className="text-sm text-slate-600 dark:text-slate-300">
-                Protect your laptop hardware, data privacy, and money with transparent engineering.
-              </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-              
-              {/* Robuzta Standard Card */}
-              <div className="rounded-3xl border-2 border-[#0E7C7B] bg-white dark:bg-slate-900 p-6 sm:p-8 space-y-6 shadow-xl relative overflow-hidden">
-                <div className="absolute top-0 right-0 bg-[#0E7C7B] text-white text-[10px] font-black uppercase tracking-wider px-4 py-1 rounded-bl-xl">
-                  ROBUZTA CERTIFIED
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+              {(data.whyChooseUs || [
+                { title: '1000+ Devices Repaired', desc: 'Trusted by thousands across Ahmedabad' },
+                { title: 'Chip-Level Repair Experts', desc: 'Precision BGA & motherboard schematics' },
+                { title: 'Genuine OEM Parts', desc: '100% original displays, batteries & ICs' },
+                { title: 'Same-Day Repairs', desc: 'Fast express 1–3 hours turnaround' },
+                { title: 'Transparent Pricing', desc: 'Upfront estimate with no hidden fees' }
+              ]).map((item, idx) => (
+
+                <div
+                  key={idx}
+                  className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 space-y-2 shadow-sm hover:border-[#0E7C7B] dark:hover:border-teal-500/80 transition-all duration-300 group text-center flex flex-col items-center justify-center"
+                >
+                  <div className="h-10 w-10 rounded-xl bg-amber-100 dark:bg-amber-950/60 text-amber-500 flex items-center justify-center text-lg font-black shrink-0 group-hover:scale-110 transition-transform">
+                    ⭐
+                  </div>
+                  <h3 className="text-sm font-black text-slate-900 dark:text-white leading-snug">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                    {item.desc}
+                  </p>
                 </div>
-
-                <div className="flex items-center gap-3">
-                  <div className="h-12 w-12 rounded-2xl bg-[#0E7C7B]/10 dark:bg-[#0E7C7B]/20 text-[#0E7C7B] dark:text-teal-400 flex items-center justify-center">
-                    <ShieldCheck size={26} />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-black text-slate-900 dark:text-white">Robuzta Techlabs</h3>
-                    <span className="text-xs font-bold text-[#0E7C7B] dark:text-teal-400">Precision Component Lab</span>
-                  </div>
-                </div>
-
-                <ul className="space-y-3.5 text-xs sm:text-sm text-slate-800 dark:text-slate-200">
-                  <li className="flex items-center gap-3">
-                    <CheckCircle2 size={18} className="text-emerald-500 shrink-0" />
-                    <span><strong>Zero Password / Zero OTP:</strong> Your personal data remains 100% locked & safe.</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle2 size={18} className="text-emerald-500 shrink-0" />
-                    <span><strong>BGA Micro-Soldering:</strong> Fix individual shorted ICs instead of ₹30,000+ board swaps.</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle2 size={18} className="text-emerald-500 shrink-0" />
-                    <span><strong>No Fix, No Fee Guarantee:</strong> Pay zero charges if we cannot repair your machine.</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle2 size={18} className="text-emerald-500 shrink-0" />
-                    <span><strong>180-Day OEM Warranty:</strong> Digital invoice & serial-verified part warranty.</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* General Shop Card */}
-              <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/40 p-6 sm:p-8 space-y-6 opacity-90">
-                <div className="flex items-center gap-3">
-                  <div className="h-12 w-12 rounded-2xl bg-slate-200 dark:bg-slate-800 text-slate-500 flex items-center justify-center">
-                    <XCircle size={26} className="text-rose-500" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-black text-slate-900 dark:text-white">General Local Repair Shop</h3>
-                    <span className="text-xs font-bold text-slate-400">Uncertified Counter Repair</span>
-                  </div>
-                </div>
-
-                <ul className="space-y-3.5 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
-                  <li className="flex items-center gap-3">
-                    <XCircle size={18} className="text-rose-500 shrink-0" />
-                    <span>Ask for your Windows/macOS passwords and access personal files.</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <XCircle size={18} className="text-rose-500 shrink-0" />
-                    <span>Insist on expensive complete motherboard replacement without component testing.</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <XCircle size={18} className="text-rose-500 shrink-0" />
-                    <span>Charge inspection fees even when device is not repaired.</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <XCircle size={18} className="text-rose-500 shrink-0" />
-                    <span>Short 7-day or zero warranty on duplicate or used parts.</span>
-                  </li>
-                </ul>
-              </div>
-
+              ))}
             </div>
-
           </div>
         </section>
 
-        {/* ══════════════════════════════════════════════
-            SECTION 4 — DYNAMIC VISUAL CROSS-LINKING MATRIX
-        ══════════════════════════════════════════════ */}
         <section className="py-16 sm:py-20 bg-white dark:bg-[#070E1A]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
             
@@ -527,11 +433,11 @@ export function LaptopRepairSlugView({ data }) {
                 {isBrand ? `REPAIR SERVICES FOR ${data.name.toUpperCase()}` : `REPAIR ${data.name.toUpperCase()} BY BRAND`}
               </span>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
-                {isBrand ? `What Needs Repair on Your ${data.name} Laptop?` : `Select Brand for ${data.name}`}
+                {isBrand ? (data.problemsTitle || `Having Trouble With Your ${data.name} Laptop?`) : `Select Brand for ${data.name}`}
               </h2>
               <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300">
                 {isBrand
-                  ? `Select the hardware issue below to view exact diagnostic workflow, pricing, and turnaround times for ${data.name}.`
+                  ? (data.problemsSubtitle || `Select the hardware issue below to view exact diagnostic workflow, pricing, and turnaround times for ${data.name}.`)
                   : `Select your laptop brand to get specialized OEM component replacement and BGA schematics.`}
               </p>
             </div>
@@ -539,12 +445,14 @@ export function LaptopRepairSlugView({ data }) {
             {/* CROSS-LINKING MATRIX GRID */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {isBrand ? (
-                /* ON BRAND PAGE -> LINK TO ALL 9 PROBLEMS WITH CLEAN COMPACT CARDS */
-                LAPTOP_PROBLEMS.map((prob) => {
+                /* ON BRAND PAGE -> LINK TO PROBLEMS WITH CLEAN CARDS */
+                (data.commonProblems || LAPTOP_PROBLEMS).map((prob) => {
                   const ProbIcon = problemIconMap[prob.slug] || Wrench;
+                  const itemTitle = prob.title || `${data.name} ${prob.name}`;
+                  const itemDesc = prob.description || prob.tagline;
                   return (
                     <Link
-                      key={prob.slug}
+                      key={prob.title || prob.slug}
                       href={`/laptop-repair/${prob.slug}/`}
                       className="group flex flex-col justify-between rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/60 p-5 sm:p-6 hover:border-[#0E7C7B] dark:hover:border-teal-500/80 hover:shadow-xl transition-all duration-300"
                     >
@@ -553,17 +461,14 @@ export function LaptopRepairSlugView({ data }) {
                           <div className="h-11 w-11 rounded-2xl bg-[#0E7C7B]/10 dark:bg-[#0E7C7B]/20 text-[#0E7C7B] dark:text-teal-300 flex items-center justify-center group-hover:scale-110 transition-transform">
                             <ProbIcon size={20} />
                           </div>
-                          <span className="text-xs font-black text-[#0E7C7B] dark:text-teal-400 font-mono bg-[#0E7C7B]/10 dark:bg-teal-400/10 px-2.5 py-0.5 rounded-full border border-[#0E7C7B]/20 dark:border-teal-400/20">
-                            {prob.priceEstimate.split(' ')[0]} {prob.priceEstimate.split(' ')[1]}
-                          </span>
                         </div>
 
                         <div>
                           <h3 className="text-base font-black text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-300 transition-colors">
-                            {data.name} {prob.name}
+                            {itemTitle}
                           </h3>
-                          <p className="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1 line-clamp-1">
-                            {prob.tagline}
+                          <p className="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1 line-clamp-2">
+                            {itemDesc}
                           </p>
                         </div>
                       </div>
@@ -571,7 +476,7 @@ export function LaptopRepairSlugView({ data }) {
                       <div className="pt-4 mt-3 border-t border-slate-200/60 dark:border-slate-800/80 flex items-center justify-between text-xs font-bold">
                         <span className="text-slate-500 dark:text-slate-400 flex items-center gap-1">
                           <Clock size={13} />
-                          {prob.estimatedTime}
+                          {prob.estimatedTime || '1 – 3 Hours'}
                         </span>
                         <span className="text-[#0E7C7B] dark:text-teal-400 group-hover:translate-x-1 transition-transform flex items-center gap-1 font-black">
                           <span>Fix Issue</span>
@@ -582,6 +487,7 @@ export function LaptopRepairSlugView({ data }) {
                   );
                 })
               ) : (
+
                 /* ON PROBLEM PAGE -> LINK TO ALL 7 BRANDS WITH CLEAN BRAND LOGO CARDS */
                 LAPTOP_BRANDS.map((brand) => (
                   <Link

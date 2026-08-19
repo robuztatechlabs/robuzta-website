@@ -300,7 +300,47 @@ export function MobileRepairSlugView({ data }) {
           </div>
         </section>
 
+        {/* Why Customers Choose Us */}
+        <section className="py-12 sm:py-16 bg-slate-50/80 dark:bg-slate-900/60 border-y border-slate-200 dark:border-slate-800">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
+            <div className="text-center space-y-2">
+              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400">
+                PROVEN REPAIR EXCELLENCE
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
+                Why Customers Choose Us
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+              {[
+                { title: '1000+ Devices Repaired', desc: 'Trusted by thousands across Ahmedabad' },
+                { title: 'Chip-Level Repair Experts', desc: 'Precision BGA & motherboard schematics' },
+                { title: 'Genuine OEM Parts', desc: '100% original displays, batteries & ICs' },
+                { title: 'Same-Day Repairs', desc: 'Fast express 1–3 hours turnaround' },
+                { title: 'Transparent Pricing', desc: 'Upfront estimate with no hidden fees' }
+              ].map((item, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 space-y-2 shadow-sm hover:border-[#0E7C7B] dark:hover:border-teal-500/80 transition-all duration-300 group text-center flex flex-col items-center justify-center"
+                >
+                  <div className="h-10 w-10 rounded-xl bg-amber-100 dark:bg-amber-950/60 text-amber-500 flex items-center justify-center text-lg font-black shrink-0 group-hover:scale-110 transition-transform">
+                    ⭐
+                  </div>
+                  <h3 className="text-sm font-black text-slate-900 dark:text-white leading-snug">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Diagnostic & Repair Protocol */}
+
         <section className="py-12 sm:py-16 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
             <div className="text-center max-w-3xl mx-auto space-y-2">

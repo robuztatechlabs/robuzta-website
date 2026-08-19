@@ -7,8 +7,10 @@ const DEDICATED_SERVICE_URLS = {
   'mobile-repair': '/mobile-repair/',
   'laptop-repair': '/laptop-repair/',
   'macbook-repair': '/laptop-repair/macbook/',
+  'surface-repair': '/laptop-repair/surface/',
   'gaming-desktop': '/gaming-desktop/repair/',
   'gaming-pc-repair': '/gaming-desktop/repair/',
+  'desktop-repair': '/gaming-desktop/repair/',
   'data-recovery': '/data-recovery/',
   'software-services': '/software-services/',
   'cleaning-tune-up': '/cleaning-tune-up/'

@@ -26,7 +26,14 @@ import {
   RotateCcw,
   MousePointerClick,
   X,
-  ExternalLink
+  ExternalLink,
+  Monitor,
+  Battery,
+  Keyboard,
+  Flame,
+  Wrench,
+  Code,
+  Wind
 } from 'lucide-react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
@@ -223,63 +230,62 @@ export function HeroSection() {
 
           </div>
 
-          {/* Right Column: One Visual Hero Feature Box */}
-          <div className="hidden md:block lg:col-span-6 relative">
-            <div className="relative rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-900/95 dark:bg-slate-950/95 backdrop-blur-xl p-5 sm:p-8 shadow-2xl space-y-6 overflow-hidden">
+          {/* Right Column: 9 Hardware Repair Service Cards Grid (Hidden on Mobile) */}
+          <div className="hidden lg:block lg:col-span-6 relative">
+            <div className="relative rounded-3xl border border-slate-800 bg-[#0B132B] p-4 xs:p-5 sm:p-6 shadow-2xl space-y-4 overflow-hidden">
               
-              {/* Visual Header */}
-              <div className="flex items-center justify-between border-b border-slate-800 pb-4">
+              {/* Dark Visual Header */}
+              <div className="flex items-center justify-between border-b border-slate-800/80 pb-3">
                 <div className="flex items-center gap-2">
-                  <div className="h-3 w-3 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="text-xs font-black tracking-widest text-slate-300 uppercase font-mono">
-                    Robuzta Hardware Lab
+                  <div className="h-2.5 w-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="text-xs font-black tracking-widest text-teal-400 uppercase font-mono">
+                    ROBUZTA HARDWARE REPAIR SERVICES
                   </span>
                 </div>
-                <span className="text-[10px] font-extrabold uppercase tracking-wider text-teal-400 bg-teal-950/80 border border-teal-800/60 px-2.5 py-1 rounded-full">
-                  ISO 9001:2015
+                <span className="text-[10px] font-extrabold uppercase tracking-wider text-teal-300 bg-teal-950/90 border border-teal-800/80 px-2.5 py-0.5 rounded-full">
+                  EXPRESS LAB
                 </span>
               </div>
 
-
-
-              {/* 3D Explorer Viewport */}
-              <div className="relative w-full h-[250px] sm:h-[350px] mt-4 rounded-xl sm:rounded-2xl overflow-hidden bg-slate-950 border border-slate-700/50 shadow-inner">
-                <LaptopExplorer
-                  onComponentSelect={handleComponentSelect}
-                  selectedComponent={selectedComponent}
-                  onResetView={handleResetView}
-                  isExploded={isExploded}
-                  zoomAction={zoomAction}
-                />
-
-                {/* Interaction Hint Badge */}
-                {!selectedComponent && (
-                  <div className="absolute bottom-3 left-0 right-0 flex items-center justify-center gap-4 pointer-events-none px-4 z-20">
-                    <div className="flex items-center gap-2 text-[10px] sm:text-xs font-bold text-slate-700 dark:text-slate-300 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-slate-200 dark:border-slate-800 shadow-xl">
-                      <MousePointerClick size={14} className="text-[#0E7C7B] dark:text-teal-400 animate-bounce" />
-                      <span>Click any IC to inspect details</span>
-                    </div>
-                  </div>
-                )}
-
-                {/* Overlay Button that appears when a component is selected */}
-                {selectedComponent && (
-                  <div className="absolute bottom-4 left-0 right-0 flex items-center justify-center pointer-events-none z-40 px-4">
-                    <a
-                      href={siteConfig.whatsappHref}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="pointer-events-auto flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white font-bold py-2 sm:py-2.5 px-4 sm:px-6 rounded-xl shadow-xl transition-transform hover:scale-105 active:scale-95 text-center border border-teal-400/30"
-                      onClick={(e) => e.stopPropagation()}
+              {/* 9 Services 3x3 Grid (Strictly 3 Columns per Row) */}
+              <div className="grid grid-cols-3 gap-2.5 sm:gap-3">
+                {[
+                  { name: 'Laptop Repair', icon: Laptop, href: '/laptop-repair/' },
+                  { name: 'Mobile Repair', icon: Smartphone, href: '/mobile-repair/' },
+                  { name: 'MacBook Repair', icon: Cpu, href: '/laptop-repair/macbook/' },
+                  { name: 'Surface Repair', icon: Monitor, href: '/laptop-repair/surface/' },
+                  { name: 'Gaming PC Repair', icon: Flame, href: '/gaming-desktop/repair/' },
+                  { name: 'Desktop Repair', icon: Wrench, href: '/services/desktop-repair/' },
+                  { name: 'Data Recovery', icon: Database, href: '/data-recovery/' },
+                  { name: 'Software Services', icon: Code, href: '/software-services/' },
+                  { name: 'Cleaning & Tune-Up', icon: Wind, href: '/cleaning-tune-up/' }
+                ].map((service, idx) => {
+                  const Icon = service.icon;
+                  return (
+                    <Link
+                      key={idx}
+                      href={service.href}
+                      className="group relative flex flex-col items-center justify-center text-center p-3.5 sm:p-4 rounded-2xl bg-[#131F37] hover:bg-[#1A2A4A] border border-slate-700/70 hover:border-teal-400/80 hover:shadow-xl hover:shadow-teal-500/10 hover:-translate-y-1 transition-all duration-300 cursor-pointer space-y-2.5"
                     >
-                      <WhatsappIcon size={18} className="text-white" />
-                      <span className="text-sm sm:text-base">Book Repair For This Part</span>
-                    </a>
-                  </div>
-                )}
+                      <div className="h-10 w-10 sm:h-11 sm:w-11 rounded-xl bg-teal-500/10 text-teal-300 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#0E7C7B] group-hover:text-white transition-all shadow-inner shrink-0">
+                        <Icon size={20} />
+                      </div>
+                      <span className="text-xs sm:text-sm font-bold text-slate-100 group-hover:text-teal-300 leading-snug transition-colors line-clamp-2">
+                        {service.name}
+                      </span>
+                    </Link>
+                  );
+                })}
               </div>
+
+
+
             </div>
           </div>
+
+
+
+
 
         </div>
       </div>

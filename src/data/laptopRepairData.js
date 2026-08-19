@@ -8,13 +8,78 @@ export const LAPTOP_BRANDS = [
     slug: 'dell',
     name: 'Dell',
     fullName: 'Dell Laptop Repair Services',
-    h1: 'Dell Laptop Repair Services in Ahmedabad',
-    tagline: 'Component-level logic board diagnostics, OEM display, battery & keyboard replacement for Inspiron, XPS, Vostro, and Alienware series.',
+    h1: 'Dell Laptop Repair in Ahmedabad',
+    tagline: 'We fix charging issues, broken screens, motherboard Issue, battery problems, overheating, and more.',
     metaTitle: 'Dell Laptop Repair in Ahmedabad | Robuzta Techlabs',
     metaDescription: 'Expert Dell laptop repair in Ahmedabad. Certified component-level diagnostics for XPS, Inspiron, Vostro & Alienware. Genuine parts & warranty.',
     logoImage: '/assets/brands/dell-2.svg',
     shortTag: 'XPS, Inspiron, Vostro & Alienware',
-    supportedModels: ['Dell XPS 13 / 15 / 17', 'Dell Inspiron 3000 / 5000 / 7000', 'Dell Vostro Series', 'Dell Latitude Corporate', 'Dell Alienware & G-Series'],
+    supportedModels: ['Dell XPS 13 / 15 / 17', 'Dell Inspiron 3000 / 5000 / 7000', 'Dell Vostro Series', 'Dell Latitude Corporate'],
+    commonProblems: [
+      {
+        title: 'Dell Laptop Stuck on Dell Logo?',
+        description: 'We diagnose boot failures caused by SSD, Windows, BIOS, or motherboard issues.',
+        slug: 'motherboard-repair',
+        priceEstimate: 'Starts ₹1,499',
+        estimatedTime: '24 – 48 Hours'
+      },
+      {
+        title: 'Dell Laptop Not Charging?',
+        description: 'Charging issues can be caused by a faulty adapter, battery, charging port, or motherboard.',
+        slug: 'charging-port-repair',
+        priceEstimate: 'Starts ₹899',
+        estimatedTime: '2 – 4 Hours'
+      },
+      {
+        title: 'Dell Laptop Showing Blue Screen Errors?',
+        description: 'Blue screen crashes can indicate hardware or operating system problems.',
+        slug: 'motherboard-repair',
+        priceEstimate: 'Starts ₹1,299',
+        estimatedTime: '1 – 3 Hours'
+      },
+      {
+        title: 'Dell Wi-Fi & Network Repair',
+        description: 'Wi-Fi connectivity, Bluetooth, and network card troubleshooting.',
+        slug: 'motherboard-repair',
+        priceEstimate: 'Starts ₹799',
+        estimatedTime: '1 – 2 Hours'
+      },
+      {
+        title: 'Dell Keyboard Replacement',
+        description: 'Faulty keys, liquid damage, and complete keyboard replacement.',
+        slug: 'keyboard-replacement',
+        priceEstimate: 'Starts ₹1,199',
+        estimatedTime: '2 – 4 Hours'
+      },
+      {
+        title: 'Dell Body Panel & Hinge Repair',
+        description: 'Fix broken hinges, damaged laptop casing, loose display frames, and cracked body panels with durable repair solutions.',
+        slug: 'body-panel-repair',
+        priceEstimate: 'Starts ₹999',
+        estimatedTime: '3 – 6 Hours'
+      },
+      {
+        title: 'Fan & Thermal Service',
+        description: 'fan cleaning, thermal paste replacement, and overheating solutions.',
+        slug: 'fan-repair',
+        priceEstimate: 'Starts ₹799',
+        estimatedTime: '1 – 3 Hours'
+      },
+      {
+        title: 'Dell Display Cable Repair',
+        description: 'Fix display cable issues causing screen flickering, no display, or intermittent screen problems.',
+        slug: 'screen-replacement',
+        priceEstimate: 'Starts ₹1,299',
+        estimatedTime: '1 – 3 Hours'
+      },
+      {
+        title: 'Dell Data Recovery Service',
+        description: 'Recover important documents, photos, videos, and business data from damaged storage devices.',
+        slug: 'liquid-damage-repair',
+        priceEstimate: 'Starts ₹1,999',
+        estimatedTime: '24 – 48 Hours'
+      }
+    ],
     brandHighlights: [
       'Component-level power IC and BGA rework on Dell motherboards',
       'Original Dell OEM battery and display assembly replacements',
@@ -23,16 +88,20 @@ export const LAPTOP_BRANDS = [
     ],
     faqs: [
       {
-        question: 'How long does Dell laptop repair take at Robuzta Techlabs?',
-        answer: 'Screen, battery, and keyboard replacements for Dell laptops are typically completed in 2 to 4 hours. Complex BGA motherboard and power IC repairs take 24 to 48 hours.'
+        question: 'Is my data safe during the repair process?',
+        answer: 'Yes, we prioritize customer privacy and do not access personal files unless necessary for diagnosis.'
       },
       {
-        question: 'Do you use genuine Dell replacement screens and batteries?',
-        answer: 'Yes! We source grade-A OEM original displays, batteries, and keyboards backed by our official replacement warranty.'
+        question: 'Do you use genuine replacement parts?',
+        answer: 'We use quality replacement parts and OEM-grade components whenever available.'
       },
       {
-        question: 'Can you repair Alienware laptops that overheat or crash while gaming?',
-        answer: 'Absolutely. We specialize in high-performance Alienware thermal overhauls, GPU BGA reballing, fan replacements, and liquid metal / thermal compound application.'
+        question: 'Why is my Dell laptop battery draining so fast?',
+        answer: 'Battery wear, background applications, and charging issues can reduce battery life.'
+      },
+      {
+        question: 'How much does Dell laptop repair cost?',
+        answer: 'Repair costs depend on the issue and replacement parts required. A diagnosis helps determine the exact repair cost.'
       }
     ]
   },
@@ -40,13 +109,71 @@ export const LAPTOP_BRANDS = [
     slug: 'hp',
     name: 'HP',
     fullName: 'HP Laptop Repair Services',
-    h1: 'HP Laptop Repair Services in Ahmedabad',
-    tagline: 'Specialized hardware repair for HP Pavilion, Spectre, Envy, EliteBook, ProBook, and OMEN gaming laptops.',
+    h1: 'HP Laptop Repair in Ahmedabad',
+    tagline: 'HP Laptop Repair Services in Ahmedabad for Pavilion, Victus, Omen, EliteBook, and ProBook laptops. We repair charging issues, screen damage, motherboard faults, battery problems, overheating, and data recovery needs with professional diagnostics and quality parts.',
     metaTitle: 'HP Laptop Repair in Ahmedabad | Robuzta Techlabs',
     metaDescription: 'Professional HP laptop repair in Ahmedabad. Fast screen, battery, hinge & logic board repair for Spectre, Pavilion, Envy & OMEN laptops.',
     logoImage: '/assets/brands/hp-hewlett-packard.svg',
     shortTag: 'Spectre, Pavilion, Envy & OMEN',
     supportedModels: ['HP Pavilion 14 / 15 / x360', 'HP Spectre x360 Series', 'HP Envy 13 / 15 / 16', 'HP OMEN & Victus Gaming', 'HP EliteBook & ProBook'],
+    problemsTitle: 'How Can We Help Fix Your HP Laptop?',
+    problemsSubtitle: 'Whether your HP laptop is not charging, running slow, overheating, or has a damaged screen, explore our repair services below for expert solutions.',
+    commonProblems: [
+      {
+        title: 'HP Laptop Black Screen But Power Light Is On?',
+        description: 'We diagnose display, RAM, motherboard, and graphics-related issues.',
+        slug: 'screen-replacement',
+        estimatedTime: '1 – 3 Hours'
+      },
+      {
+        title: 'HP Laptop Running Very Slow?',
+        description: 'Improve performance with SSD upgrades, RAM upgrades, and system optimization.',
+        slug: 'ram-ssd-upgrade',
+        estimatedTime: '1 – 2 Hours'
+      },
+      {
+        title: 'HP Laptop Camera Not Working?',
+        description: 'Webcam hardware and software troubleshooting services available.',
+        slug: 'motherboard-repair',
+        estimatedTime: '1 – 2 Hours'
+      },
+      {
+        title: 'HP Body & Hinge Repair',
+        description: 'Repair of broken hinges, body damage, and display frame issues.',
+        slug: 'body-panel-repair',
+        estimatedTime: '3 – 6 Hours'
+      },
+      {
+        title: 'HP Liquid Damage Repair',
+        description: 'Component-level repair after liquid exposure.',
+        slug: 'liquid-damage-repair',
+        estimatedTime: '24 – 48 Hours'
+      },
+      {
+        title: 'HP Laptop USB Ports Not Working?',
+        description: 'Whether your USB devices are not being detected or connections keep dropping, we can diagnose and repair USB port and hardware-related issues quickly.',
+        slug: 'charging-port-repair',
+        estimatedTime: '2 – 4 Hours'
+      },
+      {
+        title: 'HP Laptop Getting Hot While Charging?',
+        description: 'Overheating during charging can affect battery life and overall performance. We identify and fix battery, charging, and cooling-related issues to keep your HP laptop running safely.',
+        slug: 'battery-replacement',
+        estimatedTime: '1 – 3 Hours'
+      },
+      {
+        title: 'HP Laptop Fan Making Loud Noise?',
+        description: 'Excessive fan noise can be caused by dust buildup, overheating, or a faulty cooling fan. We diagnose and resolve cooling system issues professionally.',
+        slug: 'fan-repair',
+        estimatedTime: '1 – 3 Hours'
+      },
+      {
+        title: 'HP Laptop Keeps Restarting?',
+        description: 'If your HP laptop restarts on its own while working, gaming, or starting up, we can identify the underlying issue and provide the right repair solution.',
+        slug: 'motherboard-repair',
+        estimatedTime: '2 – 4 Hours'
+      }
+    ],
     brandHighlights: [
       'Precision hinge and body panel reconstruction for HP x360 2-in-1s',
       'Logic board power rail short-circuit resolution',
@@ -55,12 +182,24 @@ export const LAPTOP_BRANDS = [
     ],
     faqs: [
       {
-        question: 'Can you fix broken hinges on HP Pavilion x360 laptops?',
-        answer: 'Yes! We perform structural brass-threaded hinge reinforcement and top panel restoration so your 2-in-1 hinge opens smoothly without cracking the plastic casing.'
+        question: 'How long does an HP laptop repair take?',
+        answer: 'Most common repairs are completed within the same day, while complex motherboard repairs may require additional time.'
       },
       {
-        question: 'My HP laptop is stuck on a black screen with blinking LED codes. Can you repair it?',
-        answer: 'Blinking LED patterns indicate specific BIOS, RAM, or power rail faults. Our bench technicians diagnose the exact short-circuit component and restore motherboard power rails.'
+        question: 'Do you repair HP gaming laptops?',
+        answer: 'Yes, we repair HP Victus, HP Omen, and other HP gaming laptop models.'
+      },
+      {
+        question: 'Can you recover data from a dead HP laptop?',
+        answer: 'In many cases, we can recover important files from damaged, non-booting, or failed storage devices.'
+      },
+      {
+        question: 'Why is my HP laptop running slow?',
+        answer: 'Slow performance can be caused by an aging hard drive, low RAM, overheating, or software-related issues.'
+      },
+      {
+        question: 'What HP laptop models do you repair?',
+        answer: 'We repair HP Pavilion, Victus, Omen, EliteBook, ProBook, Spectre, Envy, ZBook, and many other HP laptop models.'
       }
     ]
   },
@@ -69,12 +208,82 @@ export const LAPTOP_BRANDS = [
     name: 'Acer',
     fullName: 'Acer Laptop Repair Services',
     h1: 'Acer Laptop Repair Services in Ahmedabad',
-    tagline: 'Reliable repair solutions for Acer Nitro 5, Predator Helios, Swift, Aspire, and Spin laptops.',
+    tagline: 'Expert Acer Laptop Repair Services in Ahmedabad for Aspire, Nitro, Predator, Swift, and TravelMate laptops. We fix charging issues, screen problems, motherboard faults, overheating, gaming performance issues, battery failures, and startup errors with professional diagnostics and quality replacement parts.',
     metaTitle: 'Acer Laptop Repair in Ahmedabad | Robuzta Techlabs',
     metaDescription: 'Expert Acer laptop repair in Ahmedabad for Nitro 5, Predator, Swift & Aspire models. Display, charging port, thermal & logic board support.',
     logoImage: '/assets/brands/acer-2011.svg',
     shortTag: 'Nitro, Predator, Swift & Aspire',
     supportedModels: ['Acer Nitro 5 / Nitro 16', 'Acer Predator Helios 300 / 16', 'Acer Swift 3 / Swift 5 / Go', 'Acer Aspire 3 / 5 / 7', 'Acer Spin Convertible Series'],
+    whyChooseUs: [
+      { title: 'Experienced Acer Repair Specialists', desc: 'Expert technicians for Aspire, Nitro & Predator' },
+      { title: 'Advanced Chip-Level Diagnostics', desc: 'Precision BGA & motherboard tracing' },
+      { title: 'Quality Replacement Parts', desc: 'OEM grade displays, batteries & ICs' },
+      { title: 'Fast Turnaround Time', desc: 'Same-day express turnaround available' },
+      { title: 'Transparent Pricing', desc: 'Upfront diagnostic quote with zero hidden fees' }
+    ],
+    problemsSubtitle: 'From unexpected shutdowns and noisy fans to display issues and charging problems, we provide professional repair solutions for all Acer laptop models.',
+    commonProblems: [
+      {
+        title: 'Acer Laptop Not Charging?',
+        description: 'We diagnose and repair charging port, battery, adapter, and motherboard-related charging issues.',
+        slug: 'charging-port-repair',
+        estimatedTime: '2 – 4 Hours'
+      },
+      {
+        title: 'Acer Laptop Screen Flickering?',
+        description: 'We diagnose and repair display issues caused by screen, cable, or graphics-related faults.',
+        slug: 'screen-replacement',
+        estimatedTime: '1 – 3 Hours'
+      },
+      {
+        title: 'Acer Laptop RAM Upgrade',
+        description: "Increase your Acer laptop's speed and efficiency with professional RAM upgrade services for Aspire, Nitro, Predator, Swift, and TravelMate models.",
+        slug: 'ram-ssd-upgrade',
+        estimatedTime: '1 – 2 Hours'
+      },
+      {
+        title: 'Acer Laptop Blue Screen Error?',
+        description: 'Blue screen crashes can be caused by hardware faults, driver conflicts, or system errors. We diagnose and fix the issue professionally.',
+        slug: 'motherboard-repair',
+        estimatedTime: '1 – 3 Hours'
+      },
+      {
+        title: 'Acer Nitro Laptop FPS Drops?',
+        description: 'FPS drops during gaming can be caused by overheating, driver issues, or performance bottlenecks. We diagnose and optimize your Acer Nitro laptop for better gaming performance.',
+        slug: 'fan-repair',
+        estimatedTime: '1 – 3 Hours'
+      },
+      {
+        title: 'Acer Gaming Laptop Random Crashes?',
+        description: 'If your Acer gaming laptop suddenly freezes, crashes, or closes games without warning, we can diagnose the issue and help restore smooth, stable performance.',
+        slug: 'motherboard-repair',
+        estimatedTime: '2 – 4 Hours'
+      },
+      {
+        title: 'Acer Motherboard Repair',
+        description: 'From dead laptops and charging issues to liquid damage and startup failures, our experts provide reliable chip-level motherboard repair services for all Acer laptop models.',
+        slug: 'motherboard-repair',
+        estimatedTime: '24 – 48 Hours'
+      },
+      {
+        title: 'Acer Battery Replacement',
+        description: 'We replace swollen, damaged, fast-draining, and non-charging Acer laptop batteries with quality replacement options.',
+        slug: 'battery-replacement',
+        estimatedTime: '1 – 2 Hours'
+      },
+      {
+        title: 'Acer Laptop Showing No Boot Device Found?',
+        description: 'If your Acer laptop cannot detect the SSD or fails to load Windows, we provide expert diagnostics and repair solutions to get your device running again.',
+        slug: 'ram-ssd-upgrade',
+        estimatedTime: '1 – 3 Hours'
+      },
+      {
+        title: 'Acer Body & Hinge Repair',
+        description: 'Acer laptops with broken hinges, cracked body parts, damaged display covers, loose hinges, and structural damage to restore proper functionality.',
+        slug: 'body-panel-repair',
+        estimatedTime: '3 – 6 Hours'
+      }
+    ],
     brandHighlights: [
       'Acer Nitro & Predator dual-fan cooling system repair',
       'DC power jack soldering and charging IC replacement',
@@ -83,26 +292,106 @@ export const LAPTOP_BRANDS = [
     ],
     faqs: [
       {
-        question: 'Do you replace high-refresh rate displays on Acer Nitro & Predator laptops?',
-        answer: 'Yes, we stock genuine 144Hz, 165Hz, and 240Hz IPS screen panels for Acer gaming laptops with 100% color accuracy and zero dead pixel guarantee.'
+        question: 'Do you repair Acer motherboard issues?',
+        answer: 'Yes, we provide advanced chip-level motherboard diagnostics and repair services for Acer laptops.'
       },
       {
-        question: 'My Acer laptop does not charge unless the cord is held at an angle. What is wrong?',
-        answer: 'This indicates a worn DC charging jack or loose motherboard solder joint. We repair or replace the jack connector with reinforced solder joints.'
+        question: 'Do you repair Acer Nitro and Predator gaming laptops?',
+        answer: 'Yes, we repair Acer Nitro, Predator, Aspire, Swift, and other Acer laptop models.'
+      },
+      {
+        question: 'Is my data safe during the repair process?',
+        answer: 'Yes, customer privacy and data security are always our priority during repairs.'
+      },
+      {
+        question: 'Can you recover data from a dead Acer laptop?',
+        answer: 'In many cases, we can recover important files from damaged, non-booting, or failed storage devices.'
+      },
+      {
+        question: 'Why is my Acer laptop overheating?',
+        answer: 'Dust buildup, blocked airflow, worn thermal paste, or cooling system issues can cause overheating. We provide complete thermal servicing.'
       }
     ]
+
   },
   {
     slug: 'asus',
     name: 'ASUS',
     fullName: 'ASUS Laptop Repair Services',
     h1: 'ASUS Laptop Repair Services in Ahmedabad',
-    tagline: 'Authorized-grade hardware repair for ASUS ROG Strix, TUF Gaming, ZenBook, Vivobook, and ProArt laptops.',
-    metaTitle: 'ASUS Laptop Repair in Ahmedabad | Robuzta Techlabs',
-    metaDescription: 'Fast ASUS laptop repair in Ahmedabad for ROG Strix, TUF Gaming, ZenBook & Vivobook models. Motherboard BGA, display & liquid spill repair.',
+    tagline: 'Expert ASUS laptop repair services in Ahmedabad for ROG, TUF Gaming, VivoBook, ZenBook, ExpertBook, and ASUS Creator Series laptops. We repair overheating issues, charging problems, motherboard faults, screen damage, battery issues, gaming performance problems, and startup failures.',
+    metaTitle: 'ASUS Laptop Repair Services in Ahmedabad | Robuzta Techlabs',
+    metaDescription: 'Expert ASUS laptop repair services in Ahmedabad for ROG, TUF Gaming, VivoBook, ZenBook, ExpertBook & Creator laptops. Overheating, screen & chip repair.',
     logoImage: '/assets/brands/asus-rog-1-1.svg',
-    shortTag: 'ROG Strix, TUF & ZenBook',
-    supportedModels: ['ASUS ROG Strix SCAR / G15', 'ASUS TUF Gaming F15 / A15', 'ASUS ZenBook Duo / Flip', 'ASUS Vivobook Pro / S Series', 'ASUS ProArt Studiobook'],
+    shortTag: 'ROG, TUF, ZenBook & VivoBook',
+    supportedModels: ['ASUS ROG Strix / Zephyrus', 'ASUS TUF Gaming F15 / A15', 'ASUS ZenBook Duo / Flip', 'ASUS VivoBook Pro / S Series', 'ASUS ExpertBook & ProArt Series'],
+    whyChooseUs: [
+      { title: 'ASUS Gaming Laptop Specialists', desc: 'Expert technicians for ROG, TUF, ZenBook & VivoBook' },
+      { title: 'Advanced Chip-Level Diagnostics', desc: 'Precision BGA & motherboard tracing' },
+      { title: 'Quality Replacement Parts', desc: 'OEM grade displays, batteries & ICs' },
+      { title: 'Fast Turnaround Time', desc: 'Same-day express repair available' },
+      { title: 'Transparent Pricing', desc: 'Upfront estimate with no hidden charges' },
+      { title: 'Warranty on Eligible Repairs', desc: 'Official warranty on replaced components' },
+      { title: 'Data Privacy Protection', desc: 'Zero password / Zero OTP data security' }
+    ],
+    problemsTitle: 'Is Your ASUS Laptop Giving You Trouble?',
+    problemsSubtitle: "Whether you're facing FPS drops, overheating, charging issues, display problems, or hardware failures, our technicians can diagnose and repair your ASUS laptop professionally.",
+    commonProblems: [
+      {
+        title: 'ASUS Laptop Showing Black Screen?',
+        description: 'We diagnose display, RAM, motherboard, and graphics-related issues.',
+        slug: 'screen-replacement',
+        estimatedTime: '1 – 3 Hours'
+      },
+      {
+        title: 'ASUS ROG Overheating?',
+        description: 'We provide complete thermal servicing and cooling system optimization.',
+        slug: 'fan-repair',
+        estimatedTime: '1 – 3 Hours'
+      },
+      {
+        title: 'ASUS Laptop Keeps Restarting?',
+        description: 'Unexpected restarts may indicate RAM, SSD, software, or motherboard issues.',
+        slug: 'motherboard-repair',
+        estimatedTime: '2 – 4 Hours'
+      },
+      {
+        title: 'ASUS Laptop Battery Not Detected?',
+        description: "Whether your ASUS laptop shows battery errors, won't charge properly, or fails to detect the battery, we provide expert diagnostics and battery-related repair services.",
+        slug: 'battery-replacement',
+        estimatedTime: '1 – 2 Hours'
+      },
+      {
+        title: 'ASUS Laptop Battery Draining Fast?',
+        description: 'Poor battery life can be caused by a worn-out battery, charging issues, or system-related problems. We diagnose and resolve the issue professionally.',
+        slug: 'battery-replacement',
+        estimatedTime: '1 – 2 Hours'
+      },
+      {
+        title: 'ASUS Laptop Freezing Frequently?',
+        description: 'If your ASUS laptop becomes slow, hangs randomly, or stops responding while working, our technicians can identify the problem and help restore reliable performance.',
+        slug: 'ram-ssd-upgrade',
+        estimatedTime: '1 – 3 Hours'
+      },
+      {
+        title: 'ASUS Laptop Fan Making Loud Noise?',
+        description: 'Excessive fan noise can be caused by dust buildup, overheating, or cooling system issues. We diagnose and fix the problem professionally.',
+        slug: 'fan-repair',
+        estimatedTime: '1 – 3 Hours'
+      },
+      {
+        title: 'ASUS TUF Shutting Down While Gaming?',
+        description: 'If your ASUS TUF laptop powers off while playing games, gets extremely hot, or shuts down under heavy load, our technicians can identify the issue and help restore reliable performance.',
+        slug: 'motherboard-repair',
+        estimatedTime: '2 – 4 Hours'
+      },
+      {
+        title: 'ASUS Data Recovery',
+        description: 'Professional ASUS data recovery services for deleted files, SSD failures, corrupted drives, Windows boot issues, formatted storage devices, and inaccessible data.',
+        slug: 'liquid-damage-repair',
+        estimatedTime: '24 – 48 Hours'
+      }
+    ],
     brandHighlights: [
       'BGA reballing for NVIDIA RTX graphics chips on ROG & TUF series',
       'OLED and FHD/4K display replacement for ZenBook models',
@@ -111,12 +400,24 @@ export const LAPTOP_BRANDS = [
     ],
     faqs: [
       {
-        question: 'Can you fix liquid damage on an ASUS ZenBook or ROG laptop?',
-        answer: 'Yes! We perform ultrasonic motherboard cleaning, corrosion removal under stereo microscopes, and replace damaged capacitors to recover your laptop.'
+        question: 'Why is my ASUS laptop fan making loud noise?',
+        answer: 'Excessive fan noise is usually caused by dust buildup, overheating, or cooling system problems.'
       },
       {
-        question: 'My ASUS TUF laptop turns on but shows no display. Is the GPU dead?',
-        answer: 'Not necessarily. It could be a faulty display ribbon, corrupted VRAM IC, or a single shorted MOSFET. We perform component testing before recommending any major repair.'
+        question: 'Do you repair liquid-damaged ASUS laptops?',
+        answer: 'Yes, we provide professional cleaning and component-level repair for liquid-damaged ASUS laptops.'
+      },
+      {
+        question: 'How long does ASUS laptop repair take?',
+        answer: 'Most common ASUS laptop repairs are completed within the same day, while complex motherboard repairs may require additional time.'
+      },
+      {
+        question: 'What ASUS laptop models do you repair?',
+        answer: 'We repair ASUS ROG, TUF Gaming, VivoBook, ZenBook, ExpertBook, ProArt, Chromebook, and many other ASUS laptop models.'
+      },
+      {
+        question: 'Do you provide ASUS laptop repair services in Ahmedabad?',
+        answer: 'Yes, we offer professional ASUS laptop repair services in Ahmedabad for gaming laptops, business laptops, and everyday-use ASUS models.'
       }
     ]
   },
@@ -125,12 +426,79 @@ export const LAPTOP_BRANDS = [
     name: 'MSI',
     fullName: 'MSI Laptop Repair Services',
     h1: 'MSI Laptop Repair Services in Ahmedabad',
-    tagline: 'High-performance diagnostic and repair lab for MSI Katana, Pulse, Stealth, Raider, and Modern series laptops.',
-    metaTitle: 'MSI Laptop Repair in Ahmedabad | Robuzta Techlabs',
-    metaDescription: 'Specialized MSI laptop repair in Ahmedabad. Thermal overhaul, GPU repair, screen replacement & hinge rebuilding for MSI Katana, Raider & Stealth.',
+    tagline: 'Expert MSI laptop repair services in Ahmedabad for Katana, Cyborg, Raider, Stealth, Vector, Pulse, Titan, and Creator Series laptops. We diagnose and repair overheating issues, FPS drops, charging problems, motherboard faults, display damage, startup failures, and gaming performance issues.',
+    metaTitle: 'MSI Laptop Repair Services in Ahmedabad | Robuzta Techlabs',
+    metaDescription: 'Expert MSI laptop repair services in Ahmedabad for Katana, Cyborg, Raider, Stealth, Vector, Pulse, Titan & Creator laptops. Overheating, FPS drops & chip repair.',
     logoImage: '/assets/brands/msi-gaming.svg',
-    shortTag: 'Katana, Raider, Stealth & Pulse',
-    supportedModels: ['MSI Katana GF66 / 15', 'MSI Pulse GL66 / 15', 'MSI Stealth 15 / 17', 'MSI Raider GE66 / 76', 'MSI Modern 14 / 15'],
+    shortTag: 'Katana, Raider, Stealth, Pulse & Cyborg',
+    supportedModels: ['MSI Katana / Cyborg Series', 'MSI Raider GE / GP Series', 'MSI Stealth 15 / 17', 'MSI Vector / Pulse Series', 'MSI Titan & Creator Series'],
+    whyChooseUs: [
+      { title: 'MSI Gaming Laptop Specialists', desc: 'Expert technicians for Katana, Raider, Stealth & Cyborg' },
+      { title: 'Advanced Chip-Level Diagnostics', desc: 'Precision GPU & motherboard tracing' },
+      { title: 'Quality Replacement Parts', desc: 'OEM grade fans, displays & ICs' },
+      { title: 'Fast Turnaround Time', desc: 'Same-day express repair available' },
+      { title: 'Transparent Pricing', desc: 'Upfront estimate with no hidden charges' },
+      { title: 'Warranty on Eligible Repairs', desc: 'Official warranty on replaced components' },
+      { title: 'Data Privacy Protection', desc: 'Zero password / Zero OTP data security' }
+    ],
+    problemsTitle: 'Is Your MSI Laptop Affecting Your Gaming or Productivity?',
+    problemsSubtitle: "Whether you're experiencing overheating, low FPS, charging issues, startup failures, or hardware problems, our technicians can diagnose and repair your MSI laptop professionally.",
+    commonProblems: [
+      {
+        title: 'MSI Laptop Stuck on MSI Logo?',
+        description: "If your MSI laptop gets stuck during startup and won't load Windows, we can diagnose boot, SSD, and BIOS-related issues.",
+        slug: 'motherboard-repair',
+        estimatedTime: '24 – 48 Hours'
+      },
+      {
+        title: 'MSI Laptop Overheating During Gaming?',
+        description: 'Excessive heat can lead to poor performance, sudden shutdowns, and long-term hardware damage. We provide complete thermal servicing.',
+        slug: 'fan-repair',
+        estimatedTime: '1 – 3 Hours'
+      },
+      {
+        title: 'MSI Laptop FPS Drops?',
+        description: 'FPS drops and stuttering can be caused by thermal throttling, driver issues, or hardware bottlenecks.',
+        slug: 'fan-repair',
+        estimatedTime: '1 – 3 Hours'
+      },
+      {
+        title: 'MSI Laptop GPU Not Working?',
+        description: 'Graphics-related issues can affect gaming, rendering, and display output. We diagnose GPU and motherboard-related faults.',
+        slug: 'motherboard-repair',
+        estimatedTime: '24 – 48 Hours'
+      },
+      {
+        title: 'MSI Laptop Randomly Freezes?',
+        description: 'Frequent freezing may indicate SSD issues, RAM faults, overheating, or software-related problems.',
+        slug: 'ram-ssd-upgrade',
+        estimatedTime: '1 – 3 Hours'
+      },
+      {
+        title: 'MSI Laptop Fan Running at Full Speed?',
+        description: 'A constantly running fan may indicate cooling system issues, dust buildup, or thermal management problems.',
+        slug: 'fan-repair',
+        estimatedTime: '1 – 2 Hours'
+      },
+      {
+        title: 'MSI Laptop Battery Not Charging?',
+        description: 'We diagnose charging port, adapter, battery, and motherboard-related charging faults.',
+        slug: 'charging-port-repair',
+        estimatedTime: '2 – 4 Hours'
+      },
+      {
+        title: 'MSI Laptop Showing No Boot Device Found?',
+        description: 'Storage detection issues can prevent Windows from loading properly. We diagnose SSD, BIOS, and boot-related problems.',
+        slug: 'ram-ssd-upgrade',
+        estimatedTime: '1 – 3 Hours'
+      },
+      {
+        title: 'MSI Laptop Shutting Down Under Load?',
+        description: 'Unexpected shutdowns during gaming, rendering, or heavy workloads may indicate overheating or power-related issues.',
+        slug: 'motherboard-repair',
+        estimatedTime: '2 – 4 Hours'
+      }
+    ],
     brandHighlights: [
       'Reinforced steel hinge mount restoration for MSI palm rests',
       'Cooler Boost fan replacement & copper thermal pipe repair',
@@ -139,26 +507,106 @@ export const LAPTOP_BRANDS = [
     ],
     faqs: [
       {
-        question: 'Why do MSI laptop hinges break, and can Robuzta fix them permanently?',
-        answer: 'MSI gaming laptops use tight steel hinges anchored into plastic palm rests. We rebuild the internal screw anchors using industrial epoxy and brass threads to prevent future breakage.'
+        question: 'Why is my MSI laptop overheating?',
+        answer: 'Dust buildup, worn thermal paste, blocked airflow, or cooling system issues are common causes of overheating.'
       },
       {
-        question: 'Can you fix noisy or non-spinning Cooler Boost fans on MSI laptops?',
-        answer: 'Yes, we replace failing hydraulic bearing fans with original MSI replacement blowers and apply high-viscosity thermal compound.'
+        question: 'Do you repair MSI gaming laptops?',
+        answer: 'Yes, we repair MSI Katana, Cyborg, Raider, Stealth, Vector, Pulse, Titan, Creator, and other MSI laptop models.'
+      },
+      {
+        question: 'How long does MSI laptop repair take?',
+        answer: 'Most common MSI laptop repairs are completed within the same day, while complex motherboard repairs may require additional time.'
+      },
+      {
+        question: 'Can you fix FPS drop issues on MSI laptops?',
+        answer: 'Yes, we diagnose and resolve FPS drops caused by overheating, thermal throttling, driver issues, and hardware bottlenecks.'
+      },
+      {
+        question: 'Do you provide MSI laptop repair services in Ahmedabad?',
+        answer: 'Yes, we offer professional MSI laptop repair services in Ahmedabad for gaming, creator, and business MSI laptops.'
       }
     ]
   },
+
   {
     slug: 'surface',
     name: 'Microsoft Surface',
     fullName: 'Microsoft Surface Repair Services',
     h1: 'Microsoft Surface Repair Services in Ahmedabad',
-    tagline: 'Delicate micro-repair lab for Microsoft Surface Pro, Surface Laptop, Surface Book, and Surface Laptop Studio.',
-    metaTitle: 'Microsoft Surface Repair in Ahmedabad | Robuzta Techlabs',
-    metaDescription: 'Precision Microsoft Surface repair in Ahmedabad. Display glass, battery, charging port & logic board repair for Surface Pro, Laptop & Book.',
+    tagline: 'Professional Microsoft Surface repair services in Ahmedabad for Surface Pro, Surface Laptop, Surface Book, Surface Go, and Surface Studio devices. We repair touchscreen issues, charging problems, battery failures, display damage, motherboard faults, startup issues, and SSD-related problems.',
+    metaTitle: 'Microsoft Surface Repair Services in Ahmedabad | Robuzta Techlabs',
+    metaDescription: 'Professional Microsoft Surface repair in Ahmedabad for Surface Pro, Surface Laptop, Book & Go. Touchscreen, battery, charging & logic board support.',
     logoImage: '/assets/brands/microsoft-centered.svg',
-    shortTag: 'Surface Pro, Laptop & Studio',
-    supportedModels: ['Surface Pro 7 / 8 / 9 / X', 'Surface Laptop 3 / 4 / 5 / Go', 'Surface Book 2 / 3', 'Surface Laptop Studio'],
+    shortTag: 'Surface Pro, Laptop, Book & Go',
+    supportedModels: ['Surface Pro Series (Pro 7 / 8 / 9 / X)', 'Surface Laptop Series (3 / 4 / 5 / Go)', 'Surface Book Series (Book 2 / 3)', 'Surface Laptop Studio & Surface Go'],
+    whyChooseUs: [
+      { title: 'Microsoft Surface Repair Specialists', desc: 'Expert technicians for Surface Pro, Laptop & Book' },
+      { title: 'Advanced Chip-Level Diagnostics', desc: 'Precision logic board & charging trace repair' },
+      { title: 'Quality Replacement Parts', desc: 'OEM grade displays, batteries & digitizers' },
+      { title: 'Fast Turnaround Time', desc: 'Same-day express repair available' },
+      { title: 'Transparent Pricing', desc: 'Upfront estimate with zero hidden charges' },
+      { title: 'Warranty on Eligible Repairs', desc: 'Official warranty on replaced components' },
+      { title: 'Data Privacy Protection', desc: 'Zero password / Zero OTP data security' }
+    ],
+    problemsTitle: 'Is Your Microsoft Surface Not Working Properly?',
+    problemsSubtitle: "Whether you're facing touchscreen issues, battery problems, charging faults, startup failures, or display damage, our technicians can diagnose and repair your Microsoft Surface device professionally.",
+    commonProblems: [
+      {
+        title: 'Microsoft Surface Not Charging?',
+        description: 'We diagnose charging port, charger, battery, and motherboard-related charging issues.',
+        slug: 'charging-port-repair',
+        estimatedTime: '2 – 4 Hours'
+      },
+      {
+        title: 'Microsoft Surface Touchscreen Not Working?',
+        description: 'Touchscreen issues can be caused by display damage, driver problems, or hardware faults.',
+        slug: 'screen-replacement',
+        estimatedTime: '1 – 3 Hours'
+      },
+      {
+        title: 'Microsoft Surface Battery Swollen?',
+        description: 'A swollen battery can damage the screen and internal components. We provide safe battery replacement services.',
+        slug: 'battery-replacement',
+        estimatedTime: '1 – 2 Hours'
+      },
+      {
+        title: 'Microsoft Surface Stuck on Logo?',
+        description: 'Startup issues may be caused by SSD failure, Windows corruption, or motherboard-related faults.',
+        slug: 'motherboard-repair',
+        estimatedTime: '24 – 48 Hours'
+      },
+      {
+        title: 'Microsoft Surface Screen Flickering?',
+        description: 'We diagnose display, graphics, and screen-related issues causing flickering or unstable visuals.',
+        slug: 'screen-replacement',
+        estimatedTime: '1 – 3 Hours'
+      },
+      {
+        title: 'Microsoft Surface Type Cover Not Working?',
+        description: 'Keyboard and Type Cover connectivity issues diagnosed and repaired professionally.',
+        slug: 'keyboard-replacement',
+        estimatedTime: '1 – 3 Hours'
+      },
+      {
+        title: 'Microsoft Surface SSD Upgrade?',
+        description: 'Upgrade your Surface device with a faster SSD for improved speed and performance.',
+        slug: 'ram-ssd-upgrade',
+        estimatedTime: '1 – 2 Hours'
+      },
+      {
+        title: 'Microsoft Surface Overheating?',
+        description: 'Excessive heat can affect performance and battery life. We provide complete thermal diagnostics and servicing.',
+        slug: 'fan-repair',
+        estimatedTime: '1 – 3 Hours'
+      },
+      {
+        title: 'Microsoft Surface Data Recovery',
+        description: 'Recover important files from failed SSDs, non-booting devices, corrupted Windows installations, and damaged Surface devices.',
+        slug: 'liquid-damage-repair',
+        estimatedTime: '24 – 48 Hours'
+      }
+    ],
     brandHighlights: [
       'ESD-safe touchscreen digitizer glass separation and assembly',
       'Battery pouch cell replacement without display damage',
@@ -167,26 +615,106 @@ export const LAPTOP_BRANDS = [
     ],
     faqs: [
       {
-        question: 'Is it safe to replace the screen or battery on a glued Microsoft Surface Pro?',
-        answer: 'Microsoft Surface devices are sealed with industrial adhesive. We use controlled infrared heat tables and suction separation tools to open the device without damaging internal ribbons.'
+        question: 'Do you repair Microsoft Surface Pro, Surface Laptop, and Surface Book devices?',
+        answer: 'Yes, we repair Surface Pro, Surface Laptop, Surface Book, Surface Go, and other Microsoft Surface models.'
       },
       {
-        question: 'My Surface Pro battery is swelling and pushing the screen out. What should I do?',
-        answer: 'Stop using the device immediately to prevent screen cracking or battery puncture. Bring it to our lab for immediate safe cell extraction and genuine battery replacement.'
+        question: 'Can a swollen battery damage my Microsoft Surface?',
+        answer: 'Yes, a swollen battery can put pressure on the display and internal components. We recommend replacing it as soon as possible.'
+      },
+      {
+        question: 'Why is my Microsoft Surface touchscreen not responding?',
+        answer: 'Touchscreen issues can be caused by display damage, software conflicts, driver issues, or hardware faults.'
+      },
+      {
+        question: 'Can you recover data from a non-working Surface device?',
+        answer: 'Yes, we provide data recovery services for many Surface devices with SSD, boot, or motherboard-related failures.'
+      },
+      {
+        question: 'Why is my Microsoft Surface stuck on the Windows logo?',
+        answer: 'This can be caused by SSD failure, Windows corruption, BIOS issues, or motherboard faults.'
       }
     ]
   },
   {
     slug: 'macbook',
+
     name: 'Apple MacBook',
     fullName: 'Apple MacBook Repair Services',
     h1: 'Apple MacBook Repair Services in Ahmedabad',
-    tagline: 'Apple-grade logic board micro-soldering, retina display replacement, and battery service for MacBook Air & MacBook Pro (M1, M2, M3 & Intel).',
-    metaTitle: 'MacBook Repair in Ahmedabad | Robuzta Techlabs',
-    metaDescription: 'Premium MacBook repair in Ahmedabad for MacBook Air & Pro (M1/M2/M3/Intel). Logic board chip repair, Retina display, battery & liquid damage.',
+    tagline: 'Professional Apple MacBook repair services in Ahmedabad for MacBook Air, MacBook Pro, M1, M2, M3, Intel MacBook, Retina MacBook, and Apple Silicon devices. We repair display issues, battery problems, liquid damage, logic board faults, charging issues, startup failures, and macOS-related problems.',
+    metaTitle: 'Apple MacBook Repair Services in Ahmedabad | Robuzta Techlabs',
+    metaDescription: 'Professional Apple MacBook repair in Ahmedabad for MacBook Air & Pro (M1, M2, M3, Intel). Logic board chip repair, Retina display, battery & liquid damage.',
     logoImage: '/assets/brands/apple-13.svg',
-    shortTag: 'MacBook Air & Pro (M1/M2/M3/Intel)',
-    supportedModels: ['MacBook Air M1 / M2 / M3 (13" & 15")', 'MacBook Pro 13" / 14" / 16" (M1/M2/M3 Pro & Max)', 'Intel MacBook Air & Pro (2015-2020)'],
+    shortTag: 'MacBook Air & Pro (M1, M2, M3 & Intel)',
+    supportedModels: ['MacBook Air M1 / M2 / M3 (13" & 15")', 'MacBook Pro 13" / 14" / 16" (M1/M2/M3 Pro & Max)', 'Intel MacBook Air & Pro', 'Retina MacBook & Apple Silicon Models'],
+    whyChooseUs: [
+      { title: 'Apple MacBook Repair Specialists', desc: 'Expert technicians for Air, Pro, M1, M2, M3 & Intel' },
+      { title: 'Advanced Logic Board Repair', desc: 'Precision BGA & USB-C CD3215 chip tracing' },
+      { title: 'Quality Replacement Parts', desc: 'Genuine Retina displays, batteries & flex cables' },
+      { title: 'Fast Turnaround Time', desc: 'Same-day express repair available' },
+      { title: 'Transparent Pricing', desc: 'Upfront estimate with zero hidden charges' },
+      { title: 'Warranty on Eligible Repairs', desc: 'Official warranty on replaced components' },
+      { title: 'Data Privacy Protection', desc: 'Zero password / Zero OTP data security' }
+    ],
+    problemsTitle: 'Is Your MacBook Not Performing Like It Should?',
+    problemsSubtitle: 'From liquid damage and battery issues to display faults and logic board failures, our technicians provide professional repair solutions for Apple MacBook devices.',
+    commonProblems: [
+      {
+        title: 'MacBook Not Charging?',
+        description: 'We diagnose charging port, battery, charger, USB-C port, and logic board-related charging issues.',
+        slug: 'charging-port-repair',
+        estimatedTime: '2 – 4 Hours'
+      },
+      {
+        title: 'MacBook Battery Draining Fast?',
+        description: 'Poor battery backup can be caused by battery wear, background processes, or charging-related problems.',
+        slug: 'battery-replacement',
+        estimatedTime: '1 – 2 Hours'
+      },
+      {
+        title: 'MacBook Screen Flickering?',
+        description: 'Display flickering may indicate screen, display cable, graphics, or logic board-related issues.',
+        slug: 'screen-replacement',
+        estimatedTime: '1 – 3 Hours'
+      },
+      {
+        title: 'MacBook Stuck on Apple Logo?',
+        description: 'Startup issues can be caused by macOS corruption, SSD failure, or logic board faults.',
+        slug: 'motherboard-repair',
+        estimatedTime: '24 – 48 Hours'
+      },
+      {
+        title: 'MacBook Showing Folder With Question Mark?',
+        description: 'This usually indicates SSD detection issues or storage-related failures that require professional diagnosis.',
+        slug: 'ram-ssd-upgrade',
+        estimatedTime: '1 – 3 Hours'
+      },
+      {
+        title: 'MacBook Liquid Damage?',
+        description: 'Liquid spills can damage internal components and logic boards. We provide professional cleaning and repair services.',
+        slug: 'liquid-damage-repair',
+        estimatedTime: '24 – 48 Hours'
+      },
+      {
+        title: 'MacBook Overheating?',
+        description: 'Excessive heat can reduce performance and affect battery life. We diagnose and resolve cooling-related issues.',
+        slug: 'fan-repair',
+        estimatedTime: '1 – 3 Hours'
+      },
+      {
+        title: 'MacBook Keyboard or Trackpad Not Working?',
+        description: 'We diagnose and repair keyboard, trackpad, flex cable, and connectivity-related issues.',
+        slug: 'keyboard-replacement',
+        estimatedTime: '2 – 4 Hours'
+      },
+      {
+        title: 'MacBook Data Recovery',
+        description: 'Professional data recovery services for failed SSDs, damaged storage, liquid-damaged devices, and non-booting MacBooks.',
+        slug: 'liquid-damage-repair',
+        estimatedTime: '24 – 48 Hours'
+      }
+    ],
     brandHighlights: [
       'Component-level Apple Silicon & Intel logic board micro-soldering',
       'Retina LCD panel and flex cable (Flexgate) repair',
@@ -195,16 +723,33 @@ export const LAPTOP_BRANDS = [
     ],
     faqs: [
       {
-        question: 'Do you repair MacBook logic boards instead of replacing the whole board?',
-        answer: 'Yes! Replacing an entire Apple logic board can cost 70% of a new MacBook. We replace individual shorted capacitors, SMC/CD3215 USB-C chips, and power ICs at a fraction of the cost.'
+        question: 'Do you repair MacBook Air and MacBook Pro models?',
+        answer: 'Yes, we repair MacBook Air, MacBook Pro, Intel MacBooks, and Apple Silicon models including M1, M2, and M3 devices.'
       },
       {
-        question: 'Will my data stay safe during MacBook liquid damage repair?',
-        answer: 'Data safety is our priority. We operate under strict Zero-Password and Zero-OTP protocols, isolating storage components to protect your personal files.'
+        question: 'Can you repair MacBook liquid damage?',
+        answer: 'Yes, we provide professional liquid damage cleaning and logic board repair services.'
+      },
+      {
+        question: 'Why is my MacBook stuck on the Apple logo?',
+        answer: 'This can be caused by macOS corruption, SSD issues, startup errors, or logic board-related faults.'
+      },
+      {
+        question: 'Can you replace a MacBook battery?',
+        answer: 'Yes, we provide battery replacement services for MacBook Air and MacBook Pro models.'
+      },
+      {
+        question: 'Why is my MacBook overheating?',
+        answer: 'Dust buildup, cooling system issues, software processes, or hardware faults can cause overheating.'
+      },
+      {
+        question: 'Can you recover data from a dead MacBook?',
+        answer: 'Yes, we provide professional data recovery services for many non-booting and damaged MacBooks.'
       }
     ]
   }
 ];
+
 
 export const LAPTOP_PROBLEMS = [
   {
