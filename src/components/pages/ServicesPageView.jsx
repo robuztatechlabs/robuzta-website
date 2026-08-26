@@ -29,7 +29,6 @@ const SERVICE_ICONS = {
   'macbook-repair': <Cpu className="h-7 w-7 text-[#0E7C7B]" />,
   'surface-repair': <Wrench className="h-7 w-7 text-purple-400" />,
   'gaming-pc-repair': <Flame className="h-7 w-7 text-amber-400" />,
-  'desktop-repair': <Monitor className="h-7 w-7 text-blue-400" />,
 };
 
 const CATEGORY_FILTERS = ['All Services', 'Laptops & MacBooks', 'Mobiles & Tablets', 'Gaming & Workstations'];
@@ -46,7 +45,7 @@ export function ServicesPageView() {
       return ['mobile-repair'].includes(service.slug);
     }
     if (activeFilter === 'Gaming & Workstations') {
-      return ['gaming-pc-repair', 'desktop-repair'].includes(service.slug);
+      return ['gaming-pc-repair'].includes(service.slug);
     }
     return true;
   });
@@ -104,7 +103,6 @@ export function ServicesPageView() {
                   'macbook-repair': '/laptop-repair/macbook/',
                   'surface-repair': '/laptop-repair/surface/',
                   'gaming-pc-repair': '/gaming-desktop/repair/',
-                  'desktop-repair': '/gaming-desktop/repair/',
                   'data-recovery': '/data-recovery/',
                   'software-services': '/software-services/',
                   'cleaning-tune-up': '/cleaning-tune-up/'

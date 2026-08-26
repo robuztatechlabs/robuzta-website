@@ -41,7 +41,6 @@ const serviceIcons = {
   'macbook-repair': Cpu,
   'surface-repair': Monitor,
   'gaming-pc-repair': Flame,
-  'desktop-repair': Wrench,
 };
 
 /* ─── Step icon map for process ────────────────────────────────── */

@@ -33,7 +33,9 @@ import {
   XCircle,
   ThumbsUp,
   Flame,
-  Search
+  Search,
+  Laptop,
+  Database
 } from 'lucide-react';
 
 import { Header } from '@/components/layout/Header';
@@ -98,22 +100,21 @@ export function LaptopRepairSlugView({ data }) {
     name: data.h1,
     provider: {
       '@type': 'LocalBusiness',
-      name: siteConfig.name,
-      address: siteConfig.address,
-      telephone: siteConfig.phone
-    },
-    areaServed: {
-      '@type': 'City',
-      name: 'Ahmedabad'
-    },
-    description: data.metaDescription,
-    serviceType: 'Laptop Hardware Repair'
+      name: 'Robuzta Techlabs',
+      telephone: siteConfig.phone,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Ahmedabad',
+        addressRegion: 'Gujarat',
+        addressCountry: 'IN'
+      }
+    }
   };
 
-  const faqSchema = {
+  const faqSchema = data.faqs && data.faqs.length > 0 ? {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: (data.faqs || []).map((faq) => ({
+    mainEntity: data.faqs.map((faq) => ({
       '@type': 'Question',
       name: faq.question,
       acceptedAnswer: {
@@ -121,7 +122,260 @@ export function LaptopRepairSlugView({ data }) {
         text: faq.answer
       }
     }))
-  };
+  } : null;
+
+  // Dedicated 100% PDF-Exact View for MacBook
+  if (data.slug === 'macbook') {
+    return (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        />
+        {faqSchema && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          />
+        )}
+
+        <Header />
+
+        <main id="main-content" className="min-h-screen bg-white dark:bg-[#070E1A] text-slate-900 dark:text-white pt-20">
+          
+          {/* SECTION 1 — HERO */}
+          <section className="relative overflow-hidden py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-slate-50/90 via-white to-slate-50/40 dark:from-[#070E1A] dark:via-[#0b1628] dark:to-[#070E1A] border-b border-slate-200 dark:border-slate-800">
+            <div className="pointer-events-none absolute top-10 left-1/4 -translate-x-1/2 w-[550px] h-[550px] bg-[#0E7C7B]/15 dark:bg-[#0E7C7B]/25 rounded-full blur-[140px]" />
+
+            <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center space-y-6">
+              <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-[#0E7C7B]/20 border border-[#0E7C7B]/30 px-4 py-1.5 text-xs font-black uppercase tracking-wider text-[#0E7C7B] dark:text-teal-300 mx-auto">
+                <Sparkles size={14} className="text-[#0E7C7B] dark:text-teal-400" />
+                <span>Certified Apple MacBook Diagnostics & Repair</span>
+              </div>
+
+              <h1 className="text-3xl sm:text-5xl lg:text-5xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.12]">
+                {data.h1}
+              </h1>
+
+              <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 font-medium leading-relaxed max-w-3xl mx-auto">
+                {data.tagline}
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
+                <button
+                  type="button"
+                  onClick={openModal}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-8 py-4 text-sm font-black shadow-xl shadow-[#0E7C7B]/30 hover:scale-[1.02] transition-all cursor-pointer"
+                >
+                  <Calendar size={18} />
+                  <span>Book Free Diagnosis</span>
+                </button>
+
+                <a
+                  href={siteConfig.whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white px-7 py-4 text-sm font-bold shadow-lg transition-all"
+                >
+                  <WhatsappIcon size={18} className="text-white" />
+                  <span>WhatsApp Quote</span>
+                </a>
+
+                <a
+                  href={siteConfig.phoneHref}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 px-6 py-4 text-sm font-bold text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all"
+                >
+                  <Phone size={17} className="text-[#0E7C7B] dark:text-teal-400" />
+                  <span>Call Hotline</span>
+                </a>
+              </div>
+            </div>
+          </section>
+
+          {/* SECTION 2 — COMMON PROBLEMS & SOLUTIONS (8 PDF ITEMS) */}
+          <section className="py-14 sm:py-20 bg-white dark:bg-[#070E1A] border-b border-slate-200 dark:border-slate-800">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+              <div className="text-center max-w-3xl mx-auto space-y-2">
+                <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400">
+                  COMMON PROBLEMS & SOLUTIONS
+                </span>
+                <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                  MacBook Repair in Ahmedabad: Common Problems & Solutions
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {data.commonProblems.map((prob, idx) => {
+                  const ProbIcon = problemIconMap[prob.slug] || Wrench;
+                  return (
+                    <div
+                      key={idx}
+                      className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-900/60 p-6 sm:p-7 space-y-3 shadow-md hover:border-[#0E7C7B] transition-all"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="h-11 w-11 rounded-2xl bg-[#0E7C7B]/10 dark:bg-[#0E7C7B]/20 text-[#0E7C7B] dark:text-teal-400 flex items-center justify-center font-black shrink-0">
+                          <ProbIcon size={22} />
+                        </div>
+                        <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-white">
+                          {prob.title}
+                        </h3>
+                      </div>
+                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
+                        {prob.description}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+
+          {/* SECTION 3 — MACBOOK REPAIR SERVICES IN AHMEDABAD (10 PDF ITEMS IN RICH CARDS) */}
+          <section className="py-14 sm:py-20 bg-slate-50/60 dark:bg-[#0b1628] border-b border-slate-200 dark:border-slate-800">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+              <div className="text-center max-w-3xl mx-auto space-y-3">
+                <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400">
+                  OUR SERVICES
+                </span>
+                <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                  MacBook Repair Services in Ahmedabad
+                </h2>
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
+                  At <strong className="font-bold text-slate-900 dark:text-white">Robuzta TechLabs</strong>, we provide professional MacBook diagnostics and repair for supported <strong className="font-bold text-slate-900 dark:text-white">MacBook Air and MacBook Pro</strong> models.
+                </p>
+              </div>
+
+              <div className="max-w-6xl mx-auto space-y-6">
+                <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400 text-center block">
+                  Our services include:
+                </span>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                  {[
+                    { title: 'Screen & Display Repair', icon: Monitor, tag: 'Retina Display' },
+                    { title: 'Battery Replacement', icon: Battery, tag: 'OEM Battery' },
+                    { title: 'Charging Port Repair', icon: Zap, tag: 'USB-C / MagSafe' },
+                    { title: 'Keyboard & Trackpad Repair', icon: Keyboard, tag: 'Trackpad & Keys' },
+                    { title: 'Liquid Damage Diagnosis', icon: Droplets, tag: 'Liquid Recovery' },
+                    { title: 'Logic Board Repair', icon: Cpu, tag: 'Micro-Soldering' },
+                    { title: 'SSD & Storage Solutions', icon: HardDrive, tag: 'Storage & SSD' },
+                    { title: 'macOS Troubleshooting', icon: Laptop, tag: 'macOS OS Fix' },
+                    { title: 'MacBook Cleaning & Thermal Service', icon: Flame, tag: 'Thermal Service' },
+                    { title: 'Data Recovery', icon: Database, tag: 'Data Extraction' }
+                  ].map((srv, idx) => {
+                    const IconComp = srv.icon;
+                    return (
+                      <motion.div
+                        key={idx}
+                        whileHover={{ y: -5 }}
+                        className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 text-center shadow-md hover:border-[#0E7C7B] hover:shadow-xl transition-all space-y-3 flex flex-col justify-between group"
+                      >
+                        <div className="space-y-3">
+                          <div className="h-12 w-12 rounded-2xl bg-[#0E7C7B]/10 text-[#0E7C7B] dark:text-teal-300 flex items-center justify-center mx-auto group-hover:scale-110 group-hover:bg-[#0E7C7B] group-hover:text-white transition-all shadow-sm">
+                            <IconComp size={22} />
+                          </div>
+                          <h3 className="text-xs sm:text-sm font-black text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors leading-snug">
+                            {srv.title}
+                          </h3>
+                        </div>
+
+                        <div className="pt-2 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-center gap-1 text-[10px] font-black uppercase text-emerald-600 dark:text-emerald-400">
+                          <CheckCircle2 size={13} className="text-emerald-500 shrink-0" />
+                          <span>{srv.tag}</span>
+                        </div>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* SECTION 4 — FAQ (5 PDF ITEMS) */}
+          {data.faqs && data.faqs.length > 0 && (
+            <section className="py-14 sm:py-20 bg-white dark:bg-[#070E1A] border-b border-slate-200 dark:border-slate-800">
+              <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-8">
+                <div className="text-center space-y-2">
+                  <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400">
+                    FREQUENTLY ASKED QUESTIONS
+                  </span>
+                  <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                    FAQ
+                  </h2>
+                </div>
+
+                <div className="space-y-4">
+                  {data.faqs.map((faq, idx) => {
+                    const isOpen = activeFaq === idx;
+                    return (
+                      <div
+                        key={faq.question}
+                        className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/90 overflow-hidden shadow-sm transition-all"
+                      >
+                        <button
+                          type="button"
+                          onClick={() => setActiveFaq(isOpen ? -1 : idx)}
+                          aria-expanded={isOpen}
+                          className="flex w-full items-center justify-between p-6 text-left font-bold text-slate-900 dark:text-white hover:text-[#0E7C7B] dark:hover:text-teal-300 transition-colors cursor-pointer"
+                        >
+                          <span className="text-sm sm:text-base pr-4">{faq.question}</span>
+                          <ChevronDown
+                            size={20}
+                            className={`shrink-0 text-slate-400 transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#0E7C7B]' : ''}`}
+                          />
+                        </button>
+                        {isOpen && (
+                          <div
+                            className="px-6 pb-6 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/80 pt-4"
+                          >
+                            {faq.answer}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* SECTION 5 — BOTTOM CTA BANNER */}
+          <section className="py-14 bg-gradient-to-r from-[#0E7C7B] via-teal-700 to-slate-900 text-white">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center space-y-6">
+              <h2 className="text-2xl sm:text-4xl font-black tracking-tight">
+                Ready to Fix Your MacBook?
+              </h2>
+              <p className="max-w-2xl mx-auto text-sm sm:text-base text-teal-100 font-medium">
+                Visit our lab in South Bopal / Tragad, Ahmedabad or request doorstep pickup. 180-day warranty, transparent quote approval & zero data risk.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+                <button
+                  type="button"
+                  onClick={openModal}
+                  className="w-full sm:w-auto rounded-2xl bg-white text-[#0E7C7B] hover:bg-slate-100 px-8 py-4 text-sm font-black shadow-xl hover:scale-105 transition-all cursor-pointer"
+                >
+                  Book Bench Diagnosis Now
+                </button>
+                <a
+                  href={siteConfig.phoneHref}
+                  className="w-full sm:w-auto rounded-2xl bg-slate-900/80 hover:bg-slate-900 border border-slate-700 px-8 py-4 text-sm font-bold text-white transition-all"
+                >
+                  Call: {siteConfig.phone}
+                </a>
+              </div>
+            </div>
+          </section>
+
+        </main>
+
+        <Footer />
+      </>
+    );
+  }
 
   return (
     <>
@@ -145,40 +399,28 @@ export function LaptopRepairSlugView({ data }) {
 
       <main id="main-content" className="min-h-screen bg-white dark:bg-[#070E1A] text-slate-900 dark:text-white pt-20">
         
-
-
-        {/* ══════════════════════════════════════════════
-            SECTION 1 — HERO & VISUAL DIAGNOSTIC SUMMARY
-        ══════════════════════════════════════════════ */}
+        {/* SECTION 1 — HERO & VISUAL DIAGNOSTIC SUMMARY */}
         <section className="relative overflow-hidden py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-slate-50/90 via-white to-slate-50/40 dark:from-[#070E1A] dark:via-[#0b1628] dark:to-[#070E1A] border-b border-slate-200 dark:border-slate-800">
-          
-          {/* Ambient Glow Orbs */}
           <div className="pointer-events-none absolute top-10 left-1/4 -translate-x-1/2 w-[550px] h-[550px] bg-[#0E7C7B]/15 dark:bg-[#0E7C7B]/25 rounded-full blur-[140px]" />
           <div className="pointer-events-none absolute bottom-10 right-10 w-[400px] h-[400px] bg-blue-600/10 dark:bg-cyan-500/15 rounded-full blur-[120px]" />
 
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
               
-              {/* Left Copy */}
               <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-                
-                {/* Eyebrow Badge */}
                 <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-[#0E7C7B]/20 border border-[#0E7C7B]/30 px-4 py-1.5 text-xs font-black uppercase tracking-wider text-[#0E7C7B] dark:text-teal-300">
                   <Sparkles size={14} className="text-[#0E7C7B] dark:text-teal-400" />
                   <span>{isBrand ? `Certified ${data.name} Lab Care` : `Component-Level Diagnostics`}</span>
                 </div>
 
-                {/* H1 Title */}
                 <h1 className="text-3xl sm:text-5xl lg:text-5xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.12]">
                   {data.h1}
                 </h1>
 
-                {/* Tagline */}
                 <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 font-medium leading-relaxed max-w-2xl">
                   {data.tagline}
                 </p>
 
-                {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
                   <button
                     type="button"
@@ -208,7 +450,6 @@ export function LaptopRepairSlugView({ data }) {
                   </a>
                 </div>
 
-                {/* Trust Badges */}
                 <div className="flex flex-wrap items-center justify-center lg:justify-start gap-5 pt-3 text-xs font-extrabold text-slate-600 dark:text-slate-400 border-t border-slate-200/80 dark:border-slate-800/80">
                   <span className="flex items-center gap-1.5">
                     <CheckCircle2 size={16} className="text-emerald-500" />
@@ -226,7 +467,6 @@ export function LaptopRepairSlugView({ data }) {
 
               </div>
 
-              {/* Right Summary Glassmorphism Card */}
               <div className="lg:col-span-5">
                 <div className="relative rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl p-6 sm:p-8 shadow-2xl space-y-6">
                   
@@ -283,7 +523,7 @@ export function LaptopRepairSlugView({ data }) {
                         <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700/60">
                           <span className="text-[10px] uppercase font-bold text-slate-400 block">Price Estimate</span>
                           <span className="text-sm font-black text-[#0E7C7B] dark:text-teal-400 font-mono mt-1 block">
-                            {data.priceEstimate.split(' ')[0]} {data.priceEstimate.split(' ')[1]}
+                            {data.priceEstimate ? data.priceEstimate : 'Upfront Quote'}
                           </span>
                         </div>
                       </div>
@@ -310,15 +550,10 @@ export function LaptopRepairSlugView({ data }) {
           </div>
         </section>
 
-        {/* ══════════════════════════════════════════════
-            SECTION 2 — VISUAL DIAGNOSTIC BREAKDOWN / SYMPTOMS
-        ══════════════════════════════════════════════ */}
         {!isBrand && (
           <section className="py-16 sm:py-20 bg-white dark:bg-[#070E1A]">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-                
-                {/* Symptoms Column */}
                 <div className="lg:col-span-6 space-y-6">
                   <div className="space-y-2">
                     <span className="text-xs font-black uppercase tracking-widest text-amber-600 dark:text-amber-400 flex items-center gap-1.5">
@@ -346,7 +581,6 @@ export function LaptopRepairSlugView({ data }) {
                   </div>
                 </div>
 
-                {/* Repair Steps Column */}
                 <div className="lg:col-span-6 space-y-6">
                   <div className="space-y-2">
                     <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400 flex items-center gap-1.5">
@@ -383,9 +617,6 @@ export function LaptopRepairSlugView({ data }) {
           </section>
         )}
 
-        {/* ══════════════════════════════════════════════
-            WHY CUSTOMERS CHOOSE US SECTION
-        ══════════════════════════════════════════════ */}
         <section className="py-12 sm:py-16 bg-slate-50/80 dark:bg-slate-900/60 border-y border-slate-200 dark:border-slate-800">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
             <div className="text-center space-y-2">
@@ -405,7 +636,6 @@ export function LaptopRepairSlugView({ data }) {
                 { title: 'Same-Day Repairs', desc: 'Fast express 1–3 hours turnaround' },
                 { title: 'Transparent Pricing', desc: 'Upfront estimate with no hidden fees' }
               ]).map((item, idx) => (
-
                 <div
                   key={idx}
                   className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 space-y-2 shadow-sm hover:border-[#0E7C7B] dark:hover:border-teal-500/80 transition-all duration-300 group text-center flex flex-col items-center justify-center"
@@ -427,7 +657,6 @@ export function LaptopRepairSlugView({ data }) {
 
         <section className="py-16 sm:py-20 bg-white dark:bg-[#070E1A]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
-            
             <div className="text-center max-w-3xl mx-auto space-y-3">
               <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400">
                 {isBrand ? `REPAIR SERVICES FOR ${data.name.toUpperCase()}` : `REPAIR ${data.name.toUpperCase()} BY BRAND`}
@@ -442,10 +671,8 @@ export function LaptopRepairSlugView({ data }) {
               </p>
             </div>
 
-            {/* CROSS-LINKING MATRIX GRID */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {isBrand ? (
-                /* ON BRAND PAGE -> LINK TO PROBLEMS WITH CLEAN CARDS */
                 (data.commonProblems || LAPTOP_PROBLEMS).map((prob) => {
                   const ProbIcon = problemIconMap[prob.slug] || Wrench;
                   const itemTitle = prob.title || `${data.name} ${prob.name}`;
@@ -487,8 +714,6 @@ export function LaptopRepairSlugView({ data }) {
                   );
                 })
               ) : (
-
-                /* ON PROBLEM PAGE -> LINK TO ALL 7 BRANDS WITH CLEAN BRAND LOGO CARDS */
                 LAPTOP_BRANDS.map((brand) => (
                   <Link
                     key={brand.slug}
@@ -496,7 +721,6 @@ export function LaptopRepairSlugView({ data }) {
                     className="group relative flex flex-col items-center text-center justify-between rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/60 p-5 sm:p-6 hover:border-[#0E7C7B] dark:hover:border-teal-500/80 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                   >
                     <div className="space-y-3.5 flex flex-col items-center w-full">
-                      {/* Real Brand Logo Container */}
                       <div className="h-16 w-full max-w-[130px] rounded-2xl bg-white dark:bg-slate-950/80 border border-slate-200/70 dark:border-slate-800 p-2.5 flex items-center justify-center group-hover:scale-105 transition-transform shadow-sm">
                         {brand.logoImage ? (
                           <Image
@@ -532,7 +756,6 @@ export function LaptopRepairSlugView({ data }) {
               )}
             </div>
 
-            {/* Back to Hub Link */}
             <div className="text-center pt-6">
               <Link
                 href="/laptop-repair/"
@@ -545,9 +768,6 @@ export function LaptopRepairSlugView({ data }) {
           </div>
         </section>
 
-        {/* ══════════════════════════════════════════════
-            SECTION 5 — ACCESSIBLE FAQ ACCORDION
-        ══════════════════════════════════════════════ */}
         {data.faqs && data.faqs.length > 0 && (
           <section className="py-16 sm:py-20 bg-slate-50 dark:bg-[#0a1424] border-t border-slate-200 dark:border-slate-800">
             <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-10">
@@ -599,9 +819,6 @@ export function LaptopRepairSlugView({ data }) {
           </section>
         )}
 
-        {/* ══════════════════════════════════════════════
-            SECTION 6 — BOTTOM CTA BANNER
-        ══════════════════════════════════════════════ */}
         <section className="py-14 bg-gradient-to-r from-[#0E7C7B] via-teal-700 to-slate-900 text-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center space-y-6">
             <h2 className="text-2xl sm:text-4xl font-black tracking-tight">

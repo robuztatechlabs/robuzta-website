@@ -200,46 +200,6 @@ export const services = [
     ]
   },
   {
-    title: 'Desktop Repair',
-    slug: 'desktop-repair',
-    metaTitle: 'Desktop Computer Repair in Ahmedabad | Robuzta Techlabs',
-    metaDescription:
-      'Desktop repair in Ahmedabad for motherboard, RAM, SSD, HDD, PSU, OS installation, virus removal, and upgrades.',
-    summary:
-      'Motherboard, RAM, SSD, HDD, PSU, OS installation, virus removal, and upgrade support.',
-    proof: 'Ideal for home systems, office machines, and small businesses.',
-    directAnswer:
-      'Robuzta handles desktop computer repair and upgrades for home, office, and small-business systems with practical diagnosis and clear approval.',
-    symptoms: [
-      'Desktop not turning on',
-      'Slow system performance',
-      'Storage failure',
-      'PSU issue',
-      'Virus or OS problem',
-      'Upgrade requirement'
-    ],
-    included: [
-      'Motherboard repair support',
-      'RAM/SSD/HDD upgrade',
-      'PSU repair or replacement',
-      'OS installation',
-      'Virus removal',
-      'Office desktop support'
-    ],
-    faqs: [
-      {
-        question: 'Do you repair office desktops and work PCs?',
-        answer:
-          'Yes! We service home PCs, commercial office workstations, and all-in-one desktop systems.'
-      },
-      {
-        question: 'Can I upgrade an old desktop to SSD?',
-        answer:
-          'Yes. Upgrading an older hard drive to an NVMe or SATA SSD will make your desktop boot and run up to 5x faster.'
-      }
-    ]
-  },
-  {
     title: 'Data Recovery',
     slug: 'data-recovery',
     metaTitle: 'Data Recovery Services in Ahmedabad | Robuzta Techlabs',

@@ -5,30 +5,22 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
   Code,
-  ShieldCheck,
-  Zap,
   CheckCircle2,
   Phone,
-  ChevronRight,
   ChevronDown,
   ArrowRight,
   Sparkles,
   Wrench,
   Clock,
-  Cpu,
-  Monitor,
-  Check,
+  ShieldCheck,
   Shield,
-  FileCheck,
-  Lock,
-  RefreshCw,
-  HardDrive
+  Laptop
 } from 'lucide-react';
 
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { siteConfig } from '@/data/site';
-import { SOFTWARE_BRANDS, SOFTWARE_SERVICES_PAGE_DATA } from '@/data/softwareServicesData';
+import { SOFTWARE_SERVICES_PAGE_DATA } from '@/data/softwareServicesData';
 import { useBookingModal } from '@/context/BookingModalContext';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 
@@ -125,8 +117,6 @@ export function SoftwareServicesView() {
             transition={SMOOTH_TRANSITION}
             className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-6"
           >
-
-
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-8 space-y-5">
                 
@@ -147,13 +137,13 @@ export function SoftwareServicesView() {
                 {/* Key Perks */}
                 <div className="flex flex-wrap items-center gap-4 text-xs font-bold text-slate-700 dark:text-slate-300 pt-2">
                   <span className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">
-                    <CheckCircle2 size={16} /> 100% Zero-OTP Data Protection
+                    <CheckCircle2 size={16} /> Data-Safe Troubleshooting
                   </span>
                   <span className="flex items-center gap-1.5 text-[#0E7C7B]">
-                    <ShieldCheck size={16} /> Genuine Digital Licenses
+                    <ShieldCheck size={16} /> Genuine OS & Drivers
                   </span>
                   <span className="flex items-center gap-1.5 text-amber-600 dark:text-amber-400">
-                    <Clock size={16} /> 60-Minute Fast Turnaround
+                    <Clock size={16} /> Fast Express Service
                   </span>
                 </div>
 
@@ -202,11 +192,11 @@ export function SoftwareServicesView() {
                   <div className="space-y-3 text-xs text-slate-600 dark:text-slate-300 font-medium">
                     <div className="flex items-center justify-between">
                       <span className="text-slate-400">Windows Activation:</span>
-                      <span className="font-extrabold text-emerald-600">Official Digital License</span>
+                      <span className="font-extrabold text-emerald-600">Official Setup</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-slate-400">Data Preservation:</span>
-                      <span className="font-extrabold text-slate-900 dark:text-white">100% User File Backup</span>
+                      <span className="text-slate-400">Data Safety:</span>
+                      <span className="font-extrabold text-slate-900 dark:text-white">100% Protection</span>
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-slate-400">Driver Stability:</span>
@@ -230,171 +220,96 @@ export function SoftwareServicesView() {
           </motion.div>
         </section>
 
-
-
-        {/* Section 2: 5 Software Service Cards */}
-        <section className="py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+        {/* Why Choose Us Section (8 ⭐ Cards) */}
+        <section className="py-12 sm:py-16 border-b border-slate-200 dark:border-slate-800">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
             <div className="text-center max-w-3xl mx-auto space-y-2">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">SOFTWARE SERVICES</span>
+              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
+                PROVEN REPAIR EXCELLENCE
+              </span>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                Complete Operating System & Software Solutions
+                {data.whyChooseUsTitle}
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {data.services?.map((srv, idx) => (
-                <motion.div
-                  key={srv.id}
-                  initial={{ opacity: 0, y: 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-20px' }}
-                  transition={{ ...SMOOTH_TRANSITION, delay: idx * 0.08 }}
-                  className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-4 shadow-md hover:border-[#0E7C7B] hover:shadow-xl transition-all flex flex-col justify-between"
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+              {data.whyChooseUs.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 sm:p-5 flex items-center gap-3.5 shadow-sm hover:border-[#0E7C7B]/50 transition-all group"
                 >
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-black text-[#0E7C7B] bg-[#0E7C7B]/10 px-3 py-1 rounded-full">
-                        {srv.turnaround}
-                      </span>
-                      <span className="text-xs font-extrabold text-emerald-600 dark:text-emerald-400">
-                        {srv.price}
-                      </span>
+                  <div className="h-10 w-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center font-black shrink-0 text-base group-hover:scale-110 transition-transform">
+                    ⭐
+                  </div>
+                  <h3 className="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white group-hover:text-[#0E7C7B] transition-colors leading-snug">
+                    {item}
+                  </h3>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SOFTWARE SERVICES Section (9 Common Problem Cards) */}
+        <section className="py-14 sm:py-20 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+            <div className="text-center max-w-3xl mx-auto space-y-2">
+              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
+                {data.servicesBadge}
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                {data.servicesTitle}
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium max-w-2xl mx-auto leading-relaxed">
+                {data.servicesDescription}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {data.softwareProblems.map((prob, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ ...SMOOTH_TRANSITION, delay: idx * 0.05 }}
+                >
+                  <div
+                    onClick={() => openModal({ serviceType: `Software Service - ${prob.title}` })}
+                    className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-4 hover:border-[#0E7C7B] shadow-md hover:shadow-xl transition-all block group h-full flex flex-col justify-between cursor-pointer"
+                  >
+                    <div className="space-y-3">
+                      <div className="h-10 w-10 rounded-2xl bg-[#0E7C7B]/10 text-[#0E7C7B] flex items-center justify-center font-black group-hover:bg-[#0E7C7B] group-hover:text-white transition-all">
+                        <Code size={20} />
+                      </div>
+                      <h3 className="text-base font-extrabold text-slate-900 dark:text-white group-hover:text-[#0E7C7B] transition-colors leading-snug">
+                        {prob.title}
+                      </h3>
+                      <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+                        {prob.description}
+                      </p>
                     </div>
 
-                    <h3 className="text-lg font-extrabold text-slate-900 dark:text-white">
-                      {srv.title}
-                    </h3>
-
-                    <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
-                      {srv.summary}
-                    </p>
-
-                    <ul className="space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800">
-                      {srv.details.map((dt, dIdx) => (
-                        <li key={dIdx} className="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300 font-medium leading-snug">
-                          <Check size={14} className="text-[#0E7C7B] shrink-0 mt-0.5" />
-                          <span>{dt}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-black text-[#0E7C7B]">
+                      <span>Get Software Fix</span>
+                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </div>
-
-                  <button
-                    onClick={() => openModal({ serviceType: srv.title })}
-                    className="w-full rounded-2xl bg-slate-50 dark:bg-slate-800 hover:bg-[#0E7C7B] hover:text-white text-slate-900 dark:text-white py-3 text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-2 mt-4"
-                  >
-                    <span>Request Software Fix</span>
-                    <ArrowRight size={14} />
-                  </button>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Section 3: Diagnostic & Software Workflow */}
-        <section className="py-14 sm:py-20 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
-            <div className="text-center max-w-3xl mx-auto space-y-2">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">SERVICE WORKFLOW</span>
-              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                4-Step Software Optimization Process
-              </h2>
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                {
-                  step: '01',
-                  title: 'User Data Backup',
-                  desc: 'Pre-service backup of Desktop, Documents, Downloads & browser data to prevent loss.'
-                },
-                {
-                  step: '02',
-                  title: 'Clean OS / App Setup',
-                  desc: 'GPT/UEFI partition creation, genuine OS installation & digital license activation.'
-                },
-                {
-                  step: '03',
-                  title: 'OEM Driver Tuning',
-                  desc: 'Installation of official chipset, GPU, Wi-Fi & audio drivers for 100% stability.'
-                },
-                {
-                  step: '04',
-                  title: 'Final Health Audit',
-                  desc: 'Boot time optimization, startup app reduction & antivirus protection setup.'
-                }
-              ].map((proc, i) => (
-                <div
-                  key={i}
-                  className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-3 relative shadow-md"
-                >
-                  <span className="text-xs font-black text-[#0E7C7B] tracking-widest block">STEP {proc.step}</span>
-                  <h3 className="text-base font-extrabold text-slate-900 dark:text-white">{proc.title}</h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
-                    {proc.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Section 4: Why Choose Us */}
-        <section className="py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
-            <div className="text-center max-w-3xl mx-auto space-y-2">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">WHY ROBUZTA SOFTWARE LAB</span>
-              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                Fast, Genuine & Data-Safe Software Support
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                {
-                  title: '100% Zero-OTP Policy',
-                  desc: 'We NEVER ask for unlock passwords, pins, or SMS OTPs. Your personal files remain 100% private.'
-                },
-                {
-                  title: 'Genuine Digital Licenses',
-                  desc: 'Official Microsoft Windows & Office activation keys that pass Windows Genuine Validation.'
-                },
-                {
-                  title: 'Zero Bloatware',
-                  desc: 'Clean OS installation without annoying adware, trialware, or unwanted background apps.'
-                },
-                {
-                  title: 'Same-Day Fast Support',
-                  desc: 'Most software services are completed within 30 to 90 minutes at South Bopal & Tragad labs.'
-                }
-              ].map((feat, i) => (
-                <div
-                  key={i}
-                  className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-3 shadow-md"
-                >
-                  <div className="h-10 w-10 rounded-xl bg-[#0E7C7B]/10 text-[#0E7C7B] flex items-center justify-center font-black">
-                    <Shield size={20} />
-                  </div>
-                  <h3 className="text-base font-extrabold text-slate-900 dark:text-white">{feat.title}</h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
-                    {feat.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Section 5: FAQs */}
+        {/* FAQs */}
         {data.faqs?.length > 0 && (
-          <section className="py-14 sm:py-20 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
+          <section className="py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800">
             <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-8">
               <div className="text-center space-y-2">
                 <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">FREQUENTLY ASKED QUESTIONS</span>
                 <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                  Software Service Questions Answered
+                  {data.faqsTitle}
                 </h2>
               </div>
 

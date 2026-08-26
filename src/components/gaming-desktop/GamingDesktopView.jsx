@@ -5,33 +5,23 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
   Flame,
-  ShieldCheck,
-  Zap,
   CheckCircle2,
   Phone,
-  ChevronRight,
   ChevronDown,
+  ChevronRight,
   ArrowRight,
   Sparkles,
   Wrench,
   Clock,
-  Cpu,
-  Monitor,
-  Battery,
-  Droplets,
-  Layers,
-  HardDrive,
-  Check,
+  ShieldCheck,
   Shield,
-  HelpCircle,
-  Sliders,
-  Maximize2
+  Cpu,
+  Monitor
 } from 'lucide-react';
 
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { siteConfig } from '@/data/site';
-import { GAMING_BRANDS } from '@/data/gamingDesktopData';
 import { useBookingModal } from '@/context/BookingModalContext';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 
@@ -44,7 +34,7 @@ export function GamingDesktopView({ data }) {
   if (!data) return null;
 
   const isRepair = data.slug === 'repair';
-  const pageTitle = isRepair ? 'Gaming Desktop Repair' : 'Gaming Desktop Build';
+  const pageTitle = isRepair ? 'Gaming PC Repair' : 'Gaming PC Build';
   const canonicalUrl = data.canonicalUrl;
 
   // JSON-LD Schemas
@@ -138,15 +128,13 @@ export function GamingDesktopView({ data }) {
             transition={SMOOTH_TRANSITION}
             className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-6"
           >
-
-
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-8 space-y-5">
                 
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-3.5 py-1 text-xs font-black text-[#0E7C7B] dark:text-teal-300 uppercase tracking-widest">
                   <Flame size={14} className="text-amber-500" />
-                  <span>{isRepair ? 'HIGH-PERFORMANCE HARDWARE DIAGNOSTICS' : 'CUSTOM RIG ASSEMBLY & CABLE MANAGEMENT'}</span>
+                  <span>GAMING PC REPAIR & BUILD SERVICES</span>
                 </div>
 
                 <h1 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-slate-100 tracking-tight leading-tight">
@@ -160,13 +148,13 @@ export function GamingDesktopView({ data }) {
                 {/* Key Perks */}
                 <div className="flex flex-wrap items-center gap-4 text-xs font-bold text-slate-700 dark:text-slate-300 pt-2">
                   <span className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">
-                    <CheckCircle2 size={16} /> Zero OTP & Password Required
+                    <CheckCircle2 size={16} /> GPU & Motherboard Diagnostics
                   </span>
                   <span className="flex items-center gap-1.5 text-[#0E7C7B]">
-                    <ShieldCheck size={16} /> 100% ESD-Safe Lab Diagnostics
+                    <ShieldCheck size={16} /> Performance & Thermal Optimization
                   </span>
                   <span className="flex items-center gap-1.5 text-amber-600 dark:text-amber-400">
-                    <Clock size={16} /> 3DMark Stress Tested
+                    <Clock size={16} /> Cable Management & Testing
                   </span>
                 </div>
 
@@ -242,7 +230,7 @@ export function GamingDesktopView({ data }) {
                     onClick={() => openModal({ serviceType: pageTitle })}
                     className="w-full rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-[#0E7C7B] hover:text-white text-slate-900 dark:text-white py-3 text-xs font-black uppercase tracking-wider transition-all"
                   >
-                    Book Diagnostic Check
+                    Start Diagnostic Check
                   </button>
                 </div>
               </div>
@@ -250,173 +238,148 @@ export function GamingDesktopView({ data }) {
           </motion.div>
         </section>
 
-
-
-        {/* Section 2: Detailed Service Cards */}
-        <section className="py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+        {/* Why Choose Us Section (8 ⭐ Cards) */}
+        <section className="py-12 sm:py-16 border-b border-slate-200 dark:border-slate-800">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
             <div className="text-center max-w-3xl mx-auto space-y-2">
               <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
-                {isRepair ? 'HARDWARE REPAIR SERVICES' : 'CUSTOM BUILD CAPABILITIES'}
+                PROVEN REPAIR EXCELLENCE
               </span>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                {isRepair ? 'Gaming Desktop PC Repair Solutions' : 'Custom Rig Building & Upgrade Options'}
+                {data.whyChooseUsTitle}
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {data.services?.map((srv, idx) => (
-                <motion.div
-                  key={srv.id}
-                  initial={{ opacity: 0, y: 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-20px' }}
-                  transition={{ ...SMOOTH_TRANSITION, delay: idx * 0.08 }}
-                  className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-4 shadow-md hover:border-[#0E7C7B] hover:shadow-xl transition-all flex flex-col justify-between"
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+              {data.whyChooseUs.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 sm:p-5 flex items-center gap-3.5 shadow-sm hover:border-[#0E7C7B]/50 transition-all group"
                 >
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-black text-[#0E7C7B] bg-[#0E7C7B]/10 px-3 py-1 rounded-full">
-                        {srv.turnaround}
-                      </span>
-                      <span className="text-xs font-extrabold text-emerald-600 dark:text-emerald-400">
-                        {srv.price}
-                      </span>
+                  <div className="h-10 w-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center font-black shrink-0 text-base group-hover:scale-110 transition-transform">
+                    ⭐
+                  </div>
+                  <h3 className="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white group-hover:text-[#0E7C7B] transition-colors leading-snug">
+                    {item}
+                  </h3>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* GAMING PC REPAIR & BUILD SERVICES Section (9 Problem Cards) */}
+        <section className="py-14 sm:py-20 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+            <div className="text-center max-w-3xl mx-auto space-y-2">
+              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
+                {data.servicesBadge}
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                {data.servicesTitle}
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium max-w-2xl mx-auto leading-relaxed">
+                {data.servicesDescription}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {data.repairProblems.map((prob, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ ...SMOOTH_TRANSITION, delay: idx * 0.05 }}
+                >
+                  <div
+                    onClick={() => openModal({ serviceType: `Gaming PC - ${prob.title}` })}
+                    className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-4 hover:border-[#0E7C7B] shadow-md hover:shadow-xl transition-all block group h-full flex flex-col justify-between cursor-pointer"
+                  >
+                    <div className="space-y-3">
+                      <div className="h-10 w-10 rounded-2xl bg-[#0E7C7B]/10 text-[#0E7C7B] flex items-center justify-center font-black group-hover:bg-[#0E7C7B] group-hover:text-white transition-all">
+                        <Cpu size={20} />
+                      </div>
+                      <h3 className="text-base font-extrabold text-slate-900 dark:text-white group-hover:text-[#0E7C7B] transition-colors leading-snug">
+                        {prob.title}
+                      </h3>
+                      <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+                        {prob.description}
+                      </p>
                     </div>
 
-                    <h3 className="text-lg font-extrabold text-slate-900 dark:text-white">
-                      {srv.title}
-                    </h3>
-
-                    <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
-                      {srv.summary}
-                    </p>
-
-                    <ul className="space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800">
-                      {srv.details.map((dt, dIdx) => (
-                        <li key={dIdx} className="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300 font-medium leading-snug">
-                          <Check size={14} className="text-[#0E7C7B] shrink-0 mt-0.5" />
-                          <span>{dt}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-black text-[#0E7C7B]">
+                      <span>Get Hardware Options</span>
+                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </div>
-
-                  <button
-                    onClick={() => openModal({ serviceType: srv.title })}
-                    className="w-full rounded-2xl bg-slate-50 dark:bg-slate-800 hover:bg-[#0E7C7B] hover:text-white text-slate-900 dark:text-white py-3 text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-2 mt-4"
-                  >
-                    <span>Request Service</span>
-                    <ArrowRight size={14} />
-                  </button>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Section 3: Diagnostic & Workflow Timeline */}
-        <section className="py-14 sm:py-20 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
-            <div className="text-center max-w-3xl mx-auto space-y-2">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">BENCHMARKING PROTOCOL</span>
-              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                4-Step Precision Workflow
-              </h2>
-            </div>
+        {/* CUSTOM GAMING PC BUILDS Section (4 Build Tiers) */}
+        {data.customBuildTiers?.length > 0 && (
+          <section className="py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+              <div className="text-center max-w-3xl mx-auto space-y-2">
+                <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
+                  {data.customBuildsBadge}
+                </span>
+                <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                  {data.customBuildsTitle}
+                </h2>
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium max-w-2xl mx-auto leading-relaxed">
+                  {data.customBuildsDescription}
+                </p>
+              </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                {
-                  step: '01',
-                  title: 'Component Audit',
-                  desc: 'FLIR thermal imaging, PSU rail load test, and VRM power phase check.'
-                },
-                {
-                  step: '02',
-                  title: 'Upfront Pricing',
-                  desc: 'Transparent itemized component quote. Zero work done without approval.'
-                },
-                {
-                  step: '03',
-                  title: 'Precision Assembly / Fix',
-                  desc: 'ESD-safe workbench repair, liquid cooling refill, and cable routing.'
-                },
-                {
-                  step: '04',
-                  title: '3DMark Stress Testing',
-                  desc: '2-hour 3DMark & FurMark thermal benchmark run backed by warranty.'
-                }
-              ].map((proc, i) => (
-                <div
-                  key={i}
-                  className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-3 relative shadow-md"
-                >
-                  <span className="text-xs font-black text-[#0E7C7B] tracking-widest block">STEP {proc.step}</span>
-                  <h3 className="text-base font-extrabold text-slate-900 dark:text-white">{proc.title}</h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
-                    {proc.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {data.customBuildTiers.map((tier, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ ...SMOOTH_TRANSITION, delay: idx * 0.05 }}
+                    className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-4 hover:border-[#0E7C7B] shadow-md hover:shadow-xl transition-all flex flex-col justify-between group"
+                  >
+                    <div className="space-y-3">
+                      <div className="h-10 w-10 rounded-2xl bg-[#0E7C7B]/10 text-[#0E7C7B] flex items-center justify-center font-black group-hover:bg-[#0E7C7B] group-hover:text-white transition-all">
+                        <Monitor size={20} />
+                      </div>
+                      <h3 className="text-base font-extrabold text-slate-900 dark:text-white group-hover:text-[#0E7C7B] transition-colors leading-snug">
+                        {tier.title}
+                      </h3>
+                      <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+                        {tier.description}
+                      </p>
+                    </div>
 
-        {/* Section 4: Why Choose Us */}
-        <section className="py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
-            <div className="text-center max-w-3xl mx-auto space-y-2">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">WHY ROBUZTA GAMING LAB</span>
-              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                Built for Gamers & High-Performance Rigs
-              </h2>
+                    <button
+                      onClick={() => openModal({ serviceType: `Custom PC Build - ${tier.title}` })}
+                      className="w-full rounded-2xl bg-slate-50 dark:bg-slate-800 hover:bg-[#0E7C7B] hover:text-white text-slate-900 dark:text-white py-3 text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-2 mt-4"
+                    >
+                      <span>Consult This Build</span>
+                      <ArrowRight size={14} />
+                    </button>
+                  </motion.div>
+                ))}
+              </div>
             </div>
+          </section>
+        )}
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                {
-                  title: 'Zero-OTP Data Safety',
-                  desc: 'We never ask for passwords, pins, or account access. Personal files are 100% untouched.'
-                },
-                {
-                  title: 'Open Glass Workbench',
-                  desc: 'Watch senior engineers repair your GPU, power supply, or AIO cooler live at our South Bopal & Tragad labs.'
-                },
-                {
-                  title: 'Original OEM Parts',
-                  desc: 'We only use 80+ Gold modular PSUs, Thermal Grizzly compounds, and original replacement components.'
-                },
-                {
-                  title: 'Free Pickup & Delivery',
-                  desc: 'Safe anti-static foam transportation across all major areas in Ahmedabad.'
-                }
-              ].map((feat, i) => (
-                <div
-                  key={i}
-                  className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-3 shadow-md"
-                >
-                  <div className="h-10 w-10 rounded-xl bg-[#0E7C7B]/10 text-[#0E7C7B] flex items-center justify-center font-black">
-                    <Shield size={20} />
-                  </div>
-                  <h3 className="text-base font-extrabold text-slate-900 dark:text-white">{feat.title}</h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
-                    {feat.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
-        {/* Section 5: FAQs */}
+        {/* FAQs */}
         {data.faqs?.length > 0 && (
-          <section className="py-14 sm:py-20 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
+          <section className="py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800">
             <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-8">
               <div className="text-center space-y-2">
                 <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">FREQUENTLY ASKED QUESTIONS</span>
                 <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                  Gaming Desktop Questions Answered
+                  {data.faqsTitle}
                 </h2>
               </div>
 

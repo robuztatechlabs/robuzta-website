@@ -58,14 +58,6 @@ const servicesList = [
     description: 'GPU diagnostic & liquid cooling service',
     link: '/services/gaming-pc-repair',
     color: 'from-purple-500/10 to-purple-500/5 text-purple-600 border-purple-500/20'
-  },
-  {
-    id: 'desktop-repair',
-    title: 'Desktop Repair',
-    icon: Cpu,
-    description: 'Motherboard, RAM & SSD upgrades',
-    link: '/services/desktop-repair',
-    color: 'from-[#0E7C7B]/10 to-[#0E7C7B]/5 text-[#0E7C7B] border-[#0E7C7B]/20'
   }
 ];
 

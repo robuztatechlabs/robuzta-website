@@ -4,24 +4,18 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
-  Flame,
-  ShieldCheck,
-  Zap,
+  Wind,
   CheckCircle2,
   Phone,
-  ChevronRight,
   ChevronDown,
   ArrowRight,
   Sparkles,
   Wrench,
   Clock,
-  Check,
-  X,
+  ShieldCheck,
   Shield,
-  Sliders,
-  Wind,
-  Thermometer,
-  Activity
+  Laptop,
+  Monitor
 } from 'lucide-react';
 
 import { Header } from '@/components/layout/Header';
@@ -124,8 +118,6 @@ export function CleaningTuneUpView() {
             transition={SMOOTH_TRANSITION}
             className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-6"
           >
-
-
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-8 space-y-5">
                 
@@ -146,13 +138,13 @@ export function CleaningTuneUpView() {
                 {/* Key Perks */}
                 <div className="flex flex-wrap items-center gap-4 text-xs font-bold text-slate-700 dark:text-slate-300 pt-2">
                   <span className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">
-                    <CheckCircle2 size={16} /> Thermal Grizzly Kryonaut Repasting
+                    <CheckCircle2 size={16} /> Deep Internal Dust Cleaning
                   </span>
                   <span className="flex items-center gap-1.5 text-[#0E7C7B]">
-                    <ShieldCheck size={16} /> 100% Zero-OTP Data Safety
+                    <ShieldCheck size={16} /> Thermal Paste Replacement
                   </span>
                   <span className="flex items-center gap-1.5 text-amber-600 dark:text-amber-400">
-                    <Clock size={16} /> 45-Min Fast Turnaround
+                    <Clock size={16} /> Fast Turnaround
                   </span>
                 </div>
 
@@ -194,34 +186,34 @@ export function CleaningTuneUpView() {
                       Thermal Guarantee
                     </span>
                     <span className="text-[10px] font-black text-teal-600 bg-teal-50 dark:bg-teal-950/60 px-2.5 py-0.5 rounded-full border border-teal-200 dark:border-teal-800">
-                      15°C–25°C Cooler
+                      Cooling & Airflow Fix
                     </span>
                   </div>
 
                   <div className="space-y-3 text-xs text-slate-600 dark:text-slate-300 font-medium">
                     <div className="flex items-center justify-between">
-                      <span className="text-slate-400">Thermal Compound:</span>
-                      <span className="font-extrabold text-[#0E7C7B]">Thermal Grizzly Kryonaut</span>
+                      <span className="text-slate-400">Dust Extraction:</span>
+                      <span className="font-extrabold text-emerald-600">Deep Component Clean</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-slate-400">Basic Servicing:</span>
-                      <span className="font-extrabold text-slate-900 dark:text-white">₹499 (45 Mins)</span>
+                      <span className="text-slate-400">Thermal Interface:</span>
+                      <span className="font-extrabold text-[#0E7C7B]">Thermal Compound Swap</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-slate-400">Pro Deep Overhaul:</span>
-                      <span className="font-extrabold text-emerald-600">₹899 (With Repasting)</span>
+                      <span className="text-slate-400">Supported Devices:</span>
+                      <span className="font-extrabold text-slate-900 dark:text-white">Laptops, Desktops & Macs</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-slate-400">Labs:</span>
+                      <span className="text-slate-400">Service Labs:</span>
                       <span className="font-extrabold text-slate-900 dark:text-white">South Bopal & Tragad</span>
                     </div>
                   </div>
 
                   <button
-                    onClick={() => openModal({ serviceType: 'Pro Cleaning & Tune-Up' })}
+                    onClick={() => openModal({ serviceType: 'Cleaning & Tune-Up' })}
                     className="w-full rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-[#0E7C7B] hover:text-white text-slate-900 dark:text-white py-3 text-xs font-black uppercase tracking-wider transition-all"
                   >
-                    Book Pro Overhaul
+                    Start Service Inspection
                   </button>
                 </div>
               </div>
@@ -229,269 +221,126 @@ export function CleaningTuneUpView() {
           </motion.div>
         </section>
 
-        {/* Section 1: Basic vs Pro Plan Comparison Section */}
-        <section className="py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12">
+        {/* Why Choose Us Section (8 ⭐ Cards) */}
+        <section className="py-12 sm:py-16 border-b border-slate-200 dark:border-slate-800">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
             <div className="text-center max-w-3xl mx-auto space-y-2">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">PLAN COMPARISON</span>
+              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
+                PROVEN REPAIR EXCELLENCE
+              </span>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                Basic vs Pro Cleaning Plan Comparison
+                {data.whyChooseUsTitle}
               </h2>
-              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium">
-                Choose the right servicing plan for your everyday laptop, gaming rig, or workstation PC.
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+              {data.whyChooseUs.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 sm:p-5 flex items-center gap-3.5 shadow-sm hover:border-[#0E7C7B]/50 transition-all group"
+                >
+                  <div className="h-10 w-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center font-black shrink-0 text-base group-hover:scale-110 transition-transform">
+                    ⭐
+                  </div>
+                  <h3 className="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white group-hover:text-[#0E7C7B] transition-colors leading-snug">
+                    {item}
+                  </h3>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CLEANING & TUNE-UP SERVICES Section (10 Common Problem Cards) */}
+        <section className="py-14 sm:py-20 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+            <div className="text-center max-w-3xl mx-auto space-y-2">
+              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
+                {data.servicesBadge}
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                {data.servicesTitle}
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium max-w-2xl mx-auto leading-relaxed">
+                {data.servicesDescription}
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              
-              {/* Basic Plan Card */}
-              <motion.div
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-20px' }}
-                transition={SMOOTH_TRANSITION}
-                className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-7 space-y-6 shadow-md relative flex flex-col justify-between"
-              >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-black uppercase tracking-wider text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full">
-                      {data.basicPlan.badge}
-                    </span>
-                    <span className="text-xs font-extrabold text-slate-500 dark:text-slate-400">
-                      {data.basicPlan.turnaround}
-                    </span>
-                  </div>
-
-                  <div>
-                    <h3 className="text-2xl font-black text-slate-900 dark:text-white">
-                      {data.basicPlan.name}
-                    </h3>
-                    <div className="flex items-baseline gap-1 mt-2">
-                      <span className="text-3xl font-black text-[#0E7C7B]">{data.basicPlan.price}</span>
-                      <span className="text-xs text-slate-400 font-medium">/ flat service</span>
-                    </div>
-                  </div>
-
-                  <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
-                    {data.basicPlan.summary}
-                  </p>
-
-                  <div className="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-3">
-                    <span className="text-xs font-black uppercase tracking-widest text-slate-400 block">WHAT'S INCLUDED:</span>
-                    {data.basicPlan.features.map((feat, fIdx) => (
-                      <div key={fIdx} className="flex items-start gap-2.5 text-xs font-medium">
-                        {feat.included ? (
-                          <Check size={16} className="text-emerald-500 shrink-0 mt-0.5" />
-                        ) : (
-                          <X size={16} className="text-slate-300 dark:text-slate-700 shrink-0 mt-0.5" />
-                        )}
-                        <span className={feat.included ? 'text-slate-800 dark:text-slate-200 font-bold' : 'text-slate-400 dark:text-slate-600 line-through'}>
-                          {feat.text}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <button
-                  onClick={() => openModal({ serviceType: data.basicPlan.name })}
-                  className="w-full rounded-2xl bg-slate-100 dark:bg-slate-800 hover:bg-[#0E7C7B] hover:text-white text-slate-900 dark:text-white py-3.5 text-xs font-black uppercase tracking-wider transition-all mt-6"
-                >
-                  Book Basic Servicing
-                </button>
-              </motion.div>
-
-              {/* Pro Plan Card (Highlighted) */}
-              <motion.div
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-20px' }}
-                transition={{ ...SMOOTH_TRANSITION, delay: 0.1 }}
-                className="rounded-3xl bg-white dark:bg-slate-900 border-2 border-[#0E7C7B] p-7 space-y-6 shadow-2xl relative flex flex-col justify-between"
-              >
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#0E7C7B] text-white text-[11px] font-black uppercase tracking-widest px-4 py-1 rounded-full shadow-md">
-                  RECOMMENDED FOR GAMING & HEAVY USE
-                </div>
-
-                <div className="space-y-4 pt-2">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-black uppercase tracking-wider text-teal-600 bg-teal-50 dark:bg-teal-950/60 px-3 py-1 rounded-full border border-teal-200 dark:border-teal-800">
-                      {data.proPlan.badge}
-                    </span>
-                    <span className="text-xs font-extrabold text-[#0E7C7B]">
-                      {data.proPlan.turnaround}
-                    </span>
-                  </div>
-
-                  <div>
-                    <h3 className="text-2xl font-black text-slate-900 dark:text-white">
-                      {data.proPlan.name}
-                    </h3>
-                    <div className="flex items-baseline gap-1 mt-2">
-                      <span className="text-3xl font-black text-[#0E7C7B]">{data.proPlan.price}</span>
-                      <span className="text-xs text-slate-400 font-medium">/ complete overhaul</span>
-                    </div>
-                  </div>
-
-                  <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
-                    {data.proPlan.summary}
-                  </p>
-
-                  <div className="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-3">
-                    <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] block">EVERYTHING IN BASIC, PLUS:</span>
-                    {data.proPlan.features.map((feat, fIdx) => (
-                      <div key={fIdx} className="flex items-start gap-2.5 text-xs font-medium">
-                        <Check size={16} className="text-emerald-500 shrink-0 mt-0.5" />
-                        <span className="text-slate-900 dark:text-white font-extrabold">
-                          {feat.text}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <button
-                  onClick={() => openModal({ serviceType: data.proPlan.name })}
-                  className="w-full rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white py-4 text-xs font-black uppercase tracking-wider shadow-lg shadow-[#0E7C7B]/30 transition-all hover:scale-[1.02] mt-6"
-                >
-                  Book Pro Overhaul
-                </button>
-              </motion.div>
-
-            </div>
-          </div>
-        </section>
-
-        {/* Section 2: Signs Your Device Needs Cleaning */}
-        <section className="py-14 sm:py-20 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
-            <div className="text-center max-w-3xl mx-auto space-y-2">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">COMMON OVERHEATING SYMPTOMS</span>
-              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                Signs Your Laptop or PC Needs Thermal Cleaning
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {data.symptoms.map((sym, idx) => (
-                <div
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {data.cleaningProblems.map((prob, idx) => (
+                <motion.div
                   key={idx}
-                  className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-3 shadow-md"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ ...SMOOTH_TRANSITION, delay: idx * 0.05 }}
                 >
-                  <div className="h-10 w-10 rounded-xl bg-[#0E7C7B]/10 text-[#0E7C7B] flex items-center justify-center font-black text-sm">
-                    0{idx + 1}
+                  <div
+                    onClick={() => openModal({ serviceType: `Cleaning Service - ${prob.title}` })}
+                    className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-4 hover:border-[#0E7C7B] shadow-md hover:shadow-xl transition-all block group h-full flex flex-col justify-between cursor-pointer"
+                  >
+                    <div className="space-y-3">
+                      <div className="h-10 w-10 rounded-2xl bg-[#0E7C7B]/10 text-[#0E7C7B] flex items-center justify-center font-black group-hover:bg-[#0E7C7B] group-hover:text-white transition-all">
+                        <Wind size={20} />
+                      </div>
+                      <h3 className="text-base font-extrabold text-slate-900 dark:text-white group-hover:text-[#0E7C7B] transition-colors leading-snug">
+                        {prob.title}
+                      </h3>
+                      <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+                        {prob.description}
+                      </p>
+                    </div>
+
+                    <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-black text-[#0E7C7B]">
+                      <span>Get Cleaning Assessment</span>
+                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-bold leading-relaxed">
-                    {sym}
-                  </p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Section 3: 4-Step Cleaning & Optimization Process */}
+        {/* CLEANING & TUNE-UP FOR (Supported Systems Grid) */}
         <section className="py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
             <div className="text-center max-w-3xl mx-auto space-y-2">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">SERVICING PROTOCOL</span>
+              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
+                {data.supportedSystemsTitle}
+              </span>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                4-Step Precision Thermal Overhaul Process
+                {data.supportedSystemsSubtitle}
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                {
-                  step: '01',
-                  title: 'Initial Thermal Audit',
-                  desc: 'FLIR thermal imaging to audit baseline CPU/GPU temperatures under stress.'
-                },
-                {
-                  step: '02',
-                  title: 'Full Disassembly',
-                  desc: 'ESD-safe motherboard removal, fan motor cleaning & heatsink dust extraction.'
-                },
-                {
-                  step: '03',
-                  title: 'Thermal Grizzly Repasting',
-                  desc: 'Cleaning old crusty thermal compound and applying fresh Thermal Grizzly Kryonaut.'
-                },
-                {
-                  step: '04',
-                  title: 'Benchmark Report',
-                  desc: 'Post-servicing 15-minute stress test to confirm 15°C to 25°C temperature drop.'
-                }
-              ].map((proc, i) => (
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {data.supportedSystems.map((sys, idx) => (
                 <div
-                  key={i}
-                  className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-3 relative shadow-md"
+                  key={idx}
+                  className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 sm:p-5 flex items-center gap-3 shadow-sm hover:border-[#0E7C7B] transition-all group"
                 >
-                  <span className="text-xs font-black text-[#0E7C7B] tracking-widest block">STEP {proc.step}</span>
-                  <h3 className="text-base font-extrabold text-slate-900 dark:text-white">{proc.title}</h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
-                    {proc.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Section 4: Why Choose Us */}
-        <section className="py-14 sm:py-20 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
-            <div className="text-center max-w-3xl mx-auto space-y-2">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">WHY ROBUZTA THERMAL LAB</span>
-              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                The Preferred Servicing Center in Ahmedabad
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                {
-                  title: 'Thermal Grizzly Kryonaut',
-                  desc: 'We use high-conductivity 12.5 W/mK thermal paste for maximum heat dissipation.'
-                },
-                {
-                  title: '100% Open Glass Lab',
-                  desc: 'Watch senior technicians disassemble and clean your laptop live in South Bopal & Tragad.'
-                },
-                {
-                  title: 'Zero-OTP Data Safety',
-                  desc: 'We NEVER ask for passwords, pins, or SMS OTPs. Your personal files remain untouched.'
-                },
-                {
-                  title: 'Same-Day Turnaround',
-                  desc: 'Basic cleaning takes 45 mins; Pro overhaul takes 90 mins with before/after thermal report.'
-                }
-              ].map((feat, i) => (
-                <div
-                  key={i}
-                  className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-3 shadow-md"
-                >
-                  <div className="h-10 w-10 rounded-xl bg-[#0E7C7B]/10 text-[#0E7C7B] flex items-center justify-center font-black">
-                    <Shield size={20} />
+                  <div className="h-9 w-9 rounded-xl bg-[#0E7C7B]/10 text-[#0E7C7B] flex items-center justify-center font-black shrink-0 text-sm group-hover:bg-[#0E7C7B] group-hover:text-white transition-all">
+                    <Laptop size={18} />
                   </div>
-                  <h3 className="text-base font-extrabold text-slate-900 dark:text-white">{feat.title}</h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
-                    {feat.desc}
-                  </p>
+                  <h3 className="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white leading-snug">
+                    {sys}
+                  </h3>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Section 5: FAQs */}
+
+        {/* FAQs */}
         {data.faqs?.length > 0 && (
           <section className="py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800">
             <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-8">
               <div className="text-center space-y-2">
                 <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">FREQUENTLY ASKED QUESTIONS</span>
                 <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                  Cleaning & Tune-Up Questions Answered
+                  {data.faqsTitle}
                 </h2>
               </div>
 
@@ -539,7 +388,7 @@ export function CleaningTuneUpView() {
                   Is Your Laptop Running Hot or Noisy?
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed">
-                  Bring your laptop to Robuzta Techlabs in South Bopal or Tragad for immediate Thermal Grizzly repasting & ultrasonic cleaning.
+                  Bring your laptop or PC to Robuzta Techlabs in South Bopal or Tragad for immediate thermal cleaning & tune-up.
                 </p>
               </div>
 

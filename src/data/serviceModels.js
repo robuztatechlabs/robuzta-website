@@ -50,30 +50,7 @@ export const serviceModelShowcases = {
       scale: 1.6,
     },
   ],
-  'desktop-repair': [
-    {
-      modelPath: '/models/SSD.glb',
-      title: 'SSD & Storage Upgrades',
-      description:
-        'NVMe and SATA SSD installation, data migration, and boot optimization — transform a slow desktop into a responsive workstation in hours.',
-      calloutTitle: 'Performance Gains:',
-      calloutText:
-        'Upgrading from a spinning HDD to NVMe storage delivers up to 5× faster boot times and dramatically improved application load speeds.',
-      badge: 'SAME-DAY UPGRADE',
-      scale: 2.2,
-    },
-    {
-      modelPath: '/models/super computer.glb',
-      title: 'Enterprise & Workstation Systems',
-      description:
-        'Motherboard, RAM, PSU, and cooling diagnostics for office desktops, all-in-one workstations, and high-performance computing setups.',
-      calloutTitle: 'Business-Grade Support:',
-      calloutText:
-        'We service commercial office fleets and enterprise workstations with serial-verified parts, digital invoicing, and minimal downtime protocols.',
-      price: 'Fleet pricing available',
-      scale: 0.9,
-    },
-  ],
+
 };
 
 export const techLabModelShowcase = {

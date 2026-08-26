@@ -262,7 +262,7 @@ export function MobileRepairSlugView({ data }) {
           </motion.div>
         </section>
 
-        {/* Symptoms or Brand Highlights Section */}
+        {/* Why Choose Us Section */}
         <section className="py-12 sm:py-16 border-b border-slate-200 dark:border-slate-800">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -274,119 +274,104 @@ export function MobileRepairSlugView({ data }) {
             >
               <div className="text-center max-w-3xl mx-auto space-y-2">
                 <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
-                  {isBrand ? 'WHY CHOOSE ROBUZTA' : 'COMMON SYMPTOMS & FAULTS'}
+                  {data.whyChooseUsTitle ? 'WHY CHOOSE US' : (isBrand ? 'WHY CHOOSE ROBUZTA' : 'COMMON SYMPTOMS & FAULTS')}
                 </span>
                 <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                  {isBrand ? `Specialized ${data.name} Repair Standards` : `Signs Your Device Needs ${data.name}`}
+                  {data.whyChooseUsTitle || (isBrand ? `Specialized ${data.name} Repair Standards` : `Signs Your Device Needs ${data.name}`)}
                 </h2>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {(isBrand ? data.brandHighlights : data.symptoms)?.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-3 shadow-sm hover:border-[#0E7C7B]/40 hover:shadow-lg transition-all"
-                  >
-                    <div className="h-10 w-10 rounded-xl bg-[#0E7C7B]/10 text-[#0E7C7B] flex items-center justify-center font-black text-sm">
-                      0{idx + 1}
+              {data.whyChooseUs ? (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+                  {data.whyChooseUs.map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 sm:p-5 flex items-center gap-3.5 shadow-sm hover:border-[#0E7C7B]/50 transition-all group"
+                    >
+                      <div className="h-10 w-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center font-black shrink-0 text-base group-hover:scale-110 transition-transform">
+                        ⭐
+                      </div>
+                      <h3 className="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white group-hover:text-[#0E7C7B] transition-colors leading-snug">
+                        {item}
+                      </h3>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-bold leading-relaxed">
-                      {item}
-                    </p>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {(isBrand ? data.brandHighlights : data.symptoms)?.map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-3 shadow-sm hover:border-[#0E7C7B]/40 hover:shadow-lg transition-all"
+                    >
+                      <div className="h-10 w-10 rounded-xl bg-[#0E7C7B]/10 text-[#0E7C7B] flex items-center justify-center font-black text-sm">
+                        0{idx + 1}
+                      </div>
+                      <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-bold leading-relaxed">
+                        {item}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              )}
             </motion.div>
           </div>
         </section>
 
-        {/* Why Customers Choose Us */}
-        <section className="py-12 sm:py-16 bg-slate-50/80 dark:bg-slate-900/60 border-y border-slate-200 dark:border-slate-800">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
-            <div className="text-center space-y-2">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400">
-                PROVEN REPAIR EXCELLENCE
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
-                Why Customers Choose Us
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-              {[
-                { title: '1000+ Devices Repaired', desc: 'Trusted by thousands across Ahmedabad' },
-                { title: 'Chip-Level Repair Experts', desc: 'Precision BGA & motherboard schematics' },
-                { title: 'Genuine OEM Parts', desc: '100% original displays, batteries & ICs' },
-                { title: 'Same-Day Repairs', desc: 'Fast express 1–3 hours turnaround' },
-                { title: 'Transparent Pricing', desc: 'Upfront estimate with no hidden fees' }
-              ].map((item, idx) => (
-                <div
-                  key={idx}
-                  className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 space-y-2 shadow-sm hover:border-[#0E7C7B] dark:hover:border-teal-500/80 transition-all duration-300 group text-center flex flex-col items-center justify-center"
-                >
-                  <div className="h-10 w-10 rounded-xl bg-amber-100 dark:bg-amber-950/60 text-amber-500 flex items-center justify-center text-lg font-black shrink-0 group-hover:scale-110 transition-transform">
-                    ⭐
-                  </div>
-                  <h3 className="text-sm font-black text-slate-900 dark:text-white leading-snug">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
-                    {item.desc}
+        {/* Common Problems Grid Section (If custom commonProblems specified on brand) */}
+        {data.commonProblems?.length > 0 && (
+          <section className="py-14 sm:py-20 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+              <div className="text-center max-w-3xl mx-auto space-y-2">
+                <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
+                  {data.problemsBadge || `REPAIR SERVICES FOR ${data.name.toUpperCase()}`}
+                </span>
+                <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                  {data.problemsTitle || `What's Going Wrong With Your ${data.name} Phone?`}
+                </h2>
+                {data.problemsDescription && (
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium max-w-2xl mx-auto leading-relaxed">
+                    {data.problemsDescription}
                   </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+                )}
+              </div>
 
-        {/* Diagnostic & Repair Protocol */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {data.commonProblems.map((prob, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ ...SMOOTH_TRANSITION, delay: idx * 0.05 }}
+                  >
+                    <Link
+                      href={`/mobile-repair/${prob.slug}/`}
+                      className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-4 hover:border-[#0E7C7B] shadow-md hover:shadow-xl transition-all block group h-full flex flex-col justify-between"
+                    >
+                      <div className="space-y-3">
+                        <div className="h-10 w-10 rounded-2xl bg-[#0E7C7B]/10 text-[#0E7C7B] flex items-center justify-center font-black group-hover:bg-[#0E7C7B] group-hover:text-white transition-all">
+                          <Wrench size={20} />
+                        </div>
+                        <h3 className="text-base font-extrabold text-slate-900 dark:text-white group-hover:text-[#0E7C7B] transition-colors leading-snug">
+                          {prob.title}
+                        </h3>
+                        <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+                          {prob.description}
+                        </p>
+                      </div>
 
-        <section className="py-12 sm:py-16 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
-            <div className="text-center max-w-3xl mx-auto space-y-2">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">WORKBENCH TRANSPARENCY</span>
-              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                4-Step Precision Mobile Repair Process
-              </h2>
+                      <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-black text-[#0E7C7B]">
+                        <span>Explore Repair Option</span>
+                        <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                {
-                  step: '01',
-                  title: 'Free Diagnostic Check',
-                  desc: 'Microscopic inspection of display connectors, battery health, or power IC short circuits in your presence.'
-                },
-                {
-                  step: '02',
-                  title: 'Transparent Quote',
-                  desc: 'Upfront component pricing with zero hidden charges. You approve before any repair work begins.'
-                },
-                {
-                  step: '03',
-                  title: 'ESD-Safe Component Fix',
-                  desc: 'Original OEM display swap or BGA chip micro-soldering performed live at our open glass workbench.'
-                },
-                {
-                  step: '04',
-                  title: 'Quality Testing & Warranty',
-                  desc: 'Comprehensive 15-point diagnostic check (touch, camera, audio, charging) backed by 180-day warranty.'
-                }
-              ].map((proc, i) => (
-                <div
-                  key={i}
-                  className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-3 relative shadow-md"
-                >
-                  <span className="text-xs font-black text-[#0E7C7B] tracking-widest block">STEP {proc.step}</span>
-                  <h3 className="text-base font-extrabold text-slate-900 dark:text-white">{proc.title}</h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
-                    {proc.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* Cross-Linking Section */}
         {/* Brand Pages -> Link to all Problem/Specialty Pages */}

@@ -27,8 +27,7 @@ const serviceIcons = {
   'mobile-repair': Smartphone,
   'macbook-repair': Cpu,
   'surface-repair': Monitor,
-  'gaming-pc-repair': Flame,
-  'desktop-repair': Wrench
+  'gaming-pc-repair': Flame
 };
 
 const navItems = [
@@ -187,7 +186,7 @@ export function Header() {
                       ? '/laptop-repair/macbook/'
                       : srv.slug === 'surface-repair'
                       ? '/laptop-repair/surface/'
-                      : srv.slug === 'gaming-pc-repair' || srv.slug === 'gaming-desktop' || srv.slug === 'desktop-repair'
+                      : srv.slug === 'gaming-pc-repair' || srv.slug === 'gaming-desktop'
                       ? '/gaming-desktop/repair/'
                       : srv.slug === 'data-recovery'
                       ? '/data-recovery/'

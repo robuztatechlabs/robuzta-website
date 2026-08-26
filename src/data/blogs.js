@@ -137,28 +137,187 @@ export const blogs = [
   },
   {
     slug: 'why-is-my-gaming-laptop-overheating',
-    title: 'Why Is My Gaming Laptop Overheating? Thermal Throttling & Thermal Paste Explained',
+    title: 'Laptop Overheating? Causes, Fixes & When to Get It Repaired',
     excerpt:
-      'Experiencing FPS drops, roaring fan noise, or sudden shutdowns during gaming? Discover why thermal paste degrades and how liquid metal repasting drops temps by 25°C.',
-    category: 'Gaming PC Repair',
+      'Laptop overheating is common during gaming, charging, video editing, and heavy workloads. Discover causes, signs, fixes, and laptop cleaning services in Ahmedabad.',
+    category: 'Laptop Repair',
     date: '2026-07-12',
-    readTime: '6 min read',
-    author: 'Robuzta Gaming Performance Lab',
-    authorRole: 'Thermal Dynamics Engineer',
+    readTime: '5 min read',
+    author: 'Robuzta Thermal Dynamics Lab',
+    authorRole: 'Senior Cooling System Specialist',
     featured: false,
     image: 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=800&auto=format&fit=crop&fm=webp',
     content: `
-      <p>Modern gaming laptops like ASUS ROG, Lenovo Legion, Acer Predator, and MSI Titan pack high-wattage CPUs and GPUs into compact chassis. Over time, heat causes factory thermal compound to dry out and pump out, resulting in CPU temperatures hitting 95°C–100°C and severe thermal throttling.</p>
+      <div class="my-4 p-6 rounded-3xl bg-gradient-to-r from-[#0E7C7B]/10 via-teal-500/10 to-slate-900/10 border border-[#0E7C7B]/30 shadow-lg space-y-2">
+        <span class="text-[11px] font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400 block">OVERHEATING DIAGNOSTIC GUIDE</span>
+        <p class="text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-relaxed m-0">
+          Laptop overheating is common during gaming, charging, video editing, and heavy workloads. But excessive heat can affect performance and cause unexpected shutdowns. Here's what you should know.
+        </p>
+      </div>
 
-      <h3>Signs Your Laptop Needs Thermal Service</h3>
-      <ul>
-        <li><strong>FPS Drops & Stuttering after 10 Minutes:</strong> The CPU/GPU automatically lowers clock speeds to prevent melt-down.</li>
-        <li><strong>Loud Fan Noise at Idle:</strong> Cooling fans spin at maximum RPM even when browsing the web.</li>
-        <li><strong>Hot Palm Rest & Keyboard Surface:</strong> Heat cannot escape through clogged radiator fins.</li>
-      </ul>
+      <h3 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mt-10 mb-3">Why Is Your Laptop Overheating?</h3>
+      <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium mb-4">Common reasons include:</p>
 
-      <h3>Robuzta’s Extreme Cooling Service</h3>
-      <p>We perform full thermal overhauls including ultrasonic radiator fin cleaning, high-viscosity thermal pad replacement on VRAM/VRMs, and application of premium <strong>Thermal Grizzly Kryonaut</strong> or <strong>Conductonaut Liquid Metal</strong> for ultimate heat transfer.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 my-6">
+        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-start gap-3 shadow-sm hover:border-[#0E7C7B] transition-all">
+          <div class="h-9 w-9 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-lg font-black shrink-0">💨</div>
+          <div>
+            <strong class="text-sm font-black text-slate-900 dark:text-white block">Dust Buildup</strong>
+            <span class="text-xs text-slate-500 dark:text-slate-400">Dust blocking internal fans, heatsinks, and air vents.</span>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-start gap-3 shadow-sm hover:border-[#0E7C7B] transition-all">
+          <div class="h-9 w-9 rounded-xl bg-teal-500/10 text-[#0E7C7B] dark:text-teal-400 flex items-center justify-center text-lg font-black shrink-0">🧪</div>
+          <div>
+            <strong class="text-sm font-black text-slate-900 dark:text-white block">Old Thermal Paste</strong>
+            <span class="text-xs text-slate-500 dark:text-slate-400">Degraded compound reducing heat transfer from CPU/GPU.</span>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-start gap-3 shadow-sm hover:border-[#0E7C7B] transition-all">
+          <div class="h-9 w-9 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center text-lg font-black shrink-0">🌀</div>
+          <div>
+            <strong class="text-sm font-black text-slate-900 dark:text-white block">Faulty Cooling Fan</strong>
+            <span class="text-xs text-slate-500 dark:text-slate-400">Noisy, rattling, or completely stopped cooling fans.</span>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-start gap-3 shadow-sm hover:border-[#0E7C7B] transition-all">
+          <div class="h-9 w-9 rounded-xl bg-purple-500/10 text-purple-500 flex items-center justify-center text-lg font-black shrink-0">🌬️</div>
+          <div>
+            <strong class="text-sm font-black text-slate-900 dark:text-white block">Blocked Airflow</strong>
+            <span class="text-xs text-slate-500 dark:text-slate-400">Using the laptop on bed sheets, pillows, or soft surfaces.</span>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-start gap-3 shadow-sm hover:border-[#0E7C7B] transition-all">
+          <div class="h-9 w-9 rounded-xl bg-red-500/10 text-red-500 flex items-center justify-center text-lg font-black shrink-0">⚡</div>
+          <div>
+            <strong class="text-sm font-black text-slate-900 dark:text-white block">Heavy CPU/GPU Load</strong>
+            <span class="text-xs text-slate-500 dark:text-slate-400">High-power 3D gaming or 4K video rendering.</span>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-start gap-3 shadow-sm hover:border-[#0E7C7B] transition-all">
+          <div class="h-9 w-9 rounded-xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center text-lg font-black shrink-0">⚙️</div>
+          <div>
+            <strong class="text-sm font-black text-slate-900 dark:text-white block">Background Apps</strong>
+            <span class="text-xs text-slate-500 dark:text-slate-400">Unneeded processes consuming processor cycles.</span>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mt-10 mb-3">Signs Your Laptop Needs Attention</h3>
+      <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium mb-4">Watch out for these symptoms:</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 my-6">
+        <div class="flex items-center gap-3 p-4 rounded-2xl bg-red-50/60 dark:bg-red-950/30 border border-red-200 dark:border-red-900/40">
+          <span class="text-xl shrink-0">🔥</span>
+          <span class="text-xs sm:text-sm font-bold text-red-950 dark:text-red-200">Laptop becoming unusually hot</span>
+        </div>
+        <div class="flex items-center gap-3 p-4 rounded-2xl bg-amber-50/60 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900/40">
+          <span class="text-xl shrink-0">🔊</span>
+          <span class="text-xs sm:text-sm font-bold text-amber-950 dark:text-amber-200">Fan running loudly or constantly</span>
+        </div>
+        <div class="flex items-center gap-3 p-4 rounded-2xl bg-orange-50/60 dark:bg-orange-950/30 border border-orange-200 dark:border-orange-900/40">
+          <span class="text-xl shrink-0">🎮</span>
+          <span class="text-xs sm:text-sm font-bold text-orange-950 dark:text-orange-200">FPS drops while gaming</span>
+        </div>
+        <div class="flex items-center gap-3 p-4 rounded-2xl bg-yellow-50/60 dark:bg-yellow-950/30 border border-yellow-200 dark:border-yellow-900/40">
+          <span class="text-xl shrink-0">🐌</span>
+          <span class="text-xs sm:text-sm font-bold text-yellow-950 dark:text-yellow-200">Performance becoming slow</span>
+        </div>
+        <div class="flex items-center gap-3 p-4 rounded-2xl bg-purple-50/60 dark:bg-purple-950/30 border border-purple-200 dark:border-purple-900/40">
+          <span class="text-xl shrink-0">🔄</span>
+          <span class="text-xs sm:text-sm font-bold text-purple-950 dark:text-purple-200">Random restarts or shutdowns</span>
+        </div>
+        <div class="flex items-center gap-3 p-4 rounded-2xl bg-rose-50/60 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-900/40">
+          <span class="text-xl shrink-0">⚠️</span>
+          <span class="text-xs sm:text-sm font-bold text-rose-950 dark:text-rose-200">Blue screen or system crashes</span>
+        </div>
+      </div>
+
+      <div class="my-8 p-6 rounded-3xl bg-slate-900 text-white space-y-3 shadow-xl">
+        <span class="text-[11px] font-mono font-black uppercase text-teal-400 tracking-wider block">QUICK FIXES & BENCH CARE</span>
+        <h3 class="text-xl font-black text-white m-0">What Can You Do?</h3>
+        <p class="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed m-0">
+          Keep the ventilation areas clear and use the laptop on a hard, flat surface. Check Task Manager for applications using excessive CPU/GPU resources.
+        </p>
+        <div class="p-3.5 rounded-2xl bg-teal-950/60 border border-teal-500/30 text-xs font-bold text-teal-200 mt-2">
+          💡 If the problem continues, the cooling system may need internal cleaning, fan servicing, or thermal paste replacement.
+        </div>
+      </div>
+
+      <div class="my-8 p-6 rounded-3xl bg-gradient-to-br from-slate-50 via-teal-50/30 to-slate-100 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 border border-slate-200 dark:border-slate-800 space-y-3">
+        <span class="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400">PERFORMANCE IMPACT</span>
+        <h3 class="text-xl font-black text-slate-900 dark:text-white m-0">Gaming Laptop Overheating</h3>
+        <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-medium leading-relaxed m-0">
+          Gaming laptops generate more heat because the CPU and GPU work under heavy load. If temperatures rise too much, <strong class="text-amber-600 dark:text-amber-400 font-black">thermal throttling</strong> can reduce CPU/GPU performance, resulting in FPS drops and stuttering.
+        </p>
+        <p class="text-xs text-slate-500 dark:text-slate-400 font-bold m-0 pt-1">
+          A proper cooling service can help maintain more consistent performance when overheating is caused by dust or degraded thermal material.
+        </p>
+      </div>
+
+      <h3 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mt-10 mb-2">Laptop Cleaning & Tune-Up in Ahmedabad</h3>
+      <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium mb-6">
+        At <strong class="font-bold text-slate-900 dark:text-white">Robuzta TechLabs</strong>, we inspect the cooling system before recommending a service.
+      </p>
+
+      <div class="space-y-4 my-6">
+        <span class="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400 block">Our tune-up can include:</span>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div class="flex items-center gap-3 p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm font-black text-xs text-slate-900 dark:text-white">
+            <span class="h-6 w-6 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs shrink-0">✓</span>
+            <span>Internal dust cleaning</span>
+          </div>
+          <div class="flex items-center gap-3 p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm font-black text-xs text-slate-900 dark:text-white">
+            <span class="h-6 w-6 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs shrink-0">✓</span>
+            <span>Fan & heatsink inspection</span>
+          </div>
+          <div class="flex items-center gap-3 p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm font-black text-xs text-slate-900 dark:text-white">
+            <span class="h-6 w-6 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs shrink-0">✓</span>
+            <span>Thermal paste replacement</span>
+          </div>
+          <div class="flex items-center gap-3 p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm font-black text-xs text-slate-900 dark:text-white">
+            <span class="h-6 w-6 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs shrink-0">✓</span>
+            <span>Airflow checking</span>
+          </div>
+          <div class="flex items-center gap-3 p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm font-black text-xs text-slate-900 dark:text-white">
+            <span class="h-6 w-6 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs shrink-0">✓</span>
+            <span>Temperature testing</span>
+          </div>
+          <div class="flex items-center gap-3 p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm font-black text-xs text-slate-900 dark:text-white">
+            <span class="h-6 w-6 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs shrink-0">✓</span>
+            <span>Basic performance inspection</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-2xl bg-[#0E7C7B]/10 dark:bg-[#0E7C7B]/20 border border-[#0E7C7B]/30 text-xs sm:text-sm font-extrabold text-[#0E7C7B] dark:text-teal-300 text-center my-6">
+        💻 We service gaming laptops, business laptops, everyday laptops, MacBooks, and desktop PCs.
+      </div>
+
+      <h3 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mt-10 mb-4">FAQ</h3>
+      <div class="space-y-4 my-6">
+        <div class="p-5 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2 shadow-sm">
+          <h4 class="text-base font-black text-slate-900 dark:text-white m-0">How often should I clean my laptop?</h4>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium m-0">It depends on usage and environment. Gaming laptops and devices used in dusty areas may need more frequent servicing.</p>
+        </div>
+        <div class="p-5 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2 shadow-sm">
+          <h4 class="text-base font-black text-slate-900 dark:text-white m-0">Can overheating cause FPS drops?</h4>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium m-0">Yes. Excessive temperatures can trigger thermal throttling and reduce gaming performance.</p>
+        </div>
+        <div class="p-5 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2 shadow-sm">
+          <h4 class="text-base font-black text-slate-900 dark:text-white m-0">Can cleaning fix overheating?</h4>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium m-0">If dust or restricted airflow is the cause, proper cleaning can significantly improve cooling.</p>
+        </div>
+        <div class="p-5 rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2 shadow-sm">
+          <h4 class="text-base font-black text-slate-900 dark:text-white m-0">Does thermal paste need yearly replacement?</h4>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium m-0">Not necessarily. It should be replaced when the thermal material has degraded or temperatures indicate a cooling problem.</p>
+        </div>
+      </div>
     `
   },
   {

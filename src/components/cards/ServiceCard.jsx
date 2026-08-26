@@ -20,7 +20,6 @@ const serviceIcons = {
   'macbook-repair': Cpu,
   'surface-repair': Monitor,
   'gaming-pc-repair': Flame,
-  'desktop-repair': Wrench,
   'data-recovery': Database,
   'software-services': Code,
   'cleaning-tune-up': Wind
@@ -32,7 +31,6 @@ const serviceBadges = {
   'macbook-repair': 'CHIP-LEVEL',
   'surface-repair': 'SPECIALIST',
   'gaming-pc-repair': 'BENCHMARK LAB',
-  'desktop-repair': 'UPGRADE READY',
   'data-recovery': '95% SUCCESS',
   'software-services': 'GENUINE OS',
   'cleaning-tune-up': '15°C COOLER'

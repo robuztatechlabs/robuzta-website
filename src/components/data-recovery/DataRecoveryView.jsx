@@ -5,31 +5,27 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
   HardDrive,
-  ShieldCheck,
-  Zap,
   CheckCircle2,
   Phone,
-  ChevronRight,
   ChevronDown,
   ArrowRight,
   Sparkles,
   Wrench,
   Clock,
-  Cpu,
-  Monitor,
-  Droplets,
-  Check,
-  Shield,
-  FileCheck,
-  Database,
   Lock,
-  Search
+  Database,
+  Shield,
+  Cpu,
+  Check,
+  Disc,
+  Smartphone,
+  Laptop
 } from 'lucide-react';
 
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { siteConfig } from '@/data/site';
-import { RECOVERY_BRANDS, DATA_RECOVERY_PAGE_DATA } from '@/data/dataRecoveryData';
+import { DATA_RECOVERY_PAGE_DATA } from '@/data/dataRecoveryData';
 import { useBookingModal } from '@/context/BookingModalContext';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 
@@ -126,8 +122,6 @@ export function DataRecoveryView() {
             transition={SMOOTH_TRANSITION}
             className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-6"
           >
-
-
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-8 space-y-5">
                 
@@ -231,70 +225,118 @@ export function DataRecoveryView() {
           </motion.div>
         </section>
 
-
-
-        {/* Section 2: 4 Service Coverage Cards */}
-        <section className="py-18 sm:py-26 lg:py-32 border-b border-slate-200 dark:border-slate-800">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+        {/* Why Choose Us Section (8 ⭐ Cards) */}
+        <section className="py-12 sm:py-16 border-b border-slate-200 dark:border-slate-800">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
             <div className="text-center max-w-3xl mx-auto space-y-2">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">SPECIALIZED RECOVERY SERVICES</span>
+              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
+                PROVEN REPAIR EXCELLENCE
+              </span>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                Component-Level Data Extraction
+                {data.whyChooseUsTitle}
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {data.services?.map((srv, idx) => (
-                <motion.div
-                  key={srv.id}
-                  initial={{ opacity: 0, y: 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-20px' }}
-                  transition={{ ...SMOOTH_TRANSITION, delay: idx * 0.08 }}
-                  className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-7 space-y-4 shadow-md hover:border-[#0E7C7B] hover:shadow-xl transition-all flex flex-col justify-between"
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+              {data.whyChooseUs.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 sm:p-5 flex items-center gap-3.5 shadow-sm hover:border-[#0E7C7B]/50 transition-all group"
                 >
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-black text-[#0E7C7B] bg-[#0E7C7B]/10 px-3 py-1 rounded-full">
-                        {srv.turnaround}
-                      </span>
-                      <span className="text-xs font-extrabold text-emerald-600 dark:text-emerald-400">
-                        {srv.price}
-                      </span>
+                  <div className="h-10 w-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center font-black shrink-0 text-base group-hover:scale-110 transition-transform">
+                    ⭐
+                  </div>
+                  <h3 className="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white group-hover:text-[#0E7C7B] transition-colors leading-snug">
+                    {item}
+                  </h3>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* DATA RECOVERY SERVICES Section (10 Common Problem Cards) */}
+        <section className="py-14 sm:py-20 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+            <div className="text-center max-w-3xl mx-auto space-y-2">
+              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
+                {data.servicesBadge}
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                {data.servicesTitle}
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium max-w-2xl mx-auto leading-relaxed">
+                {data.servicesDescription}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {data.recoveryScenarios.map((prob, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ ...SMOOTH_TRANSITION, delay: idx * 0.05 }}
+                >
+                  <div
+                    onClick={() => openModal({ serviceType: `Data Recovery - ${prob.title}` })}
+                    className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-4 hover:border-[#0E7C7B] shadow-md hover:shadow-xl transition-all block group h-full flex flex-col justify-between cursor-pointer"
+                  >
+                    <div className="space-y-3">
+                      <div className="h-10 w-10 rounded-2xl bg-[#0E7C7B]/10 text-[#0E7C7B] flex items-center justify-center font-black group-hover:bg-[#0E7C7B] group-hover:text-white transition-all">
+                        <HardDrive size={20} />
+                      </div>
+                      <h3 className="text-base font-extrabold text-slate-900 dark:text-white group-hover:text-[#0E7C7B] transition-colors leading-snug">
+                        {prob.title}
+                      </h3>
+                      <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+                        {prob.description}
+                      </p>
                     </div>
 
-                    <h3 className="text-xl font-black text-slate-900 dark:text-white">
-                      {srv.title}
-                    </h3>
-
-                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
-                      {srv.summary}
-                    </p>
-
-                    <ul className="space-y-2 pt-3 border-t border-slate-100 dark:border-slate-800">
-                      {srv.details.map((dt, dIdx) => (
-                        <li key={dIdx} className="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300 font-medium leading-snug">
-                          <Check size={14} className="text-[#0E7C7B] shrink-0 mt-0.5" />
-                          <span>{dt}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-black text-[#0E7C7B]">
+                      <span>Get Recovery Assessment</span>
+                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </div>
-
-                  <button
-                    onClick={() => openModal({ serviceType: srv.title })}
-                    className="w-full rounded-2xl bg-slate-50 dark:bg-slate-800 hover:bg-[#0E7C7B] hover:text-white text-slate-900 dark:text-white py-3.5 text-xs font-black uppercase tracking-wider transition-all flex items-center justify-center gap-2 mt-4"
-                  >
-                    <span>Request Recovery Check</span>
-                    <ArrowRight size={14} />
-                  </button>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Section 3: 4-Step Recovery Process Timeline */}
+        {/* DATA RECOVERY FROM (Supported Devices Grid) */}
+        <section className="py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+            <div className="text-center max-w-3xl mx-auto space-y-2">
+              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
+                {data.supportedDevicesTitle}
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                {data.supportedDevicesSubtitle}
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+              {data.supportedDevices.map((dev, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 sm:p-5 flex items-center gap-3 shadow-sm hover:border-[#0E7C7B] transition-all group"
+                >
+                  <div className="h-9 w-9 rounded-xl bg-[#0E7C7B]/10 text-[#0E7C7B] flex items-center justify-center font-black shrink-0 text-sm group-hover:bg-[#0E7C7B] group-hover:text-white transition-all">
+                    <Disc size={18} />
+                  </div>
+                  <h3 className="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white leading-snug">
+                    {dev}
+                  </h3>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 4-Step Recovery Protocol */}
         <section className="py-14 sm:py-20 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
             <div className="text-center max-w-3xl mx-auto space-y-2">
@@ -342,60 +384,14 @@ export function DataRecoveryView() {
           </div>
         </section>
 
-        {/* Section 4: Why Choose Robuzta for Data Recovery */}
-        <section className="py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
-            <div className="text-center max-w-3xl mx-auto space-y-2">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">WHY ROBUZTA DATA LAB</span>
-              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                Guaranteed Data Privacy & High Recovery Success
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                {
-                  title: '100% Zero-OTP Policy',
-                  desc: 'We NEVER ask for unlock passwords, pins, or SMS OTPs. Your personal files remain 100% private.'
-                },
-                {
-                  title: 'No Data, No Fee',
-                  desc: 'If we cannot extract your critical files or documents, you pay zero diagnostic or labor fee.'
-                },
-                {
-                  title: 'Transparent Open Lab',
-                  desc: 'Watch senior recovery engineers perform drive imaging live at our South Bopal & Tragad labs.'
-                },
-                {
-                  title: 'Local Encrypted Storage',
-                  desc: 'Recovered data is stored on encrypted offline bench servers with zero cloud uploads.'
-                }
-              ].map((feat, i) => (
-                <div
-                  key={i}
-                  className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-3 shadow-md"
-                >
-                  <div className="h-10 w-10 rounded-xl bg-[#0E7C7B]/10 text-[#0E7C7B] flex items-center justify-center font-black">
-                    <Shield size={20} />
-                  </div>
-                  <h3 className="text-base font-extrabold text-slate-900 dark:text-white">{feat.title}</h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
-                    {feat.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Section 5: FAQs */}
+        {/* FAQs */}
         {data.faqs?.length > 0 && (
-          <section className="py-14 sm:py-20 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
+          <section className="py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800">
             <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-8">
               <div className="text-center space-y-2">
                 <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">FREQUENTLY ASKED QUESTIONS</span>
                 <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                  Data Recovery Questions Answered
+                  {data.faqsTitle}
                 </h2>
               </div>
 

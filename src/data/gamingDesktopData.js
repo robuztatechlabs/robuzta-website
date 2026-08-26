@@ -1,6 +1,6 @@
 /**
  * Data definitions for Gaming Desktop Services (Repair & Build).
- * Adheres strictly to Robuzta Techlabs brand guidelines and realistic hardware capabilities in Ahmedabad.
+ * Adheres strictly to Robuzta Techlabs brand guidelines and PDF specifications.
  */
 
 export const GAMING_BRANDS = [
@@ -14,87 +14,118 @@ export const GAMING_BRANDS = [
 
 export const GAMING_REPAIR_DATA = {
   slug: 'repair',
-  h1: 'Gaming Desktop PC Repair Services in Ahmedabad',
-  tagline: 'Component-level motherboard repair, 80+ Gold SMPS replacement, liquid cooling thermal overhauls, and GPU BGA diagnostics for custom gaming rigs.',
+  h1: 'Gaming PC Repair & Custom PC Build Services in Ahmedabad',
+  tagline: 'Gaming PC repair and custom PC building services in Ahmedabad for gaming, streaming, editing, and high-performance systems. We diagnose GPU problems, overheating, crashes, blue screens, boot failures, power issues, RAM and SSD faults, and build performance-focused PCs based on your budget and requirements.',
   metaTitle: 'Gaming PC Repair in Ahmedabad | Power Supply, GPU & Thermal Fix | Robuzta',
-  metaDescription: 'Expert gaming desktop repair in Ahmedabad. Fast SMPS replacement, liquid cooler maintenance, RAM/SSD upgrades & GPU short-circuit repair with live workbench transparency.',
+  metaDescription: 'Gaming PC repair and custom PC building services in Ahmedabad for gaming, streaming, editing, and high-performance systems.',
   canonicalUrl: 'https://robuzta.com/gaming-desktop/repair/',
-  
-  services: [
+
+  whyChooseUsTitle: 'Why Choose Us?',
+  whyChooseUs: [
+    'Gaming PC Repair Specialists',
+    'Custom PC Build & Upgrade',
+    'GPU & Motherboard Diagnostics',
+    'Performance & Thermal Optimization',
+    'Quality Components',
+    'Transparent Build & Repair Estimates',
+    'Cable Management & Testing',
+    'Warranty on Eligible Repairs'
+  ],
+
+  servicesBadge: 'GAMING PC REPAIR & BUILD SERVICES',
+  servicesTitle: 'Is Your Gaming PC Not Performing the Way It Should?',
+  servicesDescription: 'From sudden black screens and FPS drops to overheating, crashes, hardware failures, and complete system builds, we diagnose your PC properly and provide the right repair, upgrade, or build solution.',
+
+  repairProblems: [
     {
-      id: 'smps-replacement',
-      title: 'SMPS / Power Supply Replacement',
-      summary: 'PC won’t power on, shuts down during gaming, or smells burnt? Certified 80+ Gold modular PSU installation.',
-      details: [
-        'Diagnostics for shorted 12V EPS power rails and tripped PSU protection circuits',
-        'Installation of Tier-A 80+ Gold modular power supplies (Corsair, Cooler Master, Antec, DeepCool)',
-        '12VHPWR connector installation for NVIDIA RTX 40-Series GPUs'
-      ],
-      turnaround: '1 – 3 Hours',
-      price: 'Starts ₹999'
+      title: '1. Gaming PC Turning On but No Display?',
+      description: 'PC powers on but your monitor shows no signal? We diagnose the GPU, RAM, motherboard, PSU, display connection, and other hardware components.'
     },
     {
-      id: 'overheating-cooling',
-      title: 'Overheating & Cooling Maintenance',
-      summary: 'CPU reaching 95°C, thermal throttling, or noisy AIO pump? Complete liquid cooling overhaul & repasting.',
-      details: [
-        'AIO liquid cooler pump vacuum test, gunk flushing, and coolant refilling',
-        'Application of premium Thermal Grizzly Kryonaut / Arctic MX-6 thermal paste',
-        'High-static pressure ARGB fan installation & PWM curve optimization'
-      ],
-      turnaround: '2 – 4 Hours',
-      price: 'Starts ₹799'
+      title: '2. Gaming PC Shutting Down During Gaming?',
+      description: 'Sudden shutdowns under heavy gaming load can be caused by overheating, PSU problems, GPU issues, or unstable hardware. We identify the actual cause.'
     },
     {
-      id: 'ram-ssd-upgrade',
-      title: 'RAM & NVMe SSD Upgrade',
-      summary: 'Expand memory for heavy gaming/streaming or speed up game load times with PCIe 4.0 NVMe SSDs.',
-      details: [
-        'DDR4 / DDR5 dual-channel XMP & EXPO high-speed profile tuning up to 7200MHz',
-        'PCIe Gen4 / Gen5 M.2 NVMe SSD installation with heavy heatsink mounting',
-        'OS migration & 100% zero-data-loss clone service'
-      ],
-      turnaround: '1 Hour',
-      price: 'Starts ₹499'
+      title: '3. GPU Overheating or Fan Not Working?',
+      description: 'High GPU temperatures, noisy fans, or GPU fans not spinning properly can affect gaming performance. We diagnose cooling and graphics-related issues.'
     },
     {
-      id: 'cpu-servicing',
-      title: 'CPU Servicing & Socket Repair',
-      summary: 'Bent LGA motherboard pins, processor upgrades, or VRM overheating fixes for Intel & AMD platforms.',
-      details: [
-        'Microscopic alignment & repair of bent Intel LGA 1700 / AMD AM5 socket pins',
-        'Processor upgrades (Intel 13th/14th Gen & AMD Ryzen 7000/9000 3D Series)',
-        'Motherboard BIOS updating & VRM thermal pad restoration'
-      ],
-      turnaround: '2 – 6 Hours',
-      price: 'Starts ₹1,299'
+      title: '4. Gaming PC FPS Drops or Stuttering?',
+      description: 'Unexpected FPS drops, micro-stuttering, or inconsistent gaming performance can be caused by thermal throttling, drivers, RAM, storage, GPU, or CPU limitations.'
     },
     {
-      id: 'pc-diagnostics',
-      title: 'Full Gaming PC Diagnostics & Stress Test',
-      summary: 'Random BSOD crashes, display freeze during gameplay, or artifacting graphics card troubleshooting.',
-      details: [
-        'FLIR thermal imaging to locate shorted motherboard MOSFETs and capacitors',
-        '3DMark & FurMark GPU stress testing for stability verification',
-        'MemTest86 hardware RAM error isolation'
-      ],
-      turnaround: '24 Hours',
-      price: 'Starts ₹999 (Waived on Repair)'
+      title: '5. Gaming PC Randomly Restarting or Crashing?',
+      description: 'Random restarts, freezes, game crashes, and blue screens can point to unstable RAM, GPU, PSU, CPU, storage, or software problems.'
+    },
+    {
+      title: '6. Gaming PC Not Booting?',
+      description: "If your PC gets stuck on the motherboard logo, shows a boot error, or doesn't load Windows, we diagnose SSD, RAM, BIOS, motherboard, and operating system issues."
+    },
+    {
+      title: '7. Gaming PC Overheating?',
+      description: 'High CPU or GPU temperatures can reduce performance and cause system instability. We provide thermal servicing, thermal paste replacement, fan cleaning, and cooling optimization.'
+    },
+    {
+      title: '8. Gaming PC Build & Custom PC Assembly?',
+      description: 'Planning a new gaming PC? We select compatible CPU, GPU, motherboard, RAM, SSD, PSU, cabinet, and cooling according to your games, workload, and budget.'
+    },
+    {
+      title: '9. Gaming PC Upgrade?',
+      description: 'Upgrade your existing PC with a better GPU, more RAM, faster SSD, improved cooling, or a suitable power supply to increase performance without replacing the entire system.'
     }
   ],
 
+  customBuildsBadge: 'CUSTOM GAMING PC BUILDS',
+  customBuildsTitle: 'Build a Gaming PC Around Your Budget',
+  customBuildsDescription: 'Whether you need a budget gaming PC, high-end gaming system, streaming setup, or a powerful editing workstation, we configure the components according to your requirements and expected performance.',
+  customBuildTiers: [
+    {
+      title: 'Budget Gaming PC',
+      description: 'Balanced components for popular games and everyday gaming.'
+    },
+    {
+      title: 'High-End Gaming PC',
+      description: 'Powerful CPU and GPU combinations for high-resolution and demanding games.'
+    },
+    {
+      title: 'Streaming & Gaming PC',
+      description: 'Designed to handle gaming, live streaming, recording, and multitasking.'
+    },
+    {
+      title: 'Gaming & Video Editing PC',
+      description: 'Performance-focused builds for Premiere Pro, DaVinci Resolve, After Effects, and gaming.'
+    }
+  ],
+
+  faqsTitle: 'Gaming PC Repair Questions Answered',
   faqs: [
     {
-      question: 'Why does my gaming PC shut off suddenly when launching heavy games?',
-      answer: 'Sudden shut-offs under load are almost always caused by PSU power rail trip (insufficient wattage/worn caps) or CPU/GPU thermal overload exceeding 95°C.'
+      question: '1. Why does my gaming PC turn on but show no display?',
+      answer: 'The issue can be related to the GPU, RAM, motherboard, PSU, BIOS, or display connection. We test the major components to identify the fault.'
     },
     {
-      question: 'Can you repair liquid damage or leaking AIO coolers in custom PCs?',
-      answer: 'Yes! We perform ultrasonic chemical board baths to remove dried coolant residue, inspect VRM power phases under microscopes, and replace shorted components.'
+      question: '2. Why does my PC shut down while playing games?',
+      answer: 'Overheating, PSU limitations, GPU problems, unstable hardware, or power-related faults can cause shutdowns during gaming.'
     },
     {
-      question: 'Do you bring spare power supplies and GPUs for diagnostic testing?',
-      answer: 'Yes, our bench in South Bopal and Tragad is equipped with test-bench PSUs, RTX GPUs, and test RAM to isolate exact hardware faults instantly.'
+      question: '3. Can you build a gaming PC according to my budget?',
+      answer: 'Yes. We can recommend compatible components based on your budget, games, resolution, performance requirements, and future upgrade plans.'
+    },
+    {
+      question: '4. Can you upgrade my existing gaming PC?',
+      answer: 'Yes. We check your current hardware first and recommend upgrades for the components that are actually limiting performance.'
+    },
+    {
+      question: '5. Why is my gaming PC getting very hot?',
+      answer: 'Dust, poor airflow, old thermal paste, inadequate cooling, high workload, or faulty fans can cause high temperatures.'
+    },
+    {
+      question: '6. Why am I getting low FPS even with a powerful GPU?',
+      answer: 'Low FPS can be caused by CPU limitations, thermal throttling, insufficient RAM, drivers, game settings, background processes, or hardware configuration.'
+    },
+    {
+      question: '7. Can you diagnose GPU problems?',
+      answer: 'Yes. We test graphics cards for display issues, crashes, overheating, artifacting, fan problems, and other performance-related faults.'
     }
   ]
 };
@@ -107,81 +138,92 @@ export const GAMING_BUILD_DATA = {
   metaDescription: 'Custom gaming PC build and assembly service in Ahmedabad. Expert component selection, ARGB liquid cooling setup, cable management & 3DMark stress testing.',
   canonicalUrl: 'https://robuzta.com/gaming-desktop/build/',
 
-  services: [
+  whyChooseUsTitle: 'Why Choose Us?',
+  whyChooseUs: [
+    'Gaming PC Repair Specialists',
+    'Custom PC Build & Upgrade',
+    'GPU & Motherboard Diagnostics',
+    'Performance & Thermal Optimization',
+    'Quality Components',
+    'Transparent Build & Repair Estimates',
+    'Cable Management & Testing',
+    'Warranty on Eligible Repairs'
+  ],
+
+  servicesBadge: 'CUSTOM GAMING PC BUILDS',
+  servicesTitle: 'Build a Gaming PC Around Your Budget',
+  servicesDescription: 'Whether you need a budget gaming PC, high-end gaming system, streaming setup, or a powerful editing workstation, we configure the components according to your requirements and expected performance.',
+
+  repairProblems: [
     {
-      id: 'custom-pc-builds',
-      title: 'Custom Gaming PC Build Tiers',
-      summary: 'Tailor-made rigs built for 1080p Esports, 1440p High Refresh Rate, 4K Ultra Gaming, or Heavy AI/3D Workstations.',
-      details: [
-        'Esports Tier: High FPS 1080p gaming for Valorant, CS2, GTA V & Fortnite',
-        '1440p Ultra Tier: Max settings gaming for Cyberpunk 2077 & AAA titles',
-        'Creator & AI Tier: Multi-core Threadripper / Ryzen 9 + Dual RTX 4090 setups'
-      ],
-      turnaround: 'Same Day / 24 Hours',
-      price: 'Consultation Free'
+      title: '1. Budget Gaming PC',
+      description: 'Balanced components for popular games and everyday gaming.'
     },
     {
-      id: 'cabinet-assembly',
-      title: 'Cabinet & Component Assembly',
-      summary: 'Precision assembly of motherboard, CPU, GPU anti-sag support, and tempered glass cabinet mounting.',
-      details: [
-        'Dual-chamber & fish-tank glass cabinet assembly (Lian Li, HYTE, NZXT, Corsair)',
-        'GPU vertical mounting & heavy graphics card anti-sag bracket installation',
-        'Dust filter sealing and positive air pressure fan configuration'
-      ],
-      turnaround: '2 – 4 Hours',
-      price: 'Starts ₹1,499'
+      title: '2. High-End Gaming PC',
+      description: 'Powerful CPU and GPU combinations for high-resolution and demanding games.'
     },
     {
-      id: 'component-consultation',
-      title: 'Component Consultation & Bottleneck Check',
-      summary: 'Avoid buying incompatible parts. We audit CPU-GPU bottlenecks, PSU wattage, and RAM clearance before purchase.',
-      details: [
-        'Verification of CPU cooler clearance vs tall RAM heatspreaders',
-        'Power supply wattage headroom calculation for peak GPU transient spikes',
-        'Motherboard VRM phase matching for high-wattage CPUs'
-      ],
-      turnaround: 'Instant / 30 Mins',
-      price: 'Free with Build'
+      title: '3. Streaming & Gaming PC',
+      description: 'Designed to handle gaming, live streaming, recording, and multitasking.'
     },
     {
-      id: 'cooling-rgb-setup',
-      title: 'Cooling, ARGB Sync & Cable Management',
-      summary: 'Ultra-clean hidden cable routing, ARGB lighting controller sync, and push-pull radiator fan setups.',
-      details: [
-        'Hidden velcro tie & custom sleeved cable routing behind motherboard tray',
-        'ARGB hub controller wiring synced via SignalRGB / ASUS Armoury Crate',
-        'Optimized intake/exhaust air flow balance to keep thermals under 70°C'
-      ],
-      turnaround: '2 – 3 Hours',
-      price: 'Starts ₹999'
-    },
-    {
-      id: 'office-to-gaming-upgrade',
-      title: 'Upgrade Existing PC to Gaming Specification',
-      summary: 'Transform your standard office desktop into a high-performance gaming computer.',
-      details: [
-        'Graphics card addition with dedicated PCIe power line routing',
-        'Power supply upgrade from standard 250W to 80+ Gold 650W/750W',
-        'High-speed NVMe SSD boot drive installation with Windows 11 optimization'
-      ],
-      turnaround: '2 Hours',
-      price: 'Starts ₹799 + Parts'
+      title: '4. Gaming & Video Editing PC',
+      description: 'Performance-focused builds for Premiere Pro, DaVinci Resolve, After Effects, and gaming.'
     }
   ],
 
+  customBuildsBadge: 'CUSTOM GAMING PC BUILDS',
+  customBuildsTitle: 'Build a Gaming PC Around Your Budget',
+  customBuildsDescription: 'Whether you need a budget gaming PC, high-end gaming system, streaming setup, or a powerful editing workstation, we configure the components according to your requirements and expected performance.',
+  customBuildTiers: [
+    {
+      title: 'Budget Gaming PC',
+      description: 'Balanced components for popular games and everyday gaming.'
+    },
+    {
+      title: 'High-End Gaming PC',
+      description: 'Powerful CPU and GPU combinations for high-resolution and demanding games.'
+    },
+    {
+      title: 'Streaming & Gaming PC',
+      description: 'Designed to handle gaming, live streaming, recording, and multitasking.'
+    },
+    {
+      title: 'Gaming & Video Editing PC',
+      description: 'Performance-focused builds for Premiere Pro, DaVinci Resolve, After Effects, and gaming.'
+    }
+  ],
+
+  faqsTitle: 'Gaming PC Build Questions Answered',
   faqs: [
     {
-      question: 'Can I purchase components myself and bring them to Robuzta for assembly?',
-      answer: 'Absolutely! You can purchase parts online or from any distributor, and bring them to our lab in South Bopal or Tragad for professional assembly, cable management, and stress testing.'
+      question: '1. Why does my gaming PC turn on but show no display?',
+      answer: 'The issue can be related to the GPU, RAM, motherboard, PSU, BIOS, or display connection. We test the major components to identify the fault.'
     },
     {
-      question: 'Do custom PC builds include Windows OS installation and driver setup?',
-      answer: 'Yes! Every PC build assembled at Robuzta includes clean Windows installation, latest motherboard chipset drivers, GPU drivers, and 2-hour 3DMark stress testing.'
+      question: '2. Why does my PC shut down while playing games?',
+      answer: 'Overheating, PSU limitations, GPU problems, unstable hardware, or power-related faults can cause shutdowns during gaming.'
     },
     {
-      question: 'What warranty do I get on custom PC builds assembled at Robuzta?',
-      answer: 'You get full official manufacturer warranty on individual parts, plus Robuzta’s 1-Year Free Labor & Diagnostics Support warranty.'
+      question: '3. Can you build a gaming PC according to my budget?',
+      answer: 'Yes. We can recommend compatible components based on your budget, games, resolution, performance requirements, and future upgrade plans.'
+    },
+    {
+      question: '4. Can you upgrade my existing gaming PC?',
+      answer: 'Yes. We check your current hardware first and recommend upgrades for the components that are actually limiting performance.'
+    },
+    {
+      question: '5. Why is my gaming PC getting very hot?',
+      answer: 'Dust, poor airflow, old thermal paste, inadequate cooling, high workload, or faulty fans can cause high temperatures.'
+    },
+    {
+      question: '6. Why am I getting low FPS even with a powerful GPU?',
+      answer: 'Low FPS can be caused by CPU limitations, thermal throttling, insufficient RAM, drivers, game settings, background processes, or hardware configuration.'
+    },
+    {
+      question: '7. Can you diagnose GPU problems?',
+      answer: 'Yes. We test graphics cards for display issues, crashes, overheating, artifacting, fan problems, and other performance-related faults.'
     }
   ]
 };

@@ -247,15 +247,14 @@ export function HeroSection() {
                 </span>
               </div>
 
-              {/* 9 Services 3x3 Grid (Strictly 3 Columns per Row) */}
-              <div className="grid grid-cols-3 gap-2.5 sm:gap-3">
+              {/* 8 Core Services Grid (4 Columns per Row on Desktop) */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3">
                 {[
                   { name: 'Laptop Repair', icon: Laptop, href: '/laptop-repair/' },
                   { name: 'Mobile Repair', icon: Smartphone, href: '/mobile-repair/' },
                   { name: 'MacBook Repair', icon: Cpu, href: '/laptop-repair/macbook/' },
                   { name: 'Surface Repair', icon: Monitor, href: '/laptop-repair/surface/' },
                   { name: 'Gaming PC Repair', icon: Flame, href: '/gaming-desktop/repair/' },
-                  { name: 'Desktop Repair', icon: Wrench, href: '/services/desktop-repair/' },
                   { name: 'Data Recovery', icon: Database, href: '/data-recovery/' },
                   { name: 'Software Services', icon: Code, href: '/software-services/' },
                   { name: 'Cleaning & Tune-Up', icon: Wind, href: '/cleaning-tune-up/' }

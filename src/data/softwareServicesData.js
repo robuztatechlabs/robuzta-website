@@ -1,97 +1,99 @@
 /**
  * Data definitions for Software Services in Ahmedabad.
- * Adheres strictly to Robuzta Techlabs brand standards and realistic software repair capabilities.
+ * Adheres strictly to Robuzta Techlabs brand standards and PDF specifications.
  */
 
-export const SOFTWARE_BRANDS = [
-  { name: 'Windows 11 / 10 Pro', logo: '/assets/brands/windows.svg', tag: 'Genuine OS & Driver Updates' },
-  { name: 'Microsoft Office 365', logo: '/assets/brands/office.svg', tag: 'Word, Excel, PowerPoint & Outlook' },
-  { name: 'Microsoft System', logo: '/assets/brands/microsoft.webp', tag: 'Surface & Windows Optimization' },
-  { name: 'Apple macOS & iOS', logo: '/assets/brands/apples.webp', tag: 'macOS Sequoia & iOS System Fix' }
-];
-
 export const SOFTWARE_SERVICES_PAGE_DATA = {
-  h1: 'Computer & Laptop Software Services in Ahmedabad',
-  tagline: 'Genuine Windows & MS Office installation, virus & spyware removal, BIOS password unlock, and automated data backup migration services.',
+  h1: 'Software Services in Ahmedabad',
+  tagline: 'Computer and laptop software services in Ahmedabad for Windows installation, OS errors, driver problems, boot failures, software crashes, virus removal, system optimization, and operating system troubleshooting. We provide reliable software solutions for laptops, desktops, and supported Mac devices.',
   metaTitle: 'Software Services in Ahmedabad | Windows, Office, Virus & BIOS | Robuzta',
-  metaDescription: 'Expert laptop & PC software services in Ahmedabad. Clean Windows 11/10 setup, MS Office activation, deep malware cleanup & BIOS unlock with 100% data safety.',
+  metaDescription: 'Computer and laptop software services in Ahmedabad for Windows installation, OS errors, driver problems, boot failures, software crashes, virus removal & optimization.',
   canonicalUrl: 'https://robuzta.com/software-services/',
 
-  services: [
+  whyChooseUsTitle: 'Why Choose Us?',
+  whyChooseUs: [
+    'Windows & Software Troubleshooting Experts',
+    'Genuine OS Installation & Setup',
+    'Driver & Update Troubleshooting',
+    'Boot & Startup Problem Diagnosis',
+    'Virus & Malware Removal',
+    'Software Performance Optimization',
+    'Data-Safe Troubleshooting',
+    'Transparent Service Charges'
+  ],
+
+  servicesBadge: 'SOFTWARE SERVICES',
+  servicesTitle: 'Is Your Computer Having a Software Problem?',
+  servicesDescription: 'From Windows refusing to boot and frequent crashes to missing drivers, unwanted software, and slow system performance, we diagnose the problem and provide the right software solution.',
+
+  softwareProblems: [
     {
-      id: 'windows-installation',
-      title: 'Genuine Windows Installation & Migration',
-      summary: 'Clean installation of Windows 11 / 10 Pro with official digital license activation, hardware drivers & speed tuning.',
-      details: [
-        'Clean OS installation with full partition table alignment (GPT/UEFI)',
-        'Installation of official OEM motherboard, chipset & graphics drivers',
-        'Windows Update stabilization & bloatware telemetry removal'
-      ],
-      turnaround: '1 – 2 Hours',
-      price: 'Starts ₹499'
+      title: '1. Windows Not Booting?',
+      description: 'If your computer is stuck on the Windows logo, showing startup errors, or repeatedly restarting, we diagnose boot files, system errors, storage, and related causes.'
     },
     {
-      id: 'ms-office-installation',
-      title: 'MS Office Installation & Outlook Setup',
-      summary: 'Official Microsoft 365 / Office 2021/2024 Pro suite setup with Outlook PST/OST email configuration.',
-      details: [
-        'Installation of Word, Excel, PowerPoint, Access & Outlook',
-        'Outlook email account configuration with PST data file import',
-        'VBA macro & Excel add-in compatibility verification'
-      ],
-      turnaround: '30 – 60 Mins',
-      price: 'Starts ₹399'
+      title: '2. Windows Installation & Reinstallation',
+      description: 'We install and configure supported Windows versions with drivers, updates, essential settings, and basic system setup.'
     },
     {
-      id: 'virus-malware-removal',
-      title: 'Virus, Trojan & Ransomware Cleanup',
-      summary: 'Pop-ups, browser hijacking, slow PC response, or trojan infection? Deep rootkit scan & security shield setup.',
-      details: [
-        'Deep offline boot-time scanning to remove hidden rootkits & trojans',
-        'Browser hijacker, adware & cryptocurrency miner purge',
-        'Installation of lightweight genuine Antivirus protection'
-      ],
-      turnaround: '1 – 2 Hours',
-      price: 'Starts ₹599'
+      title: '3. Laptop or PC Running Very Slow?',
+      description: 'Slow startup, freezing applications, high background usage, and sluggish performance can be caused by software clutter, startup programs, updates, or storage issues.'
     },
     {
-      id: 'bios-unlock',
-      title: 'Master BIOS Unlock & EEPROM Repair',
-      summary: 'Locked out by laptop BIOS password, supervisor lock, or corrupted firmware update flash?',
-      details: [
-        'Master BIOS password removal for Dell, HP, Lenovo, ASUS & Acer',
-        'Desoldering & EEPROM programmer flashing for corrupted BIOS chips',
-        'Intel Management Engine (ME Region) cleaning & TPM reset'
-      ],
-      turnaround: '2 – 4 Hours',
-      price: 'Starts ₹999'
+      title: '4. Blue Screen & System Crashes?',
+      description: 'Frequent BSODs, sudden crashes, and system freezes can be caused by drivers, Windows errors, incompatible software, or hardware-related problems. We diagnose the underlying cause.'
     },
     {
-      id: 'data-backup-transfer',
-      title: 'Data Backup & System Migration',
-      summary: 'Moving to a new laptop or upgrading to SSD? Seamless transfer of your documents, photos & software data.',
-      details: [
-        'Complete OS drive cloning from old HDD to fast NVMe SSD',
-        'User profile data migration (Desktop, Documents, Downloads, Chrome bookmarks)',
-        'Automated local external drive & cloud backup schedule setup'
-      ],
-      turnaround: '1 – 2 Hours',
-      price: 'Starts ₹499'
+      title: '5. Drivers Missing or Not Working?',
+      description: 'Wi-Fi, Bluetooth, audio, graphics, touchpad, USB, and other devices may stop working because of incorrect or corrupted drivers. We identify and install the appropriate drivers.'
+    },
+    {
+      title: '6. Windows Update Getting Stuck?',
+      description: 'If Windows updates repeatedly fail, remain stuck, or cause errors after installation, we diagnose the update and system components involved.'
+    },
+    {
+      title: '7. Virus, Malware & Unwanted Software Removal',
+      description: 'If your computer shows unwanted pop-ups, browser redirects, suspicious programs, or unusual behaviour, we scan the system and remove unwanted software where possible.'
+    },
+    {
+      title: '8. Software Crashing or Not Opening?',
+      description: 'Applications that freeze, crash, show errors, or stop launching can be caused by corrupted files, compatibility problems, missing components, or Windows issues.'
+    },
+    {
+      title: '9. Wi-Fi, Bluetooth or Audio Not Working?',
+      description: 'Connectivity and audio problems can sometimes be caused by software configuration, drivers, services, or Windows settings. We diagnose and troubleshoot the issue.'
     }
   ],
 
+  faqsTitle: 'Software Services Questions Answered',
   faqs: [
     {
-      question: 'Will I lose my files or photos during Windows installation?',
-      answer: 'No! We perform non-destructive Windows installation with full backup of your User profile data (Documents, Pictures, Downloads) before wiping system partitions.'
+      question: '1. Can you install Windows on my laptop?',
+      answer: 'Yes, we provide Windows installation and system setup for supported laptops and desktops.'
     },
     {
-      question: 'How do I know if my computer has a virus or spyware infection?',
-      answer: 'Common symptoms include unexpected browser pop-ups, CPU usage at 100% while idle, files renamed with weird extensions, or slow startup response.'
+      question: '2. Can you fix a laptop stuck on the Windows logo?',
+      answer: 'Yes. We diagnose startup files, Windows errors, storage issues, and other causes behind the boot problem.'
     },
     {
-      question: 'Can you unlock BIOS passwords on corporate laptops like ThinkPad or Dell Latitude?',
-      answer: 'Yes! We perform chip-level EEPROM programmer reading and ME region cleaning to remove supervisor BIOS passwords cleanly.'
+      question: '3. Will Windows installation delete my data?',
+      answer: 'It depends on the installation method and condition of the existing system. We discuss the available options before proceeding.'
+    },
+    {
+      question: '4. Can you fix Blue Screen errors?',
+      answer: 'Yes. We diagnose drivers, Windows components, software conflicts, and hardware-related causes behind repeated BSODs.'
+    },
+    {
+      question: '5. Why is my laptop slow after Windows installation?',
+      answer: 'Missing drivers, updates, startup programs, background processes, or storage and hardware limitations can affect performance. We check the system to identify the cause.'
+    },
+    {
+      question: '6. Can you install laptop drivers?',
+      answer: 'Yes. We install and troubleshoot drivers for Wi-Fi, Bluetooth, audio, graphics, touchpad, USB, and other supported hardware.'
+    },
+    {
+      question: '7. Can you remove viruses and malware?',
+      answer: 'Yes, we diagnose suspicious software, unwanted programs, browser redirects, and other common malware-related problems.'
     }
   ]
 };

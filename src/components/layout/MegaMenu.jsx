@@ -22,7 +22,6 @@ const serviceIcons = {
   'macbook-repair': Cpu,
   'surface-repair': Monitor,
   'gaming-pc-repair': Flame,
-  'desktop-repair': Wrench,
   'data-recovery': Database,
   'software-services': Code,
   'cleaning-tune-up': Wind

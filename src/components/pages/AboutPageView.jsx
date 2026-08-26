@@ -1,324 +1,328 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
-import { Header } from '@/components/layout/Header';
+import { useState } from 'react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import {
+  Header
+} from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import {
-  Lock,
-  Eye,
-  Cpu,
-  Award,
-  Truck,
-  FileCheck,
-  CheckCircle2,
-  Sparkles,
-  ArrowRight,
-  Star,
-  Clock,
-  TrendingUp,
-  Quote,
+  Laptop,
+  Smartphone,
+  Gamepad2,
+  HardDrive,
   Wrench,
+  Search,
+  CheckCircle2,
+  Phone,
+  ChevronDown,
+  Sparkles,
+  ShieldCheck,
+  Shield,
+  Clock,
+  ArrowRight,
+  Cpu,
+  Lock,
+  MessageSquare,
+  Award,
+  MapPin,
   Check,
   Zap,
-  MapPin,
-  Navigation,
-  LocateFixed,
-  Flag
+  Quote,
+  Star
 } from 'lucide-react';
-import { PlatformTrustSection } from '@/components/sections/PlatformTrustSection';
+import { ABOUT_PAGE_DATA } from '@/data/aboutData';
 import { useBookingModal } from '@/context/BookingModalContext';
+import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 
-// All 4 Timeline Milestones - Fully Responsive & Short
-const journeyWaypoints = [
-  {
-    year: '2012',
-    title: 'The Origin',
-    tag: 'STARTING POINT',
-    location: 'Ahmedabad Lab',
-    distance: '0 KM',
-    eta: '2012',
-    description: 'Began with hands-on smartphone diagnostics and circuit repair testing.',
-    icon: MapPin,
-    color: 'from-blue-500 to-indigo-600'
-  },
-  {
-    year: '2014',
-    title: 'Axiom Store Launch',
-    tag: 'FIRST STORE',
-    location: 'Multi-Brand Shop',
-    distance: '2.5 KM',
-    eta: '+2 Yrs',
-    description: 'Launched Axiom Technologies with transparent quotes and genuine parts.',
-    icon: Navigation,
-    color: 'from-[#0E7C7B] to-teal-600'
-  },
-  {
-    year: '2020',
-    title: 'Chip-Level Lab',
-    tag: 'EXPANSION',
-    location: 'BGA Soldering Hub',
-    distance: '8.0 KM',
-    eta: '+8 Yrs',
-    description: 'Expanded into motherboard and logic board repairs for laptops & MacBooks.',
-    icon: TrendingUp,
-    color: 'from-amber-500 to-orange-600'
-  },
-  {
-    year: 'Present',
-    title: 'Robuzta Network',
-    tag: 'TODAY',
-    location: 'South Bopal & Tragad',
-    distance: '15 KM',
-    eta: 'Present Day',
-    description: 'Operating twin advanced diagnostic repair laboratories in Ahmedabad.',
-    icon: Flag,
-    color: 'from-emerald-500 to-teal-400'
-  }
-];
-
-// 4 Simple Stats
-const stats = [
-  { label: 'Years Experience', value: '10+', sub: 'Est. 2012', icon: Clock },
-  { label: 'Devices Serviced', value: '10,000+', sub: 'Phones & Laptops', icon: Wrench },
-  { label: 'Repair Accuracy', value: '98.4%', sub: 'First-Time Fix Rate', icon: CheckCircle2 },
-  { label: 'Google Rating', value: '4.9★', sub: '500+ Verified Reviews', icon: Star }
-];
-
-// All 6 USP Cards - Short, Simple & Attractive Headlines
-const uspFeatureGrid = [
-  {
-    icon: Lock,
-    title: 'Zero Password Needed',
-    subtitle: 'DATA PRIVACY',
-    description: 'External boot testing used. Passwords & OTPs are never asked.',
-    color: 'from-blue-500 to-indigo-600',
-    tag: 'Zero Risk'
-  },
-  {
-    icon: Eye,
-    title: 'Live Workbench',
-    subtitle: 'TRANSPARENT REPAIR',
-    description: 'Watch your phone or laptop diagnosed live in front of you.',
-    color: 'from-[#0E7C7B] to-teal-600',
-    tag: 'Watch Live'
-  },
-  {
-    icon: Cpu,
-    title: 'Chip-Level Repair',
-    subtitle: 'ADVANCED LAB',
-    description: 'Logic board and power IC repairs done under microscopes.',
-    color: 'from-amber-500 to-orange-600',
-    tag: 'BGA Lab'
-  },
-  {
-    icon: Award,
-    title: 'Genuine Parts Only',
-    subtitle: 'SERIAL-LOGGED',
-    description: 'Original screens, batteries, and SSDs with serial tracking.',
-    color: 'from-emerald-500 to-teal-600',
-    tag: 'Original Spares'
-  },
-  {
-    icon: Truck,
-    title: 'Free Home Pickup',
-    subtitle: 'EXPRESS COURIER',
-    description: 'Safe collection & insured doorstep delivery across Ahmedabad.',
-    color: 'from-purple-500 to-pink-600',
-    tag: 'Free Pickup'
-  },
-  {
-    icon: FileCheck,
-    title: 'Warranty & Quotes',
-    subtitle: 'UPFRONT PRICING',
-    description: 'Clear digital estimates before repair and up to 1-Year warranty.',
-    color: 'from-cyan-500 to-blue-600',
-    tag: '1-Yr Warranty'
-  }
-];
+const SMOOTH_TRANSITION = { duration: 0.7, ease: [0.22, 1, 0.36, 1] };
 
 export function AboutPageView() {
   const { openModal } = useBookingModal();
-  const verticalRouteRef = useRef(null);
+  const [activeFaq, setActiveFaq] = useState(0);
 
-  const { scrollYProgress } = useScroll({
-    target: verticalRouteRef,
-    offset: ['start 60%', 'end 70%']
-  });
+  const data = ABOUT_PAGE_DATA;
 
-  const scaleY = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
+  // Icon mapping for What We Do
+  const getServiceIcon = (iconName) => {
+    switch (iconName) {
+      case 'Laptop':
+        return <Laptop size={22} />;
+      case 'Smartphone':
+        return <Smartphone size={22} />;
+      case 'Gamepad2':
+        return <Gamepad2 size={22} />;
+      case 'HardDrive':
+        return <HardDrive size={22} />;
+      case 'Wrench':
+      default:
+        return <Wrench size={22} />;
+    }
+  };
 
-  const gpsMarkerTop = useTransform(scaleY, [0, 1], ['0%', '100%']);
+  // JSON-LD Schemas
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://robuzta.com'
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'About Us',
+        item: data.canonicalUrl
+      }
+    ]
+  };
+
+  const aboutSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: data.h1,
+    description: data.metaDescription,
+    url: data.canonicalUrl,
+    mainEntity: {
+      '@type': 'LocalBusiness',
+      name: 'Robuzta Techlabs',
+      telephone: data.getInTouch.phone,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Ahmedabad',
+        addressRegion: 'Gujarat',
+        addressCountry: 'IN'
+      }
+    }
+  };
+
+  const faqSchema = data.faqs?.length
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: data.faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.answer
+          }
+        }))
+      }
+    : null;
 
   return (
     <>
+      {/* Inject Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+
       <Header />
-      <main className="bg-white dark:bg-slate-950 min-h-screen text-slate-900 dark:text-slate-100 overflow-x-hidden transition-colors duration-300">
+      <main className="bg-white dark:bg-slate-950 min-h-screen text-slate-900 dark:text-slate-100 overflow-x-hidden transition-colors duration-300 pt-20 sm:pt-20 lg:pt-20">
         
         {/* 1. HERO SECTION */}
-        <section className="relative bg-gradient-to-b from-slate-50/90 via-teal-50/20 to-white dark:from-slate-900/80 dark:via-slate-900/40 dark:to-slate-950 py-14 sm:py-20 lg:py-28 border-b border-slate-200/80 dark:border-slate-800/80 overflow-hidden">
-          <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[350px] sm:w-[600px] lg:w-[800px] h-[200px] sm:h-[350px] bg-[#0E7C7B]/10 dark:bg-teal-500/10 rounded-full blur-[120px]" />
+        <section className="relative bg-gradient-to-b from-slate-50 via-teal-50/20 to-white dark:from-slate-900 dark:via-slate-900 dark:to-slate-950 py-16 sm:py-24 lg:py-28 border-b border-slate-200 dark:border-slate-800 overflow-hidden">
+          <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[950px] h-[450px] bg-[#0E7C7B]/10 rounded-full blur-[170px]" />
 
-          <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center space-y-4 sm:space-y-6">
-            
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-3.5 sm:px-4 py-1 sm:py-1.5 text-[11px] sm:text-xs font-extrabold text-[#0E7C7B] dark:text-teal-300 shadow-sm"
-            >
-              <Sparkles size={13} className="text-amber-500 shrink-0" />
-              <span className="truncate">ROBUZTA TECHLABS &bull; AHMEDABAD</span>
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={SMOOTH_TRANSITION}
+            className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-6 text-center"
+          >
+            <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-4 py-1.5 text-xs font-black text-[#0E7C7B] dark:text-teal-300 uppercase tracking-widest mx-auto">
+              <Sparkles size={14} className="text-[#0E7C7B]" />
+              <span>ROBUZTA TECHLABS &bull; {data.h1}</span>
+            </div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-3xl sm:text-5xl lg:text-7xl font-black text-slate-900 dark:text-white tracking-tight leading-tight max-w-4xl mx-auto"
-            >
-              About Robuzta Techlabs
-            </motion.h1>
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-slate-100 tracking-tight leading-tight max-w-4xl mx-auto">
+              {data.mainHeading}
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.15 }}
-              className="text-slate-600 dark:text-slate-300 text-sm sm:text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto font-medium px-2 sm:px-0"
-            >
-              Founded in 2012 by <strong className="text-slate-900 dark:text-white font-bold">Mr. Pranshu Maheshwari</strong>, Robuzta Techlabs is Ahmedabad&apos;s trusted multi-device repair lab — providing fast, transparent repairs for MacBooks, laptops, and smartphones with zero password intrusion.
-            </motion.p>
+            <div className="space-y-4 max-w-3xl mx-auto text-sm sm:text-base text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
+              {data.introParagraphs.map((para, i) => (
+                <p key={i}>{para}</p>
+              ))}
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: 0.2 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2 sm:pt-3 max-w-md sm:max-w-none mx-auto"
-            >
+            <div className="flex flex-wrap items-center justify-center gap-3 pt-4">
               <button
-                type="button"
-                onClick={() => openModal({ formType: 'About Page Book Free Inspection' })}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 px-6 sm:px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-black text-white shadow-xl shadow-[#0E7C7B]/20 transition-all transform hover:scale-105 cursor-pointer min-h-[48px]"
+                onClick={() => openModal({ serviceType: 'About Page Inspection' })}
+                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-7 py-4 text-xs font-black uppercase tracking-wider shadow-lg shadow-[#0E7C7B]/30 transition-all hover:scale-[1.02]"
               >
-                <span>Book Free Inspection</span>
-                <ArrowRight size={16} />
+                <Wrench size={16} />
+                <span>Talk to Repair Team</span>
               </button>
 
               <a
-                href="#our-usps"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-6 sm:px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all shadow-sm min-h-[48px]"
+                href={`tel:${data.getInTouch.phone}`}
+                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white hover:border-[#0E7C7B] px-7 py-4 text-xs font-black uppercase tracking-wider transition-all"
               >
-                <span>Explore Our Guarantees</span>
+                <Phone size={16} className="text-[#0E7C7B]" />
+                <span>{data.getInTouch.phone}</span>
               </a>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </section>
 
-        {/* 2. STATS BAR */}
-        <section className="py-10 sm:py-14 lg:py-16 bg-slate-50/60 dark:bg-slate-900/40 border-b border-slate-200/80 dark:border-slate-800/80">
+        {/* 2. WHO WE ARE */}
+        <section className="py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
-              {stats.map((stat, idx) => {
-                const IconComponent = stat.icon;
-                return (
-                  <motion.div
-                    key={stat.label}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: idx * 0.08 }}
-                    className="rounded-2xl sm:rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800/80 p-4 sm:p-6 lg:p-8 shadow-sm flex flex-col items-center text-center space-y-1 sm:space-y-1.5 group hover:border-[#0E7C7B]/40 transition-all"
-                  >
-                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl sm:rounded-2xl bg-[#0E7C7B]/10 dark:bg-teal-400/10 text-[#0E7C7B] dark:text-teal-400 group-hover:scale-110 transition-transform">
-                      <IconComponent size={20} />
-                    </div>
-                    <span className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
-                      {stat.value}
-                    </span>
-                    <h3 className="text-[11px] sm:text-xs lg:text-sm font-black text-slate-800 dark:text-slate-200 truncate w-full">
-                      {stat.label}
-                    </h3>
-                    <p className="text-[10px] sm:text-[11px] font-medium text-slate-500 dark:text-slate-400">
-                      {stat.sub}
-                    </p>
-                  </motion.div>
-                );
-              })}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              <div className="lg:col-span-6 space-y-4">
+                <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
+                  {data.whoWeAre.badge}
+                </span>
+                <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                  {data.whoWeAre.heading}
+                </h2>
+                <div className="space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
+                  <p>{data.whoWeAre.paragraphs[0]}</p>
+                  <p>{data.whoWeAre.paragraphs[1]}</p>
+                  <p>{data.whoWeAre.paragraphs[3]}</p>
+                </div>
+              </div>
+
+              <div className="lg:col-span-6">
+                <div className="rounded-3xl bg-gradient-to-br from-[#0E7C7B]/10 via-teal-500/5 to-slate-900/5 dark:from-[#0E7C7B]/20 dark:to-slate-900 border-2 border-[#0E7C7B] p-8 space-y-4 shadow-xl text-center">
+                  <div className="h-12 w-12 rounded-2xl bg-[#0E7C7B] text-white flex items-center justify-center mx-auto shadow-md">
+                    <Search size={24} />
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
+                    {data.whoWeAre.paragraphs[2]}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium">
+                    We believe in accurate diagnosis before replacing any parts. Visible symptoms don&apos;t always tell the full story.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* 3. MULTI-PLATFORM VERIFIED RATINGS */}
-        <PlatformTrustSection />
-
-        {/* 4. ROBUZTA USPs - 2-CARDS PER ROW ON MOBILE (grid-cols-2 lg:grid-cols-3) */}
-        <section id="our-usps" className="py-14 sm:py-20 lg:py-24 bg-slate-50/50 dark:bg-slate-950 border-b border-slate-200/80 dark:border-slate-800/80 relative">
-          <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
-            
-            <div className="text-center space-y-2 sm:space-y-2.5 max-w-2xl mx-auto">
-              <div className="inline-flex items-center gap-1.5 rounded-full bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-3.5 py-1 text-xs font-black text-[#0E7C7B] dark:text-teal-300">
-                <Zap size={13} className="text-amber-500 shrink-0" />
-                <span>WHY ROBUZTA</span>
-              </div>
-
-              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
-                Why Trust Robuzta Repair?
+        {/* 3. WHAT WE DO (5 Technology Services) */}
+        <section className="py-14 sm:py-20 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+            <div className="text-center max-w-3xl mx-auto space-y-2">
+              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
+                {data.whatWeDo.badge}
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                {data.whatWeDo.heading}
               </h2>
+            </div>
 
-              <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-base font-medium max-w-xl mx-auto">
-                Transparent, precise, and 100% data-safe repairs for all your devices.
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {data.whatWeDo.services.map((srv, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ ...SMOOTH_TRANSITION, delay: idx * 0.06 }}
+                  className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-3 shadow-md hover:border-[#0E7C7B] hover:shadow-xl transition-all group"
+                >
+                  <div className="h-10 w-10 rounded-2xl bg-[#0E7C7B]/10 text-[#0E7C7B] flex items-center justify-center font-black group-hover:bg-[#0E7C7B] group-hover:text-white transition-all">
+                    {getServiceIcon(srv.icon)}
+                  </div>
+                  <h3 className="text-base sm:text-lg font-extrabold text-slate-900 dark:text-white group-hover:text-[#0E7C7B] transition-colors leading-snug">
+                    {srv.title}
+                  </h3>
+                  <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+                    {srv.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 4. OUR APPROACH (5-Step Protocol) */}
+        <section className="py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+            <div className="text-center max-w-3xl mx-auto space-y-2">
+              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
+                {data.ourApproach.badge}
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                {data.ourApproach.heading}
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium max-w-2xl mx-auto leading-relaxed">
+                {data.ourApproach.description}
               </p>
             </div>
 
-            {/* CLEAN RESPONSIVE GRID: 1 column on mobile for full breathing room & 0 truncation */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-              {uspFeatureGrid.map((usp, idx) => {
-                const IconComponent = usp.icon;
-                return (
-                  <motion.div
-                    key={usp.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: idx * 0.08 }}
-                    whileHover={{ y: -4 }}
-                    className="group rounded-2xl sm:rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800/80 p-5 sm:p-6 lg:p-7 shadow-sm flex flex-col justify-between space-y-4 hover:border-[#0E7C7B]/50 hover:shadow-md transition-all duration-300"
-                  >
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-between">
-                        <div className={`flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-tr ${usp.color} text-white shadow-md group-hover:scale-105 transition-transform`}>
-                          <IconComponent size={20} />
-                        </div>
-                        <span className="text-[10px] sm:text-xs font-black uppercase tracking-wider text-[#0E7C7B] dark:text-teal-300 bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 px-3 py-1 rounded-full whitespace-nowrap">
-                          {usp.tag}
-                        </span>
-                      </div>
-
-                      <div className="space-y-1">
-                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
-                          {usp.subtitle}
-                        </span>
-                        <h3 className="text-base sm:text-lg font-extrabold text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors leading-snug">
-                          {usp.title}
-                        </h3>
-                        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-medium pt-1">
-                          {usp.description}
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+              {data.ourApproach.steps.map((st, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 space-y-2.5 shadow-sm relative hover:border-[#0E7C7B] transition-all"
+                >
+                  <span className="text-xs font-black text-[#0E7C7B] tracking-widest block">
+                    {st.number}
+                  </span>
+                  <h3 className="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white">
+                    {st.title}
+                  </h3>
+                  <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+                    {st.description}
+                  </p>
+                </div>
+              ))}
             </div>
-
           </div>
         </section>
 
-        {/* 5. FOUNDER SPOTLIGHT */}
+        {/* 5. WHY CUSTOMERS CHOOSE US (6 Trust Cards) */}
+        <section className="py-14 sm:py-20 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+            <div className="text-center max-w-3xl mx-auto space-y-2">
+              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
+                {data.whyChooseUs.badge}
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                {data.whyChooseUs.heading}
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {data.whyChooseUs.points.map((pt, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-3 shadow-md hover:border-[#0E7C7B] transition-all group"
+                >
+                  <div className="h-10 w-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center font-black shrink-0 text-base group-hover:scale-110 transition-transform">
+                    ⭐
+                  </div>
+                  <h3 className="text-base font-extrabold text-slate-900 dark:text-white group-hover:text-[#0E7C7B] transition-colors leading-snug">
+                    {pt.title}
+                  </h3>
+                  <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+                    {pt.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 6. CEO / FOUNDER STATEMENT SPOTLIGHT (KEPT AS REQUESTED) */}
         <section className="py-14 sm:py-20 lg:py-24 border-b border-slate-200/80 dark:border-slate-800/80 relative bg-white dark:bg-slate-950">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -407,114 +411,308 @@ export function AboutPageView() {
           </div>
         </section>
 
-        {/* 6. VERTICAL TIMELINE */}
-        <section id="vertical-google-maps" className="py-14 sm:py-20 lg:py-24 border-b border-slate-200/80 dark:border-slate-800/80 relative bg-slate-50/50 dark:bg-[#070F1E] overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(#0E7C7B_1.5px,transparent_1.5px)] [background-size:28px_28px] opacity-10 pointer-events-none" />
+        {/* 7. OUR REPAIR PHILOSOPHY (LIGHT THEME STYLING) */}
+        <section className="py-14 sm:py-20 bg-gradient-to-b from-slate-50 via-teal-50/30 to-white dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 border-b border-slate-200 dark:border-slate-800 relative overflow-hidden">
+          <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-[#0E7C7B]/10 rounded-full blur-[160px]" />
 
-          <div ref={verticalRouteRef} className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
-            
-            <div className="text-center space-y-2 max-w-2xl mx-auto">
-              <div className="inline-flex items-center gap-1.5 rounded-full bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-3.5 py-1 text-xs font-extrabold text-[#0E7C7B] dark:text-teal-300">
-                <LocateFixed size={13} className="text-sky-500 shrink-0" />
-                <span>OUR 10+ YEAR JOURNEY</span>
+          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12">
+            <div className="text-center max-w-3xl mx-auto space-y-3">
+              <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-4 py-1 text-xs font-black text-[#0E7C7B] dark:text-teal-300 uppercase tracking-widest">
+                <Quote size={14} className="text-amber-500" />
+                <span>{data.ourPhilosophy.badge}</span>
               </div>
-
-              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
-                Our Journey Since 2012
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white leading-tight">
+                {data.ourPhilosophy.heading}
               </h2>
-
-              <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-base font-medium">
-                From a small lab in 2012 to Ahmedabad&apos;s trusted multi-device repair network.
+              <p className="text-xs sm:text-base text-slate-600 dark:text-slate-300 font-medium leading-relaxed max-w-2xl mx-auto">
+                {data.ourPhilosophy.description}
               </p>
             </div>
 
-            {/* Timeline Track */}
-            <div className="relative pt-2">
-              
-              <div className="absolute left-5 md:left-1/2 top-8 bottom-8 w-1.5 sm:w-2 -translate-x-1/2 bg-slate-200 dark:bg-slate-800 rounded-full z-0" />
+            {/* 5 Belief Cards Grid */}
+            <div className="space-y-4 max-w-5xl mx-auto">
+              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400 text-center block">
+                {data.ourPhilosophy.beliefsTitle}
+              </span>
 
-              <motion.div
-                style={{ scaleY, transformOrigin: 'top center' }}
-                className="absolute left-5 md:left-1/2 top-8 bottom-8 w-1.5 sm:w-2 -translate-x-1/2 bg-gradient-to-b from-blue-500 via-[#0E7C7B] via-amber-500 to-emerald-500 rounded-full z-10 shadow-[0_0_15px_rgba(14,124,123,0.8)]"
-              />
-
-              <motion.div
-                style={{ top: gpsMarkerTop }}
-                className="absolute left-5 md:left-1/2 -translate-x-1/2 z-30 pointer-events-none"
-              >
-                <div className="relative flex items-center justify-center">
-                  <div className="h-8 w-8 sm:h-9 sm:w-9 rounded-full bg-gradient-to-tr from-sky-400 to-teal-500 text-white flex items-center justify-center shadow-xl border-2 border-white ring-4 ring-sky-500/30">
-                    <Navigation size={15} className="rotate-180" />
-                  </div>
-                </div>
-              </motion.div>
-
-              <div className="space-y-8 sm:space-y-12">
-                {journeyWaypoints.map((wp, idx) => {
-                  const isEven = idx % 2 === 0;
-                  const IconComp = wp.icon;
-
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                {[
+                  { title: 'Clear Diagnosis', icon: Search, desc: 'Exact fault finding first' },
+                  { title: 'Honest Communication', icon: MessageSquare, desc: 'Upfront cost & details' },
+                  { title: 'Careful Repair', icon: ShieldCheck, desc: 'ESD-safe handling' },
+                  { title: 'Proper Testing', icon: CheckCircle2, desc: 'Post-repair benchmarking' },
+                  { title: 'Responsible Service', icon: Award, desc: 'Warranty backed fix' }
+                ].map((b, idx) => {
+                  const IconComp = b.icon;
                   return (
                     <motion.div
-                      key={wp.year}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, margin: '-40px' }}
-                      transition={{ duration: 0.4, delay: idx * 0.08 }}
-                      className={`relative flex flex-col md:flex-row items-start md:items-center gap-4 sm:gap-5 ${
-                        isEven ? 'md:flex-row-reverse' : ''
-                      }`}
+                      key={idx}
+                      whileHover={{ y: -5 }}
+                      className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 text-center shadow-md hover:border-[#0E7C7B] hover:shadow-xl transition-all space-y-3 flex flex-col justify-between group"
                     >
-                      <div className="absolute left-5 md:left-1/2 -translate-x-1/2 z-20 flex items-center justify-center">
-                        <div className={`h-9 w-9 sm:h-10 sm:w-10 rounded-full bg-gradient-to-tr ${wp.color} text-white shadow-md flex items-center justify-center border-4 border-white dark:border-slate-950`}>
-                          <IconComp size={15} />
-                        </div>
+                      <div className="h-10 w-10 rounded-xl bg-[#0E7C7B]/10 text-[#0E7C7B] dark:text-teal-300 flex items-center justify-center mx-auto group-hover:scale-110 group-hover:bg-[#0E7C7B] group-hover:text-white transition-all shadow-sm">
+                        <IconComp size={20} />
                       </div>
-
-                      <div className="w-full md:w-1/2 pl-12 sm:pl-16 md:pl-0">
-                        <div className={`rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-4 sm:p-6 shadow-sm space-y-2 hover:border-[#0E7C7B]/40 transition-all ${
-                          isEven ? 'md:mr-8' : 'md:ml-8'
-                        }`}>
-                          
-                          <div className="flex items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800 pb-2">
-                            <span className="text-lg sm:text-xl font-black text-[#0E7C7B] dark:text-teal-400">
-                              {wp.year}
-                            </span>
-                            <span className="text-[10px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#0E7C7B]/10 dark:bg-teal-400/10 text-[#0E7C7B] dark:text-teal-300 border border-[#0E7C7B]/20">
-                              {wp.tag}
-                            </span>
-                          </div>
-
-                          <div className="space-y-0.5">
-                            <h3 className="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white">
-                              {wp.title}
-                            </h3>
-                            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
-                              {wp.description}
-                            </p>
-                          </div>
-
-                          <div className="pt-1.5 flex items-center justify-between text-[11px] font-bold text-slate-500 dark:text-slate-400">
-                            <span className="flex items-center gap-1 text-[#0E7C7B] dark:text-teal-400">
-                              <MapPin size={13} />
-                              {wp.location}
-                            </span>
-                            <span className="text-[10px] font-bold text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">
-                              {wp.distance} ({wp.eta})
-                            </span>
-                          </div>
-
-                        </div>
+                      <div className="space-y-1">
+                        <h3 className="text-xs sm:text-sm font-black text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors">
+                          {b.title}
+                        </h3>
+                        <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">
+                          {b.desc}
+                        </p>
                       </div>
-
-                      <div className="hidden md:block w-1/2" />
+                      <span className="text-[10px] font-black uppercase tracking-wider text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full inline-block">
+                        ✓ VERIFIED
+                      </span>
                     </motion.div>
                   );
                 })}
               </div>
+            </div>
+          </div>
+        </section>
 
+        {/* 8. OUR WORKSHOP (REDESIGNED WITH WORKSHOP CARDS) */}
+        <section className="py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+            <div className="text-center max-w-3xl mx-auto space-y-2">
+              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
+                {data.ourWorkshop.badge}
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                {data.ourWorkshop.heading}
+              </h2>
             </div>
 
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                {
+                  title: 'Everyday & Complex Servicing',
+                  desc: data.ourWorkshop.paragraphs[0],
+                  icon: Wrench,
+                  tag: 'Full Hardware Scope'
+                },
+                {
+                  title: 'Professional Diagnostic Equipment',
+                  desc: data.ourWorkshop.paragraphs[1],
+                  icon: Cpu,
+                  tag: 'Micro-Soldering Lab'
+                },
+                {
+                  title: 'Dedicated Device Care',
+                  desc: data.ourWorkshop.paragraphs[2],
+                  icon: ShieldCheck,
+                  tag: '100% Quality Focus'
+                }
+              ].map((card, idx) => {
+                const IconComp = card.icon;
+                return (
+                  <motion.div
+                    key={idx}
+                    whileHover={{ y: -4 }}
+                    className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-7 space-y-4 shadow-md hover:border-[#0E7C7B] hover:shadow-xl transition-all flex flex-col justify-between"
+                  >
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <div className="h-12 w-12 rounded-2xl bg-[#0E7C7B]/10 text-[#0E7C7B] flex items-center justify-center font-black">
+                          <IconComp size={24} />
+                        </div>
+                        <span className="text-[10px] font-black uppercase tracking-widest text-[#0E7C7B] bg-[#0E7C7B]/10 px-3 py-1 rounded-full border border-[#0E7C7B]/20">
+                          {card.tag}
+                        </span>
+                      </div>
+                      <h3 className="text-lg font-black text-slate-900 dark:text-white">
+                        {card.title}
+                      </h3>
+                      <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+                        {card.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* 9. SERVING CUSTOMERS IN AHMEDABAD (REDESIGNED WITH LOCATION CARDS) */}
+        <section className="py-14 sm:py-20 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+            <div className="text-center max-w-3xl mx-auto space-y-3">
+              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
+                {data.servingAhmedabad.badge}
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                {data.servingAhmedabad.heading}
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center max-w-5xl mx-auto">
+              <div className="lg:col-span-6 space-y-4">
+                <div className="space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
+                  {data.servingAhmedabad.paragraphs.map((p, i) => (
+                    <p key={i}>{p}</p>
+                  ))}
+                </div>
+
+                <div className="flex flex-wrap items-center gap-3 pt-2">
+                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-xs font-extrabold text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700">
+                    <MapPin size={14} className="text-[#0E7C7B]" />
+                    South Bopal Lab
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 text-xs font-extrabold text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700">
+                    <MapPin size={14} className="text-[#0E7C7B]" />
+                    Tragad Lab
+                  </span>
+                </div>
+              </div>
+
+              <div className="lg:col-span-6">
+                <div className="rounded-3xl bg-gradient-to-r from-slate-900 via-[#070e1a] to-slate-950 text-white p-8 space-y-4 shadow-2xl border-2 border-[#0E7C7B] text-center">
+                  <div className="h-12 w-12 rounded-2xl bg-[#0E7C7B] text-white flex items-center justify-center mx-auto shadow-md">
+                    <ShieldCheck size={24} />
+                  </div>
+                  <span className="text-[10px] font-black uppercase tracking-widest text-amber-400 block">
+                    OUR CORE MISSION
+                  </span>
+                  <h3 className="text-lg sm:text-xl font-black text-white leading-snug">
+                    {data.servingAhmedabad.goal}
+                  </h3>
+                  <button
+                    onClick={() => openModal({ serviceType: 'Serving Ahmedabad Inspection' })}
+                    className="w-full rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white py-3.5 text-xs font-black uppercase tracking-wider transition-all shadow-lg"
+                  >
+                    Get Local Repair Quote
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 10. OUR PROMISE (REDESIGNED WITH 6 PROMISE CARDS) */}
+        <section className="py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+            <div className="text-center max-w-3xl mx-auto space-y-2">
+              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
+                {data.ourPromise.badge}
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                {data.ourPromise.heading}
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium leading-relaxed max-w-2xl mx-auto">
+                {data.ourPromise.description}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {[
+                { title: 'Honest Diagnosis', icon: Search, desc: 'We pinpoint exact faulty components first.' },
+                { title: 'Clear Communication', icon: MessageSquare, desc: 'Full estimate provided before work starts.' },
+                { title: 'Careful Handling', icon: ShieldCheck, desc: 'ESD-safe bench and careful disassembly.' },
+                { title: 'Privacy-Focused Service', icon: Lock, desc: '100% Zero-OTP & password protection.' },
+                { title: 'Professional Repair', icon: Wrench, desc: 'Lab-grade micro-soldering & original parts.' },
+                { title: 'Proper Testing', icon: CheckCircle2, desc: 'Comprehensive benchmarking before delivery.' }
+              ].map((promise, idx) => {
+                const IconComp = promise.icon;
+                return (
+                  <motion.div
+                    key={idx}
+                    whileHover={{ y: -4 }}
+                    className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-3 shadow-md hover:border-[#0E7C7B] hover:shadow-xl transition-all flex items-start gap-4"
+                  >
+                    <div className="h-12 w-12 rounded-2xl bg-[#0E7C7B]/10 text-[#0E7C7B] flex items-center justify-center font-black shrink-0">
+                      <IconComp size={22} />
+                    </div>
+                    <div className="space-y-1">
+                      <div className="flex items-center gap-1.5">
+                        <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
+                        <h3 className="text-base font-extrabold text-slate-900 dark:text-white">
+                          {promise.title}
+                        </h3>
+                      </div>
+                      <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+                        {promise.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* 11. FREQUENTLY ASKED QUESTIONS */}
+        {data.faqs?.length > 0 && (
+          <section className="py-14 sm:py-20 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
+            <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-8">
+              <div className="text-center space-y-2">
+                <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
+                  {data.faqsSubtitle}
+                </span>
+                <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                  {data.faqsTitle}
+                </h2>
+              </div>
+
+              <div className="space-y-4">
+                {data.faqs.map((faq, idx) => (
+                  <div
+                    key={idx}
+                    className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm"
+                  >
+                    <button
+                      onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
+                      className="w-full p-5 text-left flex items-center justify-between font-extrabold text-xs sm:text-sm text-slate-900 dark:text-white hover:text-[#0E7C7B] transition-colors"
+                    >
+                      <span>{faq.question}</span>
+                      <ChevronDown
+                        size={16}
+                        className={`text-[#0E7C7B] transition-transform duration-200 shrink-0 ${
+                          activeFaq === idx ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+
+                    {activeFaq === idx && (
+                      <div className="px-5 pb-5 text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium leading-relaxed border-t border-slate-100 dark:border-slate-800 pt-3">
+                        {faq.answer}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* 12. GET TO KNOW US / CTA */}
+        <section className="py-14 sm:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="rounded-3xl bg-gradient-to-r from-slate-900 via-[#070e1a] to-slate-950 text-white p-8 sm:p-12 shadow-2xl border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-8 space-y-3">
+                <div className="flex items-center gap-2 text-xs font-black uppercase text-amber-400 tracking-wider">
+                  <Sparkles size={16} />
+                  <span>{data.getInTouch.badge}</span>
+                </div>
+                <h3 className="text-2xl sm:text-4xl font-black text-white">
+                  {data.getInTouch.heading}
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed">
+                  {data.getInTouch.description}
+                </p>
+              </div>
+
+              <div className="lg:col-span-4 flex flex-col sm:flex-row gap-3">
+                <a
+                  href={`tel:${data.getInTouch.phone}`}
+                  className="inline-flex items-center justify-center gap-2 w-full rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-7 py-4 text-xs font-black uppercase tracking-wider shadow-xl shadow-[#0E7C7B]/30 transition-all hover:scale-[1.02]"
+                >
+                  <Phone size={16} />
+                  <span>{data.getInTouch.callLabel}</span>
+                </a>
+              </div>
+            </div>
           </div>
         </section>
 
