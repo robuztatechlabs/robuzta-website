@@ -174,7 +174,7 @@ export function DiagnosticEstimator() {
               className="flex items-center justify-center gap-2 w-full rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 px-4 py-2.5 text-xs font-bold text-slate-200 transition-all text-center"
             >
               <Phone size={14} className="text-teal-400 shrink-0" />
-              <span>Call Technician (+91 999 998 8885)</span>
+              <span>Call Technician (+91 999 245 2459)</span>
             </a>
           </div>
 

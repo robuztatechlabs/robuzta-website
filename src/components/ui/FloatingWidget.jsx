@@ -97,7 +97,7 @@ export function FloatingWidget() {
                 className="flex items-center justify-center gap-2 w-full rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 py-2.5 sm:py-3 text-xs font-extrabold text-white transition-all"
               >
                 <Phone size={15} className="text-[#EA580C]" />
-                <span>Call Hotline (+91 999 998 8885)</span>
+                <span>Call Hotline (+91 999 245 2459)</span>
               </a>
 
               <Link
