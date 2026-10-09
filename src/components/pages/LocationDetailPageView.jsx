@@ -99,7 +99,7 @@ export function LocationDetailPageView({ location }) {
                     </span>
                     <span className="flex items-center gap-1.5">
                       <Phone size={15} className="text-[#0E7C7B] dark:text-teal-400" />
-                      <a href={`tel:${location.phone}`} className="hover:underline">{location.phone}</a>
+                      <a href={`tel:${location.phone.replace(/\s+/g, '')}`} className="hover:underline">{location.phone}</a>
                     </span>
                     <span className="flex items-center gap-1.5">
                       <Mail size={15} className="text-[#0E7C7B] dark:text-teal-400" />

@@ -156,7 +156,7 @@ export function LocationsPageView() {
               </a>
 
               <a
-                href={`tel:${siteConfig.phone}`}
+                href={siteConfig.phoneHref}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-7 py-3.5 text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all shadow-sm"
               >
                 <Phone size={16} className="text-[#0E7C7B] dark:text-teal-400" />

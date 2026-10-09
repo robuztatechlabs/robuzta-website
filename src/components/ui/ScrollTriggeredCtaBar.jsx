@@ -81,7 +81,7 @@ export function ScrollTriggeredCtaBar() {
 
               {/* Direct Call */}
               <a
-                href={`tel:${siteConfig.phone}`}
+                href={siteConfig.phoneHref}
                 className="hidden md:inline-flex items-center justify-center gap-2 rounded-full bg-slate-800 hover:bg-slate-700 border border-slate-700 px-4 py-2.5 text-xs font-extrabold text-white transition-all whitespace-nowrap"
                 title="Call Senior Technician"
               >

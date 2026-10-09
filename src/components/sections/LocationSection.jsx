@@ -103,7 +103,7 @@ export function LocationSection() {
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row items-center gap-2.5 pt-3.5 border-t border-slate-100 dark:border-slate-800">
                 <a
-                  href={`tel:${siteConfig.phone}`}
+                  href={siteConfig.phoneHref}
                   className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-5 py-3 text-xs font-black shadow-md transition-all text-center"
                 >
                   <Phone size={15} />

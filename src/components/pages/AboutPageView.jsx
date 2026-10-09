@@ -171,7 +171,7 @@ export function AboutPageView() {
               </button>
 
               <a
-                href={`tel:${data.getInTouch.phone}`}
+                href={`tel:${data.getInTouch.phone.replace(/\s+/g, '')}`}
                 className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white hover:border-[#0E7C7B] px-7 py-4 text-xs font-black uppercase tracking-wider transition-all"
               >
                 <Phone size={16} className="text-[#0E7C7B]" />
@@ -705,7 +705,7 @@ export function AboutPageView() {
 
               <div className="lg:col-span-4 flex flex-col sm:flex-row gap-3">
                 <a
-                  href={`tel:${data.getInTouch.phone}`}
+                  href={`tel:${data.getInTouch.phone.replace(/\s+/g, '')}`}
                   className="inline-flex items-center justify-center gap-2 w-full rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-7 py-4 text-xs font-black uppercase tracking-wider shadow-xl shadow-[#0E7C7B]/30 transition-all hover:scale-[1.02]"
                 >
                   <Phone size={16} />
