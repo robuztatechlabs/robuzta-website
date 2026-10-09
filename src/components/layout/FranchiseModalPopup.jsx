@@ -216,7 +216,7 @@ export function FranchiseModalPopup({ isOpen, onClose }) {
             <div className="pt-2 text-center border-t border-slate-800 text-[11px] text-slate-400">
               Need immediate phone guidance? Call Franchise Hotline at{' '}
               <a href={siteConfig.phoneHref} className="text-amber-400 font-bold hover:underline">
-                +91 999 245 2459
+                +91 999 245 245 9
               </a>
             </div>
 

@@ -207,6 +207,6 @@ export const ABOUT_PAGE_DATA = {
     heading: 'Have a Device That Needs Attention?',
     description: "Whether it's a laptop that won't turn on, a phone with a broken display, a gaming PC crashing under load, or a storage device containing important data—we can start with a proper diagnosis.",
     callLabel: 'Talk to Our Repair Team',
-    phone: '+91 999 245 2459'
+    phone: '+91 999 245 245 9'
   }
 };

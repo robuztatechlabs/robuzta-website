@@ -73,7 +73,7 @@ export function FranchiseFinalCta() {
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 hover:border-[#EA580C] px-6 py-3.5 text-xs sm:text-sm font-black text-slate-800 dark:text-slate-200 shadow-sm hover:shadow-md transition-all"
             >
               <Phone size={16} className="text-[#EA580C]" />
-              <span>Franchise Hotline (+91 999 245 2459)</span>
+              <span>Franchise Hotline (+91 999 245 245 9)</span>
             </a>
 
           </div>

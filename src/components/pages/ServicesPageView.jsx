@@ -270,7 +270,7 @@ export function ServicesPageView() {
                   className="inline-flex items-center justify-center gap-2 w-full rounded-2xl bg-slate-800 hover:bg-slate-700 text-slate-200 px-7 py-3 text-xs font-bold transition-all"
                 >
                   <Phone size={14} />
-                  <span>Call +91 999 245 2459</span>
+                  <span>Call +91 999 245 245 9</span>
                 </a>
               </div>
             </div>

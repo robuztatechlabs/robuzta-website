@@ -194,7 +194,7 @@ export function MobileRepairHubView() {
                 className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white hover:border-[#0E7C7B] px-6 py-4 text-xs font-black uppercase tracking-wider transition-all"
               >
                 <Phone size={16} className="text-[#0E7C7B]" />
-                <span>Call +91 999 245 2459</span>
+                <span>Call +91 999 245 245 9</span>
               </a>
             </div>
           </motion.div>

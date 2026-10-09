@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: 'Robuzta Techlabs',
-  phone: '+91 999 245 2459',
+  phone: '+91 999 245 245 9',
   phoneHref: 'tel:+919999988885',
   whatsappHref: 'https://wa.me/919999988885',
   email: 'info@robuzta.com',

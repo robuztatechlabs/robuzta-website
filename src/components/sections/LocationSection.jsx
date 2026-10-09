@@ -92,7 +92,7 @@ export function LocationSection() {
                     <Phone size={18} className="text-[#0E7C7B] dark:text-teal-400 shrink-0" />
                     <div>
                       <span className="text-[9px] sm:text-[10px] text-slate-400 font-extrabold uppercase block tracking-wider">DIRECT HOTLINE</span>
-                      <span className="text-slate-900 dark:text-slate-100 font-extrabold text-xs sm:text-sm">+91 999 245 2459</span>
+                      <span className="text-slate-900 dark:text-slate-100 font-extrabold text-xs sm:text-sm">+91 999 245 245 9</span>
                       <span className="text-[9px] sm:text-[10px] text-emerald-600 dark:text-emerald-400 block font-bold">Instant Phone Support</span>
                     </div>
                   </div>

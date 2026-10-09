@@ -253,7 +253,7 @@ export function MultiStepLeadWizard() {
                       <input
                         type="tel"
                         required
-                        placeholder="e.g. +91 999 245 2459"
+                        placeholder="e.g. +91 999 245 245 9"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         className="w-full rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 px-4 py-3.5 text-xs sm:text-sm text-slate-900 dark:text-white font-medium focus:border-[#0E7C7B] focus:outline-none font-tech"

@@ -137,7 +137,7 @@ export function ContactPageView() {
                         <div className="text-base font-black text-slate-900 dark:text-white group-hover:text-emerald-600 transition-colors">
                           WhatsApp Chat
                         </div>
-                        <div className="text-xs sm:text-sm font-bold text-slate-600 dark:text-slate-300 pt-0.5">+91 999 245 2459</div>
+                        <div className="text-xs sm:text-sm font-bold text-slate-600 dark:text-slate-300 pt-0.5">+91 999 245 245 9</div>
                         <span className="text-[11px] font-medium text-slate-400 block pt-0.5">Send Photo for Fast Quote</span>
                       </div>
                     </motion.a>

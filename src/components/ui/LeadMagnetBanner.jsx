@@ -91,7 +91,7 @@ export function LeadMagnetBanner() {
                     <input
                       type="tel"
                       required
-                      placeholder="e.g. +91 999 245 2459"
+                      placeholder="e.g. +91 999 245 245 9"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       className="w-full rounded-xl bg-slate-50 border border-slate-200 px-3.5 py-2.5 text-xs text-slate-900 font-medium focus:border-[#0E7C7B] focus:outline-none font-tech"
