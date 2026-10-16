@@ -1,7 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { Cpu } from 'lucide-react';
 
 export function BrandLogosGrid() {
@@ -108,16 +106,8 @@ export function BrandLogosGrid() {
           <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-slate-50 dark:from-slate-950 to-transparent z-10" />
           <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-slate-50 dark:from-slate-950 to-transparent z-10" />
 
-          <motion.div
-            animate={{ x: ['0%', '-33.333333%'] }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: 'linear'
-            }}
-            className="flex items-center gap-12 sm:gap-20 w-max px-4"
-          >
-            {[...brands, ...brands, ...brands].map((b, idx) => (
+          <div className="flex items-center gap-12 sm:gap-20 w-max px-4 animate-marquee hover:[animation-play-state:paused]">
+            {[...brands, ...brands].map((b, idx) => (
               <div
                 key={`${b.name}-${idx}`}
                 className="flex items-center justify-center shrink-0 w-32 sm:w-44 lg:w-48 h-20 sm:h-24 opacity-70 hover:opacity-100 transition-opacity duration-300 cursor-pointer group px-4"
@@ -125,11 +115,15 @@ export function BrandLogosGrid() {
                 <img
                   src={b.image}
                   alt={`${b.name} Official Logo`}
+                  width={160}
+                  height={60}
+                  loading="lazy"
+                  decoding="async"
                   className="max-h-12 sm:max-h-14 lg:max-h-16 w-auto object-contain dark:brightness-125 group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
 
       </div>

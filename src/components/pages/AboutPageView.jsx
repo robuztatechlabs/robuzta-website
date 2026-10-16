@@ -225,12 +225,13 @@ export function AboutPageView() {
                   <div className="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-700/80 p-2 bg-white dark:bg-slate-950 shadow-md max-w-[260px] sm:max-w-[300px] w-full text-center space-y-2">
                     <div className="relative rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-900">
                       <img
-                        src="https://robuzta.com/wp-content/uploads/2026/02/Mr.-Pranshu-Maheshwari.png"
+                        src="/assets/team/pranshu-maheshwari.jpg"
                         alt="Mr. Pranshu Maheshwari - Founder & CEO Robuzta Techlabs"
                         width={300}
-                        height={360}
+                        height={400}
                         loading="lazy"
-                        className="w-full h-auto object-cover rounded-2xl"
+                        decoding="async"
+                        className="w-full h-auto object-cover rounded-2xl aspect-[3/4]"
                       />
                     </div>
 

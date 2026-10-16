@@ -11,7 +11,7 @@ export function BrandLogo({ className = '' }) {
         width={180}
         height={44}
         fetchPriority="high"
-        className="h-9 sm:h-11 w-auto object-contain dark:hidden"
+        className="h-9 sm:h-11 w-auto aspect-[180/44] shrink-0 object-contain dark:hidden"
       />
       <img
         src="/robuzta_logo_white.png"
@@ -19,7 +19,7 @@ export function BrandLogo({ className = '' }) {
         width={180}
         height={44}
         fetchPriority="high"
-        className="h-9 sm:h-11 w-auto object-contain hidden dark:block"
+        className="h-9 sm:h-11 w-auto aspect-[180/44] shrink-0 object-contain hidden dark:block"
       />
     </Link>
   );

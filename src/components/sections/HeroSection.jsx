@@ -1,59 +1,23 @@
 'use client';
 
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   ArrowRight,
-  ShieldCheck,
-  Star,
-  Clock,
-  Phone,
-  Calendar,
   Laptop,
   Smartphone,
-  Tablet,
   Database,
-  Droplets,
-  HardDrive,
-  Sparkles,
-  Lock,
-  Zap,
-  Cpu,
-  CheckCircle2,
-  Layers,
-  ZoomIn,
-  ZoomOut,
-  RotateCcw,
-  MousePointerClick,
-  X,
-  ExternalLink,
-  Monitor,
-  Battery,
-  Keyboard,
   Flame,
-  Wrench,
+  Monitor,
+  Cpu,
   Code,
-  Wind
+  Wind,
+  X,
+  ExternalLink
 } from 'lucide-react';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
 import { siteConfig } from '@/data/site';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
-
-const LaptopExplorer = dynamic(
-  () => import('@/components/3d/LaptopExplorer').then(mod => mod.LaptopExplorer),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="h-full w-full flex items-center justify-center bg-transparent min-h-[400px]">
-        <div className="flex flex-col items-center gap-4">
-          <div className="h-10 w-10 animate-spin rounded-full border-2 border-slate-300 dark:border-slate-700 border-t-[#0E7C7B]" />
-          <span className="text-xs font-bold uppercase tracking-widest text-slate-500 dark:text-slate-400">Loading 3D Hardware Model…</span>
-        </div>
-      </div>
-    ),
-  }
-);
 
 const typingPhrases = [
   'Fix My Broken Display Screen',
@@ -63,7 +27,7 @@ const typingPhrases = [
 ];
 
 function useTypingText(phrases, typingSpeed = 70, deletingSpeed = 35, delay = 2000) {
-  const [text, setText] = useState('');
+  const [text, setText] = useState(phrases[0] || '');
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
@@ -93,29 +57,7 @@ function useTypingText(phrases, typingSpeed = 70, deletingSpeed = 35, delay = 20
 
 export function HeroSection() {
   const typedText = useTypingText(typingPhrases);
-  const [selectedComponent, setSelectedComponent] = useState(null);
-  const [isExploded, setIsExploded] = useState(true);
-  const [zoomAction, setZoomAction] = useState(null);
-  const resetFnRef = useRef(null);
   const [isLiveModalOpen, setIsLiveModalOpen] = useState(false);
-
-  const handleComponentSelect = useCallback((id) => {
-    setSelectedComponent(id);
-  }, []);
-
-  const handleResetView = useCallback((resetFn) => {
-    resetFnRef.current = resetFn;
-  }, []);
-
-  const handleReset = useCallback(() => {
-    setSelectedComponent(null);
-    if (resetFnRef.current) resetFnRef.current();
-  }, []);
-
-  const triggerZoom = (direction) => {
-    setZoomAction(direction);
-    setTimeout(() => setZoomAction(null), 100);
-  };
 
   return (
     <section className="relative overflow-hidden bg-white dark:bg-[#070E1A] pt-32 sm:pt-40 lg:pt-48 pb-16 sm:pb-20 lg:pb-24 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
@@ -132,38 +74,36 @@ export function HeroSection() {
         className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f080_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f080_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1e293b80_1px,transparent_1px),linear-gradient(to_bottom,#1e293b80_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none"
       />
 
-      {/* Futuristic Top-to-Bottom Glowing Laser Light Scan Beam */}
+      {/* Futuristic Top-to-Bottom Glowing Laser Light Scan Beam - GPU Accelerated (transform y) */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {/* Horizontal Ambient Glow Wave */}
         <motion.div
-          initial={{ top: '-10%', opacity: 0 }}
+          initial={{ y: '-10vh', opacity: 0 }}
           animate={{
-            top: ['-10%', '110%'],
-            opacity: [0, 0.6, 0.6, 0]
+            y: ['-10vh', '110vh'],
+            opacity: [0, 0.5, 0.5, 0]
           }}
           transition={{
-            duration: 7,
+            duration: 8,
             repeat: Infinity,
             ease: 'linear'
           }}
-          className="absolute left-0 right-0 h-32 bg-gradient-to-b from-transparent via-[#0E7C7B]/20 dark:via-[#0E7C7B]/30 to-transparent blur-xl"
+          className="absolute left-0 right-0 top-0 h-32 bg-gradient-to-b from-transparent via-[#0E7C7B]/20 dark:via-[#0E7C7B]/30 to-transparent blur-xl will-change-transform"
         />
 
         {/* Crisp Laser Beam Line */}
         <motion.div
-          initial={{ top: '-10%' }}
+          initial={{ y: '-10vh' }}
           animate={{
-            top: ['-10%', '110%']
+            y: ['-10vh', '110vh']
           }}
           transition={{
-            duration: 7,
+            duration: 8,
             repeat: Infinity,
             ease: 'linear'
           }}
-          className="absolute left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#0E7C7B] dark:via-teal-400 to-transparent shadow-[0_0_15px_#0E7C7B]"
+          className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#0E7C7B] dark:via-teal-400 to-transparent shadow-[0_0_15px_#0E7C7B] will-change-transform"
         />
-
-
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -204,7 +144,7 @@ export function HeroSection() {
             <div className="space-y-3.5 pt-2 flex flex-col items-center lg:items-start">
 
               {/* Typing Keyboard Indicator */}
-              <div className="inline-flex items-center gap-2 rounded-xl bg-slate-900 dark:bg-slate-900 border border-slate-700/80 px-4 py-2.5 text-xs sm:text-sm font-mono text-emerald-400 shadow-md">
+              <div className="inline-flex items-center gap-2 rounded-xl bg-slate-900 dark:bg-slate-900 border border-slate-700/80 px-4 py-2.5 text-xs sm:text-sm font-mono text-emerald-400 shadow-md min-h-[42px] min-w-[280px]">
                 <span className="text-slate-400 font-sans font-medium">Type issue:</span>
                 <span className="font-bold text-teal-300">"{typedText}"</span>
                 <span className="animate-pulse text-emerald-400 font-bold">|</span>

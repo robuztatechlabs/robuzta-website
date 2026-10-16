@@ -12,5 +12,5 @@ export function FranchiseFinalCta() {
     }
   };
 
-  return ;
+  return null;
 }

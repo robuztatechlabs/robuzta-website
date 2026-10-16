@@ -7,50 +7,69 @@ export function SmoothScroll({ children }) {
   const pathname = usePathname();
 
   useEffect(() => {
-    // 1. Skip heavy JS smooth scroll on mobile touch devices for maximum performance
-    const isMobile = typeof window !== 'undefined' && (window.innerWidth < 768 || 'ontouchstart' in window);
-    if (isMobile) return;
+    // 1. Skip heavy JS smooth scroll on mobile & touch devices for native 120Hz performance
+    const isTouch = typeof window !== 'undefined' && (window.innerWidth < 1024 || 'ontouchstart' in window || navigator.maxTouchPoints > 0);
+    if (isTouch) return;
 
     let lenis = null;
     let tickerHandler = null;
+    let gsapRef = null;
     let cancelled = false;
 
-    // 2. Defer heavy GSAP & Lenis initialization until main thread is completely idle
-    const initTask = setTimeout(async () => {
+    // 2. Defer Lenis initialization until browser main thread is completely idle
+    const schedule = typeof window.requestIdleCallback === 'function'
+      ? (fn) => window.requestIdleCallback(fn, { timeout: 2500 })
+      : (fn) => setTimeout(fn, 1500);
+
+    const idleId = schedule(async () => {
       if (cancelled) return;
 
-      const [{ default: Lenis }, { gsap }, { ScrollTrigger }] = await Promise.all([
-        import('lenis'),
-        import('gsap'),
-        import('gsap/ScrollTrigger')
-      ]);
+      try {
+        const [{ default: Lenis }, { gsap }, { ScrollTrigger }] = await Promise.all([
+          import('lenis'),
+          import('gsap'),
+          import('gsap/ScrollTrigger')
+        ]);
 
-      gsap.registerPlugin(ScrollTrigger);
+        if (cancelled) return;
 
-      lenis = new Lenis({
-        duration: 0.6,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        orientation: 'vertical',
-        gestureOrientation: 'vertical',
-        smoothWheel: true,
-        wheelMultiplier: 1.1,
-        touchMultiplier: 1.0,
-        infinite: false
-      });
+        gsapRef = gsap;
+        gsap.registerPlugin(ScrollTrigger);
 
-      lenis.on('scroll', ScrollTrigger.update);
+        lenis = new Lenis({
+          duration: 0.6,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          orientation: 'vertical',
+          gestureOrientation: 'vertical',
+          smoothWheel: true,
+          wheelMultiplier: 1.1,
+          touchMultiplier: 1.0,
+          infinite: false
+        });
 
-      tickerHandler = (time) => {
-        if (lenis) lenis.raf(time * 1000);
-      };
+        lenis.on('scroll', ScrollTrigger.update);
 
-      gsap.ticker.add(tickerHandler);
-      gsap.ticker.lagSmoothing(0);
-    }, 50);
+        tickerHandler = (time) => {
+          if (lenis) lenis.raf(time * 1000);
+        };
+
+        gsap.ticker.add(tickerHandler);
+        gsap.ticker.lagSmoothing(0);
+      } catch {}
+    });
 
     return () => {
       cancelled = true;
-      clearTimeout(initTask);
+      if (typeof window.cancelIdleCallback === 'function' && typeof idleId === 'number') {
+        window.cancelIdleCallback(idleId);
+      } else {
+        clearTimeout(idleId);
+      }
+      if (tickerHandler && gsapRef) {
+        try {
+          gsapRef.ticker.remove(tickerHandler);
+        } catch {}
+      }
       if (lenis) {
         try {
           lenis.destroy();

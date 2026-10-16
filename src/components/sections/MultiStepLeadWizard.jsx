@@ -268,8 +268,8 @@ export function MultiStepLeadWizard() {
                       onChange={(e) => setLocality(e.target.value)}
                       className="w-full rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 px-4 py-3.5 text-xs sm:text-sm text-slate-900 dark:text-white font-medium focus:border-[#0E7C7B] focus:outline-none"
                     >
-                      <option value="South Bopal & Bopal">South Bopal</option>
-                      <option value="Satellite & Vastrapur">Tragad</option>
+                      <option value="South Bopal">South Bopal</option>
+                      <option value="Tragad">Tragad</option>
                     </select>
                   </div>
 
