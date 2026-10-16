@@ -186,7 +186,7 @@ export function BlogListingPageView() {
           </div>
         </section>
 
-        {/* Free Diagnostic Guide Advisory Banner */}
+        {/* Diagnostic Guide Advisory Banner */}
         <section className="py-16 sm:py-24 bg-slate-50 dark:bg-slate-900/50">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <motion.div

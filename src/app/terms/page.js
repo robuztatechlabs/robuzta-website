@@ -18,7 +18,7 @@ export default function TermsPage() {
           <div className="space-y-3 border-b border-slate-200 dark:border-slate-800 pb-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 text-xs font-bold text-[#0E7C7B] dark:text-teal-400">
               <ShieldCheck size={14} />
-              <span>180-DAY WARRANTY COVERAGE</span>
+              <span>Limited Warranty COVERAGE</span>
             </div>
             <h1 className="text-3xl sm:text-4xl font-black tracking-tight">Terms of Service</h1>
             <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">

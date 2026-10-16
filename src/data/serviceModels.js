@@ -58,7 +58,7 @@ export const techLabModelShowcase = {
   title: 'BGA Micro-Soldering & IC Rework',
   description:
     'Lab-grade BGA optical rework stations and stereo microscopes enable precision chip-level repairs on logic boards, GPUs, and mobile device PCBs.',
-  calloutTitle: 'Component-Level Repair:',
+  calloutTitle: 'Chip-level Repair:',
   calloutText:
     'Delicate microchips and power ICs are replaced under 45× magnification with ESD-safe isolation — protecting your data while fixing hardware at the source.',
   badge: 'LAB-GRADE GEAR',

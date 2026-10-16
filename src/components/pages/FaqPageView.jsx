@@ -122,7 +122,7 @@ export function FaqPageView() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto font-medium"
             >
-              Authoritative, transparent answers regarding device data security, repair turnarounds, free doorstep pickup in Ahmedabad, zero OTP policies, and warranty protection.
+              Authoritative, transparent answers regarding device data security, repair turnarounds, doorstep pickup in Ahmedabad, zero OTP policies, and warranty protection.
             </motion.p>
 
             {/* Live Search Input Box */}
@@ -138,7 +138,7 @@ export function FaqPageView() {
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search hardware issues, Zero-OTP policy, warranty, pickup..."
+                  placeholder="Search hardware issues, No Password Needed policy, warranty, pickup..."
                   className="w-full rounded-2xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 py-4 pl-12 pr-4 text-sm font-bold text-slate-900 dark:text-white shadow-xl focus:border-[#0E7C7B] focus:ring-2 focus:ring-[#0E7C7B]/30 outline-none transition-all"
                 />
                 {searchQuery && (
@@ -349,7 +349,7 @@ export function FaqPageView() {
                       className="flex items-center justify-center gap-2.5 w-full rounded-xl bg-emerald-600 hover:bg-emerald-500 py-3.5 text-xs font-black text-white shadow-md transition-all text-center"
                     >
                       <WhatsappIcon size={18} className="text-white shrink-0" />
-                      <span>Instant WhatsApp Quote</span>
+                      <span>Instant Request Quote</span>
                     </a>
 
                     <a
@@ -363,16 +363,16 @@ export function FaqPageView() {
 
                   <div className="pt-2 border-t border-slate-200/80 dark:border-slate-800 flex items-center justify-center gap-2 text-[11px] font-bold text-slate-500 dark:text-slate-400">
                     <CheckCircle2 size={14} className="text-emerald-500" />
-                    <span>Free Inspection & Zero Obligation</span>
+                    <span>Inspection & Zero Obligation</span>
                   </div>
 
                 </div>
 
-                {/* Free Pickup Banner */}
+                {/* Pickup Banner */}
                 <div className="rounded-3xl bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 text-white p-7 space-y-4 shadow-xl border border-slate-800">
                   <div className="flex items-center justify-between">
                     <span className="text-[10px] font-mono font-bold text-emerald-400 bg-emerald-950/80 border border-emerald-800 px-2.5 py-0.5 rounded-full">
-                      FREE AHMEDABAD PICKUP
+                      AHMEDABAD PICKUP
                     </span>
                     <MapPin size={18} className="text-teal-400" />
                   </div>
@@ -387,7 +387,7 @@ export function FaqPageView() {
                     onClick={() => openModal({ formType: 'FAQ Page Book Pickup Banner' })}
                     className="flex items-center justify-center gap-2 w-full rounded-xl bg-emerald-600 hover:bg-emerald-500 py-3.5 text-xs font-black text-white shadow-lg cursor-pointer transition-all transform hover:scale-[1.02]"
                   >
-                    <span>Book Free Pickup Now</span>
+                    <span>Book Pickup Now</span>
                     <ArrowRight size={15} />
                   </button>
                 </div>

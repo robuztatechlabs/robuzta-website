@@ -64,7 +64,7 @@ export function LaptopRepairSlugView({ data }) {
 
   if (!data) return null;
 
-  const isBrand = data.entityType === 'brand';
+  const isBrand = data.entityType === 'brand' || Boolean(data.supportedModels);
   const pageTitle = isBrand ? `${data.name} Laptop Repair` : data.name;
   const canonicalUrl = `https://robuzta.com/laptop-repair/${data.slug}/`;
 
@@ -172,7 +172,7 @@ export function LaptopRepairSlugView({ data }) {
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-8 py-4 text-sm font-black shadow-xl shadow-[#0E7C7B]/30 hover:scale-[1.02] transition-all cursor-pointer"
                 >
                   <Calendar size={18} />
-                  <span>Book Free Diagnosis</span>
+                  <span>Book Diagnosis</span>
                 </button>
 
                 <a
@@ -182,7 +182,7 @@ export function LaptopRepairSlugView({ data }) {
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white px-7 py-4 text-sm font-bold shadow-lg transition-all"
                 >
                   <WhatsappIcon size={18} className="text-white" />
-                  <span>WhatsApp Quote</span>
+                  <span>Request Quote</span>
                 </a>
 
                 <a
@@ -190,7 +190,7 @@ export function LaptopRepairSlugView({ data }) {
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 px-6 py-4 text-sm font-bold text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all"
                 >
                   <Phone size={17} className="text-[#0E7C7B] dark:text-teal-400" />
-                  <span>Call Hotline</span>
+                  <span>Call</span>
                 </a>
               </div>
             </div>
@@ -350,7 +350,7 @@ export function LaptopRepairSlugView({ data }) {
                 Ready to Fix Your MacBook?
               </h2>
               <p className="max-w-2xl mx-auto text-sm sm:text-base text-teal-100 font-medium">
-                Visit our lab in South Bopal / Tragad, Ahmedabad or request doorstep pickup. 180-day warranty, transparent quote approval & zero data risk.
+                Visit our lab in South Bopal / Tragad, Ahmedabad or request doorstep pickup. Limited Warranty, transparent quote approval & zero data risk.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
                 <button
@@ -410,7 +410,7 @@ export function LaptopRepairSlugView({ data }) {
               <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
                 <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-[#0E7C7B]/20 border border-[#0E7C7B]/30 px-4 py-1.5 text-xs font-black uppercase tracking-wider text-[#0E7C7B] dark:text-teal-300">
                   <Sparkles size={14} className="text-[#0E7C7B] dark:text-teal-400" />
-                  <span>{isBrand ? `Certified ${data.name} Lab Care` : `Component-Level Diagnostics`}</span>
+                  <span>{isBrand ? `Certified ${data.name} Lab Care` : `Chip-level Diagnostics`}</span>
                 </div>
 
                 <h1 className="text-3xl sm:text-5xl lg:text-5xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.12]">
@@ -428,7 +428,7 @@ export function LaptopRepairSlugView({ data }) {
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-8 py-4 text-sm font-black shadow-xl shadow-[#0E7C7B]/30 hover:scale-[1.02] transition-all cursor-pointer"
                   >
                     <Calendar size={18} />
-                    <span>Book Free Diagnosis</span>
+                    <span>Book Diagnosis</span>
                   </button>
 
                   <a
@@ -438,7 +438,7 @@ export function LaptopRepairSlugView({ data }) {
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white px-7 py-4 text-sm font-bold shadow-lg transition-all"
                   >
                     <WhatsappIcon size={18} className="text-white" />
-                    <span>WhatsApp Quote</span>
+                    <span>Request Quote</span>
                   </a>
 
                   <a
@@ -446,14 +446,14 @@ export function LaptopRepairSlugView({ data }) {
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 px-6 py-4 text-sm font-bold text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all"
                   >
                     <Phone size={17} className="text-[#0E7C7B] dark:text-teal-400" />
-                    <span>Call Hotline</span>
+                    <span>Call</span>
                   </a>
                 </div>
 
                 <div className="flex flex-wrap items-center justify-center lg:justify-start gap-5 pt-3 text-xs font-extrabold text-slate-600 dark:text-slate-400 border-t border-slate-200/80 dark:border-slate-800/80">
                   <span className="flex items-center gap-1.5">
                     <CheckCircle2 size={16} className="text-emerald-500" />
-                    1000+ Devices Repaired
+                    10000+ Devices Repaired
                   </span>
                   <span className="flex items-center gap-1.5">
                     <Zap size={16} className="text-amber-500" />
@@ -517,7 +517,7 @@ export function LaptopRepairSlugView({ data }) {
                           <span className="text-[10px] uppercase font-bold text-slate-400 block">Est. Repair Time</span>
                           <span className="text-sm font-black text-slate-900 dark:text-white flex items-center gap-1.5 mt-1">
                             <Clock size={14} className="text-[#0E7C7B] dark:text-teal-400" />
-                            {data.estimatedTime}
+                            2-3 hours
                           </span>
                         </div>
                         <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700/60">
@@ -539,7 +539,7 @@ export function LaptopRepairSlugView({ data }) {
                   )}
 
                   <div className="pt-2 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-bold text-slate-500 dark:text-slate-400">
-                    <span>Lab Location: South Bopal & Tragad</span>
+                    <span>Location: South Bopal & Tragad</span>
                     <span className="text-emerald-600 dark:text-emerald-400 font-black">● Lab Open Now</span>
                   </div>
 
@@ -550,223 +550,114 @@ export function LaptopRepairSlugView({ data }) {
           </div>
         </section>
 
-        {!isBrand && (
-          <section className="py-16 sm:py-20 bg-white dark:bg-[#070E1A]">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-                <div className="lg:col-span-6 space-y-6">
-                  <div className="space-y-2">
-                    <span className="text-xs font-black uppercase tracking-widest text-amber-600 dark:text-amber-400 flex items-center gap-1.5">
-                      <AlertTriangle size={15} />
-                      SYMPTOMS CHECKLIST
-                    </span>
-                    <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
-                      Signs You Need {data.name}
-                    </h2>
-                    <p className="text-xs text-slate-600 dark:text-slate-400">
-                      If your laptop exhibits any of these symptoms, bring it in for a free bench evaluation before further circuit degradation occurs.
-                    </p>
-                  </div>
-
-                  <div className="space-y-3">
-                    {data.symptoms?.map((sym) => (
-                      <div
-                        key={sym}
-                        className="flex items-start gap-3.5 p-4 rounded-2xl border border-amber-200/80 dark:border-amber-900/40 bg-amber-50/50 dark:bg-amber-950/20"
-                      >
-                        <AlertTriangle size={18} className="text-amber-500 shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200">{sym}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="lg:col-span-6 space-y-6">
-                  <div className="space-y-2">
-                    <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400 flex items-center gap-1.5">
-                      <Wrench size={15} />
-                      BENCH WORKFLOW
-                    </span>
-                    <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
-                      How Robuzta Fixes {data.name}
-                    </h2>
-                    <p className="text-xs text-slate-600 dark:text-slate-400">
-                      Our certified engineers follow a 4-step diagnostic and component repair procedure.
-                    </p>
-                  </div>
-
-                  <div className="space-y-3">
-                    {data.repairProcess?.map((step, idx) => (
-                      <div
-                        key={step}
-                        className="flex items-start gap-3.5 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-900/60"
-                      >
-                        <div className="h-7 w-7 rounded-xl bg-[#0E7C7B] text-white flex items-center justify-center text-xs font-black shrink-0 mt-0.5">
-                          0{idx + 1}
-                        </div>
-                        <div>
-                          <span className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 block">{step}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </section>
-        )}
-
-        <section className="py-12 sm:py-16 bg-slate-50/80 dark:bg-slate-900/60 border-y border-slate-200 dark:border-slate-800">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
-            <div className="text-center space-y-2">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400">
-                PROVEN REPAIR EXCELLENCE
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
-                Why Customers Choose Us
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-              {(data.whyChooseUs || [
-                { title: '1000+ Devices Repaired', desc: 'Trusted by thousands across Ahmedabad' },
-                { title: 'Chip-Level Repair Experts', desc: 'Precision BGA & motherboard schematics' },
-                { title: 'Genuine OEM Parts', desc: '100% original displays, batteries & ICs' },
-                { title: 'Same-Day Repairs', desc: 'Fast express 1–3 hours turnaround' },
-                { title: 'Transparent Pricing', desc: 'Upfront estimate with no hidden fees' }
-              ]).map((item, idx) => (
-                <div
-                  key={idx}
-                  className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 space-y-2 shadow-sm hover:border-[#0E7C7B] dark:hover:border-teal-500/80 transition-all duration-300 group text-center flex flex-col items-center justify-center"
-                >
-                  <div className="h-10 w-10 rounded-xl bg-amber-100 dark:bg-amber-950/60 text-amber-500 flex items-center justify-center text-lg font-black shrink-0 group-hover:scale-110 transition-transform">
-                    ⭐
-                  </div>
-                  <h3 className="text-sm font-black text-slate-900 dark:text-white leading-snug">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
+        {/* SECTION 2 — HARDWARE ISSUES & REPAIRS FOR THIS BRAND */}
         <section className="py-16 sm:py-20 bg-white dark:bg-[#070E1A]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
             <div className="text-center max-w-3xl mx-auto space-y-3">
               <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400">
-                {isBrand ? `REPAIR SERVICES FOR ${data.name.toUpperCase()}` : `REPAIR ${data.name.toUpperCase()} BY BRAND`}
+                HARDWARE ISSUES & REPAIRS
               </span>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
-                {isBrand ? (data.problemsTitle || `Having Trouble With Your ${data.name} Laptop?`) : `Select Brand for ${data.name}`}
+                {data.problemsTitle || `Common ${data.name} Hardware Issues We Fix`}
               </h2>
               <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300">
-                {isBrand
-                  ? (data.problemsSubtitle || `Select the hardware issue below to view exact diagnostic workflow, pricing, and turnaround times for ${data.name}.`)
-                  : `Select your laptop brand to get specialized OEM component replacement and BGA schematics.`}
+                {data.problemsSubtitle || `Select any hardware issue below to see diagnostic procedures and book an immediate bench evaluation.`}
               </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {isBrand ? (
-                (data.commonProblems || LAPTOP_PROBLEMS).map((prob) => {
-                  const ProbIcon = problemIconMap[prob.slug] || Wrench;
-                  const itemTitle = prob.title || `${data.name} ${prob.name}`;
-                  const itemDesc = prob.description || prob.tagline;
-                  return (
-                    <Link
-                      key={prob.title || prob.slug}
-                      href={`/laptop-repair/${prob.slug}/`}
-                      className="group flex flex-col justify-between rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/60 p-5 sm:p-6 hover:border-[#0E7C7B] dark:hover:border-teal-500/80 hover:shadow-xl transition-all duration-300"
-                    >
-                      <div className="space-y-3">
-                        <div className="flex items-center justify-between">
-                          <div className="h-11 w-11 rounded-2xl bg-[#0E7C7B]/10 dark:bg-[#0E7C7B]/20 text-[#0E7C7B] dark:text-teal-300 flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <ProbIcon size={20} />
-                          </div>
-                        </div>
-
-                        <div>
-                          <h3 className="text-base font-black text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-300 transition-colors">
-                            {itemTitle}
-                          </h3>
-                          <p className="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1 line-clamp-2">
-                            {itemDesc}
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="pt-4 mt-3 border-t border-slate-200/60 dark:border-slate-800/80 flex items-center justify-between text-xs font-bold">
-                        <span className="text-slate-500 dark:text-slate-400 flex items-center gap-1">
-                          <Clock size={13} />
-                          {prob.estimatedTime || '1 – 3 Hours'}
-                        </span>
-                        <span className="text-[#0E7C7B] dark:text-teal-400 group-hover:translate-x-1 transition-transform flex items-center gap-1 font-black">
-                          <span>Fix Issue</span>
-                          <ArrowRight size={13} />
-                        </span>
-                      </div>
-                    </Link>
-                  );
-                })
-              ) : (
-                LAPTOP_BRANDS.map((brand) => (
-                  <Link
-                    key={brand.slug}
-                    href={`/laptop-repair/${brand.slug}/`}
-                    className="group relative flex flex-col items-center text-center justify-between rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/60 p-5 sm:p-6 hover:border-[#0E7C7B] dark:hover:border-teal-500/80 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              {(data.commonProblems || LAPTOP_PROBLEMS).map((prob, idx) => {
+                const ProbIcon = problemIconMap[prob.slug] || Wrench;
+                const itemTitle = prob.title || `${data.name} ${prob.name}`;
+                const itemDesc = prob.description || prob.tagline;
+                return (
+                  <div
+                    key={prob.title || prob.slug || idx}
+                    className="group flex flex-col justify-between rounded-3xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/60 p-5 sm:p-6 hover:border-[#0E7C7B] dark:hover:border-teal-500/80 hover:shadow-xl transition-all duration-300"
                   >
-                    <div className="space-y-3.5 flex flex-col items-center w-full">
-                      <div className="h-16 w-full max-w-[130px] rounded-2xl bg-white dark:bg-slate-950/80 border border-slate-200/70 dark:border-slate-800 p-2.5 flex items-center justify-center group-hover:scale-105 transition-transform shadow-sm">
-                        {brand.logoImage ? (
-                          <Image
-                            src={brand.logoImage}
-                            alt={`${brand.name} Repair Logo`}
-                            width={110}
-                            height={40}
-                            className="max-h-9 w-auto object-contain dark:brightness-110"
-                          />
-                        ) : (
-                          <span className="text-xl font-black tracking-tighter text-[#0E7C7B] dark:text-teal-400">
-                            {brand.name.toUpperCase()}
-                          </span>
-                        )}
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <div className="h-11 w-11 rounded-2xl bg-[#0E7C7B]/10 dark:bg-[#0E7C7B]/20 text-[#0E7C7B] dark:text-teal-300 flex items-center justify-center group-hover:scale-110 transition-transform">
+                          <ProbIcon size={20} />
+                        </div>
                       </div>
 
                       <div>
                         <h3 className="text-base font-black text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-300 transition-colors">
-                          {brand.name} {data.name}
+                          {itemTitle}
                         </h3>
-                        <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium mt-0.5 line-clamp-1">
-                          {brand.shortTag}
+                        <p className="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1 line-clamp-2">
+                          {itemDesc}
                         </p>
                       </div>
                     </div>
 
-                    <div className="pt-3.5 mt-3 border-t border-slate-200/60 dark:border-slate-800/80 w-full flex items-center justify-center gap-1.5 text-xs font-black text-[#0E7C7B] dark:text-teal-400">
-                      <span>Fix {brand.name}</span>
-                      <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+                    <div className="pt-4 mt-3 border-t border-slate-200/60 dark:border-slate-800/80 flex items-center justify-between text-xs font-bold">
+                      <span className="text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
+                        <CheckCircle2 size={14} className="text-emerald-500" />
+                        <span>Genuine Parts &amp; Care</span>
+                      </span>
+                      <button
+                        type="button"
+                        onClick={openModal}
+                        className="text-[#0E7C7B] dark:text-teal-400 hover:text-teal-600 dark:hover:text-teal-300 transition-colors flex items-center gap-1 font-black cursor-pointer"
+                      >
+                        <span>Book Repair</span>
+                        <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
+                      </button>
                     </div>
-                  </Link>
-                ))
-              )}
+                  </div>
+                );
+              })}
             </div>
 
-            <div className="text-center pt-6">
-              <Link
-                href="/laptop-repair/"
-                className="inline-flex items-center gap-2 rounded-2xl bg-slate-100 dark:bg-slate-800 hover:bg-[#0E7C7B] hover:text-white dark:hover:bg-teal-500 dark:hover:text-white px-6 py-3 text-xs font-bold transition-all shadow-sm"
+            <div className="text-center pt-2">
+              <button
+                type="button"
+                onClick={openModal}
+                className="inline-flex items-center gap-2 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-7 py-3.5 text-xs font-black transition-all shadow-md hover:scale-[1.02] cursor-pointer"
               >
-                <span>← View All Brands & Problem Solutions</span>
-              </Link>
+                <span>Request Diagnostic Quote for {data.name}</span>
+                <ArrowRight size={14} />
+              </button>
             </div>
-
           </div>
         </section>
+
+        {/* SECTION 3 — BRAND REPAIR CAPABILITIES & DETAILS */}
+        {data.brandHighlights && data.brandHighlights.length > 0 && (
+          <section className="py-14 sm:py-20 bg-slate-50/70 dark:bg-[#0b1628] border-b border-slate-200 dark:border-slate-800">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
+              <div className="text-center max-w-3xl mx-auto space-y-3">
+                <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400">
+                  CHIP-LEVEL LAB DETAILS
+                </span>
+                <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                  Why Choose Robuzta for Your {data.name} Repair
+                </h2>
+                <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+                  Dedicated schematics, genuine OEM parts, and certified chip-level workbench technicians in Ahmedabad.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                {data.brandHighlights.map((hl, idx) => (
+                  <div
+                    key={idx}
+                    className="rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900/80 p-6 space-y-3 shadow-sm hover:border-[#0E7C7B] dark:hover:border-teal-500/70 hover:shadow-lg transition-all group"
+                  >
+                    <div className="h-10 w-10 rounded-2xl bg-[#0E7C7B]/10 dark:bg-teal-500/10 text-[#0E7C7B] dark:text-teal-300 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <ShieldCheck size={20} />
+                    </div>
+                    <p className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 leading-relaxed">
+                      {hl}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {data.faqs && data.faqs.length > 0 && (
           <section className="py-16 sm:py-20 bg-slate-50 dark:bg-[#0a1424] border-t border-slate-200 dark:border-slate-800">
@@ -825,7 +716,7 @@ export function LaptopRepairSlugView({ data }) {
               Ready to Fix Your {data.name}?
             </h2>
             <p className="max-w-2xl mx-auto text-sm sm:text-base text-teal-100 font-medium">
-              Visit our lab in South Bopal / Tragad, Ahmedabad or request doorstep pickup. 180-day warranty, transparent quote approval & zero data risk.
+              Visit our lab in South Bopal / Tragad, Ahmedabad or request doorstep pickup. Limited Warranty, transparent quote approval & zero data risk.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
               <button

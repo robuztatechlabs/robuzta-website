@@ -28,7 +28,7 @@ const repairCases = [
     id: 3,
     category: 'MacBook & Laptop',
     title: 'Enterprise Workstation Fleet Display & Battery Overhaul',
-    description: 'Upgraded and serviced 45 Dell XPS and ThinkPad laptops for a local engineering office under Zero-OTP privacy protocols.',
+    description: 'Upgraded and serviced 45 Dell XPS and ThinkPad laptops for a local engineering office under No Password Needed privacy protocols.',
     metrics: ['45 Workstations', 'Zero Password', 'Serial Verified'],
     tags: ['Dell XPS', 'ThinkPad', 'Battery Swap'],
     gradient: 'from-teal-500/10 to-emerald-500/10'

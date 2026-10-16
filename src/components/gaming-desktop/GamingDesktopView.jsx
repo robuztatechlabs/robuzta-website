@@ -427,7 +427,7 @@ export function GamingDesktopView({ data }) {
                   Ready to Repair or Build Your Gaming Rig?
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed">
-                  Get a free instant hardware estimate from senior desktop engineers in South Bopal and Tragad.
+                  Get a instant hardware estimate from senior desktop engineers in South Bopal and Tragad.
                 </p>
               </div>
 
@@ -437,7 +437,7 @@ export function GamingDesktopView({ data }) {
                   className="inline-flex items-center justify-center gap-2 w-full rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-7 py-4 text-xs font-black uppercase tracking-wider shadow-xl shadow-[#0E7C7B]/30 transition-all hover:scale-[1.02]"
                 >
                   <Wrench size={16} />
-                  <span>Book Free Check</span>
+                  <span>Book Check</span>
                 </button>
               </div>
             </div>

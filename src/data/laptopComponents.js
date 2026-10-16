@@ -35,7 +35,7 @@ export const COMPONENT_DATA = {
     description:
       'High-speed memory module handling active multitasking. Faulty RAM causes sudden Blue Screen of Death (BSOD), system freezes, and infinite boot loops.',
     repair:
-      'Robuzta conducts hardware loop diagnostics and slot-level trace repairs under Zero-OTP & Zero-Password data safety protocols. Same-day memory upgrades up to 64GB available.',
+      'Robuzta conducts hardware loop diagnostics and slot-level trace repairs under No Password Needed & Zero-Password data safety protocols. Same-day memory upgrades up to 64GB available.',
     badge: 'ZERO-PASSWORD DATA SAFETY',
   },
   ram2: {

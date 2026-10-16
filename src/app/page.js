@@ -19,7 +19,7 @@ export const metadata = {
   },
   openGraph: {
     title: 'Robuzta Techlabs | Precision Laptop & Mobile Repair Lab Ahmedabad',
-    description: 'Ahmedabad premier multi-device repair lab. Transparent live repairs, genuine spare parts, zero OTP privacy, and free doorstep pickup.',
+    description: 'Ahmedabad premier multi-device repair lab. Transparent live repairs, genuine spare parts, zero OTP privacy, and doorstep pickup.',
     url: 'https://robuzta.com',
     siteName: 'Robuzta Techlabs',
     images: [{ url: '/robuzta-logo-scaled.webp', width: 1200, height: 630, alt: 'Robuzta Techlabs Homepage' }],
@@ -29,7 +29,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Robuzta Techlabs | Laptop & Mobile Repair Ahmedabad',
-    description: 'Transparent live repairs, genuine parts, zero OTP privacy, free doorstep pickup in Ahmedabad.',
+    description: 'Transparent live repairs, genuine parts, zero OTP privacy, doorstep pickup in Ahmedabad.',
     images: ['/robuzta-logo-scaled.webp']
   }
 };

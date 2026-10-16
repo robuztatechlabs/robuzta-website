@@ -48,7 +48,7 @@ export function LocationDetailPageView({ location }) {
             <div className="text-center space-y-3 sm:space-y-4 max-w-3xl mx-auto">
               <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-3.5 sm:px-4 py-1 sm:py-1.5 text-[11px] sm:text-xs font-black text-[#0E7C7B] dark:text-teal-300 shadow-sm">
                 <Building2 size={13} className="text-[#0E7C7B] dark:text-teal-400 shrink-0" />
-                <span>ROBUZTA LAB BRANCH</span>
+                <span>{location.badge || 'ROBUZTA SERVICE CENTER'}</span>
               </div>
 
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
@@ -56,7 +56,7 @@ export function LocationDetailPageView({ location }) {
               </h1>
 
               <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
-                Walk into our lab or request free doorstep pickup. Live diagnostics, genuine parts, and 100% data safety.
+                {location.heroDescription || 'Walk into our service center or request doorstep pickup. Live diagnostics, genuine parts, and 100% data safety.'}
               </p>
             </div>
           </div>
@@ -77,10 +77,10 @@ export function LocationDetailPageView({ location }) {
                   </div>
                   <div>
                     <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight">
-                      Branch Info & Navigation
+                      {location.cardTitle || 'Branch Information & Directions'}
                     </h2>
                     <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">
-                      Official Robuzta Flagship Lab
+                      {location.cardSubtitle}
                     </span>
                   </div>
                 </div>
@@ -89,7 +89,14 @@ export function LocationDetailPageView({ location }) {
                 <div className="space-y-4 text-slate-700 dark:text-slate-200">
                   <div className="flex items-start gap-3 text-sm sm:text-base font-medium">
                     <MapPin size={18} className="text-[#0E7C7B] dark:text-teal-400 shrink-0 mt-0.5" />
-                    <span className="leading-relaxed">{location.address}</span>
+                    <div className="space-y-1">
+                      <span className="leading-relaxed block">{location.address}</span>
+                      {location.landmark && (
+                        <span className="inline-block text-xs font-semibold text-[#0E7C7B] dark:text-teal-400 bg-[#0E7C7B]/10 dark:bg-teal-400/10 px-2.5 py-0.5 rounded-md">
+                          Landmark: {location.landmark}
+                        </span>
+                      )}
+                    </div>
                   </div>
 
                   <div className="flex flex-wrap items-center gap-6 pt-3 text-xs font-bold text-slate-600 dark:text-slate-300 border-t border-slate-100 dark:border-slate-800">
@@ -134,10 +141,10 @@ export function LocationDetailPageView({ location }) {
                   </div>
                 </div>
 
-                {/* Areas Covered with Free Pickup */}
+                {/* Areas Covered with Pickup */}
                 <div className="pt-5 border-t border-slate-100 dark:border-slate-800 space-y-3">
                   <h3 className="text-xs font-black uppercase tracking-wider text-slate-400">
-                    Areas Covered with Free Pickup
+                    Areas Covered with Pickup
                   </h3>
                   <div className="flex flex-wrap gap-2 pt-1">
                     {location.nearbyAreas.map((area) => (

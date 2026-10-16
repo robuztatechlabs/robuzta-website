@@ -65,7 +65,7 @@ Core trust messages:
 - Old parts returned
 - Warranty on repairs
 - Digital invoice
-- Free pickup and delivery
+- pickup and delivery
 - Same-day or express repair
 - Live repair or transparent repair process
 - Data security assured
@@ -100,7 +100,7 @@ Use this design direction:
 
 Orange should be reserved for important actions such as:
 
-- Get Free Quote
+- Get Quote
 - Book Pickup
 - Book Courier Pickup
 - Submit form
@@ -174,7 +174,7 @@ Build these first:
 
 Homepage should include:
 
-- Header with logo, navigation, call, WhatsApp, and Get Free Quote
+- Header with logo, navigation, call, WhatsApp, and Get Quote
 - Hero section with clear repair offer
 - Trust badge row
 - Primary CTA buttons
@@ -194,7 +194,7 @@ Recommended hero message:
 
 Hero CTA options:
 
-- Book Free Doorstep Pickup
+- Book Doorstep Pickup
 - WhatsApp for Instant Estimate
 - Call Direct
 
@@ -330,7 +330,7 @@ Persistent header actions:
 
 - Call Now
 - WhatsApp
-- Get Free Quote
+- Get Quote
 
 Mobile navigation:
 
@@ -516,7 +516,7 @@ Every page should have a clear next action:
 
 - Call
 - WhatsApp
-- Get Free Quote
+- Get Quote
 - Book Pickup
 - Franchise Inquiry
 
@@ -537,7 +537,7 @@ CTA locations:
 
 ## Forms
 
-Get Free Quote form fields:
+Get Quote form fields:
 
 - Name
 - Phone/WhatsApp

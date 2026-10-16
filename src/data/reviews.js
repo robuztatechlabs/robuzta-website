@@ -18,7 +18,7 @@ export const reviews = [
     rating: 5,
     avatarBg: 'from-rose-500 to-red-600',
     quote:
-      'Got my iPhone 14 Pro Max display replaced within 2 hours. Zero display warning error popup and True Tone restored perfectly. Their Zero-OTP policy gave me complete peace of mind regarding my personal photos and banking apps.'
+      'Got my iPhone 14 Pro Max display replaced within 2 hours. Zero display warning error popup and True Tone restored perfectly. Their No Password Needed policy gave me complete peace of mind regarding my personal photos and banking apps.'
   },
   {
     id: 2,
@@ -42,7 +42,7 @@ export const reviews = [
     rating: 5,
     avatarBg: 'from-blue-600 to-indigo-700',
     quote:
-      'Robuzta is hands down the best Apple & laptop repair lab in Ahmedabad. My MacBook Pro M2 had a display flickering issue and dead charging port. Official service center quoted 45k for total logic board replacement. Robuzta fixed the board level IC chip in 24 hours at 1/4th the price under Zero-OTP data safety. Unbelievable service!'
+      'Robuzta is hands down the best Apple & laptop repair lab in Ahmedabad. My MacBook Pro M2 had a display flickering issue and dead charging port. Official service center quoted 45k for total logic board replacement. Robuzta fixed the board level IC chip in 24 hours at 1/4th the price under No Password Needed data safety. Unbelievable service!'
   },
   {
     id: 4,

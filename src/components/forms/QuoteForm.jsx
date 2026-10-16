@@ -6,7 +6,7 @@ import { Send, CheckCircle2, ShieldCheck, Sparkles } from 'lucide-react';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 import { submitLeadData } from '@/lib/leadDispatcher';
 
-export function QuoteForm({ title = 'Get a Free Fast Repair Quote', defaultDevice = '' }) {
+export function QuoteForm({ title = 'Get a Fast Repair Quote', defaultDevice = '' }) {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -138,7 +138,7 @@ export function QuoteForm({ title = 'Get a Free Fast Repair Quote', defaultDevic
               onChange={handleChange}
               className="w-full rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 text-xs text-slate-900 dark:text-white font-medium focus:border-[#0E7C7B] focus:outline-none"
             >
-              <option value="Doorstep Pickup">Free Doorstep Pickup (Ahmedabad)</option>
+              <option value="Doorstep Pickup">Doorstep Pickup (Ahmedabad)</option>
               <option value="Lab Visit">Lab Carry-In Visit (South Bopal / Tragad)</option>
               <option value="Courier Repair">Pan-India Insured Courier Repair</option>
             </select>
@@ -169,7 +169,7 @@ export function QuoteForm({ title = 'Get a Free Fast Repair Quote', defaultDevic
 
           <p className="text-[11px] font-semibold text-slate-400 text-center flex items-center justify-center gap-1.5 pt-1">
             <ShieldCheck size={14} className="text-[#0E7C7B] dark:text-teal-400" />
-            <span>Your data is 100% safe. Zero OTP required.</span>
+            <span>Your data is 100% safe. No Password Needed</span>
           </p>
         </form>
       )}

@@ -23,7 +23,14 @@ import {
   Droplets,
   Layers,
   Smartphone,
-  CheckCircle
+  CheckCircle,
+  Camera,
+  ScanFace,
+  RotateCcw,
+  Lock,
+  Flame,
+  Wifi,
+  Volume2
 } from 'lucide-react';
 
 import { Header } from '@/components/layout/Header';
@@ -43,6 +50,35 @@ const problemIconMap = {
   'motherboard-repair': Cpu,
   'dead-phone-repair': Droplets
 };
+
+function getProblemIcon(prob) {
+  const t = (prob.title || '').toLowerCase();
+  if (t.includes('face id') || t.includes('biometric')) return ScanFace;
+  if (t.includes('camera') || t.includes('lens')) return Camera;
+  if (t.includes('water') || t.includes('liquid') || t.includes('moisture')) return Droplets;
+  if (t.includes('screen') || t.includes('display') || t.includes('touch') || t.includes('amoled') || t.includes('lcd')) return Monitor;
+  if (t.includes('battery') || t.includes('drain')) return Battery;
+  if (t.includes('charging') || t.includes('charge') || t.includes('port')) return Zap;
+  if (t.includes('stuck') || t.includes('restart') || t.includes('boot') || t.includes('logo')) return RotateCcw;
+  if (t.includes('unavailable') || t.includes('lock') || t.includes('passcode')) return Lock;
+  if (t.includes('back glass') || t.includes('hinge') || t.includes('body') || t.includes('casing')) return Layers;
+  if (t.includes('heat') || t.includes('warm') || t.includes('hot') || t.includes('overheat')) return Flame;
+  if (t.includes('motherboard') || t.includes('dead') || t.includes('power') || t.includes('board') || t.includes('circuit')) return Cpu;
+  if (t.includes('wifi') || t.includes('wi-fi') || t.includes('network') || t.includes('signal') || t.includes('sim')) return Wifi;
+  if (t.includes('speaker') || t.includes('mic') || t.includes('sound') || t.includes('audio')) return Volume2;
+
+  // Secondary fallback to description
+  const desc = (prob.description || '').toLowerCase();
+  if (desc.includes('face id')) return ScanFace;
+  if (desc.includes('camera')) return Camera;
+  if (desc.includes('screen') || desc.includes('display')) return Monitor;
+  if (desc.includes('battery')) return Battery;
+  if (desc.includes('charging') || desc.includes('charge')) return Zap;
+  if (desc.includes('water') || desc.includes('liquid')) return Droplets;
+  if (desc.includes('heat') || desc.includes('hot')) return Flame;
+
+  return problemIconMap[prob.slug] || Smartphone;
+}
 
 export function MobileRepairSlugView({ data }) {
   const { openModal } = useBookingModal();
@@ -167,10 +203,10 @@ export function MobileRepairSlugView({ data }) {
                 {/* Key Perks Bar */}
                 <div className="flex flex-wrap items-center gap-4 text-xs font-bold text-slate-700 dark:text-slate-300 pt-2">
                   <span className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400">
-                    <CheckCircle2 size={16} /> 100% Zero OTP Required
+                    <CheckCircle2 size={16} /> 100% No Password Needed
                   </span>
                   <span className="flex items-center gap-1.5 text-[#0E7C7B]">
-                    <ShieldCheck size={16} /> 180-Day Warranty
+                    <ShieldCheck size={16} /> Limited Warranty
                   </span>
                   <span className="flex items-center gap-1.5 text-amber-600 dark:text-amber-400">
                     <Clock size={16} /> 30-Min Fast Turnaround
@@ -262,44 +298,28 @@ export function MobileRepairSlugView({ data }) {
           </motion.div>
         </section>
 
-        {/* Why Choose Us Section */}
-        <section className="py-12 sm:py-16 border-b border-slate-200 dark:border-slate-800">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-30px' }}
-              transition={SMOOTH_TRANSITION}
-              className="space-y-8"
-            >
-              <div className="text-center max-w-3xl mx-auto space-y-2">
-                <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
-                  {data.whyChooseUsTitle ? 'WHY CHOOSE US' : (isBrand ? 'WHY CHOOSE ROBUZTA' : 'COMMON SYMPTOMS & FAULTS')}
-                </span>
-                <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                  {data.whyChooseUsTitle || (isBrand ? `Specialized ${data.name} Repair Standards` : `Signs Your Device Needs ${data.name}`)}
-                </h2>
-              </div>
-
-              {data.whyChooseUs ? (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-                  {data.whyChooseUs.map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 sm:p-5 flex items-center gap-3.5 shadow-sm hover:border-[#0E7C7B]/50 transition-all group"
-                    >
-                      <div className="h-10 w-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center font-black shrink-0 text-base group-hover:scale-110 transition-transform">
-                        ⭐
-                      </div>
-                      <h3 className="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white group-hover:text-[#0E7C7B] transition-colors leading-snug">
-                        {item}
-                      </h3>
-                    </div>
-                  ))}
+        {/* Common Symptoms Section (Only for Problem/Fault Pages) */}
+        {!isBrand && data.symptoms?.length > 0 && (
+          <section className="py-12 sm:py-16 border-b border-slate-200 dark:border-slate-800">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <motion.div
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-30px' }}
+                transition={SMOOTH_TRANSITION}
+                className="space-y-8"
+              >
+                <div className="text-center max-w-3xl mx-auto space-y-2">
+                  <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
+                    COMMON SYMPTOMS & FAULTS
+                  </span>
+                  <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                    Signs Your Device Needs {data.name}
+                  </h2>
                 </div>
-              ) : (
+
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {(isBrand ? data.brandHighlights : data.symptoms)?.map((item, idx) => (
+                  {data.symptoms.map((item, idx) => (
                     <div
                       key={idx}
                       className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-3 shadow-sm hover:border-[#0E7C7B]/40 hover:shadow-lg transition-all"
@@ -313,19 +333,17 @@ export function MobileRepairSlugView({ data }) {
                     </div>
                   ))}
                 </div>
-              )}
-            </motion.div>
-          </div>
-        </section>
+              </motion.div>
+            </div>
+          </section>
+        )}
 
         {/* Common Problems Grid Section (If custom commonProblems specified on brand) */}
         {data.commonProblems?.length > 0 && (
           <section className="py-14 sm:py-20 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
               <div className="text-center max-w-3xl mx-auto space-y-2">
-                <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
-                  {data.problemsBadge || `REPAIR SERVICES FOR ${data.name.toUpperCase()}`}
-                </span>
+                
                 <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
                   {data.problemsTitle || `What's Going Wrong With Your ${data.name} Phone?`}
                 </h2>
@@ -337,37 +355,35 @@ export function MobileRepairSlugView({ data }) {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {data.commonProblems.map((prob, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ ...SMOOTH_TRANSITION, delay: idx * 0.05 }}
-                  >
-                    <Link
-                      href={`/mobile-repair/${prob.slug}/`}
-                      className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-4 hover:border-[#0E7C7B] shadow-md hover:shadow-xl transition-all block group h-full flex flex-col justify-between"
+                {data.commonProblems.map((prob, idx) => {
+                  const IconComp = getProblemIcon(prob);
+                  return (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ ...SMOOTH_TRANSITION, delay: idx * 0.05 }}
+                      className="h-full"
                     >
-                      <div className="space-y-3">
-                        <div className="h-10 w-10 rounded-2xl bg-[#0E7C7B]/10 text-[#0E7C7B] flex items-center justify-center font-black group-hover:bg-[#0E7C7B] group-hover:text-white transition-all">
-                          <Wrench size={20} />
+                      <div
+                        className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-4 shadow-sm h-full flex flex-col justify-between"
+                      >
+                        <div className="space-y-3">
+                          <div className="h-11 w-11 rounded-2xl bg-[#0E7C7B]/10 text-[#0E7C7B] dark:text-teal-400 flex items-center justify-center font-black shadow-sm">
+                            <IconComp size={22} />
+                          </div>
+                          <h3 className="text-base font-extrabold text-slate-900 dark:text-white leading-snug">
+                            {prob.title}
+                          </h3>
+                          <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
+                            {prob.description}
+                          </p>
                         </div>
-                        <h3 className="text-base font-extrabold text-slate-900 dark:text-white group-hover:text-[#0E7C7B] transition-colors leading-snug">
-                          {prob.title}
-                        </h3>
-                        <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
-                          {prob.description}
-                        </p>
                       </div>
-
-                      <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-black text-[#0E7C7B]">
-                        <span>Explore Repair Option</span>
-                        <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                      </div>
-                    </Link>
-                  </motion.div>
-                ))}
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
           </section>
@@ -376,81 +392,6 @@ export function MobileRepairSlugView({ data }) {
         {/* Cross-Linking Section */}
         {/* Brand Pages -> Link to all Problem/Specialty Pages */}
         {/* Problem/Specialty Pages -> Link to all 10 Brand Pages */}
-        <section className="py-12 sm:py-16 border-b border-slate-200 dark:border-slate-800">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
-            <div className="flex items-center justify-between">
-              <div>
-                <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
-                  {isBrand ? 'EXPLORE REPAIR SERVICES' : 'EXPLORE SUPPORTED BRANDS'}
-                </span>
-                <h3 className="text-xl sm:text-3xl font-black text-slate-900 dark:text-white">
-                  {isBrand ? `Common Repairs for ${data.name} Phones` : `Mobile Repair for All Major Brands`}
-                </h3>
-              </div>
-              <Link
-                href="/mobile-repair/"
-                className="text-xs font-black text-[#0E7C7B] hover:underline flex items-center gap-1"
-              >
-                <span>View Mobile Hub</span>
-                <ArrowRight size={14} />
-              </Link>
-            </div>
-
-            {isBrand ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-                {MOBILE_PROBLEMS.map((prob) => {
-                  const IconComp = problemIconMap[prob.slug] || Wrench;
-                  return (
-                    <Link
-                      key={prob.slug}
-                      href={`/mobile-repair/${prob.slug}/`}
-                      className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 space-y-3 hover:border-[#0E7C7B] shadow-sm hover:shadow-lg transition-all group block"
-                    >
-                      <div className="h-9 w-9 rounded-xl bg-[#0E7C7B]/10 text-[#0E7C7B] flex items-center justify-center group-hover:bg-[#0E7C7B] group-hover:text-white transition-all">
-                        <IconComp size={18} />
-                      </div>
-                      <h4 className="text-xs font-extrabold text-slate-900 dark:text-white group-hover:text-[#0E7C7B] transition-colors leading-snug">
-                        {data.name} {prob.name}
-                      </h4>
-                      <span className="text-[11px] text-[#0E7C7B] font-bold flex items-center gap-1">
-                        <span>View Fix</span> <ArrowRight size={12} />
-                      </span>
-                    </Link>
-                  );
-                })}
-              </div>
-            ) : (
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-                {MOBILE_BRANDS.map((br) => (
-                  <Link
-                    key={br.slug}
-                    href={`/mobile-repair/${br.slug}/`}
-                    className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 space-y-3 hover:border-[#0E7C7B] shadow-sm hover:shadow-lg transition-all group block flex flex-col justify-between"
-                  >
-                    <div className="space-y-1.5 text-center">
-                      <div className="h-14 w-full rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800 p-2.5 flex items-center justify-center transition-all group-hover:border-[#0E7C7B]/40">
-                        <img
-                          src={br.logoImage}
-                          alt={`${br.name} logo`}
-                          className="max-h-9 w-auto max-w-[110px] object-contain dark:brightness-110 group-hover:scale-105 transition-transform duration-300"
-                        />
-                      </div>
-                      <span className="text-xs font-black text-slate-900 dark:text-white group-hover:text-[#0E7C7B] transition-colors block">
-                        {br.name}
-                      </span>
-                      <p className="text-[10px] text-slate-500 dark:text-slate-400 font-medium line-clamp-1">
-                        {br.shortTag}
-                      </p>
-                    </div>
-                    <span className="text-[11px] text-[#0E7C7B] font-bold flex items-center justify-center gap-1 pt-1 border-t border-slate-100 dark:border-slate-800">
-                      <span>Service Page</span> <ArrowRight size={12} />
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-        </section>
 
         {/* FAQs Section */}
         {data.faqs?.length > 0 && (
@@ -507,7 +448,7 @@ export function MobileRepairSlugView({ data }) {
                   Need Fast Repair for Your {data.name}?
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed">
-                  Visit Robuzta Techlabs in South Bopal or Tragad for live workbench diagnosis, 100% data safety, and 180-day warranty.
+                  Visit Robuzta Techlabs in South Bopal or Tragad for live workbench diagnosis, 100% data safety, and Limited Warranty.
                 </p>
               </div>
 
@@ -517,7 +458,7 @@ export function MobileRepairSlugView({ data }) {
                   className="inline-flex items-center justify-center gap-2 w-full rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-7 py-4 text-xs font-black uppercase tracking-wider shadow-xl shadow-[#0E7C7B]/30 transition-all hover:scale-[1.02]"
                 >
                   <Wrench size={16} />
-                  <span>Book Free Check</span>
+                  <span>Book Check</span>
                 </button>
               </div>
             </div>

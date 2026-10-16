@@ -10,7 +10,7 @@ export const metadata = {
   openGraph: {
     title: 'Laptop Repair Services in Ahmedabad | Robuzta Techlabs',
     description:
-      'Component-level laptop repair, logic board diagnostics, OEM display & battery replacements in Ahmedabad. No fix, no fee.',
+      'Chip-level laptop repair, logic board diagnostics, OEM display & battery replacements in Ahmedabad. No fix, no fee.',
     url: 'https://robuzta.com/laptop-repair/',
     type: 'website'
   }

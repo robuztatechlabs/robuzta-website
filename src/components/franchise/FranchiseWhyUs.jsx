@@ -34,7 +34,7 @@ const whyUsPillars = [
   },
   {
     icon: ShieldCheck,
-    title: 'Zero-OTP Privacy System',
+    title: 'No Password Needed Privacy System',
     description: 'Gain immediate customer trust through external test drive boot diagnostics—no customer passcode or OTP ever required.',
     badge: 'Strict Privacy',
     color: '#2563EB'

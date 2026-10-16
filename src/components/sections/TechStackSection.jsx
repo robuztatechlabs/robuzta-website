@@ -14,7 +14,7 @@ const techCategories = {
   'Disassembly & Testing': [
     { name: 'Thermal Heating Separator', desc: 'Safe display unbonding for Microsoft Surface, iPad, and OLED phone screens.', tag: 'Screen Repair' },
     { name: 'Stereo Zoom Microscope', desc: '45x magnification inspection for cracked traces and liquid corrosion clean.', tag: 'Inspection' },
-    { name: 'External Hardware Boot Drives', desc: 'Testing hardware health under Zero-Password & Zero-OTP customer data safety.', tag: 'Data Privacy' },
+    { name: 'External Hardware Boot Drives', desc: 'Testing hardware health under Zero-Password & No Password Needed customer data safety.', tag: 'Data Privacy' },
     { name: 'Thermal Grizzly & Noctua Paste', desc: 'High-performance thermal compound repasting for gaming PCs and MacBooks.', tag: 'Cooling' }
   ],
   'Genuine Parts & Sourcing': [

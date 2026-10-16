@@ -59,7 +59,7 @@ const typingPhrases = [
   'Fix My Broken Display Screen',
   'Replace Mobile Battery',
   'Motherboard Chip Diagnostics',
-  'Free Doorstep Device Pickup'
+  'Doorstep Device Pickup'
 ];
 
 function useTypingText(phrases, typingSpeed = 70, deletingSpeed = 35, delay = 2000) {
@@ -174,11 +174,7 @@ export function HeroSection() {
 
             {/* Top Badges: ISO Badge + Watch Repairs Live Badge */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2">
-              <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-[#0E7C7B]/20 border border-[#0E7C7B]/30 px-3 py-1 sm:px-4 sm:py-1.5 text-[10px] sm:text-xs font-black uppercase tracking-wider text-[#0E7C7B] dark:text-teal-300">
-                <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#0E7C7B] dark:text-teal-400" />
-                <span>ISO 9001:2015 REPAIR LAB</span>
-              </div>
-
+              
               <button
                 type="button"
                 onClick={() => setIsLiveModalOpen(true)}
@@ -201,7 +197,7 @@ export function HeroSection() {
             </h1>
 
             <p className="text-[11px] xs:text-xs sm:text-base font-bold text-slate-500 dark:text-slate-400 tracking-wide leading-relaxed px-2 sm:px-1">
-              ISO-certified hardware lab • Zero-OTP data safety • Free doorstep pickup
+              doorstep Delivery
             </p>
 
             {/* Interactive Typing Box & Single Primary CTA Button */}
@@ -222,7 +218,7 @@ export function HeroSection() {
                 className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-emerald-600 via-teal-600 to-[#0E7C7B] hover:from-emerald-500 hover:to-teal-500 text-white px-5 py-3 sm:px-7 sm:py-4 text-xs xs:text-sm sm:text-base font-black shadow-xl shadow-emerald-600/30 hover:scale-[1.02] transition-all w-[90%] xs:w-auto sm:w-auto"
               >
                 <WhatsappIcon size={22} className="text-white shrink-0" />
-                <span>Get WhatsApp Estimate & Book</span>
+                <span>Get Whatsapp & Book</span>
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform shrink-0" />
               </a>
 
@@ -242,9 +238,7 @@ export function HeroSection() {
                     ROBUZTA HARDWARE REPAIR SERVICES
                   </span>
                 </div>
-                <span className="text-[10px] font-extrabold uppercase tracking-wider text-teal-300 bg-teal-950/90 border border-teal-800/80 px-2.5 py-0.5 rounded-full">
-                  EXPRESS LAB
-                </span>
+                
               </div>
 
               {/* 8 Core Services Grid (4 Columns per Row on Desktop) */}

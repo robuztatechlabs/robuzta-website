@@ -146,18 +146,14 @@ export function BookRepairModal() {
                     </div>
 
                     <div className="space-y-1.5">
-                      <label className="text-[11px] font-extrabold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Ahmedabad Locality</label>
+                      <label className="text-[11px] font-extrabold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Nearest Branch</label>
                       <select
                         value={locality}
                         onChange={(e) => setLocality(e.target.value)}
                         className="w-full rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 text-xs sm:text-sm font-medium focus:border-[#0E7C7B] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0E7C7B]"
                       >
-                        <option value="South Bopal & Bopal">South Bopal & Bopal</option>
-                        <option value="Satellite & Vastrapur">Satellite & Vastrapur</option>
-                        <option value="Prahlad Nagar & SG Highway">Prahlad Nagar & SG Highway</option>
-                        <option value="Shela & Ghuma">Shela & Ghuma</option>
-                        <option value="Tragad & Chandkheda">Tragad & Chandkheda</option>
-                        <option value="Other Area">Other Area</option>
+                        <option value="South Bopal & Bopal">South Bopal</option>
+                      <option value="Satellite & Vastrapur">Tragad</option>
                       </select>
                     </div>
                   </div>
@@ -178,7 +174,7 @@ export function BookRepairModal() {
                     className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 px-6 py-3.5 text-xs sm:text-sm font-black text-white shadow-xl shadow-[#0E7C7B]/25 transition-all cursor-pointer"
                   >
                     <Truck size={16} />
-                    <span>Confirm Zero-Cost Inspection & Pickup</span>
+                    <span>Submit</span>
                   </button>
                 </form>
 
@@ -188,7 +184,7 @@ export function BookRepairModal() {
                     <ShieldCheck size={13} className="text-emerald-500" /> ₹0 Inspection Fee
                   </span>
                   <span>&bull;</span>
-                  <span>180-Day Warranty</span>
+                  <span>Limited Warranty</span>
                 </div>
 
               </div>

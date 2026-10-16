@@ -12,7 +12,7 @@ import { siteConfig } from '@/data/site';
 const trustPills = [
   { icon: Calculator, label: 'Instant Estimate' },
   { icon: Clock, label: '2–4h Express Repair' },
-  { icon: ShieldCheck, label: '180-Day Warranty' },
+  { icon: ShieldCheck, label: 'Limited Warranty' },
 ];
 
 export function EstimatePageView() {
@@ -35,7 +35,7 @@ export function EstimatePageView() {
               className="inline-flex items-center gap-2 rounded-full border border-[#0E7C7B]/30 bg-[#0E7C7B]/8 dark:bg-[#0E7C7B]/15 px-4 py-1.5 text-xs font-black text-[#0E7C7B] dark:text-teal-400 uppercase tracking-widest"
             >
               <Calculator size={13} />
-              Free Instant Estimate
+              Instant Estimate
             </motion.div>
 
             <motion.h1

@@ -12,10 +12,10 @@ export const faqs = [
     id: 1,
     category: 'privacy',
     question: 'Does Robuzta Techlabs require my device screen password or OTP?',
-    shortAnswer: 'No. Robuzta operates under a strict Zero-Password & Zero-OTP privacy protocol using external diagnostic boot drives.',
+    shortAnswer: 'No. Robuzta operates under a strict Zero-Password & No Password Needed privacy protocol using external diagnostic boot drives.',
     answer:
-      'No. We adhere to a strict Zero-Password & Zero-OTP policy across all hardware repairs. For laptop screens, batteries, keyboards, and logic board repairs, we test hardware using specialized external diagnostic boot drives. Your personal files, photos, browser histories, and cloud accounts remain 100% untouched and secure.',
-    geoEntities: ['Zero-OTP Security', 'External Diagnostic Drive', 'Data Privacy Guarantee']
+      'No. We adhere to a strict Zero-Password & No Password Needed policy across all hardware repairs. For laptop screens, batteries, keyboards, and logic board repairs, we test hardware using specialized external diagnostic boot drives. Your personal files, photos, browser histories, and cloud accounts remain 100% untouched and secure.',
+    geoEntities: ['No Password Needed Security', 'External Diagnostic Drive', 'Data Privacy Guarantee']
   },
   {
     id: 2,
@@ -47,11 +47,11 @@ export const faqs = [
   {
     id: 5,
     category: 'pricing',
-    question: 'Is device inspection really 100% free at Robuzta Techlabs?',
-    shortAnswer: 'Yes, 100% free inspection with zero hidden charges. If you decide not to repair, you pay ₹0 diagnostic fee.',
+    question: 'Is device inspection really 100% at Robuzta Techlabs?',
+    shortAnswer: 'Yes, 100% inspection with zero hidden charges. If you decide not to repair, you pay ₹0 diagnostic fee.',
     answer:
-      'Yes. Robuzta provides a 100% Free Diagnostic Inspection. Our technicians open and inspect your device, perform voltage tests, and present a digital estimate. If you choose not to proceed with the repair, there is zero obligation and ₹0 fee for standard carry-in inspection.',
-    geoEntities: ['Free Inspection Fee', 'Zero Hidden Charges', 'Transparent Quote']
+      'Yes. Robuzta provides a 100% Diagnostic Inspection. Our technicians open and inspect your device, perform voltage tests, and present a digital estimate. If you choose not to proceed with the repair, there is zero obligation and ₹0 fee for standard carry-in inspection.',
+    geoEntities: ['Inspection Fee', 'Zero Hidden Charges', 'Transparent Quote']
   },
   {
     id: 6,
@@ -60,15 +60,15 @@ export const faqs = [
     shortAnswer: 'You receive a itemized digital estimate on WhatsApp or SMS containing part costs, labor fee, and estimated delivery time.',
     answer:
       'Before any screw is removed or component replaced, you receive a transparent digital estimate detailing the exact part cost, labor fee, turnaround time, and warranty period. Repair work only begins after your explicit approval.',
-    geoEntities: ['Digital Quotation', 'WhatsApp Estimate', 'No Surprise Fees']
+    geoEntities: ['Digital Quotation', 'Whatsapp', 'No Surprise Fees']
   },
   {
     id: 7,
     category: 'pickup',
-    question: 'How does Free Doorstep Pickup & Delivery work across Ahmedabad?',
+    question: 'How does Doorstep Pickup & Delivery work across Ahmedabad?',
     shortAnswer: 'Our trained courier executive collects your device in anti-static padded bags directly from your home or office.',
     answer:
-      'We offer free doorstep pickup and delivery across South Bopal, Tragad, Satellite, Vastrapur, Bopal, Shela, Prahlad Nagar, Ambli, SG Highway, and surrounding Ahmedabad areas. Our rider inspects device physical condition on pickup, generates a digital receipt, and transports it in anti-static protective bags.',
+      'We offer doorstep pickup and delivery across South Bopal, Tragad, Satellite, Vastrapur, Bopal, Shela, Prahlad Nagar, Ambli, SG Highway, and surrounding Ahmedabad areas. Our rider inspects device physical condition on pickup, generates a digital receipt, and transports it in anti-static protective bags.',
     geoEntities: ['South Bopal', 'Tragad', 'Satellite', 'Vastrapur', 'Bopal', 'Shela', 'Ahmedabad Pickup']
   },
   {

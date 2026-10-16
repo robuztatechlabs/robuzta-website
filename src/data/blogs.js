@@ -3,7 +3,7 @@ export const blogs = [
     slug: 'laptop-screen-replacement-cost-guide-ahmedabad',
     title: 'Laptop Screen Replacement Cost Guide: What to Expect in Ahmedabad (2026 Edition)',
     excerpt:
-      'Cracked display or flickering backlight? Learn about original panel pricing, display types (FHD IPS, 144Hz Gaming, 4K OLED), replacement turnaround times, and 180-day warranty options at Robuzta.',
+      'Cracked display or flickering backlight? Learn about original panel pricing, display types (FHD IPS, 144Hz Gaming, 4K OLED), replacement turnaround times, and Limited Warranty options at Robuzta.',
     category: 'Laptop Repair',
     date: '2026-07-28',
     readTime: '6 min read',
@@ -68,7 +68,7 @@ export const blogs = [
       <p>At Robuzta Techlabs in South Bopal & Tragad, we stock Grade-A original panels for Dell XPS, HP Pavilion/Spectre, Lenovo ThinkPad, ASUS ROG, Acer Predator, and Apple MacBooks.</p>
       <ul>
         <li><strong>Zero Dead Pixel Guarantee:</strong> Every panel undergo a 5-point color and backlight bleed inspection.</li>
-        <li><strong>180-Day Warranty:</strong> Includes full replacement coverage for backlight or digitizer faults.</li>
+        <li><strong>Limited Warranty:</strong> Includes full replacement coverage for backlight or digitizer faults.</li>
         <li><strong>Live Workbench Transparency:</strong> Watch our senior technicians install and calibrate your screen live in our ESD-safe lab.</li>
       </ul>
     `
@@ -88,7 +88,7 @@ export const blogs = [
     content: `
       <p>When an Apple MacBook Air or Pro stops booting up, fails to charge, or suffers liquid exposure, official service centers almost universally recommend replacing the entire logic board assembly. This repair often costs upwards of ₹45,000 to ₹70,000—frequently exceeding the current market value of the laptop itself.</p>
 
-      <h3>What is Component-Level Logic Board Repair?</h3>
+      <h3>What is Chip-level Logic Board Repair?</h3>
       <p>Instead of discarding the entire motherboard assembly, Robuzta’s specialized micro-soldering laboratory inspects the board under 45× magnification optical stereo microscopes and FLIR thermal imaging cameras. We pinpoint the specific failed component—such as a shorted 19V rail capacitor, corroded SMC charging IC, or blown MOSFET—and replace only that microchip.</p>
 
       <h3>Key Advantages of Board Repair over Board Replacement</h3>
@@ -324,7 +324,7 @@ export const blogs = [
     slug: 'no-power-laptop-charging-port-failure',
     title: 'Dead Laptop with No Power Lights? How DC Jack & Charging Port Repair Works',
     excerpt:
-      'Laptop not charging or power jack loose? Learn how component-level DC jack replacement and Type-C controller IC repairs save your laptop without motherboard replacement.',
+      'Laptop not charging or power jack loose? Learn how Chip-level DC jack replacement and Type-C controller IC repairs save your laptop without motherboard replacement.',
     category: 'Laptop Repair',
     date: '2026-07-05',
     readTime: '5 min read',
@@ -342,14 +342,14 @@ export const blogs = [
         <li><strong>Faulty USB-C PD Controller IC (e.g. TPS65988 / Cypress):</strong> Prevents negotiation of 20V power input.</li>
       </ul>
 
-      <p>At Robuzta Techlabs, we desolder broken charging connectors and solder original OEM ports onto your motherboard in 60 minutes with a 180-day warranty.</p>
+      <p>At Robuzta Techlabs, we desolder broken charging connectors and solder original OEM ports onto your motherboard in 60 minutes with a Limited Warranty.</p>
     `
   },
   {
-    slug: 'zero-otp-zero-password-privacy-guarantee',
-    title: 'Zero-OTP & Zero-Password Data Privacy: How Robuzta Protects Your Data During Repair',
+    slug: 'zero-password-privacy-guarantee',
+    title: 'Zero-Password Data Privacy: How Robuzta Protects Your Data During Repair',
     excerpt:
-      'Worried about technicians browsing private photos or needing your device password? Read how Robuzta’s strict Zero-Password & Zero-OTP policy guarantees 100% data safety.',
+      'Worried about technicians browsing private photos or needing your device password? Read how Robuzta’s strict Zero-Password & Zero-Password policy guarantees 100% data safety.',
     category: 'Data Privacy',
     date: '2026-06-28',
     readTime: '5 min read',
@@ -363,7 +363,7 @@ export const blogs = [
       <h3>Robuzta’s Industry-Leading Data Safety Standards</h3>
       <ul>
         <li><strong>Zero Password Request Policy:</strong> For hardware repairs (screens, batteries, charging ports, fans, hinges), we NEVER ask for your device unlock password or PIN code. We test hardware using external diagnostic boot drives!</li>
-        <li><strong>Zero OTP Required:</strong> We never request SMS or email OTPs under any circumstances.</li>
+        <li><strong>No Password Needed:</strong> We never request SMS or email OTPs under any circumstances.</li>
         <li><strong>Live Workbench Transparency:</strong> You can watch your device repair process in real-time at our transparent South Bopal & Tragad glass workbenches.</li>
         <li><strong>Storage Isolation:</strong> Customer SSDs and hard drives can be removed in your presence before motherboard micro-soldering begins.</li>
       </ul>

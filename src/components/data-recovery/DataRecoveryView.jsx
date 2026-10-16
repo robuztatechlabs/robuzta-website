@@ -145,7 +145,7 @@ export function DataRecoveryView() {
                     <CheckCircle2 size={16} /> No Recovery, No Fee Guarantee
                   </span>
                   <span className="flex items-center gap-1.5 text-[#0E7C7B]">
-                    <Lock size={16} /> 100% Zero-OTP & Data Privacy
+                    <Lock size={16} /> 100% No Password Needed & Data Privacy
                   </span>
                   <span className="flex items-center gap-1.5 text-amber-600 dark:text-amber-400">
                     <Clock size={16} /> Same-Day Inspection
@@ -201,7 +201,7 @@ export function DataRecoveryView() {
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-slate-400">Data Privacy:</span>
-                      <span className="font-extrabold text-slate-900 dark:text-white">100% Zero-OTP</span>
+                      <span className="font-extrabold text-slate-900 dark:text-white">100% No Password Needed</span>
                     </div>
                     <div className="flex items-center justify-between">
                       <span className="text-slate-400">Success Rate:</span>
@@ -217,7 +217,7 @@ export function DataRecoveryView() {
                     onClick={() => openModal({ serviceType: 'Data Recovery' })}
                     className="w-full rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-[#0E7C7B] hover:text-white text-slate-900 dark:text-white py-3 text-xs font-black uppercase tracking-wider transition-all"
                   >
-                    Start Free Drive Audit
+                    Start Drive Audit
                   </button>
                 </div>
               </div>
@@ -350,7 +350,7 @@ export function DataRecoveryView() {
               {[
                 {
                   step: '01',
-                  title: 'Free Drive Audit',
+                  title: 'Drive Audit',
                   desc: 'Microscopic inspection of PCB power circuits or sector-level drive health audit.'
                 },
                 {
@@ -439,7 +439,7 @@ export function DataRecoveryView() {
                   Need Urgent Data Recovery?
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed">
-                  Bring your damaged HDD, NVMe SSD, liquid laptop, or dead phone to Robuzta Techlabs for a free diagnostic audit.
+                  Bring your damaged HDD, NVMe SSD, liquid laptop, or dead phone to Robuzta Techlabs for a diagnostic audit.
                 </p>
               </div>
 
@@ -449,7 +449,7 @@ export function DataRecoveryView() {
                   className="inline-flex items-center justify-center gap-2 w-full rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-7 py-4 text-xs font-black uppercase tracking-wider shadow-xl shadow-[#0E7C7B]/30 transition-all hover:scale-[1.02]"
                 >
                   <Wrench size={16} />
-                  <span>Book Free Audit</span>
+                  <span>Book Audit</span>
                 </button>
               </div>
             </div>

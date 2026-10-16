@@ -70,7 +70,7 @@ function createScreenTexture() {
     { text: '[DIAGNOSTIC] CPU Core Thermal Margin: 34°C', color: '#4ADE80' },
     { text: '[WARNING] NVMe Controller Peak Temp: 68°C', color: '#FACC15' },
     { text: '[STATUS] BGA Micro-Soldering Station Ready', color: '#38BDF8' },
-    { text: '[DATA] Zero-OTP / Privacy Protection Active', color: '#C084FC' },
+    { text: '[DATA] No Password Needed / Privacy Protection Active', color: '#C084FC' },
     { text: '>> Select any component to inspect micro-architecture...', color: '#2DD4BF' },
   ];
 

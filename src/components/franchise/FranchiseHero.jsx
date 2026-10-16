@@ -29,7 +29,7 @@ export function FranchiseHero() {
             className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-4 py-2 text-xs font-black text-[#0E7C7B] dark:text-teal-300 shadow-sm"
           >
             <Sparkles size={14} className="text-[#EA580C]" />
-            <span>ROBUZTA ENTERPRISE NETWORK &bull; GUJARAT & PAN-INDIA EXPANSION</span>
+            <span>ROBUZTA ENTERPRISE NETWORK &bull; PAN-INDIA EXPANSION</span>
           </motion.div>
 
           {/* Main Headline */}
@@ -72,8 +72,11 @@ export function FranchiseHero() {
             </button>
 
             <a
-              href="#franchise-calculator"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-7 py-4 text-sm font-extrabold text-slate-800 dark:text-slate-200 shadow-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition-all"
+              href="/Robuzta%20Techlabs%20%E2%80%94%20Franchise%20Information%20%26%20ROI%20Brochure.pdf"
+              download="Robuzta Techlabs — Franchise Information & ROI Brochure.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-7 py-4 text-sm font-extrabold text-slate-800 dark:text-slate-200 shadow-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition-all cursor-pointer"
             >
               <Download size={18} className="text-[#EA580C]" />
               <span>Explore ROI & Financials</span>
@@ -90,7 +93,7 @@ export function FranchiseHero() {
         >
           <div className="p-4 space-y-1 border-r border-slate-100 dark:border-slate-800 last:border-0 text-center sm:text-left">
             <div className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white flex items-center justify-center sm:justify-start gap-1">
-              <span className="text-[#0E7C7B] dark:text-teal-400">₹3L - ₹6L</span>
+              <span className="text-[#0E7C7B] dark:text-teal-400">₹1L - ₹3L</span>
             </div>
             <div className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
               Est. Monthly Profit Margin
@@ -117,7 +120,7 @@ export function FranchiseHero() {
 
           <div className="p-4 space-y-1 text-center sm:text-left">
             <div className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white flex items-center justify-center sm:justify-start gap-1">
-              <span className="text-emerald-600 dark:text-emerald-400">Zero OTP</span>
+              <span className="text-emerald-600 dark:text-emerald-400">No Password Needed</span>
             </div>
             <div className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
               Privacy Standard Guarantee

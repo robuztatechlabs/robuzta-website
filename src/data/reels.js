@@ -23,7 +23,7 @@ export const instagramReels = [
   {
     id: 4,
     reelId: 'DaBK9aeT-62',
-    title: 'Zero-OTP Security Protocol',
+    title: 'No Password Needed Security Protocol',
     category: 'Data Security',
     url: 'https://www.instagram.com/reel/DaBK9aeT-62/'
   }

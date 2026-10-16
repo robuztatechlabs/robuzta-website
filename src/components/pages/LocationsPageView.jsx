@@ -1,7 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useScroll, useSpring } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -12,15 +11,11 @@ import {
   Clock,
   ShieldCheck,
   Navigation,
-  Car,
-  CheckCircle2,
   Cpu,
   Eye,
   Zap,
   Building2,
-  Compass,
   LocateFixed,
-  ExternalLink,
   ChevronRight,
   Sparkles
 } from 'lucide-react';
@@ -54,51 +49,8 @@ const officeHighlights = [
   }
 ];
 
-const routeSteps = [
-  {
-    step: '01',
-    title: 'SG Highway / Satellite',
-    subtitle: 'HEAD WEST',
-    description: 'Take the main Bopal route via SG Highway or Iskcon Cross Roads.',
-    icon: Compass
-  },
-  {
-    step: '02',
-    title: 'SP Ring Road Flyover',
-    subtitle: 'SOUTH BOPAL EXIT',
-    description: 'Cross Vakil Saheb Bridge onto Safal Parisar Main Road.',
-    icon: Navigation
-  },
-  {
-    step: '03',
-    title: 'Sun South Winds',
-    subtitle: 'MAIN LANDMARK',
-    description: 'Locate the Sun South Winds complex opposite Safal Parisar.',
-    icon: Building2
-  },
-  {
-    step: '04',
-    title: 'Office 103 (1st Floor)',
-    subtitle: 'DESTINATION',
-    description: 'Park in visitor parking and take the elevator to Office 103.',
-    icon: MapPin
-  }
-];
-
 export function LocationsPageView() {
   const { openModal } = useBookingModal();
-  const routeRef = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: routeRef,
-    offset: ['start 80%', 'end 50%']
-  });
-
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
 
   return (
     <>
@@ -112,15 +64,6 @@ export function LocationsPageView() {
           <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#0E7C7B]/10 dark:bg-teal-500/10 rounded-full blur-[130px]" />
 
           <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center space-y-5 sm:space-y-6">
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-3.5 sm:px-4 py-1 sm:py-1.5 text-[11px] sm:text-xs font-black text-[#0E7C7B] dark:text-teal-300 shadow-sm"
-            >
-              <LocateFixed size={13} className="text-amber-500 shrink-0" />
-              <span>ROBUZTA REPAIR LABS &bull; AHMEDABAD</span>
-            </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 15 }}
@@ -128,7 +71,7 @@ export function LocationsPageView() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white tracking-tight leading-tight max-w-4xl mx-auto"
             >
-              Our Repair Labs
+              Our Service Centers in Ahmedabad
             </motion.h1>
 
             <motion.p
@@ -215,7 +158,7 @@ export function LocationsPageView() {
                               {loc.title}
                             </h3>
                             <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">
-                              {isHeadquarters ? 'Main Flagship Lab • South Bopal' : 'Branch Repair Lab • Tragad'}
+                              {loc.cardSubtitle || (isHeadquarters ? 'Main Service Center • South Bopal' : 'Branch Service Center • Tragad')}
                             </span>
                           </div>
                         </div>
@@ -272,58 +215,7 @@ export function LocationsPageView() {
 
 
         {/* 5. OFFICE HIGHLIGHTS & TRUST PILLARS */}
-        <section className="py-16 sm:py-20 bg-slate-50/50 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
-            
-            <div className="text-center space-y-2 max-w-2xl mx-auto">
-              <div className="inline-flex items-center gap-1.5 rounded-full bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-3.5 py-1 text-xs font-black text-[#0E7C7B] dark:text-teal-300">
-                <Sparkles size={13} className="text-amber-500" />
-                <span>LAB QUALITY</span>
-              </div>
-
-              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
-                Built to Deliver Peace of Mind
-              </h2>
-
-              <p className="text-xs sm:text-base text-slate-600 dark:text-slate-400 font-medium">
-                Every Robuzta lab operates with component-level tools and 100% data safety protocols.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {officeHighlights.map((hl, idx) => {
-                const HlIcon = hl.icon;
-                return (
-                  <motion.div
-                    key={hl.title}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: idx * 0.08 }}
-                    whileHover={{ y: -4 }}
-                    className="group rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-5 sm:p-6 shadow-sm flex flex-col justify-between space-y-4 hover:border-[#0E7C7B]/50 transition-all duration-300"
-                  >
-                    <div className="space-y-3">
-                      <div className={`flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-tr ${hl.color} text-white shadow-md group-hover:scale-105 transition-transform`}>
-                        <HlIcon size={20} />
-                      </div>
-
-                      <div className="space-y-1">
-                        <h3 className="text-base font-extrabold text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors">
-                          {hl.title}
-                        </h3>
-                        <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
-                          {hl.description}
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-
-          </div>
-        </section>
+        
 
         {/* 6. DOORSTEP PICKUP & COURIER BANNER */}
         <section className="py-16 sm:py-20 bg-white dark:bg-slate-950">
@@ -336,7 +228,7 @@ export function LocationsPageView() {
                 <div className="space-y-1">
                   <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">Can&apos;t Visit In Person?</h3>
                   <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium max-w-xl">
-                    Request free doorstep pickup across South Bopal, Tragad, Satellite, Vastrapur & all Ahmedabad areas.
+                    Request doorstep pickup across South Bopal, Tragad, Satellite, Vastrapur & all Ahmedabad areas.
                   </p>
                 </div>
               </div>
@@ -346,7 +238,7 @@ export function LocationsPageView() {
                 onClick={() => openModal({ formType: 'Locations Doorstep Pickup' })}
                 className="w-full md:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 px-7 py-3.5 text-xs sm:text-sm font-black text-white shadow-md shadow-[#0E7C7B]/20 shrink-0 transition-all transform hover:scale-105 cursor-pointer min-h-[46px]"
               >
-                <span>Book Free Doorstep Pickup</span>
+                <span>Book Doorstep Pickup</span>
                 <ChevronRight size={16} />
               </button>
             </div>

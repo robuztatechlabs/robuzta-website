@@ -240,19 +240,19 @@ export function ServicesPageView() {
           </div>
         </section>
 
-        {/* Free Diagnostic & Booking Banner */}
+        {/* Diagnostic & Booking Banner */}
         <section className="py-16 bg-white dark:bg-slate-950">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="rounded-3xl bg-gradient-to-r from-slate-900 via-[#070e1a] to-slate-950 text-white p-8 sm:p-12 shadow-2xl border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-8 space-y-3">
                 <span className="text-xs font-black uppercase tracking-widest text-amber-400 block">
-                  FREE HARDWARE ESTIMATE & AHMEDABAD PICKUP
+                  HARDWARE ESTIMATE & AHMEDABAD PICKUP
                 </span>
                 <h3 className="text-2xl sm:text-4xl font-black text-white">
                   Need Your Device Repaired Today?
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed">
-                  Get a free instant price quote or schedule free doorstep pickup in South Bopal, Tragad, Satellite, SG Highway & surrounding areas.
+                  Get a instant price quote or schedule doorstep pickup in South Bopal, Tragad, Satellite, SG Highway & surrounding areas.
                 </p>
               </div>
 
@@ -261,7 +261,7 @@ export function ServicesPageView() {
                   href="/contact"
                   className="inline-flex items-center justify-center gap-2 w-full rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-7 py-4 text-xs font-black uppercase tracking-wider shadow-xl shadow-[#0E7C7B]/30 transition-all hover:scale-[1.02]"
                 >
-                  <span>Book Free Pickup Now</span>
+                  <span>Book Pickup Now</span>
                   <ArrowRight size={16} />
                 </Link>
 

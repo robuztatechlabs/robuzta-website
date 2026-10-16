@@ -71,7 +71,7 @@ export function CourierHighlight() {
             </MagneticButton>
 
             <span className="text-[11px] sm:text-xs font-bold text-slate-600 dark:text-slate-400 flex items-center gap-1.5">
-              <ShieldCheck size={14} className="text-emerald-600 dark:text-emerald-400 shrink-0" /> Insured Transit & Zero-OTP Safety
+              <ShieldCheck size={14} className="text-emerald-600 dark:text-emerald-400 shrink-0" /> Insured Transit & No Password Needed Safety
             </span>
           </div>
 

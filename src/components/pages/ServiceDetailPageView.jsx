@@ -187,10 +187,10 @@ export function ServiceDetailPageView({ slug }) {
                 >
                   <button
                     type="button"
-                    onClick={() => openModal({ formType: service.title + ' Free Quote', device: service.title })}
+                    onClick={() => openModal({ formType: service.title + ' Quote', device: service.title })}
                     className="inline-flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-[#0E7C7B] to-teal-500 px-7 py-4 text-base font-bold text-white shadow-xl shadow-[#0E7C7B]/30 hover:shadow-[#0E7C7B]/50 hover:scale-[1.03] transition-all cursor-pointer"
                   >
-                    <span>Get Free Quote</span>
+                    <span>Get Quote</span>
                     <ArrowRight size={18} />
                   </button>
 
@@ -201,7 +201,7 @@ export function ServiceDetailPageView({ slug }) {
                     className="inline-flex items-center gap-2.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-4 text-base font-bold shadow-lg shadow-emerald-600/20 hover:scale-[1.02] transition-all"
                   >
                     <WhatsappIcon size={18} className="text-white" />
-                    <span>WhatsApp Estimate</span>
+                    <span>Whatsapp</span>
                   </a>
                 </motion.div>
 
@@ -215,11 +215,11 @@ export function ServiceDetailPageView({ slug }) {
                 >
                   <span className="flex items-center gap-1.5">
                     <ShieldCheck size={15} className="text-[#0E7C7B]" />
-                    Zero Password / Zero OTP
+                    No Password Needed
                   </span>
                   <span className="flex items-center gap-1.5">
                     <CheckCircle2 size={15} className="text-amber-500" />
-                    180-Day Warranty
+                    Limited Warranty
                   </span>
                   <span className="flex items-center gap-1.5">
                     <Clock size={15} className="text-teal-600 dark:text-teal-400" />

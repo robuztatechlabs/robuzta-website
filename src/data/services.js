@@ -207,9 +207,9 @@ export const services = [
       'Professional data recovery in Ahmedabad for laptop HDD, NVMe SSD, dead laptops, liquid damage, and dead mobile phones with No Recovery No Fee guarantee.',
     summary:
       'HDD, SSD, dead laptop, water damage, and mobile phone data extraction.',
-    proof: '95%+ recovery rate with 100% Zero-OTP privacy guarantee.',
+    proof: '95%+ recovery rate with 100% No Password Needed privacy guarantee.',
     directAnswer:
-      'Robuzta performs component-level data extraction for damaged hard drives, solid-state drives, dead motherboards, and water-damaged smartphones.',
+      'Robuzta performs Chip-level data extraction for damaged hard drives, solid-state drives, dead motherboards, and water-damaged smartphones.',
     symptoms: [
       'Clicking hard drive sound',
       'Unrecognized NVMe SSD',

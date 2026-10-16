@@ -4,7 +4,7 @@ import { ShieldCheck } from 'lucide-react';
 
 export const metadata = {
   title: 'Privacy Policy | Robuzta Techlabs',
-  description: 'Privacy policy and Zero-OTP data safety commitment of Robuzta Techlabs Ahmedabad.',
+  description: 'Privacy policy and No Password Needed data safety commitment of Robuzta Techlabs Ahmedabad.',
 };
 
 export default function PrivacyPage() {
@@ -18,7 +18,7 @@ export default function PrivacyPage() {
           <div className="space-y-3 border-b border-slate-200 dark:border-slate-800 pb-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 text-xs font-bold text-[#0E7C7B] dark:text-teal-400">
               <ShieldCheck size={14} />
-              <span>ZERO-OTP DATA PRIVACY GUARANTEE</span>
+              <span>No Password Needed DATA PRIVACY GUARANTEE</span>
             </div>
             <h1 className="text-3xl sm:text-4xl font-black tracking-tight">Privacy Policy</h1>
             <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
@@ -28,9 +28,9 @@ export default function PrivacyPage() {
 
           <div className="prose prose-slate dark:prose-invert max-w-none space-y-6 text-sm sm:text-base leading-relaxed text-slate-600 dark:text-slate-300">
             <section className="space-y-2">
-              <h2 className="text-xl font-bold text-slate-900 dark:text-white">1. Zero-OTP Data Protection Policy</h2>
+              <h2 className="text-xl font-bold text-slate-900 dark:text-white">1. No Password Needed Data Protection Policy</h2>
               <p>
-                At Robuzta Techlabs, your personal data privacy is absolute. Technicians operate under strict ESD-safe and Zero-OTP access protocols. We never request device passwords, personal PINs, or cloud credentials for hardware repairs.
+                At Robuzta Techlabs, your personal data privacy is absolute. Technicians operate under strict ESD-safe and No Password Needed access protocols. We never request device passwords, personal PINs, or cloud credentials for hardware repairs.
               </p>
             </section>
 

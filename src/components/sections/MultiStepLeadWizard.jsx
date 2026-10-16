@@ -262,18 +262,14 @@ export function MultiStepLeadWizard() {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs font-extrabold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Ahmedabad Locality *</label>
+                    <label className="text-xs font-extrabold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Nearest Branch</label>
                     <select
                       value={locality}
                       onChange={(e) => setLocality(e.target.value)}
                       className="w-full rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 px-4 py-3.5 text-xs sm:text-sm text-slate-900 dark:text-white font-medium focus:border-[#0E7C7B] focus:outline-none"
                     >
-                      <option value="South Bopal & Bopal">South Bopal & Bopal</option>
-                      <option value="Satellite & Vastrapur">Satellite & Vastrapur</option>
-                      <option value="Prahlad Nagar & SG Highway">Prahlad Nagar & SG Highway</option>
-                      <option value="Shela & Ghuma">Shela & Ghuma</option>
-                      <option value="Tragad & Chandkheda">Tragad & Chandkheda</option>
-                      <option value="Other Locality in Ahmedabad">Other Locality in Ahmedabad</option>
+                      <option value="South Bopal & Bopal">South Bopal</option>
+                      <option value="Satellite & Vastrapur">Tragad</option>
                     </select>
                   </div>
 

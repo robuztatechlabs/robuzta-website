@@ -23,13 +23,9 @@ export function Footer() {
             </div>
 
             <p className="text-xs sm:text-sm leading-relaxed text-slate-400 max-w-md">
-              Ahmedabad’s premier multi-device repair lab. Specialized in chip-level laptop, MacBook, smartphone, Surface, and gaming PC diagnostics with transparent pricing and live workbench repairs under strict Zero-OTP privacy.
+              Ahmedabad’s premier multi-device repair lab. Specialized in chip-level laptop, MacBook, smartphone, Surface, and gaming PC diagnostics with transparent pricing and live workbench repairs under strict No Password Needed privacy.
             </p>
 
-            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-[11px] sm:text-xs text-slate-200 font-bold max-w-full">
-              <ShieldCheck size={15} className="text-[#0E7C7B] shrink-0" />
-              <span className="truncate">Zero-OTP Privacy &bull; ISO 27001 ESD Safe Lab</span>
-            </div>
 
             {/* Unique Animated Social Media Links */}
             <div className="space-y-2 pt-1 sm:pt-2">
@@ -72,7 +68,7 @@ export function Footer() {
           {/* Column 3: Quick Links */}
           <div>
             <h3 className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-white mb-3 sm:mb-4">
-              Robuzta Lab Links
+              Robuzta Site Overview
             </h3>
             <ul className="space-y-2 sm:space-y-2.5 text-xs sm:text-sm font-semibold">
               <li>
@@ -99,10 +95,10 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Contact & Lab HQ */}
+          {/* Column 4: Contact & Lab Locations */}
           <div>
             <h3 className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-white mb-3 sm:mb-4">
-              Contact & HQ Lab
+              Contact
             </h3>
             <ul className="space-y-2.5 sm:space-y-3 text-xs sm:text-sm font-medium">
               <li className="flex items-start gap-2.5">
@@ -121,12 +117,27 @@ export function Footer() {
                 <Clock size={15} className="text-[#0E7C7B] mt-0.5 flex-shrink-0" />
                 <span>11:00 AM – 7:00 PM (Mon – Sat)</span>
               </li>
-              <li className="flex items-start gap-2.5">
-                <MapPin size={15} className="text-orange-500 mt-0.5 flex-shrink-0" />
-                <span className="text-[11px] sm:text-xs leading-normal">
-                  {locations[0]?.address || 'South Bopal & Satellite, Ahmedabad, Gujarat'}
-                </span>
-              </li>
+
+              {/* Both Lab Addresses */}
+              {locations.map((loc, idx) => (
+                <li key={loc.slug} className="flex items-start gap-2.5 pt-1.5">
+                  <MapPin
+                    size={15}
+                    className={`mt-0.5 flex-shrink-0 ${idx === 0 ? 'text-[#EA580C]' : 'text-[#0E7C7B]'}`}
+                  />
+                  <div className="space-y-0.5">
+                    <Link
+                      href={`/locations/${loc.slug}/`}
+                      className="font-bold text-white hover:text-[#0E7C7B] transition-colors block text-xs"
+                    >
+                      {loc.title}
+                    </Link>
+                    <p className="text-[11px] sm:text-xs text-slate-400 leading-relaxed">
+                      {loc.address}
+                    </p>
+                  </div>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

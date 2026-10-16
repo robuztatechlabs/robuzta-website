@@ -1,51 +1,27 @@
 'use client';
 
-import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { DollarSign, TrendingUp, ShieldCheck, Clock, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
-import { siteConfig } from '@/data/site';
+import { CheckCircle2 } from 'lucide-react';
 
-const models = [
-  {
-    id: 'standard',
-    name: 'Standard Hardware Lab',
-    footprint: '300 - 500 Sq Ft',
-    investment: '₹8.5 Lakhs',
-    estRevenue: '₹4.5 Lakhs / mo',
-    profitMargin: '45%',
-    estProfit: '₹2.0 Lakhs / mo',
-    payback: '10 - 12 Months',
-    includes: [
-      'Diagnostic Microscope & ESD Bench',
-      'Laptop & Smartphone Parts Starter Stock',
-      'Robuzta CRM & WhatsApp Bot License',
-      'Local Google Maps Marketing Campaign',
-      'Technician Hiring Assistance & 30-Day Training'
-    ]
-  },
-  {
-    id: 'flagship',
-    name: 'Flagship Enterprise Lab & Hub',
-    footprint: '700 - 1200 Sq Ft',
-    investment: '₹14.5 Lakhs',
-    estRevenue: '₹9.5 Lakhs / mo',
-    profitMargin: '55%',
-    estProfit: '₹5.2 Lakhs / mo',
-    payback: '8 - 11 Months',
-    includes: [
-      'Full BGA Micro-Soldering Rework Station',
-      'OLED Screen Refurbishment Laminator',
-      'Expanded Inventory Stock & Spares Supply',
-      'Multi-Zone Doorstep Pickup Executive Fleet',
-      'Corporate AMC Sales Support Package',
-      'Dedicated Regional Master Engineer Escalation'
-    ]
-  }
-];
+const standardModel = {
+  id: 'standard',
+  name: 'Standard Hardware Lab',
+  footprint: '300 - 500 Sq Ft',
+  investment: '₹8-16 Lakhs',
+  estRevenue: '₹6-7 Lakhs / mo',
+  profitMargin: '45%',
+  estProfit: '₹1-3 Lakhs / mo',
+  payback: '10 - 12 Months',
+  includes: [
+    'Diagnostic Microscope & ESD Bench',
+    'Laptop & Smartphone Parts Starter Stock',
+    'Robuzta CRM & WhatsApp Bot License',
+    'Local Google Maps Marketing Campaign',
+    'Technician Hiring Assistance & 30-Day Training'
+  ]
+};
 
 export function FranchiseInvestmentCalculator() {
-  const [selectedModel, setSelectedModel] = useState(models[0]);
-
   return (
     <section id="franchise-calculator" className="relative bg-slate-50/50 dark:bg-slate-900/60 py-24 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300 overflow-hidden">
       
@@ -82,31 +58,29 @@ export function FranchiseInvestmentCalculator() {
             transition={{ delay: 0.2 }}
             className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed font-medium"
           >
-            Compare our store models below to inspect estimated monthly revenue, gross margins, and break-even timelines.
+            Inspect estimated monthly revenue, gross margins, and break-even timelines for our standard hardware lab model.
           </motion.p>
-        </div>
-
-        {/* Model Selector Tabs */}
-        <div className="flex items-center justify-center gap-3">
-          {models.map((m) => (
-            <button
-              key={m.id}
-              type="button"
-              onClick={() => setSelectedModel(m)}
-              className={`px-6 py-3.5 rounded-2xl text-xs sm:text-sm font-black transition-all cursor-pointer border ${
-                selectedModel.id === m.id
-                  ? 'bg-[#0E7C7B] text-white border-[#0E7C7B] shadow-xl shadow-[#0E7C7B]/25 scale-[1.02]'
-                  : 'bg-white dark:bg-slate-950 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900'
-              }`}
-            >
-              {m.name}
-            </button>
-          ))}
         </div>
 
         {/* Dynamic Financial Overview Box */}
         <div className="rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 p-8 sm:p-12 shadow-2xl space-y-8">
           
+          {/* Model Title & Footprint Badge */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-6 border-b border-slate-200 dark:border-slate-800">
+            <div>
+              <span className="text-xs font-bold text-[#0E7C7B] dark:text-teal-400 uppercase tracking-wider block">
+                Store Model
+              </span>
+              <h3 className="text-2xl font-black text-slate-900 dark:text-white">
+                {standardModel.name}
+              </h3>
+            </div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-black text-slate-700 dark:text-slate-300 w-fit">
+              <span>Required Area:</span>
+              <span className="text-[#0E7C7B] dark:text-teal-400">{standardModel.footprint}</span>
+            </div>
+          </div>
+
           {/* Top Metrics Cards */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-1">
@@ -114,9 +88,9 @@ export function FranchiseInvestmentCalculator() {
                 Initial Investment
               </span>
               <div className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                {selectedModel.investment}
+                {standardModel.investment}
               </div>
-              <div className="text-[11px] text-slate-500 dark:text-slate-400 font-bold">{selectedModel.footprint}</div>
+              <div className="text-[11px] text-slate-500 dark:text-slate-400 font-bold">{standardModel.footprint}</div>
             </div>
 
             <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-1">
@@ -124,7 +98,7 @@ export function FranchiseInvestmentCalculator() {
                 Est. Monthly Revenue
               </span>
               <div className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                {selectedModel.estRevenue}
+                {standardModel.estRevenue}
               </div>
               <div className="text-[11px] text-slate-500 dark:text-slate-400 font-bold">Based on 25+ daily repairs</div>
             </div>
@@ -134,9 +108,9 @@ export function FranchiseInvestmentCalculator() {
                 Est. Net Monthly Profit
               </span>
               <div className="text-2xl sm:text-4xl font-black text-[#EA580C]">
-                {selectedModel.estProfit}
+                {standardModel.estProfit}
               </div>
-              <div className="text-[11px] text-slate-500 dark:text-slate-400 font-bold">{selectedModel.profitMargin} Net Margin</div>
+              <div className="text-[11px] text-slate-500 dark:text-slate-400 font-bold">{standardModel.profitMargin} Net Margin</div>
             </div>
 
             <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-1">
@@ -144,7 +118,7 @@ export function FranchiseInvestmentCalculator() {
                 Target Payback Period
               </span>
               <div className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                {selectedModel.payback}
+                {standardModel.payback}
               </div>
               <div className="text-[11px] text-slate-500 dark:text-slate-400 font-bold">100% Capital Recovery</div>
             </div>
@@ -153,10 +127,10 @@ export function FranchiseInvestmentCalculator() {
           {/* Deliverables Checklist */}
           <div className="space-y-4 pt-4 border-t border-slate-200 dark:border-slate-800">
             <h4 className="text-lg font-black text-slate-900 dark:text-white">
-              Deliverables Included in {selectedModel.name}:
+              Deliverables Included in {standardModel.name}:
             </h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {selectedModel.includes.map((item) => (
+              {standardModel.includes.map((item) => (
                 <div key={item} className="flex items-center gap-2.5 p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-extrabold text-slate-800 dark:text-slate-200">
                   <CheckCircle2 size={16} className="text-[#0E7C7B] dark:text-teal-400 shrink-0" />
                   <span>{item}</span>

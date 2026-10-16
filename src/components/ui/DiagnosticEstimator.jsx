@@ -144,7 +144,7 @@ export function DiagnosticEstimator() {
             <div className="space-y-1.5 text-xs text-slate-300 font-semibold pt-1">
               <div className="flex items-center gap-2 text-emerald-400">
                 <CheckCircle2 size={14} className="shrink-0" />
-                <span>Free Doorstep Pickup & Drop</span>
+                <span>Doorstep Pickup & Drop</span>
               </div>
               <div className="flex items-center gap-2 text-emerald-400">
                 <CheckCircle2 size={14} className="shrink-0" />

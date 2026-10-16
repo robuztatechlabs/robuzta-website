@@ -7,7 +7,7 @@ import { Plus, Minus, HelpCircle } from 'lucide-react';
 const faqs = [
   {
     question: 'What is the total investment required for a Robuzta Techlabs store?',
-    answer: 'Total investment ranges between ₹8.5 Lakhs for a Standard Hardware Lab (300-500 sq ft) to ₹14.5 Lakhs for a Flagship Enterprise Hub (700-1200 sq ft). This includes store interior SOP setup, ESD diagnostic microscopes, initial spare parts inventory, CRM license, and local launch marketing.'
+    answer: 'Total investment ranges between ₹8-16 Lakhs for a Standard Hardware Lab (300-500 sq ft). This includes store interior SOP setup, ESD diagnostic microscopes, initial spare parts inventory, CRM license, and local launch marketing.'
   },
   {
     question: 'Do I need prior hardware repair or engineering experience?',

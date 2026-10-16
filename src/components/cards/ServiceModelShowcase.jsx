@@ -18,7 +18,7 @@ export function ServiceModelShowcase({
   calloutText,
   badge,
   price,
-  ctaLabel = 'Get a free quote',
+  ctaLabel = 'Get a quote',
   ctaHref = '/contact',
   scale = 1,
   index = 0,

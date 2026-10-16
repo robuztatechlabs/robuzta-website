@@ -14,16 +14,6 @@ export const MOBILE_BRANDS = [
     metaDescription: 'Expert iPhone repair in Ahmedabad. Certified screen replacement, battery swap, water damage & logic board repair for iPhone 11 to 16 Pro Max.',
     logoImage: '/assets/brands/apple-13.svg',
     shortTag: 'iPhone 11, 12, 13, 14, 15 & 16 Series, including Pro and Pro Max models.',
-    whyChooseUsTitle: 'Why Choose Us?',
-    whyChooseUs: [
-      'iPhone Repair Specialists',
-      'Advanced Board-Level Diagnostics',
-      'Quality Replacement Parts',
-      'Privacy-Focused Repairs',
-      'Fast Turnaround on Common Repairs',
-      'Transparent Repair Estimates',
-      'Warranty on Eligible Repairs'
-    ],
     problemsBadge: 'REPAIR SERVICES FOR IPHONE',
     problemsTitle: "What's Wrong With Your iPhone?",
     problemsDescription: 'From a broken display and weak battery to Face ID problems and charging failures, we diagnose the actual cause of your iPhone problem before recommending a repair.',
@@ -45,7 +35,7 @@ export const MOBILE_BRANDS = [
       },
       {
         title: '4. iPhone Face ID Not Working?',
-        description: 'Face ID failure can occur after screen damage, drops, moisture exposure, or component-level faults. We diagnose the affected hardware before repair.',
+        description: 'Face ID failure can occur after screen damage, drops, moisture exposure, or Chip-level faults. We diagnose the affected hardware before repair.',
         slug: 'motherboard-repair'
       },
       {
@@ -75,7 +65,7 @@ export const MOBILE_BRANDS = [
       },
       {
         title: '10. iPhone Motherboard Repair?',
-        description: 'No power, short circuit, charging failure, network issues, or other board-level faults can require component-level diagnosis and repair.',
+        description: 'No power, short circuit, charging failure, network issues, or other board-level faults can require Chip-level diagnosis and repair.',
         slug: 'motherboard-repair'
       }
     ],
@@ -115,7 +105,7 @@ export const MOBILE_BRANDS = [
       },
       {
         question: '6. Do you repair iPhone motherboard problems?',
-        answer: 'Yes, we provide component-level motherboard diagnostics and repair for supported iPhone models.'
+        answer: 'Yes, we provide Chip-level motherboard diagnostics and repair for supported iPhone models.'
       },
       {
         question: '7. Can you recover data from a dead iPhone?',
@@ -133,16 +123,6 @@ export const MOBILE_BRANDS = [
     metaDescription: 'Specialized Samsung Galaxy repair in Ahmedabad. Original Dynamic AMOLED screen replacement, battery swap, charging port & motherboard repair.',
     logoImage: '/assets/brands/samsung-electronics.svg',
     shortTag: 'Galaxy S Series, Ultra, A Series, Z Fold, Z Flip and other supported Samsung models.',
-    whyChooseUsTitle: 'Why Choose Us?',
-    whyChooseUs: [
-      'Samsung Smartphone Repair Specialists',
-      'Advanced Motherboard Diagnostics',
-      'Quality Replacement Parts',
-      'Privacy-Focused Repairs',
-      'Fast Turnaround on Common Repairs',
-      'Transparent Repair Estimates',
-      'Warranty on Eligible Repairs'
-    ],
     problemsBadge: 'REPAIR SERVICES FOR SAMSUNG',
     problemsTitle: "What's Going Wrong With Your Samsung Phone?",
     problemsDescription: 'From a broken AMOLED display and fast battery drain to charging failures and unexpected restarts, we diagnose the actual cause of your Samsung phone problem before recommending the right repair.',
@@ -224,7 +204,7 @@ export const MOBILE_BRANDS = [
       },
       {
         question: '5. Can you repair Samsung motherboard problems?',
-        answer: 'Yes, we provide advanced component-level diagnostics and motherboard repair for supported Samsung devices.'
+        answer: 'Yes, we provide advanced Chip-level diagnostics and motherboard repair for supported Samsung devices.'
       },
       {
         question: '6. Do you repair Samsung Z Fold and Z Flip phones?',
@@ -246,17 +226,6 @@ export const MOBILE_BRANDS = [
     metaDescription: 'Expert Google Pixel repair in Ahmedabad. Screen replacement, battery repair, Tensor chip logic board diagnostics & charging port fix.',
     logoImage: '/assets/brands/icons8-google.svg',
     shortTag: 'Pixel 6, 7, 8, 9 Series, Pro models and Pixel Fold.',
-    whyChooseUsTitle: 'Why Choose Us?',
-    whyChooseUs: [
-      'Google Pixel Repair Specialists',
-      'Advanced Board-Level Diagnostics',
-      'Quality Replacement Parts',
-      'Privacy-Focused Repairs',
-      'Proper Problem Diagnosis',
-      'Fast Turnaround on Common Repairs',
-      'Transparent Repair Estimates',
-      'Warranty on Eligible Repairs'
-    ],
     problemsBadge: 'REPAIR SERVICES FOR GOOGLE PIXEL',
     problemsTitle: "Pixel Giving You Trouble? Let's Find Out What's Wrong.",
     problemsDescription: 'Google Pixel devices can develop problems related to the camera, fingerprint sensor, USB-C port, display, software updates, network, and internal hardware. We diagnose the actual cause before recommending the right repair solution.',
@@ -367,17 +336,6 @@ export const MOBILE_BRANDS = [
     metaDescription: 'Professional OnePlus phone repair in Ahmedabad. Green line screen fix, SuperVOOC charging port, battery swap & motherboard BGA repair.',
     logoImage: '/assets/brands/oneplus-5.svg',
     shortTag: 'OnePlus 9, 10, 11, 12, 13, Nord, Open, and other supported models.',
-    whyChooseUsTitle: 'Why Choose Us?',
-    whyChooseUs: [
-      'OnePlus Repair Specialists',
-      'Advanced Motherboard Diagnostics',
-      'Display & Green Line Issue Expertise',
-      'Quality Replacement Parts',
-      'Privacy-Focused Repairs',
-      'Transparent Repair Estimates',
-      'Fast Turnaround on Common Repairs',
-      'Warranty on Eligible Repairs'
-    ],
     problemsBadge: 'REPAIR SERVICES FOR ONEPLUS',
     problemsTitle: 'Is Your OnePlus Phone Not Working the Way It Should?',
     problemsDescription: 'From the well-known green line display problem to charging failures, camera issues, fingerprint problems, and sudden shutdowns, we diagnose the actual cause of your OnePlus problem before recommending the right repair.',
@@ -482,17 +440,6 @@ export const MOBILE_BRANDS = [
     metaDescription: 'Expert OPPO mobile repair in Ahmedabad. Display screen replacement, battery swap, camera glass & charging port repair.',
     logoImage: '/assets/brands/oppo-seeklogo.svg',
     shortTag: 'Reno Series, Find Series, F Series and A Series smartphones.',
-    whyChooseUsTitle: 'Why Choose Us?',
-    whyChooseUs: [
-      'OPPO Smartphone Repair Specialists',
-      'Advanced Board-Level Diagnostics',
-      'Quality Replacement Parts',
-      'Privacy-Focused Repairs',
-      'Proper Problem Diagnosis',
-      'Fast Turnaround on Common Repairs',
-      'Transparent Repair Estimates',
-      'Warranty on Eligible Repairs'
-    ],
     problemsBadge: 'REPAIR SERVICES FOR OPPO',
     problemsTitle: 'Is Your OPPO Phone Not Working the Way It Should?',
     problemsDescription: 'From display problems and charging failures to camera issues, battery drain, and unexpected shutdowns, we diagnose the actual cause of your OPPO phone problem before recommending the right repair.',
@@ -539,7 +486,7 @@ export const MOBILE_BRANDS = [
       },
       {
         title: '9. OPPO Motherboard Repair?',
-        description: 'No power, charging failure, short circuit, network problems, or component-level faults may require advanced motherboard diagnostics and micro-soldering repair.',
+        description: 'No power, charging failure, short circuit, network problems, or Chip-level faults may require advanced motherboard diagnostics and micro-soldering repair.',
         slug: 'motherboard-repair'
       },
       {
@@ -601,17 +548,6 @@ export const MOBILE_BRANDS = [
     metaDescription: 'Certified Vivo mobile repair in Ahmedabad. Curved AMOLED display, FlashCharge battery, ZEISS camera lens & logic board fix.',
     logoImage: '/assets/brands/vivo-2.svg',
     shortTag: 'X Series, V Series, Y Series and other supported Vivo models.',
-    whyChooseUsTitle: 'Why Choose Us?',
-    whyChooseUs: [
-      'Vivo Smartphone Repair Specialists',
-      'Advanced Motherboard Diagnostics',
-      'Display & Camera Repair Expertise',
-      'Quality Replacement Parts',
-      'Privacy-Focused Repairs',
-      'Transparent Repair Estimates',
-      'Fast Turnaround on Common Repairs',
-      'Warranty on Eligible Repairs'
-    ],
     problemsBadge: 'REPAIR SERVICES FOR VIVO',
     problemsTitle: 'Is Your Vivo Phone Acting Up?',
     problemsDescription: "From a camera that won't focus to fingerprint problems, charging failures, sudden shutdowns, and display issues, we diagnose the actual problem with your Vivo phone before recommending the right repair.",
@@ -715,17 +651,6 @@ export const MOBILE_BRANDS = [
     metaDescription: 'Fast Realme phone repair in Ahmedabad. Screen glass replacement, battery swap, speaker fix & motherboard short repair.',
     logoImage: '/assets/brands/realme-seeklogo.svg',
     shortTag: 'GT Series, Number Series, Narzo Series and other supported Realme phones.',
-    whyChooseUsTitle: 'Why Choose Us?',
-    whyChooseUs: [
-      'Realme Smartphone Repair Specialists',
-      'Advanced Board-Level Diagnostics',
-      'SuperVOOC Charging Repair Expertise',
-      'Quality Replacement Parts',
-      'Privacy-Focused Repairs',
-      'Transparent Repair Estimates',
-      'Fast Turnaround on Common Repairs',
-      'Warranty on Eligible Repairs'
-    ],
     problemsBadge: 'REPAIR SERVICES FOR REALME',
     problemsTitle: 'Is Your Realme Phone Not Performing Like It Used To?',
     problemsDescription: 'From charging and gaming problems to camera, display, fingerprint, and startup issues, we diagnose the actual fault in your Realme phone before recommending the right repair.',
@@ -830,17 +755,6 @@ export const MOBILE_BRANDS = [
     metaDescription: 'Specialized Motorola repair in Ahmedabad for Moto Edge, Razr & Moto G series. pOLED screen, battery & charging port repair.',
     logoImage: '/assets/brands/motorola-seeklogo.svg',
     shortTag: 'Motorola Edge, Razr, Moto G, Moto E, and other supported models.',
-    whyChooseUsTitle: 'Why Choose Us?',
-    whyChooseUs: [
-      'Motorola Smartphone Repair Specialists',
-      'Advanced Board-Level Diagnostics',
-      'Foldable Phone Repair Expertise',
-      'Quality Replacement Parts',
-      'Privacy-Focused Repairs',
-      'Transparent Repair Estimates',
-      'Fast Turnaround on Common Repairs',
-      'Warranty on Eligible Repairs'
-    ],
     problemsBadge: 'REPAIR SERVICES FOR MOTOROLA',
     problemsTitle: 'Is Your Motorola Phone Giving You a Hard Time?',
     problemsDescription: 'From a damaged display and charging problems to camera failures, software glitches, network issues, and foldable hinge problems, we diagnose the actual cause before recommending the right repair.',
@@ -944,17 +858,6 @@ export const MOBILE_BRANDS = [
     metaDescription: 'Expert Nothing Phone repair in Ahmedabad. Glyph lighting repair, transparent back glass swap, OLED screen & battery replacement.',
     logoImage: '/assets/brands/nothing.svg',
     shortTag: 'Nothing Phone (1), Phone (2), Phone (2a) and other supported models.',
-    whyChooseUsTitle: 'Why Choose Us?',
-    whyChooseUs: [
-      'Nothing Phone Repair Specialists',
-      'Glyph Interface Diagnostics',
-      'Advanced Board-Level Repair',
-      'Quality Replacement Parts',
-      'Privacy-Focused Repairs',
-      'Proper Fault Diagnosis',
-      'Fast Turnaround on Common Repairs',
-      'Warranty on Eligible Repairs'
-    ],
     problemsBadge: 'REPAIR SERVICES FOR NOTHING',
     problemsTitle: 'Is Your Nothing Phone Acting Strange?',
     problemsDescription: 'From Glyph lights that stop working to display problems, charging faults, camera issues, and unexpected shutdowns, we diagnose the actual fault in your Nothing Phone before recommending the right repair.',
@@ -1057,17 +960,6 @@ export const MOBILE_BRANDS = [
     metaDescription: 'Specialized iQOO gaming phone repair in Ahmedabad. 144Hz AMOLED screen, Snapdragon GPU BGA repair, FlashCharge & battery swap.',
     logoImage: '/assets/brands/iqoo-seeklogo.svg',
     shortTag: 'iQOO Number Series, Neo Series, Z Series and other supported models.',
-    whyChooseUsTitle: 'Why Choose Us?',
-    whyChooseUs: [
-      'iQOO Gaming Phone Repair Specialists',
-      'Advanced Motherboard Diagnostics',
-      'Fast-Charging & Power Circuit Expertise',
-      'Gaming Performance Troubleshooting',
-      'Quality Replacement Parts',
-      'Privacy-Focused Repairs',
-      'Transparent Repair Estimates',
-      'Warranty on Eligible Repairs'
-    ],
     problemsBadge: 'REPAIR SERVICES FOR iQOO',
     problemsTitle: 'Is Your iQOO Struggling Under Pressure?',
     problemsDescription: 'Built for performance, iQOO phones can develop problems that become especially noticeable during gaming, fast charging, camera use, or heavy workloads. We diagnose the actual hardware or software fault before recommending a repair.',
@@ -1173,7 +1065,7 @@ export const MOBILE_PROBLEMS = [
     h1: 'Mobile Screen Replacement Services in Ahmedabad',
     tagline: 'Cracked glass, black display, touch not working, dead pixels, or lines on the screen? We provide screen replacement for supported smartphone models.',
     metaTitle: 'Mobile Screen Replacement in Ahmedabad | Original AMOLED | Robuzta',
-    metaDescription: 'Fast smartphone screen replacement in Ahmedabad. Original AMOLED, OLED & IPS display panels with 180-day warranty & free glass protection.',
+    metaDescription: 'Fast smartphone screen replacement in Ahmedabad. Original AMOLED, OLED & IPS display panels with Limited Warranty & glass protection.',
     symptoms: [
       'Outer front glass cracked or shattered after drop',
       'Display has black ink bleeding spots or vertical colored lines',
@@ -1266,7 +1158,7 @@ export const MOBILE_PROBLEMS = [
     name: 'Motherboard Repair',
     problemTitle: 'Mobile Motherboard & Micro-Soldering BGA Repair',
     h1: 'Mobile Motherboard & Chip-Level Repair in Ahmedabad',
-    tagline: 'Phone completely dead, stuck on the logo, damaged by water, or affected by a short circuit? Our technicians perform advanced motherboard diagnostics and component-level repairs.',
+    tagline: 'Phone completely dead, stuck on the logo, damaged by water, or affected by a short circuit? Our technicians perform advanced motherboard diagnostics and Chip-level repairs.',
     metaTitle: 'Mobile Motherboard Repair in Ahmedabad | Chip-Level BGA | Robuzta',
     metaDescription: 'Expert mobile motherboard repair in Ahmedabad. BGA chip micro-soldering, power IC, water damage & short circuit fix with data preservation.',
     symptoms: [
@@ -1286,7 +1178,7 @@ export const MOBILE_PROBLEMS = [
     faqs: [
       {
         question: 'Can my photos and data be saved if the motherboard is dead?',
-        answer: 'Yes! Component-level micro-soldering repairs the damaged power chip on the motherboard, preserving your internal NAND storage data intact.'
+        answer: 'Yes! Chip-level micro-soldering repairs the damaged power chip on the motherboard, preserving your internal NAND storage data intact.'
       }
     ]
   },

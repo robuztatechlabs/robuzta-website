@@ -11,7 +11,7 @@ export const LAPTOP_BRANDS = [
     h1: 'Dell Laptop Repair in Ahmedabad',
     tagline: 'We fix charging issues, broken screens, motherboard Issue, battery problems, overheating, and more.',
     metaTitle: 'Dell Laptop Repair in Ahmedabad | Robuzta Techlabs',
-    metaDescription: 'Expert Dell laptop repair in Ahmedabad. Certified component-level diagnostics for XPS, Inspiron, Vostro & Alienware. Genuine parts & warranty.',
+    metaDescription: 'Expert Dell laptop repair in Ahmedabad. Certified Chip-level diagnostics for XPS, Inspiron, Vostro & Alienware. Genuine parts & warranty.',
     logoImage: '/assets/brands/dell-2.svg',
     shortTag: 'XPS, Inspiron, Vostro & Alienware',
     supportedModels: ['Dell XPS 13 / 15 / 17', 'Dell Inspiron 3000 / 5000 / 7000', 'Dell Vostro Series', 'Dell Latitude Corporate'],
@@ -81,7 +81,7 @@ export const LAPTOP_BRANDS = [
       }
     ],
     brandHighlights: [
-      'Component-level power IC and BGA rework on Dell motherboards',
+      'Chip-level power IC and BGA rework on Dell motherboards',
       'Original Dell OEM battery and display assembly replacements',
       'Thermal Grizzly repasting for Alienware & G-series gaming laptops',
       'Zero-Password data privacy during diagnostic procedures'
@@ -145,7 +145,7 @@ export const LAPTOP_BRANDS = [
       },
       {
         title: 'HP Liquid Damage Repair',
-        description: 'Component-level repair after liquid exposure.',
+        description: 'Chip-level repair after liquid exposure.',
         slug: 'liquid-damage-repair',
         estimatedTime: '24 – 48 Hours'
       }
@@ -180,11 +180,11 @@ export const LAPTOP_BRANDS = [
     supportedModels: ['Lenovo ThinkPad X1 Carbon / T Series / L Series', 'Lenovo IdeaPad Slim 3 / 5 / Gaming', 'Lenovo Legion 5 / 7 / Pro', 'Lenovo Yoga 6 / 7 / 9i / Duet', 'Lenovo LOQ Series'],
     whyChooseUs: [
       { title: 'Certified Brand Technicians', desc: 'Specialized diagnosis for ThinkPad & Legion' },
-      { title: 'Component-Level Repair', desc: 'BGA rework for Lenovo mainboards' },
+      { title: 'Chip-level Repair', desc: 'BGA rework for Lenovo mainboards' },
       { title: 'Genuine Parts Only', desc: 'OEM screens, batteries, and keyboards' },
       { title: 'Same-Day Express Repairs', desc: 'Quick turnaround for screens & batteries' },
       { title: 'Transparent Cost Estimates', desc: 'Upfront pricing with zero hidden fees' },
-      { title: 'Warranty Protection', desc: 'Up to 180-day warranty on replacements' },
+      { title: 'Warranty Protection', desc: 'Up to Limited Warranty on replacements' },
       { title: 'Zero Password Privacy', desc: 'Diagnostic testing without user credentials' }
     ],
     problemsTitle: 'Is Your Lenovo Laptop Facing Hardware or Software Issues?',
@@ -278,7 +278,7 @@ export const LAPTOP_BRANDS = [
       { title: 'Micro-Soldering Lab', desc: 'In-house chip-level motherboard repair' },
       { title: 'Quality OEM Parts', desc: 'High-refresh-rate displays, original batteries & fans' },
       { title: 'Fast Same-Day Turnaround', desc: 'Express repair for screens, batteries, and jacks' },
-      { title: 'Transparent Quotes', desc: 'Free diagnostic estimate before repair approval' },
+      { title: 'Transparent Quotes', desc: 'diagnostic estimate before repair approval' },
       { title: 'Warranty Coverage', desc: 'Official warranty on all replaced hardware parts' },
       { title: 'Data Privacy Assurance', desc: 'Zero-Password policy ensures complete data safety' }
     ],
@@ -335,7 +335,7 @@ export const LAPTOP_BRANDS = [
       },
       {
         title: 'Acer SSD Storage & RAM Upgrade?',
-        description: 'Installing M.2 NVMe SSDs and high-speed RAM modules for lag-free performance.',
+        description: 'Installing M.2 NVMe SSDs and high-speed RAM modules for lag-performance.',
         slug: 'ram-ssd-upgrade',
         estimatedTime: '1 – 2 Hours'
       }
@@ -375,7 +375,7 @@ export const LAPTOP_BRANDS = [
       { title: 'Fast Turnaround Time', desc: 'Same-day express repair available' },
       { title: 'Transparent Pricing', desc: 'Upfront estimate with no hidden charges' },
       { title: 'Warranty on Eligible Repairs', desc: 'Official warranty on replaced components' },
-      { title: 'Data Privacy Protection', desc: 'Zero password / Zero OTP data security' }
+      { title: 'Data Privacy Protection', desc: 'No Password Needed data security' }
     ],
     problemsTitle: 'Is Your ASUS Laptop Giving You Trouble?',
     problemsSubtitle: "Whether you're facing FPS drops, overheating, charging issues, display problems, or hardware failures, our technicians can diagnose and repair your ASUS laptop professionally.",
@@ -448,7 +448,7 @@ export const LAPTOP_BRANDS = [
       },
       {
         question: 'Do you repair liquid-damaged ASUS laptops?',
-        answer: 'Yes, we provide professional cleaning and component-level repair for liquid-damaged ASUS laptops.'
+        answer: 'Yes, we provide professional cleaning and Chip-level repair for liquid-damaged ASUS laptops.'
       },
       {
         question: 'How long does ASUS laptop repair take?',
@@ -482,7 +482,7 @@ export const LAPTOP_BRANDS = [
       { title: 'Fast Turnaround Time', desc: 'Same-day express repair available' },
       { title: 'Transparent Pricing', desc: 'Upfront estimate with no hidden charges' },
       { title: 'Warranty on Eligible Repairs', desc: 'Official warranty on replaced components' },
-      { title: 'Data Privacy Protection', desc: 'Zero password / Zero OTP data security' }
+      { title: 'Data Privacy Protection', desc: 'No Password Needed data security' }
     ],
     problemsTitle: 'Is Your MSI Laptop Affecting Your Gaming or Productivity?',
     problemsSubtitle: "Whether you're experiencing overheating, low FPS, charging issues, startup failures, or hardware problems, our technicians can diagnose and repair your MSI laptop professionally.",
@@ -589,7 +589,7 @@ export const LAPTOP_BRANDS = [
       { title: 'Fast Turnaround Time', desc: 'Same-day express repair available' },
       { title: 'Transparent Pricing', desc: 'Upfront estimate with zero hidden charges' },
       { title: 'Warranty on Eligible Repairs', desc: 'Official warranty on replaced components' },
-      { title: 'Data Privacy Protection', desc: 'Zero password / Zero OTP data security' }
+      { title: 'Data Privacy Protection', desc: 'No Password Needed data security' }
     ],
     problemsTitle: 'Is Your Microsoft Surface Not Working Properly?',
     problemsSubtitle: "Whether you're facing touchscreen issues, battery problems, charging faults, startup failures, or display damage, our technicians can diagnose and repair your Microsoft Surface device professionally.",
@@ -695,7 +695,7 @@ export const LAPTOP_BRANDS = [
       { title: 'Charging Port Repair', desc: 'Fix USB-C/MagSafe port, charger, or charging circuit issues' },
       { title: 'Keyboard & Trackpad Repair', desc: 'Repair individual keys, full keyboard, or trackpad faults' },
       { title: 'Liquid Damage Diagnosis', desc: 'Assess and repair liquid-affected internal components' },
-      { title: 'Logic Board Repair', desc: 'Component-level logic board diagnostics and micro-soldering' },
+      { title: 'Logic Board Repair', desc: 'Chip-level logic board diagnostics and micro-soldering' },
       { title: 'SSD & Storage Solutions', desc: 'Storage upgrade, diagnosis, and system optimization' },
       { title: 'macOS Troubleshooting', desc: 'Fix slow startup, application freezes, and macOS errors' },
       { title: 'MacBook Cleaning & Thermal Service', desc: 'Thermal servicing and fan cleaning for overheating' },
@@ -754,7 +754,7 @@ export const LAPTOP_BRANDS = [
       }
     ],
     brandHighlights: [
-      'Component-level Apple Silicon & Intel logic board micro-soldering',
+      'Chip-level Apple Silicon & Intel logic board micro-soldering',
       'Retina LCD panel and flex cable (Flexgate) repair',
       'Battery replacement with zero battery warning messages',
       'Ultrasonic liquid damage recovery under 45x optical magnification'
@@ -762,7 +762,7 @@ export const LAPTOP_BRANDS = [
     faqs: [
       {
         question: 'Can you repair MacBook logic board problems?',
-        answer: 'Yes. We diagnose supported MacBook logic board faults and provide component-level repair where technically possible.'
+        answer: 'Yes. We diagnose supported MacBook logic board faults and provide Chip-level repair where technically possible.'
       },
       {
         question: 'Why is my MacBook not charging?',
@@ -802,7 +802,7 @@ export const LAPTOP_PROBLEMS = [
       'High-grade FHD, 2K, 4K, or OLED display panel replacement',
       'Display ribbon cable inspection and connector cleaning',
       'Color calibration and brightness testing',
-      '90 to 180-day warranty on replaced display panels'
+      '90 to Limited Warranty on replaced display panels'
     ],
     faqs: [
       {
@@ -881,7 +881,7 @@ export const LAPTOP_PROBLEMS = [
       'BIOS lock, password prompt, or EC chip corruption'
     ],
     repairIncludes: [
-      'Stereo microscope component-level circuit tracing',
+      'Stereo microscope Chip-level circuit tracing',
       'Power IC, MOSFET, and capacitor replacement',
       'BGA GPU/CPU reballing and reflowing',
       'Thermal imaging hot-spot diagnostics'
@@ -988,7 +988,7 @@ export const LAPTOP_PROBLEMS = [
       'Immediate battery disconnection and power isolation',
       'Ultrasonic bath mainboard cleaning for corrosion removal',
       'Micro-soldering damaged logic board traces and ICs',
-      'Component-level short circuit diagnostic testing'
+      'Chip-level short circuit diagnostic testing'
     ],
     faqs: [
       {
@@ -1026,7 +1026,23 @@ export const LAPTOP_PROBLEMS = [
 ];
 
 export function getBySlug(slug) {
-  return LAPTOP_BRANDS.find((b) => b.slug === slug);
+  const brand = LAPTOP_BRANDS.find((b) => b.slug === slug);
+  if (brand) {
+    return {
+      ...brand,
+      entityType: 'brand'
+    };
+  }
+
+  const problem = LAPTOP_PROBLEMS.find((p) => p.slug === slug);
+  if (problem) {
+    return {
+      ...problem,
+      entityType: 'problem'
+    };
+  }
+
+  return null;
 }
 
 export function getAllSlugs() {

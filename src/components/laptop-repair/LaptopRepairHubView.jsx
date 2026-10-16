@@ -57,8 +57,8 @@ export function LaptopRepairHubView() {
 
   const hubFaqs = [
     {
-      question: 'Where is Robuzta Techlabs laptop repair lab located in Ahmedabad?',
-      answer: 'Our main repair lab is located at 103, First Floor, Sun South Winds, Safal Parisar Road, South Bopal, Ahmedabad (380057). We also offer pickup and drop delivery across Ahmedabad.'
+      question: 'Where are Robuzta Techlabs laptop repair labs located in Ahmedabad?',
+      answer: 'We have two branches in Ahmedabad: 1) South Bopal Flagship Lab: 103, First Floor, Sun South Winds, Safal Parisar Road, South Bopal (380057), and 2) Tragad Service Centre: Shop 12, Ground Floor, Commercial Hub, Tragad Road, Chandkheda (382470). We also offer pickup and drop delivery across Ahmedabad.'
     },
     {
       question: 'Do you charge any fee if my laptop cannot be repaired?',
@@ -66,11 +66,11 @@ export function LaptopRepairHubView() {
     },
     {
       question: 'Will my personal files and photos remain safe during repair?',
-      answer: 'Yes! Robuzta operates under a strict Zero-Password & Zero-OTP data safety protocol. We do not ask for your Windows/macOS passwords or personal OTPs to test hardware.'
+      answer: "Yes! Robuzta prioritizes your data privacy and security. We never ask for your password or OTP unless it's truly needed."
     },
     {
       question: 'What warranty is provided on replaced laptop parts?',
-      answer: 'All genuine OEM replacement parts (screens, batteries, keyboards, SSDs) come with an official 180-day Robuzta lab replacement warranty.'
+      answer: 'All genuine OEM replacement parts (screens, batteries, keyboards, SSDs) come with an official minimum of 30 days lab replacement warranty.'
     }
   ];
 
@@ -110,7 +110,7 @@ export function LaptopRepairHubView() {
       '@type': 'City',
       name: 'Ahmedabad'
     },
-    description: 'Component-level laptop repair, logic board BGA soldering, screen replacement, battery & SSD upgrades for Dell, HP, Acer, ASUS, MSI, Surface & MacBook.',
+    description: 'Chip-level laptop repair, logic board BGA soldering, screen replacement, battery & SSD upgrades for Dell, HP, Acer, ASUS, MSI, Surface & MacBook.',
     serviceType: 'Laptop & Computer Repair'
   };
 
@@ -159,7 +159,7 @@ export function LaptopRepairHubView() {
               
               <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-[#0E7C7B]/20 border border-[#0E7C7B]/30 px-4 py-1.5 text-xs font-black uppercase tracking-wider text-[#0E7C7B] dark:text-teal-300">
                 <Sparkles size={14} className="text-[#0E7C7B] dark:text-teal-400" />
-                <span>Ahmedabad's Premier Component-Level Lab</span>
+                <span>Ahmedabad's Premier Chip-Level Lab</span>
               </div>
 
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.12]">
@@ -181,7 +181,7 @@ export function LaptopRepairHubView() {
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-8 py-4 text-sm font-black shadow-xl shadow-[#0E7C7B]/30 hover:scale-[1.02] transition-all cursor-pointer"
                 >
                   <Calendar size={18} />
-                  <span>Book Free Bench Diagnosis</span>
+                  <span>Book Bench Diagnosis</span>
                 </button>
 
                 <a
@@ -191,7 +191,7 @@ export function LaptopRepairHubView() {
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white px-7 py-4 text-sm font-bold shadow-lg transition-all"
                 >
                   <WhatsappIcon size={18} className="text-white" />
-                  <span>WhatsApp Diagnostic Quote</span>
+                  <span>Get a Quote</span>
                 </a>
               </div>
 
@@ -199,7 +199,7 @@ export function LaptopRepairHubView() {
               <div className="flex flex-wrap items-center justify-center gap-6 pt-4 text-xs font-extrabold text-slate-600 dark:text-slate-400">
                 <span className="flex items-center gap-1.5">
                   <CheckCircle2 size={16} className="text-emerald-500" />
-                  1000+ Devices Repaired
+                  10000+ Devices Repaired
                 </span>
                 <span className="flex items-center gap-1.5">
                   <Zap size={16} className="text-amber-500" />
@@ -239,8 +239,9 @@ export function LaptopRepairHubView() {
                   asus: 'max-h-14 w-full',        // ASUS wordmark is wide
                   surface: 'max-h-18 w-full',     // Microsoft logo is wide
                   msi: 'max-h-18 w-full',         // MSI wordmark/logo
-                  dell: 'max-h-18 w-full',          // Dell icon
+                  dell: 'max-h-18 w-full',        // Dell icon
                   acer: 'max-h-12 w-full',        // Acer wordmark
+                  lenovo: 'max-h-10 w-full',      // Lenovo wordmark
                   macbook: 'max-h-14 w-14',       // Apple icon
                 }[brand.slug] || 'max-h-16 w-auto';
 
@@ -296,15 +297,9 @@ export function LaptopRepairHubView() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
             
             <div className="text-center max-w-2xl mx-auto space-y-3">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400">
-                HARDWARE ISSUE DIAGNOSTICS
-              </span>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
                 Select Your Hardware Issue
               </h2>
-              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300">
-                Transparent flat pricing hints, symptoms checklist, and express repair turnaround times for all hardware problems.
-              </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -356,9 +351,6 @@ export function LaptopRepairHubView() {
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-10">
             
             <div className="text-center space-y-3">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400">
-                TRANSPARENT REPAIR ANSWERS
-              </span>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
                 Frequently Asked Questions
               </h2>
@@ -408,7 +400,7 @@ export function LaptopRepairHubView() {
               Need Immediate Laptop Diagnostics in Ahmedabad?
             </h2>
             <p className="max-w-2xl mx-auto text-sm sm:text-base text-teal-100 font-medium">
-              Visit our ESD-safe workbench in South Bopal / Tragad or request doorstep pickup. Component-level repair with zero password requirement.
+              Visit our South Bopal / Tragad branch or request doorstep pickup. Chip-level expert laptop repair services.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
               <button
@@ -422,7 +414,7 @@ export function LaptopRepairHubView() {
                 href={siteConfig.phoneHref}
                 className="w-full sm:w-auto rounded-2xl bg-slate-900/80 hover:bg-slate-900 border border-slate-700 px-8 py-4 text-sm font-bold text-white transition-all"
               >
-                Call Hotline: {siteConfig.phone}
+                Call: {siteConfig.phone}
               </a>
             </div>
           </div>

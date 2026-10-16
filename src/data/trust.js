@@ -2,7 +2,7 @@ export const trustBadges = [
   'No password needed',
   'Serial-verified parts',
   'Warranty-backed repairs',
-  'Free pickup available'
+  'pickup available'
 ];
 
 export const trustCards = [
@@ -16,10 +16,10 @@ export const trustCards = [
   },
   {
     title: 'Warranty + Invoice',
-    text: '180-day warranty & digital invoice'
+    text: 'Limited Warranty & digital invoice'
   },
   {
-    title: 'Transparent Repair Flow',
-    text: 'Live ESD workbench repair tracking'
+    title: 'Live Repair Tracking',
+    text: 'Watch your device get repaired in real time'
   }
 ];

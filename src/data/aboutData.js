@@ -5,17 +5,17 @@
 
 export const ABOUT_PAGE_DATA = {
   h1: 'ABOUT US',
-  mainHeading: 'Technology Problems. Properly Diagnosed. Professionally Repaired.',
+  mainHeading: 'Who We Are',
   introParagraphs: [
     'At Robuzta TechLabs, we believe repairing a device is not just about replacing a faulty part. It is about finding the actual reason behind the problem and fixing it the right way.',
     'From laptops and smartphones to gaming PCs, MacBooks, and data recovery, we provide professional technology repair services with a focus on proper diagnosis, transparent communication, and reliable repair solutions.'
   ],
-  metaTitle: 'About Robuzta Techlabs | Electronics Repair Lab Ahmedabad',
-  metaDescription: 'At Robuzta TechLabs, we believe repairing a device is not just about replacing a faulty part. Technology Problems. Properly Diagnosed. Professionally Repaired.',
+  metaTitle: 'Who We Are | About Robuzta Techlabs Ahmedabad',
+  metaDescription: 'Learn who we are at Robuzta Techlabs. We are Ahmedabad’s premier chip-level multi-device repair lab specializing in laptops, MacBooks, smartphones, and gaming PCs.',
   canonicalUrl: 'https://robuzta.com/about',
 
   whoWeAre: {
-    badge: 'Who We Are',
+    badge: 'Our Mission & Approach',
     heading: 'More Than Just a Repair Center',
     paragraphs: [
       'We are a technology repair and service center helping customers with everyday device problems as well as complex hardware failures.',

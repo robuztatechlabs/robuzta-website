@@ -132,7 +132,7 @@ export function MobileRepairHubView() {
     },
     {
       question: 'How long does a mobile screen replacement take?',
-      answer: 'Many common screen replacements can be completed quickly, but the exact time depends on the model and availability of the required part.'
+      answer: 'Most screen replacements are done in 2–3 hours. Exact time depends on your model and part availability.'
     },
     {
       question: 'Can you repair a phone that is completely dead?',
@@ -144,11 +144,11 @@ export function MobileRepairHubView() {
     },
     {
       question: 'Can you repair water-damaged phones?',
-      answer: 'Yes, we inspect liquid-damaged phones and provide component-level repair where technically possible.'
+      answer: 'Yes, we inspect liquid-damaged phones and provide Chip-level repair where technically possible.'
     },
     {
       question: 'Do you repair motherboard problems?',
-      answer: 'Yes. We provide advanced diagnostics and component-level motherboard repair for supported smartphones.'
+      answer: 'Yes. We provide advanced diagnostics and Chip-level motherboard repair for supported smartphones.'
     }
   ];
 
@@ -186,7 +186,7 @@ export function MobileRepairHubView() {
                 className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-7 py-4 text-xs font-black uppercase tracking-wider shadow-xl shadow-[#0E7C7B]/30 transition-all hover:scale-[1.02]"
               >
                 <Wrench size={16} />
-                <span>Book Mobile Diagnostic</span>
+                <span>Book Diagnosis</span>
               </button>
 
               <a
@@ -200,47 +200,6 @@ export function MobileRepairHubView() {
           </motion.div>
         </section>
 
-        {/* Why Choose Us Section */}
-        <section className="py-12 sm:py-16 bg-slate-50/60 dark:bg-slate-900/60 border-b border-slate-200 dark:border-slate-800">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
-            <div className="text-center max-w-3xl mx-auto space-y-2">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">WHY CHOOSE US</span>
-              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                Why Choose Us
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-              {[
-                { title: 'Privacy-First Repair', icon: Lock, color: 'text-emerald-500 bg-emerald-500/10' },
-                { title: 'Board-Level Repair Expertise', icon: Cpu, color: 'text-[#0E7C7B] bg-[#0E7C7B]/10' },
-                { title: 'Multi-Brand Repair Experience', icon: Smartphone, color: 'text-indigo-500 bg-indigo-500/10' },
-                { title: 'Proper Diagnosis', icon: CheckCircle2, color: 'text-amber-500 bg-amber-500/10' },
-                { title: 'Repair Warranty', icon: ShieldCheck, color: 'text-teal-500 bg-teal-500/10' },
-                { title: 'Fast Turnaround', icon: Zap, color: 'text-yellow-500 bg-yellow-500/10' }
-              ].map((item, idx) => {
-                const IconComp = item.icon;
-                return (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 15 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ ...SMOOTH_TRANSITION, delay: idx * 0.05 }}
-                    className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 sm:p-5 flex items-center gap-4 shadow-sm hover:shadow-md hover:border-[#0E7C7B]/50 transition-all group"
-                  >
-                    <div className={`h-11 w-11 rounded-xl flex items-center justify-center font-black shrink-0 ${item.color} group-hover:scale-110 transition-transform`}>
-                      <IconComp size={22} />
-                    </div>
-                    <h3 className="text-sm font-extrabold text-slate-900 dark:text-white group-hover:text-[#0E7C7B] transition-colors leading-snug">
-                      {item.title}
-                    </h3>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
 
         {/* Section 1: Smartphone Brands We Repair (SECOND IMAGE - UNTOUCHED AS REQUESTED) */}
         <section className="py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800">
@@ -302,9 +261,6 @@ export function MobileRepairHubView() {
         <section className="py-14 sm:py-20 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400">
-                COMMON PROBLEMS & SOLUTIONS
-              </span>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
                 Mobile Phone Repair in Ahmedabad: Common Problems & Solutions
               </h2>
@@ -323,15 +279,14 @@ export function MobileRepairHubView() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: '-20px' }}
                     transition={{ ...SMOOTH_TRANSITION, delay: idx * 0.05 }}
-                    whileHover={{ y: -4 }}
+                    className="h-full"
                   >
-                    <Link
-                      href={`/mobile-repair/${prob.slug}/`}
-                      className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-4 hover:border-[#0E7C7B] shadow-md hover:shadow-xl transition-all block group h-full flex flex-col justify-between"
+                    <div
+                      className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-4 shadow-sm h-full flex flex-col justify-between"
                     >
                       <div className="space-y-3">
                         <div className="flex items-center justify-between">
-                          <div className="h-12 w-12 rounded-2xl bg-[#0E7C7B]/10 text-[#0E7C7B] dark:text-teal-400 flex items-center justify-center font-black group-hover:scale-110 group-hover:bg-[#0E7C7B] group-hover:text-white transition-all shadow-sm">
+                          <div className="h-12 w-12 rounded-2xl bg-[#0E7C7B]/10 text-[#0E7C7B] dark:text-teal-400 flex items-center justify-center font-black shadow-sm">
                             <IconComp size={22} />
                           </div>
                           <span className="text-[10px] font-black uppercase tracking-wider text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/60 px-3 py-1 rounded-full">
@@ -339,7 +294,7 @@ export function MobileRepairHubView() {
                           </span>
                         </div>
 
-                        <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-white group-hover:text-[#0E7C7B] dark:group-hover:text-teal-400 transition-colors">
+                        <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-white">
                           {prob.title}
                         </h3>
 
@@ -347,12 +302,7 @@ export function MobileRepairHubView() {
                           {prob.description}
                         </p>
                       </div>
-
-                      <div className="pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs font-black text-[#0E7C7B] dark:text-teal-400">
-                        <span>Get Diagnostic Quote</span>
-                        <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                      </div>
-                    </Link>
+                    </div>
                   </motion.div>
                 );
               })}
@@ -364,11 +314,8 @@ export function MobileRepairHubView() {
         <section className="py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400">
-                OUR SERVICES
-              </span>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                Mobile Repair Services in Ahmedabad
+                Mobile Services
               </h2>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
                 At <strong className="font-bold text-slate-900 dark:text-white">Robuzta TechLabs</strong>, we provide professional smartphone repair for supported <strong className="font-bold text-slate-900 dark:text-white">iPhone, Samsung, Google Pixel, OnePlus, OPPO, Vivo, Realme, Motorola, Nothing, iQOO</strong>, and other devices.
@@ -468,7 +415,7 @@ export function MobileRepairHubView() {
                   Got a Damaged Mobile Phone?
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed">
-                  Get a free instant diagnostic estimate from senior mobile engineers in South Bopal and Tragad.
+                  Get a instant diagnostic estimate from senior mobile engineers in South Bopal and Tragad.
                 </p>
               </div>
 
@@ -478,7 +425,7 @@ export function MobileRepairHubView() {
                   className="inline-flex items-center justify-center gap-2 w-full rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-7 py-4 text-xs font-black uppercase tracking-wider shadow-xl shadow-[#0E7C7B]/30 transition-all hover:scale-[1.02]"
                 >
                   <Wrench size={16} />
-                  <span>Book Free Check</span>
+                  <span>Book Check</span>
                 </button>
               </div>
             </div>

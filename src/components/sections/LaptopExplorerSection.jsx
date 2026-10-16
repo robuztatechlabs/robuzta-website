@@ -258,7 +258,7 @@ export function LaptopExplorerSection() {
                         </div>
                       </div>
                       <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
-                        Our lab specializes in component-level micro-soldering, liquid damage restoration, and IC replacements across Apple MacBooks, gaming laptops, and mobile PCBs.
+                        Our lab specializes in Chip-level micro-soldering, liquid damage restoration, and IC replacements across Apple MacBooks, gaming laptops, and mobile PCBs.
                       </p>
                     </div>
 

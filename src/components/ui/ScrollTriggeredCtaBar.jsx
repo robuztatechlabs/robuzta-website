@@ -58,7 +58,7 @@ export function ScrollTriggeredCtaBar() {
             {/* Unified Action Buttons in ONE Single Line */}
             <div className="flex items-center justify-between w-full sm:w-auto gap-2 shrink-0">
               
-              {/* WhatsApp Quote */}
+              {/* Request Quote */}
               <a
                 href={siteConfig.whatsappHref}
                 target="_blank"
@@ -83,7 +83,7 @@ export function ScrollTriggeredCtaBar() {
               <a
                 href={siteConfig.phoneHref}
                 className="hidden md:inline-flex items-center justify-center gap-2 rounded-full bg-slate-800 hover:bg-slate-700 border border-slate-700 px-4 py-2.5 text-xs font-extrabold text-white transition-all whitespace-nowrap"
-                title="Call Senior Technician"
+                title="Call"
               >
                 <Phone size={14} className="text-teal-400 shrink-0" />
                 <span>Call Tech</span>

@@ -17,7 +17,7 @@ const CONTACT_FAQS = [
   },
   {
     q: 'Is my data safe during repair?',
-    a: 'Yes, 100%. We operate under a Zero-OTP and Zero-Password Data Privacy Policy. We never ask for passwords or PINs.',
+    a: 'Yes, 100%. We operate under a Zero-Password Data Privacy Policy. We never ask for passwords or PINs.',
   },
   {
     q: 'What if my device cannot be fixed?',
@@ -25,7 +25,7 @@ const CONTACT_FAQS = [
   },
   {
     q: 'Do you offer doorstep pickup in Ahmedabad?',
-    a: 'Yes! We provide free doorstep pickup and delivery across all major Ahmedabad areas.',
+    a: 'Yes! We provide doorstep pickup and delivery across all major Ahmedabad areas.',
   },
 ];
 
@@ -69,7 +69,7 @@ export function ContactPageView() {
             </h1>
 
             <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
-              Need a repair estimate or lab visit? Call, WhatsApp, or request free doorstep pickup below.
+              Need a repair estimate or lab visit? Call, WhatsApp, or request doorstep pickup below.
             </p>
           </motion.div>
         </section>
@@ -111,7 +111,7 @@ export function ContactPageView() {
                       </div>
                       <div>
                         <div className="text-base font-black text-slate-900 dark:text-white group-hover:text-[#0E7C7B] transition-colors">
-                          Call Senior Tech
+                          Call
                         </div>
                         <div className="text-xs sm:text-sm font-bold text-slate-600 dark:text-slate-300 pt-0.5">{siteConfig.phone}</div>
                         <span className="text-[11px] font-medium text-slate-400 block pt-0.5">Instant Phone Estimate</span>
@@ -179,7 +179,7 @@ export function ContactPageView() {
                       <div>
                         <div className="text-base font-black text-slate-900 dark:text-white">Operating Hours</div>
                         <div className="text-xs sm:text-sm font-bold text-slate-600 dark:text-slate-300 pt-0.5">11:00 AM – 7:00 PM</div>
-                        <span className="text-[11px] font-medium text-slate-400 block pt-0.5">Monday to Saturday</span>
+                        <span className="text-[11px] font-medium text-slate-400 block pt-0.5">Monday to Sunday</span>
                       </div>
                     </motion.div>
                   </div>
@@ -195,7 +195,7 @@ export function ContactPageView() {
                 transition={{ ...SMOOTH_TRANSITION, delay: 0.2 }}
                 className="lg:col-span-5 pt-6 lg:pt-0"
               >
-                <QuoteForm title="Request Free Repair Quote" />
+                <QuoteForm title="Request Repair Quote" />
               </motion.div>
 
             </div>

@@ -62,7 +62,7 @@ export function LocationSection() {
                     </span>
 
                     <a
-                      href={loc.mapUrl || "https://maps.google.com/?q=Robuzta+Techlabs+South+Bopal"}
+                      href={loc.mapUrl || "https://www.google.com/maps/search/?api=1&query=Robuzta+Techlabs+South+Bopal+Ahmedabad"}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-bold text-slate-500 dark:text-slate-400 hover:text-[#0E7C7B] dark:hover:text-teal-300 transition-colors shrink-0"
@@ -84,14 +84,14 @@ export function LocationSection() {
                     <div>
                       <span className="text-[9px] sm:text-[10px] text-slate-400 font-extrabold uppercase block tracking-wider">BUSINESS HOURS</span>
                       <span className="text-slate-900 dark:text-slate-100 font-extrabold text-xs sm:text-sm">11:00 AM – 7:00 PM</span>
-                      <span className="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 block font-medium">Monday to Saturday</span>
+                      <span className="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 block font-medium">Monday to Sunday</span>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-2.5 p-3 sm:p-4 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200/80 dark:border-slate-800 text-xs font-bold text-slate-800 dark:text-slate-200">
                     <Phone size={18} className="text-[#0E7C7B] dark:text-teal-400 shrink-0" />
                     <div>
-                      <span className="text-[9px] sm:text-[10px] text-slate-400 font-extrabold uppercase block tracking-wider">DIRECT HOTLINE</span>
+                      <span className="text-[9px] sm:text-[10px] text-slate-400 font-extrabold uppercase block tracking-wider">CALL</span>
                       <span className="text-slate-900 dark:text-slate-100 font-extrabold text-xs sm:text-sm">+91 999 245 245 9</span>
                       <span className="text-[9px] sm:text-[10px] text-emerald-600 dark:text-emerald-400 block font-bold">Instant Phone Support</span>
                     </div>

@@ -23,7 +23,7 @@ const comparisonRows = [
     generic: 'Component Swap Only'
   },
   {
-    feature: 'Zero-OTP Customer Data Privacy SOP',
+    feature: 'No Password Needed Customer Data Privacy SOP',
     robuzta: 'Standard Test Drive Boot Diagnostic',
     independent: 'Asks Customer for PIN / Passcode',
     generic: 'No Privacy Standard'

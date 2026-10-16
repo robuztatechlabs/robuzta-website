@@ -6,8 +6,8 @@ import { Lock, Clock, ShieldCheck, Eye, Truck, CheckCircle2, ArrowRight, Award }
 const pillars = [
   {
     icon: Lock,
-    title: 'Zero-OTP Privacy',
-    description: 'No device passwords or OTPs required'
+    title: 'No Password Needed Privacy',
+    description: 'We never ask for your password'
   },
   {
     icon: Clock,
@@ -27,7 +27,7 @@ const pillars = [
   {
     icon: Truck,
     title: 'Doorstep Pickup',
-    description: 'Free pickup & drop across Ahmedabad'
+    description: 'pickup & drop across Ahmedabad'
   }
 ];
 

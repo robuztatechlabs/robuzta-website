@@ -1,6 +1,6 @@
 export const repairProcess = [
   {
-    title: 'Inspect',
+    title: 'Pick-up/Inspect',
     text: 'Robuzta checks the fault and captures the device issue clearly.'
   },
   {
@@ -8,7 +8,7 @@ export const repairProcess = [
     text: 'Customer gets a transparent estimate before repair starts.'
   },
   {
-    title: 'Approve',
+    title: 'Approval',
     text: 'Work begins only after customer approval.'
   },
   {
@@ -20,7 +20,7 @@ export const repairProcess = [
     text: 'Device is quality checked before return.'
   },
   {
-    title: 'Return',
+    title: 'Deliver',
     text: 'Customer receives device, warranty, and invoice.'
   }
 ];

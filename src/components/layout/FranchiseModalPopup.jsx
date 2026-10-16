@@ -97,7 +97,7 @@ export function FranchiseModalPopup({ isOpen, onClose }) {
               <div className="p-3.5 rounded-2xl bg-slate-800/80 border border-slate-700/60 space-y-1">
                 <div className="flex items-center gap-1.5 text-amber-400 text-xs font-extrabold">
                   <TrendingUp size={15} />
-                  <span>₹3L - ₹6L/mo</span>
+                  <span>₹1L - ₹3L/mo</span>
                 </div>
                 <div className="text-[11px] text-slate-300 font-bold">Est. Monthly Profit</div>
               </div>
@@ -214,7 +214,7 @@ export function FranchiseModalPopup({ isOpen, onClose }) {
             )}
 
             <div className="pt-2 text-center border-t border-slate-800 text-[11px] text-slate-400">
-              Need immediate phone guidance? Call Franchise Hotline at{' '}
+              Need immediate phone guidance? Call Franchise at{' '}
               <a href={siteConfig.phoneHref} className="text-amber-400 font-bold hover:underline">
                 +91 999 245 245 9
               </a>
