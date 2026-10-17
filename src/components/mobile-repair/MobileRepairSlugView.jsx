@@ -184,7 +184,7 @@ export function MobileRepairSlugView({ data }) {
 
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-              <div className="lg:col-span-8 space-y-5">
+              <div className="lg:col-span-7 space-y-5">
                 
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-3.5 py-1 text-xs font-black text-[#0E7C7B] dark:text-teal-300 uppercase tracking-widest">
@@ -243,33 +243,38 @@ export function MobileRepairSlugView({ data }) {
                 </div>
               </div>
 
-              {/* Header Card / Logo Graphic */}
-              <div className="lg:col-span-4 flex justify-center">
-                <div className="w-full max-w-sm rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 shadow-2xl space-y-4">
-                  <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
-                    <span className="text-xs font-black text-slate-400 uppercase tracking-widest">
-                      {isBrand ? 'Supported Series' : 'Diagnostic Info'}
-                    </span>
-                    <span className="text-[10px] font-black text-emerald-600 bg-emerald-50 dark:bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-200 dark:border-emerald-800">
-                      Live Lab Inspection
-                    </span>
-                  </div>
-
-                  {isBrand ? (
-                    <div className="space-y-2">
-                      <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
-                        We stock Grade-A OEM display panels, batteries, and charging flex assemblies for:
-                      </p>
-                      <ul className="space-y-1.5 text-xs font-bold text-slate-900 dark:text-slate-100">
-                        {data.supportedModels?.map((mod, i) => (
-                          <li key={i} className="flex items-center gap-2">
-                            <Check size={14} className="text-[#0E7C7B] shrink-0" />
-                            <span>{mod}</span>
-                          </li>
-                        ))}
-                      </ul>
+              {/* Right Side: Brand Logo Graphic or Problem Card */}
+              <div className="lg:col-span-5 flex justify-center">
+                {isBrand ? (
+                  <div className="w-full max-w-sm sm:max-w-md rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl p-8 sm:p-10 shadow-2xl flex flex-col items-center justify-center relative overflow-hidden group">
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-[#0E7C7B]/10 via-transparent to-cyan-500/10 dark:from-[#0E7C7B]/20 dark:to-teal-500/10 rounded-3xl blur-2xl" />
+                    <div className="relative z-10 w-full flex items-center justify-center min-h-[200px] sm:min-h-[240px]">
+                      <img
+                        src={data.logoImage}
+                        alt={`${data.name} logo`}
+                        className={`max-h-40 sm:max-h-52 w-auto max-w-[240px] sm:max-w-[320px] object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-md ${
+                          (data.slug === 'iphone' || data.slug === 'apple' || data.slug === 'nothing')
+                            ? 'dark:invert dark:brightness-200'
+                            : 'dark:brightness-110'
+                        }`}
+                      />
                     </div>
-                  ) : (
+                    <div className="relative z-10 mt-5 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100/90 dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/60 text-xs font-bold text-slate-700 dark:text-slate-300">
+                      <CheckCircle2 size={15} className="text-[#0E7C7B] dark:text-teal-400" />
+                      <span>Certified {data.name} Care & Lab Diagnostics</span>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="w-full max-w-sm rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 shadow-2xl space-y-4">
+                    <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+                      <span className="text-xs font-black text-slate-400 uppercase tracking-widest">
+                        Diagnostic Info
+                      </span>
+                      <span className="text-[10px] font-black text-emerald-600 bg-emerald-50 dark:bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-200 dark:border-emerald-800">
+                        Live Lab Inspection
+                      </span>
+                    </div>
+
                     <div className="space-y-3">
                       <div className="flex items-center justify-between text-xs">
                         <span className="text-slate-400 font-semibold">Repair Time:</span>
@@ -284,15 +289,15 @@ export function MobileRepairSlugView({ data }) {
                         <span className="font-extrabold text-emerald-600 dark:text-emerald-400">100% Safe (No OTP)</span>
                       </div>
                     </div>
-                  )}
 
-                  <button
-                    onClick={() => openModal({ serviceType: data.name })}
-                    className="w-full rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-[#0E7C7B] hover:text-white text-slate-900 dark:text-white py-3 text-xs font-black uppercase tracking-wider transition-all"
-                  >
-                    Book Diagnostic Check
-                  </button>
-                </div>
+                    <button
+                      onClick={() => openModal({ serviceType: data.name })}
+                      className="w-full rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-[#0E7C7B] hover:text-white text-slate-900 dark:text-white py-3 text-xs font-black uppercase tracking-wider transition-all"
+                    >
+                      Book Diagnostic Check
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           </motion.div>

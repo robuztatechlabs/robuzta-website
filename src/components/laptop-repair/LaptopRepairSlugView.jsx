@@ -150,48 +150,89 @@ export function LaptopRepairSlugView({ data }) {
           {/* SECTION 1 — HERO */}
           <section className="relative overflow-hidden py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-slate-50/90 via-white to-slate-50/40 dark:from-[#070E1A] dark:via-[#0b1628] dark:to-[#070E1A] border-b border-slate-200 dark:border-slate-800">
             <div className="pointer-events-none absolute top-10 left-1/4 -translate-x-1/2 w-[550px] h-[550px] bg-[#0E7C7B]/15 dark:bg-[#0E7C7B]/25 rounded-full blur-[140px]" />
+            <div className="pointer-events-none absolute bottom-10 right-10 w-[400px] h-[400px] bg-blue-600/10 dark:bg-cyan-500/15 rounded-full blur-[120px]" />
 
-            <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center space-y-6">
-              <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-[#0E7C7B]/20 border border-[#0E7C7B]/30 px-4 py-1.5 text-xs font-black uppercase tracking-wider text-[#0E7C7B] dark:text-teal-300 mx-auto">
-                <Sparkles size={14} className="text-[#0E7C7B] dark:text-teal-400" />
-                <span>Certified Apple MacBook Diagnostics & Repair</span>
-              </div>
+            <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                
+                {/* Left Side (as it is) */}
+                <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+                  <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-[#0E7C7B]/20 border border-[#0E7C7B]/30 px-4 py-1.5 text-xs font-black uppercase tracking-wider text-[#0E7C7B] dark:text-teal-300">
+                    <Sparkles size={14} className="text-[#0E7C7B] dark:text-teal-400" />
+                    <span>Certified Apple MacBook Diagnostics & Repair</span>
+                  </div>
 
-              <h1 className="text-3xl sm:text-5xl lg:text-5xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.12]">
-                {data.h1}
-              </h1>
+                  <h1 className="text-3xl sm:text-5xl lg:text-5xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.12]">
+                    {data.h1}
+                  </h1>
 
-              <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 font-medium leading-relaxed max-w-3xl mx-auto">
-                {data.tagline}
-              </p>
+                  <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 font-medium leading-relaxed max-w-2xl">
+                    {data.tagline}
+                  </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
-                <button
-                  type="button"
-                  onClick={openModal}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-8 py-4 text-sm font-black shadow-xl shadow-[#0E7C7B]/30 hover:scale-[1.02] transition-all cursor-pointer"
-                >
-                  <Calendar size={18} />
-                  <span>Book Diagnosis</span>
-                </button>
+                  <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
+                    <button
+                      type="button"
+                      onClick={openModal}
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-8 py-4 text-sm font-black shadow-xl shadow-[#0E7C7B]/30 hover:scale-[1.02] transition-all cursor-pointer"
+                    >
+                      <Calendar size={18} />
+                      <span>Book Diagnosis</span>
+                    </button>
 
-                <a
-                  href={siteConfig.whatsappHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white px-7 py-4 text-sm font-bold shadow-lg transition-all"
-                >
-                  <WhatsappIcon size={18} className="text-white" />
-                  <span>Request Quote</span>
-                </a>
+                    <a
+                      href={siteConfig.whatsappHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white px-7 py-4 text-sm font-bold shadow-lg transition-all"
+                    >
+                      <WhatsappIcon size={18} className="text-white" />
+                      <span>Request Quote</span>
+                    </a>
 
-                <a
-                  href={siteConfig.phoneHref}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 px-6 py-4 text-sm font-bold text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all"
-                >
-                  <Phone size={17} className="text-[#0E7C7B] dark:text-teal-400" />
-                  <span>Call</span>
-                </a>
+                    <a
+                      href={siteConfig.phoneHref}
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 px-6 py-4 text-sm font-bold text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all"
+                    >
+                      <Phone size={17} className="text-[#0E7C7B] dark:text-teal-400" />
+                      <span>Call</span>
+                    </a>
+                  </div>
+
+                  <div className="flex flex-wrap items-center justify-center lg:justify-start gap-5 pt-3 text-xs font-extrabold text-slate-600 dark:text-slate-400 border-t border-slate-200/80 dark:border-slate-800/80">
+                    <span className="flex items-center gap-1.5">
+                      <CheckCircle2 size={16} className="text-emerald-500" />
+                      10000+ Devices Repaired
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                      <Zap size={16} className="text-amber-500" />
+                      Same-Day Repairs Available
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                      <ShieldCheck size={16} className="text-[#0E7C7B] dark:text-teal-400" />
+                      No Fix, No Fee Policy
+                    </span>
+                  </div>
+                </div>
+
+                {/* Right Side Brand Logo */}
+                <div className="lg:col-span-5 flex justify-center">
+                  <div className="w-full max-w-sm sm:max-w-md rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl p-8 sm:p-10 shadow-2xl flex flex-col items-center justify-center relative overflow-hidden group">
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-[#0E7C7B]/10 via-transparent to-cyan-500/10 dark:from-[#0E7C7B]/20 dark:to-teal-500/10 rounded-3xl blur-2xl" />
+                    <div className="relative z-10 w-full flex items-center justify-center min-h-[200px] sm:min-h-[240px]">
+                      <img
+                        src={data.logoImage}
+                        alt={`${data.name} logo`}
+                        className="max-h-40 sm:max-h-52 w-auto max-w-[220px] sm:max-w-[280px] object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-md dark:invert dark:brightness-200"
+                      />
+                    </div>
+                    <div className="relative z-10 mt-5 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100/90 dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/60 text-xs font-bold text-slate-700 dark:text-slate-300">
+                      <CheckCircle2 size={15} className="text-[#0E7C7B] dark:text-teal-400" />
+                      <span>Certified Apple Care & Lab Diagnostics</span>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </section>
@@ -467,50 +508,43 @@ export function LaptopRepairSlugView({ data }) {
 
               </div>
 
-              <div className="lg:col-span-5">
-                <div className="relative rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl p-6 sm:p-8 shadow-2xl space-y-6">
-                  
-                  <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-4">
-                    <div>
-                      <span className="text-[11px] font-mono font-black uppercase tracking-wider text-[#0E7C7B] dark:text-teal-400 block">
-                        LAB DIAGNOSTIC SPEC SHEET
-                      </span>
-                      <h2 className="text-lg font-black text-slate-900 dark:text-white mt-0.5">
-                        {isBrand ? `${data.name} Lab Specs` : data.problemTitle}
-                      </h2>
+              <div className="lg:col-span-5 flex justify-center">
+                {isBrand ? (
+                  <div className="w-full max-w-sm sm:max-w-md rounded-3xl border border-slate-200/80 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl p-8 sm:p-10 shadow-2xl flex flex-col items-center justify-center relative overflow-hidden group">
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-[#0E7C7B]/10 via-transparent to-cyan-500/10 dark:from-[#0E7C7B]/20 dark:to-teal-500/10 rounded-3xl blur-2xl" />
+                    <div className="relative z-10 w-full flex items-center justify-center min-h-[200px] sm:min-h-[240px]">
+                      <img
+                        src={data.logoImage}
+                        alt={`${data.name} logo`}
+                        className={`max-h-40 sm:max-h-52 w-auto max-w-[240px] sm:max-w-[320px] object-contain transition-transform duration-500 group-hover:scale-105 drop-shadow-md ${
+                          (data.slug === 'macbook' || data.slug === 'apple')
+                            ? 'dark:invert dark:brightness-200'
+                            : 'dark:brightness-110'
+                        }`}
+                      />
                     </div>
-                    <div className="h-11 w-11 rounded-2xl bg-[#0E7C7B]/10 dark:bg-[#0E7C7B]/20 text-[#0E7C7B] dark:text-teal-400 flex items-center justify-center font-bold">
-                      {isBrand ? data.name.charAt(0) : <Wrench size={22} />}
+                    <div className="relative z-10 mt-5 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100/90 dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/60 text-xs font-bold text-slate-700 dark:text-slate-300">
+                      <CheckCircle2 size={15} className="text-[#0E7C7B] dark:text-teal-400" />
+                      <span>Certified {data.name} Care & Lab Diagnostics</span>
                     </div>
                   </div>
-
-                  {isBrand ? (
-                    <div className="space-y-4">
+                ) : (
+                  <div className="relative rounded-3xl border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl p-6 sm:p-8 shadow-2xl space-y-6 w-full">
+                    
+                    <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-4">
                       <div>
-                        <span className="text-xs font-bold text-slate-500 dark:text-slate-400 block mb-2">
-                          Supported {data.name} Models:
+                        <span className="text-[11px] font-mono font-black uppercase tracking-wider text-[#0E7C7B] dark:text-teal-400 block">
+                          LAB DIAGNOSTIC SPEC SHEET
                         </span>
-                        <div className="flex flex-wrap gap-1.5">
-                          {data.supportedModels.map((m) => (
-                            <span
-                              key={m}
-                              className="text-xs font-bold px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/60"
-                            >
-                              {m}
-                            </span>
-                          ))}
-                        </div>
+                        <h2 className="text-lg font-black text-slate-900 dark:text-white mt-0.5">
+                          {data.problemTitle}
+                        </h2>
                       </div>
-
-                      <div className="p-3.5 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/50 flex items-start gap-3">
-                        <CheckCircle2 size={18} className="text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
-                        <div className="text-xs text-emerald-900 dark:text-emerald-200">
-                          <strong className="font-black block">100% Genuine OEM Grade Parts</strong>
-                          Original displays, batteries, keyboards, and BGA chips in stock.
-                        </div>
+                      <div className="h-11 w-11 rounded-2xl bg-[#0E7C7B]/10 dark:bg-[#0E7C7B]/20 text-[#0E7C7B] dark:text-teal-400 flex items-center justify-center font-bold">
+                        <Wrench size={22} />
                       </div>
                     </div>
-                  ) : (
+
                     <div className="space-y-4">
                       <div className="grid grid-cols-2 gap-3">
                         <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700/60">
@@ -536,14 +570,14 @@ export function LaptopRepairSlugView({ data }) {
                         </div>
                       </div>
                     </div>
-                  )}
 
-                  <div className="pt-2 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-bold text-slate-500 dark:text-slate-400">
-                    <span>Location: South Bopal & Tragad</span>
-                    <span className="text-emerald-600 dark:text-emerald-400 font-black">● Lab Open Now</span>
+                    <div className="pt-2 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-bold text-slate-500 dark:text-slate-400">
+                      <span>Location: South Bopal & Tragad</span>
+                      <span className="text-emerald-600 dark:text-emerald-400 font-black">● Lab Open Now</span>
+                    </div>
+
                   </div>
-
-                </div>
+                )}
               </div>
 
             </div>
