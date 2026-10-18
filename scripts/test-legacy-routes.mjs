@@ -10,7 +10,7 @@
  *   node scripts/test-legacy-routes.mjs https://robuzta.com
  */
 
-const base = process.argv[2] || process.env.TEST_BASE_URL || 'http://localhost:3000';
+const base = (process.argv[2] || process.env.TEST_BASE_URL || 'http://localhost:3000').replace(/\/+$/, '');
 
 console.log(`\n==============================================`);
 console.log(`Running Route Verification against: ${base}`);
@@ -124,6 +124,16 @@ const testCases = [
 ];
 
 async function run() {
+  // Pre-flight connectivity check
+  try {
+    const ping = await fetch(base + '/', { method: 'GET' });
+    if (!ping) throw new Error('No response');
+  } catch (err) {
+    console.error(`[ERROR] Unable to connect to server at ${base}.`);
+    console.error(`Ensure your development server is running ('npm run dev') or specify a valid URL: node scripts/test-legacy-routes.mjs http://localhost:3000\n`);
+    process.exit(1);
+  }
+
   let passed = 0;
   let failed = 0;
 
