@@ -58,6 +58,7 @@ export function MegaMenu({ onClose }) {
             <Link
               key={srv.slug}
               href={href}
+              prefetch={false}
               onClick={onClose}
               className="flex items-center gap-3 p-3 rounded-xl bg-slate-50/60 dark:bg-slate-900/60 hover:bg-[#0E7C7B]/10 dark:hover:bg-teal-400/10 border border-slate-100 dark:border-slate-800 hover:border-[#0E7C7B]/30 dark:hover:border-teal-400/30 transition-all group"
             >

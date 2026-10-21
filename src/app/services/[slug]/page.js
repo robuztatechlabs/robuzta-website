@@ -15,6 +15,8 @@ const DEDICATED_SERVICE_URLS = {
   'cleaning-tune-up': '/cleaning-tune-up/'
 };
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return services.map((service) => ({
     slug: service.slug

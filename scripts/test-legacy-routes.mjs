@@ -79,7 +79,71 @@ const testCases = [
     expectedStatus: 410,
     checkHeaders: true
   },
-  // 8. Valid application routes (must return 200)
+  // 8. WordPress legacy patterns
+  {
+    name: 'GET /category/news (Legacy WordPress category)',
+    url: '/category/news',
+    manualRedirect: true,
+    expectedStatus: 410,
+    checkHeaders: true
+  },
+  {
+    name: 'GET /tag/screen-replacement (Legacy WordPress tag)',
+    url: '/tag/screen-replacement',
+    manualRedirect: true,
+    expectedStatus: 410,
+    checkHeaders: true
+  },
+  {
+    name: 'GET /feed (Legacy RSS feed)',
+    url: '/feed',
+    manualRedirect: true,
+    expectedStatus: 410,
+    checkHeaders: true
+  },
+  {
+    name: 'GET /wp-login.php (WordPress login probe)',
+    url: '/wp-login.php',
+    manualRedirect: true,
+    expectedStatus: 410,
+    checkHeaders: true
+  },
+  {
+    name: 'GET /wp-content/uploads/2020/test.jpg (WordPress upload path)',
+    url: '/wp-content/uploads/2020/test.jpg',
+    manualRedirect: true,
+    expectedStatus: 410,
+    checkHeaders: true
+  },
+  {
+    name: 'GET /page/2 (Legacy pagination)',
+    url: '/page/2',
+    manualRedirect: true,
+    expectedStatus: 410,
+    checkHeaders: true
+  },
+  {
+    name: 'GET /xmlrpc.php (WordPress XMLRPC probe)',
+    url: '/xmlrpc.php',
+    manualRedirect: true,
+    expectedStatus: 410,
+    checkHeaders: true
+  },
+  {
+    name: 'GET /author/admin (Legacy author archive)',
+    url: '/author/admin',
+    manualRedirect: true,
+    expectedStatus: 410,
+    checkHeaders: true
+  },
+  {
+    name: 'GET /archives/2019 (Legacy archives)',
+    url: '/archives/2019',
+    manualRedirect: true,
+    expectedStatus: 410,
+    checkHeaders: true
+  },
+  // 9. Valid application routes (must return 200)
   {
     name: 'GET / (Homepage - must remain 200 OK)',
     url: '/',
@@ -88,6 +152,11 @@ const testCases = [
   {
     name: 'GET /services (Services page - must remain 200 OK)',
     url: '/services',
+    expectedStatus: 200
+  },
+  {
+    name: 'GET /estimate (Estimate page - must return 200 OK)',
+    url: '/estimate',
     expectedStatus: 200
   },
   {
@@ -115,7 +184,75 @@ const testCases = [
     url: '/sitemap.xml',
     expectedStatus: 200
   },
-  // 9. Unrelated non-existent route (must return standard 404, not 410)
+  // 10. Junk slugs on dynamic routes (must return 404 directly via dynamicParams = false)
+  {
+    name: 'GET /blog/non-existent-blog-slug-9999 (Blog dynamicParams=false -> 404)',
+    url: '/blog/non-existent-blog-slug-9999',
+    expectedStatus: 404
+  },
+  {
+    name: 'GET /services/non-existent-service-slug (Services dynamicParams=false -> 404)',
+    url: '/services/non-existent-service-slug',
+    expectedStatus: 404
+  },
+  {
+    name: 'GET /gaming-desktop/build (Ghost sitemap route removed -> 404)',
+    url: '/gaming-desktop/build',
+    expectedStatus: 404
+  },
+  // 11. Boundary verification for real paths vs legacy prefixes (must return 404, NOT 410)
+  {
+    name: 'GET /feedback (Prefix boundary test -> 404, not 410)',
+    url: '/feedback',
+    expectedStatus: 404
+  },
+  {
+    name: 'GET /tagline (Prefix boundary test -> 404, not 410)',
+    url: '/tagline',
+    expectedStatus: 404
+  },
+  {
+    name: 'GET /pagespeed (Prefix boundary test -> 404, not 410)',
+    url: '/pagespeed',
+    expectedStatus: 404
+  },
+  // 12. Legacy boundary cases (must return 410)
+  {
+    name: 'GET /feed (Exact feed legacy -> 410)',
+    url: '/feed',
+    manualRedirect: true,
+    expectedStatus: 410,
+    checkHeaders: true
+  },
+  {
+    name: 'GET /feed/ (Trailing slash feed legacy -> 410)',
+    url: '/feed/',
+    followRedirects: true,
+    expectedStatus: 410,
+    checkHeaders: true
+  },
+  {
+    name: 'GET /tag/x (Tag subpath legacy -> 410)',
+    url: '/tag/x',
+    manualRedirect: true,
+    expectedStatus: 410,
+    checkHeaders: true
+  },
+  {
+    name: 'GET /category/x (Category subpath legacy -> 410)',
+    url: '/category/x',
+    manualRedirect: true,
+    expectedStatus: 410,
+    checkHeaders: true
+  },
+  {
+    name: 'GET /2020/07/x (Year/month legacy -> 410)',
+    url: '/2020/07/x',
+    manualRedirect: true,
+    expectedStatus: 410,
+    checkHeaders: true
+  },
+  // 13. Unrelated non-existent route (must return standard 404, not 410)
   {
     name: 'GET /unrelated-nonexistent-path (Missing route - must return 404)',
     url: '/unrelated-nonexistent-path',
@@ -181,6 +318,40 @@ async function run() {
       console.error(`[ERR]  ${t.name} -> Network error: ${err.message}`);
       failed++;
     }
+  }
+
+  // Verify robots.txt content rules
+  try {
+    const robotsRes = await fetch(`${base}/robots.txt`);
+    const robotsText = await robotsRes.text();
+    let robotsOk = true;
+
+    if (!robotsText.includes('Disallow: /feed/')) {
+      console.error('[FAIL] robots.txt is missing "Disallow: /feed/"');
+      robotsOk = false;
+    }
+    if (!robotsText.includes('Disallow: /feed$')) {
+      console.error('[FAIL] robots.txt is missing "Disallow: /feed$"');
+      robotsOk = false;
+    }
+    if (/(^|\n)Disallow:\s*\/feed(\r?\n|$)/.test(robotsText)) {
+      console.error('[FAIL] robots.txt contains bare "Disallow: /feed" without trailing slash or $');
+      robotsOk = false;
+    }
+    if (robotsText.includes('GPTBot') || robotsText.includes('ClaudeBot')) {
+      console.error('[FAIL] robots.txt contains AI crawlers despite BLOCK_AI_CRAWLERS=false');
+      robotsOk = false;
+    }
+
+    if (robotsOk) {
+      console.log('[PASS] robots.txt format verification (exact /feed/ and /feed$, no bare /feed, no AI bot lines)');
+      passed++;
+    } else {
+      failed++;
+    }
+  } catch (err) {
+    console.error(`[ERR]  robots.txt check failed: ${err.message}`);
+    failed++;
   }
 
   console.log(`\nSummary: ${passed} passed, ${failed} failed.\n`);

@@ -3,6 +3,8 @@ import { locations } from '@/data/locations';
 import { LocationDetailPageView } from '@/components/pages/LocationDetailPageView';
 import { getLocalBusinessSchema, getBreadcrumbSchema } from '@/lib/jsonLd';
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return locations.map((loc) => ({
     slug: loc.slug

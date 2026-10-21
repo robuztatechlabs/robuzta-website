@@ -52,6 +52,17 @@ const nextConfig = {
             value: 'camera=(), microphone=(), geolocation=()'
           }
         ]
+      },
+      // X-Robots-Tag: noindex for non-canonical hosts (www and Vercel preview)
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www\\.robuzta\\.com' }],
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }]
+      },
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: '.*\\.vercel\\.app' }],
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }]
       }
     ];
   }

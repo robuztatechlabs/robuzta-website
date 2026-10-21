@@ -3,6 +3,8 @@ import { blogs } from '@/data/blogs';
 import { BlogDetailPageView } from '@/components/pages/BlogDetailPageView';
 import { getBlogPostingSchema, getBreadcrumbSchema } from '@/lib/jsonLd';
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return blogs.map((b) => ({
     slug: b.slug

@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation';
 import { getBySlug, getAllSlugs } from '@/data/laptopRepairData';
 import { LaptopRepairSlugView } from '@/components/laptop-repair/LaptopRepairSlugView';
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const slugs = getAllSlugs();
   return slugs.map((slug) => ({

@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation';
 import { getMobileBySlug, getAllMobileSlugs } from '@/data/mobileRepairData';
 import { MobileRepairSlugView } from '@/components/mobile-repair/MobileRepairSlugView';
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const slugs = getAllMobileSlugs();
   return slugs.map((slug) => ({

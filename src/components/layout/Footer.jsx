@@ -56,7 +56,7 @@ export function Footer() {
                 const href = dedicatedUrls[service.slug] || `/services/${service.slug}`;
                 return (
                   <li key={service.slug}>
-                    <Link href={href} className="hover:text-[#0E7C7B] transition-colors">
+                    <Link href={href} prefetch={false} className="hover:text-[#0E7C7B] transition-colors">
                       {service.title}
                     </Link>
                   </li>
@@ -72,25 +72,25 @@ export function Footer() {
             </h3>
             <ul className="space-y-2 sm:space-y-2.5 text-xs sm:text-sm font-semibold">
               <li>
-                <Link href="/services" className="hover:text-[#0E7C7B] transition-colors">All Services Overview</Link>
+                <Link href="/services" prefetch={false} className="hover:text-[#0E7C7B] transition-colors">All Services Overview</Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-[#0E7C7B] transition-colors">About Robuzta Lab</Link>
+                <Link href="/about" prefetch={false} className="hover:text-[#0E7C7B] transition-colors">About Robuzta Lab</Link>
               </li>
               <li>
-                <Link href="/locations" className="hover:text-[#0E7C7B] transition-colors">Lab Locations</Link>
+                <Link href="/locations" prefetch={false} className="hover:text-[#0E7C7B] transition-colors">Lab Locations</Link>
               </li>
               <li>
-                <Link href="/franchise" className="hover:text-[#0E7C7B] transition-colors">Franchise Opportunity</Link>
+                <Link href="/franchise" prefetch={false} className="hover:text-[#0E7C7B] transition-colors">Franchise Opportunity</Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-[#0E7C7B] transition-colors">Repair Guides & Blog</Link>
+                <Link href="/blog" prefetch={false} className="hover:text-[#0E7C7B] transition-colors">Repair Guides & Blog</Link>
               </li>
               <li>
-                <Link href="/faq" className="hover:text-[#0E7C7B] transition-colors">Help Center & FAQ</Link>
+                <Link href="/faq" prefetch={false} className="hover:text-[#0E7C7B] transition-colors">Help Center & FAQ</Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-[#0E7C7B] transition-colors">Book Doorstep Pickup</Link>
+                <Link href="/contact" prefetch={false} className="hover:text-[#0E7C7B] transition-colors">Book Doorstep Pickup</Link>
               </li>
             </ul>
           </div>
@@ -128,6 +128,7 @@ export function Footer() {
                   <div className="space-y-0.5">
                     <Link
                       href={`/locations/${loc.slug}/`}
+                      prefetch={false}
                       className="font-bold text-white hover:text-[#0E7C7B] transition-colors block text-xs"
                     >
                       {loc.title}
@@ -146,8 +147,8 @@ export function Footer() {
         <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-center sm:text-left text-xs text-slate-400 font-medium">
           <p>© {new Date().getFullYear()} Robuzta Techlabs. All rights reserved.</p>
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
-            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link href="/privacy" prefetch={false} className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" prefetch={false} className="hover:text-white transition-colors">Terms of Service</Link>
             <span className="flex items-center gap-1.5 text-emerald-400 font-bold">
               <span className="h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
               Workbench Operational
