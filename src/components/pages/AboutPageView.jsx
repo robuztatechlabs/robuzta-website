@@ -179,9 +179,6 @@ export function AboutPageView() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-6 space-y-4">
-                <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
-                  {data.whoWeAre.badge}
-                </span>
                 <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
                   {data.whoWeAre.heading}
                 </h2>
@@ -214,9 +211,6 @@ export function AboutPageView() {
         <section className="py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
             <div className="text-center space-y-2 max-w-2xl mx-auto">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
-                {data.ourApproach.badge}
-              </span>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
                 {data.ourApproach.heading}
               </h2>
@@ -267,9 +261,6 @@ export function AboutPageView() {
           <section className="py-14 sm:py-20 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800">
             <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-8">
               <div className="text-center space-y-2">
-                <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
-                  {data.faqsSubtitle}
-                </span>
                 <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
                   {data.faqsTitle}
                 </h2>

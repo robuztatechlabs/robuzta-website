@@ -8,7 +8,7 @@ export const ABOUT_PAGE_DATA = {
   mainHeading: 'Who We Are',
   introParagraphs: [
     'At Robuzta Techlabs, we are a dedicated team of hardware & software engineers,  technicians, and diagnostic specialists. We believe repairing a device is not just about swapping a part—it is about deep technical understanding, circuit-level troubleshooting, and precision engineering.',
-    'From complex MacBook logic board micro-soldering and laptop motherboard repairs to smartphone chip diagnostics and gaming rig overhauls, our engineering team brings deep bench-level expertise, transparent communication, and meticulous craftsmanship to every device.'
+    'From complex MacBook motherboard micro-soldering and laptop motherboard repairs to smartphone chip diagnostics and gaming rig overhauls, our engineering team brings deep bench-level expertise, transparent communication, and meticulous craftsmanship to every device.'
   ],
   metaTitle: 'Who We Are | About Robuzta Techlabs Ahmedabad',
   metaDescription: 'Learn who we are at Robuzta Techlabs. We are a specialized team of hardware engineers and  technicians providing precision chip-level repairs across laptops, MacBooks, smartphones, and gaming PCs in Ahmedabad.',

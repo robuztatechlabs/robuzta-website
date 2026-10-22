@@ -117,11 +117,6 @@ export function LocationsPageView() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
             
             <div className="text-center space-y-3 max-w-2xl mx-auto">
-              <div className="inline-flex items-center gap-1.5 rounded-full bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-3.5 py-1 text-xs font-black text-[#0E7C7B] dark:text-teal-300">
-                <Building2 size={13} />
-                <span>OFFICIAL BRANCHES</span>
-              </div>
-
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
                 Robuzta Techlabs near You
               </h2>

@@ -21,10 +21,6 @@ export function FranchiseHomeSection() {
             {/* Left Content Column */}
             <div className="lg:col-span-7 space-y-8 text-center sm:text-left">
 
-              <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/20 px-4 py-1.5 text-xs font-black text-[#0E7C7B] dark:text-teal-400 uppercase tracking-widest">
-                <Building size={14} className="text-[#0E7C7B] dark:text-teal-400" />
-                <span>FRANCHISE OPPORTUNITY</span>
-              </div>
 
               <motion.h2
                 initial={{ opacity: 0, y: 15 }}

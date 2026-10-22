@@ -8,7 +8,7 @@ export function BrandLogosGrid() {
       name: 'Apple MacBook',
       tag: 'Air, Pro & Mac Studio',
       image: '/assets/brands/apple-13.svg',
-      badge: 'Logic Board',
+      badge: 'motherboard',
       logoStyle: 'h-14 sm:h-16 w-14 sm:w-16 max-w-[64px]',
       mobileScale: 1
     },

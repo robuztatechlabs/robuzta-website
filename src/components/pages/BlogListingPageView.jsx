@@ -197,10 +197,6 @@ export function BlogListingPageView() {
               className="rounded-3xl bg-gradient-to-r from-slate-900 via-[#070e1a] to-slate-950 text-white p-7 sm:p-12 shadow-2xl border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
             >
               <div className="lg:col-span-8 space-y-3">
-                <div className="flex items-center gap-2 text-xs font-black uppercase text-amber-400 tracking-wider">
-                  <ShieldIcon size={16} />
-                  <span>ROBUZTA HARDWARE ADVISORY</span>
-                </div>
                 <h3 className="text-2xl sm:text-3xl font-black text-white">
                   Need Help Diagnosing Your Laptop or MacBook?
                 </h3>

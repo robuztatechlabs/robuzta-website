@@ -216,9 +216,6 @@ export function LaptopRepairHubView() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
             
             <div className="text-center max-w-2xl mx-auto space-y-3">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400">
-                BRAND-SPECIFIC LAB REPAIR
-              </span>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
                 Select Your Laptop Brand
               </h2>

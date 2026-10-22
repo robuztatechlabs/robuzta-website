@@ -57,11 +57,6 @@ export function ReelsSection({
         
         {/* Header */}
         <div className="text-center space-y-4 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-gradient-to-r dark:from-fuchsia-600/20 dark:via-pink-600/20 dark:to-amber-500/20 border border-[#0E7C7B]/20 dark:border-pink-500/30 px-4 py-1.5 text-xs font-extrabold text-[#0E7C7B] dark:text-pink-300">
-            <Sparkles size={14} className="text-[#EA580C] dark:text-amber-400" />
-            <span>OFFICIAL INSTAGRAM REELS &bull; @ROBUZTATECHLABS</span>
-          </div>
-
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
             {title}
           </h2>

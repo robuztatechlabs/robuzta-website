@@ -9,10 +9,10 @@ const repairCases = [
   {
     id: 1,
     category: 'MacBook & Laptop',
-    title: 'MacBook Pro M2 Liquid Damage Logic Board Recovery',
+    title: 'MacBook Pro M2 Liquid Damage motherboard Recovery',
     description: 'Micro-soldered blown power ICs and corrosion-damaged capacitors under microscope. Recovered 100% of user data with 24-hour turnaround.',
     metrics: ['100% Data Saved', 'Micro-Soldering', '24h Turnaround'],
-    tags: ['MacBook Pro M2', 'Logic Board', 'FLIR Thermal Scan'],
+    tags: ['MacBook Pro M2', 'motherboard', 'FLIR Thermal Scan'],
     gradient: 'from-purple-500/10 to-teal-500/10'
   },
   {

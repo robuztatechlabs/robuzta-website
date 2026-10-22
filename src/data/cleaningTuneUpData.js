@@ -10,7 +10,7 @@ export const CLEANING_PAGE_DATA = {
   metaDescription: 'Latop and Desktop cleaning and tune-up services in Ahmedabad to reduce overheating, improve airflow, control fan noise, and maintain system performance.',
   canonicalUrl: 'https://robuzta.com/cleaning-tune-up/',
 
-  whyChooseUsTitle: 'Why Choose Us?',
+  whyChooseUsTitle: 'Why Professional Deep Cleaning Matters',
   whyChooseUs: [
     'Deep Internal Cleaning',
     'Thermal Performance Check',

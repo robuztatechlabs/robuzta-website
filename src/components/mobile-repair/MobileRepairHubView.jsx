@@ -205,7 +205,6 @@ export function MobileRepairHubView() {
         <section className="py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
             <div className="text-center max-w-3xl mx-auto space-y-2">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">REPAIR BY BRAND</span>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
                 Smartphone Brands We Repair
               </h2>
@@ -262,7 +261,7 @@ export function MobileRepairHubView() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
             <div className="text-center max-w-3xl mx-auto space-y-3">
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
-                Mobile Phone Repair in Ahmedabad: Common Problems & Solutions
+                Common Smartphone Faults & Diagnostic Solutions
               </h2>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
                 Is your phone not charging, overheating, showing display problems, or suddenly switched off? Learn about common smartphone problems, what causes them, and when professional mobile repair is required.
@@ -315,7 +314,7 @@ export function MobileRepairHubView() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
             <div className="text-center max-w-3xl mx-auto space-y-3">
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                Mobile Services
+                Comprehensive Smartphone Repair Capabilities
               </h2>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
                 At <strong className="font-bold text-slate-900 dark:text-white">Robuzta TechLabs</strong>, we provide professional smartphone repair for supported <strong className="font-bold text-slate-900 dark:text-white">iPhone, Samsung, Google Pixel, OnePlus, OPPO, Vivo, Realme, Motorola, Nothing, iQOO</strong>, and other devices.
@@ -323,9 +322,6 @@ export function MobileRepairHubView() {
             </div>
 
             <div className="max-w-6xl mx-auto space-y-6">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400 text-center block">
-                Our services include:
-              </span>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
                 {includedServices.map((srv, idx) => {
@@ -361,9 +357,8 @@ export function MobileRepairHubView() {
         <section className="py-14 sm:py-20 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-8">
             <div className="text-center space-y-2">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">FREQUENTLY ASKED QUESTIONS</span>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                FAQ
+                Frequently Asked Questions
               </h2>
             </div>
 
@@ -407,10 +402,6 @@ export function MobileRepairHubView() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="rounded-3xl bg-gradient-to-r from-slate-900 via-[#070e1a] to-slate-950 text-white p-8 sm:p-12 shadow-2xl border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-8 space-y-3">
-                <div className="flex items-center gap-2 text-xs font-black uppercase text-amber-400 tracking-wider">
-                  <Sparkles size={16} />
-                  <span>QUICK MOBILE REPAIR SERVICE IN AHMEDABAD</span>
-                </div>
                 <h3 className="text-2xl sm:text-4xl font-black text-white">
                   Got a Damaged Mobile Phone?
                 </h3>

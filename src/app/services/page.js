@@ -3,7 +3,7 @@ import { ServicesPageView } from '@/components/pages/ServicesPageView';
 export const metadata = {
   title: 'All Electronics & Computer Repair Services | Robuzta Techlabs Ahmedabad',
   description:
-    'Explore Robuzta Techlabs repair services in Ahmedabad: Laptop Repair, MacBook Logic Board Repair, Smartphone Display & Battery, Surface Pro & Gaming PC Thermal Tuning.',
+    'Explore Robuzta Techlabs repair services in Ahmedabad: Laptop Repair, MacBook motherboard Repair, Smartphone Display & Battery, Surface Pro & Gaming PC Thermal Tuning.',
   openGraph: {
     title: 'All Repair Services | Robuzta Techlabs Ahmedabad',
     description:

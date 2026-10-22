@@ -244,9 +244,6 @@ export function GamingDesktopView({ data }) {
         <section className="py-12 sm:py-16 border-b border-slate-200 dark:border-slate-800">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
             <div className="text-center max-w-3xl mx-auto space-y-2">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
-                
-              </span>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
                 {data.whyChooseUsTitle}
               </h2>
@@ -274,9 +271,6 @@ export function GamingDesktopView({ data }) {
         <section className="py-14 sm:py-20 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
             <div className="text-center max-w-3xl mx-auto space-y-2">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
-                {data.servicesBadge}
-              </span>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
                 {data.servicesTitle}
               </h2>
@@ -326,9 +320,6 @@ export function GamingDesktopView({ data }) {
           <section className="py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
               <div className="text-center max-w-3xl mx-auto space-y-2">
-                <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
-                  {data.customBuildsBadge}
-                </span>
                 <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
                   {data.customBuildsTitle}
                 </h2>
@@ -379,7 +370,6 @@ export function GamingDesktopView({ data }) {
           <section className="py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800">
             <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-8">
               <div className="text-center space-y-2">
-                <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">FREQUENTLY ASKED QUESTIONS</span>
                 <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
                   {data.faqsTitle}
                 </h2>
@@ -421,10 +411,6 @@ export function GamingDesktopView({ data }) {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="rounded-3xl bg-gradient-to-r from-slate-900 via-[#070e1a] to-slate-950 text-white p-8 sm:p-12 shadow-2xl border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-8 space-y-3">
-                <div className="flex items-center gap-2 text-xs font-black uppercase text-amber-400 tracking-wider">
-                  <Sparkles size={16} />
-                  <span>GAMING PC EXPERTS IN AHMEDABAD</span>
-                </div>
                 <h3 className="text-2xl sm:text-4xl font-black text-white">
                   Ready to Repair or Build Your Gaming Rig?
                 </h3>

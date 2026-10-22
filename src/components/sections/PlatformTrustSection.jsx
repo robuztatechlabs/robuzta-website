@@ -58,16 +58,6 @@ export function PlatformTrustSection() {
         
         {/* Header Title Bar - Short & Simple */}
         <div className="text-center space-y-2 max-w-2xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-1.5 rounded-full bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-3.5 py-1 text-xs font-black text-[#0E7C7B] dark:text-teal-300"
-          >
-            <ShieldCheck size={13} className="text-emerald-500" />
-            <span>VERIFIED RATINGS</span>
-          </motion.div>
-
           <motion.h2
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}

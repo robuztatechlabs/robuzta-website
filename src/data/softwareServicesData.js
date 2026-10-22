@@ -10,7 +10,7 @@ export const SOFTWARE_SERVICES_PAGE_DATA = {
   metaDescription: 'Computer and laptop software services in Ahmedabad for Windows installation, OS errors, driver problems, boot failures, software crashes, virus removal & optimization.',
   canonicalUrl: 'https://robuzta.com/software-services/',
 
-  whyChooseUsTitle: 'Why Choose Us?',
+  whyChooseUsTitle: 'Why Choose Robuzta for Software Solutions',
   whyChooseUs: [
     'Windows & Software Troubleshooting Experts',
     'Genuine OS Installation & Setup',

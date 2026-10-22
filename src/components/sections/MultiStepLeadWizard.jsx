@@ -16,7 +16,7 @@ const brands = [
 const issueTypes = [
   { label: 'Screen & Touch Display Damage', icon: Laptop, badge: 'Same-Day Swap' },
   { label: 'Liquid Spill & Water Damage Emergency', icon: Droplets, badge: 'Decontamination' },
-  { label: 'Motherboard No Power / Dead Logic Board', icon: Cpu, badge: 'BGA Soldering' },
+  { label: 'Motherboard No Power / Dead motherboard', icon: Cpu, badge: 'BGA Soldering' },
   { label: 'Battery Drain / Charging Port Repair', icon: ShieldCheck, badge: 'OEM Battery' },
   { label: 'Hard Drive & SSD Data Recovery', icon: HardDrive, badge: 'Data Saved' }
 ];

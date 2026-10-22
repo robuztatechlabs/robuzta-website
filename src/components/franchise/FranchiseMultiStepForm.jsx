@@ -54,10 +54,6 @@ export function FranchiseMultiStepForm() {
         
         {/* Section Header */}
         <div className="text-center space-y-4">
-          <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-300 bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 dark:border-teal-400/30 px-4 py-1.5 rounded-full inline-block">
-            CONFIDENTIAL FRANCHISE APPLICATION
-          </span>
-
           <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
             Apply for Robuzta Franchise Partnership
           </h2>

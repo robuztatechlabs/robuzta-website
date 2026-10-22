@@ -695,7 +695,7 @@ export const LAPTOP_BRANDS = [
       { title: 'Charging Port Repair', desc: 'Fix USB-C/MagSafe port, charger, or charging circuit issues' },
       { title: 'Keyboard & Trackpad Repair', desc: 'Repair individual keys, full keyboard, or trackpad faults' },
       { title: 'Liquid Damage Diagnosis', desc: 'Assess and repair liquid-affected internal components' },
-      { title: 'Logic Board Repair', desc: 'Chip-level motherboard diagnostics and micro-soldering' },
+      { title: 'motherboard Repair', desc: 'Chip-level motherboard diagnostics and micro-soldering' },
       { title: 'SSD & Storage Solutions', desc: 'Storage upgrade, diagnosis, and system optimization' },
       { title: 'macOS Troubleshooting', desc: 'Fix slow startup, application freezes, and macOS errors' },
       { title: 'MacBook Cleaning & Thermal Service', desc: 'Thermal servicing and fan cleaning for overheating' },

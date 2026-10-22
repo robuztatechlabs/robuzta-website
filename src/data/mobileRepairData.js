@@ -10,7 +10,7 @@ export const MOBILE_BRANDS = [
     fullName: 'Apple iPhone Repair Services',
     h1: 'iPhone Repair Services in Ahmedabad',
     tagline: 'Professional iPhone repair in Ahmedabad for cracked screens, battery problems, charging issues, Face ID faults, camera problems, back glass damage, water damage, and motherboard issues. We repair iPhone 11, 12, 13, 14, 15, 16 and supported Pro and Pro Max models.',
-    metaTitle: 'iPhone Repair in Ahmedabad | Screen, Battery & Logic Board | Robuzta',
+    metaTitle: 'iPhone Repair in Ahmedabad | Screen, Battery & motherboard | Robuzta',
     metaDescription: 'Expert iPhone repair in Ahmedabad.  screen replacement, battery swap, water damage & motherboard repair for iPhone 11 to 16 Pro Max.',
     logoImage: '/assets/brands/apple-13.svg',
     shortTag: 'iPhone 11, 12, 13, 14, 15 & 16 Series, including Pro and Pro Max models.',

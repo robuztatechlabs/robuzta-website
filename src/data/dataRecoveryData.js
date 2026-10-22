@@ -10,7 +10,7 @@ export const DATA_RECOVERY_PAGE_DATA = {
   metaDescription: 'Data recovery services in Ahmedabad for failed hard drives, SSDs, memory cards, USB drives, laptops, desktops, and damaged storage devices.',
   canonicalUrl: 'https://robuzta.com/data-recovery/',
 
-  whyChooseUsTitle: 'Why Choose Us?',
+  whyChooseUsTitle: 'Why Trust Robuzta for Data Recovery?',
   whyChooseUs: [
     'Advanced Data Recovery Diagnostics',
     'HDD & SSD Recovery Expertise',

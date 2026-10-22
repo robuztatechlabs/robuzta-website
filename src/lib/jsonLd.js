@@ -106,7 +106,7 @@ export function getLocalBusinessSchema(location = null) {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'MacBook Logic Board & Display Repair'
+            name: 'MacBook motherboard & Display Repair'
           }
         },
         {

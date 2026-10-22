@@ -28,12 +28,6 @@ export function CourierHighlight() {
         <div className="rounded-3xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4.5 xs:p-6 sm:p-12 shadow-md flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8">
           
           <div className="space-y-4 sm:space-y-6 max-w-3xl">
-            <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-xl sm:rounded-full bg-[#0E7C7B]/10 dark:bg-teal-400/10 border border-[#0E7C7B]/20 px-3 sm:px-3.5 py-1 sm:py-1.5 text-[10px] sm:text-xs font-black text-[#0E7C7B] dark:text-teal-400 uppercase tracking-wider sm:tracking-widest">
-              <Truck size={14} className="text-[#0E7C7B] dark:text-teal-400 shrink-0" />
-              <span className="sm:hidden">EXPRESS PICKUP & PAN-INDIA SHIP-IN</span>
-              <span className="hidden sm:inline">EXPRESS DOORSTEP PICKUP & PAN-INDIA SHIP-IN REPAIR</span>
-            </div>
-
             <h2 className="text-xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-snug">
               Doorstep Pickup Across Ahmedabad & Insured Pan-India Courier Repair
             </h2>

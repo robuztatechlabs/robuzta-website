@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Cpu } from 'lucide-react';
 
 const techCategories = {
-  'Micro-Soldering & Logic Board': [
+  'Micro-Soldering & motherboard': [
     { name: 'FLIR Thermal Imaging Camera', desc: 'Pinpoints short-circuits & motherboard overheating chips instantly without invasive probes.', tag: 'Diagnostics' },
     { name: 'BGA Optical Rework Station', desc: 'Precision chip-level micro-soldering, reballing, and SMC/Power IC replacement.', tag: 'Hardware' },
     { name: 'Rigol Digital Oscilloscope', desc: 'Motherboard frequency, power rail, and signal wave diagnostics.', tag: 'Testing' },
@@ -20,13 +20,13 @@ const techCategories = {
   'Genuine Parts & Sourcing': [
     { name: 'Serial-Verified Displays', desc: 'Grade-A original screens for Apple Retina, Dell XPS, HP, and OLED phones.', tag: 'Original Parts' },
     { name: 'OEM Battery Packs', desc: 'High-cycle OEM batteries backed by official replacement warranty.', tag: 'Battery Health' },
-    { name: 'Logic Board IC Components', desc: 'Genuine power ICs, charging flex cables, and capacitors.', tag: 'Components' },
+    { name: 'motherboard IC Components', desc: 'Genuine power ICs, charging flex cables, and capacitors.', tag: 'Components' },
     { name: 'Digital Invoice & Tracking', desc: 'Logged serial numbers and digital invoices for full customer transparency.', tag: 'Trust' }
   ]
 };
 
 export function TechStackSection() {
-  const [activeTab, setActiveTab] = useState('Micro-Soldering & Logic Board');
+  const [activeTab, setActiveTab] = useState('Micro-Soldering & motherboard');
 
   return (
     <section className="relative bg-white dark:bg-slate-950 py-24 border-b border-slate-200 dark:border-slate-700">

@@ -20,7 +20,7 @@ export const GAMING_REPAIR_DATA = {
   metaDescription: 'Gaming PC repair and custom PC building services in Ahmedabad for gaming, streaming, editing, and high-performance systems.',
   canonicalUrl: 'https://robuzta.com/gaming-desktop/repair/',
 
-  whyChooseUsTitle: 'Why Choose Us?',
+  whyChooseUsTitle: 'Why Gamers Trust Robuzta Lab',
   whyChooseUs: [
     'Gaming PC Repair Specialists',
     'Custom PC Build & Upgrade',
@@ -138,7 +138,7 @@ export const GAMING_BUILD_DATA = {
   metaDescription: 'Custom gaming PC build and assembly service in Ahmedabad. Expert component selection, ARGB liquid cooling setup, cable management & 3DMark stress testing.',
   canonicalUrl: 'https://robuzta.com/gaming-desktop/build/',
 
-  whyChooseUsTitle: 'Why Choose Us?',
+  whyChooseUsTitle: 'Why Build Your Custom Rig with Robuzta',
   whyChooseUs: [
     'Gaming PC Repair Specialists',
     'Custom PC Build & Upgrade',

@@ -146,7 +146,6 @@ export function BlogDetailPageView({ article }) {
                 className="flex items-center justify-between"
               >
                 <div>
-                  <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] block">RECOMMENDED READS</span>
                   <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">Related Hardware Guides</h3>
                 </div>
                 <Link href="/blog" className="text-xs font-black text-[#0E7C7B] flex items-center gap-1 hover:underline">

@@ -213,7 +213,6 @@ export function ContactPageView() {
               transition={SMOOTH_TRANSITION}
               className="text-center space-y-2"
             >
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400 block">FAQ</span>
               <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">Frequently Asked Questions</h2>
             </motion.div>
 

@@ -6,7 +6,7 @@
 
 export const COMPONENT_DATA = {
   cpu: {
-    name: 'Motherboard & Logic Board Repair',
+    name: 'Motherboard & motherboard Repair',
     icon: '🔲',
     color: '#0E7C7B',
     href: '/laptop-repair/motherboard-repair/',

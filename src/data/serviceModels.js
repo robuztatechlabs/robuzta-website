@@ -40,7 +40,7 @@ export const serviceModelShowcases = {
   'macbook-repair': [
     {
       modelPath: '/models/Circuit board 1.glb',
-      title: 'Logic Board & Circuit Repair',
+      title: 'motherboard & Circuit Repair',
       description:
         'Apple Silicon and Intel MacBook motherboard micro-soldering — power IC replacement, liquid damage recovery, and trace repair under microscope.',
       calloutTitle: 'Micro-Soldering Precision:',

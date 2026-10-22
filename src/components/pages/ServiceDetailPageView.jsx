@@ -243,7 +243,6 @@ export function ServiceDetailPageView({ slug }) {
                       <ShieldCheck size={24} />
                     </div>
                     <div>
-                      <p className="text-[10px] font-black uppercase tracking-widest text-[#0E7C7B]">Robuzta Lab Guarantee</p>
                       <h2 className="text-xl font-extrabold text-slate-900 dark:text-white leading-tight">{service.title} Promise</h2>
                     </div>
                   </div>
@@ -293,9 +292,6 @@ export function ServiceDetailPageView({ slug }) {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
                 <div>
-                  <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
-                    BRAND & PROBLEM DIRECT ROUTING
-                  </span>
                   <h2 className="text-2xl sm:text-3xl font-black text-white mt-1">
                     Select Your Laptop Brand or Issue
                   </h2>
@@ -378,14 +374,6 @@ export function ServiceDetailPageView({ slug }) {
 
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
               <div className="text-center max-w-3xl mx-auto space-y-4">
-                <motion.span
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="inline-block text-xs font-bold uppercase tracking-widest text-[#0E7C7B] bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-3.5 py-1.5 rounded-full"
-                >
-                  Interactive Hardware Preview
-                </motion.span>
                 <motion.h2
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -421,14 +409,6 @@ export function ServiceDetailPageView({ slug }) {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {/* Section heading */}
             <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
-              <motion.span
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="inline-block text-xs font-bold uppercase tracking-widest text-[#0E7C7B] bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-3.5 py-1.5 rounded-full"
-              >
-                Common Symptoms
-              </motion.span>
               <motion.h2
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -479,14 +459,6 @@ export function ServiceDetailPageView({ slug }) {
 
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-              <motion.span
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="inline-block text-xs font-bold uppercase tracking-widest text-blue-700 bg-blue-50 border border-blue-200 px-3.5 py-1.5 rounded-full"
-              >
-                Simple Workflow
-              </motion.span>
               <motion.h2
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -546,14 +518,6 @@ export function ServiceDetailPageView({ slug }) {
 
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
-              <motion.span
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="inline-block text-xs font-bold uppercase tracking-widest text-orange-700 bg-orange-50 border border-orange-200 px-3.5 py-1.5 rounded-full"
-              >
-                Comprehensive Scope
-              </motion.span>
               <motion.h2
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -614,14 +578,6 @@ export function ServiceDetailPageView({ slug }) {
             <div className="max-w-3xl mx-auto">
               {/* Heading */}
               <div className="text-center space-y-4 mb-12">
-                <motion.span
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="inline-block text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700 px-3.5 py-1.5 rounded-full shadow-sm"
-                >
-                  Service FAQ
-                </motion.span>
                 <motion.h2
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -685,14 +641,6 @@ export function ServiceDetailPageView({ slug }) {
 
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
-              <motion.span
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="inline-block text-xs font-bold uppercase tracking-widest text-blue-700 bg-blue-50 border border-blue-200 px-3.5 py-1.5 rounded-full"
-              >
-                Related Hardware
-              </motion.span>
               <motion.h2
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}

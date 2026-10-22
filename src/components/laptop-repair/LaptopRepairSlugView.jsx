@@ -237,11 +237,8 @@ export function LaptopRepairSlugView({ data }) {
           <section className="py-14 sm:py-20 bg-white dark:bg-[#070E1A] border-b border-slate-200 dark:border-slate-800">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
               <div className="text-center max-w-3xl mx-auto space-y-2">
-                <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400">
-                  COMMON PROBLEMS & SOLUTIONS
-                </span>
                 <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                  MacBook Repair in Ahmedabad: Common Problems & Solutions
+                  Common MacBook Issues & Diagnostic Solutions
                 </h2>
               </div>
 
@@ -275,9 +272,8 @@ export function LaptopRepairSlugView({ data }) {
           <section className="py-14 sm:py-20 bg-slate-50/60 dark:bg-[#0b1628] border-b border-slate-200 dark:border-slate-800">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
               <div className="text-center max-w-3xl mx-auto space-y-3">
-                
                 <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                  MacBook Repair Services in Ahmedabad
+                  Specialized MacBook Component & motherboard Services
                 </h2>
                 <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
                   At <strong className="font-bold text-slate-900 dark:text-white">Robuzta TechLabs</strong>, we provide professional MacBook diagnostics and repair for supported <strong className="font-bold text-slate-900 dark:text-white">MacBook Air and MacBook Pro</strong> models.
@@ -285,9 +281,6 @@ export function LaptopRepairSlugView({ data }) {
               </div>
 
               <div className="max-w-6xl mx-auto space-y-6">
-                <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400 text-center block">
-                  Our services include:
-                </span>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
                   {[
@@ -296,7 +289,7 @@ export function LaptopRepairSlugView({ data }) {
                     { title: 'Charging Port Repair', icon: Zap, tag: 'USB-C / MagSafe' },
                     { title: 'Keyboard & Trackpad Repair', icon: Keyboard, tag: 'Trackpad & Keys' },
                     { title: 'Liquid Damage Diagnosis', icon: Droplets, tag: 'Liquid Recovery' },
-                    { title: 'Logic Board Repair', icon: Cpu, tag: 'Micro-Soldering' },
+                    { title: 'motherboard Repair', icon: Cpu, tag: 'Micro-Soldering' },
                     { title: 'SSD & Storage Solutions', icon: HardDrive, tag: 'Storage & SSD' },
                     { title: 'macOS Troubleshooting', icon: Laptop, tag: 'macOS OS Fix' },
                     { title: 'MacBook Cleaning & Thermal Service', icon: Flame, tag: 'Thermal Service' },
@@ -335,11 +328,8 @@ export function LaptopRepairSlugView({ data }) {
             <section className="py-14 sm:py-20 bg-white dark:bg-[#070E1A] border-b border-slate-200 dark:border-slate-800">
               <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-8">
                 <div className="text-center space-y-2">
-                  <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400">
-                    FREQUENTLY ASKED QUESTIONS
-                  </span>
                   <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                    FAQ
+                    Frequently Asked Questions
                   </h2>
                 </div>
 
@@ -577,9 +567,6 @@ export function LaptopRepairSlugView({ data }) {
         <section className="py-16 sm:py-20 bg-white dark:bg-[#070E1A]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400">
-                HARDWARE ISSUES & REPAIRS
-              </span>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
                 {data.problemsTitle || `Common ${data.name} Hardware Issues We Fix`}
               </h2>

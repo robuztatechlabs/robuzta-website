@@ -245,9 +245,6 @@ export function ServicesPageView() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="rounded-3xl bg-gradient-to-r from-slate-900 via-[#070e1a] to-slate-950 text-white p-8 sm:p-12 shadow-2xl border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-8 space-y-3">
-                <span className="text-xs font-black uppercase tracking-widest text-amber-400 block">
-                  HARDWARE ESTIMATE & AHMEDABAD PICKUP
-                </span>
                 <h3 className="text-2xl sm:text-4xl font-black text-white">
                   Need Your Device Repaired Today?
                 </h3>
