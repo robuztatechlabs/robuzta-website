@@ -11,7 +11,7 @@ export const LAPTOP_BRANDS = [
     h1: 'Dell Laptop Repair in Ahmedabad',
     tagline: 'We fix charging issues, broken screens, motherboard Issue, battery problems, overheating, and more.',
     metaTitle: 'Dell Laptop Repair in Ahmedabad | Robuzta Techlabs',
-    metaDescription: 'Expert Dell laptop repair in Ahmedabad. Certified Chip-level diagnostics for XPS, Inspiron, Vostro & Alienware. Genuine parts & warranty.',
+    metaDescription: 'Expert Dell laptop repair in Ahmedabad.  Chip-level diagnostics for XPS, Inspiron, Vostro & Alienware. Genuine parts & warranty.',
     logoImage: '/assets/brands/dell-2.svg',
     shortTag: 'XPS, Inspiron, Vostro & Alienware',
     supportedModels: ['Dell XPS 13 / 15 / 17', 'Dell Inspiron 3000 / 5000 / 7000', 'Dell Vostro Series', 'Dell Latitude Corporate'],
@@ -112,7 +112,7 @@ export const LAPTOP_BRANDS = [
     h1: 'HP Laptop Repair in Ahmedabad',
     tagline: 'HP Laptop Repair Services in Ahmedabad for Pavilion, Victus, Omen, EliteBook, and ProBook laptops. We repair charging issues, screen damage, motherboard faults, battery problems, overheating, and data recovery needs with professional diagnostics and quality parts.',
     metaTitle: 'HP Laptop Repair in Ahmedabad | Robuzta Techlabs',
-    metaDescription: 'Professional HP laptop repair in Ahmedabad. Fast screen, battery, hinge & logic board repair for Spectre, Pavilion, Envy & OMEN laptops.',
+    metaDescription: 'Professional HP laptop repair in Ahmedabad. Fast screen, battery, hinge & motherboard repair for Spectre, Pavilion, Envy & OMEN laptops.',
     logoImage: '/assets/brands/hp-hewlett-packard.svg',
     shortTag: 'Spectre, Pavilion, Envy & OMEN',
     supportedModels: ['HP Pavilion 14 / 15 / x360', 'HP Spectre x360 Series', 'HP Envy 13 / 15 / 16', 'HP OMEN & Victus Gaming', 'HP EliteBook & ProBook'],
@@ -174,17 +174,17 @@ export const LAPTOP_BRANDS = [
     h1: 'Lenovo Laptop Repair Services in Ahmedabad',
     tagline: 'Expert Lenovo laptop repair services in Ahmedabad for ThinkPad, IdeaPad, Legion, Yoga, and LOQ laptops. We diagnose and fix screen damage, battery drainage, motherboard faults, charging issues, hinge breakage, liquid spills, and performance problems.',
     metaTitle: 'Lenovo Laptop Repair Services in Ahmedabad | Robuzta Techlabs',
-    metaDescription: 'Expert Lenovo laptop repair in Ahmedabad for ThinkPad, IdeaPad, Legion, Yoga & LOQ. Fast display, battery, hinge, charging & logic board fix.',
+    metaDescription: 'Expert Lenovo laptop repair in Ahmedabad for ThinkPad, IdeaPad, Legion, Yoga & LOQ. Fast display, battery, hinge, charging & motherboard fix.',
     logoImage: '/assets/brands/lenovo-2.svg',
     shortTag: 'ThinkPad, IdeaPad, Legion & Yoga',
     supportedModels: ['Lenovo ThinkPad X1 Carbon / T Series / L Series', 'Lenovo IdeaPad Slim 3 / 5 / Gaming', 'Lenovo Legion 5 / 7 / Pro', 'Lenovo Yoga 6 / 7 / 9i / Duet', 'Lenovo LOQ Series'],
     whyChooseUs: [
-      { title: 'Certified Brand Technicians', desc: 'Specialized diagnosis for ThinkPad & Legion' },
+      { title: ' Brand Technicians', desc: 'Specialized diagnosis for ThinkPad & Legion' },
       { title: 'Chip-level Repair', desc: 'BGA rework for Lenovo mainboards' },
       { title: 'Genuine Parts Only', desc: 'OEM screens, batteries, and keyboards' },
       { title: 'Same-Day Express Repairs', desc: 'Quick turnaround for screens & batteries' },
       { title: 'Transparent Cost Estimates', desc: 'Upfront pricing with zero hidden fees' },
-      { title: 'Warranty Protection', desc: 'Up to Limited Warranty on replacements' },
+      { title: 'Warranty Protection', desc: 'Up to Warranty on replacements' },
       { title: 'Zero Password Privacy', desc: 'Diagnostic testing without user credentials' }
     ],
     problemsTitle: 'Is Your Lenovo Laptop Facing Hardware or Software Issues?',
@@ -578,13 +578,13 @@ export const LAPTOP_BRANDS = [
     h1: 'Microsoft Surface Repair Services in Ahmedabad',
     tagline: 'Professional Microsoft Surface repair services in Ahmedabad for Surface Pro, Surface Laptop, Surface Book, Surface Go, and Surface Studio devices. We repair touchscreen issues, charging problems, battery failures, display damage, motherboard faults, startup issues, and SSD-related problems.',
     metaTitle: 'Microsoft Surface Repair Services in Ahmedabad | Robuzta Techlabs',
-    metaDescription: 'Professional Microsoft Surface repair in Ahmedabad for Surface Pro, Surface Laptop, Book & Go. Touchscreen, battery, charging & logic board support.',
+    metaDescription: 'Professional Microsoft Surface repair in Ahmedabad for Surface Pro, Surface Laptop, Book & Go. Touchscreen, battery, charging & motherboard support.',
     logoImage: '/assets/brands/microsoft-centered.svg',
     shortTag: 'Surface Pro, Laptop, Book & Go',
     supportedModels: ['Surface Pro Series (Pro 7 / 8 / 9 / X)', 'Surface Laptop Series (3 / 4 / 5 / Go)', 'Surface Book Series (Book 2 / 3)', 'Surface Laptop Studio & Surface Go'],
     whyChooseUs: [
       { title: 'Microsoft Surface Repair Specialists', desc: 'Expert technicians for Surface Pro, Laptop & Book' },
-      { title: 'Advanced Chip-Level Diagnostics', desc: 'Precision logic board & charging trace repair' },
+      { title: 'Advanced Chip-Level Diagnostics', desc: 'Precision motherboard & charging trace repair' },
       { title: 'Quality Replacement Parts', desc: 'OEM grade displays, batteries & digitizers' },
       { title: 'Fast Turnaround Time', desc: 'Same-day express repair available' },
       { title: 'Transparent Pricing', desc: 'Upfront estimate with zero hidden charges' },
@@ -653,7 +653,7 @@ export const LAPTOP_BRANDS = [
       'ESD-safe touchscreen digitizer glass separation and assembly',
       'Battery pouch cell replacement without display damage',
       'Surface Connect magnetic charging port trace repair',
-      'Logic board power management IC micro-soldering'
+      'Motherboard power management IC micro-soldering'
     ],
     faqs: [
       {
@@ -682,10 +682,10 @@ export const LAPTOP_BRANDS = [
     slug: 'macbook',
     name: 'Apple MacBook',
     fullName: 'Apple MacBook Repair Services',
-    h1: 'Apple MacBook Repair Services in Ahmedabad',
+    h1: 'MacBook Repair in Ahmedabad',
     tagline: 'At Robuzta TechLabs, we provide professional MacBook diagnostics and repair for supported MacBook Air and MacBook Pro models.',
-    metaTitle: 'Apple MacBook Repair Services in Ahmedabad | Robuzta Techlabs',
-    metaDescription: 'Professional Apple MacBook repair in Ahmedabad for MacBook Air & Pro (M1, M2, M3, Intel). Logic board chip repair, Retina display, battery & liquid damage.',
+    metaTitle: 'MacBook Services in Ahmedabad | Robuzta Techlabs',
+    metaDescription: 'Professional Apple MacBook repair in Ahmedabad for MacBook Air & Pro (M1, M2, M3, Intel). Motherboard chip repair, Retina display, battery & liquid damage.',
     logoImage: '/assets/brands/apple-13.svg',
     shortTag: 'MacBook Air & Pro (M1, M2, M3 & Intel)',
     supportedModels: ['MacBook Air M1 / M2 / M3 (13" & 15")', 'MacBook Pro 13" / 14" / 16" (M1/M2/M3 Pro & Max)', 'Intel MacBook Air & Pro', 'Retina MacBook & Apple Silicon Models'],
@@ -695,7 +695,7 @@ export const LAPTOP_BRANDS = [
       { title: 'Charging Port Repair', desc: 'Fix USB-C/MagSafe port, charger, or charging circuit issues' },
       { title: 'Keyboard & Trackpad Repair', desc: 'Repair individual keys, full keyboard, or trackpad faults' },
       { title: 'Liquid Damage Diagnosis', desc: 'Assess and repair liquid-affected internal components' },
-      { title: 'Logic Board Repair', desc: 'Chip-level logic board diagnostics and micro-soldering' },
+      { title: 'Logic Board Repair', desc: 'Chip-level motherboard diagnostics and micro-soldering' },
       { title: 'SSD & Storage Solutions', desc: 'Storage upgrade, diagnosis, and system optimization' },
       { title: 'macOS Troubleshooting', desc: 'Fix slow startup, application freezes, and macOS errors' },
       { title: 'MacBook Cleaning & Thermal Service', desc: 'Thermal servicing and fan cleaning for overheating' },
@@ -730,7 +730,7 @@ export const LAPTOP_BRANDS = [
       },
       {
         title: 'MacBook Not Turning On?',
-        description: 'If your MacBook shows no signs of power, we check the battery, charging section, power circuit, logic board, and other hardware components.',
+        description: 'If your MacBook shows no signs of power, we check the battery, charging section, power circuit, motherboard, and other hardware components.',
         slug: 'motherboard-repair',
         estimatedTime: '24 – 48 Hours'
       },
@@ -742,7 +742,7 @@ export const LAPTOP_BRANDS = [
       },
       {
         title: 'MacBook Liquid Damage?',
-        description: 'Liquid damage can affect the keyboard, battery, charging circuit, display, and logic board. If liquid enters your MacBook, avoid repeatedly powering it on and get it inspected.',
+        description: 'Liquid damage can affect the keyboard, battery, charging circuit, display, and motherboard. If liquid enters your MacBook, avoid repeatedly powering it on and get it inspected.',
         slug: 'liquid-damage-repair',
         estimatedTime: '24 – 48 Hours'
       },
@@ -754,19 +754,19 @@ export const LAPTOP_BRANDS = [
       }
     ],
     brandHighlights: [
-      'Chip-level Apple Silicon & Intel logic board micro-soldering',
+      'Chip-level Apple Silicon & Intel motherboard micro-soldering',
       'Retina LCD panel and flex cable (Flexgate) repair',
       'Battery replacement with zero battery warning messages',
       'Ultrasonic liquid damage recovery under 45x optical magnification'
     ],
     faqs: [
       {
-        question: 'Can you repair MacBook logic board problems?',
-        answer: 'Yes. We diagnose supported MacBook logic board faults and provide Chip-level repair where technically possible.'
+        question: 'Can you repair MacBook motherboard problems?',
+        answer: 'Yes. We diagnose supported MacBook motherboard faults and provide Chip-level repair where technically possible.'
       },
       {
         question: 'Why is my MacBook not charging?',
-        answer: 'The charger, charging port, battery, power circuit, or logic board may be responsible. We diagnose the complete charging system.'
+        answer: 'The charger, charging port, battery, power circuit, or motherboard may be responsible. We diagnose the complete charging system.'
       },
       {
         question: 'Can you repair a liquid-damaged MacBook?',
@@ -802,7 +802,7 @@ export const LAPTOP_PROBLEMS = [
       'High-grade FHD, 2K, 4K, or OLED display panel replacement',
       'Display ribbon cable inspection and connector cleaning',
       'Color calibration and brightness testing',
-      '90 to Limited Warranty on replaced display panels'
+      '90 to Warranty on replaced display panels'
     ],
     faqs: [
       {
@@ -987,7 +987,7 @@ export const LAPTOP_PROBLEMS = [
     repairIncludes: [
       'Immediate battery disconnection and power isolation',
       'Ultrasonic bath mainboard cleaning for corrosion removal',
-      'Micro-soldering damaged logic board traces and ICs',
+      'Micro-soldering damaged motherboard traces and ICs',
       'Chip-level short circuit diagnostic testing'
     ],
     faqs: [

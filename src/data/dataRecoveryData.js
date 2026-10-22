@@ -5,7 +5,7 @@
 
 export const DATA_RECOVERY_PAGE_DATA = {
   h1: 'Data Recovery Services in Ahmedabad',
-  tagline: 'Data recovery services in Ahmedabad for failed hard drives, SSDs, memory cards, USB drives, laptops, desktops, and damaged storage devices. We handle deleted files, formatted drives, corrupted data, dead devices, partition problems, and hardware-related storage failures.',
+  tagline: 'Recovery services for failed hard drives, SSDs, memory cards, USB drives, laptops, desktops, and damaged storage devices. We handle deleted files, formatted drives, corrupted data, dead devices, partition problems, and hardware-related storage failures.',
   metaTitle: 'Data Recovery Services in Ahmedabad | HDD, SSD, Dead Laptop & Mobile | Robuzta',
   metaDescription: 'Data recovery services in Ahmedabad for failed hard drives, SSDs, memory cards, USB drives, laptops, desktops, and damaged storage devices.',
   canonicalUrl: 'https://robuzta.com/data-recovery/',
@@ -16,13 +16,12 @@ export const DATA_RECOVERY_PAGE_DATA = {
     'HDD & SSD Recovery Expertise',
     'Deleted & Formatted Data Recovery',
     'Privacy-Focused Recovery Process',
-    'No Recovery, No Fee Policy*',
     'Transparent Recovery Assessment',
     'Secure Data Handling',
     'Recovery for Multiple Storage Devices'
   ],
 
-  servicesBadge: 'DATA RECOVERY SERVICES',
+  // servicesBadge: 'DATA RECOVERY SERVICES',
   servicesTitle: "Lost Your Important Data? Don't Make the Problem Worse.",
   servicesDescription: 'Whether your drive has stopped working, files were accidentally deleted, or Windows is no longer detecting your storage device, we first diagnose the condition of the drive before attempting recovery.',
 
@@ -86,7 +85,7 @@ export const DATA_RECOVERY_PAGE_DATA = {
     'Supported Mac Storage Devices'
   ],
 
-  faqsTitle: 'Data Recovery Questions Answered',
+  faqsTitle: 'Frequently Asked Questions',
   faqs: [
     {
       question: '1. How much does data recovery cost in Ahmedabad?',

@@ -226,7 +226,7 @@ export function CleaningTuneUpView() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
             <div className="text-center max-w-3xl mx-auto space-y-2">
               <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
-                PROVEN REPAIR EXCELLENCE
+                
               </span>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
                 {data.whyChooseUsTitle}
@@ -382,7 +382,7 @@ export function CleaningTuneUpView() {
               <div className="lg:col-span-8 space-y-3">
                 <div className="flex items-center gap-2 text-xs font-black uppercase text-amber-400 tracking-wider">
                   <Sparkles size={16} />
-                  <span>EXPRESS LAPTOP CLEANING IN AHMEDABAD</span>
+                  <span>LAPTOP CLEANING IN AHMEDABAD</span>
                 </div>
                 <h3 className="text-2xl sm:text-4xl font-black text-white">
                   Is Your Laptop Running Hot or Noisy?
@@ -398,7 +398,7 @@ export function CleaningTuneUpView() {
                   className="inline-flex items-center justify-center gap-2 w-full rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-7 py-4 text-xs font-black uppercase tracking-wider shadow-xl shadow-[#0E7C7B]/30 transition-all hover:scale-[1.02]"
                 >
                   <Wrench size={16} />
-                  <span>Book Cleaning Check</span>
+                  <span>Book Laptop Cleaning</span>
                 </button>
               </div>
             </div>

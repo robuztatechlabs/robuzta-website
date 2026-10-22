@@ -52,7 +52,7 @@ export function FranchiseHero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-slate-600 dark:text-slate-400 text-base sm:text-xl leading-relaxed max-w-3xl mx-auto font-medium"
           >
-            Partner with India’s most trusted, technology-enabled repair lab brand. High-margin unit economics, ESD-isolated workbench setups, and 100% turnkey operational & lead support.
+            Partner with India’s most trusted, technology-enabled repair lab brand. High-margin unit economics, ESD-isolated workbench setups, and 100% company-managed social media & content creation.
           </motion.p>
 
           {/* Hero CTAs */}
@@ -83,50 +83,6 @@ export function FranchiseHero() {
             </a>
           </motion.div>
         </div>
-
-        {/* Live Metrics Trust Bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-6 rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 shadow-xl"
-        >
-          <div className="p-4 space-y-1 border-r border-slate-100 dark:border-slate-800 last:border-0 text-center sm:text-left">
-            <div className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white flex items-center justify-center sm:justify-start gap-1">
-              <span className="text-[#0E7C7B] dark:text-teal-400">₹1L - ₹3L</span>
-            </div>
-            <div className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
-              Est. Monthly Profit Margin
-            </div>
-          </div>
-
-          <div className="p-4 space-y-1 border-r border-slate-100 dark:border-slate-800 last:border-0 text-center sm:text-left">
-            <div className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white flex items-center justify-center sm:justify-start gap-1">
-              <span className="text-[#EA580C]">10 - 14 Mo</span>
-            </div>
-            <div className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
-              Target ROI Break-Even
-            </div>
-          </div>
-
-          <div className="p-4 space-y-1 border-r border-slate-100 dark:border-slate-800 last:border-0 text-center sm:text-left">
-            <div className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white flex items-center justify-center sm:justify-start gap-1">
-              <span className="text-[#0E7C7B] dark:text-teal-400">100% Turnkey</span>
-            </div>
-            <div className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
-              ESD Lab Setup & Staff Hiring
-            </div>
-          </div>
-
-          <div className="p-4 space-y-1 text-center sm:text-left">
-            <div className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white flex items-center justify-center sm:justify-start gap-1">
-              <span className="text-emerald-600 dark:text-emerald-400">No Password Needed</span>
-            </div>
-            <div className="text-xs font-extrabold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
-              Privacy Standard Guarantee
-            </div>
-          </div>
-        </motion.div>
 
       </div>
     </section>

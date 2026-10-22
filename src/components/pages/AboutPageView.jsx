@@ -21,7 +21,9 @@ import {
   ArrowRight,
   MapPin,
   Check,
-  Quote
+  Quote,
+  Zap,
+  CircleDot
 } from 'lucide-react';
 import { ABOUT_PAGE_DATA } from '@/data/aboutData';
 import { useBookingModal } from '@/context/BookingModalContext';
@@ -208,93 +210,54 @@ export function AboutPageView() {
         </section>
 
 
-        {/* 4. CEO / FOUNDER STATEMENT SPOTLIGHT (KEPT AS REQUESTED) */}
-        <section className="py-14 sm:py-20 lg:py-24 border-b border-slate-200/80 dark:border-slate-800/80 relative bg-white dark:bg-slate-950">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="rounded-3xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 p-5 sm:p-10 lg:p-12 shadow-lg relative overflow-hidden"
-            >
-              <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center z-10">
-                
-                {/* Photo Frame */}
-                <div className="lg:col-span-5 flex justify-center">
-                  <div className="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-700/80 p-2 bg-white dark:bg-slate-950 shadow-md max-w-[260px] sm:max-w-[300px] w-full text-center space-y-2">
-                    <div className="relative rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-900">
-                      <img
-                        src="/assets/team/pranshu-maheshwari.jpg"
-                        alt="Mr. Pranshu Maheshwari - Founder & CEO Robuzta Techlabs"
-                        width={300}
-                        height={400}
-                        loading="lazy"
-                        decoding="async"
-                        className="w-full h-auto object-cover rounded-2xl aspect-[3/4]"
-                      />
+        {/* 4. OUR APPROACH — Connected Step-Flow Diagram */}
+        <section className="py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
+            <div className="text-center space-y-2 max-w-2xl mx-auto">
+              <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
+                {data.ourApproach.badge}
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                {data.ourApproach.heading}
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium">
+                {data.ourApproach.description}
+              </p>
+            </div>
+
+            {/* Step-Flow Diagram */}
+            <div className="relative max-w-4xl mx-auto">
+              {/* Connecting vertical line (desktop) */}
+              <div className="hidden sm:block absolute left-6 top-8 bottom-8 w-px bg-gradient-to-b from-[#0E7C7B]/60 via-teal-500/40 to-[#0E7C7B]/60" />
+
+              <div className="space-y-3 sm:space-y-0">
+                {data.ourApproach.steps.map((step, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.1 }}
+                    className="relative flex items-start gap-4 sm:gap-5 sm:py-4"
+                  >
+                    {/* Node Circle */}
+                    <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#0E7C7B] text-white text-sm font-black shadow-lg shadow-[#0E7C7B]/20">
+                      {step.number}
                     </div>
 
-                    <div className="pt-1.5 pb-1">
-                      <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-white">
-                        Mr. Pranshu Maheshwari
+                    {/* Step Content Card */}
+                    <div className="flex-1 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 sm:p-5 hover:border-[#0E7C7B]/40 transition-colors">
+                      <h3 className="text-sm sm:text-base font-black text-slate-900 dark:text-white">
+                        {step.title}
                       </h3>
-                      <p className="text-xs font-bold text-[#0E7C7B] dark:text-teal-400">
-                        Founder & CEO &bull; Robuzta Techlabs
+                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-medium mt-1">
+                        {step.description}
                       </p>
                     </div>
-                  </div>
-                </div>
-
-                {/* Founder Content */}
-                <div className="lg:col-span-7 space-y-4 sm:space-y-5 text-center lg:text-left">
-                  <div className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-2xl bg-[#0E7C7B] text-white shadow-md mx-auto lg:mx-0">
-                    <Quote size={20} />
-                  </div>
-
-                  <div className="space-y-1 sm:space-y-1.5">
-                    <span className="text-[10px] sm:text-[11px] font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-300 bg-[#0E7C7B]/10 dark:bg-teal-400/10 px-3 py-1 rounded-full border border-[#0E7C7B]/20 inline-block">
-                      FOUNDER STATEMENT
-                    </span>
-                    <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
-                      &quot;No Solution Found? Robuzta Hai Na!&quot;
-                    </h2>
-                  </div>
-
-                  <blockquote className="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed font-medium italic border-l-0 lg:border-l-4 border-[#0E7C7B] pl-0 lg:pl-3.5 py-0.5">
-                    &quot;Over a decade of repair care shaped our core promise: total accuracy, upfront pricing, and zero data risk.&quot;
-                  </blockquote>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-extrabold pt-1 max-w-md mx-auto lg:mx-0">
-                    <div className="flex items-center justify-center lg:justify-start gap-2 text-slate-800 dark:text-slate-200">
-                      <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#0E7C7B]/10 dark:bg-teal-400/10 text-[#0E7C7B] dark:text-teal-400 shrink-0">
-                        <Check size={13} />
-                      </div>
-                      <span>Expert Technicians</span>
-                    </div>
-
-                    <div className="flex items-center justify-center lg:justify-start gap-2 text-slate-800 dark:text-slate-200">
-                      <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#0E7C7B]/10 dark:bg-teal-400/10 text-[#0E7C7B] dark:text-teal-400 shrink-0">
-                        <Check size={13} />
-                      </div>
-                      <span>Zero Password Data Protection</span>
-                    </div>
-                  </div>
-
-                  <div className="pt-2">
-                    <button
-                      type="button"
-                      onClick={() => openModal({ formType: 'About Page Contact Senior Technician' })}
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 px-7 py-3.5 text-xs sm:text-sm font-black text-white shadow-xl shadow-[#0E7C7B]/20 transition-all transform hover:scale-105 cursor-pointer min-h-[46px]"
-                    >
-                      <span>Contact Senior Technician</span>
-                      <ArrowRight size={16} />
-                    </button>
-                  </div>
-                </div>
-
+                  </motion.div>
+                ))}
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 

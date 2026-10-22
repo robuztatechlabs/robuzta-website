@@ -58,11 +58,11 @@ export function LaptopRepairHubView() {
   const hubFaqs = [
     {
       question: 'Where are Robuzta Techlabs laptop repair labs located in Ahmedabad?',
-      answer: 'We have two branches in Ahmedabad: 1) South Bopal Flagship Lab: 103, First Floor, Sun South Winds, Safal Parisar Road, South Bopal (380057), and 2) Tragad Service Centre: Shop 12, Ground Floor, Commercial Hub, Tragad Road, Chandkheda (382470). We also offer pickup and drop delivery across Ahmedabad.'
+      answer: 'We have two branches in Ahmedabad: 1) South Bopal Lab: 103, First Floor, Sun South Winds, Safal Parisar Road, South Bopal (380057), and 2) Tragad Service Centre: Shop 12, Ground Floor, Commercial Hub, Tragad Road, Chandkheda (382470). We also offer pickup and drop delivery across Ahmedabad.'
     },
     {
       question: 'Do you charge any fee if my laptop cannot be repaired?',
-      answer: 'No. We strictly follow a No Fix, No Fee policy. If our bench technicians are unable to resolve your hardware or motherboard issue, you pay zero diagnostic charges.'
+      answer: "Yes, we charge diagnostic charges if you choose not to get it repaired. If in case we are not able to solve the issue, then we don't charge."
     },
     {
       question: 'Will my personal files and photos remain safe during repair?',
@@ -70,7 +70,7 @@ export function LaptopRepairHubView() {
     },
     {
       question: 'What warranty is provided on replaced laptop parts?',
-      answer: 'All genuine OEM replacement parts (screens, batteries, keyboards, SSDs) come with an official minimum of 30 days lab replacement warranty.'
+      answer: 'All genuine OEM replacement parts (screens, batteries, keyboards, SSDs) come with an official minimum of 30 days replacement warranty.'
     }
   ];
 
@@ -110,7 +110,7 @@ export function LaptopRepairHubView() {
       '@type': 'City',
       name: 'Ahmedabad'
     },
-    description: 'Chip-level laptop repair, logic board BGA soldering, screen replacement, battery & SSD upgrades for Dell, HP, Acer, ASUS, MSI, Surface & MacBook.',
+    description: 'Chip-level laptop repair, motherboard BGA soldering, screen replacement, battery & SSD upgrades for Dell, HP, Acer, ASUS, MSI, Surface & MacBook.',
     serviceType: 'Laptop & Computer Repair'
   };
 
@@ -205,10 +205,6 @@ export function LaptopRepairHubView() {
                   <Zap size={16} className="text-amber-500" />
                   Same-Day Repairs Available
                 </span>
-                <span className="flex items-center gap-1.5">
-                  <ShieldCheck size={16} className="text-[#0E7C7B] dark:text-teal-400" />
-                  No Fix, No Fee Policy
-                </span>
               </div>
 
             </div>
@@ -227,7 +223,7 @@ export function LaptopRepairHubView() {
                 Select Your Laptop Brand
               </h2>
               <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300">
-                Select your laptop brand to view specialized logic board schematics, supported models, and genuine OEM parts.
+                Select your laptop brand to view specialized motherboard schematics, supported models, and genuine OEM parts.
               </p>
             </div>
 

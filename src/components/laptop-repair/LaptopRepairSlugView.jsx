@@ -159,7 +159,7 @@ export function LaptopRepairSlugView({ data }) {
                 <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
                   <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-[#0E7C7B]/20 border border-[#0E7C7B]/30 px-4 py-1.5 text-xs font-black uppercase tracking-wider text-[#0E7C7B] dark:text-teal-300">
                     <Sparkles size={14} className="text-[#0E7C7B] dark:text-teal-400" />
-                    <span>Certified Apple MacBook Diagnostics & Repair</span>
+                    <span> Apple MacBook Diagnostics & Repair</span>
                   </div>
 
                   <h1 className="text-3xl sm:text-5xl lg:text-5xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.12]">
@@ -208,10 +208,6 @@ export function LaptopRepairSlugView({ data }) {
                       <Zap size={16} className="text-amber-500" />
                       Same-Day Repairs Available
                     </span>
-                    <span className="flex items-center gap-1.5">
-                      <ShieldCheck size={16} className="text-[#0E7C7B] dark:text-teal-400" />
-                      No Fix, No Fee Policy
-                    </span>
                   </div>
                 </div>
 
@@ -228,7 +224,7 @@ export function LaptopRepairSlugView({ data }) {
                     </div>
                     <div className="relative z-10 mt-5 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100/90 dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/60 text-xs font-bold text-slate-700 dark:text-slate-300">
                       <CheckCircle2 size={15} className="text-[#0E7C7B] dark:text-teal-400" />
-                      <span>Certified Apple Care & Lab Diagnostics</span>
+                      <span> Apple Care & Lab Diagnostics</span>
                     </div>
                   </div>
                 </div>
@@ -279,9 +275,7 @@ export function LaptopRepairSlugView({ data }) {
           <section className="py-14 sm:py-20 bg-slate-50/60 dark:bg-[#0b1628] border-b border-slate-200 dark:border-slate-800">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
               <div className="text-center max-w-3xl mx-auto space-y-3">
-                <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400">
-                  OUR SERVICES
-                </span>
+                
                 <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
                   MacBook Repair Services in Ahmedabad
                 </h2>
@@ -391,7 +385,7 @@ export function LaptopRepairSlugView({ data }) {
                 Ready to Fix Your MacBook?
               </h2>
               <p className="max-w-2xl mx-auto text-sm sm:text-base text-teal-100 font-medium">
-                Visit our lab in South Bopal / Tragad, Ahmedabad or request doorstep pickup. Limited Warranty, transparent quote approval & zero data risk.
+                Visit our lab in South Bopal / Tragad, Ahmedabad or request doorstep pickup. Warranty, transparent quote approval & zero data risk.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
                 <button
@@ -451,7 +445,7 @@ export function LaptopRepairSlugView({ data }) {
               <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
                 <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 dark:bg-[#0E7C7B]/20 border border-[#0E7C7B]/30 px-4 py-1.5 text-xs font-black uppercase tracking-wider text-[#0E7C7B] dark:text-teal-300">
                   <Sparkles size={14} className="text-[#0E7C7B] dark:text-teal-400" />
-                  <span>{isBrand ? `Certified ${data.name} Lab Care` : `Chip-level Diagnostics`}</span>
+                  <span>{isBrand ? ` ${data.name} Laptop Service` : `Chip-level Diagnostics`}</span>
                 </div>
 
                 <h1 className="text-3xl sm:text-5xl lg:text-5xl font-black tracking-tight text-slate-900 dark:text-white leading-[1.12]">
@@ -500,12 +494,7 @@ export function LaptopRepairSlugView({ data }) {
                     <Zap size={16} className="text-amber-500" />
                     Same-Day Repairs Available
                   </span>
-                  <span className="flex items-center gap-1.5">
-                    <ShieldCheck size={16} className="text-[#0E7C7B] dark:text-teal-400" />
-                    No Fix, No Fee Policy
-                  </span>
                 </div>
-
               </div>
 
               <div className="lg:col-span-5 flex justify-center">
@@ -525,7 +514,7 @@ export function LaptopRepairSlugView({ data }) {
                     </div>
                     <div className="relative z-10 mt-5 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100/90 dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/60 text-xs font-bold text-slate-700 dark:text-slate-300">
                       <CheckCircle2 size={15} className="text-[#0E7C7B] dark:text-teal-400" />
-                      <span>Certified {data.name} Care & Lab Diagnostics</span>
+                      <span> {data.name} Care & Lab Diagnostics</span>
                     </div>
                   </div>
                 ) : (
@@ -658,49 +647,11 @@ export function LaptopRepairSlugView({ data }) {
           </div>
         </section>
 
-        {/* SECTION 3 — BRAND REPAIR CAPABILITIES & DETAILS */}
-        {data.brandHighlights && data.brandHighlights.length > 0 && (
-          <section className="py-14 sm:py-20 bg-slate-50/70 dark:bg-[#0b1628] border-b border-slate-200 dark:border-slate-800">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-10">
-              <div className="text-center max-w-3xl mx-auto space-y-3">
-                <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400">
-                  CHIP-LEVEL LAB DETAILS
-                </span>
-                <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                  Why Choose Robuzta for Your {data.name} Repair
-                </h2>
-                <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300">
-                  Dedicated schematics, genuine OEM parts, and certified chip-level workbench technicians in Ahmedabad.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                {data.brandHighlights.map((hl, idx) => (
-                  <div
-                    key={idx}
-                    className="rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900/80 p-6 space-y-3 shadow-sm hover:border-[#0E7C7B] dark:hover:border-teal-500/70 hover:shadow-lg transition-all group"
-                  >
-                    <div className="h-10 w-10 rounded-2xl bg-[#0E7C7B]/10 dark:bg-teal-500/10 text-[#0E7C7B] dark:text-teal-300 flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <ShieldCheck size={20} />
-                    </div>
-                    <p className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 leading-relaxed">
-                      {hl}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-
         {data.faqs && data.faqs.length > 0 && (
           <section className="py-16 sm:py-20 bg-slate-50 dark:bg-[#0a1424] border-t border-slate-200 dark:border-slate-800">
             <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-10">
               
               <div className="text-center space-y-3">
-                <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B] dark:text-teal-400">
-                  REPAIR TRANSPARENCY
-                </span>
                 <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
                   Frequently Asked Questions
                 </h2>
@@ -750,7 +701,7 @@ export function LaptopRepairSlugView({ data }) {
               Ready to Fix Your {data.name}?
             </h2>
             <p className="max-w-2xl mx-auto text-sm sm:text-base text-teal-100 font-medium">
-              Visit our lab in South Bopal / Tragad, Ahmedabad or request doorstep pickup. Limited Warranty, transparent quote approval & zero data risk.
+              Visit our lab in South Bopal / Tragad, Ahmedabad or request doorstep pickup. Warranty, transparent quote approval & zero data risk.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
               <button

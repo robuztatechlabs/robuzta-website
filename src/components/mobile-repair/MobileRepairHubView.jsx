@@ -409,13 +409,13 @@ export function MobileRepairHubView() {
               <div className="lg:col-span-8 space-y-3">
                 <div className="flex items-center gap-2 text-xs font-black uppercase text-amber-400 tracking-wider">
                   <Sparkles size={16} />
-                  <span>FAST MOBILE REPAIR IN AHMEDABAD</span>
+                  <span>QUICK MOBILE REPAIR SERVICE IN AHMEDABAD</span>
                 </div>
                 <h3 className="text-2xl sm:text-4xl font-black text-white">
                   Got a Damaged Mobile Phone?
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed">
-                  Get a instant diagnostic estimate from senior mobile engineers in South Bopal and Tragad.
+                  Get a instant diagnostic estimate from our service center in South Bopal and Tragad.
                 </p>
               </div>
 
@@ -425,7 +425,7 @@ export function MobileRepairHubView() {
                   className="inline-flex items-center justify-center gap-2 w-full rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-7 py-4 text-xs font-black uppercase tracking-wider shadow-xl shadow-[#0E7C7B]/30 transition-all hover:scale-[1.02]"
                 >
                   <Wrench size={16} />
-                  <span>Book Check</span>
+                  <span>Book an Appointment</span>
                 </button>
               </div>
             </div>

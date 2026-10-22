@@ -84,9 +84,9 @@ export const services = [
     slug: 'macbook-repair',
     metaTitle: 'MacBook Repair in Ahmedabad | Robuzta Techlabs',
     metaDescription:
-      'MacBook repair in Ahmedabad for screen, battery, keyboard, liquid damage, and logic board issues with transparent premium service.',
+      'MacBook repair in Ahmedabad for screen, battery, keyboard, liquid damage, and motherboard issues with transparent premium service.',
     summary:
-      'Premium screen, battery, keyboard, liquid damage, and logic board repair.',
+      'Premium screen, battery, keyboard, liquid damage, and motherboard repair.',
     proof: 'Apple-grade care without losing the transparent Robuzta process.',
     directAnswer:
       'Robuzta offers premium MacBook repair for customers who want careful handling, clear part explanation, and a transparent process before approval.',
@@ -95,14 +95,14 @@ export const services = [
       'Battery service warning',
       'Keyboard or trackpad issue',
       'Liquid spill damage',
-      'Logic board problem',
+      'Motherboard problem',
       'MacBook not charging'
     ],
     included: [
       'MacBook screen replacement',
       'Battery replacement',
       'Keyboard repair',
-      'Logic board diagnosis',
+      'Motherboard diagnosis',
       'Liquid damage inspection',
       'Charging issue support'
     ],
@@ -110,12 +110,12 @@ export const services = [
       {
         question: 'Is MacBook repair handled carefully?',
         answer:
-          'Absolutely. We use ESD-safe workstations, anti-static tools, and micro-soldering equipment to handle MacBook Air and MacBook Pro logic boards.'
+          'Absolutely. We use ESD-safe workstations, anti-static tools, and micro-soldering equipment to handle MacBook Air and MacBook Pro motherboards.'
       },
       {
-        question: 'Do you offer chip-level logic board repair?',
+        question: 'Do you offer chip-level motherboard repair?',
         answer:
-          'Yes! Rather than replacing the entire logic board at high cost, we perform micro-soldering to replace faulty ICs and capacitors.'
+          'Yes! Rather than replacing the entire motherboard at high cost, we perform micro-soldering to replace faulty ICs and capacitors.'
       }
     ]
   },

@@ -18,7 +18,7 @@ export default function TermsPage() {
           <div className="space-y-3 border-b border-slate-200 dark:border-slate-800 pb-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 text-xs font-bold text-[#0E7C7B] dark:text-teal-400">
               <ShieldCheck size={14} />
-              <span>Limited Warranty COVERAGE</span>
+              <span>Warranty COVERAGE</span>
             </div>
             <h1 className="text-3xl sm:text-4xl font-black tracking-tight">Terms of Service</h1>
             <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
@@ -44,7 +44,7 @@ export default function TermsPage() {
             <section className="space-y-2">
               <h2 className="text-xl font-bold text-slate-900 dark:text-white">3. Customer Authorization</h2>
               <p>
-                By proceeding with repair orders, customers authorize Robuzta Techlabs certified technicians to perform necessary hardware diagnostics and component replacements.
+                By proceeding with repair orders, customers authorize Robuzta Techlabs  technicians to perform necessary hardware diagnostics and component replacements.
               </p>
             </section>
           </div>

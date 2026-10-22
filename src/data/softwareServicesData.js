@@ -4,7 +4,7 @@
  */
 
 export const SOFTWARE_SERVICES_PAGE_DATA = {
-  h1: 'Software Services in Ahmedabad',
+  h1: 'Computer Software Services in Ahmedabad',
   tagline: 'Computer and laptop software services in Ahmedabad for Windows installation, OS errors, driver problems, boot failures, software crashes, virus removal, system optimization, and operating system troubleshooting. We provide reliable software solutions for laptops, desktops, and supported Mac devices.',
   metaTitle: 'Software Services in Ahmedabad | Windows, Office, Virus & BIOS | Robuzta',
   metaDescription: 'Computer and laptop software services in Ahmedabad for Windows installation, OS errors, driver problems, boot failures, software crashes, virus removal & optimization.',

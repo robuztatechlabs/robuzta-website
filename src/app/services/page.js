@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: 'All Repair Services | Robuzta Techlabs Ahmedabad',
     description:
-      'Lab-grade hardware repair for laptops, MacBooks, iPhones, Surface Pros, and gaming PCs in Ahmedabad. 180-day warranties and Zero-Password data safety.',
+      'Lab-grade hardware repair for laptops, MacBooks, iPhones, Surface Pros, and gaming PCs in Ahmedabad. Warranties and Zero-Password data safety.',
     url: 'https://robuzta.com/services',
     siteName: 'Robuzta Techlabs',
     locale: 'en_IN',

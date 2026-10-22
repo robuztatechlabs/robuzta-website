@@ -4,7 +4,7 @@ import { getFaqPageSchema, getBreadcrumbSchema, getLocalBusinessSchema } from '@
 
 export const metadata = {
   title: 'Robuzta FAQ | Device Security, Repair Turnaround & Pickup Questions',
-  description: 'Authoritative answers on Robuzta No Password Needed data privacy, 1-4 hour express repairs, Limited Warranty policies, and doorstep pickup across South Bopal, Tragad & Ahmedabad.',
+  description: 'Authoritative answers on Robuzta No Password Needed data privacy, 1-4 hour express repairs, Warranty policies, and doorstep pickup across South Bopal, Tragad & Ahmedabad.',
   keywords: [
     'Robuzta FAQ',
     'Laptop repair questions Ahmedabad',
@@ -12,14 +12,13 @@ export const metadata = {
     'No Password Needed data privacy repair',
     'doorstep pickup South Bopal Tragad',
     'iPhone screen repair warranty Ahmedabad',
-    'No repair no fee policy Ahmedabad'
   ],
   alternates: {
     canonical: 'https://robuzta.com/faq'
   },
   openGraph: {
     title: 'Robuzta FAQ | Device Security, Repair Turnaround & Pickup Questions',
-    description: 'Authoritative answers on Robuzta No Password Needed data privacy, 1-4 hour express repairs, Limited Warranty policies, and doorstep pickup across South Bopal, Tragad & Ahmedabad.',
+    description: 'Authoritative answers on Robuzta No Password Needed data privacy, 1-4 hour express repairs, Warranty policies, and doorstep pickup across South Bopal, Tragad & Ahmedabad.',
     url: 'https://robuzta.com/faq',
     siteName: 'Robuzta Techlabs',
     images: [{ url: '/robuzta-logo-scaled.webp', width: 1200, height: 630, alt: 'Robuzta Techlabs FAQ' }],
@@ -29,7 +28,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Robuzta FAQ | Device Security, Repair Turnaround & Pickup Questions',
-    description: 'Authoritative answers on Robuzta No Password Needed data privacy, 1-4 hour express repairs, Limited Warranty policies, and doorstep pickup across South Bopal, Tragad & Ahmedabad.',
+    description: 'Authoritative answers on Robuzta No Password Needed data privacy, 1-4 hour express repairs, Warranty policies, and doorstep pickup across South Bopal, Tragad & Ahmedabad.',
     images: ['/robuzta-logo-scaled.webp']
   }
 };

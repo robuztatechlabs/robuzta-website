@@ -13,7 +13,9 @@ import {
   Code,
   Wind,
   X,
-  ExternalLink
+  ExternalLink,
+  Truck,
+  ShieldCheck
 } from 'lucide-react';
 import Link from 'next/link';
 import { siteConfig } from '@/data/site';
@@ -27,7 +29,7 @@ const typingPhrases = [
 ];
 
 function useTypingText(phrases, typingSpeed = 70, deletingSpeed = 35, delay = 2000) {
-  const [text, setText] = useState(phrases[0] || '');
+  const [text, setText] = useState('');
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
@@ -136,9 +138,26 @@ export function HeroSection() {
               </span>
             </h1>
 
-            <p className="text-[11px] xs:text-xs sm:text-base font-bold text-slate-500 dark:text-slate-400 tracking-wide leading-relaxed px-2 sm:px-1">
-              doorstep Delivery
-            </p>
+            {/* Trust & Convenience Badges */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-3 pt-1">
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full bg-slate-100/90 dark:bg-slate-900/80 border border-slate-200/90 dark:border-slate-800/90 text-slate-800 dark:text-slate-200 shadow-sm backdrop-blur-md transition-all duration-300 hover:border-teal-500/50 hover:shadow-teal-500/5">
+                <div className="h-5 w-5 rounded-full bg-[#0E7C7B]/15 dark:bg-teal-400/15 text-[#0E7C7B] dark:text-teal-300 flex items-center justify-center shrink-0">
+                  <Truck size={13} className="shrink-0" />
+                </div>
+                <span className="text-xs sm:text-sm font-bold tracking-tight">
+                  Doorstep Express Pickup
+                </span>
+              </div>
+
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full bg-slate-100/90 dark:bg-slate-900/80 border border-slate-200/90 dark:border-slate-800/90 text-slate-800 dark:text-slate-200 shadow-sm backdrop-blur-md transition-all duration-300 hover:border-emerald-500/50 hover:shadow-emerald-500/5">
+                <div className="h-5 w-5 rounded-full bg-emerald-500/15 dark:bg-emerald-400/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+                  <ShieldCheck size={13} className="shrink-0" />
+                </div>
+                <span className="text-xs sm:text-sm font-bold tracking-tight">
+                  100% Zero-Password Privacy
+                </span>
+              </div>
+            </div>
 
             {/* Interactive Typing Box & Single Primary CTA Button */}
             <div className="space-y-3.5 pt-2 flex flex-col items-center lg:items-start">

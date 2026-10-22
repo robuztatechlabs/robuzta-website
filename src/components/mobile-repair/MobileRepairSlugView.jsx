@@ -189,7 +189,7 @@ export function MobileRepairSlugView({ data }) {
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-3.5 py-1 text-xs font-black text-[#0E7C7B] dark:text-teal-300 uppercase tracking-widest">
                   <Smartphone size={14} className="text-[#0E7C7B]" />
-                  <span>{isBrand ? 'BRAND SPECIALIST LAB' : 'EXPERT PROBLEM DIAGNOSTICS'}</span>
+                  <span>{isBrand ? 'mobile repair' : 'EXPERT PROBLEM DIAGNOSTICS'}</span>
                 </div>
 
                 <h1 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-slate-100 tracking-tight leading-tight">
@@ -206,10 +206,10 @@ export function MobileRepairSlugView({ data }) {
                     <CheckCircle2 size={16} /> 100% No Password Needed
                   </span>
                   <span className="flex items-center gap-1.5 text-[#0E7C7B]">
-                    <ShieldCheck size={16} /> Limited Warranty
+                    <ShieldCheck size={16} /> Warranty
                   </span>
                   <span className="flex items-center gap-1.5 text-amber-600 dark:text-amber-400">
-                    <Clock size={16} /> 30-Min Fast Turnaround
+                    <Clock size={16} /> 2-3 Hours Fast Turnaround
                   </span>
                 </div>
 
@@ -261,7 +261,7 @@ export function MobileRepairSlugView({ data }) {
                     </div>
                     <div className="relative z-10 mt-5 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100/90 dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/60 text-xs font-bold text-slate-700 dark:text-slate-300">
                       <CheckCircle2 size={15} className="text-[#0E7C7B] dark:text-teal-400" />
-                      <span>Certified {data.name} Care & Lab Diagnostics</span>
+                      <span> {data.name} Care & Lab Diagnostics</span>
                     </div>
                   </div>
                 ) : (
@@ -453,7 +453,7 @@ export function MobileRepairSlugView({ data }) {
                   Need Fast Repair for Your {data.name}?
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-300 font-medium leading-relaxed">
-                  Visit Robuzta Techlabs in South Bopal or Tragad for live workbench diagnosis, 100% data safety, and Limited Warranty.
+                  Visit Robuzta Techlabs in South Bopal or Tragad for live workbench diagnosis, 100% data safety, and Warranty.
                 </p>
               </div>
 
@@ -463,7 +463,7 @@ export function MobileRepairSlugView({ data }) {
                   className="inline-flex items-center justify-center gap-2 w-full rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-7 py-4 text-xs font-black uppercase tracking-wider shadow-xl shadow-[#0E7C7B]/30 transition-all hover:scale-[1.02]"
                 >
                   <Wrench size={16} />
-                  <span>Book Check</span>
+                  <span>Book your service</span>
                 </button>
               </div>
             </div>

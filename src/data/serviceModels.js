@@ -42,10 +42,10 @@ export const serviceModelShowcases = {
       modelPath: '/models/Circuit board 1.glb',
       title: 'Logic Board & Circuit Repair',
       description:
-        'Apple Silicon and Intel MacBook logic board micro-soldering — power IC replacement, liquid damage recovery, and trace repair under microscope.',
+        'Apple Silicon and Intel MacBook motherboard micro-soldering — power IC replacement, liquid damage recovery, and trace repair under microscope.',
       calloutTitle: 'Micro-Soldering Precision:',
       calloutText:
-        'Rather than costly full logic board swaps, we replace faulty SMC chips, capacitors, and charging ICs at the component level with BGA rework stations.',
+        'Rather than costly full motherboard swaps, we replace faulty SMC chips, capacitors, and charging ICs at the component level with BGA rework stations.',
       badge: 'APPLE-GRADE CARE',
       scale: 1.6,
     },
@@ -57,7 +57,7 @@ export const techLabModelShowcase = {
   modelPath: '/models/Microchip.glb',
   title: 'BGA Micro-Soldering & IC Rework',
   description:
-    'Lab-grade BGA optical rework stations and stereo microscopes enable precision chip-level repairs on logic boards, GPUs, and mobile device PCBs.',
+    'Lab-grade BGA optical rework stations and stereo microscopes enable precision chip-level repairs on motherboards, GPUs, and mobile device PCBs.',
   calloutTitle: 'Chip-level Repair:',
   calloutText:
     'Delicate microchips and power ICs are replaced under 45× magnification with ESD-safe isolation — protecting your data while fixing hardware at the source.',

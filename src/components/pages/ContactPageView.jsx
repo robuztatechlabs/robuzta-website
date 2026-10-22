@@ -21,7 +21,7 @@ const CONTACT_FAQS = [
   },
   {
     q: 'What if my device cannot be fixed?',
-    a: 'We operate on a No Fix, No Fee Guarantee. If we cannot fix your device, you pay zero diagnostic charges.',
+    a: "If in case we are not able to solve the issue, then we don't charge. Diagnostic charges apply only if you choose not to get it repaired.",
   },
   {
     q: 'Do you offer doorstep pickup in Ahmedabad?',

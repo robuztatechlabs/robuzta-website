@@ -16,7 +16,7 @@ export const trustCards = [
   },
   {
     title: 'Warranty + Invoice',
-    text: 'Limited Warranty & digital invoice'
+    text: 'Warranty & digital invoice'
   },
   {
     title: 'Live Repair Tracking',

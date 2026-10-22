@@ -70,7 +70,7 @@ export function ServicesPageView() {
             </h1>
 
             <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto font-medium">
-              From MacBook BGA logic board micro-soldering to smartphone screen replacements and gaming PC thermal overhauls—backed by 180-day OEM warranties and Zero-Password data safety.
+              From MacBook BGA motherboard micro-soldering to smartphone screen replacements and gaming PC thermal overhauls—backed by OEM warranties.
             </p>
 
             {/* Quick Category Filter Pills */}

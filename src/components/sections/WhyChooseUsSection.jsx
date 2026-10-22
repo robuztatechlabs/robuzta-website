@@ -5,11 +5,6 @@ import { Lock, Clock, ShieldCheck, Eye, Truck, CheckCircle2, ArrowRight, Award }
 
 const pillars = [
   {
-    icon: Lock,
-    title: 'No Password Needed Privacy',
-    description: 'We never ask for your password'
-  },
-  {
     icon: Clock,
     title: '2–4h Turnaround',
     description: 'Same-day express repair & delivery'
@@ -27,7 +22,7 @@ const pillars = [
   {
     icon: Truck,
     title: 'Doorstep Pickup',
-    description: 'pickup & drop across Ahmedabad'
+    description: 'pickup & drop across India'
   }
 ];
 

@@ -26,7 +26,7 @@ const officeHighlights = [
   {
     icon: Cpu,
     title: 'Chip-Level Lab',
-    description: 'BGA soldering stations and microscopic diagnostics for logic board repairs.',
+    description: 'BGA soldering stations and microscopic diagnostics for motherboard repairs.',
     color: 'from-blue-500 to-indigo-600'
   },
   {
@@ -123,7 +123,7 @@ export function LocationsPageView() {
               </div>
 
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
-                Robuzta Lab Locations
+                Robuzta Techlabs near You
               </h2>
 
               <p className="text-xs sm:text-base text-slate-600 dark:text-slate-400 font-medium">
@@ -158,7 +158,7 @@ export function LocationsPageView() {
                               {loc.title}
                             </h3>
                             <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">
-                              {loc.cardSubtitle || (isHeadquarters ? 'Main Service Center • South Bopal' : 'Branch Service Center • Tragad')}
+                              {loc.cardSubtitle || (isHeadquarters ? 'South Bopal . Bopal . Ghuma . Shela . Ambli . Vakil Saheb Bridge . TRP Mall Area' : 'Tragad . Chandkheda . Zundal . Adani Shantigram . Motera . Godrej Garden City')}
                             </span>
                           </div>
                         </div>
@@ -228,7 +228,7 @@ export function LocationsPageView() {
                 <div className="space-y-1">
                   <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">Can&apos;t Visit In Person?</h3>
                   <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium max-w-xl">
-                    Request doorstep pickup across South Bopal, Tragad, Satellite, Vastrapur & all Ahmedabad areas.
+                    We accept courier across India.
                   </p>
                 </div>
               </div>

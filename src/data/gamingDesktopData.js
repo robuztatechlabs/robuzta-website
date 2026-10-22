@@ -76,7 +76,7 @@ export const GAMING_REPAIR_DATA = {
   ],
 
   customBuildsBadge: 'CUSTOM GAMING PC BUILDS',
-  customBuildsTitle: 'Build a Gaming PC Around Your Budget',
+  customBuildsTitle: 'Build a Gaming PC',
   customBuildsDescription: 'Whether you need a budget gaming PC, high-end gaming system, streaming setup, or a powerful editing workstation, we configure the components according to your requirements and expected performance.',
   customBuildTiers: [
     {
@@ -151,7 +151,7 @@ export const GAMING_BUILD_DATA = {
   ],
 
   servicesBadge: 'CUSTOM GAMING PC BUILDS',
-  servicesTitle: 'Build a Gaming PC Around Your Budget',
+  servicesTitle: 'A Gaming PC Around Your Budget',
   servicesDescription: 'Whether you need a budget gaming PC, high-end gaming system, streaming setup, or a powerful editing workstation, we configure the components according to your requirements and expected performance.',
 
   repairProblems: [
@@ -174,7 +174,7 @@ export const GAMING_BUILD_DATA = {
   ],
 
   customBuildsBadge: 'CUSTOM GAMING PC BUILDS',
-  customBuildsTitle: 'Build a Gaming PC Around Your Budget',
+  customBuildsTitle: 'Build a PC Around Your Budget',
   customBuildsDescription: 'Whether you need a budget gaming PC, high-end gaming system, streaming setup, or a powerful editing workstation, we configure the components according to your requirements and expected performance.',
   customBuildTiers: [
     {

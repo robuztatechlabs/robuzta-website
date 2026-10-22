@@ -41,10 +41,10 @@ const comparisonRows = [
     generic: 'Third-Party Vendor Margins'
   },
   {
-    feature: 'Target Return on Investment (ROI)',
-    robuzta: '10 to 14 Months Payback',
-    independent: 'High Risk / Uncertain',
-    generic: '18 to 24 Months'
+    feature: 'Content Creation & Social Media Management',
+    robuzta: '100% Handled by Robuzta HQ (Reels, Posts & Ads)',
+    independent: 'Owner must create alone or hire costly agency',
+    generic: 'Generic brochure templates only'
   }
 ];
 

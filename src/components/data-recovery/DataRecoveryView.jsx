@@ -128,7 +128,7 @@ export function DataRecoveryView() {
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-3.5 py-1 text-xs font-black text-[#0E7C7B] dark:text-teal-300 uppercase tracking-widest">
                   <Database size={14} className="text-[#0E7C7B]" />
-                  <span>EMERGENCY HARDWARE DATA EXTRACTION LAB</span>
+                  <span>Recover Your Data</span>
                 </div>
 
                 <h1 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-slate-100 tracking-tight leading-tight">
@@ -159,7 +159,7 @@ export function DataRecoveryView() {
                     className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-6 py-3.5 text-xs font-black uppercase tracking-wider shadow-lg shadow-[#0E7C7B]/30 transition-all hover:scale-[1.02]"
                   >
                     <Wrench size={16} />
-                    <span>Book Recovery Diagnostic</span>
+                    <span>Submit Your Hard-drive</span>
                   </button>
 
                   <a
@@ -230,7 +230,7 @@ export function DataRecoveryView() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
             <div className="text-center max-w-3xl mx-auto space-y-2">
               <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
-                PROVEN REPAIR EXCELLENCE
+                
               </span>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
                 {data.whyChooseUsTitle}
@@ -389,7 +389,6 @@ export function DataRecoveryView() {
           <section className="py-14 sm:py-20 border-b border-slate-200 dark:border-slate-800">
             <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 space-y-8">
               <div className="text-center space-y-2">
-                <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">FREQUENTLY ASKED QUESTIONS</span>
                 <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
                   {data.faqsTitle}
                 </h2>
@@ -433,7 +432,7 @@ export function DataRecoveryView() {
               <div className="lg:col-span-8 space-y-3">
                 <div className="flex items-center gap-2 text-xs font-black uppercase text-amber-400 tracking-wider">
                   <Sparkles size={16} />
-                  <span>EMERGENCY DATA RECOVERY IN AHMEDABAD</span>
+                  <span>Did you lose your data?</span>
                 </div>
                 <h3 className="text-2xl sm:text-4xl font-black text-white">
                   Need Urgent Data Recovery?
@@ -449,7 +448,7 @@ export function DataRecoveryView() {
                   className="inline-flex items-center justify-center gap-2 w-full rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-7 py-4 text-xs font-black uppercase tracking-wider shadow-xl shadow-[#0E7C7B]/30 transition-all hover:scale-[1.02]"
                 >
                   <Wrench size={16} />
-                  <span>Book Audit</span>
+                  <span>Book an Audit</span>
                 </button>
               </div>
             </div>

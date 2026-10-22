@@ -67,7 +67,7 @@ export function PortfolioSection() {
             </h2>
 
             <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed font-medium">
-              Explore real-world case studies of complex logic board soldering, screen replacements, and liquid damage recoveries performed at our lab.
+              Explore real-world case studies of complex motherboard soldering, screen replacements, and liquid damage recoveries performed at our lab.
             </p>
           </div>
 

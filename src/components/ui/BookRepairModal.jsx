@@ -184,7 +184,7 @@ export function BookRepairModal() {
                     <ShieldCheck size={13} className="text-emerald-500" /> ₹0 Inspection Fee
                   </span>
                   <span>&bull;</span>
-                  <span>Limited Warranty</span>
+                  <span>Warranty</span>
                 </div>
 
               </div>

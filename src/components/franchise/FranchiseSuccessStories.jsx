@@ -6,7 +6,7 @@ import { Star, Quote, CheckCircle2, TrendingUp, Award } from 'lucide-react';
 const partnerStories = [
   {
     name: 'Vikramaditya Shah',
-    location: 'South Bopal Flagship Lab',
+    location: 'South Bopal Lab',
     growth: '100% Breakeven in Month 4',
     revenue: '₹5.8 Lakhs / Month Avg',
     quote: 'The live workbench transparency and ESD safety setup won immediate customer trust. Robuzta central marketing brings 20+ laptop & Mac repair leads every single day.',

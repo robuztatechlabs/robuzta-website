@@ -299,7 +299,7 @@ export function LaptopExplorerSection() {
                     {/* Bottom Lab Guarantee Note */}
                     <div className="flex items-center gap-2 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 p-3 sm:p-3.5 rounded-2xl text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 font-medium">
                       <Wrench size={15} className="text-[#0E7C7B] dark:text-teal-400 shrink-0" />
-                      <span>Certified Micro-Soldering Lab &bull; No Fix, No Fee Guarantee</span>
+                      <span> Micro-Soldering Lab &bull; No Fix, No Fee Guarantee</span>
                     </div>
                   </motion.div>
                 )}

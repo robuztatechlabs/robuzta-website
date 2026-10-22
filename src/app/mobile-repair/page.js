@@ -10,7 +10,7 @@ export const metadata = {
   openGraph: {
     title: 'Mobile Repair Services in Ahmedabad | Robuzta Techlabs',
     description:
-      'Chip-level smartphone repair, logic board diagnostics, OEM AMOLED display & battery replacements in Ahmedabad. No Password Needed protected. No fix, no fee.',
+      'Chip-level smartphone repair, motherboard diagnostics, OEM AMOLED display & battery replacements in Ahmedabad. No Password Needed protected. No fix, no fee.',
     url: 'https://robuzta.com/mobile-repair/',
     type: 'website'
   }

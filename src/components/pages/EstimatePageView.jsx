@@ -12,7 +12,7 @@ import { siteConfig } from '@/data/site';
 const trustPills = [
   { icon: Calculator, label: 'Instant Estimate' },
   { icon: Clock, label: '2–4h Express Repair' },
-  { icon: ShieldCheck, label: 'Limited Warranty' },
+  { icon: ShieldCheck, label: 'Warranty' },
 ];
 
 export function EstimatePageView() {

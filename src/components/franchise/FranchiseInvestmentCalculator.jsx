@@ -7,17 +7,17 @@ const standardModel = {
   id: 'standard',
   name: 'Standard Hardware Lab',
   footprint: '300 - 500 Sq Ft',
-  investment: '₹8-16 Lakhs',
-  estRevenue: '₹6-7 Lakhs / mo',
-  profitMargin: '45%',
-  estProfit: '₹1-3 Lakhs / mo',
-  payback: '10 - 12 Months',
+  investment: '₹8 - 16 Lakhs',
+  estRevenue: '₹6 - 7 Lakhs / mo',
+  profitMargin: '45% - 50%',
+  payback: '10 - 14 Months',
   includes: [
-    'Diagnostic Microscope & ESD Bench',
-    'Laptop & Smartphone Parts Starter Stock',
-    'Robuzta CRM & WhatsApp Bot License',
-    'Local Google Maps Marketing Campaign',
-    'Technician Hiring Assistance & 30-Day Training'
+    'Complete Content Creation & Centralized Social Media Management',
+    'Local Google Maps SEO & Meta Lead Generation Campaigns',
+    'Diagnostic Microscope & ISO-ESD Workbench Setup',
+    'Laptop & Smartphone Genuine Parts Starter Inventory',
+    'Robuzta Repair CRM & Automated WhatsApp Lead Bot',
+    'Technician Recruitment Assistance & 30-Day Masterclass Training'
   ]
 };
 
@@ -105,12 +105,12 @@ export function FranchiseInvestmentCalculator() {
 
             <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-1">
               <span className="text-[11px] font-black text-amber-600 dark:text-amber-400 uppercase tracking-wider block">
-                Est. Net Monthly Profit
+                Gross Profit Margin
               </span>
               <div className="text-2xl sm:text-4xl font-black text-[#EA580C]">
-                {standardModel.estProfit}
+                {standardModel.profitMargin}
               </div>
-              <div className="text-[11px] text-slate-500 dark:text-slate-400 font-bold">{standardModel.profitMargin} Net Margin</div>
+              <div className="text-[11px] text-slate-500 dark:text-slate-400 font-bold">High Unit Economics</div>
             </div>
 
             <div className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-1">

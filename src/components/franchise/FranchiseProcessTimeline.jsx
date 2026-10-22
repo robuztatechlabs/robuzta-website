@@ -32,12 +32,12 @@ const processSteps = [
   {
     step: '06',
     title: 'Technician Masterclass',
-    description: '30-day intensive hardware training masterclass covering Apple logic board soldering, OLED screen refurbishment, and store SOPs.'
+    description: '30-day intensive hardware training masterclass covering Apple motherboard soldering, OLED screen refurbishment, and store SOPs.'
   },
   {
     step: '07',
-    title: 'Grand Launch & Scale',
-    description: 'Marketing campaign blast, live video workbench launch, doorstep pickup activation, and multi-store expansion scaling.'
+    title: 'Grand Launch & Brand Marketing',
+    description: 'Company-produced video content launch, managed social media reels, targeted local ad campaigns, doorstep pickup activation, and multi-store scaling.'
   }
 ];
 

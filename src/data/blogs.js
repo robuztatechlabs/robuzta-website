@@ -3,7 +3,7 @@ export const blogs = [
     slug: 'laptop-screen-replacement-cost-guide-ahmedabad',
     title: 'Laptop Screen Replacement Cost Guide: What to Expect in Ahmedabad (2026 Edition)',
     excerpt:
-      'Cracked display or flickering backlight? Learn about original panel pricing, display types (FHD IPS, 144Hz Gaming, 4K OLED), replacement turnaround times, and Limited Warranty options at Robuzta.',
+      'Cracked display or flickering backlight? Learn about original panel pricing, display types (FHD IPS, 144Hz Gaming, 4K OLED), replacement turnaround times, and Warranty options at Robuzta.',
     category: 'Laptop Repair',
     date: '2026-07-28',
     readTime: '6 min read',
@@ -68,7 +68,7 @@ export const blogs = [
       <p>At Robuzta Techlabs in South Bopal & Tragad, we stock Grade-A original panels for Dell XPS, HP Pavilion/Spectre, Lenovo ThinkPad, ASUS ROG, Acer Predator, and Apple MacBooks.</p>
       <ul>
         <li><strong>Zero Dead Pixel Guarantee:</strong> Every panel undergo a 5-point color and backlight bleed inspection.</li>
-        <li><strong>Limited Warranty:</strong> Includes full replacement coverage for backlight or digitizer faults.</li>
+        <li><strong>Warranty:</strong> Includes full replacement coverage for backlight or digitizer faults.</li>
         <li><strong>Live Workbench Transparency:</strong> Watch our senior technicians install and calibrate your screen live in our ESD-safe lab.</li>
       </ul>
     `
@@ -77,7 +77,7 @@ export const blogs = [
     slug: 'macbook-motherboard-repair-vs-replacement',
     title: 'MacBook Logic Board Repair vs. Replacement: Save Up to 65% with BGA Micro-Soldering',
     excerpt:
-      'Has Apple suggested replacing your entire logic board for ₹45,000+? Discover how BGA chip-level micro-soldering fixes liquid damage and short circuits at a fraction of the cost.',
+      'Has Apple suggested replacing your entire motherboard for ₹45,000+? Discover how BGA chip-level micro-soldering fixes liquid damage and short circuits at a fraction of the cost.',
     category: 'MacBook Repair',
     date: '2026-07-22',
     readTime: '7 min read',
@@ -86,15 +86,15 @@ export const blogs = [
     featured: true,
     image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=800&auto=format&fit=crop&fm=webp',
     content: `
-      <p>When an Apple MacBook Air or Pro stops booting up, fails to charge, or suffers liquid exposure, official service centers almost universally recommend replacing the entire logic board assembly. This repair often costs upwards of ₹45,000 to ₹70,000—frequently exceeding the current market value of the laptop itself.</p>
+      <p>When an Apple MacBook Air or Pro stops booting up, fails to charge, or suffers liquid exposure, official service centers almost universally recommend replacing the entire motherboard assembly. This repair often costs upwards of ₹45,000 to ₹70,000—frequently exceeding the current market value of the laptop itself.</p>
 
       <h3>What is Chip-level Logic Board Repair?</h3>
       <p>Instead of discarding the entire motherboard assembly, Robuzta’s specialized micro-soldering laboratory inspects the board under 45× magnification optical stereo microscopes and FLIR thermal imaging cameras. We pinpoint the specific failed component—such as a shorted 19V rail capacitor, corroded SMC charging IC, or blown MOSFET—and replace only that microchip.</p>
 
       <h3>Key Advantages of Board Repair over Board Replacement</h3>
       <ul>
-        <li><strong>100% Data Preservation:</strong> Apple Silicon (M1/M2/M3) and T2 MacBooks have storage soldered directly onto the logic board. Replacing the board erases all your irreplaceable files. Micro-soldering the board restores power and saves your data!</li>
-        <li><strong>60% to 70% Cost Savings:</strong> Typical logic board chip repairs cost between ₹4,500 and ₹12,000—saving you tens of thousands of rupees.</li>
+        <li><strong>100% Data Preservation:</strong> Apple Silicon (M1/M2/M3) and T2 MacBooks have storage soldered directly onto the motherboard. Replacing the board erases all your irreplaceable files. Micro-soldering the board restores power and saves your data!</li>
+        <li><strong>60% to 70% Cost Savings:</strong> Typical motherboard chip repairs cost between ₹4,500 and ₹12,000—saving you tens of thousands of rupees.</li>
         <li><strong>Eco-Friendly Electronic Conservation:</strong> Prevents unnecessary e-waste by restoring original high-grade silicon.</li>
       </ul>
 
@@ -342,7 +342,7 @@ export const blogs = [
         <li><strong>Faulty USB-C PD Controller IC (e.g. TPS65988 / Cypress):</strong> Prevents negotiation of 20V power input.</li>
       </ul>
 
-      <p>At Robuzta Techlabs, we desolder broken charging connectors and solder original OEM ports onto your motherboard in 60 minutes with a Limited Warranty.</p>
+      <p>At Robuzta Techlabs, we desolder broken charging connectors and solder original OEM ports onto your motherboard in 60 minutes with a Warranty.</p>
     `
   },
   {

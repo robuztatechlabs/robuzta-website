@@ -24,7 +24,7 @@ export const COMPONENT_DATA = {
     description:
       'Dedicated NVIDIA RTX & AMD Radeon graphics processors undergo intense thermal stress in gaming laptops, leading to screen artifacts, black displays, and crashing under load.',
     repair:
-      'Robuzta’s certified engineers perform BGA chip reflowing, micro-reballing, and GDDR6 VRAM IC replacement under 45× stereo microscopes with a lab warranty.',
+      'Robuzta’s  engineers perform BGA chip reflowing, micro-reballing, and GDDR6 VRAM IC replacement under 45× stereo microscopes with a lab warranty.',
     badge: 'ADVANCED GPU LAB REWORK',
   },
   ram1: {
@@ -68,7 +68,7 @@ export const COMPONENT_DATA = {
     description:
       'Swollen or degraded lithium pouch cells are a dangerous fire risk and press against the trackpad or aluminum palm rest, causing physical chassis bulging.',
     repair:
-      'Robuzta safely extracts swollen cells and installs genuine OEM grade-A battery packs backed by our official 180-day replacement warranty in Ahmedabad.',
+      'Robuzta safely extracts swollen cells and installs genuine OEM grade-A battery packs backed by our official replacement warranty in Ahmedabad.',
     badge: '180-DAY OEM WARRANTY',
   },
   wifi: {

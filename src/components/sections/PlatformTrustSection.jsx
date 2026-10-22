@@ -38,7 +38,7 @@ export const platformListings = [
     id: 'sulekha',
     name: 'Sulekha',
     rating: '4.9',
-    reviews: 'Gold Certified Service',
+    reviews: 'Gold  Service',
     badge: 'Hardware & Micro-Soldering Expert',
     url: 'https://www.sulekha.com/robuzta-techlabs-bopal-ahmedabad-contact-address',
     renderLogo: () => <SulekhaIcon size={24} />,

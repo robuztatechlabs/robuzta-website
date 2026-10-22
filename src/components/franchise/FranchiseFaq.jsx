@@ -11,7 +11,7 @@ const faqs = [
   },
   {
     question: 'Do I need prior hardware repair or engineering experience?',
-    answer: 'No. Robuzta provides complete operational coaching, hiring assistance to recruit skilled hardware engineers, and a 30-day masterclass training program covering Apple logic board soldering, OLED screen refurbishment, and customer service SOPs.'
+    answer: 'No. Robuzta provides complete operational coaching, hiring assistance to recruit skilled hardware engineers, and a 30-day masterclass training program covering Apple motherboard soldering, OLED screen refurbishment, and customer service SOPs.'
   },
   {
     question: 'What is the expected Return on Investment (ROI) and payback period?',
@@ -26,8 +26,8 @@ const faqs = [
     answer: 'Franchise partners get direct access to Robuzta’s centralized supply chain portal to order genuine screens, batteries, motherboards, and micro-chips at wholesale partner pricing.'
   },
   {
-    question: 'What marketing and lead generation support is provided?',
-    answer: 'Our central digital marketing team manages local Google Maps SEO, Meta video advertising campaigns, and WhatsApp lead bots that direct qualified customer repair leads straight to your store.'
+    question: 'Does Robuzta handle content creation and social media for our franchise?',
+    answer: 'Yes, 100%. Franchise partners never have to worry about marketing, video editing, or posting. Our central creative media team produces high-engagement tech repair reels, device teardown videos, and educational content. We fully manage your official social media presence, execute targeted local Meta & Google Maps ad campaigns, and drive verified customer repair leads directly to your store.'
   }
 ];
 

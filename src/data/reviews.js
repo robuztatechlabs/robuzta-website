@@ -42,7 +42,7 @@ export const reviews = [
     rating: 5,
     avatarBg: 'from-blue-600 to-indigo-700',
     quote:
-      'Robuzta is hands down the best Apple & laptop repair lab in Ahmedabad. My MacBook Pro M2 had a display flickering issue and dead charging port. Official service center quoted 45k for total logic board replacement. Robuzta fixed the board level IC chip in 24 hours at 1/4th the price under No Password Needed data safety. Unbelievable service!'
+      'Robuzta is hands down the best Apple & laptop repair lab in Ahmedabad. My MacBook Pro M2 had a display flickering issue and dead charging port. Official service center quoted 45k for total motherboard replacement. Robuzta fixed the board level IC chip in 24 hours at 1/4th the price under No Password Needed data safety. Unbelievable service!'
   },
   {
     id: 4,

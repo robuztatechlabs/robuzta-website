@@ -23,7 +23,7 @@ export function Footer() {
             </div>
 
             <p className="text-xs sm:text-sm leading-relaxed text-slate-400 max-w-md">
-              Ahmedabad’s premier multi-device repair lab. Specialized in chip-level laptop, MacBook, smartphone, Surface, and gaming PC diagnostics with transparent pricing and live workbench repairs under strict No Password Needed privacy.
+              Ahmedabad’s premier multi-device repair lab. Specialized in chip-level laptop, MacBook, smartphone, Surface, and gaming PC diagnostics with transparent pricing and live repairs.
             </p>
 
 
@@ -78,7 +78,7 @@ export function Footer() {
                 <Link href="/about" prefetch={false} className="hover:text-[#0E7C7B] transition-colors">About Robuzta Lab</Link>
               </li>
               <li>
-                <Link href="/locations" prefetch={false} className="hover:text-[#0E7C7B] transition-colors">Lab Locations</Link>
+                <Link href="/locations" prefetch={false} className="hover:text-[#0E7C7B] transition-colors">Robuzta Locations</Link>
               </li>
               <li>
                 <Link href="/franchise" prefetch={false} className="hover:text-[#0E7C7B] transition-colors">Franchise Opportunity</Link>

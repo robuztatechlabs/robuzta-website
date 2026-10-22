@@ -8,7 +8,7 @@ const techCategories = {
   'Micro-Soldering & Logic Board': [
     { name: 'FLIR Thermal Imaging Camera', desc: 'Pinpoints short-circuits & motherboard overheating chips instantly without invasive probes.', tag: 'Diagnostics' },
     { name: 'BGA Optical Rework Station', desc: 'Precision chip-level micro-soldering, reballing, and SMC/Power IC replacement.', tag: 'Hardware' },
-    { name: 'Rigol Digital Oscilloscope', desc: 'Logic board frequency, power rail, and signal wave diagnostics.', tag: 'Testing' },
+    { name: 'Rigol Digital Oscilloscope', desc: 'Motherboard frequency, power rail, and signal wave diagnostics.', tag: 'Testing' },
     { name: 'ESD Anti-Static Bench', desc: 'Electrostatic discharge isolation protecting delicate microchips during repair.', tag: 'Safety' }
   ],
   'Disassembly & Testing': [
@@ -19,7 +19,7 @@ const techCategories = {
   ],
   'Genuine Parts & Sourcing': [
     { name: 'Serial-Verified Displays', desc: 'Grade-A original screens for Apple Retina, Dell XPS, HP, and OLED phones.', tag: 'Original Parts' },
-    { name: 'OEM Battery Packs', desc: 'High-cycle OEM batteries backed by official 180-day replacement warranty.', tag: 'Battery Health' },
+    { name: 'OEM Battery Packs', desc: 'High-cycle OEM batteries backed by official replacement warranty.', tag: 'Battery Health' },
     { name: 'Logic Board IC Components', desc: 'Genuine power ICs, charging flex cables, and capacitors.', tag: 'Components' },
     { name: 'Digital Invoice & Tracking', desc: 'Logged serial numbers and digital invoices for full customer transparency.', tag: 'Trust' }
   ]

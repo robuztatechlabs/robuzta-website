@@ -23,7 +23,7 @@ const servicesList = [
     id: 'laptop-repair',
     title: 'Laptop Repair',
     icon: Laptop,
-    description: 'Screen, battery & logic board repairs',
+    description: 'Screen, battery & motherboard repairs',
     link: '/services/laptop-repair',
     color: 'from-teal-500/10 to-teal-500/5 text-[#0E7C7B] border-[#0E7C7B]/20'
   },
@@ -39,7 +39,7 @@ const servicesList = [
     id: 'macbook-repair',
     title: 'MacBook Repair',
     icon: Laptop,
-    description: 'Logic board micro-soldering & screens',
+    description: 'Motherboard micro-soldering & screens',
     link: '/services/macbook-repair',
     color: 'from-blue-500/10 to-blue-500/5 text-blue-600 border-blue-500/20'
   },

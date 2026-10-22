@@ -56,7 +56,7 @@ export function BlogListingPageView() {
             </h1>
 
             <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
-              Transparent component pricing breakdowns, MacBook logic board diagnostics, and zero-password data safety tips.
+              Transparent component pricing breakdowns, MacBook motherboard diagnostics, and zero-password data safety tips.
             </p>
 
             {/* Search Input Bar */}

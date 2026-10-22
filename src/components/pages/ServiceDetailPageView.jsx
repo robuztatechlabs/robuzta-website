@@ -219,7 +219,7 @@ export function ServiceDetailPageView({ slug }) {
                   </span>
                   <span className="flex items-center gap-1.5">
                     <CheckCircle2 size={15} className="text-amber-500" />
-                    Limited Warranty
+                    Warranty
                   </span>
                   <span className="flex items-center gap-1.5">
                     <Clock size={15} className="text-teal-600 dark:text-teal-400" />
@@ -596,7 +596,7 @@ export function ServiceDetailPageView({ slug }) {
                       {item}
                     </h3>
                     <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                      Diagnosis-first support with transparent quote, customer approval, and certified lab handling.
+                      Diagnosis-first support with transparent quote, customer approval, and  lab handling.
                     </p>
                   </div>
                 </motion.article>

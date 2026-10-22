@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import dynamic from 'next/dynamic';
 import {
   Flame,
   CheckCircle2,
@@ -24,6 +25,21 @@ import { Footer } from '@/components/layout/Footer';
 import { siteConfig } from '@/data/site';
 import { useBookingModal } from '@/context/BookingModalContext';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
+
+const GamingHero3DViewer = dynamic(
+  () => import('./GamingHero3DViewer').then((mod) => mod.GamingHero3DViewer),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full h-[380px] sm:h-[440px] lg:h-[470px] rounded-3xl animate-pulse bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col items-center justify-center gap-3">
+        <div className="h-10 w-10 animate-spin rounded-full border-2 border-slate-300 dark:border-slate-700 border-t-[#0E7C7B]" />
+        <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">
+          Loading 3D Hardware Model...
+        </span>
+      </div>
+    )
+  }
+);
 
 const SMOOTH_TRANSITION = { duration: 0.7, ease: [0.22, 1, 0.36, 1] };
 
@@ -128,13 +144,38 @@ export function GamingDesktopView({ data }) {
             transition={SMOOTH_TRANSITION}
             className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-6"
           >
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-              <div className="lg:col-span-8 space-y-5">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+              <div className="lg:col-span-7 space-y-5">
                 
-                {/* Badge */}
-                <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-3.5 py-1 text-xs font-black text-[#0E7C7B] dark:text-teal-300 uppercase tracking-widest">
-                  <Flame size={14} className="text-amber-500" />
-                  <span>GAMING PC REPAIR & BUILD SERVICES</span>
+                {/* Badge & Quick Service Switch */}
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-3.5 py-1 text-xs font-black text-[#0E7C7B] dark:text-teal-300 uppercase tracking-widest">
+                    <Flame size={14} className="text-amber-500" />
+                    <span>GAMING PC REPAIR & BUILD SERVICES</span>
+                  </div>
+
+                  <div className="inline-flex p-1 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm text-xs font-bold">
+                    <Link
+                      href="/gaming-desktop/repair/"
+                      className={`px-3 py-1 rounded-xl transition-all ${
+                        isRepair
+                          ? 'bg-[#0E7C7B] text-white shadow-sm font-black'
+                          : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                      }`}
+                    >
+                      Repair
+                    </Link>
+                    <Link
+                      href="/gaming-desktop/build/"
+                      className={`px-3 py-1 rounded-xl transition-all ${
+                        !isRepair
+                          ? 'bg-[#0E7C7B] text-white shadow-sm font-black'
+                          : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                      }`}
+                    >
+                      Custom Build
+                    </Link>
+                  </div>
                 </div>
 
                 <h1 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-slate-100 tracking-tight leading-tight">
@@ -159,7 +200,7 @@ export function GamingDesktopView({ data }) {
                 </div>
 
                 {/* CTAs */}
-                <div className="flex flex-wrap items-center gap-3 pt-4">
+                <div className="flex flex-wrap items-center gap-3 pt-3">
                   <button
                     onClick={() => openModal({ serviceType: pageTitle })}
                     className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-6 py-3.5 text-xs font-black uppercase tracking-wider shadow-lg shadow-[#0E7C7B]/30 transition-all hover:scale-[1.02]"
@@ -188,51 +229,12 @@ export function GamingDesktopView({ data }) {
                 </div>
               </div>
 
-              {/* Navigation Switch Box */}
-              <div className="lg:col-span-4 flex justify-center">
-                <div className="w-full max-w-sm rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 shadow-2xl space-y-4">
-                  <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
-                    <span className="text-xs font-black text-slate-400 uppercase tracking-widest">
-                      Gaming PC Services
-                    </span>
-                    <span className="text-[10px] font-black text-teal-600 bg-teal-50 dark:bg-teal-950/60 px-2.5 py-0.5 rounded-full border border-teal-200 dark:border-teal-800">
-                      Live Lab Inspection
-                    </span>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Link
-                      href="/gaming-desktop/repair/"
-                      className={`flex items-center justify-between p-3.5 rounded-2xl border transition-all ${
-                        isRepair
-                          ? 'bg-[#0E7C7B]/10 border-[#0E7C7B] text-[#0E7C7B] font-extrabold'
-                          : 'bg-slate-50 dark:bg-slate-800/60 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 font-bold hover:border-[#0E7C7B]'
-                      }`}
-                    >
-                      <span className="text-xs">Gaming PC Repair & Fix</span>
-                      <ChevronRight size={16} />
-                    </Link>
-
-                    <Link
-                      href="/gaming-desktop/build/"
-                      className={`flex items-center justify-between p-3.5 rounded-2xl border transition-all ${
-                        !isRepair
-                          ? 'bg-[#0E7C7B]/10 border-[#0E7C7B] text-[#0E7C7B] font-extrabold'
-                          : 'bg-slate-50 dark:bg-slate-800/60 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 font-bold hover:border-[#0E7C7B]'
-                      }`}
-                    >
-                      <span className="text-xs">Custom PC Build & Assembly</span>
-                      <ChevronRight size={16} />
-                    </Link>
-                  </div>
-
-                  <button
-                    onClick={() => openModal({ serviceType: pageTitle })}
-                    className="w-full rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-[#0E7C7B] hover:text-white text-slate-900 dark:text-white py-3 text-xs font-black uppercase tracking-wider transition-all"
-                  >
-                    Start Diagnostic Check
-                  </button>
-                </div>
+              {/* 3D Interactive Model Viewer */}
+              <div className="lg:col-span-5 flex justify-center w-full">
+                <GamingHero3DViewer
+                  modelPath="/models/gaming-model.glb"
+                  className="h-[400px] sm:h-[450px] lg:h-[480px]"
+                />
               </div>
             </div>
           </motion.div>
@@ -243,7 +245,7 @@ export function GamingDesktopView({ data }) {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
             <div className="text-center max-w-3xl mx-auto space-y-2">
               <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
-                PROVEN REPAIR EXCELLENCE
+                
               </span>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
                 {data.whyChooseUsTitle}

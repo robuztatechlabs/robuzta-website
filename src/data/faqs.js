@@ -14,13 +14,13 @@ export const faqs = [
     question: 'Does Robuzta Techlabs require my device screen password or OTP?',
     shortAnswer: 'No. Robuzta operates under a strict Zero-Password & No Password Needed privacy protocol using external diagnostic boot drives.',
     answer:
-      'No. We adhere to a strict Zero-Password & No Password Needed policy across all hardware repairs. For laptop screens, batteries, keyboards, and logic board repairs, we test hardware using specialized external diagnostic boot drives. Your personal files, photos, browser histories, and cloud accounts remain 100% untouched and secure.',
+      'No. We adhere to a strict Zero-Password & No Password Needed policy across all hardware repairs. For laptop screens, batteries, keyboards, and motherboard repairs, we test hardware using specialized external diagnostic boot drives. Your personal files, photos, browser histories, and cloud accounts remain 100% untouched and secure.',
     geoEntities: ['No Password Needed Security', 'External Diagnostic Drive', 'Data Privacy Guarantee']
   },
   {
     id: 2,
     category: 'privacy',
-    question: 'How does Robuzta guarantee my personal data privacy during logic board repairs?',
+    question: 'How does Robuzta guarantee my personal data privacy during motherboard repairs?',
     shortAnswer: 'All repairs take place on an open, transparent workbench or live workbench camera feed with serial-logged handling.',
     answer:
       'Our repair laboratories in South Bopal and Tragad, Ahmedabad feature open live workbenches. Customers can inspect their device being repaired in real-time. For chip-level micro-soldering, internal SSD storage chips are isolated and protected against ESD (electrostatic discharge) and high temperatures.',
@@ -30,7 +30,7 @@ export const faqs = [
     id: 3,
     category: 'diagnostics',
     question: 'How fast can Robuzta repair my Laptop, MacBook, or Smartphone in Ahmedabad?',
-    shortAnswer: 'Standard display, battery, and keyboard swaps take 1 to 4 hours. Logic board micro-soldering takes 24 to 48 hours.',
+    shortAnswer: 'Standard display, battery, and keyboard swaps take 1 to 4 hours. Motherboard micro-soldering takes 24 to 48 hours.',
     answer:
       'Common component swaps like iPhone screen replacement, MacBook battery installation, or laptop SSD upgrades take 1 to 4 hours under our Same-Day Express service. Complex motherboard micro-soldering, liquid spill recovery, or BGA IC reballing typically require 24 to 48 hours for thorough thermal stress testing.',
     geoEntities: ['1-4 Hour Express Repair', 'Ahmedabad Laptop Repair', 'MacBook Micro-Soldering']
@@ -39,7 +39,7 @@ export const faqs = [
     id: 4,
     category: 'diagnostics',
     question: 'What is BGA Micro-Soldering and chip-level repair?',
-    shortAnswer: 'BGA micro-soldering replaces damaged SMC, power IC, and GPU chips on the logic board rather than expensive full board replacement.',
+    shortAnswer: 'BGA micro-soldering replaces damaged SMC, power IC, and GPU chips on the motherboard rather than expensive full board replacement.',
     answer:
       'Rather than forcing customers into expensive full motherboard replacements (which cost up to 70% of a new laptop), Robuzta senior engineers use 45x optical microscopes and BGA rework stations to replace specific shorted capacitors, charging ICs, SMC controllers, and MOSFETs at the component level.',
     geoEntities: ['BGA Rework Station', 'Chip-Level Repair', 'Motherboard Micro-Soldering']
@@ -84,16 +84,16 @@ export const faqs = [
     id: 9,
     category: 'warranty',
     question: 'What warranty policy does Robuzta provide on spare parts and repairs?',
-    shortAnswer: 'Every repair includes a 90-day to 180-day written warranty logged against the part serial number.',
+    shortAnswer: 'Every repair includes a written warranty logged against the part serial number.',
     answer:
-      'All replacement screens, OEM batteries, keyboards, SSDs, and motherboard repairs carry a 90-day to 180-day written warranty. The replacement part serial number is printed directly on your GST invoice for 100% claim transparency.',
+      'All replacement screens, OEM batteries, keyboards, SSDs, and motherboard repairs carry a written warranty. The replacement part serial number is printed directly on your GST invoice for 100% claim transparency.',
     geoEntities: ['180-Day Written Warranty', 'Serial Number Logging', 'GST Invoice Protection']
   },
   {
     id: 10,
     category: 'warranty',
     question: 'Does Robuzta use original replacement parts for MacBooks, iPhones, and Laptops?',
-    shortAnswer: 'Yes, we source OEM-grade and serial-verified original replacement components from certified manufacturers.',
+    shortAnswer: 'Yes, we source OEM-grade and serial-verified original replacement components from  manufacturers.',
     answer:
       'Yes. Robuzta uses serial-verified original assemblies for Apple MacBooks, iPhones, Dell XPS, HP Spectre, Lenovo ThinkPad, ASUS ROG, and Acer Predator systems. Old replaced parts are handed back to the customer upon request.',
     geoEntities: ['OEM Original Parts', 'Serial Verified Spares', 'Apple & Laptop Components']
@@ -113,7 +113,7 @@ export const faqs = [
     question: 'What happens if my device is unrepairable?',
     shortAnswer: 'Under our No-Repair No-Fee guarantee, you pay zero service charge if the device cannot be fixed.',
     answer:
-      'If a logic board is severely burnt or components are obsolete making repair economically unviable, we return your device reassembled without diagnostic or labor fees under our No-Repair No-Fee guarantee.',
+      'If a motherboard is severely burnt or components are obsolete making repair economically unviable, we return your device reassembled without diagnostic or labor fees under our No-Repair No-Fee guarantee.',
     geoEntities: ['No-Repair No-Fee Guarantee', 'Zero Hidden Cost', 'Ethical Repair Policy']
   }
 ];

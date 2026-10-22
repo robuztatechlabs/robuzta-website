@@ -15,7 +15,7 @@ export function FranchiseMultiStepForm() {
     phone: '',
     city: '',
     state: 'Gujarat',
-    budget: '₹8.5L - ₹15L',
+    budget: '₹8L - ₹16L',
     experience: 'Business Owner / Entrepreneur',
     message: ''
   });
@@ -235,8 +235,8 @@ export function FranchiseMultiStepForm() {
                       onChange={(e) => updateField('budget', e.target.value)}
                       className="w-full rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 px-4 py-3.5 text-sm text-slate-900 dark:text-white font-medium focus:border-[#0E7C7B] focus:outline-none"
                     >
-                      <option value="₹8.5L - ₹15L">Standard Lab Model (₹8.5 Lakhs - ₹15 Lakhs)</option>
-                      <option value="₹15L - ₹25L">Flagship Enterprise Hub (₹15 Lakhs - ₹25 Lakhs)</option>
+                      <option value="₹8L - ₹16L">Standard Lab Model (₹8 Lakhs - ₹16 Lakhs)</option>
+                      <option value="₹15L - ₹25L">Enterprise Hub (₹15 Lakhs - ₹25 Lakhs)</option>
                       <option value="₹25L+">Multi-Store State Master Franchise (₹25 Lakhs+)</option>
                     </select>
                   </div>

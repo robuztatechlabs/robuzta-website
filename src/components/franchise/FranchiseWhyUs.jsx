@@ -28,16 +28,9 @@ const whyUsPillars = [
   {
     icon: Award,
     title: '30-Day Masterclass & Certification',
-    description: 'Intensive hands-on technician coaching covering Apple M1/M2 logic board soldering, OLED screen refurbishment, and store SOPs.',
+    description: 'Intensive hands-on technician coaching covering Apple M1/M2 motherboard soldering, OLED screen refurbishment, and store SOPs.',
     badge: 'Complete Training',
     color: '#EA580C'
-  },
-  {
-    icon: ShieldCheck,
-    title: 'No Password Needed Privacy System',
-    description: 'Gain immediate customer trust through external test drive boot diagnostics—no customer passcode or OTP ever required.',
-    badge: 'Strict Privacy',
-    color: '#2563EB'
   },
   {
     icon: Layers,

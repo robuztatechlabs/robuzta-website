@@ -120,11 +120,6 @@ export function SoftwareServicesView() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               <div className="lg:col-span-8 space-y-5">
                 
-                {/* Badge */}
-                <div className="inline-flex items-center gap-2 rounded-full bg-[#0E7C7B]/10 border border-[#0E7C7B]/20 px-3.5 py-1 text-xs font-black text-[#0E7C7B] dark:text-teal-300 uppercase tracking-widest">
-                  <Code size={14} className="text-[#0E7C7B]" />
-                  <span>GENUINE OS & SOFTWARE LABORATORY</span>
-                </div>
 
                 <h1 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-slate-100 tracking-tight leading-tight">
                   {data.h1}
@@ -149,14 +144,6 @@ export function SoftwareServicesView() {
 
                 {/* CTAs */}
                 <div className="flex flex-wrap items-center gap-3 pt-4">
-                  <button
-                    onClick={() => openModal({ serviceType: 'Software Services' })}
-                    className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0E7C7B] hover:bg-teal-600 text-white px-6 py-3.5 text-xs font-black uppercase tracking-wider shadow-lg shadow-[#0E7C7B]/30 transition-all hover:scale-[1.02]"
-                  >
-                    <Wrench size={16} />
-                    <span>Book Software Service</span>
-                  </button>
-
                   <a
                     href={siteConfig.phoneHref}
                     className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white hover:border-[#0E7C7B] px-6 py-3.5 text-xs font-black uppercase tracking-wider transition-all"
@@ -225,7 +212,7 @@ export function SoftwareServicesView() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
             <div className="text-center max-w-3xl mx-auto space-y-2">
               <span className="text-xs font-black uppercase tracking-widest text-[#0E7C7B]">
-                PROVEN REPAIR EXCELLENCE
+                
               </span>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
                 {data.whyChooseUsTitle}

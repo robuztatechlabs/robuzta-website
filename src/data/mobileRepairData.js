@@ -11,7 +11,7 @@ export const MOBILE_BRANDS = [
     h1: 'iPhone Repair Services in Ahmedabad',
     tagline: 'Professional iPhone repair in Ahmedabad for cracked screens, battery problems, charging issues, Face ID faults, camera problems, back glass damage, water damage, and motherboard issues. We repair iPhone 11, 12, 13, 14, 15, 16 and supported Pro and Pro Max models.',
     metaTitle: 'iPhone Repair in Ahmedabad | Screen, Battery & Logic Board | Robuzta',
-    metaDescription: 'Expert iPhone repair in Ahmedabad. Certified screen replacement, battery swap, water damage & logic board repair for iPhone 11 to 16 Pro Max.',
+    metaDescription: 'Expert iPhone repair in Ahmedabad.  screen replacement, battery swap, water damage & motherboard repair for iPhone 11 to 16 Pro Max.',
     logoImage: '/assets/brands/apple-13.svg',
     shortTag: 'iPhone 11, 12, 13, 14, 15 & 16 Series, including Pro and Pro Max models.',
     problemsBadge: 'REPAIR SERVICES FOR IPHONE',
@@ -223,7 +223,7 @@ export const MOBILE_BRANDS = [
     h1: 'Google Pixel Mobile Repair Services in Ahmedabad',
     tagline: 'Google Pixel repair services in Ahmedabad for screen problems, USB-C charging issues, camera faults, fingerprint problems, overheating, software update failures, network issues, motherboard faults, and water damage. We repair supported Pixel 6, 7, 8, 9, Pro, A Series, and Pixel Fold models.',
     metaTitle: 'Google Pixel Phone Repair in Ahmedabad | Pixel 6, 7, 8 & 9 | Robuzta',
-    metaDescription: 'Expert Google Pixel repair in Ahmedabad. Screen replacement, battery repair, Tensor chip logic board diagnostics & charging port fix.',
+    metaDescription: 'Expert Google Pixel repair in Ahmedabad. Screen replacement, battery repair, Tensor chip motherboard diagnostics & charging port fix.',
     logoImage: '/assets/brands/icons8-google.svg',
     shortTag: 'Pixel 6, 7, 8, 9 Series, Pro models and Pixel Fold.',
     problemsBadge: 'REPAIR SERVICES FOR GOOGLE PIXEL',
@@ -545,7 +545,7 @@ export const MOBILE_BRANDS = [
     h1: 'Vivo Mobile Repair Services in Ahmedabad',
     tagline: 'Vivo mobile repair services in Ahmedabad for display problems, battery issues, charging faults, camera problems, fingerprint failures, motherboard damage, network issues, water damage, and software-related problems. We repair Vivo X, V, Y, T, and other supported smartphone models.',
     metaTitle: 'Vivo Phone Repair in Ahmedabad | V & X Series Repair | Robuzta',
-    metaDescription: 'Certified Vivo mobile repair in Ahmedabad. Curved AMOLED display, FlashCharge battery, ZEISS camera lens & logic board fix.',
+    metaDescription: ' Vivo mobile repair in Ahmedabad. Curved AMOLED display, FlashCharge battery, ZEISS camera lens & motherboard fix.',
     logoImage: '/assets/brands/vivo-2.svg',
     shortTag: 'X Series, V Series, Y Series and other supported Vivo models.',
     problemsBadge: 'REPAIR SERVICES FOR VIVO',
@@ -1065,7 +1065,7 @@ export const MOBILE_PROBLEMS = [
     h1: 'Mobile Screen Replacement Services in Ahmedabad',
     tagline: 'Cracked glass, black display, touch not working, dead pixels, or lines on the screen? We provide screen replacement for supported smartphone models.',
     metaTitle: 'Mobile Screen Replacement in Ahmedabad | Original AMOLED | Robuzta',
-    metaDescription: 'Fast smartphone screen replacement in Ahmedabad. Original AMOLED, OLED & IPS display panels with Limited Warranty & glass protection.',
+    metaDescription: 'Fast smartphone screen replacement in Ahmedabad. Original AMOLED, OLED & IPS display panels with Warranty & glass protection.',
     symptoms: [
       'Outer front glass cracked or shattered after drop',
       'Display has black ink bleeding spots or vertical colored lines',
@@ -1087,7 +1087,7 @@ export const MOBILE_PROBLEMS = [
       },
       {
         question: 'Do replacement screens come with warranty?',
-        answer: 'All our screen replacements carry an official 180-day Robuzta warranty covering touch sensor sensitivity and display manufacturing faults.'
+        answer: 'All our screen replacements carry an official Robuzta warranty covering touch sensor sensitivity and display manufacturing faults.'
       }
     ]
   },

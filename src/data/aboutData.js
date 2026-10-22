@@ -7,21 +7,21 @@ export const ABOUT_PAGE_DATA = {
   h1: 'ABOUT US',
   mainHeading: 'Who We Are',
   introParagraphs: [
-    'At Robuzta TechLabs, we believe repairing a device is not just about replacing a faulty part. It is about finding the actual reason behind the problem and fixing it the right way.',
-    'From laptops and smartphones to gaming PCs, MacBooks, and data recovery, we provide professional technology repair services with a focus on proper diagnosis, transparent communication, and reliable repair solutions.'
+    'At Robuzta Techlabs, we are a dedicated team of hardware & software engineers,  technicians, and diagnostic specialists. We believe repairing a device is not just about swapping a part—it is about deep technical understanding, circuit-level troubleshooting, and precision engineering.',
+    'From complex MacBook logic board micro-soldering and laptop motherboard repairs to smartphone chip diagnostics and gaming rig overhauls, our engineering team brings deep bench-level expertise, transparent communication, and meticulous craftsmanship to every device.'
   ],
   metaTitle: 'Who We Are | About Robuzta Techlabs Ahmedabad',
-  metaDescription: 'Learn who we are at Robuzta Techlabs. We are Ahmedabad’s premier chip-level multi-device repair lab specializing in laptops, MacBooks, smartphones, and gaming PCs.',
+  metaDescription: 'Learn who we are at Robuzta Techlabs. We are a specialized team of hardware engineers and  technicians providing precision chip-level repairs across laptops, MacBooks, smartphones, and gaming PCs in Ahmedabad.',
   canonicalUrl: 'https://robuzta.com/about',
 
   whoWeAre: {
-    badge: 'Our Mission & Approach',
-    heading: 'More Than Just a Repair Center',
+    badge: 'Our Team & Engineering Core',
+    heading: 'Engineers & Technicians Behind Every Repair',
     paragraphs: [
-      'We are a technology repair and service center helping customers with everyday device problems as well as complex hardware failures.',
-      'A device may look completely dead, refuse to charge, overheat, crash, or stop working suddenly—but the visible problem is not always the actual problem.',
-      "That's why we focus on diagnosis before repair.",
-      'Our technicians work on everything from screen and battery replacements to charging faults, motherboard issues, chip-level repairs, storage failures, and performance problems.'
+      'We are an engineering-driven team of skilled technicians and hardware specialists who take on everyday device issues as well as the complex board failures that other service centers turn away.',
+      'Behind our open workbenches, our technicians and micro-soldering engineers analyze schematics, measure voltage lines, and diagnose motherboards under microscopes to identify the true root cause before picking up a tool.',
+      "That's why our engineers diagnose first, before repairing.",
+      'From precision BGA chip reballing and power rail diagnostics to OEM screen, battery, and port replacements, our team combines decades of cumulative lab experience with cutting-edge diagnostic equipment.'
     ]
   },
 

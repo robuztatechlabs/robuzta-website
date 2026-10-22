@@ -3,10 +3,8 @@ export const locations = [
     title: 'South Bopal Service Center',
     slug: 'south-bopal',
     branchType: 'Main Service Center',
-    badge: 'MAIN SERVICE CENTER • SOUTH BOPAL',
-    tagline: 'Main Flagship Repair Lab & Walk-in Center',
+    tagline: 'Main Repair Lab & Walk-in Center',
     cardTitle: 'Branch Information & Directions',
-    cardSubtitle: 'Official Robuzta Flagship Repair Center',
     landmark: 'Opposite Safal Parisar, Near Marigold Circle',
     heroDescription:
       'Walk into our flagship South Bopal lab for live workbench diagnostics, chip-level laptop & mobile repairs, and transparent pricing. Fast doorstep pickup across South Bopal, Shela, Bopal & West Ahmedabad.',
@@ -45,7 +43,6 @@ export const locations = [
     badge: 'CHANDKHEDA & TRAGAD BRANCH',
     tagline: 'Authorized Express Repair Branch & Walk-in Center',
     cardTitle: 'Branch Information & Directions',
-    cardSubtitle: 'Official Robuzta Service Center • Near Vaishnodevi Circle, Tragad',
     landmark: 'Malabar County-2, Near Vaishnodevi Circle, Behind Nirma University',
     heroDescription:
       'Walk into our Tragad service center for express device diagnostics, screen & battery replacements, and fast repair turnaround. Doorstep pickup across Tragad, Chandkheda, Zundal, Motera & North Ahmedabad.',
