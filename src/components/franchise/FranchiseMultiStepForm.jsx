@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Send, CheckCircle2, ArrowRight, ArrowLeft, Sparkles, Building, User, Mail, Phone, MapPin, DollarSign, Briefcase, MessageSquare } from 'lucide-react';
 import { siteConfig } from '@/data/site';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
+import { submitLeadData } from '@/lib/leadDispatcher';
 
 export function FranchiseMultiStepForm() {
   const [step, setStep] = useState(1);
@@ -31,6 +32,19 @@ export function FranchiseMultiStepForm() {
       setStep(step + 1);
     } else {
       setIsSubmitted(true);
+
+      // Dispatch to Lead API (Google Sheets, Email & Local Backup)
+      submitLeadData({
+        formType: 'Franchise Multi-Step Application',
+        name: formData.fullName,
+        phone: formData.phone,
+        email: formData.email,
+        device: 'Franchise Partnership',
+        issue: `Budget: ${formData.budget} | Experience: ${formData.experience}`,
+        locality: `${formData.city}, ${formData.state}`,
+        notes: `Company: ${formData.companyName} | Message: ${formData.message}`
+      });
+
       const whatsappMsg = `Hi Robuzta Techlabs! I submitted a Franchise Application:\n\n- Name: ${formData.fullName}\n- Company: ${formData.companyName}\n- Phone: ${formData.phone}\n- Email: ${formData.email}\n- City/State: ${formData.city}, ${formData.state}\n- Budget: ${formData.budget}\n- Experience: ${formData.experience}\n- Message: ${formData.message}\n\nPlease contact me for Franchise Consultation.`;
       const whatsappUrl = `${siteConfig.whatsappHref}?text=${encodeURIComponent(whatsappMsg)}`;
 

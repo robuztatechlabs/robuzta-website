@@ -9,7 +9,7 @@ export const repairProcess = [
   },
   {
     title: 'Approval',
-    text: 'Work begins only after customer approval.'
+    text: 'Work begins only after you approval.'
   },
   {
     title: 'Repair',

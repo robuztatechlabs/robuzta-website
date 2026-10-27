@@ -118,7 +118,7 @@ export function LocationsPageView() {
             
             <div className="text-center space-y-3 max-w-2xl mx-auto">
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
-                Robuzta Techlabs near You
+                Robuzta Techlabs Near You
               </h2>
 
               <p className="text-xs sm:text-base text-slate-600 dark:text-slate-400 font-medium">

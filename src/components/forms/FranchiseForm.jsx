@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/Button';
 import { siteConfig } from '@/data/site';
 import { Building2, CheckCircle2 } from 'lucide-react';
+import { submitLeadData } from '@/lib/leadDispatcher';
 
 export function FranchiseForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -24,6 +25,17 @@ export function FranchiseForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
+
+    // Dispatch to Lead API (Google Sheets, Email & Local Backup)
+    submitLeadData({
+      formType: 'Franchise Form (Legacy)',
+      name: formData.name,
+      phone: formData.phone,
+      device: 'Franchise Partnership',
+      issue: `Investment: ${formData.investment}`,
+      locality: formData.city,
+      notes: `Background: ${formData.background} | Message: ${formData.message}`
+    });
 
     const message = `Hi Robuzta Franchise Team! My name is ${formData.name}. I am interested in opening a Robuzta Techlabs franchise in ${formData.city}.\n\n*Investment Capacity:* ${formData.investment}\n*Background:* ${formData.background}\n*Phone:* ${formData.phone}\n*Note:* ${formData.message}`;
     const encodedMessage = encodeURIComponent(message);

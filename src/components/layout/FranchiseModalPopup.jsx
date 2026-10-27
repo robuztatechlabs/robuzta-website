@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, TrendingUp, ShieldCheck, Wrench, Sparkles, Send, CheckCircle2, Phone } from 'lucide-react';
 import { siteConfig } from '@/data/site';
 import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
+import { submitLeadData } from '@/lib/leadDispatcher';
 
 export function FranchiseModalPopup({ isOpen, onClose }) {
   const [name, setName] = useState('');
@@ -25,6 +26,17 @@ export function FranchiseModalPopup({ isOpen, onClose }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
+
+    // Dispatch to Lead API (Google Sheets, Email & Local Backup)
+    submitLeadData({
+      formType: 'Franchise Modal Popup Inquiry',
+      name,
+      phone,
+      device: 'Franchise Partnership',
+      issue: `Budget: ${budget}`,
+      locality: city,
+      notes: `City: ${city} | Budget: ${budget}`
+    });
 
     const message = `Hi Robuzta Techlabs! I am interested in a Franchise Partnership:\n\n- Name: ${name}\n- Phone: ${phone}\n- City: ${city}\n- Budget Range: ${budget}\n\nPlease share Franchise Model Details & Consultation.`;
     const whatsappUrl = `${siteConfig.whatsappHref}?text=${encodeURIComponent(message)}`;

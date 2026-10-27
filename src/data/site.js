@@ -10,6 +10,7 @@ export const siteConfig = {
   socials: {
     instagram: 'https://www.instagram.com/robuztatechlabs/',
     youtube: 'https://www.youtube.com/@robuztatechlabs',
+    youtubeLive: 'https://youtube.com/@robuztatechlabs/live',
     facebook: 'https://www.facebook.com/robuztatechlabs/'
   }
 };
