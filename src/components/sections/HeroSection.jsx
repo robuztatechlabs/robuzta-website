@@ -130,9 +130,10 @@ export function HeroSection() {
 
             {/* Main Headline */}
             <h1 className="text-[2.5rem] leading-[1.1] sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white sm:leading-tight">
-              Precision Repair for{' '}
+              Sip Your Chai, We'll Handle the
+              {' '}
               <span className="bg-gradient-to-r from-[#0E7C7B] via-teal-600 dark:via-teal-400 to-slate-900 dark:to-teal-200 bg-clip-text text-transparent">
-                Laptops & Mobiles
+                Laptop & Mobile
               </span>
             </h1>
 
