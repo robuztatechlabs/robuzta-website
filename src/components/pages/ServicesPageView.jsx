@@ -184,62 +184,6 @@ export function ServicesPageView() {
           </div>
         </section>
 
-        {/* Why Robuzta Lab Section */}
-        <section className="py-20 bg-slate-50/50 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12">
-            <div className="text-center max-w-3xl mx-auto space-y-4">
-              <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">
-                Why Customers Trust Robuzta Techlabs
-              </h2>
-              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 font-medium">
-                We combine advanced optical micro-soldering, FLIR thermal diagnostic cameras, genuine parts sourcing, and strict data privacy.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-3 shadow-lg">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-500/15 text-[#0E7C7B] font-black">
-                  <ShieldCheck size={24} />
-                </div>
-                <h3 className="text-lg font-black text-slate-900 dark:text-white">Zero-Password Data Safety</h3>
-                <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
-                  We test hardware using external diagnostic boot drives. Your personal passwords, photos, and OTPs are 100% private.
-                </p>
-              </div>
-
-              <div className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-3 shadow-lg">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-500/15 text-amber-500 font-black">
-                  <Zap size={24} />
-                </div>
-                <h3 className="text-lg font-black text-slate-900 dark:text-white">BGA Micro-Soldering</h3>
-                <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
-                  Instead of expensive motherboard swaps, we solder faulty IC chips and reball GPUs under 45x optical stereo microscopes.
-                </p>
-              </div>
-
-              <div className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-3 shadow-lg">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/15 text-emerald-500 font-black">
-                  <Clock size={24} />
-                </div>
-                <h3 className="text-lg font-black text-slate-900 dark:text-white">Same-Day Turnaround</h3>
-                <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
-                  80% of screen replacements, battery installs, and charging port repairs are completed within 2 to 4 hours.
-                </p>
-              </div>
-
-              <div className="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 space-y-3 shadow-lg">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-500/15 text-blue-500 font-black">
-                  <CheckCircle2 size={24} />
-                </div>
-                <h3 className="text-lg font-black text-slate-900 dark:text-white">No Fix, No Fee Guarantee</h3>
-                <p className="text-xs text-slate-600 dark:text-slate-400 font-medium leading-relaxed">
-                  If we cannot fix your hardware issue or restore system power, you pay zero diagnostic or bench charges.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Diagnostic & Booking Banner */}
         <section className="py-16 bg-white dark:bg-slate-950">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
