@@ -141,10 +141,11 @@ export async function POST(request) {
 
     if (transporter) {
       try {
+        const leadContact = [name, phone].filter(Boolean).join(' - ') || email || 'New Inquiry';
         await transporter.sendMail({
           from: `"Robuzta Lead System" <${process.env.SMTP_USER}>`,
           to: toEmail,
-          subject: `🚨 New Robuzta Lead: ${formType} — ${name} (${phone})`,
+          subject: `🚨 New Robuzta Lead: ${formType} — ${leadContact}`,
           html: buildEmailHtml(leadData)
         });
         console.log(`[Lead API] Email sent to ${toEmail} for lead ${leadData.id}`);

@@ -7,7 +7,8 @@ export async function submitLeadData(data) {
     fetch('/api/lead', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
+      keepalive: true
     }).catch((err) => console.error('Background lead dispatch error:', err));
   } catch (err) {
     console.error('Lead submit error:', err);
