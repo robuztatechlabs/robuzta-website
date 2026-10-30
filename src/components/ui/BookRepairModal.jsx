@@ -26,7 +26,7 @@ export function BookRepairModal() {
 
     // 1. Dispatch Lead to API (Google Sheets, Email & Local Backup)
     submitLeadData({
-      formType: 'Instant Modal Booking',
+      formType: 'Instant Model Booking',
       name,
       phone,
       device,
